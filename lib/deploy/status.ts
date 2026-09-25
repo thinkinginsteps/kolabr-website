@@ -21,7 +21,9 @@ function parse(raw: string): DeployRecord | null {
   }
   if (!data || typeof data !== "object") return null;
   const r = data as Record<string, unknown>;
-  if (typeof r.id !== "string" || !isStatus(r.status)) return null;
+  // The id has to be a real one: a stray .json in the log directory should not show up as a
+  // blank row in the history.
+  if (typeof r.id !== "string" || !isValidDeployId(r.id) || !isStatus(r.status)) return null;
 
   const record: DeployRecord = {
     id: r.id,

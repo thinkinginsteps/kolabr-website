@@ -32,6 +32,7 @@ Put `ADMIN_EMAIL` and the printed `ADMIN_PASSWORD_HASH` in `.env.local`, then si
 | `npm run assets` | Copies fonts from `design/` and converts its images to WebP in `assets/` |
 | `npm run publish:prepare` | Type-check, lint, build, then write the deployment package |
 | `npm run publish:package` | Just the package, into `publish/` |
+| `npm run test:deploy` | Runs the deploy, rebuild and watchdog scripts against a fake server |
 
 ## How it is laid out
 

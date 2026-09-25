@@ -21,6 +21,9 @@ export const CONTENT_DIR = process.env.CONTENT_DIR ?? local("content");
 /** Uploaded deployment packages. The deploy script reads them from here as root. */
 export const UPLOAD_DIR = process.env.UPLOAD_DIR ?? local(".local-state", "uploads");
 
+/** Where the server keeps everything: the app, the previous build, the logs, the watchdog's notes. */
+export const SERVER_PREFIX = process.env.KOLABR_PREFIX ?? "/opt/kolabr";
+
 /** The root-owned script that actually performs a deploy. */
 export const DEPLOY_SCRIPT = process.env.DEPLOY_SCRIPT ?? "/opt/kolabr/deploy.sh";
 

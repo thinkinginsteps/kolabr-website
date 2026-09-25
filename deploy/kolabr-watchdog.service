@@ -1,0 +1,12 @@
+[Unit]
+Description=Kolabr website watchdog: puts the site back up if something killed it mid-deploy
+# Nothing here depends on the website being up, so the watchdog must not be ordered after it.
+
+[Service]
+Type=oneshot
+ExecStart=/opt/kolabr/watchdog.sh
+# One check, one minute: never let a stuck check pile up behind the next one.
+TimeoutStartSec=50
+# The lightest thing on the box. It must never be the reason another service is slow.
+Nice=15
+IOWeight=10

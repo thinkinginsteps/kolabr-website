@@ -30,8 +30,9 @@ export function DeployPanel({ history }: { history: DeployRecord[] }) {
         <h2 className="text-[20px] font-semibold tracking-[-0.02em] text-ink">Deploy</h2>
         <p className="mt-2 text-[15.5px] leading-[1.6] text-ink-muted">
           New code, not new posts. Build the package locally with <code className="text-ink">npm run publish:prepare</code>, then
-          upload it here. The site goes down for a minute or two while it builds, and rolls back on its own if the new build does
-          not come up.
+          upload it here. The new version is built alongside the live one, so the site keeps serving throughout and is only
+          swapped over, for a few seconds, once the build has succeeded. If the new version does not come up, the previous one is
+          put back on its own.
         </p>
 
         <form action={action} className="mt-5 flex flex-wrap items-center gap-3">

@@ -1,0 +1,13 @@
+[Unit]
+Description=Check every minute that the Kolabr website is up
+
+[Timer]
+# From 30s after boot, then every minute. AccuracySec keeps it off the same tick as everything
+# else on the machine.
+OnBootSec=30s
+OnUnitActiveSec=60s
+AccuracySec=10s
+Unit=kolabr-watchdog.service
+
+[Install]
+WantedBy=timers.target

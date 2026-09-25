@@ -1,62 +1,60 @@
 #!/usr/bin/env bash
 # Kolabr website deploy.
 #
-# Installs an uploaded source .zip into /opt/kolabr/app, builds it, restarts the service, and
-# rolls back if the new build does not come up healthy.
+# Installs an uploaded source .zip, builds it, and swaps it in. Three rules shape this script:
 #
-# WHY THIS SCRIPT DETACHES ITSELF (do not remove):
-# The back office runs this from a Next.js server action, so it starts life inside
-# kolabr.service's cgroup. systemd's default KillMode=control-group means `systemctl stop kolabr`
-# (the stop step below) SIGTERMs every process in that cgroup: this script, its sudo parent, and
-# the rollback handler with it. The deploy would die at the moment it stopped the service and
-# leave the site down. So the script re-execs into a transient unit (systemd-run) and lives in
-# its own cgroup.
+#   1. THE SITE IS NEVER DOWN FOR LONGER THAN A SWAP. The new version is installed and built in a
+#      staging directory while the current one keeps serving. The service is stopped only to move
+#      two directories and start again: a few seconds, not the minutes a build takes. A failed
+#      build therefore never takes the site down, because the site was never stopped.
+#   2. IT NEVER LEAVES THE SERVICE STOPPED. Every exit path, including a signal, ends by making
+#      sure the service is running, and says so in the status file if it could not.
+#   3. IT STAYS OUT OF THE WAY OF EVERYTHING ELSE ON THE BOX. The build runs under a CPU and
+#      memory ceiling so a co-hosted app is not starved, disk space is checked before anything is
+#      written, and the only unit this script ever touches is its own.
 #
-# Because the process that launched the deploy is always killed partway through, the deploy can
-# never answer its caller in-band. Progress goes to a log file and a JSON status file that the
-# back office polls once the site is back up.
+# WHY IT DETACHES ITSELF (do not remove):
+# The back office runs this from a Next.js server action, so it starts inside kolabr.service's
+# cgroup. systemd's default KillMode=control-group means `systemctl stop kolabr` SIGTERMs every
+# process in that cgroup: this script, its sudo parent, and the rollback with it. So it re-execs
+# into a transient unit and lives in its own cgroup. Because the process that launched it is
+# killed partway through, the deploy reports through a status file the back office polls.
 #
 # Usage: deploy.sh /path/to/package.zip [options]
 #
-#   --deploy-id <id>   id for the log and status filenames. The app passes this so it knows
-#                      which status file to poll; the script echoes back the id it adopted.
-#   --owns-package     delete the package after a successful deploy (the app sets this for its
-#                      own /tmp uploads; an operator's package is never deleted).
-#   --no-rollback      leave a failed build in place instead of restoring the backup.
-#   --foreground       run here instead of re-execing into a transient unit. Correct for a
-#                      manual SSH run, where the shell is its own scope. Never from the app.
-#   --help             this text.
+#   --deploy-id <id>   id for the log and status filenames, echoed back for the poller.
+#   --owns-package     delete the package after a successful deploy (the app sets this).
+#   --no-rollback      leave a failed deploy in place instead of restoring the previous build.
+#   --foreground       run here instead of re-execing. Correct for a manual SSH run, never from
+#                      the app.
+#   --help
 #
 # Caller-supplied values are FLAGS, never environment variables: sudoers sets `Defaults
-# env_reset`, so `DEPLOY_ID=x sudo deploy.sh ...` is silently stripped and the app would poll a
-# status file that never appears.
-#
-# Env (fallback for direct root runs):
-#   DEPLOY_ID, DEPLOY_WATCH_SECONDS (default 25), DEPLOY_LOG_DIR, DEPLOY_OWNS_PACKAGE
+# env_reset`, so an env var set by the caller is stripped before this script sees it.
 
 set -euo pipefail
 
-# The prefix is overridable so the script can be exercised against a scratch directory before it
-# is trusted with the real one. sudoers strips the environment, so a deploy from the back office
-# always uses /opt/kolabr.
 PREFIX="${KOLABR_PREFIX:-/opt/kolabr}"
 APP_ROOT="$PREFIX/app"
+PREVIOUS_ROOT="$PREFIX/app.previous"
 STATE_ROOT="$PREFIX/state"
 CONTENT_ROOT="$PREFIX/content"
 SERVICE_NAME="${KOLABR_SERVICE:-kolabr}"
 SERVICE_USER="${KOLABR_USER:-kolabr}"
 WORK_ROOT="$PREFIX/.deploy-work"
 BACKUP_ROOT="$PREFIX/backups"
-# Where the back office writes uploaded packages. Not /tmp: the service may run with a private
-# /tmp, and then the root deploy script could not see the file the app just wrote.
 UPLOAD_ROOT="$PREFIX/uploads"
 LOCK_FILE="$PREFIX/.deploy.lock"
 LOG_DIR="${DEPLOY_LOG_DIR:-$PREFIX/deploy-logs}"
-SERVICE_URL="http://127.0.0.1:3000"
+SERVICE_URL="${KOLABR_URL:-http://127.0.0.1:3000}"
 KEEP_BACKUPS=5
+# Free space needed before anything is written. node_modules and .next come to roughly 1.2GB, and
+# filling the disk would break every service on the machine, not just this one.
+MIN_FREE_MB="${DEPLOY_MIN_FREE_MB:-3000}"
+# Ceilings for the build, so a co-hosted app is not starved of CPU or memory by a deploy.
+BUILD_CPU_QUOTA="${DEPLOY_CPU_QUOTA:-70%}"
+BUILD_MEMORY_MAX="${DEPLOY_MEMORY_MAX:-3G}"
 
-# A fixed unit name makes systemd the mutex: a second deploy fails to start with a clear error
-# instead of racing. --collect reaps the unit on exit so the name is immediately reusable.
 DEPLOY_UNIT="kolabr-deploy.service"
 SELF="$(readlink -f "$0")"
 
@@ -74,7 +72,7 @@ while [[ $# -gt 0 ]]; do
     --foreground) FOREGROUND=1; shift ;;
     --owns-package) OWNS_PACKAGE=1; shift ;;
     --deploy-id) DEPLOY_ID="${2:-}"; shift 2 ;;
-    --help|-h) sed -n '2,45p' "$SELF"; exit 0 ;;
+    --help|-h) sed -n '2,32p' "$SELF"; exit 0 ;;
     -*) echo "unknown option: $1" >&2; exit 2 ;;
     *) PKG_PATH="$1"; shift ;;
   esac
@@ -105,6 +103,10 @@ if [[ "$FOREGROUND" -eq 0 && -z "${DEPLOY_DETACHED:-}" ]]; then
   echo "deploy-id: $DEPLOY_ID"
   systemd-run \
     --unit="$DEPLOY_UNIT" --collect --quiet \
+    --property="CPUQuota=$BUILD_CPU_QUOTA" \
+    --property="MemoryMax=$BUILD_MEMORY_MAX" \
+    --property="Nice=10" \
+    --property="IOWeight=50" \
     --setenv=DEPLOY_DETACHED=1 \
     --setenv=DEPLOY_LOG_DIR="$LOG_DIR" \
     -- "$SELF" "$PKG_PATH" --deploy-id "$DEPLOY_ID" --foreground \
@@ -114,26 +116,29 @@ if [[ "$FOREGROUND" -eq 0 && -z "${DEPLOY_DETACHED:-}" ]]; then
   exit 0
 fi
 
-exec > >(tee -a "$LOG_FILE") 2>&1
+# Everything from here goes to the log file, and only there.
+#
+# This used to tee into a live copy on stdout. Do not put that back: the tee is a second process in
+# the same process group, so a kill takes it out first, and the exit handler then dies of SIGPIPE
+# on its own first message, with the site stopped. A plain append cannot break. To watch a manual
+# run, follow the log in another terminal.
+if [[ -t 1 ]]; then echo "logging to $LOG_FILE (tail -f it to watch)"; fi
+trap '' PIPE
+exec >> "$LOG_FILE" 2>&1
 
-# ---------------------------------------------------------------- status file
+# ---------------------------------------------------------------- status
 
 STARTED_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 CURRENT_STEP="queued"
 TERMINAL_WRITTEN=0
 ROLLED_BACK="false"
+SWAPPED=0
 
-state_step() { echo "$CURRENT_STEP"; }
-
-# Messages are this script's own one-line strings, so escaping quotes and backslashes is enough
-# to keep the status file valid JSON. No python on the box is assumed.
 json_escape() { printf '%s' "$1" | sed -e 's/\\/\\\\/g' -e 's/"/\\"/g'; }
 
-# The back office reads this file. Write it atomically: a half-written file read mid-poll is a
-# parse error on the client, which looks like a failed deploy.
 write_state() {
   local status="$1" step="$2" message="$3" exit_code="${4:-0}"
-  local tmp="$STATE_FILE.tmp"
+  local tmp="$STATE_FILE.tmp.$$"
   cat > "$tmp" <<JSON
 {
   "id": "$DEPLOY_ID",
@@ -157,153 +162,238 @@ step() {
   write_state running "$1" "$2"
 }
 
+service_healthy() {
+  systemctl is-active "$SERVICE_NAME" >/dev/null 2>&1 && curl -fsS -o /dev/null --max-time 5 "$SERVICE_URL"
+}
+
+# Rule 2. Whatever happened, the site must be running when this script exits.
+#
+# The swap is two renames. A kill landing between them leaves no $APP_ROOT at all, and starting the
+# service then would fail, so the first thing this does is put a directory back if one is missing.
+ensure_running() {
+  if [[ ! -d "$APP_ROOT" ]]; then
+    if [[ -d "$STAGE_DIR" ]]; then
+      echo "no $APP_ROOT: the swap was interrupted. Completing it with the new build." >&2
+      mv "$STAGE_DIR" "$APP_ROOT"
+    elif [[ -d "$PREVIOUS_ROOT" ]]; then
+      echo "no $APP_ROOT: the swap was interrupted. Putting the previous build back." >&2
+      mv "$PREVIOUS_ROOT" "$APP_ROOT"
+      ROLLED_BACK="true"
+    fi
+  fi
+  systemctl is-active "$SERVICE_NAME" >/dev/null 2>&1 && return 0
+  echo "service is not running; starting it" >&2
+  systemctl start "$SERVICE_NAME" || true
+  for _ in $(seq 1 15); do
+    systemctl is-active "$SERVICE_NAME" >/dev/null 2>&1 && return 0
+    sleep 1
+  done
+  echo "COULD NOT START $SERVICE_NAME. The site is down and needs a person." >&2
+  return 1
+}
+
 WORK_DIR="$WORK_ROOT/$DEPLOY_ID"
-EXTRACT_DIR="$WORK_DIR/package"
+STAGE_DIR="$WORK_DIR/app"
 BACKUP_FILE="$BACKUP_ROOT/app-$DEPLOY_ID.tgz"
 
 echo "=== Kolabr deploy $DEPLOY_ID ==="
 echo "package:  $PKG_PATH"
 echo "watch:    ${WATCH_SECONDS}s"
 echo "rollback: $ROLLBACK_ON_FAILURE"
+echo "limits:   cpu $BUILD_CPU_QUOTA, memory $BUILD_MEMORY_MAX"
 
-# Any exit that has not already recorded a terminal status is a failure, signals included.
-# Without this a killed deploy leaves the back office polling "running" forever.
+MAIN_PID=$$
+
 on_exit() {
   local code=$?
+  # Bash runs an inherited EXIT trap in every forked subshell, including the ones behind command
+  # substitutions and pipelines. Without this guard the handler re-enters itself from inside its
+  # own `$(...)` calls, and its output lands in the status file instead of the log.
+  [[ -n "${BASHPID:-}" && "${BASHPID:-}" != "$MAIN_PID" ]] && return 0
+  # The swap runs in a subshell, so its step never reached this variable. The state file is the
+  # only place that knows how far it got.
+  CURRENT_STEP="$(sed -n 's/.*"step": "\([^"]*\)".*/\1/p' "$STATE_FILE" 2>/dev/null | tail -1 || true)"
+  [[ -z "$CURRENT_STEP" ]] && CURRENT_STEP="queued"
+  # Getting the site up comes first: ensure_running may still need the staging directory under
+  # $WORK_DIR to finish an interrupted swap.
+  local up=0
+  ensure_running && up=1
   rm -rf "$WORK_DIR"
+  if [[ "$up" -eq 0 ]]; then
+    write_state failed "$CURRENT_STEP" "deploy ended with the site DOWN: could not start $SERVICE_NAME" "$code"
+    return
+  fi
   if [[ "$TERMINAL_WRITTEN" -eq 0 ]]; then
-    local where; where="$(state_step)"
-    echo "deploy terminated unexpectedly during '$where' (exit $code)" >&2
-    write_state failed "$where" "terminated unexpectedly during '$where' (exit $code)" "$code"
+    echo "deploy terminated unexpectedly during '$CURRENT_STEP' (exit $code); the site is running" >&2
+    write_state failed "$CURRENT_STEP" "terminated unexpectedly during '$CURRENT_STEP' (exit $code); the site is running" "$code"
   fi
 }
 trap on_exit EXIT
+# A signal must go through the same handler rather than killing the script where it stands. The
+# subshell that owns the swap gets the signal too, so exiting here is enough.
+trap 'echo "deploy interrupted by a signal during '"'"'$CURRENT_STEP'"'"'" >&2; exit 143' INT TERM HUP
 
-step lock "acquiring deploy lock"
+step lock "acquiring the deploy lock"
 exec 9>"$LOCK_FILE"
 if ! flock -n 9; then
-  echo "another deployment is in progress" >&2
-  write_state failed lock "another deployment is in progress" 1
+  echo "another deploy or rebuild is already running" >&2
+  write_state failed lock "another deploy or rebuild is already running" 1
   exit 1
 fi
 
-rollback() {
-  if [[ ! -f "$BACKUP_FILE" ]]; then
-    echo "rollback skipped: backup not found at $BACKUP_FILE" >&2
-    return 1
-  fi
-  echo "rollback: restoring app from $BACKUP_FILE"
-  systemctl stop "$SERVICE_NAME" || true
-  mkdir -p "$APP_ROOT"
-  find "$APP_ROOT" -mindepth 1 -maxdepth 1 -exec rm -rf {} +
-  tar -C "$APP_ROOT" -xzf "$BACKUP_FILE"
-  chown -R "$SERVICE_USER:$SERVICE_USER" "$APP_ROOT"
-  systemctl start "$SERVICE_NAME"
-  systemctl is-active "$SERVICE_NAME" >/dev/null
-  ROLLED_BACK="true"
-  echo "rollback complete"
-}
+# ---------------------------------------------------------------- preflight
 
-# State and content live outside the app so a deploy cannot touch them. The app reaches them
-# through CONTENT_DIR and STATE_DIR, never through a symlink inside the app: Turbopack follows a
-# symlink that leaves the project root and fails the build with "leaves the filesystem root".
-seed_content() {
-  if [[ -z "$(ls -A "$CONTENT_ROOT" 2>/dev/null)" && -d "$APP_ROOT/content" ]]; then
-    echo "seeding $CONTENT_ROOT from the package (first deploy only)"
-    cp -a "$APP_ROOT/content/." "$CONTENT_ROOT"/
-  fi
-}
+step preflight "checking the disk"
+free_mb=$(df -Pm "$PREFIX" | awk 'NR==2 {print $4}')
+if [[ "${free_mb:-0}" -lt "$MIN_FREE_MB" ]]; then
+  echo "only ${free_mb}MB free on $PREFIX, need ${MIN_FREE_MB}MB" >&2
+  write_state failed preflight "not enough disk space: ${free_mb}MB free, ${MIN_FREE_MB}MB needed" 1
+  exit 1
+fi
+echo "disk: ${free_mb}MB free"
 
-step unzip "extracting package"
-mkdir -p "$EXTRACT_DIR"
-unzip -q "$PKG_PATH" -d "$EXTRACT_DIR"
+# The previous deploy's copy, kept for an instant rollback, is released now a new one is starting.
+rm -rf "$PREVIOUS_ROOT"
 
-step validate "checking package contents"
+step unzip "extracting the package"
+mkdir -p "$STAGE_DIR"
+unzip -q "$PKG_PATH" -d "$STAGE_DIR"
+
+step validate "checking the package contents"
 for required in package.json package-lock.json next.config.ts app lib; do
-  if [[ ! -e "$EXTRACT_DIR/$required" ]]; then
+  if [[ ! -e "$STAGE_DIR/$required" ]]; then
     echo "invalid package: $required missing" >&2
     write_state failed validate "invalid package: $required missing" 1
     exit 1
   fi
 done
 
-if [[ -d "$APP_ROOT" && -n "$(ls -A "$APP_ROOT" 2>/dev/null)" ]]; then
-  step backup "backing up current app to $BACKUP_FILE"
-  tar -C "$APP_ROOT" -czf "$BACKUP_FILE" --exclude=./node_modules --exclude=./.next .
+# First deploy only: seed the content directory from the package. After that the server's copy is
+# the source of truth and no deploy touches it again.
+if [[ -z "$(ls -A "$CONTENT_ROOT" 2>/dev/null)" && -d "$STAGE_DIR/content" ]]; then
+  echo "seeding $CONTENT_ROOT from the package (first deploy only)"
+  cp -a "$STAGE_DIR/content/." "$CONTENT_ROOT"/
 fi
 
+if [[ -d "$APP_ROOT" && -n "$(ls -A "$APP_ROOT" 2>/dev/null)" ]]; then
+  step backup "saving the current source"
+  tar -C "$APP_ROOT" -czf "$BACKUP_FILE" --exclude=./node_modules --exclude=./.next . || true
+fi
+
+# ---------------------------------------------------------------- build, with the site still up
+
+step build "installing and building (the site stays up)"
+chown -R "$SERVICE_USER:$SERVICE_USER" "$WORK_DIR" "$STATE_ROOT" "$CONTENT_ROOT"
+
 set +e
-(
-  step stop "stopping $SERVICE_NAME"
-  systemctl stop "$SERVICE_NAME" || true
-
-  step swap "installing new files"
-  mkdir -p "$APP_ROOT"
-  # node_modules and .next are kept: npm ci reuses the cache and the build is far quicker.
-  find "$APP_ROOT" -mindepth 1 -maxdepth 1 ! -name node_modules ! -name .next -exec rm -rf {} +
-  cp -a "$EXTRACT_DIR"/. "$APP_ROOT"/
-
-  # First deploy only: seed the content directory from the package. After that the server's copy
-  # is the source of truth and no deploy touches it again.
-  seed_content
-  chown -R "$SERVICE_USER:$SERVICE_USER" "$APP_ROOT" "$STATE_ROOT" "$CONTENT_ROOT"
-
-  step build "npm ci && npm run build"
-  # The build reads the blog posts from CONTENT_DIR, so it is set here as well as in the unit,
-  # along with anything in .env.production the build needs (NEXT_PUBLIC_* are baked in here).
-  su - "$SERVICE_USER" -s /bin/bash -c "
+su - "$SERVICE_USER" -s /bin/bash -c "
 set -e
-cd ${APP_ROOT}
+cd ${STAGE_DIR}
 set -a; [[ -f ${PREFIX}/.env.production ]] && . ${PREFIX}/.env.production; set +a
 export CONTENT_DIR=${CONTENT_ROOT}
 export STATE_DIR=${STATE_ROOT}
 npm ci --no-audit --no-fund
 npm run build
 "
+BUILD_RC=$?
+set -e
 
-  step start "starting $SERVICE_NAME"
+if [[ "$BUILD_RC" -ne 0 ]]; then
+  # Nothing has been swapped and the service was never stopped: the site is still serving the
+  # previous build. This is the whole reason the build happens before the stop.
+  echo "build failed (exit $BUILD_RC); the site is untouched and still running" >&2
+  write_state failed build "the build failed; the site is untouched and still running. See $LOG_FILE" "$BUILD_RC"
+  exit 1
+fi
+
+# ---------------------------------------------------------------- swap
+
+swap_back() {
+  [[ ! -d "$PREVIOUS_ROOT" ]] && { echo "no previous build to restore" >&2; return 1; }
+  echo "rollback: restoring the previous build"
+  systemctl stop "$SERVICE_NAME" || true
+  rm -rf "$APP_ROOT"
+  mv "$PREVIOUS_ROOT" "$APP_ROOT"
+  systemctl start "$SERVICE_NAME"
+  ROLLED_BACK="true"
+  for _ in $(seq 1 "$WATCH_SECONDS"); do
+    service_healthy && { echo "rollback complete; the previous build is serving"; return 0; }
+    sleep 1
+  done
+  echo "rollback done but the previous build is not answering" >&2
+  return 1
+}
+
+set +e
+(
+  set -e
+  # A subshell inherits the traps. Without this both it and the parent would run the exit handler
+  # when a signal arrives, two copies would race on the status file, and neither would be readable.
+  # The parent is the one that handles the ending.
+  trap - EXIT INT TERM HUP
+  step stop "stopping the site for the swap"
+  systemctl stop "$SERVICE_NAME" || true
+
+  # Nothing slow belongs between the stop and the start. Ownership is already correct from the
+  # build, and a rename keeps it, so the whole down time is two renames on one filesystem.
+  step swap "swapping in the new build"
+  if [[ -d "$APP_ROOT" ]]; then mv "$APP_ROOT" "$PREVIOUS_ROOT"; fi
+  mv "$STAGE_DIR" "$APP_ROOT"
+
+  step start "starting the site"
   systemctl start "$SERVICE_NAME"
 
-  step watch "watching startup for ${WATCH_SECONDS}s"
-  deadline=$((SECONDS + WATCH_SECONDS))
+  step watch "checking it came back (${WATCH_SECONDS}s)"
   healthy=0
-  while [[ $SECONDS -lt $deadline ]]; do
-    if ! systemctl is-active "$SERVICE_NAME" >/dev/null; then
-      echo "service stopped during the watch window" >&2
+  for _ in $(seq 1 "$WATCH_SECONDS"); do
+    if ! systemctl is-active "$SERVICE_NAME" >/dev/null 2>&1; then
+      echo "the service stopped during the watch window" >&2
       break
     fi
-    if curl -fsS -o /dev/null "$SERVICE_URL"; then
-      healthy=1
-      break
-    fi
+    if service_healthy; then healthy=1; break; fi
     sleep 1
   done
   [[ "$healthy" -eq 1 ]]
 )
-INSTALL_RC=$?
+SWAP_RC=$?
 set -e
+SWAPPED=1
 
-# The steps ran in a subshell, so the parent never saw them advance. The status file did:
-# read the step back from it rather than reporting the last one this shell happened to set.
 CURRENT_STEP="$(sed -n 's/.*"step": "\([^"]*\)".*/\1/p' "$STATE_FILE" 2>/dev/null || echo "$CURRENT_STEP")"
 
-if [[ "$INSTALL_RC" -eq 0 ]]; then
-  step done "deploy complete"
+if [[ "$SWAP_RC" -eq 0 ]]; then
+  step verify "checking the main pages"
+  bad=""
+  for p in / /pricing/ /blog/ /contact/; do
+    curl -fsS -o /dev/null --max-time 10 "${SERVICE_URL}${p}" || bad="$bad $p"
+  done
+  if [[ -n "$bad" ]]; then
+    echo "these pages did not answer:$bad" >&2
+    if [[ "$ROLLBACK_ON_FAILURE" -eq 1 ]]; then
+      write_state running rollback "pages did not answer:$bad; restoring the previous build"
+      swap_back || echo "rollback failed" >&2
+    fi
+    write_state failed verify "pages did not answer:$bad" 1
+    exit 1
+  fi
+
   [[ "$OWNS_PACKAGE" -eq 1 ]] && rm -f "$PKG_PATH"
-  # Keep a handful of backups: enough to recover, not enough to fill the disk.
   ls -1t "$BACKUP_ROOT"/app-*.tgz 2>/dev/null | tail -n +$((KEEP_BACKUPS + 1)) | xargs -r rm -f
+  # $PREVIOUS_ROOT is deliberately kept until the next deploy: it is the fastest rollback there
+  # is, and it costs one copy of the build rather than a rebuild from a tarball.
+  step done "deploy complete"
   write_state succeeded done "deploy complete"
   echo "deploy complete: $DEPLOY_ID"
 else
   FAILED_STEP="$CURRENT_STEP"
-  echo "deploy failed during '$FAILED_STEP' (exit $INSTALL_RC)" >&2
-  if [[ "$ROLLBACK_ON_FAILURE" -eq 1 ]]; then
+  echo "deploy failed during '$FAILED_STEP' (exit $SWAP_RC)" >&2
+  if [[ "$ROLLBACK_ON_FAILURE" -eq 1 && "$SWAPPED" -eq 1 ]]; then
     CURRENT_STEP="rollback"
     write_state running rollback "restoring the previous build"
-    rollback || echo "rollback failed, the site may still be down" >&2
+    swap_back || echo "rollback failed; the exit handler will make sure something is running" >&2
   else
-    echo "rollback disabled, leaving the failed build in place"
+    echo "rollback disabled; leaving the new build in place"
   fi
-  write_state failed "$FAILED_STEP" "deploy failed during '$FAILED_STEP'; see $LOG_FILE" "$INSTALL_RC"
+  write_state failed "$FAILED_STEP" "deploy failed during '$FAILED_STEP'; see $LOG_FILE" "$SWAP_RC"
   exit 1
 fi

@@ -1,8 +1,9 @@
 # Deploying kolabr.com
 
 The site is updated by uploading a package in the back office. You build a zip locally, sign in at
-`https://kolabr.com/admin/`, upload it, and watch it land. The server extracts it, installs, builds,
-restarts, and puts the previous build back if the new one does not come up.
+`https://kolabr.com/admin/`, upload it, and watch it land. The server extracts and builds it **next
+to the running site**, then stops the service just long enough to rename two directories and start
+it again. If anything goes wrong it puts the previous build back.
 
 No SSH is needed to deploy. SSH is needed once, to set the server up, and afterwards only to change
 something outside the app: the deploy script, the systemd unit, nginx, or `.env.production`.
@@ -14,9 +15,10 @@ or Copy, then press **Publish changes**.
 That rebuilds the site from the current content and swaps the new build in. It takes about a
 minute, and the site stays up except for a few seconds at the swap. `rebuild.sh` does this.
 
-**Code** (anything else): build a package locally and upload it under Deploy. That replaces the
-app, reinstalls dependencies and rebuilds, and takes a few minutes with the site down while it
-builds. `deploy.sh` does this.
+**Code** (anything else): build a package locally and upload it under Deploy. That installs
+dependencies and builds the new version in a staging directory while the current one keeps serving,
+then swaps the two. It takes a few minutes, of which the site is down for the swap alone.
+`deploy.sh` does this.
 
 A deploy never overwrites content: the package's `content/` only seeds the server on the very
 first deploy.
@@ -32,13 +34,38 @@ That type-checks, lints, builds, and then writes `publish/kolabr-<timestamp>.zip
 
 Then sign in at `https://kolabr.com/admin/`, choose the file, and press **Upload and deploy**.
 
-The panel shows each step: extracting, checking, backing up, stopping, installing, building,
-starting, watching. **The site is down while it builds**, usually a minute or two, and the panel
-cannot reach the server during that time. It says so and keeps watching; a failed poll is the
-expected middle of a deploy, not a failure. When the server comes back it reports what happened.
+The panel shows each step: extracting, checking, backing up, **building**, stopping, swapping,
+starting, watching, verifying. The site serves the old version throughout the build, which is the
+slow part. It is down only between "stopping" and "starting", a few seconds, and the panel cannot
+reach the server for that moment: a failed poll there is the expected middle of a deploy, not a
+failure.
 
-If the new build does not answer within 25 seconds of starting, the deploy restores the backup and
-the panel says "Rolled back". The site is back on the previous build; nothing is lost.
+Three things can go wrong, and each has an answer:
+
+| What happens | What the deploy does |
+| --- | --- |
+| The build fails | Stops there. The site was never touched and is still serving. |
+| The new version does not start, or does not answer within 25 seconds | Swaps the previous build back and starts it. The panel says "rolled back". |
+| A main page (`/`, `/pricing/`, `/blog/`, `/contact/`) does not answer afterwards | The same. A build that compiles but cannot render a page is still a failure. |
+
+The previous build stays on disk as `/opt/kolabr/app.previous` until the next deploy, so the way
+back is a rename rather than a rebuild. The back office shows whether it is there, under **The
+server**.
+
+## Changing the deploy scripts
+
+They stop and start the live site, so there is no safe way to try them out on the server. Run them
+against a fake one instead:
+
+```bash
+npm run test:deploy
+```
+
+That builds a tiny package, stands in for `systemctl`, `curl`, `su`, `flock` and `chown`, and walks
+every path that matters: a failing build, a service that will not start, a page that does not
+answer, an invalid package, a deploy killed outright mid-build, and each repair the watchdog makes.
+Every case asserts the same thing at the end, which is the only rule that cannot bend: **the site
+is running**.
 
 ## What goes in the package
 
@@ -55,19 +82,61 @@ back office.
 
 ```
 /opt/kolabr/
-  app/              the running site; wiped and replaced by every deploy
+  app/              the running site; replaced by every deploy
+  app.previous/     the version before it, kept for an instant rollback
+  .deploy-work/     where the next version is built while the current one keeps serving
   content/          blog posts and page copy. Survives deploys (CONTENT_DIR)
   state/            admin sessions and contact form messages. Survives deploys (STATE_DIR)
   uploads/          packages received from the back office
-  backups/          the last 5 builds, as tarballs
-  deploy-logs/      per-deploy log and status JSON
+  backups/          the last 5 deploys' source, as tarballs
+  deploy-logs/      per-deploy log and status JSON, and the watchdog's notes
   deploy.sh         root-owned. A deploy cannot change it
+  rebuild.sh        root-owned. A deploy cannot change it
+  watchdog.sh       root-owned. Runs every minute; see below
   .env.production   secrets. A deploy cannot change it
+  .maintenance      create this file to silence the watchdog while working on the box
 ```
 
 Content and state are reached through absolute paths, **not symlinks inside the app**. A symlink
 that leaves the project root makes Turbopack fail the build outright with "leaves the filesystem
 root", which is a confusing way to discover this.
+
+## The site is never left stopped
+
+Both scripts end by making sure the service is running, whatever happened on the way, including
+when they are interrupted by a signal. The one case they cannot cover is being killed outright: a
+`kill -9`, the out-of-memory killer or a power cut in the second between the two renames of the
+swap leaves the site stopped with no code in place and no handler alive to fix it.
+
+`kolabr-watchdog.timer` covers that last case, once a minute:
+
+1. If a deploy or rebuild holds the lock, it does nothing. The site being briefly down during a
+   swap is normal, and the deploy is handling itself.
+2. If `app/` or `app/.next` is missing, an interrupted swap left it that way, and it puts the
+   previous build back.
+3. If the service is not running, it starts it.
+
+It deliberately does **not** restart on a failing health check. A service that is up but answering
+badly is a job for a person, not for a loop that would flap. Its last verdict is in the back office
+under **The server**, and in `/opt/kolabr/deploy-logs/watchdog.log`.
+
+Working on the box and want the site to stay down? `touch /opt/kolabr/.maintenance`, and remember to
+remove it.
+
+## Staying out of the way of the other sites on the server
+
+The machine hosts more than this. A deploy therefore:
+
+- **checks the disk first** and refuses to start below 3GB free, rather than filling the volume
+  every other service shares;
+- **runs the build under a ceiling**: its transient unit gets `CPUQuota=70%`, `MemoryMax=3G`,
+  `Nice=10` and `IOWeight=50`, so a build cannot starve a neighbour of CPU, memory or disk I/O;
+- **touches only its own unit**. `systemctl` is called with `kolabr` and nothing else, and the
+  sudoers entry allows exactly two scripts, no other command.
+
+Raise or lower the ceilings with `DEPLOY_CPU_QUOTA`, `DEPLOY_MEMORY_MAX` and `DEPLOY_MIN_FREE_MB`
+in the environment of a manual run. A build with too little memory fails and leaves the site
+serving, so erring low is safe.
 
 ## First install
 
@@ -88,15 +157,15 @@ mkdir -p /opt/kolabr/{app,content,state,uploads,backups,deploy-logs}
 chown -R kolabr:kolabr /opt/kolabr
 ```
 
-**3. The deploy and rebuild scripts, owned by root**
+**3. The server scripts, owned by root**
 
 ```bash
 install -o root -g root -m 0755 deploy/deploy.sh /opt/kolabr/deploy.sh
 install -o root -g root -m 0755 deploy/rebuild.sh /opt/kolabr/rebuild.sh
+install -o root -g root -m 0755 deploy/watchdog.sh /opt/kolabr/watchdog.sh
 ```
 
-Neither may be writable by `kolabr`. If either were, the sudoers line below would hand that user
-root.
+None may be writable by `kolabr`. If one were, the sudoers line below would hand that user root.
 
 **4. sudoers**
 
@@ -131,7 +200,16 @@ certbot --nginx -d kolabr.com -d www.kolabr.com
 nginx -t && systemctl reload nginx
 ```
 
-**7. The first deploy**
+**7. The watchdog**
+
+```bash
+install -m 0644 deploy/kolabr-watchdog.service /etc/systemd/system/
+install -m 0644 deploy/kolabr-watchdog.timer /etc/systemd/system/
+systemctl daemon-reload && systemctl enable --now kolabr-watchdog.timer
+systemctl list-timers kolabr-watchdog.timer      # should show a next run within the minute
+```
+
+**8. The first deploy**
 
 There is no back office yet, because there is no app yet. Copy the first package up and run the
 script by hand:
@@ -166,11 +244,26 @@ The panel links the deploy id. On the server:
 ```bash
 cat /opt/kolabr/deploy-logs/<id>.log        # everything the deploy printed
 cat /opt/kolabr/deploy-logs/<id>.json       # the status the panel polls
+cat /opt/kolabr/deploy-logs/watchdog.log    # anything the watchdog had to repair
 systemctl status kolabr
 journalctl -u kolabr -n 100
 ```
 
-Manual rollback, if the automatic one could not run:
+**Manual rollback**, if the automatic one could not run. The previous build is a directory, so this
+is a rename and a restart, not a rebuild:
+
+```bash
+systemctl stop kolabr
+rm -rf /opt/kolabr/app.broken && mv /opt/kolabr/app /opt/kolabr/app.broken
+mv /opt/kolabr/app.previous /opt/kolabr/app
+systemctl start kolabr
+```
+
+Keep `app.broken` until you have worked out what happened, then delete it. Note that the next
+deploy expects to write `app.previous` itself, so do not leave a hand-made one behind.
+
+**If there is no `app.previous`** (the first deploy, or two failures in a row), restore the source
+from a backup tarball and build it:
 
 ```bash
 ls -t /opt/kolabr/backups/
@@ -178,11 +271,11 @@ systemctl stop kolabr
 find /opt/kolabr/app -mindepth 1 -maxdepth 1 -exec rm -rf {} +
 tar -C /opt/kolabr/app -xzf /opt/kolabr/backups/app-<id>.tgz
 chown -R kolabr:kolabr /opt/kolabr/app
+su kolabr -s /bin/bash -c 'cd /opt/kolabr/app && npm ci && npm run build'
 systemctl start kolabr
 ```
 
-The backup excludes `node_modules` and `.next`, so if the restore comes up empty, rebuild in place:
-`su kolabr -s /bin/bash -c 'cd /opt/kolabr/app && npm ci && npm run build'`.
+The tarball is source only, without `node_modules` or `.next`, which is why that one has to build.
 
 ## Where the page copy lives
 
@@ -226,7 +319,16 @@ privacy policy, which currently describes enquiries as handled by support toolin
   escalation.
 - **Never package secrets.** `.env*` is excluded and the packager refuses to add one; check anyway.
 - **A rebuild must not be able to break the live build.** It builds into `.next-build` and only
-  swaps it in once the build has succeeded, keeping the previous one until the new one answers.
+  swaps it in once the build has succeeded, keeping the previous one until the next rebuild.
+- **Build first, stop second.** Both scripts build the new version while the old one is still
+  serving. Moving the stop earlier would put the whole build inside the down time and make every
+  failed build an outage.
+- **Neither script may log through a pipe.** They append straight to their log file. A `tee` is a
+  second process in the same group: a kill takes it out first and the exit handler then dies of
+  SIGPIPE on its first message, with the site stopped, which is exactly the case it exists for.
+- **The swap subshell clears the inherited traps.** Bash runs an inherited EXIT trap in forked
+  subshells too; two copies of the handler racing on the status file leave it unreadable, and the
+  panel then cannot say what happened.
 - **A deploy cannot update `deploy.sh`, `rebuild.sh`, the unit, nginx or `.env.production`.** Those are installed
   by hand, on purpose: they are what recovers the site when a deploy goes wrong.
 
