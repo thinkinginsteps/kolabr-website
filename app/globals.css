@@ -1,0 +1,435 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens. Values come from design/*.dc.html.
+ * Components use these through the Tailwind theme below (bg-surface, text-ink, ...),
+ * never as raw hex. The dark set mirrors the design's [data-theme="dark"] block and is
+ * not switched on anywhere yet; it is here so dark mode is a matter of setting the attribute.
+ */
+:root {
+  --ink: #33505b;
+  --ink-muted: #5d7380;
+  --accent: #15c0e8;
+  /* Accessible accent for text on light surfaces. --accent fails contrast on white. */
+  --accent-ink: #0b7a96;
+  --surface: #ffffff;
+  --surface-tint: #f2f6fa;
+  --border: #dde6ed;
+  --on-ink: #ffffff;
+
+  --glass: rgba(255, 255, 255, 0.68);
+  --glass-line: rgba(255, 255, 255, 0.75);
+
+  --deep: #33505b;
+  --footer: #22363e;
+  --on-deep: #ffffff;
+  --on-deep-muted: #c3d2da;
+  --footer-rule: rgba(255, 255, 255, 0.13);
+
+  --shadow-sm: 0 2px 8px rgba(51, 80, 91, 0.06);
+  --shadow: 0 18px 50px -12px rgba(51, 80, 91, 0.22);
+  --shadow-lg: 0 60px 120px -40px rgba(51, 80, 91, 0.45);
+
+  --accent-glow: rgba(21, 192, 232, 0.34);
+  --accent-halo: rgba(21, 192, 232, 0.2);
+  --accent-wash: rgba(21, 192, 232, 0.16);
+
+  /* Soft card shadows used on light cards (design uses a near-black rgb(15,23,32) base). */
+  --shadow-rest: 0 1px 2px rgba(15, 23, 32, 0.04), 0 6px 16px rgba(15, 23, 32, 0.045);
+  --shadow-hover: 0 2px 4px rgba(15, 23, 32, 0.05), 0 12px 28px rgba(15, 23, 32, 0.07);
+  --shadow-chip: 0 1px 2px rgba(15, 23, 32, 0.06);
+  --shadow-highlight: 0 2px 6px rgba(15, 23, 32, 0.06), 0 18px 44px rgba(21, 192, 232, 0.16);
+  --shadow-toggle: 0 1px 3px rgba(15, 23, 32, 0.12);
+
+  /* Avatar placeholder dots (Home "Who pays" cards). */
+  --avatar-user-1: #5d7380;
+  --avatar-user-2: #7e93a0;
+  --avatar-user-3: #a3b4be;
+  --avatar-guest-1: #15c0e8;
+  --avatar-guest-2: #5ed2ee;
+  --avatar-guest-3: #8fd9ea;
+  --avatar-guest-4: #b9e8f4;
+  --avatar-guest-5: #d9f3f9;
+  --on-deep-panel: rgba(255, 255, 255, 0.07);
+
+  /* Pricing feature table. */
+  --ink-faint: #6e8391;
+  --rule-soft: rgba(221, 230, 237, 0.6);
+  --row-hover: rgba(242, 246, 250, 0.85);
+  --highlight-col: rgba(21, 192, 232, 0.055);
+  --highlight-col-head: rgba(21, 192, 232, 0.075);
+  --shadow-table: 0 1px 2px rgba(15, 23, 32, 0.04), 0 10px 30px rgba(15, 23, 32, 0.055);
+
+  /* Product pages. */
+  --accent-soft: rgba(21, 192, 232, 0.14);
+  --shadow-screenshot: 0 60px 120px -48px rgba(51, 80, 91, 0.3), 0 40px 90px -38px rgba(21, 192, 232, 0.2);
+  --shadow-screenshot-plain: 0 60px 120px -48px rgba(51, 80, 91, 0.3);
+
+  /* About and Contact. */
+  --on-deep-card: rgba(255, 255, 255, 0.06);
+  --accent-ring: rgba(21, 192, 232, 0.18);
+  --accent-line: rgba(21, 192, 232, 0.55);
+  --field-placeholder: #757575;
+  /* Small bold text on an accent-wash chip: accent-ink is 4.03:1 there, which fails. */
+  --accent-ink-strong: #076b83;
+  /* The same problem on the deep panel: plain accent is 4.03:1 on it, this is 5.5:1. */
+  --accent-on-deep: #7ddcf2;
+
+  /* SLA and presence colours in the product illustrations. */
+  --status-breached: #d2585c;
+  --status-risk: #c08a2e;
+  --status-ok: #2f8f6b;
+  --presence-available: #22a06b;
+  --presence-busy: #e0793f;
+  --presence-away: #a7b8c1;
+}
+
+[data-theme="dark"] {
+  --ink: #eaf1f5;
+  --ink-muted: #a7b8c1;
+  --surface: #0d161b;
+  --surface-tint: #141f26;
+  --border: #243541;
+  --glass: rgba(23, 36, 44, 0.7);
+  --glass-line: rgba(255, 255, 255, 0.08);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow: 0 18px 50px -12px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 60px 120px -40px rgba(0, 0, 0, 0.8);
+  --deep: #0a1216;
+  --footer: #070e11;
+  --on-deep: #ffffff;
+  --on-deep-muted: #a7b8c1;
+}
+
+@theme inline {
+  /* Brand tokens only: no default Tailwind palette, so stray colours cannot creep in. */
+  --color-*: initial;
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-wash: var(--accent-wash);
+  --color-surface: var(--surface);
+  --color-surface-tint: var(--surface-tint);
+  --color-border: var(--border);
+  --color-on-ink: var(--on-ink);
+  --color-glass: var(--glass);
+  --color-glass-line: var(--glass-line);
+  --color-deep: var(--deep);
+  --color-footer: var(--footer);
+  --color-on-deep: var(--on-deep);
+  --color-on-deep-muted: var(--on-deep-muted);
+  --color-footer-rule: var(--footer-rule);
+  --color-avatar-user-1: var(--avatar-user-1);
+  --color-avatar-user-2: var(--avatar-user-2);
+  --color-avatar-user-3: var(--avatar-user-3);
+  --color-avatar-guest-1: var(--avatar-guest-1);
+  --color-avatar-guest-2: var(--avatar-guest-2);
+  --color-avatar-guest-3: var(--avatar-guest-3);
+  --color-avatar-guest-4: var(--avatar-guest-4);
+  --color-avatar-guest-5: var(--avatar-guest-5);
+  --color-on-deep-panel: var(--on-deep-panel);
+  --color-ink-faint: var(--ink-faint);
+  --color-rule-soft: var(--rule-soft);
+  --color-row-hover: var(--row-hover);
+  --color-highlight-col: var(--highlight-col);
+  --color-highlight-col-head: var(--highlight-col-head);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-deep-card: var(--on-deep-card);
+  --color-accent-ring: var(--accent-ring);
+  --color-accent-line: var(--accent-line);
+  --color-field-placeholder: var(--field-placeholder);
+  --color-accent-ink-strong: var(--accent-ink-strong);
+  --color-accent-on-deep: var(--accent-on-deep);
+  --color-status-breached: var(--status-breached);
+  --color-status-risk: var(--status-risk);
+  --color-status-ok: var(--status-ok);
+  --color-presence-available: var(--presence-available);
+  --color-presence-busy: var(--presence-busy);
+  --color-presence-away: var(--presence-away);
+
+  --shadow-subtle: var(--shadow-sm);
+  --shadow-card: var(--shadow);
+  --shadow-float: var(--shadow-lg);
+  --shadow-soft: var(--shadow-rest);
+  --shadow-pill: var(--shadow-chip);
+  --shadow-glow: var(--shadow-highlight);
+  --shadow-knob: var(--shadow-toggle);
+  --shadow-panel: var(--shadow-table);
+  --shadow-shot: var(--shadow-screenshot);
+  --shadow-shot-plain: var(--shadow-screenshot-plain);
+
+  --font-sans: var(--font-switzer), ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", sans-serif;
+
+  --container-content: 1400px;
+
+  /* Design breakpoints: the layout changes at max-width 1080px and 700px. */
+  --breakpoint-tab: 701px;
+  --breakpoint-desk: 1081px;
+
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-stack: cubic-bezier(0.16, 0.84, 0.28, 1);
+
+  --animate-sheet: kSheet 0.3s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-float: kFloat 7s ease-in-out infinite;
+  --animate-pulse-ring: kPulse 2.6s ease infinite;
+}
+
+@keyframes kFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+/* Box-shadow ring on a small dot. Paint only, no layout shift. */
+@keyframes kPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(21, 192, 232, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(21, 192, 232, 0);
+  }
+}
+@keyframes kSheet {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Glass: nav, mega menus, floating cards, highlighted pricing card, modals, small pills and
+   secondary buttons (approved). Never on full-width sections. */
+@utility glass {
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+}
+@utility glass-strong {
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(26px) saturate(180%);
+  backdrop-filter: blur(26px) saturate(180%);
+}
+@utility glass-soft {
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+/* Gradient backgrounds from the design. Written as utilities here because Tailwind cannot
+   generate layered gradients with var() colours from arbitrary bg-[...] classes (it emits
+   nothing), which silently dropped the hero glow and the split backdrops. */
+@utility bg-hero-glow {
+  background:
+    radial-gradient(1000px 620px at 78% 6%, var(--accent-halo), transparent 68%),
+    radial-gradient(680px 460px at 2% 40%, rgba(51, 80, 91, 0.07), transparent 72%),
+    var(--surface);
+}
+@utility bg-legal-glow {
+  background: radial-gradient(900px 540px at 80% 8%, rgba(21, 192, 232, 0.17), transparent 68%), var(--surface);
+}
+@utility bg-cta-glow {
+  background: radial-gradient(760px 460px at 50% 0%, var(--accent-wash), transparent 70%), var(--surface);
+}
+@utility bg-features-glow {
+  background: radial-gradient(900px 520px at 78% 8%, rgba(21, 192, 232, 0.13), transparent 68%);
+}
+@utility bg-deep-glow {
+  background:
+    radial-gradient(760px 520px at 88% 8%, rgba(21, 192, 232, 0.3), transparent 68%),
+    radial-gradient(520px 400px at 4% 96%, rgba(21, 192, 232, 0.12), transparent 70%);
+}
+@utility bg-promo-glow {
+  background: radial-gradient(320px 220px at 80% 0%, var(--accent-glow), transparent 70%);
+}
+@utility bg-stepline {
+  background: linear-gradient(90deg, var(--border), var(--accent), var(--border));
+}
+@utility bg-backdrop-tint {
+  background: radial-gradient(600px 420px at 60% 30%, var(--accent-soft), transparent 70%), var(--surface-tint);
+}
+
+/* Hover effects that only animate opacity and transform (brief: nothing else animates).
+   The design transitions background and box-shadow; these reproduce the look by fading a
+   pseudo-element instead. */
+@utility hover-tint {
+  position: relative;
+  isolation: isolate;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: var(--tint, var(--surface-tint));
+    opacity: 0;
+    transition: opacity 0.25s var(--ease-out-soft);
+  }
+  &:hover::before,
+  &[aria-expanded="true"]::before {
+    opacity: 1;
+  }
+}
+@utility lift {
+  position: relative;
+  transition: transform 0.35s var(--ease-out-soft);
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: var(--lift-shadow, var(--shadow));
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s var(--ease-out-soft);
+  }
+  &:hover {
+    transform: translateY(var(--lift-y, -2px));
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 104px;
+  }
+  body {
+    background: var(--surface);
+    color: var(--ink-muted);
+    font-size: 18px;
+    line-height: 1.62;
+    letter-spacing: -0.003em;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+  /* The design hovers links to --accent. That fails contrast as text, so hover uses --accent-ink. */
+  a:hover {
+    color: var(--accent-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent-ink);
+    outline-offset: 2px;
+  }
+  summary {
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Blog post bodies. The Markdown pipeline emits plain HTML, so the styles live here rather
+   than on each element, and they use the same tokens and sizes as the rest of the site. */
+@utility prose {
+  font-size: 18px;
+  line-height: 1.72;
+  color: var(--ink-muted);
+  & > * + * {
+    margin-top: 1.15em;
+  }
+  & h2 {
+    margin-top: 1.9em;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+  & h3 {
+    margin-top: 1.6em;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  & h2 + *,
+  & h3 + * {
+    margin-top: 0.6em;
+  }
+  /* The heading anchor wraps the heading text; it should look like the heading, not a link. */
+  & .heading-anchor {
+    color: inherit;
+    text-decoration: none;
+  }
+  & strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  & a:not(.heading-anchor) {
+    color: var(--ink);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 1px;
+  }
+  & ul,
+  & ol {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55em;
+    padding-left: 1.3em;
+  }
+  & ul {
+    list-style: disc;
+  }
+  & ol {
+    list-style: decimal;
+  }
+  & blockquote {
+    border-left: 3px solid var(--accent);
+    padding: 0.1em 0 0.1em 1.1em;
+    color: var(--ink);
+  }
+  & code {
+    font-size: 0.92em;
+    background: var(--surface-tint);
+    border-radius: 6px;
+    padding: 0.15em 0.4em;
+  }
+  & table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+  }
+  & th,
+  & td {
+    border-bottom: 1px solid var(--border);
+    padding: 12px 14px;
+    text-align: left;
+    vertical-align: top;
+  }
+  & th {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  & hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin-top: 2em;
+  }
+}

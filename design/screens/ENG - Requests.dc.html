@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script>(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com'+'/css2?family='+'Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block';document.head.appendChild(l);})();</script>
+<style>
+
+@font-face { font-family: 'Switzer'; src: url("../assets/screens/switzer-300.otf") format('opentype'); font-weight: 300; font-display: swap; }
+@font-face { font-family: 'Switzer'; src: url("../assets/screens/switzer-400.otf") format('opentype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Switzer'; src: url("../assets/screens/switzer-500.otf") format('opentype'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Switzer'; src: url("../assets/screens/switzer-600.otf") format('opentype'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Switzer'; src: url("../assets/screens/switzer-700.otf") format('opentype'); font-weight: 700; font-display: swap; }
+html, body { margin: 0; padding: 0; height: 100%; background: var(--page, #edf3f7); }
+* { box-sizing: border-box; }
+a { color: #00a6d9; text-decoration: none; }
+a:hover { color: #00c3ff; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--scroll, rgba(51,80,91,0.18)); border-radius: 8px; border: 3px solid transparent; background-clip: content-box; }
+@keyframes kolabrPop { from { opacity: 0; transform: translateY(-6px) scale(0.98); } to { opacity: 1; transform: none; } }
+
+/* View-only: these screens are a visual guide, not a prototype. */
+body * { pointer-events: none !important; }
+a, button, input, textarea, select, [sc-camel-on-click] { pointer-events: none !important; cursor: default !important; }
+input, textarea, select { caret-color: transparent !important; }
+</style>
+</helmet>
+
+<div style="height: 100vh; display: flex; flex-direction: column; font-family: 'Switzer', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; background: var(--page, #edf3f7); color: var(--text, #33505b); -webkit-font-smoothing: antialiased; overflow: hidden;">
+
+  <header style="position: relative; z-index: 90; display: flex; align-items: center; gap: 0; height: 64px; padding: 0; background: var(--chrome, rgba(255,255,255,0.72)); backdrop-filter: saturate(180%) blur(24px); -webkit-backdrop-filter: saturate(180%) blur(24px);">
+    <a role="presentation" tabindex="-1" title="Dashboard" style="flex: none; width: 250px; height: 64px; box-sizing: border-box; display: flex; align-items: center; padding: 0 14px 0 24px; background: var(--sidebar, rgba(255,255,255,0.55)); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-right: 1px solid var(--page, #edf3f7);"><img src="../assets/screens/kolabr-logo.svg" ref="{{ logoRef }}" alt="Kolabr" style="height: 21px; width: auto; display: block;"></a>
+
+    <div style="flex: 1; min-width: 0; display: flex; align-items: center; gap: 16px; height: 64px; padding: 0 20px 0 0;">
+
+    <div style="position: relative; flex: 0 1 auto; min-width: 280px; margin-left: 32px; display: flex; align-items: center; gap: 10px; height: 40px; background: transparent; border: none;">
+
+      <span style="position: relative; flex: 0 1 auto; min-width: 0; display: flex;">
+        <button data-menu-root="" sc-camel-on-click="{{ toggleTenants }}" title="Switch tenant" style="display: flex; align-items: center; gap: 9px; min-width: 0; height: 40px; padding: 0 11px 0 8px; border-radius: 12px; cursor: pointer; font-family: inherit; color: inherit; text-align: left; background: transparent; border: none;" style-hover="background: var(--chanBtn, #f2f7fa);">
+          <span style="width: 26px; height: 26px; flex: none; border-radius: 8px; display: grid; place-items: center; background: linear-gradient(150deg, #00c3ff, #0aa8dd); color: #ffffff; font-size: 11px; font-weight: 700;">{{ tenantLetter }}</span>
+          <span style="flex: 0 1 auto; min-width: 0; font-size: 13.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ tenantName }}</span>
+          <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--muted, #6b8290);">unfold_more</span>
+        </button>
+        <sc-if value="{{ showTenants }}" hint-placeholder-val="{{ false }}">
+          <div data-menu-root="" style="position: absolute; top: 48px; left: 8px; z-index: 200; width: 300px; padding: 8px; border-radius: 16px; background: var(--glass, rgba(255,255,255,0.96)); backdrop-filter: saturate(180%) blur(30px); -webkit-backdrop-filter: saturate(180%) blur(30px); box-shadow: 0 20px 50px var(--shadowStrong, rgba(0,0,0,0.16)); animation: kolabrPop 160ms ease both;">
+            <div style="padding: 8px 12px 6px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; color: var(--muted, #6b8290);">TENANTS</div>
+            <sc-for list="{{ tenantList }}" as="t" hint-placeholder-count="2">
+              <div sc-camel-on-click="{{ t.onClick }}" style="display: flex; align-items: center; gap: 11px; padding: 8px 10px; border-radius: 11px; cursor: pointer;" style-hover="background: var(--bg, #f5f5f7);">
+                <span style="width: 30px; height: 30px; flex: none; border-radius: 9px; display: grid; place-items: center; background: linear-gradient(150deg, #00c3ff, #0aa8dd); color: #ffffff; font-size: 11px; font-weight: 700;">{{ t.letter }}</span>
+                <span style="flex: 1; min-width: 0;">
+                  <span style="display: block; font-size: 13px; font-weight: 500; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ t.name }}</span>
+                  <span style="display: block; font-size: 11px; color: var(--muted, #6b8290);">{{ t.sub }}</span>
+                </span>
+                <sc-if value="{{ t.active }}" hint-placeholder-val="{{ false }}">
+                  <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: #00a6d9;">check</span>
+                </sc-if>
+                <sc-if value="{{ t.unread }}" hint-placeholder-val="{{ false }}">
+                  <span style="min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: #34c759; color: #ffffff; font-size: 10.5px; font-weight: 700; line-height: 1; display: flex; align-items: center; justify-content: center;">{{ t.unread }}</span>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </span>
+
+      <span style="position: relative; flex: 0 1 auto; min-width: 0; display: flex;">
+        <button data-menu-root="" sc-camel-on-click="{{ toggleChannels }}" title="Switch channel" style="display: flex; align-items: center; gap: 8px; min-width: 0; height: 40px; padding: 0 12px 0 10px; border-radius: 12px; cursor: pointer; font-family: inherit; color: inherit; text-align: left; background: transparent; border: none;" style-hover="background: var(--chanBtn, #f2f7fa);">
+          <span style="flex: none; font-family: 'Material Symbols Rounded'; font-size: 20px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--topIcon, #33505b);">workspaces</span>
+          <span style="flex: 0 1 auto; min-width: 0; font-size: 13.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ chanName }}</span>
+          <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--muted, #6b8290);">unfold_more</span>
+        </button>
+        <sc-if value="{{ showChannels }}" hint-placeholder-val="{{ false }}">
+          <div data-menu-root="" style="position: absolute; top: 48px; left: 0; z-index: 200; width: 320px; padding: 8px; border-radius: 16px; background: var(--glass, rgba(255,255,255,0.96)); backdrop-filter: saturate(180%) blur(30px); -webkit-backdrop-filter: saturate(180%) blur(30px); box-shadow: 0 20px 50px var(--shadowStrong, rgba(0,0,0,0.16)); animation: kolabrPop 160ms ease both;">
+            <div style="padding: 8px 12px 6px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; color: var(--muted, #6b8290);">CURRENT CHANNEL</div>
+            <sc-for list="{{ currentChannel }}" as="ch" hint-placeholder-count="1">
+              <div sc-camel-on-click="{{ ch.onClick }}" style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 11px; cursor: pointer;" style-hover="background: var(--bg, #f5f5f7);">
+                <span style="width: 30px; height: 30px; flex: none; border-radius: 9px; display: grid; place-items: center; background: var(--chip, rgba(51,80,91,0.07)); color: var(--topIcon, #33505b); font-size: 11px; font-weight: 700;">
+                  <sc-if value="{{ ch.allIcon }}" hint-placeholder-val="{{ false }}">
+                    <span style="font-family: 'Material Symbols Rounded'; font-size: 16px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">grid_view</span>
+                  </sc-if>
+                  <sc-if value="{{ ch.letter }}" hint-placeholder-val="{{ true }}">{{ ch.letter }}</sc-if>
+                </span>
+                <span style="flex: 1; min-width: 0;">
+                  <span style="display: block; font-size: 13px; font-weight: 500; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ ch.category }}</span>
+                  <span style="display: block; font-size: 11px; color: var(--muted, #6b8290); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ ch.company }}</span>
+                </span>
+                <sc-if value="{{ ch.active }}" hint-placeholder-val="{{ false }}">
+                  <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: #00a6d9;">check</span>
+                </sc-if>
+                <sc-if value="{{ ch.unread }}" hint-placeholder-val="{{ false }}">
+                  <span style="min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: #34c759; color: #ffffff; font-size: 10.5px; font-weight: 700; line-height: 1; display: flex; align-items: center; justify-content: center;">{{ ch.unread }}</span>
+                </sc-if>
+              </div>
+            </sc-for>
+            <div style="height: 1px; margin: 8px 10px 2px; background: var(--sepOnChip, rgba(0,0,0,0.08));"></div>
+            <div style="padding: 8px 12px 6px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; color: var(--muted, #6b8290);">SWITCH CHANNEL</div>
+            <sc-for list="{{ otherChannels }}" as="ch" hint-placeholder-count="5">
+              <div sc-camel-on-click="{{ ch.onClick }}" style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 11px; cursor: pointer;" style-hover="background: var(--bg, #f5f5f7);">
+                <span style="width: 30px; height: 30px; flex: none; border-radius: 9px; display: grid; place-items: center; background: var(--chip, rgba(51,80,91,0.07)); color: var(--topIcon, #33505b); font-size: 11px; font-weight: 700;">
+                  <sc-if value="{{ ch.allIcon }}" hint-placeholder-val="{{ false }}">
+                    <span style="font-family: 'Material Symbols Rounded'; font-size: 16px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">grid_view</span>
+                  </sc-if>
+                  <sc-if value="{{ ch.letter }}" hint-placeholder-val="{{ true }}">{{ ch.letter }}</sc-if>
+                </span>
+                <span style="flex: 1; min-width: 0;">
+                  <span style="display: block; font-size: 13px; font-weight: 500; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ ch.category }}</span>
+                  <span style="display: block; font-size: 11px; color: var(--muted, #6b8290); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ ch.company }}</span>
+                </span>
+                <sc-if value="{{ ch.active }}" hint-placeholder-val="{{ false }}">
+                  <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: #00a6d9;">check</span>
+                </sc-if>
+                <sc-if value="{{ ch.unread }}" hint-placeholder-val="{{ false }}">
+                  <span style="min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: #34c759; color: #ffffff; font-size: 10.5px; font-weight: 700; line-height: 1; display: flex; align-items: center; justify-content: center;">{{ ch.unread }}</span>
+                </sc-if>
+              </div>
+            </sc-for>
+            <div style="height: 1px; margin: 8px 10px 4px; background: var(--sepOnChip, rgba(0,0,0,0.08));"></div>
+            <div style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 11px; cursor: pointer; font-size: 13px; font-weight: 500; color: #00a6d9;" style-hover="background: var(--bg, #f5f5f7);">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">add_circle</span>
+              New channel
+            </div>
+          </div>
+        </sc-if>
+      </span>
+
+    </div>
+
+
+    <div style="flex: 1;"></div>
+
+    <div style="flex: 0 1 auto; min-width: 0; display: flex; align-items: center; gap: 8px;">
+      <button data-menu-root="" sc-camel-on-click="{{ toggleNotifs }}" title="Notifications" style="position: relative; flex: none; width: 40px; height: 40px; display: grid; place-items: center; cursor: pointer; border-radius: 50%; background: var(--chip, rgba(51,80,91,0.07)); border: none; color: var(--topIcon, #33505b); transition: background 140ms ease;" style-hover="background: var(--iconHover, rgba(51,80,91,0.14));">
+        <span style="font-family: 'Material Symbols Rounded'; font-size: 21px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600, 'opsz' 24;">notifications</span>
+        <span style="position: absolute; top: -2px; right: -2px; min-width: 18px; height: 18px; padding: 0 4px; border-radius: 9px; background: #ff5c66; color: #fff; font-size: 10px; font-weight: 700; line-height: 1; display: flex; align-items: center; justify-content: center; border: 2px solid var(--chromeSolid, #ffffff);">5</span>
+      </button>
+
+      <button data-menu-root="" sc-camel-on-click="{{ toggleChats }}" title="Active chats" style="position: relative; flex: none; width: 40px; height: 40px; display: grid; place-items: center; cursor: pointer; border-radius: 50%; background: var(--chip, rgba(51,80,91,0.07)); border: none; color: var(--topIcon, #33505b); transition: background 140ms ease;" style-hover="background: var(--iconHover, rgba(51,80,91,0.14));">
+        <span style="font-family: 'Material Symbols Rounded'; font-size: 21px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600, 'opsz' 24;">chat_bubble</span>
+        <span style="position: absolute; top: -2px; right: -2px; min-width: 18px; height: 18px; padding: 0 4px; border-radius: 9px; background: #34c759; color: #ffffff; font-size: 10px; font-weight: 700; line-height: 1; display: flex; align-items: center; justify-content: center; border: 2px solid var(--chromeSolid, #ffffff);">3</span>
+      </button>
+
+      <button data-menu-root="" sc-camel-on-click="{{ toggleSettings }}" title="Settings" style="flex: none; width: 40px; height: 40px; display: grid; place-items: center; cursor: pointer; border-radius: 50%; background: var(--chip, rgba(51,80,91,0.07)); border: none; color: var(--topIcon, #33505b); transition: background 140ms ease;" style-hover="background: var(--iconHover, rgba(51,80,91,0.14));">
+        <span style="font-family: 'Material Symbols Rounded'; font-size: 21px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600, 'opsz' 24;">settings</span>
+      </button>
+
+      <button sc-camel-on-click="{{ toggleTheme }}" title="Appearance" style="flex: none; width: 40px; height: 40px; display: grid; place-items: center; cursor: pointer; border-radius: 50%; background: var(--chip, rgba(51,80,91,0.07)); border: none; color: var(--topIcon, #33505b); transition: background 140ms ease;" style-hover="background: var(--iconHover, rgba(51,80,91,0.14));">
+        <span style="font-family: 'Material Symbols Rounded'; font-size: 21px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600, 'opsz' 24;">{{ themeIcon }}</span>
+      </button>
+
+
+      <button data-menu-root="" sc-camel-on-click="{{ toggleProfile }}" title="Profile" style="flex: 0 1 auto; min-width: 0; display: flex; align-items: center; gap: 9px; height: 40px; padding: 0 12px 0 4px; margin-left: 2px; cursor: pointer; border-radius: 999px; background: var(--chip, rgba(51,80,91,0.07)); border: none; color: inherit; font-family: inherit; transition: background 140ms ease;" style-hover="background: var(--iconHover, rgba(51,80,91,0.14));">
+        <span style="width: 32px; height: 32px; flex: none; border-radius: 50%; display: grid; place-items: center; font-size: 11.5px; font-weight: 600; color: #fff; background: {{ acctAvatar }}; background-size: cover; background-position: center;">{{ acctInitials }}</span>
+        <sc-if value="{{ showAcctName }}" hint-placeholder-val="{{ true }}">
+          <span style="flex: 0 1 auto; min-width: 0; font-size: 13.5px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ acctName }}</span>
+        </sc-if>
+        <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--muted, #6b8290); font-variation-settings: 'FILL' 1, 'wght' 600;">expand_more</span>
+      </button>
+
+      <span style="width: 6px;"></span>
+
+      <button title="Log out" style="flex: none; width: 38px; height: 38px; display: grid; place-items: center; border: none; cursor: pointer; border-radius: 11px; background: transparent; color: var(--topIcon, #33505b); transition: background 140ms ease, color 140ms ease;" style-hover="background: rgba(255,92,102,0.10); color: #ff5c66;">
+        <span style="font-family: 'Material Symbols Rounded'; font-size: 21px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">logout</span>
+      </button>
+    </div>
+
+    <sc-if value="{{ showNotifs }}" hint-placeholder-val="{{ false }}">
+      <div data-menu-root="" style="position: absolute; top: 58px; right: 356px; z-index: 80; width: 340px; border-radius: 18px; padding: 8px; background: var(--glass, rgba(255,255,255,0.78)); backdrop-filter: saturate(180%) blur(30px); -webkit-backdrop-filter: saturate(180%) blur(30px);  box-shadow: 0 24px 60px var(--shadowStrong, rgba(21,44,54,0.18)), 0 2px 6px rgba(21,44,54,0.06); animation: kolabrPop 160ms ease both;">
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 12px 12px;">
+          <span style="font-size: 15px; font-weight: 600;">Notifications</span>
+          <span style="font-size: 12px; color: #00a6d9; cursor: pointer;">Mark all read</span>
+        </div>
+        <sc-for list="{{ notifications }}" as="n" hint-placeholder-count="4">
+          <div sc-camel-on-click="{{ openRequestChat }}" style="display: flex; gap: 11px; padding: 11px 12px; border-radius: 13px; cursor: pointer; transition: background 120ms ease;" style-hover="background: var(--bg, #f5f5f7);">
+            <span style="width: 32px; height: 32px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--chip, rgba(0,0,0,0.05));">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--topIcon, #33505b);">{{ n.icon }}</span>
+            </span>
+            <div style="min-width: 0;">
+              <div style="font-size: 13px; line-height: 1.45; text-wrap: pretty; font-weight: {{ n.weight }}; color: {{ n.textColor }};">{{ n.text }}</div>
+              <div style="font-size: 11.5px; color: var(--muted, #6b8290); margin-top: 3px;">{{ n.time }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ showChats }}" hint-placeholder-val="{{ false }}">
+      <div data-menu-root="" style="position: absolute; top: 58px; right: 308px; z-index: 80; width: 340px; border-radius: 18px; padding: 8px; background: var(--glass, rgba(255,255,255,0.78)); backdrop-filter: saturate(180%) blur(30px); -webkit-backdrop-filter: saturate(180%) blur(30px);  box-shadow: 0 24px 60px var(--shadowStrong, rgba(21,44,54,0.18)); animation: kolabrPop 160ms ease both;">
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 12px 12px;">
+          <span style="font-size: 15px; font-weight: 600;">Active chats</span>
+          <span style="font-size: 12px; color: #00a6d9; cursor: pointer;">Mark all read</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; padding: 0 12px 10px;">
+          <div style="flex: 1; display: flex; align-items: center; gap: 7px; height: 34px; padding: 0 11px; border-radius: 10px; background: var(--chip, rgba(0,0,0,0.05));">
+            <span style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--muted, #6e6e73);">search</span>
+            <input type="text" placeholder="Search chats" value="{{ chatQuery }}" sc-camel-on-change="{{ onChatQuery }}" style="flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: inherit; font-size: 13px; color: inherit;">
+          </div>
+          <button sc-camel-on-click="{{ toggleUnread }}" title="Unread only" style="display: flex; align-items: center; gap: 7px; height: 34px; padding: 0 4px 0 2px; border: none; background: transparent; cursor: pointer; font-family: inherit; font-size: 12.5px; font-weight: 500; color: var(--muted, #6e6e73);">
+            Unread
+            <span style="position: relative; width: 34px; height: 20px; flex: none; border-radius: 999px; background: {{ unreadTrack }}; transition: background 160ms ease;">
+              <span style="position: absolute; top: 2px; left: {{ unreadKnobX }}; width: 16px; height: 16px; border-radius: 50%; background: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.25); transition: left 160ms ease;"></span>
+            </span>
+          </button>
+        </div>
+        <sc-for list="{{ activeChats }}" as="c" hint-placeholder-count="3">
+          <div sc-camel-on-click="{{ c.onClick }}" style="display: flex; align-items: center; gap: 11px; padding: 9px 12px; border-radius: 13px; cursor: pointer;" style-hover="background: var(--bg, #f5f5f7);">
+            <span style="width: 32px; height: 32px; flex: none; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, #33505b, #557a88); color: #fff; font-size: 11px; font-weight: 600;">{{ c.initials }}</span>
+            <div style="min-width: 0; flex: 1;">
+              <div style="font-size: 13.5px; font-weight: 500;">{{ c.name }}</div>
+              <div style="font-size: 11.5px; color: var(--muted, #6b8290); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ c.preview }}</div>
+            </div>
+            <sc-if value="{{ c.unread }}" hint-placeholder-val="{{ true }}">
+              <span style="width: 7px; height: 7px; border-radius: 50%; background: #34c759; flex: none;"></span>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ showProfile }}" hint-placeholder-val="{{ false }}">
+      <div data-menu-root="" style="position: absolute; top: 58px; right: 66px; z-index: 80; width: 340px; border-radius: 18px; padding: 8px; background: var(--glass, rgba(255,255,255,0.78)); backdrop-filter: saturate(180%) blur(30px); -webkit-backdrop-filter: saturate(180%) blur(30px);  box-shadow: 0 24px 60px var(--shadowStrong, rgba(21,44,54,0.18)); animation: kolabrPop 160ms ease both;">
+        <div style="display: flex; align-items: center; gap: 11px; padding: 12px 12px 10px;">
+          <span style="width: 40px; height: 40px; flex: none; border-radius: 50%; display: grid; place-items: center; font-size: 13px; font-weight: 600; color: #fff; background: {{ acctAvatar }}; background-size: cover; background-position: center;">{{ acctInitials }}</span>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ acctName }}</div>
+            <div style="font-size: 11.5px; color: var(--muted, #6b8290); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ acctRole }}</div>
+          </div>
+        </div>
+        <div style="position: relative; padding: 6px 12px 12px;">
+          <button sc-camel-on-click="{{ toggleStatusMenu }}" style="display: flex; align-items: center; gap: 8px; width: 100%; height: 32px; padding: 0 10px; border-radius: 9px; cursor: pointer; border: none; font-family: inherit; font-size: 12.5px; font-weight: 500; text-align: left; color: var(--text, #1d1d1f); background: var(--chip, rgba(0,0,0,0.05));" style-hover="background: var(--iconHover, rgba(0,0,0,0.09));">
+            <span style="width: 8px; height: 8px; flex: none; border-radius: 50%; background: {{ statusColor }};"></span>
+            <span style="flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ statusLabel }}</span>
+            <span style="font-family: 'Material Symbols Rounded'; font-size: 16px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--muted, #6e6e73);">unfold_more</span>
+          </button>
+            <sc-if value="{{ showStatusMenu }}" hint-placeholder-val="{{ false }}">
+            <div style="position: absolute; top: 44px; left: 12px; right: 12px; z-index: 100; padding: 6px; border-radius: 12px; background: var(--glass, rgba(255,255,255,0.96)); backdrop-filter: saturate(180%) blur(24px); -webkit-backdrop-filter: saturate(180%) blur(24px); box-shadow: 0 16px 40px var(--shadowStrong, rgba(0,0,0,0.16)); animation: kolabrPop 140ms ease both;">
+                <sc-for list="{{ statusOptions }}" as="st" hint-placeholder-count="4">
+                  <div sc-camel-on-click="{{ st.onClick }}" style="display: flex; align-items: center; gap: 9px; padding: 7px 9px; border-radius: 9px; cursor: pointer; font-size: 12.5px;" style-hover="background: var(--bg, #f5f5f7);">
+                    <span style="width: 8px; height: 8px; flex: none; border-radius: 50%; background: {{ st.color }};"></span>
+                    <span style="flex: 1;">{{ st.label }}</span>
+                    <sc-if value="{{ st.active }}" hint-placeholder-val="{{ false }}">
+                      <span style="font-family: 'Material Symbols Rounded'; font-size: 15px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: #00a6d9;">check</span>
+                    </sc-if>
+                  </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <div style="height: 2px;"></div>
+        <sc-for list="{{ profileItems }}" as="p" hint-placeholder-count="3">
+          <div sc-camel-on-click="{{ p.onClick }}" style="display: flex; align-items: center; gap: 11px; padding: 10px 12px; border-radius: 12px; cursor: pointer; font-size: 13.5px;" style-hover="background: var(--bg, #f5f5f7);">
+            <span style="width: 32px; height: 32px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--chip, rgba(0,0,0,0.05));">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--topIcon, #33505b);">{{ p.icon }}</span>
+            </span>
+            {{ p.label }}
+          </div>
+        </sc-for>
+
+        <div style="height: 1px; margin: 6px 12px; background: var(--sepOnChip, rgba(0,0,0,0.08));"></div>
+
+        <div style="padding: 4px 12px 6px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; color: var(--muted, #6e6e73);">OTHER ACCOUNTS</div>
+        <sc-for list="{{ otherAccounts }}" as="a" hint-placeholder-count="1">
+          <div sc-camel-on-click="{{ a.onClick }}" sc-camel-on-mouse-enter="{{ a.onEnter }}" sc-camel-on-mouse-leave="{{ a.onLeave }}" style="display: flex; align-items: center; gap: 11px; padding: 8px 12px; border-radius: 12px; cursor: pointer;" style-hover="background: var(--bg, #f5f5f7);">
+            <span style="width: 32px; height: 32px; flex: none; border-radius: 50%; display: grid; place-items: center; font-size: 11.5px; font-weight: 600; color: #fff; background: {{ a.bg }}; background-size: cover; background-position: center;">{{ a.initials }}</span>
+            <div style="flex: 1; min-width: 0;">
+              <div style="display: flex; align-items: center; gap: 7px;">
+                <span style="flex: none; max-width: 100%; font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ a.name }}</span>
+                <span style="flex: none; font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 6px; border-radius: 5px; color: var(--muted, #6b8290); background: var(--chip, rgba(0,0,0,0.05));">{{ a.badge }}</span>
+              </div>
+              <div style="font-size: 11px; color: var(--muted, #6b8290); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ a.email }}</div>
+            </div>
+            <span style="flex: none; display: flex; align-items: center; gap: 4px; font-size: 11.5px; font-weight: 600; color: #00a6d9; white-space: nowrap; opacity: 1;">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 16px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">swap_horiz</span>Switch
+            </span>
+          </div>
+        </sc-for>
+
+        <div style="height: 1px; margin: 8px 12px 6px; background: var(--sepOnChip, rgba(0,0,0,0.08));"></div>
+
+        <div sc-camel-on-click="{{ addAccount }}" style="display: flex; align-items: center; gap: 11px; padding: 9px 12px; border-radius: 12px; cursor: pointer; font-size: 13.5px;" style-hover="background: var(--bg, #f5f5f7);">
+          <span style="width: 32px; height: 32px; flex: none; border-radius: 50%; display: grid; place-items: center; border: 1px dashed var(--sepOnChip, rgba(0,0,0,0.22)); color: var(--topIcon, #33505b);">
+            <span style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'wght' 600;">add</span>
+          </span>
+          Add another account
+        </div>
+        <div sc-camel-on-click="{{ signOutAll }}" style="display: flex; align-items: center; gap: 11px; padding: 9px 12px 10px; border-radius: 12px; cursor: pointer; font-size: 13.5px; color: var(--muted, #6b8290);" style-hover="background: var(--bg, #f5f5f7);">
+          <span style="width: 32px; height: 32px; flex: none; display: grid; place-items: center;">
+            <span style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'wght' 600;">logout</span>
+          </span>
+          Sign out of all accounts
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ showSettings }}" hint-placeholder-val="{{ false }}">
+      <div data-menu-root="" style="position: absolute; top: 58px; right: 260px; z-index: 80; width: 340px; border-radius: 18px; padding: 8px; background: var(--glass, rgba(255,255,255,0.78)); backdrop-filter: saturate(180%) blur(30px); -webkit-backdrop-filter: saturate(180%) blur(30px);  box-shadow: 0 24px 60px var(--shadowStrong, rgba(21,44,54,0.18)); animation: kolabrPop 160ms ease both;">
+        <div style="display: flex; align-items: center; gap: 10px; padding: 10px 12px 12px;">
+          <span style="font-size: 15px; font-weight: 600;">Settings</span>
+        </div>
+        <sc-for list="{{ settingsItems }}" as="s" hint-placeholder-count="3">
+          <div sc-camel-on-click="{{ s.onClick }}" style="display: flex; align-items: center; gap: 11px; padding: 10px 12px; border-radius: 12px; cursor: pointer; font-size: 13.5px;" style-hover="background: var(--bg, #f5f5f7);">
+            <span style="width: 32px; height: 32px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--chip, rgba(0,0,0,0.05));">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--topIcon, #33505b);">{{ s.icon }}</span>
+            </span>
+            {{ s.label }}
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+    </div>
+  </header>
+
+  <div style="position: relative; flex: 1; display: flex; min-height: 0;">
+
+    <aside style="position: relative; z-index: 10; width: 250px; flex: none; display: flex; flex-direction: column; gap: 0; padding: 22px 14px 14px; overflow-y: auto; scrollbar-gutter: stable; background: var(--sidebar, rgba(255,255,255,0.55)); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-right: 1px solid var(--page, #edf3f7);">
+
+      <div style="flex: none; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; color: var(--muted, #6b8290); padding: 0 10px 8px;">COLLABORATE</div>
+      <sc-for list="{{ collaborate }}" as="c" hint-placeholder-count="2">
+        <div sc-camel-on-click="{{ c.onClick }}" style="display: flex; flex: none; align-items: center; gap: 11px; height: 32px; padding: 0 10px; border-radius: 9px; cursor: pointer; font-size: 13.5px; transition: background 120ms ease;" style-hover="background: var(--bg, #f5f5f7);">
+          <span style="font-family: 'Material Symbols Rounded'; font-size: 19px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--topIcon, #33505b);">{{ c.icon }}</span>
+          <span style="flex: 1;">{{ c.label }}</span>
+          <sc-if value="{{ c.hasCount }}" hint-placeholder-val="{{ true }}">
+            <span style="font-size: 11px; font-weight: 600; color: var(--muted, #6b8290); background: var(--chip, rgba(51,80,91,0.07)); border-radius: 7px; padding: 2px 7px;">{{ c.count }}</span>
+          </sc-if>
+        </div>
+      </sc-for>
+
+      <div style="flex: none; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; color: var(--muted, #6b8290); padding: 34px 10px 8px;">ONGOING CHATS</div>
+      <sc-for list="{{ chats }}" as="c" hint-placeholder-count="2">
+        <div sc-camel-on-click="{{ c.onClick }}" sc-camel-on-mouse-enter="{{ c.onEnter }}" sc-camel-on-mouse-leave="{{ c.onLeave }}" style="display: flex; flex: none; align-items: center; gap: 11px; height: 34px; padding: 0 10px; border-radius: 9px; cursor: pointer; font-size: 13.5px; transition: background 120ms ease;" style-hover="background: var(--bg, #f5f5f7);">
+          <span style="width: 26px; height: 26px; flex: none; border-radius: 50%; display: grid; place-items: center; background: {{ c.avatarBg }}; color: {{ c.avatarFg }}; font-size: 10px; font-weight: 600;">
+            <sc-if value="{{ c.group }}" hint-placeholder-val="{{ false }}">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 16px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">groups</span>
+            </sc-if>
+            <sc-if value="{{ c.initials }}" hint-placeholder-val="{{ true }}">{{ c.initials }}</sc-if>
+          </span>
+          <span style="flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ c.name }}</span>
+          <sc-if value="{{ c.unread }}" hint-placeholder-val="{{ true }}">
+            <span style="min-width: 16px; height: 16px; padding: 0 4px; border-radius: 8px; background: #34c759; color: #ffffff; font-size: 10px; font-weight: 700; line-height: 1; display: flex; align-items: center; justify-content: center;">{{ c.unread }}</span>
+          </sc-if>
+        </div>
+      </sc-for>
+
+      <div style="display: flex; flex: none; align-items: center; justify-content: space-between; gap: 8px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; color: var(--muted, #6b8290); padding: 34px 10px 8px;">
+        CHANNEL MEMBERS
+        <span sc-camel-on-click="{{ openUsersPage }}" title="Member settings" style="font-family: 'Material Symbols Rounded'; font-size: 15px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 400, 'opsz' 20; color: var(--cogColor, #9a9aa0); cursor: pointer;">settings</span>
+      </div>
+      <sc-for list="{{ members }}" as="m" hint-placeholder-count="6">
+        <div sc-camel-on-click="{{ openChatPage }}" sc-camel-on-mouse-enter="{{ m.onEnter }}" sc-camel-on-mouse-leave="{{ m.onLeave }}" style="display: flex; flex: none; align-items: center; gap: 11px; height: 34px; padding: 0 10px; border-radius: 9px; cursor: pointer; font-size: 13.5px; transition: background 120ms ease;" style-hover="background: var(--bg, #f5f5f7);">
+          <span style="position: relative; width: 26px; height: 26px; flex: none; border-radius: 50%; display: grid; place-items: center; background: {{ m.bg }}; color: #ffffff; font-size: 9.5px; font-weight: 600; letter-spacing: 0.01em;">
+            {{ m.initials }}
+            <sc-if value="{{ m.photo }}" hint-placeholder-val="{{ false }}">
+              <span style="position: absolute; inset: 0; border-radius: 50%; background-image: {{ m.photoCss }}; background-size: cover; background-position: center;"></span>
+            </sc-if>
+            <span style="position: absolute; right: -1px; bottom: -1px; width: 9px; height: 9px; border-radius: 50%; background: {{ m.dot }}; border: 2px solid var(--sidebarSolid, #f7fafb);"></span>
+          </span>
+          <span style="display: flex; align-items: baseline; gap: 5px; flex: 1; min-width: 0;">
+            <span style="min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ m.name }}</span>
+            <sc-if value="{{ m.admin }}" hint-placeholder-val="{{ false }}">
+              <svg title="Channel admin" sc-camel-view-box="0 0 24 24" width="15.5" height="15.5" style="flex: none; display: block; overflow: visible; align-self: flex-end; margin-bottom: 0px;" aria-label="Channel admin">
+                <path d="M19 19h-14c-.5 0 -.9 -.3 -1 -.8l-2 -10c0 -.4 .1 -.8 .5 -1.1c.4 -.2 .8 -.2 1.1 0l4.1 3.3l3.4 -5.1c.4 -.6 1.3 -.6 1.7 0l3.4 5.1l4.1 -3.3c.3 -.3 .8 -.3 1.1 0c.4 .2 .5 .6 .5 1.1l-2 10c0 .5 -.5 .8 -1 .8z" fill="#ffcc00"></path>
+              </svg>
+            </sc-if>
+          </span>
+        </div>
+      </sc-for>
+      <div style="flex: none; margin-top: auto; position: sticky; bottom: 0; z-index: 6; padding-top: 34px; padding-bottom: 0px; background: var(--sidebarSolid, #ffffff);">
+        <div title="Usage" style="display: flex; flex-direction: column; gap: 6px; padding: 8px 13px 9px; border-radius: 10px; cursor: pointer; opacity: 0.78; transition: background 140ms ease, opacity 140ms ease;" style-hover="background: var(--page, #edf3f7); opacity: 1;">
+          <span style="font-size: 10.5px; font-weight: 650; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted, #6e6e73);">Usage</span>
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--muted, #6e6e73);">
+            <span style="width: 52px; flex: none;">Users</span>
+            <span style="display: block; flex: 1; height: 3px; border-radius: 980px; overflow: hidden; background: var(--chip, rgba(0,0,0,0.05));">
+              <span style="display: block; width: 70%; height: 100%; border-radius: 980px; background: var(--muted, #6e6e73); opacity: 0.42;"></span>
+            </span>
+            <span style="flex: none; font-weight: 550;">16/30</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--muted, #6e6e73);">
+            <span style="width: 52px; flex: none;">Channels</span>
+            <span style="display: block; flex: 1; height: 3px; border-radius: 980px; overflow: hidden; background: var(--chip, rgba(0,0,0,0.05));">
+              <span style="display: block; width: 80%; height: 100%; border-radius: 980px; background: var(--muted, #6e6e73); opacity: 0.42;"></span>
+            </span>
+            <span style="flex: none; font-weight: 550;">8/30</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+
+
+    <sc-if value="{{ hoverCard }}" hint-placeholder-val="{{ false }}">
+      <div sc-camel-on-mouse-enter="{{ keepCard }}" sc-camel-on-mouse-leave="{{ hideCard }}" style="position: fixed; left: 246px; top: {{ cardTop }}; z-index: 95; width: 292px; padding: 18px; border-radius: 18px; background: var(--glass, rgba(255,255,255,0.96)); backdrop-filter: saturate(180%) blur(30px); -webkit-backdrop-filter: saturate(180%) blur(30px); box-shadow: 0 24px 60px var(--shadowStrong, rgba(0,0,0,0.16)); animation: kolabrPop 140ms ease both;">
+        <div style="display: flex; align-items: center; gap: 13px;">
+          <span style="position: relative; width: 52px; height: 52px; flex: none; border-radius: 50%; display: grid; place-items: center; background: {{ cardBg }}; color: #ffffff; font-size: 16px; font-weight: 600;">
+            {{ cardInitials }}
+            <sc-if value="{{ cardPhoto }}" hint-placeholder-val="{{ false }}">
+              <span style="position: absolute; inset: 0; border-radius: 50%; background-image: {{ cardPhotoCss }}; background-size: cover; background-position: center;"></span>
+            </sc-if>
+            <span style="position: absolute; right: 0; bottom: 0; width: 14px; height: 14px; border-radius: 50%; background: {{ cardDot }}; border: 3px solid var(--glassSolid, #ffffff);"></span>
+          </span>
+          <div style="min-width: 0;">
+            <div style="font-size: 15.5px; font-weight: 600; line-height: 1.2;">{{ cardName }}</div>
+            <div style="font-size: 12px; color: var(--muted, #6e6e73); margin-top: 3px;">{{ cardRole }}</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 7px; margin: 16px 0 16px;">
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--muted, #6e6e73); min-width: 0;">
+            <span style="font-family: 'Material Symbols Rounded'; font-size: 16px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 500; color: var(--topIcon, #33505b);">mail</span>
+            <span style="min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ cardEmail }}</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--muted, #6e6e73);">
+            <span style="font-family: 'Material Symbols Rounded'; font-size: 16px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 500; color: var(--topIcon, #33505b);">event</span>
+            Member since {{ cardSince }}
+          </div>
+        </div>
+        <button style="display: flex; align-items: center; justify-content: center; gap: 7px; width: 100%; height: 36px; border-radius: 980px; cursor: pointer; border: none; font-family: inherit; font-size: 13px; font-weight: 600; color: #ffffff; background: #00c3ff; transition: background 140ms ease;" style-hover="background: #17cdff;">
+          <span style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">chat_bubble</span>
+          Message
+        </button>
+      </div>
+    </sc-if>
+
+    <main style="flex: 1; min-width: 0; overflow-y: auto; padding: 34px 40px 48px;">
+      <div style="display: flex; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 22px;">
+        <div style="flex: 1; min-width: 260px;">
+          <h1 style="margin: 0; font-size: 34px; font-weight: 700; letter-spacing: -0.028em; line-height: 1.08;">Request Management</h1>
+          <p style="margin: 10px 0 0; font-size: 15px; color: var(--muted, #6b8290);">Every channel · 77 records</p>
+        </div>
+      </div>
+
+      <div style="display: inline-flex; align-items: center; gap: 4px; padding: 4px; border-radius: 14px; background: var(--tabTrack, #e9e9ec); margin-bottom: 18px;">
+        <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+          <button sc-camel-on-click="{{ t.onClick }}" style="position: relative; height: 34px; padding: 0 20px; border: none; cursor: pointer; border-radius: 11px; font-family: inherit; font-size: 13.5px; font-weight: {{ t.weight }}; color: {{ t.fg }}; background: transparent; box-shadow: {{ t.shadow }}; transition: background 140ms ease, color 140ms ease;" style-hover="background: var(--tabHover, rgba(0,0,0,0.045)); color: var(--text, #1d1d1f);">
+            <span style="position: absolute; inset: 0; border-radius: 11px; background: {{ t.bg }}; pointer-events: none;"></span>
+            <span style="position: relative;">{{ t.label }}</span>
+          </button>
+        </sc-for>
+      </div>
+
+      <div style="border-radius: 20px; background: var(--card, #ffffff); overflow: hidden; transition: box-shadow 160ms ease;" style-hover="box-shadow: 0 6px 20px var(--cardHover, rgba(0,0,0,0.10));">
+
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 18px 22px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <button sc-camel-on-click="{{ toggleFilter }}" style="display: flex; align-items: center; gap: 7px; height: 36px; padding: 0 16px; border: none; cursor: pointer; border-radius: 980px; font-family: inherit; font-size: 13.5px; font-weight: 500; color: {{ filterFg }}; background: {{ filterBg }}; transition: background 140ms ease;" style-hover="background: var(--iconHover, rgba(51,80,91,0.10));">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'FILL' 0, 'wght' 500;">filter_list</span>
+              Filter
+              <sc-if value="{{ hasFilters }}" hint-placeholder-val="{{ false }}">
+                <span style="min-width: 18px; height: 18px; padding: 0 5px; display: grid; place-items: center; border-radius: 9px; background: #00c3ff; color: #ffffff; font-size: 10.5px; font-weight: 700;">{{ filterCount }}</span>
+              </sc-if>
+            </button>
+            <div style="display: flex; align-items: center; gap: 8px; height: 36px; width: 260px; padding: 0 14px; border-radius: 980px; background: var(--chip, rgba(51,80,91,0.07));">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'FILL' 0, 'wght' 500; color: var(--muted, #6b8290);">search</span>
+              <input value="{{ query }}" sc-camel-on-change="{{ onQuery }}" placeholder="Search all columns…" style="flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: inherit; font-size: 13.5px; color: inherit;">
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span title="Refresh" style="display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 0, 'wght' 500; color: var(--topIcon, #33505b); transition: background 140ms ease;" style-hover="background: var(--iconHover, rgba(51,80,91,0.08));">refresh</span>
+            <button style="display: flex; align-items: center; gap: 7px; height: 36px; padding: 0 18px; border: none; cursor: pointer; border-radius: 980px; font-family: inherit; font-size: 13.5px; font-weight: 600; color: #ffffff; background: #00c3ff; transition: background 140ms ease;" style-hover="background: #17cdff;">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">add</span>
+              New request
+            </button>
+            <button style="display: flex; align-items: center; gap: 7px; height: 36px; padding: 0 16px; border: none; cursor: pointer; border-radius: 980px; font-family: inherit; font-size: 13.5px; font-weight: 500; color: inherit; background: var(--chip, rgba(51,80,91,0.07)); transition: background 140ms ease;" style-hover="background: var(--iconHover, rgba(51,80,91,0.10));">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'FILL' 0, 'wght' 500; color: var(--topIcon, #33505b);">download</span>
+              Export
+            </button>
+          </div>
+        </div>
+
+        <sc-if value="{{ filterOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="padding: 4px 22px 16px; background: var(--card, #ffffff); display: flex; flex-direction: column; gap: 10px;">
+            <sc-for list="{{ filters }}" as="f" hint-placeholder-count="1">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="width: 52px; flex: none; font-size: 10.5px; font-weight: 600; letter-spacing: 0.1em; color: var(--muted, #6b8290);">{{ f.joiner }}</span>
+                <sc-raw-select value="{{ f.col }}" sc-camel-on-change="{{ f.onCol }}" style="height: 34px; width: 196px; flex: none; border-radius: 10px; border: 1px solid var(--border, rgba(0,0,0,0.14)); background: var(--card, #ffffff) url(&quot;data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' sc-camel-view-box='0 0 12 12'&gt;&lt;path d='M2.5 4.5 6 8l3.5-3.5' fill='none' stroke='%236b8290' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/&gt;&lt;/svg&gt;&quot;) no-repeat right 10px center; padding: 0 30px 0 10px; font-family: inherit; font-size: 13px; color: inherit; cursor: pointer; appearance: none;">
+                  <option value="">Select a column</option>
+                  <sc-for list="{{ columnOptions }}" as="c" hint-placeholder-count="10">
+                    <option value="{{ c.value }}">{{ c.label }}</option>
+                  </sc-for>
+                </sc-raw-select>
+                <sc-raw-select value="{{ f.cond }}" sc-camel-on-change="{{ f.onCond }}" style="height: 34px; width: 196px; flex: none; border-radius: 10px; border: 1px solid var(--border, rgba(0,0,0,0.14)); background: var(--card, #ffffff) url(&quot;data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' sc-camel-view-box='0 0 12 12'&gt;&lt;path d='M2.5 4.5 6 8l3.5-3.5' fill='none' stroke='%236b8290' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/&gt;&lt;/svg&gt;&quot;) no-repeat right 10px center; padding: 0 30px 0 10px; font-family: inherit; font-size: 13px; color: inherit; cursor: pointer; appearance: none;">
+                  <option value="">Select a condition</option>
+                  <sc-for list="{{ conditionOptions }}" as="c" hint-placeholder-count="8">
+                    <option value="{{ c.value }}">{{ c.label }}</option>
+                  </sc-for>
+                </sc-raw-select>
+                <sc-if value="{{ f.needsValue }}" hint-placeholder-val="{{ true }}">
+                  <input value="{{ f.val }}" sc-camel-on-change="{{ f.onVal }}" placeholder="Value…" style="flex: 1; min-width: 0; height: 34px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--border, rgba(0,0,0,0.14)); background: var(--card, #ffffff); outline: none; font-family: inherit; font-size: 13px; color: inherit;">
+                </sc-if>
+                <span sc-camel-on-click="{{ f.onRemove }}" title="Remove filter" style="margin-left: auto; display: grid; place-items: center; width: 32px; height: 32px; flex: none; border-radius: 50%; cursor: pointer; font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 0, 'wght' 500; color: var(--muted, #6b8290); transition: background 140ms ease, color 140ms ease;" style-hover="background: rgba(255,92,102,0.12); color: #ff5c66;">delete</span>
+              </div>
+            </sc-for>
+            <button sc-camel-on-click="{{ addFilter }}" style="align-self: flex-start; display: flex; align-items: center; gap: 5px; height: 30px; padding: 0 10px 0 8px; border: none; border-radius: 9px; cursor: pointer; background: transparent; font-family: inherit; font-size: 13px; font-weight: 500; color: #0089b6; transition: background 140ms ease;" style-hover="background: rgba(0,195,255,0.10);">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'FILL' 0, 'wght' 500;">add</span>
+              Add filter
+            </button>
+          </div>
+        </sc-if>
+
+        <div style="overflow-x: auto;">
+          <div style="min-width: 1120px;">
+            <div style="display: grid; grid-template-columns: 96px minmax(240px, 1.6fr) 100px 92px minmax(116px, 1fr) minmax(130px, 1fr) 88px minmax(112px, 0.9fr) 92px minmax(150px, 1fr); gap: 4px; align-items: center; box-sizing: border-box; padding: 11px 22px; background: var(--tabTrack, #e9e9ec); font-size: 10.5px; font-weight: 600; letter-spacing: 0.1em; color: var(--muted, #6b8290);">
+              <sc-for list="{{ columns }}" as="c" hint-placeholder-count="10">
+                <div style="display: flex; align-items: center; gap: 4px; cursor: pointer; white-space: nowrap;">
+                  {{ c.label }}
+                  <span style="font-family: 'Material Symbols Rounded'; font-size: 13px; line-height: 1; font-variation-settings: 'FILL' 0, 'wght' 500; opacity: 0.55;">unfold_more</span>
+                </div>
+              </sc-for>
+            </div>
+
+            <sc-for list="{{ rows }}" as="r" hint-placeholder-count="6">
+              <div sc-camel-on-click="{{ openRequestChat }}" style="display: grid; grid-template-columns: 96px minmax(240px, 1.6fr) 100px 92px minmax(116px, 1fr) minmax(130px, 1fr) 88px minmax(112px, 0.9fr) 92px minmax(150px, 1fr); gap: 4px; align-items: center; box-sizing: border-box; padding: 13px 22px; border-top: 1px solid var(--hairline, rgba(0,0,0,0.07)); font-size: 13.5px; cursor: pointer; transition: background 120ms ease;" style-hover="background: var(--rowHover, rgba(0,0,0,0.022));">
+                <div style="font-size: 12.5px; color: var(--muted, #6b8290); letter-spacing: -0.01em;">{{ r.id }}</div>
+                <div style="min-width: 0; font-weight: 500; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-wrap: pretty;">{{ r.title }}</div>
+                <div><span style="display: inline-block; font-size: 11.5px; font-weight: 600; padding: 4px 10px; border-radius: 8px; background: {{ r.statusBg }}; color: {{ r.statusFg }};">{{ r.status }}</span></div>
+                <div><span style="display: inline-block; font-size: 11.5px; font-weight: 600; padding: 4px 10px; border-radius: 8px; background: {{ r.prioBg }}; color: {{ r.prioFg }};">{{ r.priority }}</span></div>
+                <div style="min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ r.owner }}</div>
+                <div style="min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted, #6b8290);">{{ r.assigned }}</div>
+                <div style="color: var(--muted, #6b8290);">{{ r.channel }}</div>
+                <div style="min-width: 0; color: var(--muted, #6b8290); font-size: 12.5px;">{{ r.category }}</div>
+                <div style="display: flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 500; color: {{ r.slaColor }};">
+                  <span style="width: 7px; height: 7px; border-radius: 50%; background: {{ r.slaColor }};"></span>
+                  {{ r.sla }}
+                </div>
+                <div style="color: var(--muted, #6b8290); font-size: 12.5px; white-space: nowrap;">{{ r.created }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 16px 22px; border-top: 1px solid var(--hairline, rgba(0,0,0,0.07));">
+          <div style="font-size: 12.5px; color: var(--muted, #6b8290);">{{ recordLabel }}</div>
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <sc-raw-select value="{{ perPage }}" sc-camel-on-change="{{ onPerPage }}" style="height: 32px; padding: 0 30px 0 14px; border: none; border-radius: 980px; background: var(--chip, rgba(51,80,91,0.07)) url(&quot;data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' sc-camel-view-box='0 0 12 12'&gt;&lt;path d='M2.5 4.5 6 8l3.5-3.5' fill='none' stroke='%236b8290' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/&gt;&lt;/svg&gt;&quot;) no-repeat right 12px center; font-family: inherit; font-size: 12.5px; color: inherit; cursor: pointer; appearance: none;">
+              <option value="10">10 per page</option>
+              <option value="25">25 per page</option>
+              <option value="50">50 per page</option>
+            </sc-raw-select>
+            <div style="font-size: 12.5px; color: var(--muted, #6b8290);">{{ pageLabel }}</div>
+            <div style="display: flex; align-items: center; gap: 2px;">
+              <sc-for list="{{ pager }}" as="p" hint-placeholder-count="4">
+                <span sc-camel-on-click="{{ p.onClick }}" style="display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'FILL' 0, 'wght' 500; color: var(--muted, #6b8290); opacity: {{ p.opacity }}; cursor: {{ p.cursor }}; transition: background 140ms ease;" style-hover="background: var(--iconHover, rgba(51,80,91,0.08));">{{ p.icon }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light' | 'dark'&quot;}}">
+const THEMES = {
+  light: {
+    '--bg': '#f5f5f7', '--page': '#edf3f7', '--chrome': '#ffffff', '--chromeSolid': '#ffffff',
+    '--sidebar': '#ffffff', '--sidebarSolid': '#ffffff', '--card': '#ffffff', '--sepOnChip': 'rgba(0,0,0,0.12)',
+    '--headerBorder': 'rgba(0,0,0,0.08)', '--border': 'rgba(0,0,0,0.08)', '--chanBtn': '#f2f7fa', '--chanBtnHover': '#e2ecf3', '--chanBtnBorder': 'rgba(0,0,0,0.08)', '--hairline': 'rgba(0,0,0,0.09)', '--text': '#1d1d1f', '--muted': '#6e6e73',
+    '--chip': 'rgba(0,0,0,0.05)', '--tabTrack': '#e9e9ec', '--tabHover': 'rgba(0,0,0,0.045)', '--rowHover': 'rgba(0,0,0,0.022)', '--iconHover': 'rgba(0,0,0,0.09)', '--topIcon': '#33505b', '--cogColor': '#9a9aa0', '--cardHover': 'rgba(0,0,0,0.10)', '--glassSolid': '#ffffff',
+    '--glass': 'rgba(255,255,255,0.96)', '--glassBorder': 'rgba(0,0,0,0.06)',
+    '--shadow': 'rgba(0,0,0,0.04)', '--shadowSoft': 'rgba(0,0,0,0.04)', '--shadowStrong': 'rgba(0,0,0,0.16)',
+    '--barMuted': 'rgba(0,0,0,0.16)', '--scroll': 'rgba(0,0,0,0.13)'
+  },
+  dark: {
+    '--bg': '#101012', '--page': '#101012', '--chrome': '#202022', '--chromeSolid': '#202022',
+    '--sidebar': '#202022', '--sidebarSolid': '#202022', '--card': '#202022', '--sepOnChip': 'rgba(255,255,255,0.14)',
+    '--headerBorder': 'rgba(0,0,0,0.42)', '--border': 'rgba(255,255,255,0.10)', '--chanBtn': 'rgba(255,255,255,0.09)', '--chanBtnHover': 'rgba(255,255,255,0.115)', '--chanBtnBorder': 'transparent', '--hairline': 'rgba(255,255,255,0.10)', '--text': '#f5f5f7', '--muted': '#86868b',
+    '--chip': 'rgba(255,255,255,0.09)', '--tabTrack': '#2a2a2c', '--tabHover': 'rgba(255,255,255,0.06)', '--rowHover': 'rgba(255,255,255,0.035)', '--iconHover': 'rgba(255,255,255,0.14)', '--topIcon': '#c9d6dc', '--cogColor': '#6e6e73', '--cardHover': 'rgba(0,0,0,0.55)', '--glassSolid': '#1d1d1f',
+    '--glass': 'rgba(29,29,31,0.96)', '--glassBorder': 'rgba(255,255,255,0.10)',
+    '--shadow': 'rgba(0,0,0,0.5)', '--shadowSoft': 'rgba(0,0,0,0.4)', '--shadowStrong': 'rgba(0,0,0,0.6)',
+    '--barMuted': 'rgba(255,255,255,0.22)', '--scroll': 'rgba(255,255,255,0.22)'
+  }
+};
+
+const CHAT_FILTERS = ['All', 'Unread'];
+const ALL_CHATS = [
+  { initials: 'NP', name: 'Nicola Prinsloo', preview: 'Can we pour Thursday or not?', unread: true, customer: true },
+  { initials: 'G1', name: 'Engineering team', unread: true, preview: 'Kabelo: deflection check is done', customer: false, href: '' },
+  { initials: 'BT', name: 'Brett Turner', preview: 'Need the certificate for the bank.', unread: false, customer: true },
+  { initials: 'WG', name: 'Willem Greyling', preview: 'Fire water pressure test Friday.', unread: false, customer: false }
+];
+
+const TENANTS = [
+  { name: 'Cavendish Mall upgrade', unread: '' },
+  { name: 'Other projects', unread: '7' }
+];
+
+const CHANNELS = [
+  { tenant: 'Cavendish Mall upgrade', category: 'Structural', members: '12 members', unread: '' },
+  { tenant: 'Cavendish Mall upgrade', category: 'Wet services', members: '8 members', unread: '4' },
+  { tenant: 'Cavendish Mall upgrade', category: 'Inspections & certification', members: '9 members', unread: '' },
+  { tenant: 'Cavendish Mall upgrade', category: 'Client & approvals', members: '6 members', unread: '' },
+  { tenant: 'Other projects', category: 'N2 bridge rehabilitation', members: '7 members', unread: '12' },
+  { tenant: 'Other projects', category: 'Rosslyn plant expansion', members: '6 members', unread: '' }
+];
+
+const chansFor = (t) => CHANNELS.filter((c) => c.tenant === t);
+const ALL_ROW = { category: 'All channels', members: 'Every channel on this project', unread: '', all: true };
+
+const STATUSES = [
+  { id: 'online', label: 'Available', color: () => '#34c759' },
+  { id: 'away', label: 'Away', color: () => '#f5a524' },
+  { id: 'dnd', label: 'Do not disturb', color: () => '#ff453a' },
+  { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
+];
+
+const SHARON = { initials: 'MV', name: 'Marize Visser', role: 'Client · Facilities', email: 'marize.visser@cavendishproperties.co.za', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+
+const MEMBERS = [
+  { initials: 'EL', name: 'Erika Lombard', admin: true, role: 'Channel admin · Pr Eng, project lead', email: 'erika.lombard@lombardconsulting.co.za', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'KN', name: 'Kabelo Ntuli', role: 'Structural engineer', email: 'kabelo.ntuli@lombardconsulting.co.za', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'WG', name: 'Willem Greyling', role: 'Wet services engineer', email: 'willem.greyling@lombardconsulting.co.za', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'AS', name: 'Anele Sithole', role: 'Candidate engineer', email: 'anele.sithole@lombardconsulting.co.za', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'BT', name: 'Brett Turner', role: 'Client · Development manager', email: 'brett.turner@cavendishproperties.co.za', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'NP', name: 'Nicola Prinsloo', role: 'Contractor · Site agent', email: 'nicola.prinsloo@vermeulenbuild.co.za', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+];
+
+const TITLES = [
+  ['Slab 4C: rebar spacing query, pour on hold', 'Site query', 'Structural', 'Kabelo Ntuli'],
+  ['Concrete cube results below 28-day spec', 'Testing', 'Inspections & certification', 'Anele Sithole'],
+  ['Completion certificate for the bank drawdown', 'Certification', 'Client & approvals', 'Erika Lombard'],
+  ['Fire water pressure test: witness required', 'Testing', 'Wet services', 'Willem Greyling'],
+  ['Inspection INS-091: level 2 slab sign-off', 'Inspection', 'Inspections & certification', 'Kabelo Ntuli'],
+  ['Design change: column relocation at grid F', 'Design', 'Structural', 'Erika Lombard'],
+  ['Bridge bearing condition assessment', 'Inspection', 'N2 bridge rehabilitation', 'Willem Greyling'],
+  ['Stormwater attenuation sizing query', 'Design', 'Wet services', 'Willem Greyling'],
+  ['Geotechnical report addendum required', 'Design', 'Structural', 'Dumisani Ncube'],
+  ['Weld inspection, steel canopy frame', 'Inspection', 'Inspections & certification', 'Anele Sithole'],
+  ['As-built survey vs design levels', 'Site query', 'Structural', 'Nicola Prinsloo'],
+  ['Occupancy certificate documentation pack', 'Certification', 'Client & approvals', 'Erika Lombard'],
+  ['Pump station commissioning schedule', 'Testing', 'Wet services', 'Willem Greyling'],
+  ['Crack monitoring, existing east wall', 'Inspection', 'Inspections & certification', 'Kabelo Ntuli'],
+  ['Professional indemnity query on scope change', 'Certification', 'Client & approvals', 'Leigh Marshall']
+];
+
+const OWNERS = ['Jared Kemp', 'Erika Lombard', 'Rosa Thiel', 'Dumisani Ncube', 'Peach Group', 'Jules Marchand', 'Fabien Moreau', 'Brett Turner'];
+const ASSIGNEES = ['-', 'Engineering team', 'Kabelo Ntuli', 'Willem Greyling', '-', 'Engineering team'];
+const CHANNELS_COL = ['Structural', 'Wet services', 'Inspections & certification', 'Client & approvals', 'N2 bridge rehabilitation'];
+const TM_STATUSES = ['In Progress', 'In Progress', 'Waiting', 'New', 'Resolved', 'Closed', 'On Hold', 'New', 'Closed', 'Resolved'];
+const PRIORITIES = ['High', 'High', 'Medium', 'High', 'Low', 'Medium', 'High'];
+const SLAS = ['At risk', 'Breached', 'On track', 'On track', 'On track', 'On track', '-', 'At risk'];
+const MONTHS = ['Aug', 'Aug', 'Aug', 'Jul', 'Jul', 'Jun'];
+
+const TICKET_ROWS = Array.from({ length: 77 }, (_, i) => {
+  const t = TITLES[i % TITLES.length];
+  const day = 28 - (i % 26);
+  const hour = 8 + (i * 3) % 10;
+  const min = (i * 17) % 60;
+  return {
+    id: 'CM−' + (6140 - i),
+    title: t[0],
+    status: TM_STATUSES[i % TM_STATUSES.length],
+    priority: PRIORITIES[i % PRIORITIES.length],
+    owner: t[3],
+    assigned: ASSIGNEES[i % ASSIGNEES.length],
+    channel: t[2],
+    category: t[1],
+    sla: SLAS[i % SLAS.length],
+    created: String(day).padStart(2, '0') + ' ' + MONTHS[i % MONTHS.length] + ' 2026, ' + String(hour).padStart(2, '0') + ':' + String(min).padStart(2, '0')
+  };
+});
+
+const FILTER_COLUMNS = [
+  { value: 'id', label: 'Request #' }, { value: 'title', label: 'Title' }, { value: 'status', label: 'Status' },
+  { value: 'priority', label: 'Priority' }, { value: 'owner', label: 'Owner' }, { value: 'assigned', label: 'Assigned To' },
+  { value: 'channel', label: 'Channel' }, { value: 'category', label: 'Category' }, { value: 'sla', label: 'SLA' },
+  { value: 'created', label: 'Created' }
+];
+const CONDITIONS = ['Contains', 'Does not contain', 'Equals', 'Does not equal', 'Starts with', 'Ends with', 'Is empty', 'Is not empty'].map(c => ({ value: c, label: c }));
+const NO_VALUE = ['Is empty', 'Is not empty'];
+
+function matchFilter(cell, cond, raw) {
+  const a = cell.toLowerCase(), b = (raw || '').trim().toLowerCase();
+  switch (cond) {
+    case 'Contains': return a.includes(b);
+    case 'Does not contain': return !a.includes(b);
+    case 'Equals': return a === b;
+    case 'Does not equal': return a !== b;
+    case 'Starts with': return a.startsWith(b);
+    case 'Ends with': return a.endsWith(b);
+    case 'Is empty': return !cell || cell === '-';
+    case 'Is not empty': return !!cell && cell !== '-';
+    default: return true;
+  }
+}
+
+const ACCOUNTS = [
+  { name: 'Erika Lombard', email: 'erika.lombard@lombardconsulting.co.za', role: 'Pr Eng · Lombard Consulting', initials: 'EL', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Practice' },
+  { name: 'Erika Lombard', email: 'erika@cavendishproperties.co.za', initials: 'EL', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Engineering team · Cavendish' }
+];
+
+const goPage = (href) => (e) => {
+  if (e && e.stopPropagation) e.stopPropagation();
+  if (!href) return;
+  const here = decodeURIComponent(window.location.pathname);
+  if (!here.endsWith(href)) window.location.assign(encodeURI(href));
+};
+
+class Component extends DCLogic {
+  state = { account: 0, theme: null, menu: null, chatQuery: '', chatFilterIdx: 0, hoverPerson: null, hoverTop: 0, status: 'online', statusMenu: false, tab: 'All Requests', page: 1, perPage: 25, query: '', filterOpen: false, filters: [{ col: '', cond: '', val: '' }] };
+
+  setFilter(i, key, value) {
+    this.setState(s => ({ filters: s.filters.map((f, n) => n === i ? { ...f, [key]: value } : f) }));
+  }
+
+  showCard(p, el) { clearTimeout(this._cardT); const r = el.getBoundingClientRect(); this.setState({ hoverPerson: p, hoverTop: Math.min(Math.max(r.top - 40, 76), window.innerHeight - 250) }); }
+  scheduleHide() { clearTimeout(this._cardT); this._cardT = setTimeout(() => this.setState({ hoverPerson: null }), 140); }
+
+  get theme() { return this.state.theme || this.props.theme || 'light'; }
+
+  applyTheme(name) {
+    const vars = THEMES[name] || THEMES.light;
+    const root = document.documentElement;
+    Object.keys(vars).forEach(k => root.style.setProperty(k, vars[k]));
+    root.style.colorScheme = name;
+  }
+
+  logoRef = React.createRef();
+
+  applyLogo() {
+    const el = this.logoRef.current;
+    if (el) el.src = this.theme === 'dark' ? '../assets/screens/kolabr-logo-dark.svg' : '../assets/screens/kolabr-logo.svg';
+  }
+
+  componentDidMount() {
+    this.applyTheme(this.theme); this.applyLogo();
+    this._away = (e) => {
+      if (!this.state.menu) return;
+      const el = e.target.closest && e.target.closest('[data-menu-root]');
+      if (!el) this.setState({ menu: null, statusMenu: false });
+    };
+    document.addEventListener('mousedown', this._away, true);
+    this._esc = (e) => { if (e.key === 'Escape') this.setState({ menu: null }); };
+    document.addEventListener('keydown', this._esc);
+    this._vw = () => this.setState({ vw: window.innerWidth });
+    window.addEventListener('resize', this._vw);
+    this._vw();
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this._away, true);
+    document.removeEventListener('keydown', this._esc);
+    window.removeEventListener('resize', this._vw);
+    clearTimeout(this._cardT);
+  }
+  componentDidUpdate() { this.applyTheme(this.theme); this.applyLogo(); }
+
+  setMenu(name) {
+    this.setState(s => ({ menu: s.menu === name ? null : name }));
+  }
+
+  renderVals() {
+    const theme = this.theme;
+    const dark = theme === 'dark';
+    const menu = this.state.menu;
+    const ok = dark ? '#3ddc97' : '#12a06a';
+    const warn = '#f5a524';
+    const bad = '#ff5c66';
+    const hm = this.state.hoverPerson;
+
+    const chip = {
+      Closed: [dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', dark ? '#8ba3ae' : '#5c6f78'],
+      New: ['rgba(0,195,255,0.14)', dark ? '#5ad2ff' : '#0089b6'],
+      Waiting: ['rgba(245,165,36,0.16)', warn],
+      Resolved: [dark ? 'rgba(61,220,151,0.14)' : 'rgba(18,160,106,0.12)', ok],
+      'On Hold': [dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', dark ? '#8ba3ae' : '#5c6f78'],
+      'In Progress': [dark ? 'rgba(175,140,255,0.16)' : 'rgba(126,87,216,0.12)', dark ? '#b79bff' : '#6f45cf']
+    };
+    const prio = {
+      High: ['rgba(255,92,102,0.16)', bad],
+      Medium: ['rgba(0,195,255,0.14)', dark ? '#5ad2ff' : '#0089b6'],
+      Low: [dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', dark ? '#8ba3ae' : '#5c6f78']
+    };
+    const q = this.state.query.trim().toLowerCase();
+    const active = this.state.filters.filter(f => f.col && f.cond && (NO_VALUE.includes(f.cond) || f.val.trim()));
+    const tab = this.state.tab;
+    const tabTest = {
+      'All Requests': () => true,
+      'Unassigned': r => r.assigned === '-',
+      'My Queue': r => r.assigned === 'Brett Turner' || r.owner === 'Brett Turner',
+      'SLA Risk': r => r.sla === 'At risk' || r.sla === 'Breached',
+      'Waiting': r => r.status === 'Waiting' || r.status === 'On Hold'
+    }[tab] || (() => true);
+    const visible = TICKET_ROWS
+      .filter(tabTest)
+      .filter(r => !q || Object.values(r).join(' ').toLowerCase().includes(q))
+      .filter(r => active.every(f => matchFilter(String(r[f.col] ?? ''), f.cond, f.val)))
+      .map(r => ({
+        ...r,
+        statusBg: chip[r.status][0], statusFg: chip[r.status][1],
+        prioBg: prio[r.priority][0], prioFg: prio[r.priority][1],
+        slaColor: r.sla === 'Breached' ? bad : r.sla === 'At risk' ? warn : r.sla === '-' ? 'var(--muted, #6b8290)' : ok
+      }));
+
+    const perPage = this.state.perPage || 25;
+    const pageCount = Math.max(1, Math.ceil(visible.length / perPage));
+    const page = Math.min(this.state.page || 1, pageCount);
+    const pageRows = visible.slice((page - 1) * perPage, page * perPage);
+    const goto = n => this.setState({ page: Math.min(Math.max(n, 1), pageCount) });
+
+    return {
+      theme,
+      logoRef: this.logoRef,
+      sunColor: theme === 'dark' ? 'var(--muted, #6e6e73)' : '#ffcc00',
+      moonColor: theme === 'dark' ? '#00c3ff' : 'var(--muted, #9a9aa0)',
+      themeTrack: theme === 'dark' ? '#00c3ff' : '#ffcc00',
+      themeKnobX: theme === 'dark' ? '16px' : '2px',
+      themeIcon: theme === 'dark' ? 'dark_mode' : 'light_mode',
+      toggleTheme: (e) => { e.stopPropagation(); this.setState(s => ({ theme: (s.theme || this.props.theme || 'light') === 'light' ? 'dark' : 'light' })); },
+      menuOpen: !!menu,
+      closeMenu: () => this.setState({ menu: null }),
+      showNotifs: menu === 'notifs',
+      showChats: menu === 'chats',
+      showProfile: menu === 'profile',
+      showSettings: menu === 'settings',
+      showChannels: menu === 'channels',
+      showTenants: menu === 'tenants',
+      toggleTenants: (e) => { e.stopPropagation(); this.setMenu('tenants'); },
+      tenantName: TENANTS[this.state.tenant || 0].name,
+      tenantLetter: TENANTS[this.state.tenant || 0].name.slice(0, 1),
+      chanName: (chansFor(TENANTS[this.state.tenant || 0].name)[this.state.chan || 0] || chansFor(TENANTS[this.state.tenant || 0].name)[0]).category,
+      tenantList: TENANTS.map((t, i) => ({
+        name: t.name,
+        sub: chansFor(t.name).length + ' channels',
+        unread: t.unread,
+        letter: t.name.slice(0, 1),
+        active: i === (this.state.tenant || 0),
+        onClick: (e) => { e.stopPropagation(); this.setState({ tenant: i, chan: 0, menu: null }); }
+      })),
+
+      toggleChannels: (e) => { e.stopPropagation(); this.setMenu('channels'); },
+      currentChannel: chansFor(TENANTS[this.state.tenant || 0].name).filter((c, i) => i === (this.state.chan || 0)).map((c) => ({
+        letter: c.category.slice(0, 1),
+        allIcon: false,
+        company: c.members,
+        category: c.category,
+        unread: c.unread,
+        active: true,
+        rowBg: 'transparent',
+        badgeBg: 'linear-gradient(150deg, #00c3ff, #0aa8dd)',
+        badgeFg: '#ffffff',
+        onClick: (e) => { e.stopPropagation(); this.setState({ menu: null }); }
+      })),
+      otherChannels: [ALL_ROW].concat(chansFor(TENANTS[this.state.tenant || 0].name).filter((c, i) => i !== (this.state.chan || 0))).map((c) => ({
+        letter: c.all ? '' : c.category.slice(0, 1),
+        allIcon: !!c.all,
+        company: c.members,
+        category: c.category,
+        unread: c.unread,
+        active: false,
+        rowBg: 'transparent',
+        badgeBg: 'var(--chip, rgba(0,0,0,0.05))',
+        badgeFg: 'var(--topIcon, #33505b)',
+        onClick: (e) => { e.stopPropagation(); this.setState({ chan: c.all ? (this.state.chan || 0) : chansFor(TENANTS[this.state.tenant || 0].name).findIndex((x) => x.category === c.category), menu: null }); }
+      })),
+      channels: CHANNELS.map((c, i) => ({
+        letter: c.category.slice(0, 1),
+        allIcon: false,
+        company: c.members,
+        category: c.category,
+        unread: c.unread,
+        active: i === 1,
+        badgeBg: i === 1 ? 'linear-gradient(150deg, #00c3ff, #0aa8dd)' : 'var(--chip, rgba(0,0,0,0.05))',
+        badgeFg: i === 1 ? '#ffffff' : 'var(--topIcon, #33505b)',
+        onClick: () => this.setState({ menu: null })
+      })),
+      toggleNotifs: () => this.setMenu('notifs'),
+      toggleChats: () => this.setMenu('chats'),
+      toggleProfile: () => this.setMenu('profile'),
+      toggleSettings: () => this.setMenu('settings'),
+
+      notifications: [
+        { icon: 'priority_high', text: 'Hold on pour: “Slab 4C, rebar spacing query” due in 3h', time: '4 min ago', unread: true },
+        { icon: 'person_add', text: 'Marize Visser joined Client & approvals as a guest', time: '26 min ago', unread: true },
+        { icon: 'assignment_ind', text: 'Erika Lombard assigned you the completion certificate pack', time: '1 hr ago', unread: true },
+        { icon: 'task_alt', text: 'Inspection INS-091 signed off: level 2 slab', time: '2 hr ago', unread: false },
+        { icon: 'forum', text: '3 new replies in Engineering team', time: 'Yesterday', unread: false }
+      ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
+      chatQuery: this.state.chatQuery,
+      onChatQuery: (e) => this.setState({ chatQuery: e.target.value }),
+      toggleUnread: (e) => { e.stopPropagation(); this.setState(s => ({ chatFilterIdx: s.chatFilterIdx === 1 ? 0 : 1 })); },
+      unreadTrack: this.state.chatFilterIdx === 1 ? '#00c3ff' : (dark ? 'rgba(255,255,255,0.20)' : 'rgba(0,0,0,0.16)'),
+      unreadKnobX: this.state.chatFilterIdx === 1 ? '16px' : '2px',
+      activeChats: ALL_CHATS.filter(c => {
+        const q = this.state.chatQuery.trim().toLowerCase();
+        if (q && !(c.name + ' ' + c.preview).toLowerCase().includes(q)) return false;
+        const f = CHAT_FILTERS[this.state.chatFilterIdx];
+        if (f === 'Unread') return c.unread;
+        if (f === 'Customers') return c.customer;
+        return true;
+      }).map(c => ({ ...c, onClick: goPage(c.href || 'Desktop Admin - Chat.dc.html') })),
+      statusLabel: STATUSES.find(x => x.id === this.state.status).label,
+      statusColor: STATUSES.find(x => x.id === this.state.status).color(dark),
+      showStatusMenu: this.state.statusMenu,
+      toggleStatusMenu: (e) => { e.stopPropagation(); this.setState(s2 => ({ statusMenu: !s2.statusMenu })); },
+      statusOptions: STATUSES.map(x => ({
+        label: x.label, color: x.color(dark), active: x.id === this.state.status,
+        onClick: (e) => { e.stopPropagation(); this.setState({ status: x.id, statusMenu: false }); }
+      })),
+      otherAccounts: ACCOUNTS.filter((_, i) => i !== this.state.account).map((a) => ({
+        name: a.name, email: a.email, initials: a.photo ? '' : a.initials,
+        bg: a.photo ? 'url(' + a.photo + ')' : a.bg,
+        badge: a.badge,
+        onEnter: () => this.setState({ hoverAcct: a.email }),
+        onLeave: () => this.setState({ hoverAcct: null }),
+        onClick: (e) => { e.stopPropagation(); this.setState({ account: ACCOUNTS.indexOf(a), menu: null, hoverAcct: null }); }
+      })),
+      addAccount: (e) => { e.stopPropagation(); this.setState({ menu: null }); },
+      signOutAll: (e) => { e.stopPropagation(); this.setState({ menu: null }); },
+      showAcctName: (this.state.vw || 1400) >= 1180,
+      acctName: ACCOUNTS[this.state.account].name,
+      acctRole: ACCOUNTS[this.state.account].role,
+      acctAvatar: ACCOUNTS[this.state.account].photo ? 'url(' + ACCOUNTS[this.state.account].photo + ')' : ACCOUNTS[this.state.account].bg,
+      acctInitials: ACCOUNTS[this.state.account].photo ? '' : ACCOUNTS[this.state.account].initials,
+      openDashboard: goPage('Desktop Admin - Dashboard.dc.html'),
+      openChatPage: goPage('Desktop Admin - Chat.dc.html'),
+      openUsersPage: goPage('Desktop Admin - User Management.dc.html'),
+      openRequestChat: goPage('Desktop Admin - Request Chat.dc.html'),
+      profileItems: [
+        { icon: 'account_circle', label: 'Account', href: 'Desktop Admin - Account.dc.html' },
+        { icon: 'lock', label: 'Security', href: 'Desktop Admin - Account.dc.html' },
+        { icon: 'notifications', label: 'Notifications', href: 'Desktop Admin - Account.dc.html' },
+        { icon: 'help', label: 'Help & Support', href: '' }
+      ].map(x => ({ ...x, onClick: goPage(x.href) })),
+      settingsItems: [
+        { icon: 'confirmation_number', label: 'Request Management', href: 'Desktop Admin - Request Management.dc.html' },
+        { icon: 'workspaces', label: 'Channel Management', href: 'Desktop Admin - Channel Management.dc.html' },
+        { icon: 'group', label: 'User Management', href: 'Desktop Admin - User Management.dc.html' },
+        { icon: 'history', label: 'Audit Log', href: 'Desktop Admin - Audit Log.dc.html' },
+        { icon: 'credit_card', label: 'Billing & Subscription', href: 'Desktop Admin - Billing.dc.html' },
+        { icon: 'tune', label: 'Configuration', href: 'Desktop Admin - System Settings.dc.html' }
+      ].map(x => ({ ...x, onClick: goPage(x.href) })),
+
+      collaborate: [
+        { icon: 'chat_bubble', label: 'Channel Chat', count: '12', hasCount: true, href: 'Desktop Admin - Channel Chat.dc.html' },
+        { icon: 'assignment', label: 'Requests', count: '29', hasCount: true, href: 'Desktop Admin - Channel Requests.dc.html' },
+        { icon: 'event', label: 'Scheduled Events', count: '3', hasCount: true, href: 'Desktop Admin - Scheduled Events.dc.html' },
+        { icon: 'menu_book', label: 'Wiki', count: '', hasCount: false, href: 'Desktop Admin - Wiki.dc.html' }
+      ].map(x => ({ ...x, onClick: goPage(x.href) })),
+      chats: [
+        { initials: '', group: true, name: 'Engineering team', unread: '2', avatarBg: dark ? 'rgba(255,255,255,0.12)' : 'rgba(51,80,91,0.12)', avatarFg: 'var(--topIcon, #33505b)', onClick: goPage('Desktop Admin - Group Chat.dc.html'), onEnter: () => {}, onLeave: () => {} },
+        { initials: 'MV', group: false, name: 'Marize Visser', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
+          onEnter: (e) => this.showCard(SHARON, e.currentTarget), onLeave: () => this.scheduleHide() }
+      ],
+      members: MEMBERS.map((m, i) => ({
+        initials: m.photo ? '' : m.initials, photo: m.photo || '', admin: !!m.admin, photoCss: m.photo ? 'url(' + m.photo + ')' : 'none', name: m.name, customer: m.customer, bg: m.bg,
+        dot: m.status === 'online' ? '#34c759' : m.status === 'away' ? warn : m.status === 'dnd' ? '#ff453a' : (dark ? '#6e6e73' : '#b8b8bd'),
+        onEnter: (e) => this.showCard(m, e.currentTarget),
+        onLeave: () => this.scheduleHide()
+      })),
+      hoverCard: !!hm,
+      cardTop: this.state.hoverTop + 'px',
+      cardName: hm ? hm.name : '',
+      cardRole: hm ? hm.role : '',
+      cardEmail: hm ? hm.email : '',
+      cardSince: hm ? hm.since : '',
+      cardInitials: hm && !hm.photo ? hm.initials : '',
+      cardPhoto: hm && hm.photo ? hm.photo : '',
+      cardPhotoCss: hm && hm.photo ? 'url(' + hm.photo + ')' : 'none',
+      cardBg: hm ? hm.bg : 'transparent',
+      cardDot: hm ? (hm.status === 'online' ? '#34c759' : hm.status === 'away' ? warn : hm.status === 'dnd' ? '#ff453a' : (dark ? '#6e6e73' : '#b8b8bd')) : 'transparent',
+      keepCard: () => clearTimeout(this._cardT),
+      hideCard: () => this.scheduleHide(),
+
+      filterOpen: this.state.filterOpen,
+      toggleFilter: () => this.setState(s => ({ filterOpen: !s.filterOpen })),
+      filterBg: this.state.filterOpen ? 'rgba(0,195,255,0.14)' : 'var(--chip, rgba(51,80,91,0.07))',
+      filterFg: this.state.filterOpen ? (dark ? '#5ad2ff' : '#0089b6') : 'var(--text, #1d1d1f)',
+      hasFilters: active.length > 0,
+      filterCount: active.length,
+      columnOptions: FILTER_COLUMNS,
+      conditionOptions: CONDITIONS,
+      addFilter: () => this.setState(s => ({ filters: [...s.filters, { col: '', cond: '', val: '' }] })),
+      filters: this.state.filters.map((f, i) => ({
+        col: f.col, cond: f.cond, val: f.val,
+        joiner: i === 0 ? 'WHERE' : 'AND',
+        needsValue: !!f.cond && !NO_VALUE.includes(f.cond),
+        onCol: (e) => this.setFilter(i, 'col', e.target.value),
+        onCond: (e) => this.setFilter(i, 'cond', e.target.value),
+        onVal: (e) => this.setFilter(i, 'val', e.target.value),
+        onRemove: () => this.setState(s => {
+          const rest = s.filters.filter((_, n) => n !== i);
+          return rest.length ? { filters: rest } : { filters: [{ col: '', cond: '', val: '' }], filterOpen: false };
+        })
+      })),
+
+      tabs: ['All Requests', 'Unassigned', 'My Queue', 'SLA Risk', 'Waiting'].map(t => ({
+        label: t,
+        weight: t === this.state.tab ? 600 : 500,
+        fg: t === this.state.tab ? 'var(--text, #1d1d1f)' : 'var(--muted, #6b8290)',
+        bg: t === this.state.tab ? 'var(--card, #ffffff)' : 'transparent',
+        hoverBg: t === this.state.tab ? 'var(--card, #ffffff)' : (dark ? 'rgba(255,255,255,0.14)' : 'rgba(0,0,0,0.10)'),
+        shadow: t === this.state.tab ? '0 1px 3px var(--shadowStrong, rgba(0,0,0,0.14))' : 'none',
+        onClick: () => this.setState({ tab: t, page: 1 })
+      })),
+      columns: ['TICKET #', 'TITLE', 'STATUS', 'PRIORITY', 'OWNER', 'ASSIGNED TO', 'CHANNEL', 'CATEGORY', 'SLA', 'CREATED'].map(label => ({ label })),
+      query: this.state.query,
+      onQuery: (e) => this.setState({ query: e.target.value, page: 1 }),
+      pager: [
+        { icon: 'keyboard_double_arrow_left', onClick: () => goto(1), disabled: page === 1 },
+        { icon: 'chevron_left', onClick: () => goto(page - 1), disabled: page === 1 },
+        { icon: 'chevron_right', onClick: () => goto(page + 1), disabled: page === pageCount },
+        { icon: 'keyboard_double_arrow_right', onClick: () => goto(pageCount), disabled: page === pageCount }
+      ].map(p => ({ ...p, opacity: p.disabled ? 0.35 : 1, cursor: p.disabled ? 'default' : 'pointer' })),
+      recordLabel: visible.length + (visible.length === 1 ? ' record' : ' records'),
+      totalLabel: TICKET_ROWS.length + ' records',
+      pageLabel: page + ' / ' + pageCount,
+      perPage: perPage,
+      perPageLabel: perPage + ' per page',
+      onPerPage: e => this.setState({ perPage: Number(e.target.value), page: 1 }),
+      rows: pageRows,
+
+      metrics: [
+        { icon: 'confirmation_number', label: 'Total requests', value: '248', delta: '+12 this week', note: 'Across 18 channels', color: 'inherit', deltaColor: '#00c3ff' },
+        { icon: 'pending_actions', label: 'Open requests', value: '42', delta: '−8 vs last week', note: 'Median age 1.4 days', color: 'inherit', deltaColor: ok },
+        { icon: 'person_search', label: 'Unassigned', value: '7', delta: 'Oldest 3h 12m', note: 'Needs an owner', color: 'inherit', deltaColor: warn },
+        { icon: 'timer_off', label: 'SLA at risk', value: '3', delta: 'Next breach in 42m', note: '2 first-response, 1 resolution', color: 'inherit', deltaColor: bad }
+      ],
+
+      bars: [
+        { label: '30', a: 52, b: 44 }, { label: '31', a: 61, b: 50 }, { label: '01', a: 44, b: 58 },
+        { label: '02', a: 72, b: 55 }, { label: '03', a: 66, b: 71 }, { label: '04', a: 38, b: 46 },
+        { label: '05', a: 29, b: 34 }, { label: '06', a: 81, b: 62 }, { label: '07', a: 94, b: 70 },
+        { label: '08', a: 76, b: 88 }, { label: '09', a: 58, b: 66 }, { label: '10', a: 47, b: 52 },
+        { label: '11', a: 69, b: 60 }, { label: '12', a: 84, b: 57 }
+      ],
+
+      requests: [
+        { id: '#614', subject: 'Slab 4C: rebar spacing query, pour on hold', channel: 'Structural', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due in 3h', slaColor: bad },
+        { id: '#609', subject: 'Completion certificate for the bank drawdown', channel: 'Client & approvals', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: dark ? '#8ba3ae' : '#6b8290', sla: 'Due in 6h', slaColor: warn },
+        { id: '#606', subject: 'Fire water pressure test: witness required', channel: 'Wet services', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due Friday', slaColor: dark ? '#8ba3ae' : '#6b8290' },
+        { id: '#611', subject: 'Concrete cube results below 28-day spec', channel: 'Inspections & certification', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 1d', slaColor: bad },
+        { id: '#598', subject: 'Inspection INS-091: level 2 slab sign-off', channel: 'Inspections & certification', status: 'Resolved', statusBg: dark ? 'rgba(61,220,151,0.14)' : 'rgba(18,160,106,0.12)', statusFg: ok, sla: 'Met · 6h 15m', slaColor: ok }
+      ]
+    };
+  }
+}
+
+</script>
+
+
+</body></html>

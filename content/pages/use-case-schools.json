@@ -1,0 +1,243 @@
+{
+  "hero": {
+    "eyebrow": "Kolabr for schools",
+    "title": "A channel per classroom. And one for everything else the school runs.",
+    "lede": "Teachers, office staff, parents, coaches and the bus company. Each conversation in the channel it belongs to, with a record of what was said and what was promised. Parents and suppliers join as guests, free, on every plan.",
+    "image": {
+      "file": "shot-chat",
+      "alt": "The Grade 4B channel in Kolabr: the class thread with a notice about permission slips, an absence raised as a request, the parent roster on the right and the channel’s requests, events and wiki in the sidebar"
+    }
+  },
+  "channels": {
+    "title": "Where a school puts its channels",
+    "lede": "A channel is a group of people plus the work they share: the chat, the requests, the calendar and the wiki. Most schools land on something close to this.",
+    "cards": [
+      {
+        "title": "Grade 4B",
+        "body": "Two teachers, 27 parents as guests. Notices, homework, the class photo, and a private thread when it is about one child."
+      },
+      {
+        "title": "Staff room",
+        "body": "Your own team only. Briefings, cover arrangements, the week ahead, documents nobody should see outside the school."
+      },
+      {
+        "title": "Facilities and IT",
+        "body": "Broken projector, a door that will not lock, a login that expired. Raised as requests, owned by a name, closed with a date."
+      },
+      {
+        "title": "Admissions",
+        "body": "Prospective parents as guests for the length of the application. Forms, interview slots, the offer, then archive it."
+      },
+      {
+        "title": "Sports and extramurals",
+        "body": "Coaches, the fixture list, the WhatsApp-at-6am problem solved by events with reminders and a sync to parents’ calendars."
+      },
+      {
+        "title": "Suppliers",
+        "body": "Bus company, caterer, uniform shop, maintenance contractor. Each in their own channel, each a guest, none of them seeing the others."
+      }
+    ],
+    "seatNote": [
+      "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, and your staff and your guests share those seats. A class of 27 parents and two teachers fits a Starter channel; a whole grade needs Pro. ",
+      {
+        "label": "Compare plans",
+        "href": "/pricing#compare-plans"
+      },
+      "."
+    ]
+  },
+  "parents": {
+    "id": "parents",
+    "title": "Parent communication that is not a group chat",
+    "lede": "Parents are guests in their child’s channel. They see that channel and nothing else, no staff room, no other family’s thread, no teacher’s personal number.",
+    "points": [
+      {
+        "title": "Notices go out once",
+        "body": "An announcement reaches every parent in the class at the same time, with the letter attached. It stays on the channel, so the parent who was on a plane still finds it."
+      },
+      {
+        "title": "One child, one thread",
+        "body": "Concerns about a single child belong in a private thread between that parent and the teachers, inside the same channel. Read by the people who need it, invisible to the rest."
+      },
+      {
+        "title": "When the teacher’s day ends, it ends",
+        "body": "Parents raise things as requests instead of messaging at 22:40. The request has an owner and a due date, and the answer arrives inside school hours."
+      }
+    ],
+    "image": {
+      "file": "shot-mobile",
+      "alt": "Kolabr on a phone: the Grade 4B thread, a parent asking about the outing form, with the channel tabs along the bottom"
+    }
+  },
+  "requests": {
+    "id": "requests",
+    "title": "Every “can you please” gets an owner",
+    "lede": "Absence notes, transport changes, a projector that died before third period, a permission slip, a new login for a substitute teacher. Raised in the channel, categorised, owned by a person, closed with a date, not lost in somebody’s inbox.",
+    "image": {
+      "file": "shot-requests",
+      "alt": "Request management in Kolabr: absences, transport changes, permission slips and facilities jobs in one table with status, priority and owner"
+    },
+    "cards": [
+      {
+        "title": "Your own categories",
+        "body": "Absence, transport, maintenance, IT, finance, permission. Each one routes to the person who actually handles it."
+      },
+      {
+        "title": "A promise with a clock",
+        "body": "An SLA per category, so “we will come back to you” means two school days and everyone can see whether it happened."
+      },
+      {
+        "title": "A message becomes a request",
+        "body": "A parent writes it as a message; a teacher turns that message into a request in one step and hands it to the office."
+      }
+    ]
+  },
+  "calendar": {
+    "id": "calendar",
+    "title": "The term, on one calendar",
+    "lede": "Parent evenings, fixtures, exams, staff briefings, the governing body meeting. Scheduled in the channel it concerns, so the people it concerns are the people who get it.",
+    "image": {
+      "file": "shot-events",
+      "alt": "The Kolabr calendar for a school: morning briefings, the Planetarium outing, a netball fixture and parent evening slots on one month view"
+    },
+    "cards": [
+      {
+        "title": "Syncs to their calendar",
+        "body": "Google and Outlook, so a parent evening lands where parents already look."
+      },
+      {
+        "title": "Recurring by default",
+        "body": "Weekly staff briefing, Friday assembly, monthly PTA: set once for the term."
+      },
+      {
+        "title": "A call when they cannot come in",
+        "body": "Start the video call from the event and share a screen with the report on it."
+      },
+      {
+        "title": "Tied to the request",
+        "body": "The meeting about one child hangs off that request, with the notes afterwards."
+      }
+    ]
+  },
+  "wiki": {
+    "id": "wiki",
+    "title": "The policy, written down once",
+    "lede": [
+      "Uniform list, absence procedure, exam rules, the code of conduct, what a substitute needs to know about 4B. Published in the channel’s wiki, and offered to a parent as a suggestion while they are typing the question. ",
+      {
+        "label": "How the wiki works",
+        "href": "/product/wiki"
+      },
+      "."
+    ],
+    "image": {
+      "file": "shot-wiki",
+      "alt": "The class wiki in Kolabr: the Absence and late arrivals article with its steps, reason codes and review date, beside sections for Term 3 and school routines"
+    }
+  },
+  "oversight": {
+    "title": "What the head of school can see",
+    "lede": "Schools carry a duty of care for what is said to children and parents. Kolabr keeps that record by default instead of leaving it on staff phones.",
+    "image": {
+      "file": "shot-dashboard-final",
+      "alt": "The Kolabr dashboard for a school: request volume for the fortnight, open and unassigned counts, what is due today, and the requests assigned to this teacher"
+    },
+    "wide": {
+      "title": "One view across every channel",
+      "body": "Open requests per department, what is overdue, which classes are waiting on the office. The whole school on one dashboard instead of asking six people how it is going.",
+      "link": {
+        "label": "Administration and controls",
+        "href": "/product/administration"
+      },
+      "rows": [
+        {
+          "label": "Facilities",
+          "value": "14 open"
+        },
+        {
+          "label": "IT and accounts",
+          "value": "6 open"
+        },
+        {
+          "label": "Admissions",
+          "value": "23 in progress"
+        },
+        {
+          "label": "Overdue",
+          "value": "2",
+          "total": true
+        }
+      ]
+    },
+    "deep": {
+      "title": "A record, not a rumour",
+      "body": "Every message, request and file stays with the channel. When a conversation with a family needs reviewing, it is there, with who said it and when.",
+      "rows": [
+        {
+          "label": "Audit log",
+          "value": "who did what"
+        },
+        {
+          "label": "Retention",
+          "value": "set by policy",
+          "highlight": true
+        },
+        {
+          "label": "Archive",
+          "value": "at year end"
+        }
+      ]
+    },
+    "cards": [
+      {
+        "title": "Guests see one channel",
+        "body": "A parent invited to 4B sees 4B. No directory of other families, no staff channels, nothing they were not asked into."
+      },
+      {
+        "title": "Roles for office and staff",
+        "body": "Who can invite, who can close a request, who can publish a notice to every parent. Set once, applied everywhere."
+      },
+      {
+        "title": "In a pocket, not a staff room",
+        "body": [
+          "Teachers answer between lessons on the phone; the office works from the desk. Same channel, same record. ",
+          {
+            "label": "The mobile app",
+            "href": "/product/mobile-app"
+          },
+          "."
+        ]
+      }
+    ]
+  },
+  "stages": {
+    "title": "Starting in September, ending in June",
+    "lede": "A school year is a cycle, and the tool should follow it rather than accumulate.",
+    "cards": [
+      {
+        "title": "Start with one class",
+        "body": "Pick the teacher who is drowning in messages. One channel, the parents invited, two weeks. It either helps by half-term or it does not."
+      },
+      {
+        "title": "Roll over in one step",
+        "body": "Build next year’s classes from a channel template: categories, SLAs and the wiki already in place. Archive last year’s and keep it readable."
+      },
+      {
+        "title": "You pay for staff only",
+        "body": [
+          "Parents, coaches and suppliers are guests and are never billed. The plan covers your own team. ",
+          {
+            "label": "See pricing",
+            "href": "/pricing"
+          },
+          "."
+        ]
+      }
+    ]
+  },
+  "cta": {
+    "title": "Try it on one classroom.",
+    "body": "Fourteen days free on Max, every option included, no card. Invite one class and see what the teacher’s evenings look like afterwards.",
+    "primary": "Start free trial"
+  }
+}

@@ -1,0 +1,39 @@
+[Unit]
+Description=Kolabr website
+After=network.target
+
+[Service]
+Type=simple
+User=kolabr
+Group=kolabr
+WorkingDirectory=/opt/kolabr/app
+
+# Secrets and anything environment-specific. Values needed by the BUILD (every NEXT_PUBLIC_*)
+# are read from this same file by deploy.sh, because they are baked in at build time.
+EnvironmentFile=/opt/kolabr/.env.production
+Environment=NODE_ENV=production
+Environment=PORT=3000
+# Bind to loopback only: nginx is the only thing that should reach this.
+Environment=HOSTNAME=127.0.0.1
+# Content and state live outside the app so a deploy cannot touch them. Absolute paths, not
+# symlinks inside the app: Turbopack follows a symlink out of the project root and fails the build.
+Environment=CONTENT_DIR=/opt/kolabr/content
+Environment=STATE_DIR=/opt/kolabr/state
+Environment=UPLOAD_DIR=/opt/kolabr/uploads
+
+ExecStart=/usr/bin/node /opt/kolabr/app/node_modules/next/dist/bin/next start -H 127.0.0.1 -p 3000
+Restart=always
+RestartSec=2
+
+# The app writes uploads and state, and nothing else.
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/kolabr/uploads /opt/kolabr/state /opt/kolabr/content
+# PrivateTmp is deliberately OFF: an uploaded package has to be readable by the deploy script,
+# which runs as root in its own unit. With a private /tmp it would not be, so uploads go to
+# /opt/kolabr/uploads instead and /tmp is never used to hand files between the two.
+PrivateTmp=false
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,288 @@
+{
+  "schools": [
+    {
+      "q": "Do we have to pay for parents to use Kolabr?",
+      "a": "No. Parents, coaches and suppliers join as guests, free, on every plan, and are never billed. The plan covers your own team. Each channel does have a seat count (30 on Starter, 100 on Pro, unlimited on Max) that staff and guests share, so a class of 27 parents and two teachers fits a Starter channel."
+    },
+    {
+      "q": "Can parents see other families or the staff room?",
+      "a": "No. A parent invited to a class channel sees that channel and nothing else: no staff room, no directory of other families, no teacher's personal number. Concerns about a single child go in a private thread between that parent and the teachers, inside the same channel, invisible to the rest of the class."
+    },
+    {
+      "q": "How do we stop parents messaging teachers at night?",
+      "a": "Parents raise things as requests instead of messages. Each request has an owner and a due date, and the answer arrives inside school hours. You set your own categories (absence, transport, maintenance, IT and so on) with an SLA per category, so everyone can see whether the promised reply happened."
+    },
+    {
+      "q": "What happens to our channels at the end of the school year?",
+      "a": "You build next year's classes from a channel template, with categories, SLAs and the wiki already in place, and archive last year's channels so they stay readable. Every message, request and file stays with the channel, so a conversation with a family can still be reviewed later, with who said it and when."
+    },
+    {
+      "q": "What is the best way to trial Kolabr at our school?",
+      "a": "Start with one class. Pick the teacher who is drowning in messages, create one channel, invite the parents and run it for two weeks. The trial is fourteen days free on Max, with every option included and no card required. It either helps by half-term or it does not."
+    }
+  ],
+  "nonprofits": [
+    {
+      "q": "Will we be billed for our volunteers?",
+      "a": "No. Volunteers, trustees and funders join as guests and are never billed; the plan covers the people on your payroll. Each channel has a seat count (30 on Starter, 100 on Pro, unlimited on Max) shared between staff and guests, but a small team supporting forty volunteers is not a forty-person bill."
+    },
+    {
+      "q": "Can funders see our internal conversations or other funders' grants?",
+      "a": "No. Each funder gets their own channel and sees only the programme they fund, not another funder's grant and not your internal conversation about cash flow. They can watch the work as it happens instead of waiting for a quarterly PDF. Trustees likewise see governance without seeing every field message."
+    },
+    {
+      "q": "Our facilitators work at sites with almost no signal. Will it work?",
+      "a": "The app is built for that. Facilitators use the phones they already carry, so there are no tablets to buy. It is light on data for expensive, unreliable mobile connections. When there is no signal, they photograph the paper register, which serves as the evidence until the numbers are captured."
+    },
+    {
+      "q": "How does Kolabr make quarterly funder reports and audits easier?",
+      "a": "Data requests, receipts, safeguarding items, volunteer screening and funder deadlines are recorded as numbered items with an owner and a date, the day they happen. When the quarter closes, the evidence is already in one place. The audit log shows who recorded what, when and with which document, for auditors, funders and the board."
+    },
+    {
+      "q": "What happens to the history when a coordinator leaves?",
+      "a": "It stays with the programme. Messages, items and procedures belong to the channel, not the person, so staff turnover does not take the record with it. When a grant closes, you archive the channel and keep it readable for the audit, then build the next programme from a channel template."
+    }
+  ],
+  "architecture-firms": [
+    {
+      "q": "Do clients, contractors and consultants need to pay for a seat?",
+      "a": "No. Clients, contractors, engineers and QSs join as guests, free, on every plan, and are never billed. The plan covers your own people. Each channel has a seat count (30 on Starter, 100 on Pro, unlimited on Max) shared with guests, and a project with a client, a contractor and four consultants sits comfortably inside a Starter channel."
+    },
+    {
+      "q": "How are RFIs tracked in Kolabr?",
+      "a": "A question from site becomes a numbered request in the project channel, categorised as an RFI, variation, site instruction or submission, and routed to the person who answers it. Each category carries an SLA the contractor and client can see. Anyone in the studio can turn a site message into a numbered RFI in one step, photographs attached."
+    },
+    {
+      "q": "How do we stop contractors pricing off a superseded drawing?",
+      "a": "Issue the revision in the channel and the contractor, QS and engineer all see the same transmittal at the same moment, with the superseded list published alongside. The transmittal, drawing register and revision notes live on the channel wiki, which guests can read, and each revision can be linked to the RFI or instruction that caused it."
+    },
+    {
+      "q": "Will a contractor see our fees or other clients' projects?",
+      "a": "No. Guests see one project. The contractor on one scheme sees that scheme, not your fee conversation and not another client's project they may be bidding on. Resourcing, fee queries and internal critique stay in a studio channel for your own team only. Roles control who can issue a set, close an RFI or approve a variation."
+    },
+    {
+      "q": "Does it help if a contractor claims our information was late?",
+      "a": "Yes. The channel keeps a record of who asked, when it was answered, which revision went out and who acknowledged it. The audit log shows who did what, retention is set by policy, and at practical completion you archive the channel and keep it readable for the defects period."
+    }
+  ],
+  "engineering-firms": [
+    {
+      "q": "Can a candidate engineer sign off an inspection certificate?",
+      "a": "A candidate engineer can run an inspection, but only a professional closes the certificate, and this is enforced by role rather than by memory. The inspection procedure sits on the channel wiki beside the project, covering what a hold point is, what to photograph and exactly how a decision is recorded."
+    },
+    {
+      "q": "How is an inspection decision recorded?",
+      "a": "In writing, in the channel: approved, approved with conditions, or not approved, with the measurement and the reason. Inspect against the current revision and photograph what you measured, such as the tape against the bar. Sign-off can be recorded at the element from the field, not typed up from notes that evening."
+    },
+    {
+      "q": "Can the site agent raise a query from site before a pour?",
+      "a": "Yes. The site agent photographs the issue and turns it into a numbered query in one step, with the image attached and a name against the answer. A query holding a pour has a due time both sides can see. The app works on a bad line, and engineers can often measure off the photograph without driving to site."
+    },
+    {
+      "q": "How long are inspection records kept?",
+      "a": "Professional liability outlives the project, so the record of what you inspected, measured and refused, and when, is kept for as long as the exposure lasts. The audit log shows who signed what, retention runs beyond completion, and archived channels are read-only and searchable for the liability period. The record stays with the project when an engineer leaves."
+    },
+    {
+      "q": "Do we pay for clients and contractors, and how do we start?",
+      "a": "Clients, contractors and other consultants are guests and are never billed; the plan covers your own people. To start, pick the project with the most site queries and the least written record, invite the contractor and run it for two weeks. The trial is fourteen days free on Max, every option included, no card."
+    }
+  ],
+  "marketing-agencies": [
+    {
+      "q": "Do our clients have to pay to use Kolabr?",
+      "a": "No. Clients join as guests, free, on every plan, and that includes their legal reviewers and freelance collaborators. You pay for the agency only. Each channel has a seat count (30 on Starter, 100 on Pro, unlimited on Max), shared between your team and your guests."
+    },
+    {
+      "q": "How should an agency set up its channels?",
+      "a": "Most agencies run one channel per client, then split by workstream: campaign, creative review, always-on social, and scope and billing. A studio channel is for your own team only, for resourcing, fee conversations and honest critique. Each client sees only their own work, never another client's."
+    },
+    {
+      "q": "How does Kolabr stop us doing out-of-scope work for free?",
+      "a": "Approvals, scope requests, brand queries and delivery deadlines become numbered items with an owner and a clock. When a client asks for one more thing in the channel, one step turns that message into a scope request with an estimate attached. At month-end, over-servicing is a number you can point at, not a feeling."
+    },
+    {
+      "q": "Can clients approve work from their phone?",
+      "a": "Yes. A sign-off that unblocks a print slot takes ten seconds on a phone, and the approval is still logged against the version, in the channel. Notifications are set per channel, so a launch week does not train people to mute everything, and client conversations stop living on personal phones."
+    },
+    {
+      "q": "What happens to the client history when an account director leaves?",
+      "a": "It stays with the client instead of walking out in a mailbox. The channel keeps what was approved, by whom, on which version, and what was asked for afterwards, with an audit log of who approved what. Retention is set by policy, and when an account ends it can be archived and kept readable."
+    }
+  ],
+  "accounting-firms": [
+    {
+      "q": "Do our clients' finance staff need paid accounts?",
+      "a": "No. Client finance teams join as guests and are never billed, however many of them send you documents. You pay for your staff. Each channel has a seat count (30 on Starter, 100 on Pro, unlimited on Max), shared between your staff and your client's. A client with three finance people and your team of five sits comfortably inside Starter."
+    },
+    {
+      "q": "How do we organise channels for each client?",
+      "a": "Most firms run one channel per client, split by service line: monthly bookkeeping, year-end and audit, payroll, and tax and SARS. Payroll sits separately because its questions are urgent and personal. A practice channel is for your own people. Clients see only their own affairs, never another client or your internal notes."
+    },
+    {
+      "q": "Can Kolabr track SARS and other statutory deadlines?",
+      "a": "Yes. Filings, queries, audit items and bookkeeping tasks are numbered items with an owner and a due date. Statutory dates such as VAT201, EMP201, provisional tax and CIPC carry a clock on the item, and \"waiting on client\" is visible to the client. Each client's compliance calendar syncs to Outlook and Google."
+    },
+    {
+      "q": "Can we stop a junior submitting without partner review?",
+      "a": "Yes. A junior prepares, a partner reviews and submits, and that is enforced by role rather than by a reminder in a team meeting. The SARS procedure can also sit on the channel wiki beside the client, setting out what to ask for and who reviews before anything is submitted."
+    },
+    {
+      "q": "What's the best way to try Kolabr in our practice?",
+      "a": "Start with the client who never sends anything. Set up one channel, invite their finance people and run one month-end through it. The trial is fourteen days free on Max, with every option included and no card. After that, each new client can be built from a channel template in one step."
+    }
+  ],
+  "law-firms": [
+    {
+      "q": "Can we keep a conflicted matter away from certain staff?",
+      "a": "Yes. A channel is a wall: where a conflict requires separation, the people who must not see a matter simply cannot. Sensitive work such as employment matters is visible only to the people who should see it, and clients see only their own matter, not another client or the firm's internal view of their position."
+    },
+    {
+      "q": "How does Kolabr help us record client instructions?",
+      "a": "When a client gives an instruction in the channel, one step makes it a recorded instruction with the mandate attached, before anyone acts on it. The procedure sits on the matter's wiki: who may instruct, how to confirm it, and what to do when there was no time to confirm before acting."
+    },
+    {
+      "q": "What stops a court deadline being missed?",
+      "a": "A court date carries a clock and escalates before it is missed, so it does not depend on one person remembering a diary entry. Filings, instructions, drafting, due diligence and advice are numbered tasks, each routed to the fee earner who owns it. A supervising partner sees approaching deadlines across every matter on one screen."
+    },
+    {
+      "q": "Do clients and counsel have to pay?",
+      "a": "No. Clients, counsel and other advisers are guests and are never billed. The plan covers your fee earners. Each channel has a seat count (30 on Starter, 100 on Pro, unlimited on Max), shared between your fee earners and your guests. A matter with three client contacts and your team of five sits inside Starter."
+    },
+    {
+      "q": "How long is the matter record kept?",
+      "a": "The audit log records who said what, and when. Retention runs for the prescription period, and the channel is archived on matter closure. If an associate leaves mid-transaction, the instructions and history stay with the matter, ready for a fee dispute, a negligence allegation or a client who remembers it differently."
+    }
+  ],
+  "it-service-providers": [
+    {
+      "q": "Do our clients need a portal login to raise requests?",
+      "a": "No. Client staff raise requests by typing in their channel, with no portal login. When a user describes a problem, one step turns the message into a request with the whole thread attached, so nobody retypes anything. Client staff join as guests and are never billed, however many requests they raise."
+    },
+    {
+      "q": "Can our clients see how we're performing against the SLA?",
+      "a": "Yes, that is the point. SLAs are set per category and per client, for example fifteen minutes for a P1 response and four hours for a printer. They are visible to the client and measured whether or not anyone is watching. Volume, response times and what was resolved become evidence for the QBR."
+    },
+    {
+      "q": "How should we structure channels for each managed client?",
+      "a": "Most providers run one channel per client, split by the kind of work: the everyday queue, incidents and outages (P1 and P2 only, so clients can mute the noise but never this), security and compliance, and projects. An internal channel is for your engineers only. Each client sees only their own estate."
+    },
+    {
+      "q": "How does on-call work from a phone?",
+      "a": "The wiki travels with the channel, so the runbook is one tap from the alert. The engineer can read it, post the update and hand over at shift change from the channel the client is already watching. The next engineer reads the thread, and notifications are per channel, so incidents wake you and the printer channel does not."
+    },
+    {
+      "q": "Which plan do we need for a forty-person client?",
+      "a": "Each channel has a seat count shared between your engineers and your client's staff: 30 on Starter, 100 on Pro, unlimited on Max. A forty-person client with your team of six needs Pro, while a boutique practice sits inside Starter. Client staff are guests and never billed, and the plan covers your own people."
+    }
+  ],
+  "construction": [
+    {
+      "q": "Do subcontractors cost us anything?",
+      "a": "No. Clients, QSs and subcontractors join as guests and are never billed. The plan covers the people on your payroll. Each channel has a seat count (30 on Starter, 100 on Pro, unlimited on Max) shared between your staff and your guests, and a site with a client PM, a QS and six subcontractor foremen sits inside a Starter channel."
+    },
+    {
+      "q": "Will our foremen actually use this on site?",
+      "a": "It is built for a foreman with one bar of signal and gloves on, not a desk. They can photograph the clash, raise the variation and be done before the concrete arrives, without learning a system. Toolbox talks are recorded and signed off on a phone, and the procedure sits on the channel wiki, readable at the excavation."
+    },
+    {
+      "q": "How do variations and delay notices get recorded?",
+      "a": "The foreman reports it in the channel, and one step turns that message into a numbered variation with the photographs already attached. Variations, delay notices, RFIs, quality items, safety incidents and snags each route to the person who owns them. If a change moves the critical path, the notice of delay goes in the same day and links to the variation."
+    },
+    {
+      "q": "Can subcontractors see our margins?",
+      "a": "No. Each subcontractor sees their own trade channel and nothing else. The electrical contractor on Harbour Yard sees Harbour Yard, not your margins and not the job they are about to bid against you on. Roles set who can approve a variation, close a safety item or sign off a pour."
+    },
+    {
+      "q": "How long is the site record kept after completion?",
+      "a": "Retention runs through the defects period, and the channel is archived at final account and kept readable. The audit log shows who was told, when, and with which photograph attached, which is the file you want in adjudication. When a site agent moves to the next job, the claim history stays with the project."
+    }
+  ],
+  "property-management": [
+    {
+      "q": "Do trustees and residents have to pay to use Kolabr?",
+      "a": "No. Trustees, owners and residents join as guests, free, on every plan, and are never billed however many of them report a leak. You pay for your staff. Guests do share each channel's seat count with your staff: 30 on Starter, 100 on Pro and unlimited on Max."
+    },
+    {
+      "q": "How should a managing agent set up channels for each building?",
+      "a": "Most managing agents run one channel per building, split by who is allowed to see what. Typical channels are Maintenance, Trustees, Residents, Levies & arrears, and your own Agency channel. Owners and trustees see only their own building, and sensitive matters like arrears stay out of the residents channel."
+    },
+    {
+      "q": "How do response times work for emergencies versus everyday queries?",
+      "a": "Every job has a number, an owner and a clock. Categories such as emergency, resident query, quote approval, compliance and arrears are each routed to the person who handles them, with their own response time: an emergency has minutes, a parking dispute has days. Trustees see the same clock you do."
+    },
+    {
+      "q": "Can our site supervisors use it from their phones on site?",
+      "a": "Yes. What site staff photograph, quote and confirm from a phone lands on the building's record. Photographs attach to the request with a timestamp, spend approvals are recorded against the job, and notifications are set per building, so an emergency at one scheme wakes you and a parking query does not."
+    },
+    {
+      "q": "What happens to a building's history if a portfolio manager leaves or the mandate moves?",
+      "a": "The history stays with the building instead of on a personal phone. The audit log shows who approved what, retention is set by policy, and handover is covered if the mandate moves. The same record answers the AGM: what was reported, when it was attended, what it cost and who approved it."
+    }
+  ],
+  "clinics": [
+    {
+      "q": "Does Kolabr hold patient records?",
+      "a": "No. Kolabr is not a patient record; it coordinates the practice around one. The wiki rule on every clinical channel is that identifiers and clinical detail stay in the record, not in chat. The channel carries a file number, a priority and a name, and the fact that an item was seen and closed."
+    },
+    {
+      "q": "Do our lab and radiology partners need to pay?",
+      "a": "No. Labs, radiology practices and referral partners join as guests and are never billed; the plan covers your own people. Each partner sees only its own channel, not billing or the roster. Guests share the channel seat count with staff, and a single-site practice with a lab and a radiology partner sits comfortably inside Starter."
+    },
+    {
+      "q": "What happens if nobody acknowledges an urgent result?",
+      "a": "An urgent result is flagged by file number and assigned to the named clinician on that patient today, so the task has an owner rather than an audience. If it is unacknowledged after an hour, it escalates to the practice manager, not because someone remembered to check. Acknowledging it on a phone takes seconds."
+    },
+    {
+      "q": "How do we give locums access and then remove it?",
+      "a": "Locum onboarding is a task with a deadline, so access can start on Tuesday morning and be gone on Thursday evening. The results procedure sits on the channel wiki, so a locum follows the same procedure as the partner. The audit log records who saw and acted, and access is revoked the day staff leave."
+    },
+    {
+      "q": "Can we track fridge logs and other routine checks?",
+      "a": "Yes. Fridge logs, emergency trolley checks and sharps collections run as recurring tasks with a name against each one, in the Practice operations channel. If it is not ticked in the channel, it did not happen as far as an inspection is concerned. The dashboard shows compliance due alongside overdue results and outstanding referrals."
+    }
+  ],
+  "logistics": [
+    {
+      "q": "Do our clients pay for access to their account channel?",
+      "a": "No. Client depots, receiving clerks and planners join as guests and are never billed; the plan covers your controllers. They do share each channel's seat count with your staff: 30 on Starter, 100 on Pro, unlimited on Max. A national account with six receiving sites needs Pro, while a single-lane customer fits in Starter."
+    },
+    {
+      "q": "Can one client see another shipper's loads or rates?",
+      "a": "No. Most carriers run one channel per account, and each client sees only its own freight, not another shipper's rates and not a competitor sharing your backhaul. Your Control room channel is for your own staff: shift handover, fleet and the frank assessment of a trailer before a client hears about it."
+    },
+    {
+      "q": "How quickly should we tell a client about a cold chain excursion?",
+      "a": "The procedure on the account's wiki says within fifteen minutes, before their depot notices: what happened, what is on the trailer, what you are doing and when it will arrive, with the log attached. The exception carries a clock both sides can see, so the client watches the same timer you do."
+    },
+    {
+      "q": "Does it work for supervisors and controllers on the road at night?",
+      "a": "Yes. It is built for a truck stop, not an office connection, and works on one bar. Seal photographs and tally sheets attach where the claim will be argued, the next controller reads the channel at shift handover, and notifications are per account, so cold chain wakes you and a booking query does not."
+    },
+    {
+      "q": "Will it help us when a client lodges a claim?",
+      "a": "Yes. Temperature logs, seal photographs, signed PODs and the time you told the client sit on the record, and a claim is decided on the record. The audit log shows who reported and when, retention runs through the claim window, and roles set who can accept a claim, rebook a slot or close an exception."
+    }
+  ],
+  "manufacturing": [
+    {
+      "q": "Do our customers have to pay to join their channel?",
+      "a": "No. Customer engineers, buyers and auditors join as guests and are never billed; the plan covers your own people. Guests share each channel's seat count with your plant: 30 on Starter, 100 on Pro, unlimited on Max. A customer quality channel fits inside Starter, while a production channel with three shifts of leads needs Pro."
+    },
+    {
+      "q": "Will a customer see our supplier problems or other customers' NCRs?",
+      "a": "No. Most plants run one channel per customer plus the internal ones. Each customer sees only their own parts, not another customer's NCR rate and not the competitor you build for on the next line. Your inbound quality problems with steel, castings and tooling sit in channels your customer is not in."
+    },
+    {
+      "q": "How are NCR containment deadlines tracked?",
+      "a": "Non-conformances are tracked items with an owner and a due time. The containment clocks are four hours to notify, same day to contain and a week to root cause, and the customer sees the same deadlines your quality manager does. An inspector posts the CMM result in the channel and one step raises the NCR, with the report attached and the batch quarantined."
+    },
+    {
+      "q": "Can we control who is allowed to disposition a part?",
+      "a": "Yes, by role. An inspector raises, a quality manager dispositions, and nobody ships use-as-is without written approval. The audit log records who dispositioned what, retention follows your IATF requirement, and when a customer auditor asks how a non-conformance was handled, the channel has the measurement, the disposition, the approval and the dates."
+    },
+    {
+      "q": "What is the best way to start rolling it out?",
+      "a": "Start with the account that has the tightest supplier quality requirements: one channel, their SQE invited, one NCR. The next programme is built from a channel template with categories, containment times, the NCR procedure and the change-control process already there. The trial is fourteen days free on Max, every option included, no card."
+    }
+  ]
+}

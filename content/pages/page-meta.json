@@ -1,0 +1,186 @@
+{
+  "/": {
+    "title": "Client collaboration software with free guests | Kolabr",
+    "description": "Kolabr puts your team and the clients, partners and suppliers you work with in one shared channel for chat, requests, meetings and a wiki. Guests are free.",
+    "name": "Home"
+  },
+  "/pricing/": {
+    "title": "Pricing: per user plans, guests always free | Kolabr",
+    "description": "Kolabr pricing in full. Starter, Pro and Max compared per user, what each plan includes, and why every client or partner you invite is free on all of them.",
+    "name": "Pricing"
+  },
+  "/blog/": {
+    "title": "Blog: working with clients, not around them | Kolabr",
+    "description": "Practical writing on working with clients, contractors and suppliers: shared channels, tracked requests, what to write down and what guests should cost.",
+    "name": "Blog"
+  },
+  "/about/": {
+    "title": "About Kolabr: software for work between organisations",
+    "description": "Why Kolabr exists. Collaboration tools assume one company, one directory, one email domain, and most real work runs between a firm and its clients.",
+    "name": "About"
+  },
+  "/contact/": {
+    "title": "Contact Kolabr and talk to us about your client work",
+    "description": "Tell us how you work with clients, contractors and suppliers and we will say honestly whether Kolabr fits. A person replies within one working day.",
+    "name": "Contact"
+  },
+  "/product/channels/": {
+    "title": "Shared channels for your team and your clients | Kolabr",
+    "description": "A channel is one shared workspace for your team and the people you work with, holding chat, requests, meetings and a wiki behind a single membership list.",
+    "name": "Channels"
+  },
+  "/product/chat/": {
+    "title": "Channel chat: client conversations in one place | Kolabr",
+    "description": "Channel chat keeps every conversation where the work is. One main thread, side chats for the detail, and clients reading only the channels they belong to.",
+    "name": "Channel chat"
+  },
+  "/product/requests/": {
+    "title": "Client request tracking with owners and SLAs | Kolabr",
+    "description": "Turn any message into a tracked request with an owner, a category, a priority and a response target, so nothing agreed with a client is lost in an inbox.",
+    "name": "Requests"
+  },
+  "/product/meetings/": {
+    "title": "Client meetings and scheduled events in a channel | Kolabr",
+    "description": "Schedule and run calls from the channel they belong to. Recurring events, calendar sync, and notes and decisions that land back on the work they relate to.",
+    "name": "Meetings"
+  },
+  "/product/wiki/": {
+    "title": "A shared wiki for your team and your clients | Kolabr",
+    "description": "Every channel has a wiki for the runbooks, checklists and answers behind the work, so the reasoning survives when the people who knew it move on.",
+    "name": "Wiki"
+  },
+  "/product/administration/": {
+    "title": "Admin controls: roles, routing and audit logs | Kolabr",
+    "description": "Users and roles, channel membership, response targets, routing rules, retention and an audit log of admin actions, included rather than sold as a tier.",
+    "name": "Administration"
+  },
+  "/product/mobile-app/": {
+    "title": "Kolabr mobile app for iOS and Android | Free guests",
+    "description": "The free companion app for iOS and Android. Your channels, requests and chat in your pocket, with notifications that respect what you are working on.",
+    "name": "Mobile app"
+  },
+  "/product/details/": {
+    "title": "Dark mode, several accounts and small details | Kolabr",
+    "description": "The details that make Kolabr pleasant daily: light and dark mode, several accounts side by side, keyboard shortcuts, search that works and quiet alerts.",
+    "name": "Small details"
+  },
+  "/use-cases/schools/": {
+    "title": "School communication with staff and parents | Kolabr",
+    "description": "A channel per classroom, department and supplier. Teachers, parents, staff and suppliers in one place, and parents join free as guests on every plan.",
+    "name": "Schools"
+  },
+  "/use-cases/nonprofits/": {
+    "title": "Collaboration software for nonprofits and funders | Kolabr",
+    "description": "A channel per programme. Field sites, volunteers, trustees and funders in one place, and none of them cost anything, because guests are free on every plan.",
+    "name": "Nonprofits"
+  },
+  "/use-cases/architecture-firms/": {
+    "title": "Client collaboration for architecture firms | Kolabr",
+    "description": "A channel per project. Client, contractor and every consultant in one place, with drawing revisions, approvals and site queries on the record.",
+    "name": "Architecture firms"
+  },
+  "/use-cases/engineering-firms/": {
+    "title": "Client collaboration for engineering firms | Kolabr",
+    "description": "A channel per project. Inspections, hold points, test results and certification in one place, with the client and subcontractors joining free as guests.",
+    "name": "Engineering firms"
+  },
+  "/use-cases/marketing-agencies/": {
+    "title": "Client collaboration for marketing agencies | Kolabr",
+    "description": "A channel per client. Rounds, approvals and scope in one place, with the client commenting where the work lives. Every client you invite is a free guest.",
+    "name": "Marketing agencies"
+  },
+  "/use-cases/accounting-firms/": {
+    "title": "Client collaboration software for accountants | Kolabr",
+    "description": "A channel per client. Filings, queries, audit requests and bookkeeping in one place, with the client answering in the channel, not in an email thread.",
+    "name": "Accounting firms"
+  },
+  "/use-cases/law-firms/": {
+    "title": "Client collaboration software for law firms | Kolabr",
+    "description": "A channel per matter. Instructions, drafts, deadlines and client approvals on the record, with the client in the room as a free guest on every Kolabr plan.",
+    "name": "Law firms"
+  },
+  "/use-cases/it-service-providers/": {
+    "title": "Client collaboration for IT service providers | Kolabr",
+    "description": "A channel per client. Requests, incidents, change control and runbooks in one place, with response targets your clients can see and free guest access.",
+    "name": "IT service providers"
+  },
+  "/use-cases/construction/": {
+    "title": "Site collaboration for construction projects | Kolabr",
+    "description": "A channel per site. Client, quantity surveyor and every subcontractor in one place, with variations, instructions and progress photographs on the record.",
+    "name": "Construction"
+  },
+  "/use-cases/property-management/": {
+    "title": "Collaboration software for property managers | Kolabr",
+    "description": "A channel per building. Maintenance, trustee approvals, resident notices and arrears in one place, with contractors and trustees joining free as guests.",
+    "name": "Property management"
+  },
+  "/use-cases/clinics/": {
+    "title": "Collaboration software for clinics and practices | Kolabr",
+    "description": "A channel per practice. Urgent results, referrals, compliance and locum cover in one place, with the people you refer to joining free as guests.",
+    "name": "Clinics"
+  },
+  "/use-cases/logistics/": {
+    "title": "Client collaboration for logistics operators | Kolabr",
+    "description": "A channel per account. Cold chain exceptions, delays, claims and proof of delivery in one place, with the customer in the channel, not chasing by email.",
+    "name": "Logistics"
+  },
+  "/use-cases/manufacturing/": {
+    "title": "Customer collaboration software for manufacturers | Kolabr",
+    "description": "A channel per customer. Non-conformances, containment, engineering changes and delivery dates in one place, with the customer and suppliers joining free.",
+    "name": "Manufacturing"
+  },
+  "/compare/slack/": {
+    "title": "Slack alternative for client work | Kolabr vs Slack",
+    "description": "Kolabr and Slack compared feature by feature: what guests cost, how clients join, requests with response targets, the channel wiki, history and price.",
+    "name": "Kolabr vs Slack"
+  },
+  "/compare/teams/": {
+    "title": "Microsoft Teams alternative for clients | Kolabr vs Teams",
+    "description": "Kolabr and Microsoft Teams compared feature by feature: guest access and its cost, tracked requests, the channel wiki, pricing, and where Teams still wins.",
+    "name": "Kolabr vs Teams"
+  },
+  "/compare/basecamp/": {
+    "title": "Basecamp alternative for client work | Kolabr vs Basecamp",
+    "description": "Kolabr and Basecamp compared feature by feature: channels against projects, requests with owners and response targets, tasks, the wiki and what each costs.",
+    "name": "Kolabr vs Basecamp"
+  },
+  "/compare/notion/": {
+    "title": "Notion alternative for client work | Kolabr vs Notion",
+    "description": "Kolabr and Notion compared feature by feature: real conversation, requests with owners and response targets, tasks inside a request and channel wikis.",
+    "name": "Kolabr vs Notion"
+  },
+  "/compare/clickup/": {
+    "title": "ClickUp alternative for client work | Kolabr vs ClickUp",
+    "description": "Kolabr and ClickUp compared feature by feature: what guests cost and what they see, requests with response targets, tasks, chat, the wiki and the price.",
+    "name": "Kolabr vs ClickUp"
+  },
+  "/compare/zendesk/": {
+    "title": "Zendesk alternative for named clients | Kolabr vs Zendesk",
+    "description": "Kolabr and Zendesk compared feature by feature: a helpdesk portal against a shared channel, how each is priced, named client accounts, tasks and the wiki.",
+    "name": "Kolabr vs Zendesk"
+  },
+  "/privacy/": {
+    "title": "Privacy policy | How Kolabr handles personal information",
+    "description": "How Kolabr collects, uses, stores and protects personal information, the rights you have over your data, who we share it with and how to contact us.",
+    "name": "Privacy",
+    "noindex": true
+  },
+  "/terms/": {
+    "title": "Terms of service | The agreement for anyone using Kolabr",
+    "description": "The terms governing use of Kolabr: plans and seats, payment, the free trial, acceptable use, your content, availability, liability and termination.",
+    "name": "Terms",
+    "noindex": true
+  },
+  "/cookies/": {
+    "title": "Cookie policy | What Kolabr stores on your device and why",
+    "description": "The cookies Kolabr uses on its website and in the app, what each one does, how long it lasts, and how you can control or remove them in your browser.",
+    "name": "Cookies",
+    "noindex": true
+  },
+  "/refunds/": {
+    "title": "Refund policy | When and how Kolabr issues refunds",
+    "description": "When Kolabr issues refunds: the free trial, the first thirty days, annual plans, downgrades, outages and billing errors, and how to ask for one.",
+    "name": "Refunds",
+    "noindex": true
+  }
+}

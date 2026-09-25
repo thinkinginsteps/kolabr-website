@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script>(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com'+'/css2?family='+'Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block';document.head.appendChild(l);})();</script>
+<style>
+
+@font-face { font-family: 'Switzer'; src: url("../assets/screens/switzer-300.otf") format('opentype'); font-weight: 300; font-display: swap; }
+@font-face { font-family: 'Switzer'; src: url("../assets/screens/switzer-400.otf") format('opentype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Switzer'; src: url("../assets/screens/switzer-500.otf") format('opentype'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Switzer'; src: url("../assets/screens/switzer-600.otf") format('opentype'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Switzer'; src: url("../assets/screens/switzer-700.otf") format('opentype'); font-weight: 700; font-display: swap; }
+html, body { margin: 0; padding: 0; height: 100%; background: var(--page, #edf3f7); }
+* { box-sizing: border-box; }
+a { color: #00a6d9; text-decoration: none; }
+a:hover { color: #00c3ff; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--scroll, rgba(51,80,91,0.18)); border-radius: 8px; border: 3px solid transparent; background-clip: content-box; }
+@keyframes kolabrPop { from { opacity: 0; transform: translateY(-6px) scale(0.98); } to { opacity: 1; transform: none; } }
+
+/* View-only: these screens are a visual guide, not a prototype. */
+body * { pointer-events: none !important; }
+a, button, input, textarea, select, [sc-camel-on-click] { pointer-events: none !important; cursor: default !important; }
+input, textarea, select { caret-color: transparent !important; }
+</style>
+</helmet>
+
+<div style="height: 100vh; display: flex; flex-direction: column; font-family: 'Switzer', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; background: var(--page, #edf3f7); color: var(--text, #33505b); -webkit-font-smoothing: antialiased; overflow: hidden;">
+
+  <header style="position: relative; z-index: 90; display: flex; align-items: center; gap: 0; height: 64px; padding: 0; background: var(--chrome, rgba(255,255,255,0.72)); backdrop-filter: saturate(180%) blur(24px); -webkit-backdrop-filter: saturate(180%) blur(24px);">
+    <a role="presentation" tabindex="-1" title="Dashboard" style="flex: none; width: 250px; height: 64px; box-sizing: border-box; display: flex; align-items: center; padding: 0 14px 0 24px; background: var(--sidebar, rgba(255,255,255,0.55)); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-right: 1px solid var(--page, #edf3f7);"><img src="../assets/screens/kolabr-logo.svg" ref="{{ logoRef }}" alt="Kolabr" style="height: 21px; width: auto; display: block;"></a>
+
+    <div style="flex: 1; min-width: 0; display: flex; align-items: center; gap: 16px; height: 64px; padding: 0 20px 0 0;">
+
+    <div style="position: relative; flex: 0 1 auto; min-width: 280px; margin-left: 32px; display: flex; align-items: center; gap: 10px; height: 40px; background: transparent; border: none;">
+
+      <span style="position: relative; flex: 0 1 auto; min-width: 0; display: flex;">
+        <button data-menu-root="" sc-camel-on-click="{{ toggleTenants }}" title="Switch tenant" style="display: flex; align-items: center; gap: 9px; min-width: 0; height: 40px; padding: 0 11px 0 8px; border-radius: 12px; cursor: pointer; font-family: inherit; color: inherit; text-align: left; background: transparent; border: none;" style-hover="background: var(--chanBtn, #f2f7fa);">
+          <span style="width: 26px; height: 26px; flex: none; border-radius: 8px; display: grid; place-items: center; background: linear-gradient(150deg, #00c3ff, #0aa8dd); color: #ffffff; font-size: 11px; font-weight: 700;">{{ tenantLetter }}</span>
+          <span style="flex: 0 1 auto; min-width: 0; font-size: 13.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ tenantName }}</span>
+          <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--muted, #6b8290);">unfold_more</span>
+        </button>
+        <sc-if value="{{ showTenants }}" hint-placeholder-val="{{ false }}">
+          <div data-menu-root="" style="position: absolute; top: 48px; left: 8px; z-index: 200; width: 300px; padding: 8px; border-radius: 16px; background: var(--glass, rgba(255,255,255,0.96)); backdrop-filter: saturate(180%) blur(30px); -webkit-backdrop-filter: saturate(180%) blur(30px); box-shadow: 0 20px 50px var(--shadowStrong, rgba(0,0,0,0.16)); animation: kolabrPop 160ms ease both;">
+            <div style="padding: 8px 12px 6px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; color: var(--muted, #6b8290);">TENANTS</div>
+            <sc-for list="{{ tenantList }}" as="t" hint-placeholder-count="2">
+              <div sc-camel-on-click="{{ t.onClick }}" style="display: flex; align-items: center; gap: 11px; padding: 8px 10px; border-radius: 11px; cursor: pointer;" style-hover="background: var(--bg, #f5f5f7);">
+                <span style="width: 30px; height: 30px; flex: none; border-radius: 9px; display: grid; place-items: center; background: linear-gradient(150deg, #00c3ff, #0aa8dd); color: #ffffff; font-size: 11px; font-weight: 700;">{{ t.letter }}</span>
+                <span style="flex: 1; min-width: 0;">
+                  <span style="display: block; font-size: 13px; font-weight: 500; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ t.name }}</span>
+                  <span style="display: block; font-size: 11px; color: var(--muted, #6b8290);">{{ t.sub }}</span>
+                </span>
+                <sc-if value="{{ t.active }}" hint-placeholder-val="{{ false }}">
+                  <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: #00a6d9;">check</span>
+                </sc-if>
+                <sc-if value="{{ t.unread }}" hint-placeholder-val="{{ false }}">
+                  <span style="min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: #34c759; color: #ffffff; font-size: 10.5px; font-weight: 700; line-height: 1; display: flex; align-items: center; justify-content: center;">{{ t.unread }}</span>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </span>
+
+      <span style="position: relative; flex: 0 1 auto; min-width: 0; display: flex;">
+        <button data-menu-root="" sc-camel-on-click="{{ toggleChannels }}" title="Switch channel" style="display: flex; align-items: center; gap: 8px; min-width: 0; height: 40px; padding: 0 12px 0 10px; border-radius: 12px; cursor: pointer; font-family: inherit; color: inherit; text-align: left; background: transparent; border: none;" style-hover="background: var(--chanBtn, #f2f7fa);">
+          <span style="flex: none; font-family: 'Material Symbols Rounded'; font-size: 20px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--topIcon, #33505b);">workspaces</span>
+          <span style="flex: 0 1 auto; min-width: 0; font-size: 13.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ chanName }}</span>
+          <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--muted, #6b8290);">unfold_more</span>
+        </button>
+        <sc-if value="{{ showChannels }}" hint-placeholder-val="{{ false }}">
+          <div data-menu-root="" style="position: absolute; top: 48px; left: 0; z-index: 200; width: 320px; padding: 8px; border-radius: 16px; background: var(--glass, rgba(255,255,255,0.96)); backdrop-filter: saturate(180%) blur(30px); -webkit-backdrop-filter: saturate(180%) blur(30px); box-shadow: 0 20px 50px var(--shadowStrong, rgba(0,0,0,0.16)); animation: kolabrPop 160ms ease both;">
+            <div style="padding: 8px 12px 6px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; color: var(--muted, #6b8290);">CURRENT CHANNEL</div>
+            <sc-for list="{{ currentChannel }}" as="ch" hint-placeholder-count="1">
+              <div sc-camel-on-click="{{ ch.onClick }}" style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 11px; cursor: pointer;" style-hover="background: var(--bg, #f5f5f7);">
+                <span style="width: 30px; height: 30px; flex: none; border-radius: 9px; display: grid; place-items: center; background: var(--chip, rgba(51,80,91,0.07)); color: var(--topIcon, #33505b); font-size: 11px; font-weight: 700;">
+                  <sc-if value="{{ ch.allIcon }}" hint-placeholder-val="{{ false }}">
+                    <span style="font-family: 'Material Symbols Rounded'; font-size: 16px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">grid_view</span>
+                  </sc-if>
+                  <sc-if value="{{ ch.letter }}" hint-placeholder-val="{{ true }}">{{ ch.letter }}</sc-if>
+                </span>
+                <span style="flex: 1; min-width: 0;">
+                  <span style="display: block; font-size: 13px; font-weight: 500; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ ch.category }}</span>
+                  <span style="display: block; font-size: 11px; color: var(--muted, #6b8290); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ ch.company }}</span>
+                </span>
+                <sc-if value="{{ ch.active }}" hint-placeholder-val="{{ false }}">
+                  <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: #00a6d9;">check</span>
+                </sc-if>
+                <sc-if value="{{ ch.unread }}" hint-placeholder-val="{{ false }}">
+                  <span style="min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: #34c759; color: #ffffff; font-size: 10.5px; font-weight: 700; line-height: 1; display: flex; align-items: center; justify-content: center;">{{ ch.unread }}</span>
+                </sc-if>
+              </div>
+            </sc-for>
+            <div style="height: 1px; margin: 8px 10px 2px; background: var(--sepOnChip, rgba(0,0,0,0.08));"></div>
+            <div style="padding: 8px 12px 6px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; color: var(--muted, #6b8290);">SWITCH CHANNEL</div>
+            <sc-for list="{{ otherChannels }}" as="ch" hint-placeholder-count="5">
+              <div sc-camel-on-click="{{ ch.onClick }}" style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 11px; cursor: pointer;" style-hover="background: var(--bg, #f5f5f7);">
+                <span style="width: 30px; height: 30px; flex: none; border-radius: 9px; display: grid; place-items: center; background: var(--chip, rgba(51,80,91,0.07)); color: var(--topIcon, #33505b); font-size: 11px; font-weight: 700;">
+                  <sc-if value="{{ ch.allIcon }}" hint-placeholder-val="{{ false }}">
+                    <span style="font-family: 'Material Symbols Rounded'; font-size: 16px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">grid_view</span>
+                  </sc-if>
+                  <sc-if value="{{ ch.letter }}" hint-placeholder-val="{{ true }}">{{ ch.letter }}</sc-if>
+                </span>
+                <span style="flex: 1; min-width: 0;">
+                  <span style="display: block; font-size: 13px; font-weight: 500; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ ch.category }}</span>
+                  <span style="display: block; font-size: 11px; color: var(--muted, #6b8290); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ ch.company }}</span>
+                </span>
+                <sc-if value="{{ ch.active }}" hint-placeholder-val="{{ false }}">
+                  <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: #00a6d9;">check</span>
+                </sc-if>
+                <sc-if value="{{ ch.unread }}" hint-placeholder-val="{{ false }}">
+                  <span style="min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: #34c759; color: #ffffff; font-size: 10.5px; font-weight: 700; line-height: 1; display: flex; align-items: center; justify-content: center;">{{ ch.unread }}</span>
+                </sc-if>
+              </div>
+            </sc-for>
+            <div style="height: 1px; margin: 8px 10px 4px; background: var(--sepOnChip, rgba(0,0,0,0.08));"></div>
+            <div style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 11px; cursor: pointer; font-size: 13px; font-weight: 500; color: #00a6d9;" style-hover="background: var(--bg, #f5f5f7);">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">add_circle</span>
+              New channel
+            </div>
+          </div>
+        </sc-if>
+      </span>
+
+    </div>
+
+
+    <div style="flex: 1;"></div>
+
+    <div style="flex: 0 1 auto; min-width: 0; display: flex; align-items: center; gap: 8px;">
+      <button data-menu-root="" sc-camel-on-click="{{ toggleNotifs }}" title="Notifications" style="position: relative; flex: none; width: 40px; height: 40px; display: grid; place-items: center; cursor: pointer; border-radius: 50%; background: var(--chip, rgba(51,80,91,0.07)); border: none; color: var(--topIcon, #33505b); transition: background 140ms ease;" style-hover="background: var(--iconHover, rgba(51,80,91,0.14));">
+        <span style="font-family: 'Material Symbols Rounded'; font-size: 21px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600, 'opsz' 24;">notifications</span>
+        <span style="position: absolute; top: -2px; right: -2px; min-width: 18px; height: 18px; padding: 0 4px; border-radius: 9px; background: #ff5c66; color: #fff; font-size: 10px; font-weight: 700; line-height: 1; display: flex; align-items: center; justify-content: center; border: 2px solid var(--chromeSolid, #ffffff);">5</span>
+      </button>
+
+      <button data-menu-root="" sc-camel-on-click="{{ toggleChats }}" title="Active chats" style="position: relative; flex: none; width: 40px; height: 40px; display: grid; place-items: center; cursor: pointer; border-radius: 50%; background: var(--chip, rgba(51,80,91,0.07)); border: none; color: var(--topIcon, #33505b); transition: background 140ms ease;" style-hover="background: var(--iconHover, rgba(51,80,91,0.14));">
+        <span style="font-family: 'Material Symbols Rounded'; font-size: 21px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600, 'opsz' 24;">chat_bubble</span>
+        <span style="position: absolute; top: -2px; right: -2px; min-width: 18px; height: 18px; padding: 0 4px; border-radius: 9px; background: #34c759; color: #ffffff; font-size: 10px; font-weight: 700; line-height: 1; display: flex; align-items: center; justify-content: center; border: 2px solid var(--chromeSolid, #ffffff);">3</span>
+      </button>
+
+      <button data-menu-root="" sc-camel-on-click="{{ toggleSettings }}" title="Settings" style="flex: none; width: 40px; height: 40px; display: grid; place-items: center; cursor: pointer; border-radius: 50%; background: var(--chip, rgba(51,80,91,0.07)); border: none; color: var(--topIcon, #33505b); transition: background 140ms ease;" style-hover="background: var(--iconHover, rgba(51,80,91,0.14));">
+        <span style="font-family: 'Material Symbols Rounded'; font-size: 21px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600, 'opsz' 24;">settings</span>
+      </button>
+
+      <button sc-camel-on-click="{{ toggleTheme }}" title="Appearance" style="flex: none; width: 40px; height: 40px; display: grid; place-items: center; cursor: pointer; border-radius: 50%; background: var(--chip, rgba(51,80,91,0.07)); border: none; color: var(--topIcon, #33505b); transition: background 140ms ease;" style-hover="background: var(--iconHover, rgba(51,80,91,0.14));">
+        <span style="font-family: 'Material Symbols Rounded'; font-size: 21px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600, 'opsz' 24;">{{ themeIcon }}</span>
+      </button>
+
+
+      <button data-menu-root="" sc-camel-on-click="{{ toggleProfile }}" title="Profile" style="flex: 0 1 auto; min-width: 0; display: flex; align-items: center; gap: 9px; height: 40px; padding: 0 12px 0 4px; margin-left: 2px; cursor: pointer; border-radius: 999px; background: var(--chip, rgba(51,80,91,0.07)); border: none; color: inherit; font-family: inherit; transition: background 140ms ease;" style-hover="background: var(--iconHover, rgba(51,80,91,0.14));">
+        <span style="width: 32px; height: 32px; flex: none; border-radius: 50%; display: grid; place-items: center; font-size: 11.5px; font-weight: 600; color: #fff; background: {{ acctAvatar }}; background-size: cover; background-position: center;">{{ acctInitials }}</span>
+        <sc-if value="{{ showAcctName }}" hint-placeholder-val="{{ true }}">
+          <span style="flex: 0 1 auto; min-width: 0; font-size: 13.5px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ acctName }}</span>
+        </sc-if>
+        <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--muted, #6b8290); font-variation-settings: 'FILL' 1, 'wght' 600;">expand_more</span>
+      </button>
+
+      <span style="width: 6px;"></span>
+
+      <button title="Log out" style="flex: none; width: 38px; height: 38px; display: grid; place-items: center; border: none; cursor: pointer; border-radius: 11px; background: transparent; color: var(--topIcon, #33505b); transition: background 140ms ease, color 140ms ease;" style-hover="background: rgba(255,92,102,0.10); color: #ff5c66;">
+        <span style="font-family: 'Material Symbols Rounded'; font-size: 21px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">logout</span>
+      </button>
+    </div>
+
+    <sc-if value="{{ showNotifs }}" hint-placeholder-val="{{ false }}">
+      <div data-menu-root="" style="position: absolute; top: 58px; right: 356px; z-index: 80; width: 340px; border-radius: 18px; padding: 8px; background: var(--glass, rgba(255,255,255,0.78)); backdrop-filter: saturate(180%) blur(30px); -webkit-backdrop-filter: saturate(180%) blur(30px);  box-shadow: 0 24px 60px var(--shadowStrong, rgba(21,44,54,0.18)), 0 2px 6px rgba(21,44,54,0.06); animation: kolabrPop 160ms ease both;">
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 12px 12px;">
+          <span style="font-size: 15px; font-weight: 600;">Notifications</span>
+          <span style="font-size: 12px; color: #00a6d9; cursor: pointer;">Mark all read</span>
+        </div>
+        <sc-for list="{{ notifications }}" as="n" hint-placeholder-count="4">
+          <div sc-camel-on-click="{{ openRequestChat }}" style="display: flex; gap: 11px; padding: 11px 12px; border-radius: 13px; cursor: pointer; transition: background 120ms ease;" style-hover="background: var(--bg, #f5f5f7);">
+            <span style="width: 32px; height: 32px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--chip, rgba(0,0,0,0.05));">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--topIcon, #33505b);">{{ n.icon }}</span>
+            </span>
+            <div style="min-width: 0;">
+              <div style="font-size: 13px; line-height: 1.45; text-wrap: pretty; font-weight: {{ n.weight }}; color: {{ n.textColor }};">{{ n.text }}</div>
+              <div style="font-size: 11.5px; color: var(--muted, #6b8290); margin-top: 3px;">{{ n.time }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ showChats }}" hint-placeholder-val="{{ false }}">
+      <div data-menu-root="" style="position: absolute; top: 58px; right: 308px; z-index: 80; width: 340px; border-radius: 18px; padding: 8px; background: var(--glass, rgba(255,255,255,0.78)); backdrop-filter: saturate(180%) blur(30px); -webkit-backdrop-filter: saturate(180%) blur(30px);  box-shadow: 0 24px 60px var(--shadowStrong, rgba(21,44,54,0.18)); animation: kolabrPop 160ms ease both;">
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 12px 12px;">
+          <span style="font-size: 15px; font-weight: 600;">Active chats</span>
+          <span style="font-size: 12px; color: #00a6d9; cursor: pointer;">Mark all read</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; padding: 0 12px 10px;">
+          <div style="flex: 1; display: flex; align-items: center; gap: 7px; height: 34px; padding: 0 11px; border-radius: 10px; background: var(--chip, rgba(0,0,0,0.05));">
+            <span style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--muted, #6e6e73);">search</span>
+            <input type="text" placeholder="Search chats" value="{{ chatQuery }}" sc-camel-on-change="{{ onChatQuery }}" style="flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: inherit; font-size: 13px; color: inherit;">
+          </div>
+          <button sc-camel-on-click="{{ toggleUnread }}" title="Unread only" style="display: flex; align-items: center; gap: 7px; height: 34px; padding: 0 4px 0 2px; border: none; background: transparent; cursor: pointer; font-family: inherit; font-size: 12.5px; font-weight: 500; color: var(--muted, #6e6e73);">
+            Unread
+            <span style="position: relative; width: 34px; height: 20px; flex: none; border-radius: 999px; background: {{ unreadTrack }}; transition: background 160ms ease;">
+              <span style="position: absolute; top: 2px; left: {{ unreadKnobX }}; width: 16px; height: 16px; border-radius: 50%; background: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.25); transition: left 160ms ease;"></span>
+            </span>
+          </button>
+        </div>
+        <sc-for list="{{ activeChats }}" as="c" hint-placeholder-count="3">
+          <div sc-camel-on-click="{{ c.onClick }}" style="display: flex; align-items: center; gap: 11px; padding: 9px 12px; border-radius: 13px; cursor: pointer;" style-hover="background: var(--bg, #f5f5f7);">
+            <span style="width: 32px; height: 32px; flex: none; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, #33505b, #557a88); color: #fff; font-size: 11px; font-weight: 600;">{{ c.initials }}</span>
+            <div style="min-width: 0; flex: 1;">
+              <div style="font-size: 13.5px; font-weight: 500;">{{ c.name }}</div>
+              <div style="font-size: 11.5px; color: var(--muted, #6b8290); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ c.preview }}</div>
+            </div>
+            <sc-if value="{{ c.unread }}" hint-placeholder-val="{{ true }}">
+              <span style="width: 7px; height: 7px; border-radius: 50%; background: #34c759; flex: none;"></span>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ showProfile }}" hint-placeholder-val="{{ false }}">
+      <div data-menu-root="" style="position: absolute; top: 58px; right: 66px; z-index: 80; width: 340px; border-radius: 18px; padding: 8px; background: var(--glass, rgba(255,255,255,0.78)); backdrop-filter: saturate(180%) blur(30px); -webkit-backdrop-filter: saturate(180%) blur(30px);  box-shadow: 0 24px 60px var(--shadowStrong, rgba(21,44,54,0.18)); animation: kolabrPop 160ms ease both;">
+        <div style="display: flex; align-items: center; gap: 11px; padding: 12px 12px 10px;">
+          <span style="width: 40px; height: 40px; flex: none; border-radius: 50%; display: grid; place-items: center; font-size: 13px; font-weight: 600; color: #fff; background: {{ acctAvatar }}; background-size: cover; background-position: center;">{{ acctInitials }}</span>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ acctName }}</div>
+            <div style="font-size: 11.5px; color: var(--muted, #6b8290); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ acctRole }}</div>
+          </div>
+        </div>
+        <div style="position: relative; padding: 6px 12px 12px;">
+          <button sc-camel-on-click="{{ toggleStatusMenu }}" style="display: flex; align-items: center; gap: 8px; width: 100%; height: 32px; padding: 0 10px; border-radius: 9px; cursor: pointer; border: none; font-family: inherit; font-size: 12.5px; font-weight: 500; text-align: left; color: var(--text, #1d1d1f); background: var(--chip, rgba(0,0,0,0.05));" style-hover="background: var(--iconHover, rgba(0,0,0,0.09));">
+            <span style="width: 8px; height: 8px; flex: none; border-radius: 50%; background: {{ statusColor }};"></span>
+            <span style="flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ statusLabel }}</span>
+            <span style="font-family: 'Material Symbols Rounded'; font-size: 16px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--muted, #6e6e73);">unfold_more</span>
+          </button>
+            <sc-if value="{{ showStatusMenu }}" hint-placeholder-val="{{ false }}">
+            <div style="position: absolute; top: 44px; left: 12px; right: 12px; z-index: 100; padding: 6px; border-radius: 12px; background: var(--glass, rgba(255,255,255,0.96)); backdrop-filter: saturate(180%) blur(24px); -webkit-backdrop-filter: saturate(180%) blur(24px); box-shadow: 0 16px 40px var(--shadowStrong, rgba(0,0,0,0.16)); animation: kolabrPop 140ms ease both;">
+                <sc-for list="{{ statusOptions }}" as="st" hint-placeholder-count="4">
+                  <div sc-camel-on-click="{{ st.onClick }}" style="display: flex; align-items: center; gap: 9px; padding: 7px 9px; border-radius: 9px; cursor: pointer; font-size: 12.5px;" style-hover="background: var(--bg, #f5f5f7);">
+                    <span style="width: 8px; height: 8px; flex: none; border-radius: 50%; background: {{ st.color }};"></span>
+                    <span style="flex: 1;">{{ st.label }}</span>
+                    <sc-if value="{{ st.active }}" hint-placeholder-val="{{ false }}">
+                      <span style="font-family: 'Material Symbols Rounded'; font-size: 15px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: #00a6d9;">check</span>
+                    </sc-if>
+                  </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <div style="height: 2px;"></div>
+        <sc-for list="{{ profileItems }}" as="p" hint-placeholder-count="3">
+          <div sc-camel-on-click="{{ p.onClick }}" style="display: flex; align-items: center; gap: 11px; padding: 10px 12px; border-radius: 12px; cursor: pointer; font-size: 13.5px;" style-hover="background: var(--bg, #f5f5f7);">
+            <span style="width: 32px; height: 32px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--chip, rgba(0,0,0,0.05));">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--topIcon, #33505b);">{{ p.icon }}</span>
+            </span>
+            {{ p.label }}
+          </div>
+        </sc-for>
+
+        <div style="height: 1px; margin: 6px 12px; background: var(--sepOnChip, rgba(0,0,0,0.08));"></div>
+
+        <div style="padding: 4px 12px 6px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; color: var(--muted, #6e6e73);">OTHER ACCOUNTS</div>
+        <sc-for list="{{ otherAccounts }}" as="a" hint-placeholder-count="1">
+          <div sc-camel-on-click="{{ a.onClick }}" sc-camel-on-mouse-enter="{{ a.onEnter }}" sc-camel-on-mouse-leave="{{ a.onLeave }}" style="display: flex; align-items: center; gap: 11px; padding: 8px 12px; border-radius: 12px; cursor: pointer;" style-hover="background: var(--bg, #f5f5f7);">
+            <span style="width: 32px; height: 32px; flex: none; border-radius: 50%; display: grid; place-items: center; font-size: 11.5px; font-weight: 600; color: #fff; background: {{ a.bg }}; background-size: cover; background-position: center;">{{ a.initials }}</span>
+            <div style="flex: 1; min-width: 0;">
+              <div style="display: flex; align-items: center; gap: 7px;">
+                <span style="flex: none; max-width: 100%; font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ a.name }}</span>
+                <span style="flex: none; font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 6px; border-radius: 5px; color: var(--muted, #6b8290); background: var(--chip, rgba(0,0,0,0.05));">{{ a.badge }}</span>
+              </div>
+              <div style="font-size: 11px; color: var(--muted, #6b8290); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ a.email }}</div>
+            </div>
+            <span style="flex: none; display: flex; align-items: center; gap: 4px; font-size: 11.5px; font-weight: 600; color: #00a6d9; white-space: nowrap; opacity: 1;">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 16px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">swap_horiz</span>Switch
+            </span>
+          </div>
+        </sc-for>
+
+        <div style="height: 1px; margin: 8px 12px 6px; background: var(--sepOnChip, rgba(0,0,0,0.08));"></div>
+
+        <div sc-camel-on-click="{{ addAccount }}" style="display: flex; align-items: center; gap: 11px; padding: 9px 12px; border-radius: 12px; cursor: pointer; font-size: 13.5px;" style-hover="background: var(--bg, #f5f5f7);">
+          <span style="width: 32px; height: 32px; flex: none; border-radius: 50%; display: grid; place-items: center; border: 1px dashed var(--sepOnChip, rgba(0,0,0,0.22)); color: var(--topIcon, #33505b);">
+            <span style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'wght' 600;">add</span>
+          </span>
+          Add another account
+        </div>
+        <div sc-camel-on-click="{{ signOutAll }}" style="display: flex; align-items: center; gap: 11px; padding: 9px 12px 10px; border-radius: 12px; cursor: pointer; font-size: 13.5px; color: var(--muted, #6b8290);" style-hover="background: var(--bg, #f5f5f7);">
+          <span style="width: 32px; height: 32px; flex: none; display: grid; place-items: center;">
+            <span style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'wght' 600;">logout</span>
+          </span>
+          Sign out of all accounts
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ showSettings }}" hint-placeholder-val="{{ false }}">
+      <div data-menu-root="" style="position: absolute; top: 58px; right: 260px; z-index: 80; width: 340px; border-radius: 18px; padding: 8px; background: var(--glass, rgba(255,255,255,0.78)); backdrop-filter: saturate(180%) blur(30px); -webkit-backdrop-filter: saturate(180%) blur(30px);  box-shadow: 0 24px 60px var(--shadowStrong, rgba(21,44,54,0.18)); animation: kolabrPop 160ms ease both;">
+        <div style="display: flex; align-items: center; gap: 10px; padding: 10px 12px 12px;">
+          <span style="font-size: 15px; font-weight: 600;">Settings</span>
+        </div>
+        <sc-for list="{{ settingsItems }}" as="s" hint-placeholder-count="3">
+          <div sc-camel-on-click="{{ s.onClick }}" style="display: flex; align-items: center; gap: 11px; padding: 10px 12px; border-radius: 12px; cursor: pointer; font-size: 13.5px;" style-hover="background: var(--bg, #f5f5f7);">
+            <span style="width: 32px; height: 32px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--chip, rgba(0,0,0,0.05));">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--topIcon, #33505b);">{{ s.icon }}</span>
+            </span>
+            {{ s.label }}
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+    </div>
+  </header>
+
+  <div style="position: relative; flex: 1; display: flex; min-height: 0;">
+
+    <aside style="position: relative; z-index: 10; width: 250px; flex: none; display: flex; flex-direction: column; gap: 0; padding: 22px 14px 14px; overflow-y: auto; scrollbar-gutter: stable; background: var(--sidebar, rgba(255,255,255,0.55)); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-right: 1px solid var(--page, #edf3f7);">
+
+      <div style="flex: none; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; color: var(--muted, #6b8290); padding: 0 10px 8px;">COLLABORATE</div>
+      <sc-for list="{{ collaborate }}" as="c" hint-placeholder-count="2">
+        <div sc-camel-on-click="{{ c.onClick }}" style="display: flex; flex: none; align-items: center; gap: 11px; height: 32px; padding: 0 10px; border-radius: 9px; cursor: pointer; font-size: 13.5px; transition: background 120ms ease;" style-hover="background: var(--bg, #f5f5f7);">
+          <span style="font-family: 'Material Symbols Rounded'; font-size: 19px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--topIcon, #33505b);">{{ c.icon }}</span>
+          <span style="flex: 1;">{{ c.label }}</span>
+          <sc-if value="{{ c.hasCount }}" hint-placeholder-val="{{ true }}">
+            <span style="font-size: 11px; font-weight: 600; color: var(--muted, #6b8290); background: var(--chip, rgba(51,80,91,0.07)); border-radius: 7px; padding: 2px 7px;">{{ c.count }}</span>
+          </sc-if>
+        </div>
+      </sc-for>
+
+      <div style="flex: none; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; color: var(--muted, #6b8290); padding: 34px 10px 8px;">ONGOING CHATS</div>
+      <sc-for list="{{ chats }}" as="c" hint-placeholder-count="2">
+        <div sc-camel-on-click="{{ c.onClick }}" sc-camel-on-mouse-enter="{{ c.onEnter }}" sc-camel-on-mouse-leave="{{ c.onLeave }}" style="display: flex; flex: none; align-items: center; gap: 11px; height: 34px; padding: 0 10px; border-radius: 9px; cursor: pointer; font-size: 13.5px; transition: background 120ms ease;" style-hover="background: var(--bg, #f5f5f7);">
+          <span style="width: 26px; height: 26px; flex: none; border-radius: 50%; display: grid; place-items: center; background: {{ c.avatarBg }}; color: {{ c.avatarFg }}; font-size: 10px; font-weight: 600;">
+            <sc-if value="{{ c.group }}" hint-placeholder-val="{{ false }}">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 16px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">groups</span>
+            </sc-if>
+            <sc-if value="{{ c.initials }}" hint-placeholder-val="{{ true }}">{{ c.initials }}</sc-if>
+          </span>
+          <span style="flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ c.name }}</span>
+          <sc-if value="{{ c.unread }}" hint-placeholder-val="{{ true }}">
+            <span style="min-width: 16px; height: 16px; padding: 0 4px; border-radius: 8px; background: #34c759; color: #ffffff; font-size: 10px; font-weight: 700; line-height: 1; display: flex; align-items: center; justify-content: center;">{{ c.unread }}</span>
+          </sc-if>
+        </div>
+      </sc-for>
+
+      <div style="display: flex; flex: none; align-items: center; justify-content: space-between; gap: 8px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; color: var(--muted, #6b8290); padding: 34px 10px 8px;">
+        CHANNEL MEMBERS
+        <span sc-camel-on-click="{{ openUsersPage }}" title="Member settings" style="font-family: 'Material Symbols Rounded'; font-size: 15px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 400, 'opsz' 20; color: var(--cogColor, #9a9aa0); cursor: pointer;">settings</span>
+      </div>
+      <sc-for list="{{ members }}" as="m" hint-placeholder-count="6">
+        <div sc-camel-on-click="{{ openChatPage }}" sc-camel-on-mouse-enter="{{ m.onEnter }}" sc-camel-on-mouse-leave="{{ m.onLeave }}" style="display: flex; flex: none; align-items: center; gap: 11px; height: 34px; padding: 0 10px; border-radius: 9px; cursor: pointer; font-size: 13.5px; transition: background 120ms ease;" style-hover="background: var(--bg, #f5f5f7);">
+          <span style="position: relative; width: 26px; height: 26px; flex: none; border-radius: 50%; display: grid; place-items: center; background: {{ m.bg }}; color: #ffffff; font-size: 9.5px; font-weight: 600; letter-spacing: 0.01em;">
+            {{ m.initials }}
+            <sc-if value="{{ m.photo }}" hint-placeholder-val="{{ false }}">
+              <span style="position: absolute; inset: 0; border-radius: 50%; background-image: {{ m.photoCss }}; background-size: cover; background-position: center;"></span>
+            </sc-if>
+            <span style="position: absolute; right: -1px; bottom: -1px; width: 9px; height: 9px; border-radius: 50%; background: {{ m.dot }}; border: 2px solid var(--sidebarSolid, #f7fafb);"></span>
+          </span>
+          <span style="display: flex; align-items: baseline; gap: 5px; flex: 1; min-width: 0;">
+            <span style="min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ m.name }}</span>
+            <sc-if value="{{ m.admin }}" hint-placeholder-val="{{ false }}">
+              <svg title="Channel admin" sc-camel-view-box="0 0 24 24" width="15.5" height="15.5" style="flex: none; display: block; overflow: visible; align-self: flex-end; margin-bottom: 0px;" aria-label="Channel admin">
+                <path d="M19 19h-14c-.5 0 -.9 -.3 -1 -.8l-2 -10c0 -.4 .1 -.8 .5 -1.1c.4 -.2 .8 -.2 1.1 0l4.1 3.3l3.4 -5.1c.4 -.6 1.3 -.6 1.7 0l3.4 5.1l4.1 -3.3c.3 -.3 .8 -.3 1.1 0c.4 .2 .5 .6 .5 1.1l-2 10c0 .5 -.5 .8 -1 .8z" fill="#ffcc00"></path>
+              </svg>
+            </sc-if>
+          </span>
+        </div>
+      </sc-for>
+      <div style="flex: none; margin-top: auto; position: sticky; bottom: 0; z-index: 6; padding-top: 34px; padding-bottom: 0px; background: var(--sidebarSolid, #ffffff);">
+        <div title="Usage" style="display: flex; flex-direction: column; gap: 6px; padding: 8px 13px 9px; border-radius: 10px; cursor: pointer; opacity: 0.78; transition: background 140ms ease, opacity 140ms ease;" style-hover="background: var(--page, #edf3f7); opacity: 1;">
+          <span style="font-size: 10.5px; font-weight: 650; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted, #6e6e73);">Usage</span>
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--muted, #6e6e73);">
+            <span style="width: 52px; flex: none;">Users</span>
+            <span style="display: block; flex: 1; height: 3px; border-radius: 980px; overflow: hidden; background: var(--chip, rgba(0,0,0,0.05));">
+              <span style="display: block; width: 70%; height: 100%; border-radius: 980px; background: var(--muted, #6e6e73); opacity: 0.42;"></span>
+            </span>
+            <span style="flex: none; font-weight: 550;">19/30</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--muted, #6e6e73);">
+            <span style="width: 52px; flex: none;">Channels</span>
+            <span style="display: block; flex: 1; height: 3px; border-radius: 980px; overflow: hidden; background: var(--chip, rgba(0,0,0,0.05));">
+              <span style="display: block; width: 80%; height: 100%; border-radius: 980px; background: var(--muted, #6e6e73); opacity: 0.42;"></span>
+            </span>
+            <span style="flex: none; font-weight: 550;">10/30</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+
+
+    <sc-if value="{{ hoverCard }}" hint-placeholder-val="{{ false }}">
+      <div sc-camel-on-mouse-enter="{{ keepCard }}" sc-camel-on-mouse-leave="{{ hideCard }}" style="position: fixed; left: 246px; top: {{ cardTop }}; z-index: 95; width: 292px; padding: 18px; border-radius: 18px; background: var(--glass, rgba(255,255,255,0.96)); backdrop-filter: saturate(180%) blur(30px); -webkit-backdrop-filter: saturate(180%) blur(30px); box-shadow: 0 24px 60px var(--shadowStrong, rgba(0,0,0,0.16)); animation: kolabrPop 140ms ease both;">
+        <div style="display: flex; align-items: center; gap: 13px;">
+          <span style="position: relative; width: 52px; height: 52px; flex: none; border-radius: 50%; display: grid; place-items: center; background: {{ cardBg }}; color: #ffffff; font-size: 16px; font-weight: 600;">
+            {{ cardInitials }}
+            <sc-if value="{{ cardPhoto }}" hint-placeholder-val="{{ false }}">
+              <span style="position: absolute; inset: 0; border-radius: 50%; background-image: {{ cardPhotoCss }}; background-size: cover; background-position: center;"></span>
+            </sc-if>
+            <span style="position: absolute; right: 0; bottom: 0; width: 14px; height: 14px; border-radius: 50%; background: {{ cardDot }}; border: 3px solid var(--glassSolid, #ffffff);"></span>
+          </span>
+          <div style="min-width: 0;">
+            <div style="font-size: 15.5px; font-weight: 600; line-height: 1.2;">{{ cardName }}</div>
+            <div style="font-size: 12px; color: var(--muted, #6e6e73); margin-top: 3px;">{{ cardRole }}</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 7px; margin: 16px 0 16px;">
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--muted, #6e6e73); min-width: 0;">
+            <span style="font-family: 'Material Symbols Rounded'; font-size: 16px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 500; color: var(--topIcon, #33505b);">mail</span>
+            <span style="min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ cardEmail }}</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--muted, #6e6e73);">
+            <span style="font-family: 'Material Symbols Rounded'; font-size: 16px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 500; color: var(--topIcon, #33505b);">event</span>
+            Member since {{ cardSince }}
+          </div>
+        </div>
+        <button style="display: flex; align-items: center; justify-content: center; gap: 7px; width: 100%; height: 36px; border-radius: 980px; cursor: pointer; border: none; font-family: inherit; font-size: 13px; font-weight: 600; color: #ffffff; background: #00c3ff; transition: background 140ms ease;" style-hover="background: #17cdff;">
+          <span style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">chat_bubble</span>
+          Message
+        </button>
+      </div>
+    </sc-if>
+
+    <main style="flex: 1; min-width: 0; display: flex; flex-direction: column; overflow: hidden; padding: 28px 32px 22px;">
+
+      <div style="display: flex; align-items: flex-end; gap: 20px; flex-wrap: wrap; flex: none; margin-bottom: 18px;">
+        <div style="flex: 1; min-width: 220px;">
+          <h1 style="margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -0.028em; line-height: 1.08;">Scheduled events</h1>
+          <p style="margin: 8px 0 0; font-size: 14px; color: var(--muted, #6b8290);">{{ headerSummary }}</p>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <button sc-camel-on-click="{{ openLink }}" style="display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px; border: none; cursor: pointer; border-radius: 980px; font-family: inherit; font-size: 13.5px; font-weight: 500; color: inherit; background: var(--chip, rgba(51,80,91,0.07)); transition: background 140ms ease;" style-hover="background: var(--iconHover, rgba(51,80,91,0.14));">
+            <span style="font-family: 'Material Symbols Rounded'; font-size: 19px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">sync_alt</span>
+            Linked calendars
+          </button>
+          <button sc-camel-on-click="{{ openSchedule }}" style="display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 19px 0 15px; border: none; cursor: pointer; border-radius: 980px; font-family: inherit; font-size: 14px; font-weight: 600; color: #ffffff; background: #00c3ff; transition: background 140ms ease;" style-hover="background: #17cdff;">
+            <span style="font-family: 'Material Symbols Rounded'; font-size: 20px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">add</span>
+            Schedule event
+          </button>
+        </div>
+      </div>
+
+      <div style="flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(230px, 0.85fr) minmax(0, 2.15fr); gap: 18px; align-items: stretch;">
+
+        <section style="min-width: 0; min-height: 0; display: flex; flex-direction: column; gap: 12px;">
+
+          <div style="display: flex; align-items: center; gap: 4px; flex: none; padding: 4px; border-radius: 980px; background: var(--chip, rgba(51,80,91,0.07));">
+            <sc-for list="{{ leftTabs }}" as="t" hint-placeholder-count="2">
+              <button sc-camel-on-click="{{ t.onClick }}" style="flex: 1; height: 30px; border: none; cursor: pointer; border-radius: 980px; font-family: inherit; font-size: 12.5px; font-weight: 500; background: {{ t.bg }}; color: {{ t.fg }}; box-shadow: {{ t.shadow }}; transition: background 140ms ease;">{{ t.label }}</button>
+            </sc-for>
+          </div>
+
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex: none; padding: 0 2px;">
+            <span style="font-size: 15px; font-weight: 600; letter-spacing: -0.015em;">{{ listTitle }}</span>
+            <span style="font-size: 12px; color: var(--muted, #6b8290);">{{ listMeta }}</span>
+          </div>
+
+          <div style="flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 9px; padding: 1px 2px 4px;">
+            <sc-for list="{{ eventList }}" as="e" hint-placeholder-count="4">
+              <sc-if value="{{ e.showDay }}" hint-placeholder-val="{{ false }}">
+                <span style="flex: none; padding: 6px 2px 0; font-size: 10.5px; font-weight: 650; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted, #6b8290);">{{ e.dayLabel }}</span>
+              </sc-if>
+              <div sc-camel-on-click="{{ e.onClick }}" style="display: flex; gap: 12px; flex: none; padding: 12px 14px; border-radius: 16px; cursor: pointer; background: var(--card, #ffffff); opacity: {{ e.opacity }}; box-shadow: 0 1px 3px var(--shadow, rgba(21,44,54,0.07)); transition: box-shadow 150ms ease, transform 150ms ease;" style-hover="transform: translateY(-1px); box-shadow: 0 10px 26px var(--shadow, rgba(21,44,54,0.13));">
+                <span style="width: 4px; flex: none; border-radius: 980px; background: {{ e.color }};"></span>
+                <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px;">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 12.5px; font-weight: 600; font-variant-numeric: tabular-nums;">{{ e.time }}</span>
+                    <span style="font-size: 11.5px; color: var(--muted, #6b8290);">{{ e.meta }}</span>
+                    <span style="flex: 1;"></span>
+                    <span title="{{ e.sourceLabel }}" style="font-family: 'Material Symbols Rounded'; font-size: 15px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 500; color: var(--muted, #6b8290);">{{ e.sourceIcon }}</span>
+                  </div>
+                  <div style="font-size: 14px; font-weight: 500; letter-spacing: -0.012em; line-height: 1.3; text-wrap: pretty;">{{ e.title }}</div>
+                  <div style="display: flex; align-items: center; gap: 9px; flex-wrap: wrap;">
+                    <span style="display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; color: var(--muted, #6b8290);">
+                      <span style="font-family: 'Material Symbols Rounded'; font-size: 14px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 500;">workspaces</span>
+                      {{ e.chan }}
+                    </span>
+                    <span style="display: flex; align-items: center;">
+                      <sc-for list="{{ e.avatars }}" as="a" hint-placeholder-count="3">
+                        <span style="width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; margin-left: {{ a.ml }}; background: {{ a.bg }}; color: #ffffff; font-size: 8.5px; font-weight: 600; border: 2px solid var(--card, #ffffff);">{{ a.initials }}</span>
+                      </sc-for>
+                    </span>
+                    <span style="flex: 1;"></span>
+                    <sc-if value="{{ e.isCall }}" hint-placeholder-val="{{ false }}">
+                      <a role="presentation" tabindex="-1" style="display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 12px; border-radius: 980px; font-size: 12px; font-weight: 600; color: #ffffff; background: #00c3ff;">
+                        <span style="font-family: 'Material Symbols Rounded'; font-size: 15px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">videocam</span>
+                        Join
+                      </a>
+                    </sc-if>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+
+            <sc-if value="{{ listEmpty }}" hint-placeholder-val="{{ false }}">
+              <div style="flex: none; padding: 34px 20px; text-align: center; border-radius: 16px; background: var(--card, #ffffff);">
+                <div style="font-size: 14px; font-weight: 600;">Nothing scheduled</div>
+                <div style="font-size: 12.5px; color: var(--muted, #6b8290); margin-top: 5px;">Pick another day, or schedule something.</div>
+              </div>
+            </sc-if>
+          </div>
+
+        </section>
+
+        <section style="min-width: 0; min-height: 0; display: flex; flex-direction: column; border-radius: 20px; overflow: hidden; background: var(--card, #ffffff); box-shadow: 0 1px 3px var(--shadow, rgba(21,44,54,0.07));">
+
+          <div style="flex: none; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 14px 16px; border-bottom: 1px solid var(--hairline, rgba(0,0,0,0.09));">
+            <div style="display: flex; align-items: center; gap: 2px;">
+              <button sc-camel-on-click="{{ goPrev }}" title="Previous" style="width: 32px; height: 32px; display: grid; place-items: center; border: none; cursor: pointer; border-radius: 9px; background: transparent; color: var(--topIcon, #33505b); transition: background 140ms ease;" style-hover="background: var(--chip, rgba(51,80,91,0.07));">
+                <span style="font-family: 'Material Symbols Rounded'; font-size: 20px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">chevron_left</span>
+              </button>
+              <button sc-camel-on-click="{{ goToday }}" style="height: 32px; padding: 0 13px; border: none; cursor: pointer; border-radius: 9px; font-family: inherit; font-size: 12.5px; font-weight: 500; color: inherit; background: transparent; transition: background 140ms ease;" style-hover="background: var(--chip, rgba(51,80,91,0.07));">Today</button>
+              <button sc-camel-on-click="{{ goNext }}" title="Next" style="width: 32px; height: 32px; display: grid; place-items: center; border: none; cursor: pointer; border-radius: 9px; background: transparent; color: var(--topIcon, #33505b); transition: background 140ms ease;" style-hover="background: var(--chip, rgba(51,80,91,0.07));">
+                <span style="font-family: 'Material Symbols Rounded'; font-size: 20px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">chevron_right</span>
+              </button>
+            </div>
+
+            <span style="min-width: 0; font-size: 17px; font-weight: 600; letter-spacing: -0.018em;">{{ calTitle }}</span>
+
+            <span style="flex: 1 1 20px;"></span>
+
+            <div style="display: flex; flex: none; align-items: center; gap: 4px; padding: 4px; border-radius: 980px; background: var(--chip, rgba(51,80,91,0.07));">
+              <sc-for list="{{ viewTabs }}" as="v" hint-placeholder-count="4">
+                <button sc-camel-on-click="{{ v.onClick }}" style="height: 28px; padding: 0 13px; border: none; cursor: pointer; border-radius: 980px; font-family: inherit; font-size: 12.5px; font-weight: 500; background: {{ v.bg }}; color: {{ v.fg }}; box-shadow: {{ v.shadow }}; transition: background 140ms ease;">{{ v.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+
+          <sc-if value="{{ isMonth }}" hint-placeholder-val="{{ true }}">
+            <div style="flex: 1; min-height: 0; display: flex; flex-direction: column;">
+              <div style="flex: none; display: grid; grid-template-columns: repeat(7, 1fr); border-bottom: 1px solid var(--hairline, rgba(0,0,0,0.09));">
+                <sc-for list="{{ dowLabels }}" as="d" hint-placeholder-count="7">
+                  <span style="padding: 8px 9px; font-size: 10.5px; font-weight: 650; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted, #6b8290);">{{ d.label }}</span>
+                </sc-for>
+              </div>
+              <div style="flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); grid-auto-rows: minmax(106px, 1fr); overflow-y: auto;">
+                <sc-for list="{{ monthCells }}" as="d" hint-placeholder-count="42">
+                  <div sc-camel-on-click="{{ d.onClick }}" style="display: flex; flex-direction: column; gap: 3px; min-height: 0; overflow: hidden; padding: 5px 6px 6px; cursor: pointer; border-right: 1px solid var(--hairline, rgba(0,0,0,0.06)); border-bottom: 1px solid var(--hairline, rgba(0,0,0,0.06)); background: {{ d.bg }}; opacity: {{ d.opacity }}; transition: background 120ms ease;" style-hover="background: var(--chip, rgba(51,80,91,0.07));">
+                    <span style="display: grid; place-items: center; width: 22px; height: 22px; flex: none; border-radius: 50%; font-size: 11.5px; font-weight: {{ d.weight }}; background: {{ d.numBg }}; color: {{ d.numFg }};">{{ d.num }}</span>
+                    <sc-for list="{{ d.chips }}" as="c" hint-placeholder-count="1">
+                      <span style="display: flex; align-items: center; gap: 5px; flex: none; padding: 2px 6px; border-radius: 6px; background: {{ c.bg }}; color: {{ c.fg }}; min-width: 0;">
+                        <span style="width: 5px; height: 5px; flex: none; border-radius: 50%; background: {{ c.color }};"></span>
+                        <span style="min-width: 0; font-size: 10.5px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ c.label }}</span>
+                      </span>
+                    </sc-for>
+                    <sc-if value="{{ d.hasMore }}" hint-placeholder-val="{{ false }}">
+                      <span style="font-size: 10px; font-weight: 500; color: var(--muted, #6b8290); padding-left: 2px;">{{ d.moreLabel }}</span>
+                    </sc-if>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isWeek }}" hint-placeholder-val="{{ false }}">
+            <div style="flex: 1; min-height: 0; overflow: auto;">
+              <div style="min-width: 640px; display: flex; flex-direction: column;">
+              <div style="position: sticky; top: 0; z-index: 2; flex: none; display: grid; grid-template-columns: 58px repeat(7, minmax(0, 1fr)); background: var(--card, #ffffff); border-bottom: 1px solid var(--hairline, rgba(0,0,0,0.09));">
+                <span></span>
+                <sc-for list="{{ weekHeads }}" as="h" hint-placeholder-count="7">
+                  <span sc-camel-on-click="{{ h.onClick }}" style="display: flex; align-items: center; gap: 7px; padding: 8px 9px; cursor: pointer; border-left: 1px solid var(--hairline, rgba(0,0,0,0.06));">
+                    <span style="font-size: 10.5px; font-weight: 650; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted, #6b8290);">{{ h.dow }}</span>
+                    <span style="display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; font-size: 11.5px; font-weight: {{ h.weight }}; background: {{ h.numBg }}; color: {{ h.numFg }};">{{ h.num }}</span>
+                  </span>
+                </sc-for>
+              </div>
+                <sc-for list="{{ weekRows }}" as="r" hint-placeholder-count="13">
+                  <div style="display: grid; grid-template-columns: 58px repeat(7, minmax(0, 1fr)); min-height: 54px; border-bottom: 1px solid var(--hairline, rgba(0,0,0,0.06));">
+                    <span style="padding: 5px 9px; font-size: 10.5px; font-variant-numeric: tabular-nums; color: var(--muted, #6b8290);">{{ r.label }}</span>
+                    <sc-for list="{{ r.cells }}" as="c" hint-placeholder-count="7">
+                      <div sc-camel-on-click="{{ c.onClick }}" style="display: flex; flex-direction: column; gap: 3px; min-width: 0; overflow: hidden; padding: 3px; cursor: pointer; border-left: 1px solid var(--hairline, rgba(0,0,0,0.06)); background: {{ c.bg }};">
+                        <sc-for list="{{ c.events }}" as="e" hint-placeholder-count="1">
+                          <span sc-camel-on-click="{{ e.onClick }}" style="display: flex; flex-direction: column; gap: 1px; padding: 4px 7px; border-radius: 8px; cursor: pointer; background: {{ e.softBg }}; border-left: 3px solid {{ e.color }}; opacity: {{ e.opacity }}; min-width: 0;">
+                            <span style="font-size: 10.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ e.title }}</span>
+                            <span style="font-size: 9.5px; font-variant-numeric: tabular-nums; color: var(--muted, #6b8290);">{{ e.time }}</span>
+                          </span>
+                        </sc-for>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isDay }}" hint-placeholder-val="{{ false }}">
+            <div style="flex: 1; min-height: 0; overflow-y: auto;">
+              <sc-for list="{{ dayRows }}" as="r" hint-placeholder-count="13">
+                <div style="display: grid; grid-template-columns: 68px minmax(0, 1fr); min-height: 56px; border-bottom: 1px solid var(--hairline, rgba(0,0,0,0.06));">
+                  <span style="padding: 6px 12px; font-size: 11px; font-variant-numeric: tabular-nums; color: var(--muted, #6b8290);">{{ r.label }}</span>
+                  <div style="display: flex; flex-direction: column; gap: 4px; padding: 4px 10px 4px 4px; border-left: 1px solid var(--hairline, rgba(0,0,0,0.06)); background: {{ r.bg }};">
+                    <sc-for list="{{ r.events }}" as="e" hint-placeholder-count="1">
+                      <span sc-camel-on-click="{{ e.onClick }}" style="display: flex; align-items: center; gap: 10px; padding: 7px 12px; border-radius: 10px; cursor: pointer; background: {{ e.softBg }}; border-left: 3px solid {{ e.color }}; opacity: {{ e.opacity }};">
+                        <span style="font-size: 12.5px; font-weight: 600; letter-spacing: -0.01em;">{{ e.title }}</span>
+                        <span style="font-size: 11.5px; font-variant-numeric: tabular-nums; color: var(--muted, #6b8290);">{{ e.time }}</span>
+                        <span style="flex: 1;"></span>
+                        <span style="font-size: 11.5px; color: var(--muted, #6b8290);">{{ e.chan }}</span>
+                      </span>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isYear }}" hint-placeholder-val="{{ false }}">
+            <div style="flex: 1; min-height: 0; overflow-y: auto; padding: 18px; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px;">
+              <sc-for list="{{ yearMonths }}" as="m" hint-placeholder-count="12">
+                <div style="display: flex; flex-direction: column; gap: 7px;">
+                  <span sc-camel-on-click="{{ m.onClick }}" style="font-size: 13px; font-weight: 600; letter-spacing: -0.01em; cursor: pointer; color: {{ m.titleFg }};">{{ m.name }}</span>
+                  <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px;">
+                    <sc-for list="{{ m.dow }}" as="d" hint-placeholder-count="7">
+                      <span style="text-align: center; font-size: 8.5px; font-weight: 600; color: var(--muted, #6b8290);">{{ d.label }}</span>
+                    </sc-for>
+                    <sc-for list="{{ m.cells }}" as="c" hint-placeholder-count="42">
+                      <span sc-camel-on-click="{{ c.onClick }}" style="position: relative; display: grid; place-items: center; height: 17px; cursor: pointer; border-radius: 50%; font-size: 9.5px; font-weight: {{ c.weight }}; background: {{ c.bg }}; color: {{ c.fg }};">{{ c.num }}</span>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </section>
+      </div>
+    </main>
+
+    <sc-if value="{{ paneSchedule }}" hint-placeholder-val="{{ false }}">
+      <div sc-camel-on-click="{{ closePane }}" style="position: fixed; inset: 0; z-index: 120; display: grid; place-items: center; padding: 32px; background: var(--scrim, rgba(21,44,54,0.42)); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);">
+        <div sc-camel-on-click="{{ stop }}" style="width: 560px; max-width: 100%; max-height: 100%; display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; background: var(--card, #ffffff); box-shadow: 0 40px 90px rgba(0,0,0,0.28);">
+          <div style="flex: none; display: flex; align-items: center; gap: 12px; padding: 20px 22px 16px; border-bottom: 1px solid var(--hairline, rgba(0,0,0,0.09));">
+            <span style="font-size: 18px; font-weight: 600; letter-spacing: -0.018em; flex: 1;">Schedule event</span>
+            <button sc-camel-on-click="{{ closePane }}" style="width: 32px; height: 32px; display: grid; place-items: center; border: none; cursor: pointer; border-radius: 50%; background: var(--chip, rgba(51,80,91,0.07)); color: inherit;">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">close</span>
+            </button>
+          </div>
+          <div style="flex: 1; min-height: 0; overflow-y: auto; padding: 18px 22px 22px; display: flex; flex-direction: column; gap: 14px;">
+            <label style="display: flex; flex-direction: column; gap: 6px;">
+              <span style="font-size: 11.5px; font-weight: 600; color: var(--muted, #6b8290);">Title</span>
+              <input type="text" placeholder="e.g. Quarterly funder review" style="height: 40px; padding: 0 13px; border: 1px solid var(--hairline, rgba(0,0,0,0.12)); border-radius: 11px; background: transparent; font-family: inherit; font-size: 13.5px; color: inherit; outline: none;">
+            </label>
+            <div style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 10px;">
+              <label style="display: flex; flex-direction: column; gap: 6px;">
+                <span style="font-size: 11.5px; font-weight: 600; color: var(--muted, #6b8290);">Date</span>
+                <input type="date" value="{{ formDate }}" style="height: 40px; padding: 0 11px; border: 1px solid var(--hairline, rgba(0,0,0,0.12)); border-radius: 11px; background: transparent; font-family: inherit; font-size: 13.5px; color: inherit; outline: none;">
+              </label>
+              <label style="display: flex; flex-direction: column; gap: 6px;">
+                <span style="font-size: 11.5px; font-weight: 600; color: var(--muted, #6b8290);">Start</span>
+                <input type="time" value="09:30" style="height: 40px; padding: 0 11px; border: 1px solid var(--hairline, rgba(0,0,0,0.12)); border-radius: 11px; background: transparent; font-family: inherit; font-size: 13.5px; color: inherit; outline: none;">
+              </label>
+              <label style="display: flex; flex-direction: column; gap: 6px;">
+                <span style="font-size: 11.5px; font-weight: 600; color: var(--muted, #6b8290);">Duration</span>
+                <sc-raw-select style="height: 40px; padding: 0 11px; border: 1px solid var(--hairline, rgba(0,0,0,0.12)); border-radius: 11px; background: transparent; font-family: inherit; font-size: 13.5px; color: inherit; outline: none;"><option>15 min</option><option>30 min</option><option>45 min</option><option>1 hour</option><option>90 min</option></sc-raw-select>
+              </label>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <label style="display: flex; flex-direction: column; gap: 6px;">
+                <span style="font-size: 11.5px; font-weight: 600; color: var(--muted, #6b8290);">Type</span>
+                <sc-raw-select style="height: 40px; padding: 0 11px; border: 1px solid var(--hairline, rgba(0,0,0,0.12)); border-radius: 11px; background: transparent; font-family: inherit; font-size: 13.5px; color: inherit; outline: none;"><option>Meeting</option><option>Video call</option><option>Deadline</option><option>Review</option></sc-raw-select>
+              </label>
+              <label style="display: flex; flex-direction: column; gap: 6px;">
+                <span style="font-size: 11.5px; font-weight: 600; color: var(--muted, #6b8290);">Channel</span>
+                <sc-raw-select style="height: 40px; padding: 0 11px; border: 1px solid var(--hairline, rgba(0,0,0,0.12)); border-radius: 11px; background: transparent; font-family: inherit; font-size: 13.5px; color: inherit; outline: none;"><option>Field sites</option><option>Programme: Early learning</option><option>Volunteers</option><option>Board &amp; governance</option></sc-raw-select>
+              </label>
+            </div>
+            <label style="display: flex; flex-direction: column; gap: 6px;">
+              <span style="font-size: 11.5px; font-weight: 600; color: var(--muted, #6b8290);">Attendees</span>
+              <div style="display: flex; align-items: center; gap: 7px; flex-wrap: wrap; min-height: 40px; padding: 6px 9px; border: 1px solid var(--hairline, rgba(0,0,0,0.12)); border-radius: 11px;">
+                <sc-for list="{{ formAttendees }}" as="a" hint-placeholder-count="3">
+                  <span style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 9px 0 3px; border-radius: 980px; background: var(--chip, rgba(51,80,91,0.07)); font-size: 12px;">
+                    <span style="width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; background: {{ a.bg }}; color: #ffffff; font-size: 8.5px; font-weight: 600;">{{ a.initials }}</span>
+                    {{ a.name }}
+                  </span>
+                </sc-for>
+                <input type="text" placeholder="Add people…" style="flex: 1; min-width: 90px; height: 26px; border: none; background: transparent; font-family: inherit; font-size: 13px; color: inherit; outline: none;">
+              </div>
+            </label>
+            <div style="position: relative; display: flex; flex-direction: column; gap: 6px;">
+              <span style="font-size: 11.5px; font-weight: 600; color: var(--muted, #6b8290);">Linked request</span>
+              <div sc-camel-on-click="{{ toggleReqPicker }}" style="display: flex; align-items: center; gap: 10px; min-height: 40px; padding: 6px 11px; border: 1px solid var(--hairline, rgba(0,0,0,0.12)); border-radius: 11px; cursor: pointer;">
+                <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; flex: none; font-variation-settings: 'FILL' 1, 'wght' 500; color: var(--muted, #6b8290);">assignment</span>
+                <sc-if value="{{ hasLinkedReq }}" hint-placeholder-val="{{ false }}">
+                  <span style="flex: none; font-size: 12.5px; font-weight: 700; color: #00a6d9;">{{ linkReqId }}</span>
+                </sc-if>
+                <span style="flex: 1; min-width: 0; font-size: 13px; color: {{ linkReqColor }}; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ linkReqSubject }}</span>
+                <sc-if value="{{ hasLinkedReq }}" hint-placeholder-val="{{ false }}">
+                  <span sc-camel-on-click="{{ clearLinkReq }}" title="Remove link" style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; flex: none; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--muted, #6b8290);">cancel</span>
+                </sc-if>
+                <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; flex: none; font-variation-settings: 'wght' 600; color: var(--muted, #6b8290);">expand_more</span>
+              </div>
+              <sc-if value="{{ reqPickerOpen }}" hint-placeholder-val="{{ false }}">
+                <div style="position: absolute; top: 68px; left: 0; right: 0; z-index: 40; padding: 8px; border-radius: 14px; background: var(--glass, rgba(255,255,255,0.98)); backdrop-filter: saturate(180%) blur(30px); -webkit-backdrop-filter: saturate(180%) blur(30px); box-shadow: 0 20px 50px var(--shadowStrong, rgba(0,0,0,0.16)); animation: kolabrPop 140ms ease both;">
+                  <div style="display: flex; align-items: center; gap: 7px; height: 34px; margin-bottom: 4px; padding: 0 11px; border-radius: 10px; background: var(--chip, rgba(0,0,0,0.05));">
+                    <span style="font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--muted, #6b8290);">search</span>
+                    <input type="text" placeholder="Search by ID, subject or channel" value="{{ reqQuery }}" sc-camel-on-change="{{ onReqQuery }}" style="flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: inherit; font-size: 13px; color: inherit;">
+                  </div>
+                  <div style="max-height: 208px; overflow-y: auto;">
+                    <sc-for list="{{ reqOptions }}" as="r" hint-placeholder-count="4">
+                      <div sc-camel-on-click="{{ r.onClick }}" style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 11px; cursor: pointer; background: {{ r.bg }};" style-hover="background: var(--bg, #f5f5f7);">
+                        <span style="flex: 1; min-width: 0;">
+                          <span style="display: flex; align-items: baseline; gap: 7px;">
+                            <span style="flex: none; font-size: 12px; font-weight: 700; color: {{ r.idColor }};">{{ r.id }}</span>
+                            <span style="flex: 1; min-width: 0; font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ r.subject }}</span>
+                          </span>
+                          <span style="display: block; font-size: 11.5px; color: var(--muted, #6b8290); margin-top: 2px;">{{ r.meta }}</span>
+                        </span>
+                        <span style="font-family: 'Material Symbols Rounded'; font-size: 19px; line-height: 1; flex: none; font-variation-settings: 'FILL' 1, 'wght' 600; color: {{ r.checkColor }};">{{ r.check }}</span>
+                      </div>
+                    </sc-for>
+                    <sc-if value="{{ noReqMatch }}" hint-placeholder-val="{{ false }}">
+                      <div style="padding: 12px 10px; font-size: 12.5px; color: var(--muted, #6b8290);">No requests match that search.</div>
+                    </sc-if>
+                  </div>
+                </div>
+              </sc-if>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 13px 14px; border-radius: 14px; background: var(--bg, #f5f5f7);">
+              <sc-for list="{{ formToggles }}" as="t" hint-placeholder-count="2">
+                <div sc-camel-on-click="{{ t.onClick }}" style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                  <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 500; color: var(--muted, #6b8290);">{{ t.icon }}</span>
+                  <span style="flex: 1; font-size: 13px;">{{ t.label }}</span>
+                  <span style="position: relative; width: 38px; height: 22px; flex: none; border-radius: 999px; background: {{ t.track }}; transition: background 160ms ease;">
+                    <span style="position: absolute; top: 3px; left: {{ t.knob }}; width: 16px; height: 16px; border-radius: 50%; background: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.25); transition: left 160ms ease;"></span>
+                  </span>
+                </div>
+              </sc-for>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <label style="display: flex; flex-direction: column; gap: 6px;">
+                <span style="font-size: 11.5px; font-weight: 600; color: var(--muted, #6b8290);">Repeats</span>
+                <sc-raw-select style="height: 40px; padding: 0 11px; border: 1px solid var(--hairline, rgba(0,0,0,0.12)); border-radius: 11px; background: transparent; font-family: inherit; font-size: 13.5px; color: inherit; outline: none;"><option>Does not repeat</option><option>Every weekday</option><option>Weekly</option><option>Monthly</option></sc-raw-select>
+              </label>
+              <label style="display: flex; flex-direction: column; gap: 6px;">
+                <span style="font-size: 11.5px; font-weight: 600; color: var(--muted, #6b8290);">Reminder</span>
+                <sc-raw-select style="height: 40px; padding: 0 11px; border: 1px solid var(--hairline, rgba(0,0,0,0.12)); border-radius: 11px; background: transparent; font-family: inherit; font-size: 13.5px; color: inherit; outline: none;"><option>10 minutes before</option><option>30 minutes before</option><option>1 hour before</option><option>None</option></sc-raw-select>
+              </label>
+            </div>
+          </div>
+          <div style="flex: none; display: flex; align-items: center; gap: 10px; padding: 14px 22px; border-top: 1px solid var(--hairline, rgba(0,0,0,0.09));">
+            <span style="flex: 1; font-size: 12px; color: var(--muted, #6b8290);">All 4 attendees are free at this time.</span>
+            <button sc-camel-on-click="{{ closePane }}" style="height: 38px; padding: 0 16px; border: none; cursor: pointer; border-radius: 980px; font-family: inherit; font-size: 13.5px; font-weight: 500; color: inherit; background: var(--chip, rgba(51,80,91,0.07));">Cancel</button>
+            <button sc-camel-on-click="{{ closePane }}" style="height: 38px; padding: 0 20px; border: none; cursor: pointer; border-radius: 980px; font-family: inherit; font-size: 13.5px; font-weight: 600; color: #ffffff; background: #00c3ff;">Schedule</button>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ paneLink }}" hint-placeholder-val="{{ false }}">
+      <div sc-camel-on-click="{{ closePane }}" style="position: fixed; inset: 0; z-index: 120; display: grid; place-items: center; padding: 32px; background: var(--scrim, rgba(21,44,54,0.42)); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);">
+        <div sc-camel-on-click="{{ stop }}" style="width: 520px; max-width: 100%; max-height: 100%; display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; background: var(--card, #ffffff); box-shadow: 0 40px 90px rgba(0,0,0,0.28);">
+          <div style="flex: none; display: flex; align-items: center; gap: 12px; padding: 20px 22px 16px; border-bottom: 1px solid var(--hairline, rgba(0,0,0,0.09));">
+            <div style="flex: 1;">
+              <div style="font-size: 18px; font-weight: 600; letter-spacing: -0.018em;">Linked calendars</div>
+              <div style="font-size: 12.5px; color: var(--muted, #6b8290); margin-top: 4px;">Bring outside events in, and push Kolabr events out.</div>
+            </div>
+            <button sc-camel-on-click="{{ closePane }}" style="width: 32px; height: 32px; display: grid; place-items: center; border: none; cursor: pointer; border-radius: 50%; background: var(--chip, rgba(51,80,91,0.07)); color: inherit;">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">close</span>
+            </button>
+          </div>
+          <div style="flex: 1; min-height: 0; overflow-y: auto; padding: 16px 22px 22px; display: flex; flex-direction: column; gap: 10px;">
+            <sc-for list="{{ providers }}" as="p" hint-placeholder-count="4">
+              <div style="display: flex; align-items: center; gap: 12px; padding: 13px 14px; border-radius: 14px; background: {{ p.rowBg }}; box-shadow: inset 0 0 0 1px {{ p.rowRing }};">
+                <span style="position: relative; width: 36px; height: 36px; flex: none; display: grid; place-items: center; border-radius: 11px; background: var(--card, #ffffff); box-shadow: 0 1px 3px var(--shadow, rgba(21,44,54,0.07));">
+                  <span style="font-family: 'Material Symbols Rounded'; font-size: 19px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 500; color: var(--topIcon, #33505b);">{{ p.icon }}</span>
+                  <sc-if value="{{ p.connected }}" hint-placeholder-val="{{ true }}">
+                    <span style="position: absolute; right: -3px; bottom: -3px; width: 16px; height: 16px; display: grid; place-items: center; border-radius: 50%; background: {{ p.dot }}; border: 2px solid var(--card, #ffffff);">
+                      <span style="font-family: 'Material Symbols Rounded'; font-size: 11px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 700; color: #ffffff;">check</span>
+                    </span>
+                  </sc-if>
+                </span>
+                <div style="flex: 1; min-width: 0;">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 13.5px; font-weight: 500;">{{ p.name }}</span>
+                    <sc-if value="{{ p.connected }}" hint-placeholder-val="{{ true }}">
+                      <span style="display: inline-flex; align-items: center; gap: 4px; height: 19px; padding: 0 8px; border-radius: 980px; background: {{ p.pillBg }}; color: {{ p.dot }}; font-size: 10.5px; font-weight: 650; letter-spacing: 0.02em;">Connected</span>
+                    </sc-if>
+                  </div>
+                  <div style="font-size: 11.5px; color: {{ p.detailFg }}; margin-top: 2px;">{{ p.detail }}</div>
+                </div>
+                <button sc-camel-on-click="{{ p.onClick }}" style="height: 32px; padding: 0 14px; border: none; cursor: pointer; border-radius: 980px; font-family: inherit; font-size: 12.5px; font-weight: 600; color: {{ p.btnFg }}; background: {{ p.btnBg }};">{{ p.btnLabel }}</button>
+              </div>
+            </sc-for>
+
+            <div style="display: flex; align-items: center; gap: 8px; padding: 2px 2px 0; font-size: 11.5px; color: var(--muted, #6b8290);">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 15px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 500;">sync</span>
+              {{ syncStatus }}
+            </div>
+
+            <div style="height: 4px;"></div>
+            <div style="font-size: 10.5px; font-weight: 650; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted, #6b8290);">Subscribe elsewhere</div>
+            <div style="display: flex; align-items: center; gap: 8px; padding: 4px 4px 4px 13px; border: 1px solid var(--hairline, rgba(0,0,0,0.12)); border-radius: 12px;">
+              <span style="flex: 1; min-width: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; color: var(--muted, #6b8290); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">webcal://kolabr.com/ics/thandeka.mabaso/field-sites</span>
+              <button style="height: 32px; padding: 0 13px; border: none; cursor: pointer; border-radius: 980px; font-family: inherit; font-size: 12.5px; font-weight: 600; color: inherit; background: var(--chip, rgba(51,80,91,0.07));">Copy</button>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 6px; padding: 14px; border-radius: 14px; background: var(--bg, #f5f5f7);">
+              <sc-for list="{{ syncToggles }}" as="t" hint-placeholder-count="3">
+                <div sc-camel-on-click="{{ t.onClick }}" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                  <span style="flex: 1;">
+                    <span style="display: block; font-size: 13px;">{{ t.label }}</span>
+                    <span style="display: block; font-size: 11.5px; color: var(--muted, #6b8290); margin-top: 2px;">{{ t.detail }}</span>
+                  </span>
+                  <span style="position: relative; width: 38px; height: 22px; flex: none; border-radius: 999px; background: {{ t.track }}; transition: background 160ms ease;">
+                    <span style="position: absolute; top: 3px; left: {{ t.knob }}; width: 16px; height: 16px; border-radius: 50%; background: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.25); transition: left 160ms ease;"></span>
+                  </span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ paneDetail }}" hint-placeholder-val="{{ false }}">
+      <div sc-camel-on-click="{{ closePane }}" style="position: fixed; inset: 0; z-index: 120; display: grid; place-items: center; padding: 32px; background: var(--scrim, rgba(21,44,54,0.42)); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);">
+        <div sc-camel-on-click="{{ stop }}" style="width: 480px; max-width: 100%; max-height: 100%; display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; background: var(--card, #ffffff); box-shadow: 0 40px 90px rgba(0,0,0,0.28);">
+          <div style="flex: none; padding: 20px 22px 18px; border-bottom: 1px solid var(--hairline, rgba(0,0,0,0.09));">
+            <div style="display: flex; align-items: flex-start; gap: 12px;">
+              <span style="width: 4px; align-self: stretch; flex: none; border-radius: 980px; background: {{ detailColor }};"></span>
+              <div style="flex: 1; min-width: 0;">
+                <div style="font-size: 12.5px; font-weight: 600; color: var(--muted, #6b8290);">{{ detailWhen }}</div>
+                <div style="font-size: 19px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.25; margin-top: 5px; text-wrap: pretty;">{{ detailTitle }}</div>
+              </div>
+              <button sc-camel-on-click="{{ closePane }}" style="width: 32px; height: 32px; flex: none; display: grid; place-items: center; border: none; cursor: pointer; border-radius: 50%; background: var(--chip, rgba(51,80,91,0.07)); color: inherit;">
+                <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">close</span>
+              </button>
+            </div>
+          </div>
+          <div style="flex: 1; min-height: 0; overflow-y: auto; padding: 16px 22px 20px; display: flex; flex-direction: column; gap: 2px;">
+            <sc-for list="{{ detailRows }}" as="r" hint-placeholder-count="4">
+              <div style="display: flex; align-items: center; gap: 12px; min-height: 24px; font-size: 13px;">
+                <span style="flex: 1; color: var(--muted, #6b8290);">{{ r.label }}</span>
+                <span style="font-weight: 500; text-align: right;">{{ r.value }}</span>
+              </div>
+            </sc-for>
+
+            <div style="height: 10px;"></div>
+            <div style="font-size: 10.5px; font-weight: 650; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted, #6b8290);">Attendees</div>
+            <sc-for list="{{ detailPeople }}" as="p" hint-placeholder-count="3">
+              <div style="display: flex; align-items: center; gap: 10px; padding: 7px 0;">
+                <span style="width: 28px; height: 28px; flex: none; border-radius: 50%; display: grid; place-items: center; background: {{ p.bg }}; color: #ffffff; font-size: 10px; font-weight: 600;">{{ p.initials }}</span>
+                <span style="flex: 1; min-width: 0; font-size: 13.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ p.name }}</span>
+                <span style="font-size: 11.5px; font-weight: 600; color: {{ p.rsvpFg }};">{{ p.rsvp }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="flex: none; display: flex; align-items: center; gap: 9px; padding: 14px 22px; border-top: 1px solid var(--hairline, rgba(0,0,0,0.09));">
+            <sc-if value="{{ detailIsCall }}" hint-placeholder-val="{{ false }}">
+              <a role="presentation" tabindex="-1" style="display: inline-flex; align-items: center; gap: 7px; height: 38px; padding: 0 17px; border-radius: 980px; font-size: 13.5px; font-weight: 600; color: #ffffff; background: #00c3ff;">
+                <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">videocam</span>
+                Join call
+              </a>
+            </sc-if>
+            <button style="height: 38px; padding: 0 15px; border: none; cursor: pointer; border-radius: 980px; font-family: inherit; font-size: 13.5px; font-weight: 500; color: inherit; background: var(--chip, rgba(51,80,91,0.07));">Accept</button>
+            <button style="height: 38px; padding: 0 15px; border: none; cursor: pointer; border-radius: 980px; font-family: inherit; font-size: 13.5px; font-weight: 500; color: inherit; background: var(--chip, rgba(51,80,91,0.07));">Decline</button>
+            <span style="flex: 1;"></span>
+            <button title="Delete event" style="width: 38px; height: 38px; display: grid; place-items: center; border: none; cursor: pointer; border-radius: 50%; background: transparent; color: var(--muted, #6b8290); transition: background 140ms ease, color 140ms ease;" style-hover="background: rgba(255,92,102,0.12); color: #ff5c66;">
+              <span style="font-family: 'Material Symbols Rounded'; font-size: 19px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">delete</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light' | 'dark'&quot;}}">
+const THEMES = {
+  light: {
+    '--bg': '#f5f5f7', '--page': '#edf3f7', '--chrome': '#ffffff', '--chromeSolid': '#ffffff',
+    '--sidebar': '#ffffff', '--sidebarSolid': '#ffffff', '--card': '#ffffff', '--sepOnChip': 'rgba(0,0,0,0.12)',
+    '--headerBorder': 'rgba(0,0,0,0.08)', '--border': 'rgba(0,0,0,0.08)', '--chanBtn': '#f2f7fa', '--chanBtnHover': '#e2ecf3', '--scrim': 'rgba(21,44,54,0.42)', '--chanBtnBorder': 'rgba(0,0,0,0.08)', '--hairline': 'rgba(0,0,0,0.09)', '--text': '#1d1d1f', '--muted': '#6e6e73',
+    '--chip': 'rgba(0,0,0,0.05)', '--iconHover': 'rgba(0,0,0,0.09)', '--topIcon': '#33505b', '--cogColor': '#9a9aa0', '--cardHover': 'rgba(0,0,0,0.10)', '--glassSolid': '#ffffff',
+    '--glass': 'rgba(255,255,255,0.96)', '--glassBorder': 'rgba(0,0,0,0.06)',
+    '--shadow': 'rgba(0,0,0,0.04)', '--shadowSoft': 'rgba(0,0,0,0.04)', '--shadowStrong': 'rgba(0,0,0,0.16)',
+    '--barMuted': 'rgba(0,0,0,0.16)', '--scroll': 'rgba(0,0,0,0.13)'
+  },
+  dark: {
+    '--bg': '#101012', '--page': '#101012', '--chrome': '#202022', '--chromeSolid': '#202022',
+    '--sidebar': '#202022', '--sidebarSolid': '#202022', '--card': '#202022', '--sepOnChip': 'rgba(255,255,255,0.14)',
+    '--headerBorder': 'rgba(0,0,0,0.42)', '--border': 'rgba(255,255,255,0.10)', '--chanBtn': 'rgba(255,255,255,0.09)', '--chanBtnHover': 'rgba(255,255,255,0.115)', '--scrim': 'rgba(14,14,15,0.66)', '--chanBtnBorder': 'transparent', '--hairline': 'rgba(255,255,255,0.10)', '--text': '#f5f5f7', '--muted': '#86868b',
+    '--chip': 'rgba(255,255,255,0.09)', '--iconHover': 'rgba(255,255,255,0.14)', '--topIcon': '#c9d6dc', '--cogColor': '#6e6e73', '--cardHover': 'rgba(0,0,0,0.55)', '--glassSolid': '#1d1d1f',
+    '--glass': 'rgba(29,29,31,0.96)', '--glassBorder': 'rgba(255,255,255,0.10)',
+    '--shadow': 'rgba(0,0,0,0.5)', '--shadowSoft': 'rgba(0,0,0,0.4)', '--shadowStrong': 'rgba(0,0,0,0.6)',
+    '--barMuted': 'rgba(255,255,255,0.22)', '--scroll': 'rgba(255,255,255,0.22)'
+  }
+};
+
+const CHAT_FILTERS = ['All', 'Unread'];
+const ALL_CHATS = [
+  { initials: 'RC', name: 'Rita Coetzer', preview: 'Is the Q3 narrative report on track?', unread: true, customer: true },
+  { initials: 'G1', name: 'Programme team', unread: true, preview: 'Sarah: attendance data is in from Mthatha', customer: false, href: '' },
+  { initials: 'PM', name: 'Palesa Mokoena', preview: 'Two facilitators off sick this week.', unread: false, customer: false },
+  { initials: 'DM', name: 'David Moloi', preview: 'Need the receipts before month-end.', unread: false, customer: false }
+];
+
+const TENANTS = [
+  { name: 'Thusanang Trust', unread: '' },
+  { name: 'Funders & partners', unread: '7' }
+];
+
+const CHANNELS = [
+  { tenant: 'Thusanang Trust', category: 'Programme: Early learning', members: '16 members', unread: '' },
+  { tenant: 'Thusanang Trust', category: 'Field sites', members: '21 members', unread: '4' },
+  { tenant: 'Thusanang Trust', category: 'Volunteers', members: '14 members', unread: '' },
+  { tenant: 'Thusanang Trust', category: 'Board & governance', members: '7 members', unread: '' },
+  { tenant: 'Funders & partners', category: 'Meridian Foundation', members: '6 members', unread: '12' },
+  { tenant: 'Funders & partners', category: 'Provincial department', members: '5 members', unread: '' }
+];
+
+const chansFor = (t) => CHANNELS.filter((c) => c.tenant === t);
+const ALL_ROW = { category: 'All channels', members: 'Every channel in this organisation', unread: '', all: true };
+
+const STATUSES = [
+  { id: 'online', label: 'Available', color: () => '#34c759' },
+  { id: 'away', label: 'Away', color: () => '#f5a524' },
+  { id: 'dnd', label: 'Do not disturb', color: () => '#ff453a' },
+  { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
+];
+
+const SHARON = { initials: 'PM', name: 'Palesa Mokoena', role: 'Site facilitator · Lusikisiki', email: 'palesa.mokoena@thusanang.org.za', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+
+const MEMBERS = [
+  { initials: 'TM', name: 'Thandeka Mabaso', admin: true, role: 'Channel admin · Programme manager', email: 'thandeka.mabaso@thusanang.org.za', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'JP', name: 'Johan Prinsloo', role: 'Monitoring & evaluation', email: 'johan.prinsloo@thusanang.org.za', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'SB', name: 'Sarah Bhengu', role: 'Field coordinator · Mthatha', email: 'sarah.bhengu@thusanang.org.za', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'DM', name: 'David Moloi', role: 'Finance & grants', email: 'david.moloi@thusanang.org.za', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'RC', name: 'Rita Coetzer', role: 'Funder · Meridian Foundation', email: 'rita.coetzer@meridianfoundation.org', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'KN', name: 'Kate Nel', role: 'Volunteer coordinator', email: 'kate.nel@thusanang.org.za', since: '27 May 2026', status: 'offline', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+];
+
+const CH_CATS = ['All', 'Programme', 'Field', 'Funders', 'Governance'];
+
+const PEOPLE = {
+  TM: { name: 'Thandeka Mabaso', email: 'thandeka.mabaso@thusanang.org.za', role: 'Programme manager' },
+  JP: { name: 'Johan Prinsloo', email: 'johan.prinsloo@thusanang.org.za', role: 'Monitoring & evaluation' },
+  SB: { name: 'Sarah Bhengu', email: 'sarah.bhengu@thusanang.org.za', role: 'Field coordinator' },
+  DM: { name: 'David Moloi', email: 'david.moloi@thusanang.org.za', role: 'Finance & grants' },
+  KN: { name: 'Kate Nel', email: 'kate.nel@thusanang.org.za', role: 'Volunteer coordinator' },
+  PM: { name: 'Palesa Mokoena', email: 'palesa.mokoena@thusanang.org.za', role: 'Site facilitator' },
+  RC: { name: 'Rita Coetzer', email: 'rita.coetzer@meridianfoundation.org', role: 'Funder' }
+};
+
+const AVATAR_BGS = ['linear-gradient(150deg, #33505b, #557a88)', 'linear-gradient(150deg, #00c3ff, #0a9fd4)', 'linear-gradient(150deg, #7c6cf0, #5c4bd8)'];
+
+const CHANNEL_LIST = [
+  { name: 'Programme: Early learning', category: 'Programme', desc: 'Curriculum and delivery', members: 6, sla: 'Standard', people: ['TM', 'JP', 'SB', 'PM', 'KN', 'DM'] },
+  { name: 'Field sites', category: 'Field', desc: 'Four sites, daily reporting', members: 5, sla: 'Priority', people: ['SB', 'PM', 'TM', 'JP', 'DM'] },
+  { name: 'Volunteers', category: 'Field', desc: 'Screening and rotas', members: 4, sla: 'Standard', people: ['KN', 'PM', 'TM', 'SB'] },
+  { name: 'Board & governance', category: 'Governance', desc: 'Audit, finance, board packs', members: 3, sla: 'Standard', people: ['TM', 'DM', 'JP'] },
+  { name: 'Meridian Foundation', category: 'Funders', desc: 'Grant reporting', members: 3, sla: 'Priority', people: ['TM', 'RC', 'DM'] },
+  { name: 'Provincial department', category: 'Funders', desc: 'Compliance returns', members: 3, sla: 'Enhanced', people: ['TM', 'JP', 'DM'] },
+  { name: 'Internal', category: 'Governance', desc: 'Staff coordination', members: 5, sla: 'Standard', people: ['TM', 'JP', 'DM', 'KN', 'SB'] }
+];
+
+
+
+const EV_TYPES = {
+  call:     { color: '#00c3ff', soft: 'rgba(0,195,255,0.12)', label: 'Video call' },
+  meeting:  { color: '#12a06a', soft: 'rgba(18,160,106,0.12)', label: 'Meeting' },
+  deadline: { color: '#ff5c66', soft: 'rgba(255,92,102,0.12)', label: 'Deadline' },
+  review:   { color: '#7c6cf0', soft: 'rgba(124,108,240,0.13)', label: 'Review' }
+};
+
+const SRC_ICONS = { kolabr: 'workspaces', google: 'event', outlook: 'mail', apple: 'devices' };
+const SRC_LABELS = { kolabr: 'Kolabr', google: 'Google Calendar', outlook: 'Outlook', apple: 'Apple Calendar' };
+
+const EVENTS = [
+  { id: 'e20', date: '2026-08-04', start: '08:00', mins: 30, title: 'Site check-in: all four sites', type: 'call', chan: 'Field sites', src: 'kolabr', people: ['SB', 'PM', 'TM'] },
+  { id: 'e21', date: '2026-08-06', start: '10:00', mins: 60, title: 'Volunteer screening panel', type: 'meeting', chan: 'Volunteers', src: 'google', people: ['KN', 'TM'] },
+  { id: 'e22', date: '2026-08-11', start: '14:00', mins: 45, title: 'Data quality review: week 5', type: 'review', chan: 'Programme: Early learning', src: 'kolabr', people: ['JP', 'SB'] },
+  { id: 'e23', date: '2026-08-13', start: '15:00', mins: 0, title: 'Attendance data due from sites', type: 'deadline', chan: 'Field sites', src: 'outlook', people: ['SB', 'PM'] },
+  { id: 'e24', date: '2026-08-14', start: '09:00', mins: 45, title: 'Safeguarding refresher training', type: 'meeting', chan: 'Volunteers', src: 'kolabr', people: ['KN', 'PM'] },
+  { id: 'e25', date: '2026-08-18', start: '11:00', mins: 60, title: 'Grant budget review', type: 'review', chan: 'Meridian Foundation', src: 'kolabr', people: ['DM', 'TM', 'RC'] },
+  { id: 'e26', date: '2026-08-19', start: '13:00', mins: 45, title: 'Provincial compliance prep', type: 'review', chan: 'Provincial department', src: 'kolabr', people: ['TM', 'JP'] },
+  { id: 'e1', date: '2026-08-20', start: '15:30', mins: 45, title: 'Staff coordination', type: 'call', chan: 'Internal', src: 'kolabr', people: ['TM', 'JP', 'KN'] },
+  { id: 'e2', date: '2026-08-24', start: '08:00', mins: 30, title: 'Site check-in: all four sites', type: 'call', chan: 'Field sites', src: 'kolabr', people: ['SB', 'PM', 'TM'] },
+  { id: 'e3', date: '2026-08-25', start: '11:30', mins: 45, title: 'Q3 report drafting session', type: 'review', chan: 'Meridian Foundation', src: 'outlook', people: ['TM', 'JP'] },
+  { id: 'e4', date: '2026-08-26', start: '08:00', mins: 30, title: 'Site check-in: all four sites', type: 'call', chan: 'Field sites', src: 'kolabr', people: ['SB', 'PM', 'TM', 'JP'] },
+  { id: 'e5', date: '2026-08-26', start: '10:00', mins: 60, title: 'Quarterly funder review', type: 'meeting', chan: 'Meridian Foundation', src: 'google', people: ['TM', 'RC', 'DM'] },
+  { id: 'e6', date: '2026-08-26', start: '13:00', mins: 45, title: 'Lusikisiki data capture catch-up', type: 'review', chan: 'Field sites', src: 'kolabr', people: ['JP', 'SB'] },
+  { id: 'e7', date: '2026-08-26', start: '16:00', mins: 30, title: 'Safeguarding case review', type: 'call', chan: 'Volunteers', src: 'kolabr', people: ['KN', 'TM'] },
+  { id: 'e8', date: '2026-08-27', start: '12:00', mins: 0, title: 'Expense receipts due, month-end', type: 'deadline', chan: 'Board & governance', src: 'kolabr', people: ['DM'] },
+  { id: 'e9', date: '2026-08-27', start: '14:00', mins: 60, title: 'Volunteer rota planning', type: 'meeting', chan: 'Volunteers', src: 'google', people: ['KN', 'PM'] },
+  { id: 'e10', date: '2026-08-28', start: '09:00', mins: 45, title: 'Board pack walkthrough', type: 'review', chan: 'Board & governance', src: 'kolabr', people: ['TM', 'DM'] },
+  { id: 'e11', date: '2026-08-28', start: '15:00', mins: 0, title: 'Q3 narrative report due to Meridian', type: 'deadline', chan: 'Meridian Foundation', src: 'outlook', people: ['TM'] },
+  { id: 'e12', date: '2026-08-31', start: '10:00', mins: 90, title: 'Monthly programme review', type: 'meeting', chan: 'Programme: Early learning', src: 'kolabr', people: ['TM', 'JP', 'SB', 'KN'] },
+  { id: 'e13', date: '2026-09-01', start: '11:00', mins: 45, title: 'Audit schedules walkthrough', type: 'call', chan: 'Board & governance', src: 'google', people: ['DM', 'TM'] },
+  { id: 'e14', date: '2026-09-03', start: '13:00', mins: 60, title: 'Site facilitator training', type: 'meeting', chan: 'Field sites', src: 'kolabr', people: ['PM', 'SB'] }
+];
+
+
+const TODAY_ISO = '2026-08-26';
+const DOW = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+const DOW1 = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const CAL_VIEWS = ['Day', 'Week', 'Month', 'Year'];
+
+const ACCOUNTS = [
+  { name: 'Thandeka Mabaso', email: 'thandeka.mabaso@thusanang.org.za', role: 'Programme manager · Thusanang', initials: 'TM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Staff' },
+  { name: 'Thandeka Mabaso', email: 'thandeka@meridianfoundation.org', initials: 'TM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Grantee · Meridian Foundation' }
+];
+
+const LINKABLE_REQUESTS = [
+  { id: '#512', subject: 'Q3 narrative report to Meridian Foundation', channel: 'Meridian Foundation', status: 'In progress' },
+  { id: '#509', subject: 'Safeguarding concern reported at Mthatha', channel: 'Field sites', status: 'On hold' },
+  { id: '#508', subject: 'Attendance data missing: Lusikisiki, week 6', channel: 'Field sites', status: 'In progress' },
+  { id: '#505', subject: 'Expense receipts outstanding: 3 sites', channel: 'Board & governance', status: 'Waiting' },
+  { id: '#498', subject: 'Volunteer intake: 14 to be screened', channel: 'Volunteers', status: 'New' }
+];
+
+
+const goPage = (href) => (e) => {
+  if (e && e.stopPropagation) e.stopPropagation();
+  if (!href) return;
+  const here = decodeURIComponent(window.location.pathname);
+  if (!here.endsWith(href)) window.location.assign(encodeURI(href));
+};
+
+class Component extends DCLogic {
+  state = { account: 0, view: 'Month', cursor: null, sel: null, leftTab: null, pane: null, evId: null, conn: null, togs: null, theme: null, menu: null, chatQuery: '', chatFilterIdx: 0, hoverPerson: null, hoverTop: 0, status: 'online', statusMenu: false, query: '', cat: 'All', modal: null, mChannel: null, draft: null, invite: '' };
+
+  showCard(p, el) { clearTimeout(this._cardT); const r = el.getBoundingClientRect(); this.setState({ hoverPerson: p, hoverTop: Math.min(Math.max(r.top - 40, 76), window.innerHeight - 250) }); }
+  scheduleHide() { clearTimeout(this._cardT); this._cardT = setTimeout(() => this.setState({ hoverPerson: null }), 140); }
+
+  get theme() { return this.state.theme || this.props.theme || 'light'; }
+
+  applyTheme(name) {
+    const vars = THEMES[name] || THEMES.light;
+    const root = document.documentElement;
+    Object.keys(vars).forEach(k => root.style.setProperty(k, vars[k]));
+    root.style.colorScheme = name;
+  }
+
+  logoRef = React.createRef();
+
+  applyLogo() {
+    const el = this.logoRef.current;
+    if (el) el.src = this.theme === 'dark' ? '../assets/screens/kolabr-logo-dark.svg' : '../assets/screens/kolabr-logo.svg';
+  }
+
+  componentDidMount() {
+    this.applyTheme(this.theme); this.applyLogo();
+    this._away = (e) => {
+      if (!this.state.menu) return;
+      const el = e.target.closest && e.target.closest('[data-menu-root]');
+      if (!el) this.setState({ menu: null, statusMenu: false });
+    };
+    document.addEventListener('mousedown', this._away, true);
+    this._esc = (e) => { if (e.key === 'Escape') this.setState({ menu: null }); };
+    document.addEventListener('keydown', this._esc);
+    this._vw = () => this.setState({ vw: window.innerWidth });
+    window.addEventListener('resize', this._vw);
+    this._vw();
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this._away, true);
+    document.removeEventListener('keydown', this._esc);
+    window.removeEventListener('resize', this._vw);
+    clearTimeout(this._cardT);
+  }
+  componentDidUpdate() { this.applyTheme(this.theme); this.applyLogo(); }
+
+  setMenu(name) {
+    this.setState(s => ({ menu: s.menu === name ? null : name }));
+  }
+
+
+  static isoOf(d) {
+    const m = d.getMonth() + 1, day = d.getDate();
+    return d.getFullYear() + '-' + (m < 10 ? '0' + m : m) + '-' + (day < 10 ? '0' + day : day);
+  }
+  static parse(iso) { const p = iso.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
+  static weekStart(d) { const x = new Date(d); const k = (x.getDay() + 6) % 7; x.setDate(x.getDate() - k); return x; }
+  static endTime(ev) {
+    if (!ev.mins) return '';
+    const p = ev.start.split(':');
+    const t = (+p[0]) * 60 + (+p[1]) + ev.mins;
+    const h = Math.floor(t / 60) % 24, m = t % 60;
+    return (h < 10 ? '0' + h : h) + ':' + (m < 10 ? '0' + m : m);
+  }
+  static durLabel(ev) {
+    if (!ev.mins) return 'Deadline';
+    if (ev.mins < 60) return ev.mins + ' min';
+    if (ev.mins === 60) return '1 hour';
+    return (ev.mins / 60).toFixed(1).replace('.0', '') + ' hours';
+  }
+  evsOn(iso) { return EVENTS.filter(e => e.date === iso).sort((a, b) => a.start < b.start ? -1 : 1); }
+  avatarsFor(ev) {
+    return ev.people.slice(0, 3).map((k, j) => ({
+      initials: k, ml: j === 0 ? '0px' : '-7px',
+      bg: ['linear-gradient(150deg, #33505b, #557a88)', 'linear-gradient(150deg, #00c3ff, #0a9fd4)', 'linear-gradient(150deg, #7c6cf0, #5c4bd8)'][j % 3]
+    }));
+  }
+  cardFor(ev) {
+    const t = EV_TYPES[ev.type];
+    const end = Component.endTime(ev);
+    const dark = this.theme === 'dark';
+    const past = ev.date < TODAY_ISO;
+    const grey = dark ? 'rgba(255,255,255,0.28)' : 'rgba(51,80,91,0.28)';
+    const greySoft = dark ? 'rgba(255,255,255,0.06)' : 'rgba(51,80,91,0.05)';
+    return {
+      opacity: past ? 0.55 : 1,
+      time: ev.start + (end ? '–' + end : ''),
+      meta: ev.mins ? (Component.durLabel(ev) + ' · ' + t.label) : t.label,
+      title: ev.title, chan: ev.chan, color: past ? grey : t.color, softBg: past ? greySoft : t.soft,
+      isCall: ev.type === 'call' && !past,
+      sourceIcon: SRC_ICONS[ev.src], sourceLabel: SRC_LABELS[ev.src],
+      avatars: this.avatarsFor(ev),
+      onClick: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.setState({ pane: 'detail', evId: ev.id }); }
+    };
+  }
+  shift(dir) {
+    const cur = Component.parse(this.state.cursor || TODAY_ISO);
+    const v = this.state.view || 'Month';
+    if (v === 'Day') cur.setDate(cur.getDate() + dir);
+    else if (v === 'Week') cur.setDate(cur.getDate() + 7 * dir);
+    else if (v === 'Month') cur.setMonth(cur.getMonth() + dir);
+    else cur.setFullYear(cur.getFullYear() + dir);
+    this.setState({ cursor: Component.isoOf(cur) });
+  }
+
+  calVals() {
+    const dark = this.theme === 'dark';
+    const view = this.state.view || 'Month';
+    const cursorIso = this.state.cursor || TODAY_ISO;
+    const selIso = this.state.sel || TODAY_ISO;
+    const cur = Component.parse(cursorIso);
+    const sel = Component.parse(selIso);
+    const hairline = dark ? 'rgba(255,255,255,0.10)' : 'rgba(0,0,0,0.06)';
+    const pane = this.state.pane || null;
+    const leftTab = this.state.leftTab || 'Selected day';
+    const conn = Object.assign({ google: true, outlook: true, apple: false, caldav: false }, this.state.conn || {});
+    const togs = Object.assign({ video: true, notify: true, twoWay: true, busy: true, invites: false }, this.state.togs || {});
+
+    const pick = (iso) => () => this.setState({ sel: iso, cursor: iso, leftTab: 'Selected day' });
+    const track = (on) => on ? '#00c3ff' : (dark ? 'rgba(255,255,255,0.18)' : 'rgba(51,80,91,0.20)');
+    const knob = (on) => on ? '19px' : '3px';
+    const flip = (k) => () => this.setState(s => ({ togs: Object.assign({}, togs, { [k]: !togs[k] }) }));
+
+    // ---- left column
+    const dayEvs = this.evsOn(selIso);
+    const upcoming = EVENTS.filter(e => e.date >= TODAY_ISO).sort((a, b) => (a.date + a.start) < (b.date + b.start) ? -1 : 1).slice(0, 10);
+    const showUp = leftTab === 'Upcoming';
+    const listEvs = showUp ? upcoming : dayEvs;
+    const totalMins = dayEvs.reduce((n, e) => n + e.mins, 0);
+    const busyLabel = totalMins >= 60 ? (Math.floor(totalMins / 60) + 'h ' + (totalMins % 60) + 'm') : (totalMins + 'm');
+
+    // ---- month cells
+    const first = new Date(cur.getFullYear(), cur.getMonth(), 1);
+    const gridStart = Component.weekStart(first);
+    const monthCells = [];
+    for (let i = 0; i < 42; i++) {
+      const d = new Date(gridStart); d.setDate(gridStart.getDate() + i);
+      const iso = Component.isoOf(d);
+      const evs = this.evsOn(iso);
+      const isSel = iso === selIso, isToday = iso === TODAY_ISO;
+      const other = d.getMonth() !== cur.getMonth();
+      monthCells.push({
+        num: d.getDate(), opacity: iso < TODAY_ISO ? 0.55 : 1,
+        bg: isSel ? (dark ? 'rgba(0,195,255,0.10)' : 'rgba(0,195,255,0.07)') : 'transparent',
+        weight: isToday ? 700 : 500,
+        numBg: isToday ? '#00c3ff' : 'transparent',
+        numFg: isToday ? '#ffffff' : (other ? 'var(--muted, #6b8290)' : 'inherit'),
+        chips: evs.slice(0, 2).map(e => ({
+          label: e.start + ' ' + e.title,
+          color: iso < TODAY_ISO ? (dark ? 'rgba(255,255,255,0.30)' : 'rgba(51,80,91,0.30)') : EV_TYPES[e.type].color,
+          bg: iso < TODAY_ISO ? (dark ? 'rgba(255,255,255,0.06)' : 'rgba(51,80,91,0.05)') : EV_TYPES[e.type].soft,
+          fg: iso < TODAY_ISO ? 'var(--muted, #6b8290)' : 'inherit'
+        })),
+        hasMore: evs.length > 2, moreLabel: '+' + (evs.length - 2) + ' more',
+        onClick: pick(iso)
+      });
+    }
+
+    // ---- week
+    const ws = Component.weekStart(cur);
+    const weekDays = [];
+    for (let i = 0; i < 7; i++) { const d = new Date(ws); d.setDate(ws.getDate() + i); weekDays.push(d); }
+    const weekHeads = weekDays.map(d => {
+      const iso = Component.isoOf(d);
+      return {
+        dow: DOW[(d.getDay() + 6) % 7], num: d.getDate(),
+        weight: iso === TODAY_ISO ? 700 : 500,
+        numBg: iso === TODAY_ISO ? '#00c3ff' : (iso === selIso ? (dark ? 'rgba(255,255,255,0.14)' : 'rgba(51,80,91,0.10)') : 'transparent'),
+        numFg: iso === TODAY_ISO ? '#ffffff' : 'inherit',
+        onClick: pick(iso)
+      };
+    });
+    const hours = [];
+    for (let h = 7; h <= 19; h++) hours.push((h < 10 ? '0' + h : h) + ':00');
+    const weekRows = hours.map(label => ({
+      label,
+      cells: weekDays.map(d => {
+        const iso = Component.isoOf(d);
+        return {
+          bg: iso === selIso ? (dark ? 'rgba(0,195,255,0.07)' : 'rgba(0,195,255,0.05)') : 'transparent',
+          onClick: pick(iso),
+          events: this.evsOn(iso).filter(e => e.start.slice(0, 2) === label.slice(0, 2)).map(e => this.cardFor(e))
+        };
+      })
+    }));
+    const dayRows = hours.map(label => ({
+      label,
+      bg: 'transparent',
+      events: this.evsOn(selIso).filter(e => e.start.slice(0, 2) === label.slice(0, 2)).map(e => this.cardFor(e))
+    }));
+
+    // ---- year
+    const yearMonths = MONTHS.map((name, mi) => {
+      const f = new Date(cur.getFullYear(), mi, 1);
+      const gs = Component.weekStart(f);
+      const cells = [];
+      for (let i = 0; i < 42; i++) {
+        const d = new Date(gs); d.setDate(gs.getDate() + i);
+        const iso = Component.isoOf(d);
+        const other = d.getMonth() !== mi;
+        const has = !other && this.evsOn(iso).length > 0;
+        cells.push({
+          num: other ? '' : d.getDate(),
+          weight: iso === TODAY_ISO ? 700 : (has ? 600 : 400),
+          bg: iso === TODAY_ISO ? '#00c3ff' : (has ? (dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.08)') : 'transparent'),
+          fg: iso === TODAY_ISO ? '#ffffff' : (other ? 'transparent' : 'inherit'),
+          onClick: () => this.setState({ sel: iso, cursor: iso, view: 'Month', leftTab: 'Selected day' })
+        });
+      }
+      return {
+        name, cells, dow: DOW1.map(l => ({ label: l })),
+        titleFg: mi === cur.getMonth() ? '#00a6d9' : 'inherit',
+        onClick: () => this.setState({ cursor: Component.isoOf(new Date(cur.getFullYear(), mi, 1)), view: 'Month' })
+      };
+    });
+
+    const titles = {
+      Day: DOW[(sel.getDay() + 6) % 7] + ' ' + sel.getDate() + ' ' + MONTHS[sel.getMonth()] + ' ' + sel.getFullYear(),
+      Week: weekDays[0].getDate() + ' – ' + weekDays[6].getDate() + ' ' + MONTHS[weekDays[6].getMonth()] + ' ' + weekDays[6].getFullYear(),
+      Month: MONTHS[cur.getMonth()] + ' ' + cur.getFullYear(),
+      Year: String(cur.getFullYear())
+    };
+
+    const ev = EVENTS.find(e => e.id === this.state.evId) || null;
+    const rsvpFor = (i) => i === 0 ? 'Organiser' : (i === 1 ? 'Accepted' : (i === 2 ? 'Tentative' : 'No reply'));
+
+    return {
+      headerSummary: dayEvs.length + ' events on the selected day · ' + upcoming.length + ' coming up this fortnight',
+      leftTabs: ['Selected day', 'Upcoming'].map(l => ({
+        label: l, onClick: () => this.setState({ leftTab: l }),
+        bg: l === leftTab ? 'var(--card, #ffffff)' : 'transparent',
+        fg: l === leftTab ? 'var(--text, #1d1d1f)' : 'var(--muted, #6b8290)',
+        shadow: l === leftTab ? '0 1px 3px var(--shadow, rgba(0,0,0,0.10))' : 'none'
+      })),
+      listTitle: showUp ? 'Next up' : DOW[(sel.getDay() + 6) % 7] + ' ' + sel.getDate() + ' ' + MONTHS[sel.getMonth()],
+      listMeta: showUp ? (upcoming.length + ' events') : (dayEvs.length + ' events · ' + busyLabel + ' booked'),
+      eventList: listEvs.map((e, i) => {
+        const c = this.cardFor(e);
+        const d = Component.parse(e.date);
+        const isToday = e.date === TODAY_ISO;
+        c.showDay = showUp && (i === 0 || listEvs[i - 1].date !== e.date);
+        c.dayLabel = isToday ? 'Today' : DOW[(d.getDay() + 6) % 7] + ' ' + d.getDate() + ' ' + MONTHS[d.getMonth()];
+        return c;
+      }),
+      listEmpty: listEvs.length === 0,
+      syncStatus: 'Last synced 4 minutes ago · 2 calendars linked',
+
+
+      calTitle: titles[view],
+      viewTabs: CAL_VIEWS.map(l => ({
+        label: l, onClick: () => this.setState({ view: l }),
+        bg: l === view ? 'var(--card, #ffffff)' : 'transparent',
+        fg: l === view ? 'var(--text, #1d1d1f)' : 'var(--muted, #6b8290)',
+        shadow: l === view ? '0 1px 3px var(--shadow, rgba(0,0,0,0.10))' : 'none'
+      })),
+      goPrev: () => this.shift(-1),
+      goNext: () => this.shift(1),
+      goToday: () => this.setState({ cursor: TODAY_ISO, sel: TODAY_ISO }),
+      isDay: view === 'Day', isWeek: view === 'Week', isMonth: view === 'Month', isYear: view === 'Year',
+      dowLabels: DOW.map(l => ({ label: l })),
+      monthCells, weekHeads, weekRows, dayRows, yearMonths,
+
+      paneSchedule: pane === 'schedule', paneLink: pane === 'link', paneDetail: pane === 'detail' && !!ev,
+      openSchedule: () => this.setState({ pane: 'schedule' }),
+      openLink: () => this.setState({ pane: 'link' }),
+      closePane: () => this.setState({ pane: null, evId: null }),
+      formDate: selIso,
+      formAttendees: [
+        { initials: 'TM', name: 'Thandeka Mabaso', bg: 'linear-gradient(150deg, #33505b, #557a88)' },
+        { initials: 'JP', name: 'Johan Prinsloo', bg: 'linear-gradient(150deg, #00c3ff, #0a9fd4)' },
+        { initials: 'AH', name: 'Ayesha Hoosen', bg: 'linear-gradient(150deg, #7c6cf0, #5c4bd8)' }
+      ],
+      formToggles: [
+        { icon: 'videocam', label: 'Add a Kolabr video call', onClick: flip('video'), track: track(togs.video), knob: knob(togs.video) },
+        { icon: 'notifications', label: 'Notify the channel when scheduled', onClick: flip('notify'), track: track(togs.notify), knob: knob(togs.notify) }
+      ],
+      ...(() => {
+        const cur = LINKABLE_REQUESTS.find(r => r.id === this.state.linkReq) || null;
+        const q = (this.state.reqQ || '').trim().toLowerCase();
+        const matches = LINKABLE_REQUESTS.filter(r => !q || r.id.toLowerCase().includes(q) || r.subject.toLowerCase().includes(q) || r.channel.toLowerCase().includes(q));
+        return {
+          hasLinkedReq: !!cur,
+          linkReqId: cur ? cur.id : '',
+          linkReqSubject: cur ? cur.subject : 'Not linked to a request',
+          linkReqColor: cur ? 'var(--text, #1d1d1f)' : 'var(--muted, #6b8290)',
+          reqPickerOpen: !!this.state.reqPickerOpen,
+          toggleReqPicker: (e) => { e.stopPropagation(); this.setState(s => ({ reqPickerOpen: !s.reqPickerOpen })); },
+          reqQuery: this.state.reqQ || '',
+          onReqQuery: (e) => this.setState({ reqQ: e.target.value }),
+          clearLinkReq: (e) => { e.stopPropagation(); this.setState({ linkReq: null, reqPickerOpen: false }); },
+          noReqMatch: matches.length === 0,
+          reqOptions: matches.map(r => {
+            const on = r.id === this.state.linkReq;
+            return {
+              id: r.id, subject: r.subject, meta: r.channel + ' · ' + r.status,
+              bg: on ? 'rgba(0,195,255,0.10)' : 'transparent',
+              idColor: on ? '#00a6d9' : 'var(--text, #1d1d1f)',
+              check: on ? 'check_circle' : 'radio_button_unchecked',
+              checkColor: on ? '#00a6d9' : 'var(--hairline, rgba(0,0,0,0.22))',
+              onClick: (e) => { e.stopPropagation(); this.setState(s => ({ linkReq: s.linkReq === r.id ? null : r.id, reqPickerOpen: false, reqQ: '' })); }
+            };
+          })
+        };
+      })(),
+      providers: [
+        { icon: 'event', name: 'Google Calendar', detail: conn.google ? 'dylan@thusanang.org.za · two-way' : 'Bring in events and free/busy', connected: conn.google },
+        { icon: 'mail', name: 'Microsoft Outlook', detail: conn.outlook ? 'support@thusanang.org.za · two-way' : 'Bring in events and free/busy', connected: conn.outlook },
+        { icon: 'devices', name: 'Apple Calendar', detail: 'Sync via iCloud', connected: conn.apple },
+        { icon: 'link', name: 'CalDAV / other', detail: 'Connect any CalDAV server', connected: conn.caldav }
+      ].map(p => ({
+        icon: p.icon, name: p.name, detail: p.detail,
+        connected: p.connected,
+        dot: dark ? '#3ddc97' : '#12a06a',
+        pillBg: dark ? 'rgba(61,220,151,0.16)' : 'rgba(18,160,106,0.12)',
+        rowBg: 'var(--page, #edf3f7)',
+        rowRing: 'transparent',
+        detailFg: 'var(--muted, #6b8290)',
+        btnLabel: p.connected ? 'Disconnect' : 'Connect',
+        btnBg: p.connected ? 'var(--chip, rgba(51,80,91,0.07))' : '#00c3ff',
+        btnFg: p.connected ? 'var(--muted, #6b8290)' : '#ffffff',
+        onClick: () => {}
+      })),
+      syncToggles: [
+        { label: 'Two-way sync', detail: 'Kolabr events appear in the linked calendar', onClick: flip('twoWay'), track: track(togs.twoWay), knob: knob(togs.twoWay) },
+        { label: 'Share free / busy', detail: 'Teammates see when you are booked, not what', onClick: flip('busy'), track: track(togs.busy), knob: knob(togs.busy) },
+        { label: 'Accept invites automatically', detail: 'When you are free and it is in one of your channels', onClick: flip('invites'), track: track(togs.invites), knob: knob(togs.invites) }
+      ],
+
+      detailTitle: ev ? ev.title : '',
+      detailColor: ev ? EV_TYPES[ev.type].color : 'transparent',
+      detailIsCall: ev ? ev.type === 'call' : false,
+      detailWhen: ev ? (DOW[(Component.parse(ev.date).getDay() + 6) % 7] + ' ' + Component.parse(ev.date).getDate() + ' ' + MONTHS[Component.parse(ev.date).getMonth()] + ' · ' + ev.start + (Component.endTime(ev) ? '–' + Component.endTime(ev) : '')) : '',
+      detailRows: ev ? [
+        { label: 'Type', value: EV_TYPES[ev.type].label },
+        { label: 'Channel', value: ev.chan },
+        { label: 'Duration', value: Component.durLabel(ev) },
+        { label: 'Source', value: SRC_LABELS[ev.src] },
+        { label: 'Reminder', value: '10 minutes before' },
+        { label: 'Linked request', value: ev.type === 'call' ? 'RQ-025326' : 'None' }
+      ] : [],
+      detailPeople: ev ? ev.people.map((k, i) => ({
+        initials: k, name: (PEOPLE[k] || { name: k }).name,
+        bg: AVATAR_BGS[i % 3],
+        rsvp: rsvpFor(i),
+        rsvpFg: i === 1 ? (dark ? '#3ddc97' : '#12a06a') : (i === 2 ? '#f5a524' : 'var(--muted, #6b8290)')
+      })) : []
+    };
+  }
+
+  renderVals() {
+    const theme = this.theme;
+    const dark = theme === 'dark';
+    const menu = this.state.menu;
+    const ok = dark ? '#3ddc97' : '#12a06a';
+    const warn = '#f5a524';
+    const bad = '#ff5c66';
+    const hm = this.state.hoverPerson;
+    const q = this.state.query.trim().toLowerCase();
+    const mc = CHANNEL_LIST.find(c => c.name === this.state.mChannel) || null;
+    const draft = this.state.draft || {};
+    const chFiltered = CHANNEL_LIST.filter(c => {
+      if (this.state.cat !== 'All' && c.category !== this.state.cat) return false;
+      return !q || (c.name + ' ' + c.category + ' ' + (c.desc || '')).toLowerCase().includes(q);
+    });
+
+    return {
+      ...this.calVals(),
+      theme,
+      logoRef: this.logoRef,
+      sunColor: theme === 'dark' ? 'var(--muted, #6e6e73)' : '#ffcc00',
+      moonColor: theme === 'dark' ? '#00c3ff' : 'var(--muted, #9a9aa0)',
+      themeTrack: theme === 'dark' ? '#00c3ff' : '#ffcc00',
+      themeKnobX: theme === 'dark' ? '16px' : '2px',
+      themeIcon: theme === 'dark' ? 'dark_mode' : 'light_mode',
+      toggleTheme: (e) => { e.stopPropagation(); this.setState(s => ({ theme: (s.theme || this.props.theme || 'light') === 'light' ? 'dark' : 'light' })); },
+      menuOpen: !!menu,
+      closeMenu: () => this.setState({ menu: null }),
+      showNotifs: menu === 'notifs',
+      showChats: menu === 'chats',
+      showProfile: menu === 'profile',
+      showSettings: menu === 'settings',
+      showChannels: menu === 'channels',
+      showTenants: menu === 'tenants',
+      toggleTenants: (e) => { e.stopPropagation(); this.setMenu('tenants'); },
+      tenantName: TENANTS[this.state.tenant || 0].name,
+      tenantLetter: TENANTS[this.state.tenant || 0].name.slice(0, 1),
+      chanName: (chansFor(TENANTS[this.state.tenant || 0].name)[this.state.chan || 0] || chansFor(TENANTS[this.state.tenant || 0].name)[0]).category,
+      tenantList: TENANTS.map((t, i) => ({
+        name: t.name,
+        sub: chansFor(t.name).length + ' channels',
+        unread: t.unread,
+        letter: t.name.slice(0, 1),
+        active: i === (this.state.tenant || 0),
+        onClick: (e) => { e.stopPropagation(); this.setState({ tenant: i, chan: 0, menu: null }); }
+      })),
+
+      toggleChannels: (e) => { e.stopPropagation(); this.setMenu('channels'); },
+      currentChannel: chansFor(TENANTS[this.state.tenant || 0].name).filter((c, i) => i === (this.state.chan || 0)).map((c) => ({
+        letter: c.category.slice(0, 1),
+        allIcon: false,
+        company: c.members,
+        category: c.category,
+        unread: c.unread,
+        active: true,
+        rowBg: 'transparent',
+        badgeBg: 'linear-gradient(150deg, #00c3ff, #0aa8dd)',
+        badgeFg: '#ffffff',
+        onClick: (e) => { e.stopPropagation(); this.setState({ menu: null }); }
+      })),
+      otherChannels: [ALL_ROW].concat(chansFor(TENANTS[this.state.tenant || 0].name).filter((c, i) => i !== (this.state.chan || 0))).map((c) => ({
+        letter: c.all ? '' : c.category.slice(0, 1),
+        allIcon: !!c.all,
+        company: c.members,
+        category: c.category,
+        unread: c.unread,
+        active: false,
+        rowBg: 'transparent',
+        badgeBg: 'var(--chip, rgba(0,0,0,0.05))',
+        badgeFg: 'var(--topIcon, #33505b)',
+        onClick: (e) => { e.stopPropagation(); this.setState({ chan: c.all ? (this.state.chan || 0) : chansFor(TENANTS[this.state.tenant || 0].name).findIndex((x) => x.category === c.category), menu: null }); }
+      })),
+      channels: CHANNELS.map((c, i) => ({
+        letter: c.category.slice(0, 1),
+        allIcon: false,
+        company: c.members,
+        category: c.category,
+        unread: c.unread,
+        active: i === 1,
+        badgeBg: i === 1 ? 'linear-gradient(150deg, #00c3ff, #0aa8dd)' : 'var(--chip, rgba(0,0,0,0.05))',
+        badgeFg: i === 1 ? '#ffffff' : 'var(--topIcon, #33505b)',
+        onClick: () => this.setState({ menu: null })
+      })),
+      toggleNotifs: () => this.setMenu('notifs'),
+      toggleChats: () => this.setMenu('chats'),
+      toggleProfile: () => this.setMenu('profile'),
+      toggleSettings: () => this.setMenu('settings'),
+
+      notifications: [
+        { icon: 'priority_high', text: 'Due today: “Q3 narrative report to Meridian”', time: '4 min ago', unread: true },
+        { icon: 'person_add', text: 'Rita Coetzer joined Meridian Foundation as a guest', time: '26 min ago', unread: true },
+        { icon: 'assignment_ind', text: 'David Moloi assigned you the Lusikisiki expense pack', time: '1 hr ago', unread: true },
+        { icon: 'task_alt', text: 'Safeguarding refresher completed: 18 volunteers', time: '2 hr ago', unread: false },
+        { icon: 'forum', text: '3 new replies in Programme team', time: 'Yesterday', unread: false }
+      ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
+      chatQuery: this.state.chatQuery,
+      onChatQuery: (e) => this.setState({ chatQuery: e.target.value }),
+      toggleUnread: (e) => { e.stopPropagation(); this.setState(s => ({ chatFilterIdx: s.chatFilterIdx === 1 ? 0 : 1 })); },
+      unreadTrack: this.state.chatFilterIdx === 1 ? '#00c3ff' : (dark ? 'rgba(255,255,255,0.20)' : 'rgba(0,0,0,0.16)'),
+      unreadKnobX: this.state.chatFilterIdx === 1 ? '16px' : '2px',
+      activeChats: ALL_CHATS.filter(c => {
+        const q = this.state.chatQuery.trim().toLowerCase();
+        if (q && !(c.name + ' ' + c.preview).toLowerCase().includes(q)) return false;
+        const f = CHAT_FILTERS[this.state.chatFilterIdx];
+        if (f === 'Unread') return c.unread;
+        if (f === 'Customers') return c.customer;
+        return true;
+      }).map(c => ({ ...c, onClick: goPage(c.href || 'Desktop Admin - Chat.dc.html') })),
+      statusLabel: STATUSES.find(x => x.id === this.state.status).label,
+      statusColor: STATUSES.find(x => x.id === this.state.status).color(dark),
+      showStatusMenu: this.state.statusMenu,
+      toggleStatusMenu: (e) => { e.stopPropagation(); this.setState(s2 => ({ statusMenu: !s2.statusMenu })); },
+      statusOptions: STATUSES.map(x => ({
+        label: x.label, color: x.color(dark), active: x.id === this.state.status,
+        onClick: (e) => { e.stopPropagation(); this.setState({ status: x.id, statusMenu: false }); }
+      })),
+      otherAccounts: ACCOUNTS.filter((_, i) => i !== this.state.account).map((a) => ({
+        name: a.name, email: a.email, initials: a.photo ? '' : a.initials,
+        bg: a.photo ? 'url(' + a.photo + ')' : a.bg,
+        badge: a.badge,
+        onEnter: () => this.setState({ hoverAcct: a.email }),
+        onLeave: () => this.setState({ hoverAcct: null }),
+        onClick: (e) => { e.stopPropagation(); this.setState({ account: ACCOUNTS.indexOf(a), menu: null, hoverAcct: null }); }
+      })),
+      addAccount: (e) => { e.stopPropagation(); this.setState({ menu: null }); },
+      signOutAll: (e) => { e.stopPropagation(); this.setState({ menu: null }); },
+      showAcctName: (this.state.vw || 1400) >= 1180,
+      acctName: ACCOUNTS[this.state.account].name,
+      acctRole: ACCOUNTS[this.state.account].role,
+      acctAvatar: ACCOUNTS[this.state.account].photo ? 'url(' + ACCOUNTS[this.state.account].photo + ')' : ACCOUNTS[this.state.account].bg,
+      acctInitials: ACCOUNTS[this.state.account].photo ? '' : ACCOUNTS[this.state.account].initials,
+      openDashboard: goPage('Desktop Admin - Dashboard.dc.html'),
+      openChatPage: goPage('Desktop Admin - Chat.dc.html'),
+      openUsersPage: goPage('Desktop Admin - User Management.dc.html'),
+      openRequestChat: goPage('Desktop Admin - Request Chat.dc.html'),
+      profileItems: [
+        { icon: 'account_circle', label: 'Account', href: 'Desktop Admin - Account.dc.html' },
+        { icon: 'lock', label: 'Security', href: 'Desktop Admin - Account.dc.html' },
+        { icon: 'notifications', label: 'Notifications', href: 'Desktop Admin - Account.dc.html' },
+        { icon: 'help', label: 'Help & Support', href: '' }
+      ].map(x => ({ ...x, onClick: goPage(x.href) })),
+      settingsItems: [
+        { icon: 'confirmation_number', label: 'Request Management', href: 'Desktop Admin - Request Management.dc.html' },
+        { icon: 'workspaces', label: 'Channel Management', href: 'Desktop Admin - Channel Management.dc.html' },
+        { icon: 'group', label: 'User Management', href: 'Desktop Admin - User Management.dc.html' },
+        { icon: 'history', label: 'Audit Log', href: 'Desktop Admin - Audit Log.dc.html' },
+        { icon: 'credit_card', label: 'Billing & Subscription', href: 'Desktop Admin - Billing.dc.html' },
+        { icon: 'tune', label: 'Configuration', href: 'Desktop Admin - System Settings.dc.html' }
+      ].map(x => ({ ...x, onClick: goPage(x.href) })),
+
+      collaborate: [
+        { icon: 'chat_bubble', label: 'Channel Chat', count: '12', hasCount: true, href: 'Desktop Admin - Channel Chat.dc.html' },
+        { icon: 'assignment', label: 'Requests', count: '27', hasCount: true, href: 'Desktop Admin - Channel Requests.dc.html' },
+        { icon: 'event', label: 'Scheduled Events', count: '3', hasCount: true, href: 'Desktop Admin - Scheduled Events.dc.html' },
+        { icon: 'menu_book', label: 'Wiki', count: '', hasCount: false, href: 'Desktop Admin - Wiki.dc.html' }
+      ].map(x => ({ ...x, onClick: goPage(x.href) })),
+      chats: [
+        { initials: '', group: true, name: 'Programme team', unread: '2', avatarBg: dark ? 'rgba(255,255,255,0.12)' : 'rgba(51,80,91,0.12)', avatarFg: 'var(--topIcon, #33505b)', onClick: goPage('Desktop Admin - Group Chat.dc.html'), onEnter: () => {}, onLeave: () => {} },
+        { initials: 'PM', group: false, name: 'Palesa Mokoena', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
+          onEnter: (e) => this.showCard(SHARON, e.currentTarget), onLeave: () => this.scheduleHide() }
+      ],
+      members: MEMBERS.map((m, i) => ({
+        initials: m.photo ? '' : m.initials, photo: m.photo || '', admin: !!m.admin, photoCss: m.photo ? 'url(' + m.photo + ')' : 'none', name: m.name, customer: m.customer, bg: m.bg,
+        dot: m.status === 'online' ? '#34c759' : m.status === 'away' ? warn : m.status === 'dnd' ? '#ff453a' : (dark ? '#6e6e73' : '#b8b8bd'),
+        onEnter: (e) => this.showCard(m, e.currentTarget),
+        onLeave: () => this.scheduleHide()
+      })),
+      hoverCard: !!hm,
+      cardTop: this.state.hoverTop + 'px',
+      cardName: hm ? hm.name : '',
+      cardRole: hm ? hm.role : '',
+      cardEmail: hm ? hm.email : '',
+      cardSince: hm ? hm.since : '',
+      cardInitials: hm && !hm.photo ? hm.initials : '',
+      cardPhoto: hm && hm.photo ? hm.photo : '',
+      cardPhotoCss: hm && hm.photo ? 'url(' + hm.photo + ')' : 'none',
+      cardBg: hm ? hm.bg : 'transparent',
+      cardDot: hm ? (hm.status === 'online' ? '#34c759' : hm.status === 'away' ? warn : hm.status === 'dnd' ? '#ff453a' : (dark ? '#6e6e73' : '#b8b8bd')) : 'transparent',
+      keepCard: () => clearTimeout(this._cardT),
+      hideCard: () => this.scheduleHide(),
+
+      countLabel: chFiltered.length + ' of ' + CHANNEL_LIST.length + ' channels',
+      catFilters: CH_CATS.map(t => ({
+        label: t,
+        onClick: () => this.setState({ cat: t }),
+        bg: t === this.state.cat ? 'var(--card, #ffffff)' : 'transparent',
+        fg: t === this.state.cat ? 'var(--text, #1d1d1f)' : 'var(--muted, #6b8290)',
+        shadow: t === this.state.cat ? '0 1px 3px var(--shadow, rgba(0,0,0,0.10))' : 'none'
+      })),
+      chQuery: this.state.query,
+      onChQuery: (e) => this.setState({ query: e.target.value }),
+      chEmpty: chFiltered.length === 0,
+      showEdit: this.state.modal === 'edit',
+      showMembers: this.state.modal === 'members',
+      closeModal: () => this.setState({ modal: null, mChannel: null, draft: null, invite: '' }),
+      stop: (e) => e.stopPropagation(),
+      modalName: mc ? '#' + mc.name : '',
+      memberCount: mc ? (mc.members === 1 ? '1 member' : mc.members + ' members') : '',
+      draftName: draft.name || '',
+      draftDesc: draft.desc || '',
+      draftCat: draft.category || 'Programme',
+      draftSla: draft.sla || 'Standard',
+      onDraftName: (e) => this.setState(s => ({ draft: { ...s.draft, name: e.target.value } })),
+      onDraftDesc: (e) => this.setState(s => ({ draft: { ...s.draft, desc: e.target.value } })),
+      onDraftCat: (e) => this.setState(s => ({ draft: { ...s.draft, category: e.target.value } })),
+      onDraftSla: (e) => this.setState(s => ({ draft: { ...s.draft, sla: e.target.value } })),
+      togglePrivate: () => this.setState(s => ({ draft: { ...s.draft, priv: !s.draft.priv } })),
+      privateTrack: draft.priv ? '#00c3ff' : (dark ? 'rgba(255,255,255,0.18)' : 'rgba(51,80,91,0.20)'),
+      privateKnobX: draft.priv ? '21px' : '3px',
+      saveEdit: () => {
+        const t = CHANNEL_LIST.find(c => c.name === this.state.mChannel);
+        if (t) { t.name = draft.name; t.desc = draft.desc; t.category = draft.category; t.sla = draft.sla; }
+        this.setState({ modal: null, mChannel: null, draft: null });
+      },
+      deleteChannel: () => {
+        const i = CHANNEL_LIST.findIndex(c => c.name === this.state.mChannel);
+        if (i > -1) CHANNEL_LIST.splice(i, 1);
+        this.setState({ modal: null, mChannel: null, draft: null });
+      },
+      inviteQuery: this.state.invite,
+      onInvite: (e) => this.setState({ invite: e.target.value }),
+      memberList: (mc ? mc.people : []).map((k, j) => {
+        const pr = PEOPLE[k] || { name: k, email: '-', role: 'Staff' };
+        return {
+          initials: k, name: pr.name, email: pr.email, role: pr.role,
+          bg: AVATAR_BGS[j % 3],
+          roleBg: pr.role === 'Owner' ? 'rgba(0,195,255,0.14)' : pr.role === 'Guest' ? (dark ? 'rgba(255,255,255,0.09)' : 'rgba(51,80,91,0.08)') : (dark ? 'rgba(61,220,151,0.14)' : 'rgba(18,160,106,0.12)'),
+          roleFg: pr.role === 'Owner' ? (dark ? '#5ad2ff' : '#0089b6') : pr.role === 'Guest' ? 'var(--muted, #6b8290)' : ok
+        };
+      }),
+      chList: chFiltered.map((c, i) => ({
+        openEdit: () => this.setState({ modal: 'edit', mChannel: c.name, draft: { name: c.name, desc: c.desc || '', category: c.category, sla: c.sla, priv: false } }),
+        openMembers: () => this.setState({ modal: 'members', mChannel: c.name }),
+        name: c.name,
+        category: c.category,
+        desc: c.desc || 'No description yet',
+        memberLabel: c.members === 1 ? '1 member' : c.members + ' members',
+        sla: c.sla,
+        slaDot: c.sla === 'Priority' ? '#ff5c66' : c.sla === 'Enhanced' ? warn : ok,
+        iconBg: i % 3 === 0 ? 'rgba(0,195,255,0.13)' : (dark ? 'rgba(255,255,255,0.08)' : 'rgba(51,80,91,0.08)'),
+        iconFg: i % 3 === 0 ? (dark ? '#5ad2ff' : '#0089b6') : 'var(--topIcon, #33505b)',
+        tagBg: dark ? 'rgba(255,255,255,0.09)' : 'rgba(51,80,91,0.08)',
+        tagFg: 'var(--muted, #6b8290)',
+        avatars: c.people.slice(0, 3).map((p, j) => ({
+          initials: p,
+          ml: j === 0 ? '0px' : '-8px',
+          bg: ['linear-gradient(150deg, #33505b, #557a88)', 'linear-gradient(150deg, #00c3ff, #0a9fd4)', 'linear-gradient(150deg, #7c6cf0, #5c4bd8)'][j % 3]
+        }))
+      }))
+    };
+  }
+}
+
+</script>
+
+
+</body></html>

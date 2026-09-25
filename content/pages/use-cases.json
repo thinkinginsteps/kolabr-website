@@ -1,0 +1,2823 @@
+{
+  "accounting-firms": {
+    "hero": {
+      "eyebrow": "Kolabr for accounting firms",
+      "title": "Stop chasing documents through four inboxes.",
+      "lede": "A SARS letter with twenty-one days on it, a client who forwards invoices to whoever they spoke to last, and a junior reconstructing what was asked for in March. One channel per client, where the request, the document and the deadline all live together. Clients join as guests, free, on every plan.",
+      "image": {
+        "file": "ac2-chat",
+        "alt": "The Tax and SARS channel for Harlow Foods: a pinned VAT201 deadline, open stock count queries, and the client reporting a SARS verification request"
+      }
+    },
+    "channels": {
+      "title": "Where a practice puts its channels",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the requests, the deadline calendar and the wiki. Most firms run one per client, split by service line.",
+      "cards": [
+        {
+          "title": "One channel per client",
+          "body": "Harlow Foods in one place: their financial director, their creditors clerk, their MD. Guests, free, seeing only their own affairs."
+        },
+        {
+          "title": "Monthly bookkeeping",
+          "body": "Reconciliations, queries and the management accounts pack. The place a bookkeeper asks about an unidentified deposit instead of guessing."
+        },
+        {
+          "title": "Year-end & audit",
+          "body": "Fieldwork, records requests and the queries that hold up a sign-off. Every document request with a date and a name on it."
+        },
+        {
+          "title": "Payroll",
+          "body": "Monthly runs, variances and EMP501. Separate, because payroll questions are urgent and personal and should not sit behind an audit thread."
+        },
+        {
+          "title": "Tax & SARS",
+          "body": "Returns, verifications, assessments. When a letter arrives with twenty-one days on it, everyone can see the clock."
+        },
+        {
+          "title": "Practice",
+          "body": "Your own people. Capacity, deadline load, and the honest conversation about a client who never sends anything on time."
+        }
+      ],
+      "seatNote": [
+        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your staff and your client’s. A client with three finance people and your team of five sits comfortably inside Starter. ",
+        {
+          "label": "Compare plans",
+          "href": "/pricing#compare-plans"
+        },
+        "."
+      ]
+    },
+    "requests": {
+      "id": "deadlines",
+      "title": "Nothing waits on a document nobody asked for twice",
+      "lede": "Filings, queries, audit items and bookkeeping tasks as numbered items with an owner and a due date. What is outstanding from the client is a list, not a feeling, and the client can see it too.",
+      "image": {
+        "file": "ac2-requests",
+        "alt": "Request management for the firm: VAT201 filings, a SARS verification, stock count queries, creditors reconciliation and payroll variances in one table with owner, channel and deadline"
+      },
+      "cards": [
+        {
+          "title": "Categories that match the work",
+          "body": "Filing, query, audit, bookkeeping, payroll. Each routes to the person who does it, not to whoever the client emailed."
+        },
+        {
+          "title": "Statutory dates with a clock",
+          "body": "VAT201, EMP201, provisional tax, CIPC. The deadline is on the item, and “waiting on client” is visible to the client."
+        },
+        {
+          "title": "A message becomes a request",
+          "body": "The client mentions a SARS letter in the channel; one step turns it into a tracked item with the document list attached."
+        }
+      ]
+    },
+    "split": {
+      "id": "sars",
+      "title": "Every junior handles a SARS letter the way you would",
+      "lede": "The procedure sits on the channel wiki beside the client it concerns: what kind of letter it is, what to ask for, and who reviews before anything is submitted.",
+      "points": [
+        {
+          "title": "Diarise the deadline the day it arrives",
+          "body": "Not the day you start. Twenty-one days sounds generous until the client takes twelve of them finding one invoice."
+        },
+        {
+          "title": "Ask for everything at once",
+          "body": "One consolidated list in the channel, not four messages across a fortnight. Every round trip is two days you do not have."
+        },
+        {
+          "title": "A partner reviews, then post the reference",
+          "body": "What you submit becomes part of the record. Post the submission reference back in the channel so nobody reconstructs it in eight months."
+        }
+      ],
+      "image": {
+        "file": "ac2-wiki",
+        "alt": "The client wiki article Responding to a SARS query: four steps, a table of letter types from verification to final demand, and the message to send the client the day a letter arrives"
+      }
+    },
+    "site": {
+      "id": "mobile",
+      "title": "February does not happen at a desk",
+      "lede": "Year-end runs on site visits, stock counts and a partner answering a client between two meetings. The channel goes with them, and what they agree lands on the file, not in a text message.",
+      "image": {
+        "file": "ac3-mobile",
+        "alt": "Kolabr on a phone: the tax specialist reporting a SARS verification with the document list up, and the client's managing director asking whether the VAT201 can still be filed on time"
+      },
+      "cards": [
+        {
+          "title": "Answer from anywhere",
+          "body": "A partner unblocks a junior in thirty seconds, and it is recorded against the client."
+        },
+        {
+          "title": "Documents at the stock count",
+          "body": "Photograph the sheet at the warehouse rather than promising to scan it later."
+        },
+        {
+          "title": "Notifications per client",
+          "body": "The client filing tomorrow interrupts you. The one on a quarterly cycle does not."
+        },
+        {
+          "title": "No personal WhatsApp",
+          "body": "Client records stop living on a phone that leaves when a manager does."
+        }
+      ]
+    },
+    "calendar": {
+      "title": "The compliance calendar, per client, in one place",
+      "lede": "VAT on the 25th, EMP201 on the 7th, provisional tax, the audit sign-off meeting and the management accounts pack. In the channel it belongs to, synced to Outlook and Google.",
+      "image": {
+        "file": "ac2-events",
+        "alt": "The firm's calendar: practice deadline reviews, PAYE and VAT201 due dates, audit planning, the stock count query session and the management accounts deadline on one month view"
+      }
+    },
+    "oversight": {
+      "title": "Which deadlines are at risk, and whose fault that is",
+      "lede": "Filings due, documents outstanding from clients, and the engagement quietly consuming three times its fee in chasing.",
+      "image": {
+        "file": "ac2-dashboard",
+        "alt": "The practice dashboard: open items across client channels, filings due, items awaiting client documents, deadlines at risk, and query volume for the fortnight"
+      },
+      "wide": {
+        "title": "Every client on one screen",
+        "body": "Deadlines, outstanding documents and how long each client has been sitting on a request. The fee conversation goes better with a list.",
+        "link": {
+          "label": "Administration and controls",
+          "href": "/product/administration"
+        },
+        "rows": [
+          {
+            "label": "Harlow Foods",
+            "value": "3 due this week"
+          },
+          {
+            "label": "Brightline Retail",
+            "value": "Audit fieldwork"
+          },
+          {
+            "label": "Kestrel Logistics",
+            "value": "On track"
+          },
+          {
+            "label": "Awaiting client documents",
+            "value": "9",
+            "total": true
+          }
+        ]
+      },
+      "deep": {
+        "title": "A file that answers back",
+        "body": "What you asked for, when, and what the client actually sent. Useful for a review, and decisive when a client says they gave you something they did not.",
+        "rows": [
+          {
+            "label": "Audit log",
+            "value": "who asked, who sent"
+          },
+          {
+            "label": "Retention",
+            "value": "set by policy",
+            "highlight": true
+          },
+          {
+            "label": "Archive",
+            "value": "when an engagement ends"
+          }
+        ]
+      },
+      "cards": [
+        {
+          "title": "Clients see their own affairs",
+          "body": "Harlow sees Harlow. Not another client, and certainly not your internal note about their creditors ageing."
+        },
+        {
+          "title": "Who may submit",
+          "body": "A junior prepares, a partner reviews and submits. Enforced by role, not by a reminder in a team meeting."
+        },
+        {
+          "title": "The client, not the manager",
+          "body": [
+            "When a manager resigns in February, the client history stays with the engagement. ",
+            {
+              "label": "How the wiki works",
+              "href": "/product/wiki"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "stages": {
+      "title": "Engagement letter through sign-off",
+      "lede": "A client relationship has a rhythm, and the channel should follow it.",
+      "cards": [
+        {
+          "title": "Start with the client who never sends anything",
+          "body": "Pick the engagement where half your time goes on chasing. One channel, their finance people invited, one month-end. The list of what is outstanding does the arguing for you."
+        },
+        {
+          "title": "Next client in one step",
+          "body": "Build it from a channel template: service lines, the compliance calendar, the SARS procedure and the records checklist already there. Onboarding stops being a week of setup."
+        },
+        {
+          "title": "You pay for your staff",
+          "body": [
+            "Client finance teams are guests and are never billed, however many of them send you documents. ",
+            {
+              "label": "See pricing",
+              "href": "/pricing"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Try it on one client.",
+      "body": "Fourteen days free on Max, every option included, no card. Invite their finance team and run one month-end through it.",
+      "primary": "Start free trial"
+    }
+  },
+  "architecture-firms": {
+    "hero": {
+      "eyebrow": "Kolabr for architecture practices",
+      "title": "A channel per project. Every consultant and the client already in it.",
+      "lede": "The RFI, the revision it caused, the variation it triggered and the client’s approval: one thread, one record, one place the contractor cannot claim they never received. Clients and consultants join as guests, free, on every plan.",
+      "image": {
+        "file": "a5-chat",
+        "alt": "The Design and drawings channel for the Sable Bay Precinct: a pinned notice that Rev C supersedes Rev B, a client question about a balustrade fixing answered in a thread, and an RFI raised from that message"
+      }
+    },
+    "channels": {
+      "title": "Where a practice puts its channels",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the RFIs and variations, the calendar and the wiki. Most practices land on one channel per project, and a few standing ones.",
+      "cards": [
+        {
+          "title": "Sable Bay Precinct",
+          "body": "The project channel. Client, contractor, engineer, QS and landscape architect in one place, each of them a guest, none of them paying for a seat."
+        },
+        {
+          "title": "Design & drawings",
+          "body": "Where revisions are issued and RFIs are answered. The transmittal, the marked-up detail and the answer sit together instead of in three inboxes."
+        },
+        {
+          "title": "Client review",
+          "body": "Sign-offs and sample approvals. When the client approves, it is approved in writing, with a date, against the sheet it concerns."
+        },
+        {
+          "title": "Site queries",
+          "body": "The site agent photographs the clash at 07:10, and the answer lands before the trade moves on. No “I sent it to someone at your office”."
+        },
+        {
+          "title": "Council submission",
+          "body": "Comments, responses and the resubmission checklist for one authority, kept out of the design conversation."
+        },
+        {
+          "title": "Studio",
+          "body": "Your own team only. Resourcing, fee queries, internal critique: the things a client should never scroll past."
+        }
+      ],
+      "seatNote": [
+        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your studio and your guests. A project with a client, a contractor and four consultants sits comfortably inside a Starter channel. ",
+        {
+          "label": "Compare plans",
+          "href": "/pricing#compare-plans"
+        },
+        "."
+      ]
+    },
+    "requests": {
+      "id": "rfis",
+      "title": "Every RFI has an owner and a due date",
+      "lede": "A question from site becomes a numbered request in the channel it belongs to: categorised as an RFI, a variation, a site instruction or a submission, owned by a name, answered against a drawing. Six months later you can still show who asked, who answered and when.",
+      "image": {
+        "file": "a5-requests",
+        "alt": "Request management for the practice: RFIs, variations, drawing revisions, site instructions and council submissions in one table, each with its channel, owner, status and priority"
+      },
+      "cards": [
+        {
+          "title": "Your own categories",
+          "body": "RFI, drawing revision, variation, site instruction, submission. Each one routes to the person who actually answers it."
+        },
+        {
+          "title": "A clock the contractor can see",
+          "body": "An SLA per category, so “we are looking into it” becomes two working days: visible to the client, which is the point."
+        },
+        {
+          "title": "A message becomes an RFI",
+          "body": "The site agent writes it as a message; anyone in the studio turns that message into a numbered RFI in one step, photographs attached."
+        }
+      ]
+    },
+    "split": {
+      "id": "revisions",
+      "title": "Nobody prices off a superseded sheet again",
+      "lede": "Issue the revision in the channel and the contractor, the QS and the engineer all see the same transmittal at the same moment. The superseded list is published with it.",
+      "points": [
+        {
+          "title": "The revision knows why it exists",
+          "body": "Link the new revision to the RFI or instruction that caused it. In a year, when someone asks why the sheet moved, the answer is on the record instead of in a memory."
+        },
+        {
+          "title": "One issue, one list, one place",
+          "body": "Transmittal, drawing register and revision notes live on the channel wiki. Guests read them without a licence, so there is no “please resend the latest set”."
+        },
+        {
+          "title": "Cost changes go past the principal",
+          "body": "A variation cannot be approved by a quiet email. It is a request with an owner, a price and a signature, sitting against the sheet it changes."
+        }
+      ],
+      "image": {
+        "file": "a7-wiki-crop",
+        "alt": "The project wiki article Issuing a revised drawing set: the four steps, the revision code table and the message to paste to the contractor, with the wiki section tree beside it"
+      }
+    },
+    "site": {
+      "id": "site",
+      "title": "The answer reaches site before the trade moves on",
+      "lede": "Your technologist is at a desk with the model open. The site agent is standing in front of the clash with a phone. Same channel, same RFI number, same photographs, and the answer is written down where the contractor has to acknowledge it.",
+      "image": {
+        "file": "a3-mobile",
+        "alt": "Kolabr on a phone: a site query about a soffit clash with photographs attached, and the open RFIs for the project"
+      },
+      "cards": [
+        {
+          "title": "Photographs, not descriptions",
+          "body": "Shot at the clash, attached to the request, visible to the engineer in seconds."
+        },
+        {
+          "title": "A call from the request",
+          "body": "Start a video call and share the detail on screen when writing it out would take longer."
+        },
+        {
+          "title": "Works on a bad line",
+          "body": "The site is a slab with one bar of signal. The app is built for that, not for the office."
+        },
+        {
+          "title": "No personal numbers",
+          "body": "Nobody hands out a mobile number to a contractor they will meet again on the next job."
+        }
+      ]
+    },
+    "calendar": {
+      "title": "Submission dates, site meetings and the tender clock",
+      "lede": "Design reviews, consultant coordination, the monthly site meeting, the council resubmission, the date tender pack B must be out. Scheduled in the channel it concerns, synced to Outlook and Google, and tied to the request it came from.",
+      "image": {
+        "file": "a5-events",
+        "alt": "The project calendar: studio work-in-progress, structural coordination, a client design review, the Rev C issue deadline and the council resubmission on one month view"
+      }
+    },
+    "oversight": {
+      "title": "Nothing hides between projects",
+      "lede": "Which schemes are waiting on you, which are waiting on the client, and which RFI is quietly turning into a delay claim.",
+      "image": {
+        "file": "a5-dashboard",
+        "alt": "The practice dashboard: open items across project channels, open RFIs, items awaiting client sign-off, what is due today, RFI volume for the fortnight and the requests assigned to this architect"
+      },
+      "wide": {
+        "title": "One view across every project",
+        "body": "Open RFIs per project, what is overdue, which client has been sitting on an approval for four days. The whole practice on one dashboard instead of chasing six people for a status.",
+        "link": {
+          "label": "Administration and controls",
+          "href": "/product/administration"
+        },
+        "rows": [
+          {
+            "label": "Sable Bay Precinct",
+            "value": "18 open"
+          },
+          {
+            "label": "Mount Rise Villas",
+            "value": "9 open"
+          },
+          {
+            "label": "Ridge Street Offices",
+            "value": "4 in review"
+          },
+          {
+            "label": "Awaiting client sign-off",
+            "value": "6",
+            "total": true
+          }
+        ]
+      },
+      "deep": {
+        "title": "A record that survives the claim",
+        "body": "When a contractor argues the information was late, the channel says otherwise: who asked, when it was answered, which revision went out and who acknowledged it.",
+        "rows": [
+          {
+            "label": "Audit log",
+            "value": "who did what"
+          },
+          {
+            "label": "Retention",
+            "value": "set by policy",
+            "highlight": true
+          },
+          {
+            "label": "Archive",
+            "value": "at practical completion"
+          }
+        ]
+      },
+      "cards": [
+        {
+          "title": "Guests see one project",
+          "body": "The contractor on Sable Bay sees Sable Bay. Not your fee conversation, not the other client whose scheme they are about to bid against."
+        },
+        {
+          "title": "Roles for the studio",
+          "body": "Who can issue a set, who can close an RFI, who can approve a variation. Set once, applied on every project."
+        },
+        {
+          "title": "The project, not the person",
+          "body": [
+            "When a technologist leaves, the RFI history stays with the project instead of walking out in a mailbox. ",
+            {
+              "label": "How the wiki works",
+              "href": "/product/wiki"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "stages": {
+      "title": "Concept through practical completion",
+      "lede": "A project has stages, and the channel should follow them rather than sprawl.",
+      "cards": [
+        {
+          "title": "Start with the messy one",
+          "body": "Pick the project where the RFI log is a spreadsheet nobody trusts. One channel, the consultants invited, two weeks. You will know by the second site meeting."
+        },
+        {
+          "title": "Next project in one step",
+          "body": "Build it from a channel template: categories, SLAs, drawing standards and the submission checklist already in place. Archive the last one and keep it readable for the defects period."
+        },
+        {
+          "title": "You pay for the studio only",
+          "body": [
+            "Clients, contractors, engineers and QSs are guests and are never billed. The plan covers your own people. ",
+            {
+              "label": "See pricing",
+              "href": "/pricing"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Try it on one project.",
+      "body": "Fourteen days free on Max, every option included, no card. Invite the client and the contractor and see what happens to your RFI log.",
+      "primary": "Start free trial"
+    }
+  },
+  "clinics": {
+    "hero": {
+      "eyebrow": "Kolabr for clinics and practices",
+      "title": "An urgent result should never wait in a shared inbox.",
+      "lede": "It arrives at twenty to five, lands in an inbox nobody owns, and is found at nine the next morning. One channel per practice instead: where an urgent result is flagged by file number, has a named clinician and escalates if nobody acknowledges it. Labs and referral partners join as guests, free, on every plan.",
+      "note": "Kolabr is not a patient record. It coordinates the practice around one: the wiki rule on every clinical channel is that identifiers and clinical detail stay in the record, not in chat.",
+      "image": {
+        "file": "c3-chat",
+        "alt": "The Clinical team channel for Northfield Health: a pinned rule against patient identifiers, the vaccine fridge log, and the pathology partner reporting two unacknowledged urgent results"
+      }
+    },
+    "channels": {
+      "title": "Where a practice puts its channels",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the tasks, the calendar and the wiki. Most practices split by who needs to see what.",
+      "cards": [
+        {
+          "title": "Clinical team",
+          "body": "Doctors, nurses and locums. Results flagged by file number, handover between sessions, and who is covering when somebody is off."
+        },
+        {
+          "title": "Front desk & bookings",
+          "body": "Lists, repeat scripts, the room running late. The things reception currently shouts across a corridor or holds in their head."
+        },
+        {
+          "title": "Practice operations",
+          "body": "Fridge logs, sharps collections, emergency trolley checks. Compliance as recurring tasks with a name against each one."
+        },
+        {
+          "title": "Billing & medical aid",
+          "body": "Rejections, pre-authorisations and the claims that need chasing: away from clinical traffic."
+        },
+        {
+          "title": "Laboratory and radiology partners",
+          "body": "Your pathology lab and imaging practice as guests. Urgent results and referrals in a channel, not a shared inbox after four."
+        },
+        {
+          "title": "Practice",
+          "body": "Your own staff only. Roster, locum cover, and the conversations that should not sit where a partner can read them."
+        }
+      ],
+      "seatNote": [
+        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your staff and your guests. A single-site practice with a lab and a radiology partner sits comfortably inside Starter. ",
+        {
+          "label": "Compare plans",
+          "href": "/pricing#compare-plans"
+        },
+        "."
+      ]
+    },
+    "requests": {
+      "id": "tasks",
+      "title": "The admin that surrounds care, with an owner on each item",
+      "lede": "Urgent results, referrals, compliance checks, medical aid rejections and locum access as tracked tasks. Nothing clinical in the chat: a file number, a priority and a name.",
+      "image": {
+        "file": "c5-requests",
+        "alt": "Request management for the practice: an unactioned urgent result, locum access, a medical aid rejection, an unacknowledged referral and the weekly fridge log in one table"
+      },
+      "cards": [
+        {
+          "title": "Categories that match a practice",
+          "body": "Clinical, referral, compliance, billing, onboarding. Each routed to the nurse, the reception lead or the practice manager."
+        },
+        {
+          "title": "Escalation that does not rely on memory",
+          "body": "An urgent result unacknowledged after an hour escalates to the practice manager. Not because someone remembered to check."
+        },
+        {
+          "title": "Recurring compliance as tasks",
+          "body": "Fridge logs, trolley checks, sharps collections. If it is not ticked in the channel, it did not happen as far as an inspection is concerned."
+        }
+      ]
+    },
+    "split": {
+      "id": "results",
+      "title": "The locum follows the same procedure as the partner",
+      "lede": "How a result travels from the lab to a clinician sits on the channel wiki, beside the rule about what may be written down. New staff read it on their first morning instead of learning it by getting it wrong.",
+      "points": [
+        {
+          "title": "Flag it by file number, not by inbox",
+          "body": "A shared inbox after four is where urgent results go to wait until morning. The channel has someone accountable and a clock."
+        },
+        {
+          "title": "Name who must act",
+          "body": "Not “the doctor”. The clinician on that patient today, by name, so the task has an owner rather than an audience."
+        },
+        {
+          "title": "Close it in the record, not in the chat",
+          "body": "What was done goes in the patient record. The channel only ever carries the fact that it was seen and closed."
+        }
+      ],
+      "image": {
+        "file": "c6-wiki",
+        "alt": "The practice wiki article Handling an urgent result: four steps, a result priority table from critical to repeat, and the exact message to post in the channel"
+      }
+    },
+    "site": {
+      "id": "mobile",
+      "title": "Between patients, not between emails",
+      "lede": "A doctor has four minutes between consultations and is not going to open a laptop. Acknowledging an urgent result, confirming cover for Thursday or answering reception takes seconds on a phone, and it lands on the record rather than in a corridor.",
+      "image": {
+        "file": "c8-mobile",
+        "alt": "Kolabr on a phone: the lab flagging an urgent result by file number, the doctor acknowledging it before the ten o'clock list, and reception reporting the repeat script backlog"
+      },
+      "cards": [
+        {
+          "title": "Acknowledge in seconds",
+          "body": "The urgent result is seen, logged and off the escalation path."
+        },
+        {
+          "title": "On call, off site",
+          "body": "The clinician covering tonight reads the same channel as the one who left at five."
+        },
+        {
+          "title": "Notifications per channel",
+          "body": "Urgent results reach you at home. The billing channel does not."
+        },
+        {
+          "title": "No personal WhatsApp group",
+          "body": "Practice conversation stops living on phones the practice does not control."
+        }
+      ]
+    },
+    "calendar": {
+      "title": "Huddles, compliance checks and the locum’s first day",
+      "lede": "The morning huddle, the weekly fridge check, the practice meeting, the claims deadline and the day a locum needs access. In the channel they belong to, synced to Outlook and Google.",
+      "image": {
+        "file": "c6-events",
+        "alt": "The practice calendar: morning huddles, the urgent results catch-up with the lab, the practice meeting, the repeat script backlog review and the locum access deadline"
+      }
+    },
+    "oversight": {
+      "title": "What is overdue, and who is waiting on whom",
+      "lede": "Results not acknowledged, referrals a partner has sat on for five days, and the compliance check that quietly lapsed.",
+      "image": {
+        "file": "c5-dashboard",
+        "alt": "The practice dashboard: open items across practice channels, open tasks, items awaiting partners, what is overdue today and task volume for the fortnight"
+      },
+      "wide": {
+        "title": "The practice on one screen",
+        "body": "Overdue results, outstanding referrals, compliance due. A practice manager can see the risk without walking the building.",
+        "link": {
+          "label": "Administration and controls",
+          "href": "/product/administration"
+        },
+        "rows": [
+          {
+            "label": "Urgent results open",
+            "value": "1 overdue"
+          },
+          {
+            "label": "Referrals awaiting partners",
+            "value": "6"
+          },
+          {
+            "label": "Compliance checks",
+            "value": "On track"
+          },
+          {
+            "label": "Medical aid rejections",
+            "value": "8 claims",
+            "total": true
+          }
+        ]
+      },
+      "deep": {
+        "title": "Built for what you may write down",
+        "body": "Identifiers stay out of the channel by policy and by habit: the wiki rule is pinned, and the record remains the only place clinical detail lives.",
+        "rows": [
+          {
+            "label": "Audit log",
+            "value": "who saw and acted"
+          },
+          {
+            "label": "Retention",
+            "value": "set by policy",
+            "highlight": true
+          },
+          {
+            "label": "Access",
+            "value": "revoked the day staff leave"
+          }
+        ]
+      },
+      "cards": [
+        {
+          "title": "Partners see one channel",
+          "body": "Your lab sees the results channel. Not the billing conversation, and not the roster discussion about a locum."
+        },
+        {
+          "title": "Locums, in and out",
+          "body": "Access on Tuesday morning, gone on Thursday evening. Onboarding is a task with a deadline, not a favour someone remembers."
+        },
+        {
+          "title": "The practice, not the person",
+          "body": [
+            "When a practice manager leaves, the procedures and history stay with the practice. ",
+            {
+              "label": "How the wiki works",
+              "href": "/product/wiki"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "stages": {
+      "title": "One room, then the whole practice",
+      "lede": "You do not have to change how the practice works on a Monday.",
+      "cards": [
+        {
+          "title": "Start with results",
+          "body": "One clinical channel, your lab invited, two weeks. If nothing else changes, an urgent result stops waiting overnight, and that is the whole case."
+        },
+        {
+          "title": "Second site in one step",
+          "body": "Build it from a channel template: categories, escalation times, the results procedure and the compliance checklist already there."
+        },
+        {
+          "title": "You pay for your staff",
+          "body": [
+            "Labs, radiology practices and referral partners are guests and are never billed. The plan covers your own people. ",
+            {
+              "label": "See pricing",
+              "href": "/pricing"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Try it on the results channel.",
+      "body": "Fourteen days free on Max, every option included, no card. Invite your lab and see what happens to the four o’clock result.",
+      "primary": "Start free trial"
+    }
+  },
+  "construction": {
+    "hero": {
+      "eyebrow": "Kolabr for construction",
+      "title": "The variation was raised on the day. Not argued about at month-end.",
+      "lede": "Rock deeper than the geotech, a crew standing while they wait on you, a near miss on level 2: all of it in the channel the hour it happens, with photographs attached and a name against it. Clients and subcontractors join as guests, free, on every plan.",
+      "image": {
+        "file": "con-chat",
+        "alt": "The Site coordination channel for Harbour Yard: a pinned notice moving the grid C pour, a foreman reporting rock below founding level, and a variation raised from that message"
+      }
+    },
+    "channels": {
+      "title": "Where a contractor puts its channels",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the variations and RFIs, the calendar and the wiki. Most sites run one project channel and a handful of standing ones.",
+      "cards": [
+        {
+          "title": "Harbour Yard",
+          "body": "The site channel. Client PM, QS, foremen, safety officer and every subcontractor in one place: the subbies join as guests and cost you nothing."
+        },
+        {
+          "title": "Site coordination",
+          "body": "The day. Setting-out, pours, inspections, variations raised the hour the ground changes rather than at month-end."
+        },
+        {
+          "title": "Client & PM",
+          "body": "Valuations, notices, delay claims. When you tell the client something, it is written down with a date on it."
+        },
+        {
+          "title": "Safety & incidents",
+          "body": "Near misses, toolbox talks, inductions. Photographed, logged and closed out: the file you want to have when an inspector arrives."
+        },
+        {
+          "title": "Snags & handover",
+          "body": "Defects by unit, with the photo and who owes the fix. Practical completion without a spreadsheet emailed sixteen times."
+        },
+        {
+          "title": "Per trade",
+          "body": "Electrical, plumbing, groundworks. Each subcontractor sees their own channel and nothing else, not your margins, not the next tender."
+        }
+      ],
+      "seatNote": [
+        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your own staff and your guests. A site with a client PM, a QS and six subcontractor foremen sits inside a Starter channel. ",
+        {
+          "label": "Compare plans",
+          "href": "/pricing#compare-plans"
+        },
+        "."
+      ]
+    },
+    "requests": {
+      "id": "variations",
+      "title": "Every claim has a number, an owner and a date",
+      "lede": "Variations, delay notices, quality sign-offs, safety incidents and snags: one table, categorised the way a site actually works, each item owned by a name. At valuation you produce the record instead of reconstructing it.",
+      "image": {
+        "file": "con-requests",
+        "alt": "Request management for the site: variations, quality checks, delay notices, safety incidents and snags in one table with owner, channel, category and SLA"
+      },
+      "cards": [
+        {
+          "title": "Categories that match the contract",
+          "body": "Variation, delay notice, RFI, quality, safety, snag. Each routes to the person who actually owns it."
+        },
+        {
+          "title": "Standing time logged daily",
+          "body": "A crew waiting is a cost. Logged the day it happens, it is a claim; logged at month-end, it is a discussion."
+        },
+        {
+          "title": "A message becomes a variation",
+          "body": "The foreman reports it in the channel; one step turns that message into a numbered variation with the photographs already attached."
+        }
+      ]
+    },
+    "split": {
+      "id": "record",
+      "title": "The procedure lives on site, not in a folder nobody opens",
+      "lede": "How to raise a variation, what a dayworks sheet must carry, when a notice of delay goes in. Written once, on the channel wiki, where the foreman can read it on his phone at the excavation.",
+      "points": [
+        {
+          "title": "Raise it the same day",
+          "body": "A variation raised on the day is a record. One raised at month-end is an argument, and the client knows it."
+        },
+        {
+          "title": "Photograph before it is buried",
+          "body": "Excavation, rebar and services disappear under concrete. The photo attached to the request is the only evidence that survives."
+        },
+        {
+          "title": "Cost and time are two claims",
+          "body": "If the change moves the critical path, the notice of delay goes in the same day and links to the variation. Miss that and you have priced the work but lost the time."
+        }
+      ],
+      "image": {
+        "file": "con-wiki",
+        "alt": "The site wiki article Raising a variation on site: four steps, a table of variation types and the notice to paste into the client channel, with sections for commercial, safety and quality beside it"
+      }
+    },
+    "site": {
+      "id": "site",
+      "title": "Built for a man in a hard hat, not a desk",
+      "lede": "Your foreman has one bar of signal, gloves on and a bakkie to unload. He can photograph the clash, raise the variation and be done before the concrete arrives, without learning a system.",
+      "image": {
+        "file": "c6-mobile",
+        "alt": "Kolabr on a phone: the foreman reporting rock at grid C, the reply telling him to photograph it before backfill, and the day's open requests"
+      },
+      "cards": [
+        {
+          "title": "Photographs, not descriptions",
+          "body": "Shot at the excavation, attached to the claim, visible to the QS in seconds."
+        },
+        {
+          "title": "Toolbox talks recorded",
+          "body": "Who attended, what was covered, signed off on a phone at 06:15."
+        },
+        {
+          "title": "Works on a bad line",
+          "body": "Built for a slab with one bar of signal, not an office fibre connection."
+        },
+        {
+          "title": "No personal numbers",
+          "body": "Subbies come and go between jobs. Nobody hands out a mobile number to keep in touch."
+        }
+      ]
+    },
+    "calendar": {
+      "title": "Pours, inspections, valuations and the notice that must go in",
+      "lede": "The 05:30 pour, the rebar inspection, the monthly valuation cut-off, the extension-of-time notice with a deadline attached to it. In the channel they belong to, synced to Outlook and Google.",
+      "image": {
+        "file": "con-events",
+        "alt": "The site calendar: toolbox talks, the grid C pour, rebar inspection, the client site meeting, the valuation cut-off and the extension of time notice on one month view"
+      }
+    },
+    "oversight": {
+      "title": "What the contracts manager sees across every site",
+      "lede": "Which variations are unpriced, what the client has been sitting on, and which safety item is still open at the end of the week.",
+      "image": {
+        "file": "con-dashboard",
+        "alt": "The site dashboard: open items across site channels, open variations with the value claimed to date, items awaiting the client, safety items open, and variation volume for the fortnight"
+      },
+      "wide": {
+        "title": "Every site on one screen",
+        "body": "Unpriced variations, overdue claims, open safety items. You find out on Tuesday, not when the valuation comes back short.",
+        "link": {
+          "label": "Administration and controls",
+          "href": "/product/administration"
+        },
+        "rows": [
+          {
+            "label": "Harbour Yard",
+            "value": "12 variations"
+          },
+          {
+            "label": "Kloof Interchange",
+            "value": "7 variations"
+          },
+          {
+            "label": "Silverton Depot",
+            "value": "3 in snagging"
+          },
+          {
+            "label": "Unpriced, awaiting client",
+            "value": "5",
+            "total": true
+          }
+        ]
+      },
+      "deep": {
+        "title": "The file you want in adjudication",
+        "body": "Who was told, when, with which photograph attached. A channel that was honest on the day is worth more than a letter written afterwards.",
+        "rows": [
+          {
+            "label": "Audit log",
+            "value": "who did what"
+          },
+          {
+            "label": "Retention",
+            "value": "through the defects period",
+            "highlight": true
+          },
+          {
+            "label": "Archive",
+            "value": "at final account"
+          }
+        ]
+      },
+      "cards": [
+        {
+          "title": "Subbies see one site",
+          "body": "The electrical contractor on Harbour Yard sees Harbour Yard. Not your margins, not the job they are about to bid against you on."
+        },
+        {
+          "title": "Roles that match the site",
+          "body": "Who can approve a variation, who can close a safety item, who can sign off a pour. Set once, applied on every project."
+        },
+        {
+          "title": "The site, not the site agent",
+          "body": [
+            "When an agent moves to the next job, the claim history stays with the project instead of leaving in a mailbox. ",
+            {
+              "label": "How the wiki works",
+              "href": "/product/wiki"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "stages": {
+      "title": "Mobilisation through final account",
+      "lede": "A site has a beginning and an end, and the channel should follow it.",
+      "cards": [
+        {
+          "title": "Start with the contentious one",
+          "body": "Pick the site where the variation register is disputed. One channel, the client PM and the QS invited, two weeks. You will know by the first valuation."
+        },
+        {
+          "title": "Next site in one step",
+          "body": "Build it from a channel template: categories, SLAs, safety procedure and the valuation checklist already there. Archive the last one and keep it readable through the defects period."
+        },
+        {
+          "title": "You pay for your own staff",
+          "body": [
+            "Clients, QSs and subcontractors are guests and are never billed. The plan covers the people on your payroll. ",
+            {
+              "label": "See pricing",
+              "href": "/pricing"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Try it on one site.",
+      "body": "Fourteen days free on Max, every option included, no card. Invite the client PM and two subcontractors and see what the next valuation looks like.",
+      "primary": "Start free trial"
+    }
+  },
+  "engineering-firms": {
+    "hero": {
+      "eyebrow": "Kolabr for engineering practices",
+      "title": "You signed it. So it had better be written down.",
+      "lede": "A pour booked for Thursday, spacing that looks wrong in a photograph, and a contractor who will say you approved it verbally. One channel per project, where the inspection, the measurement and the decision carry a name and a timestamp. Clients and contractors join as guests, free, on every plan.",
+      "image": {
+        "file": "e2-chat",
+        "alt": "The Structural channel for the Cavendish Mall upgrade: a pinned rule that no pour proceeds without a signed inspection, cube results flagged under spec, and the contractor asking whether to stop"
+      }
+    },
+    "channels": {
+      "title": "Where a practice puts its channels",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the inspections and queries, the calendar and the wiki. Most practices run one per project, split by discipline.",
+      "cards": [
+        {
+          "title": "One channel per project",
+          "body": "Cavendish Mall in one place: the client, the contractor, and each of your disciplines. They join as guests, free, and see only this project."
+        },
+        {
+          "title": "Per discipline",
+          "body": "Structural, wet services, geotechnical. A stormwater query does not interrupt the people designing a frame, and neither gets lost in the other’s thread."
+        },
+        {
+          "title": "Inspections & certification",
+          "body": "Hold points, witness points, test results and the sign-off itself. The channel that matters most when something goes wrong two years from now."
+        },
+        {
+          "title": "Client & approvals",
+          "body": "Certificates, drawdowns, scope changes. Where the client asks what is outstanding and gets an answer with a date on it."
+        },
+        {
+          "title": "Contractor",
+          "body": "The site agent’s direct line to the engineer. Photographs at 06:40, a decision before the concrete arrives."
+        },
+        {
+          "title": "Practice",
+          "body": "Your own engineers. Resourcing, internal QA, and the conversation about a design before a client sees it."
+        }
+      ],
+      "seatNote": [
+        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your engineers and your guests. A project with a client, a contractor and three disciplines sits inside a Starter channel. ",
+        {
+          "label": "Compare plans",
+          "href": "/pricing#compare-plans"
+        },
+        "."
+      ]
+    },
+    "requests": {
+      "id": "signoff",
+      "title": "Every inspection, query and certificate has a number",
+      "lede": "Site queries, inspections, test results, design changes and certification as tracked items with an owner and a due date. What is holding work up is visible, and so is who is holding it.",
+      "image": {
+        "file": "e2-requests",
+        "alt": "Request management for the practice: a rebar spacing query holding a pour, cube results under spec, a completion certificate, pressure testing and inspections in one table"
+      },
+      "cards": [
+        {
+          "title": "Categories that match the work",
+          "body": "Site query, inspection, testing, design, certification. Each routes to the engineer who can actually answer it."
+        },
+        {
+          "title": "A clock the contractor can see",
+          "body": "A query holding a pour has a due time. Both sides watch the same clock, which is a faster argument than a phone call."
+        },
+        {
+          "title": "A photograph becomes a query",
+          "body": "The site agent photographs the bar spacing; one step turns it into a numbered query with the image attached and a name against the answer."
+        }
+      ]
+    },
+    "split": {
+      "id": "inspections",
+      "title": "Candidate engineers inspect the way you would",
+      "lede": "The procedure sits on the channel wiki, beside the project it governs: what a hold point is, what to photograph, and exactly how a decision is recorded. Your registration is on the certificate; the process should not depend on who happened to attend.",
+      "points": [
+        {
+          "title": "Inspect against the current revision",
+          "body": "More disputes start with a superseded drawing than with anything measured on site. Check the revision before you leave the office."
+        },
+        {
+          "title": "Photograph what you measured",
+          "body": "Not a general view of the slab: the tape against the bar. In two years that photograph is the only thing that answers the question."
+        },
+        {
+          "title": "Decide in writing, in the channel",
+          "body": "Approved, approved with conditions, or not approved, with the measurement and the reason. A nod on site protects nobody, least of all you."
+        }
+      ],
+      "image": {
+        "file": "e2-wiki",
+        "alt": "The project wiki article Signing off an inspection: four steps, a table defining hold points, witness points, approved and not approved, and the wording for recording a failed inspection"
+      }
+    },
+    "site": {
+      "id": "site",
+      "title": "The hold reaches site before the concrete does",
+      "lede": "Your engineer is at a desk with the bending schedule open. The site agent is standing over the rebar at twenty to seven with a phone. Same channel, same query number, same photograph, and the instruction not to pour is in writing before the pump arrives.",
+      "image": {
+        "file": "e4-mobile",
+        "alt": "Kolabr on a phone: the engineer measuring 180mm against 150mm off the contractor's photographs and instructing no pour, the re-inspection booked, and the client asking about the certificate"
+      },
+      "cards": [
+        {
+          "title": "Measure off the photograph",
+          "body": "Often enough to make the call without driving two hours to the site."
+        },
+        {
+          "title": "Sign-off from the field",
+          "body": "The inspection is recorded at the element, not typed up from notes that evening."
+        },
+        {
+          "title": "Works on a bad line",
+          "body": "Built for a slab with one bar of signal, not an office connection."
+        },
+        {
+          "title": "No personal numbers",
+          "body": "A contractor who has your mobile will phone at 05:30 rather than raise a query."
+        }
+      ]
+    },
+    "calendar": {
+      "title": "Inspections, tests and the date the certificate is needed",
+      "lede": "The 07:00 re-inspection, the pour it releases, the pressure test that needs a witness, and the completion certificate the bank is waiting on. In the channel they belong to, synced to Outlook and Google.",
+      "image": {
+        "file": "e2-events",
+        "alt": "The project calendar: practice work-in-progress, the slab 4C re-inspection and pour, the fire water pressure test, certificate pack review and the completion certificate issue date"
+      }
+    },
+    "oversight": {
+      "title": "What is waiting on a signature, across every project",
+      "lede": "Which inspections are due, what work is on hold, and which certificate a client is quietly waiting for.",
+      "image": {
+        "file": "e2-dashboard",
+        "alt": "The practice dashboard: open items across project channels, inspections due, items awaiting sign-off, work currently on hold, and inspection volume for the fortnight"
+      },
+      "wide": {
+        "title": "Every project on one screen",
+        "body": "Inspections due, work on hold, certificates outstanding. A principal can see where the practice is exposed without asking five engineers.",
+        "link": {
+          "label": "Administration and controls",
+          "href": "/product/administration"
+        },
+        "rows": [
+          {
+            "label": "Cavendish Mall",
+            "value": "11 inspections"
+          },
+          {
+            "label": "N2 bridge",
+            "value": "6 open"
+          },
+          {
+            "label": "Rosslyn plant",
+            "value": "In design"
+          },
+          {
+            "label": "Awaiting sign-off",
+            "value": "5",
+            "total": true
+          }
+        ]
+      },
+      "deep": {
+        "title": "The file your insurer wants",
+        "body": "Professional liability outlives the project. What you inspected, what you measured, what you refused and when you said so: kept for as long as the exposure lasts.",
+        "rows": [
+          {
+            "label": "Audit log",
+            "value": "who signed what"
+          },
+          {
+            "label": "Retention",
+            "value": "beyond completion",
+            "highlight": true
+          },
+          {
+            "label": "Archive",
+            "value": "read-only, searchable"
+          }
+        ]
+      },
+      "cards": [
+        {
+          "title": "Guests see one project",
+          "body": "The contractor on Cavendish sees Cavendish. Not your fee, and not the tender they are bidding against you on next month."
+        },
+        {
+          "title": "Who may sign",
+          "body": "A candidate engineer can run an inspection; only a professional closes the certificate. Enforced by role, not by memory."
+        },
+        {
+          "title": "The project, not the engineer",
+          "body": [
+            "When an engineer leaves, the inspection record stays with the project instead of walking out in a mailbox. ",
+            {
+              "label": "How the wiki works",
+              "href": "/product/wiki"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "stages": {
+      "title": "Appointment through certificate",
+      "lede": "A commission has a shape, and the channel should follow it.",
+      "cards": [
+        {
+          "title": "Start where you are exposed",
+          "body": "Pick the project with the most site queries and the least written record. One channel, the contractor invited, two weeks. Your first hold point will show you."
+        },
+        {
+          "title": "Next commission in one step",
+          "body": "Build it from a channel template: disciplines, hold points, the inspection procedure and the certificate checklist already there. Archive the last one and keep it readable for the liability period."
+        },
+        {
+          "title": "You pay for your engineers",
+          "body": [
+            "Clients, contractors and other consultants are guests and are never billed. The plan covers your own people. ",
+            {
+              "label": "See pricing",
+              "href": "/pricing"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Try it on one project.",
+      "body": "Fourteen days free on Max, every option included, no card. Invite the contractor and run your next hold point through it.",
+      "primary": "Start free trial"
+    }
+  },
+  "it-service-providers": {
+    "hero": {
+      "eyebrow": "Kolabr for IT service providers",
+      "title": "The client can see the SLA clock. That is the point.",
+      "lede": "A ticket portal nobody logs into, an inbox that swallows requests, and a client who only hears from you when something breaks. One channel per client instead: where the incident, the update and the time remaining are all visible to the people paying for them. Clients join as guests, free, on every plan.",
+      "image": {
+        "file": "i2-chat",
+        "alt": "The Service desk channel for Rossgrove Legal: a pinned P1 notice promising updates every thirty minutes, the practice manager asking how bad the mail outage is, and the incident raised from that message"
+      }
+    },
+    "channels": {
+      "title": "Where a provider puts its channels",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the requests, the calendar and the runbooks. Most providers run one per client, split by the kind of work.",
+      "cards": [
+        {
+          "title": "One channel per client",
+          "body": "Rossgrove Legal in one place: their practice manager, their managing partner, their office administrator. Guests, free, seeing only their own estate."
+        },
+        {
+          "title": "Service desk",
+          "body": "The everyday queue. Printer offline, new starter, shared mailbox: raised by the people who have the problem, not relayed through one overloaded contact."
+        },
+        {
+          "title": "Incidents & outages",
+          "body": "P1 and P2 only, so the client can mute the noise and never mute this. The bridge, the updates and the clock in one thread."
+        },
+        {
+          "title": "Security & compliance",
+          "body": "MFA enrolment, joiners and leavers, the audit evidence. The channel you open when a client asks what you actually do for the security line on the invoice."
+        },
+        {
+          "title": "Projects",
+          "body": "The migration, the rollout, the refresh. Separate from the desk so project work is not eaten by tickets."
+        },
+        {
+          "title": "Internal",
+          "body": "Your engineers only. Rota, escalation, the honest assessment of an estate before you word it for the client."
+        }
+      ],
+      "seatNote": [
+        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your engineers and your client’s staff. A forty-person client with your team of six needs Pro; a boutique practice sits inside Starter. ",
+        {
+          "label": "Compare plans",
+          "href": "/pricing#compare-plans"
+        },
+        "."
+      ]
+    },
+    "requests": {
+      "id": "requests",
+      "title": "A service desk your clients will actually use",
+      "lede": "Incidents, service requests, changes and security items with an owner, a priority and an SLA that runs in the open. Raised by typing in a channel, no portal login, no “did you get my email?”.",
+      "image": {
+        "file": "i2-requests",
+        "alt": "Request management for the provider: a P1 mail incident, onboarding, MFA rollout, backup failures and change requests in one table with owner, channel, category and SLA state"
+      },
+      "cards": [
+        {
+          "title": "Your SLAs, per category",
+          "body": "P1 responds in fifteen minutes, a printer in four hours. Set per client, visible to them, and measured whether or not anyone is watching."
+        },
+        {
+          "title": "Requests from conversation",
+          "body": "The user describes the problem in the channel; one step makes it a request with the whole thread attached. Nobody retypes anything."
+        },
+        {
+          "title": "Evidence for the QBR",
+          "body": "Volume, response times, what was resolved and what the client sat on. The review becomes a report instead of a negotiation."
+        }
+      ]
+    },
+    "split": {
+      "id": "incidents",
+      "title": "Every engineer runs a P1 the same way",
+      "lede": "The runbook lives on the channel wiki, beside the estate it describes. New starters follow it on their first week; the client reads the same page and knows what to expect.",
+      "points": [
+        {
+          "title": "Declare it, do not debate it",
+          "body": "Downgrading later costs nothing. A P1 discovered at eleven that started at twenty to nine costs the relationship."
+        },
+        {
+          "title": "One lead, one scribe",
+          "body": "The lead fixes. The scribe keeps the client informed. An engineer doing both does neither well, and the client always notices which one was dropped."
+        },
+        {
+          "title": "Update on the clock, not on progress",
+          "body": "Every thirty minutes, even with nothing new. Silence is what makes a practice manager phone the managing partner instead of you."
+        }
+      ],
+      "image": {
+        "file": "i2-wiki",
+        "alt": "The client wiki article Declaring and running a P1: four steps, the priority definition table from P1 to P4, and the plain-language update to post in the client channel"
+      }
+    },
+    "site": {
+      "id": "mobile",
+      "title": "On-call, on a phone, at twenty past one in the morning",
+      "lede": "The engineer who picks up the page is in a car park, not at a desk. Read the runbook, post the update, hand over at shift change: all from the channel the client is already watching.",
+      "image": {
+        "file": "i2-mobile",
+        "alt": "Kolabr on a phone: the engineer confirming failover is running with the next update time, and the client asking about the mail delays"
+      },
+      "cards": [
+        {
+          "title": "Runbooks in your pocket",
+          "body": "The wiki travels with the channel, so the procedure is one tap from the alert."
+        },
+        {
+          "title": "Clean handover",
+          "body": "The next engineer reads the thread, not a voicemail and three screenshots."
+        },
+        {
+          "title": "Notifications per channel",
+          "body": "Incidents wake you. The printer channel does not."
+        },
+        {
+          "title": "No personal numbers",
+          "body": "Clients stop WhatsApping the engineer who once helped them at nine on a Sunday."
+        }
+      ]
+    },
+    "calendar": {
+      "title": "Change windows, service reviews and the cutover date",
+      "lede": "The firewall window at eight on a Thursday night, the monthly service review, the day MFA enforcement goes live. In the channel it belongs to, synced to Outlook and Google, tied to the change it came from.",
+      "image": {
+        "file": "i2-events",
+        "alt": "The provider calendar: service desk stand-ups, a P1 incident bridge, the monthly service review, the firewall change window, the M365 pilot cutover and MFA enforcement going live"
+      }
+    },
+    "oversight": {
+      "title": "Which contracts are healthy, and which are quietly losing money",
+      "lede": "Request volume per client, what is about to breach, and the estate generating three times the requests it is priced for.",
+      "image": {
+        "file": "i2-dashboard",
+        "alt": "The provider dashboard: requests this month across client channels, open requests, unassigned, SLA at risk with the next breach time, request volume for the fortnight and CSAT"
+      },
+      "wide": {
+        "title": "Every client on one screen",
+        "body": "Volume, breaches and satisfaction per contract. The renewal conversation and the price-increase conversation both start here.",
+        "link": {
+          "label": "Administration and controls",
+          "href": "/product/administration"
+        },
+        "rows": [
+          {
+            "label": "Rossgrove Legal",
+            "value": "38 open"
+          },
+          {
+            "label": "Bellview Clinics",
+            "value": "21 open"
+          },
+          {
+            "label": "Harbour Freight",
+            "value": "9 open"
+          },
+          {
+            "label": "Breaching today",
+            "value": "2",
+            "total": true
+          }
+        ]
+      },
+      "deep": {
+        "title": "Proof for the audit",
+        "body": "Who had access, when it was revoked, which change was approved and by whom. Your client’s auditor asks; the channel answers.",
+        "rows": [
+          {
+            "label": "Audit log",
+            "value": "who did what"
+          },
+          {
+            "label": "Retention",
+            "value": "set by policy",
+            "highlight": true
+          },
+          {
+            "label": "Archive",
+            "value": "when a contract ends"
+          }
+        ]
+      },
+      "cards": [
+        {
+          "title": "Clients see one estate",
+          "body": "Rossgrove sees Rossgrove. Not another client’s outage, and not your internal assessment of their ageing server."
+        },
+        {
+          "title": "Roles for the desk",
+          "body": "Who can approve a change, who can close a P1, who can see security items. Set once, applied on every contract."
+        },
+        {
+          "title": "The estate, not the engineer",
+          "body": [
+            "When your senior engineer resigns, the runbooks and the history stay with the client instead of leaving in his head. ",
+            {
+              "label": "How the wiki works",
+              "href": "/product/wiki"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "stages": {
+      "title": "Onboarding through renewal",
+      "lede": "A contract has a life, and the channel should follow it.",
+      "cards": [
+        {
+          "title": "Start with the noisy client",
+          "body": "Pick the account where tickets arrive by phone, email and corridor. One channel, their staff invited, two weeks. Your first-line will tell you by Friday."
+        },
+        {
+          "title": "Next client in one step",
+          "body": "Build it from a channel template: categories, SLAs, the incident runbook and the joiner-leaver process already there. Onboarding stops being a fortnight of setup."
+        },
+        {
+          "title": "You pay for your engineers",
+          "body": [
+            "Client staff are guests and are never billed, however many of them raise requests. The plan covers your own people. ",
+            {
+              "label": "See pricing",
+              "href": "/pricing"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Try it on one contract.",
+      "body": "Fourteen days free on Max, every option included, no card. Invite one client’s staff and watch where the requests come from.",
+      "primary": "Start free trial"
+    }
+  },
+  "law-firms": {
+    "hero": {
+      "eyebrow": "Kolabr for law firms",
+      "title": "An instruction nobody wrote down is not an instruction.",
+      "lede": "A mandate given on a telephone call, a deadline in someone’s diary, and a candidate attorney reconstructing in March what was agreed in November. One channel per matter, where the instruction, the draft and the court date all live together. Clients join as guests, free, on every plan.",
+      "image": {
+        "file": "l3-chat",
+        "alt": "The Kingsway acquisition matter channel: a pinned signature date, a discovery affidavit deadline, and the client's general counsel asking for a change to the warranty schedule"
+      }
+    },
+    "channels": {
+      "title": "Where a firm puts its channels",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the tasks and deadlines, the calendar and the wiki. Most firms run one per matter, or one per client with a channel per workstream.",
+      "cards": [
+        {
+          "title": "One channel per matter",
+          "body": "The Kingsway acquisition in one place: the client’s general counsel, their company secretary, their CEO. Guests, free, seeing only that matter."
+        },
+        {
+          "title": "Litigation",
+          "body": "Deadlines, discovery, counsel. A court date is not a preference, and the channel treats it accordingly."
+        },
+        {
+          "title": "Commercial & contracts",
+          "body": "Renewals, reviews and the standing work that keeps a client. Separate from the deal so it does not get starved during one."
+        },
+        {
+          "title": "Employment",
+          "body": "Restraints, retrenchments, disciplinary process. Sensitive by nature, and visible only to the people who should see it."
+        },
+        {
+          "title": "Company secretarial",
+          "body": "Resolutions, filings, the registers. Where the client uploads what they have signed instead of emailing scans around."
+        },
+        {
+          "title": "Firm",
+          "body": "Your own people. Conflicts, capacity, and the conversation about a matter before the client is in the room."
+        }
+      ],
+      "seatNote": [
+        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your fee earners and your guests. A matter with three client contacts and your team of five sits inside Starter. ",
+        {
+          "label": "Compare plans",
+          "href": "/pricing#compare-plans"
+        },
+        "."
+      ]
+    },
+    "requests": {
+      "id": "deadlines",
+      "title": "Court dates, instructions and drafts, all with an owner",
+      "lede": "Filings, client instructions, due diligence items and advice as numbered tasks with a name and a date. What is waiting on the client is visible to the client, which is usually all it takes.",
+      "image": {
+        "file": "l3-requests",
+        "alt": "Request management for the firm: a discovery affidavit with a court deadline, a warranty schedule awaiting client review, board resolutions, an employment query and due diligence items"
+      },
+      "cards": [
+        {
+          "title": "Categories that match practice",
+          "body": "Court deadline, instruction, drafting, due diligence, advice. Each routed to the fee earner who owns it."
+        },
+        {
+          "title": "Deadlines that are not negotiable",
+          "body": "A court date carries a clock and escalates before it is missed. No diary system that depends on one person remembering."
+        },
+        {
+          "title": "An instruction becomes a task",
+          "body": "The client says it in the channel; one step makes it a recorded instruction with the mandate attached: before anyone acts on it."
+        }
+      ]
+    },
+    "split": {
+      "id": "instructions",
+      "title": "Every associate records a mandate the same way",
+      "lede": "The procedure sits on the channel wiki beside the matter it governs: who may instruct, how to confirm it, and what to do when there was no time to confirm before acting.",
+      "points": [
+        {
+          "title": "Write it down the same day",
+          "body": "Instructions arrive by telephone, in corridors and at the end of unrelated meetings. The recording of it is what makes it an instruction."
+        },
+        {
+          "title": "Confirm back in the client’s words",
+          "body": "A client reading their own instruction will correct a misunderstanding. A client receiving a memorandum will not read it at all."
+        },
+        {
+          "title": "Name the trade-off when you take it",
+          "body": "If holding one position costs another, say so when the mandate is recorded, not at eleven on the morning of signature."
+        }
+      ],
+      "image": {
+        "file": "l3-wiki",
+        "alt": "The matter wiki article Recording a client instruction: four steps, a table of instruction types from instruction to urgent oral, and the confirmation to post before acting"
+      }
+    },
+    "site": {
+      "id": "mobile",
+      "title": "Between court and a client meeting",
+      "lede": "A partner spends the day away from a desk and still owes three people an answer. Record the mandate on a phone in the ten minutes before a hearing, and it is on the file rather than in a memory.",
+      "image": {
+        "file": "l4-mobile",
+        "alt": "Kolabr on a phone: the client's general counsel asking for a 24-month warranty period, the partner recording the mandate, and the CEO asking whether Friday's signature still holds"
+      },
+      "cards": [
+        {
+          "title": "Record it before you forget it",
+          "body": "Thirty seconds on a phone is worth more than a perfect attendance note that never gets typed."
+        },
+        {
+          "title": "Unblock a junior in a break",
+          "body": "The answer is recorded against the matter, not lost in a private message."
+        },
+        {
+          "title": "Notifications per matter",
+          "body": "The matter signing on Friday reaches you. The one in a six-month lull does not."
+        },
+        {
+          "title": "No personal WhatsApp",
+          "body": "Privileged conversation stops living on a phone outside the firm’s control."
+        }
+      ]
+    },
+    "calendar": {
+      "title": "The diary, per matter, where the work is",
+      "lede": "Filing dates, consultations with counsel, the client instruction meeting and Friday’s signature. In the channel they belong to, synced to Outlook and Google, tied to the task they came from.",
+      "image": {
+        "file": "l3-events",
+        "alt": "The matter calendar: firm reviews, the notice of intention to amend, consultation with counsel, discovery affidavit filing and the Kingsway signature meeting on one month view"
+      }
+    },
+    "oversight": {
+      "title": "Which matters are exposed, before they become complaints",
+      "lede": "Court deadlines approaching, instructions outstanding, and the matter where nobody has written anything down for a fortnight.",
+      "image": {
+        "file": "l3-dashboard",
+        "alt": "The firm dashboard: open items across matter channels, court deadlines, items awaiting client instruction, at-risk matters and activity for the fortnight"
+      },
+      "wide": {
+        "title": "Every matter on one screen",
+        "body": "Deadlines, outstanding instructions and matters going quiet. A supervising partner sees the risk without reading forty files.",
+        "link": {
+          "label": "Administration and controls",
+          "href": "/product/administration"
+        },
+        "rows": [
+          {
+            "label": "Kingsway acquisition",
+            "value": "Signing Friday"
+          },
+          {
+            "label": "Supplier dispute",
+            "value": "Filing Thursday"
+          },
+          {
+            "label": "Delport estate",
+            "value": "On track"
+          },
+          {
+            "label": "Awaiting client instruction",
+            "value": "7",
+            "total": true
+          }
+        ]
+      },
+      "deep": {
+        "title": "A file that defends itself",
+        "body": "Who instructed what, when, and what you advised in response. The answer to a fee dispute, a negligence allegation, or a client who remembers it differently.",
+        "rows": [
+          {
+            "label": "Audit log",
+            "value": "who said what, when"
+          },
+          {
+            "label": "Retention",
+            "value": "for the prescription period",
+            "highlight": true
+          },
+          {
+            "label": "Archive",
+            "value": "on matter closure"
+          }
+        ]
+      },
+      "cards": [
+        {
+          "title": "Clients see their matter",
+          "body": "Arcadia sees Arcadia. Not another client, and not the firm’s internal view of their position."
+        },
+        {
+          "title": "Information barriers",
+          "body": "A channel is a wall. Where a conflict requires separation, the people who must not see a matter simply cannot."
+        },
+        {
+          "title": "The matter, not the attorney",
+          "body": [
+            "When an associate leaves mid-transaction, the instructions and history stay with the matter. ",
+            {
+              "label": "How the wiki works",
+              "href": "/product/wiki"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "stages": {
+      "title": "Intake through closure",
+      "lede": "A matter has a life, and the channel should follow it.",
+      "cards": [
+        {
+          "title": "Start with the busiest matter",
+          "body": "Pick the transaction with three client contacts and a deadline. One channel, two weeks. The first time an instruction is confirmed in writing, you will see the point."
+        },
+        {
+          "title": "Next matter in one step",
+          "body": "Build it from a channel template: categories, the instruction procedure, the conflicts checklist and the closing checklist already there."
+        },
+        {
+          "title": "You pay for fee earners",
+          "body": [
+            "Clients, counsel and other advisers are guests and are never billed. The plan covers your own people. ",
+            {
+              "label": "See pricing",
+              "href": "/pricing"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Try it on one matter.",
+      "body": "Fourteen days free on Max, every option included, no card. Invite the client and run one transaction through it.",
+      "primary": "Start free trial"
+    }
+  },
+  "logistics": {
+    "hero": {
+      "eyebrow": "Kolabr for logistics",
+      "title": "The client should hear it from you, not from their depot.",
+      "lede": "A reefer alarms outside Colesberg, the controller phones the fleet supervisor, and the client finds out when the trailer arrives two hours late. One channel per account instead: where the exception, the temperature log and the new ETA reach everyone at once. Clients join as guests, free, on every plan.",
+      "image": {
+        "file": "g2-chat",
+        "alt": "The Exceptions and delays channel for Cold Harvest Foods: a pinned cold chain reporting rule, six outstanding PODs flagged, and a controller reporting a reefer alarm in transit"
+      }
+    },
+    "channels": {
+      "title": "Where a carrier puts its channels",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the exceptions, the calendar and the wiki. Most carriers run one per account, split by what the client needs to see.",
+      "cards": [
+        {
+          "title": "One channel per account",
+          "body": "Cold Harvest in one place: their supply chain manager, their depot receiving, their head of logistics. Guests, free, seeing only their own freight."
+        },
+        {
+          "title": "Loads in transit",
+          "body": "The live picture. Where a controller posts a delay before the client’s depot works it out for themselves."
+        },
+        {
+          "title": "Exceptions & delays",
+          "body": "Cold chain, breakdowns, borders. The channel a client will forgive you for using, and never forgive you for not using."
+        },
+        {
+          "title": "Claims & PODs",
+          "body": "Proof of delivery, shorts and damages. Six outstanding PODs is six invoices you cannot send, visible to the people who can find them."
+        },
+        {
+          "title": "Bookings & planning",
+          "body": "Slots, lanes, rates. Next week’s plan agreed in writing rather than on a Friday phone call."
+        },
+        {
+          "title": "Control room",
+          "body": "Your own staff. Shift handover, fleet and the frank assessment of a trailer before a client hears about it."
+        }
+      ],
+      "seatNote": [
+        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your controllers and the client’s depots. A national account with six receiving sites needs Pro; a single-lane customer fits in Starter. ",
+        {
+          "label": "Compare plans",
+          "href": "/pricing#compare-plans"
+        },
+        "."
+      ]
+    },
+    "requests": {
+      "id": "exceptions",
+      "title": "Exceptions with a number, an owner and a clock",
+      "lede": "Cold chain events, delays, claims, PODs and bookings as tracked items. When a client asks what happened to a load in July, the answer is a record with a temperature log attached.",
+      "image": {
+        "file": "g2-requests",
+        "alt": "Request management for the carrier: a reefer temperature excursion, a short delivery claim, a missing POD, a border delay and booking items in one table with owner, channel and SLA"
+      },
+      "cards": [
+        {
+          "title": "Categories that match freight",
+          "body": "Cold chain, delay, claim, POD, booking. Each routed to the controller, the supervisor or compliance, not to whoever picked up."
+        },
+        {
+          "title": "A clock both sides can see",
+          "body": "Fifteen minutes on a cold chain report, six days on a POD. The client watches the same timer, which is worth more than a monthly service report."
+        },
+        {
+          "title": "An alarm becomes an exception",
+          "body": "The controller posts it in the channel; one step makes it a numbered exception with the reefer download attached and the client already looking at it."
+        }
+      ]
+    },
+    "split": {
+      "id": "coldchain",
+      "title": "Every controller works an excursion the same way",
+      "lede": "The procedure lives on the account’s wiki: what the thresholds are, who to tell in what order, and what evidence to pull while the trailer is still moving.",
+      "points": [
+        {
+          "title": "Verify, then escalate, in that order",
+          "body": "Check the second probe. A probe fault reported as an excursion costs you a load; a real excursion reported late costs you the account."
+        },
+        {
+          "title": "Recover while you report",
+          "body": "Backup unit, technician, nearest cold store. Do not wait for a decision to start moving: the clock on the product runs either way."
+        },
+        {
+          "title": "Tell the client within fifteen minutes",
+          "body": "Before their depot notices. What happened, what is on the trailer, what you are doing and when it will arrive, with the log attached."
+        }
+      ],
+      "image": {
+        "file": "g2-wiki",
+        "alt": "The account wiki article Reporting a cold chain excursion: four steps, a table of excursion thresholds from minor deviation to door-open events, and the message to post for the client"
+      }
+    },
+    "site": {
+      "id": "mobile",
+      "title": "Nights, depots and the side of the N1",
+      "lede": "A supervisor on a forecourt at two in the morning, a controller on the night shift, a depot receiving clerk with a tally sheet and a phone. All three are on the same exception, and none of them is typing it up afterwards.",
+      "image": {
+        "file": "g3-mobile",
+        "alt": "Kolabr on a phone: the controller reporting the reefer reading and the backup unit, the log attached to the exception, and the client asking whether the depot slot still holds"
+      },
+      "cards": [
+        {
+          "title": "Evidence from the roadside",
+          "body": "Seal photographs and tally sheets attached where the claim will be argued."
+        },
+        {
+          "title": "Clean shift handover",
+          "body": "The next controller reads the channel, not a page of scrawl on a clipboard."
+        },
+        {
+          "title": "Notifications per account",
+          "body": "Cold chain wakes you. A booking query for next Thursday does not."
+        },
+        {
+          "title": "Works on one bar",
+          "body": "Built for a truck stop outside Colesberg, not an office connection."
+        }
+      ]
+    },
+    "calendar": {
+      "title": "Slots, planning calls and the POD deadline",
+      "lede": "The depot slot a load has to make, the weekly planning call, the day PODs must be in for invoicing, and the compliance audit. In the channel they belong to, synced to Outlook and Google.",
+      "image": {
+        "file": "g2-events",
+        "alt": "The account calendar: night shift handovers, the cold chain exception bridge, the CH-4471 depot slot, weekly planning, POD deadlines and the compliance audit on one month view"
+      }
+    },
+    "oversight": {
+      "title": "Which accounts run clean, and which eat the margin",
+      "lede": "Exception rate per account, PODs holding up invoicing, and the lane that generates a claim every second week.",
+      "image": {
+        "file": "g2-dashboard",
+        "alt": "The carrier dashboard: loads this month across account channels, open exceptions, PODs outstanding, items at risk today with the next breach time, and exception volume for the fortnight"
+      },
+      "wide": {
+        "title": "Every account on one screen",
+        "body": "Exceptions, claims and PODs per contract. The rate conversation at renewal goes better when the service record is a number.",
+        "link": {
+          "label": "Administration and controls",
+          "href": "/product/administration"
+        },
+        "rows": [
+          {
+            "label": "Cold Harvest Foods",
+            "value": "19 open"
+          },
+          {
+            "label": "Verity Pharma",
+            "value": "1 claim"
+          },
+          {
+            "label": "Brackwater Mills",
+            "value": "On track"
+          },
+          {
+            "label": "PODs blocking invoices",
+            "value": "6",
+            "total": true
+          }
+        ]
+      },
+      "deep": {
+        "title": "The evidence when a claim lands",
+        "body": "Temperature logs, seal photographs, signed PODs and the time you told the client. A claim is decided on the record, and this is the record.",
+        "rows": [
+          {
+            "label": "Audit log",
+            "value": "who reported, when"
+          },
+          {
+            "label": "Retention",
+            "value": "through the claim window",
+            "highlight": true
+          },
+          {
+            "label": "Archive",
+            "value": "when a contract ends"
+          }
+        ]
+      },
+      "cards": [
+        {
+          "title": "Clients see their freight",
+          "body": "Cold Harvest sees Cold Harvest. Not another shipper’s rates, and not the competitor sharing your backhaul."
+        },
+        {
+          "title": "Roles for the control room",
+          "body": "Who can accept a claim, who can rebook a slot, who can close an exception. Set once, applied on every account."
+        },
+        {
+          "title": "The account, not the controller",
+          "body": [
+            "When a controller moves on, the history stays with the account instead of leaving in a WhatsApp group. ",
+            {
+              "label": "How the wiki works",
+              "href": "/product/wiki"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "stages": {
+      "title": "Onboarding through renewal",
+      "lede": "A contract has a rhythm, and the channel should follow it.",
+      "cards": [
+        {
+          "title": "Start with the account that phones most",
+          "body": "Pick the client whose depot rings the control room three times a day. One channel, their receiving team invited, two weeks. The calls stop before the month does."
+        },
+        {
+          "title": "Next account in one step",
+          "body": "Build it from a channel template: categories, response times, the excursion procedure and the POD process already there. Onboarding a shipper stops being a fortnight."
+        },
+        {
+          "title": "You pay for your own staff",
+          "body": [
+            "Client depots, receiving clerks and planners are guests and are never billed. The plan covers your controllers. ",
+            {
+              "label": "See pricing",
+              "href": "/pricing"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Try it on one account.",
+      "body": "Fourteen days free on Max, every option included, no card. Invite one client’s depot and run a fortnight of loads through it.",
+      "primary": "Start free trial"
+    }
+  },
+  "manufacturing": {
+    "hero": {
+      "eyebrow": "Kolabr for manufacturing",
+      "title": "A late notification is a bigger finding than the defect.",
+      "lede": "Four parts measure out of tolerance on the night shift, 480 are already at the customer, and their supplier quality engineer hears about it when their own line stops. One channel per customer instead: where the NCR, the containment plan and the 8D all happen in front of them. Customers join as guests, free, on every plan.",
+      "image": {
+        "file": "f2-chat",
+        "alt": "The Quality and NCRs channel for Torque Automotive: a pinned quarantine rule, an engineering change notice, and the quality manager reporting a bore diameter out of tolerance"
+      }
+    },
+    "channels": {
+      "title": "Where a plant puts its channels",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the NCRs and changes, the calendar and the wiki. Most plants run one per customer, plus the internal ones.",
+      "cards": [
+        {
+          "title": "One channel per customer",
+          "body": "Torque Automotive in one place: their supplier quality engineer, their buyer, their programme manager. Guests, free, seeing only their own parts."
+        },
+        {
+          "title": "Quality & NCRs",
+          "body": "Non-conformances, containment and 8Ds. The customer watches the containment clock instead of asking for a status call."
+        },
+        {
+          "title": "Production",
+          "body": "Output, downtime and scrap by line. Where a supervisor flags a tool change overrun before it becomes a short shipment."
+        },
+        {
+          "title": "Engineering changes",
+          "body": "ECNs, drawing revisions and cut-over dates. Everyone finds out that rev B stops shipping Friday at the same moment."
+        },
+        {
+          "title": "Delivery schedule",
+          "body": "Orders, shipments and the honest answer to “can you still make Friday?”"
+        },
+        {
+          "title": "Suppliers",
+          "body": "Steel, castings and tooling: your own inbound quality problems, in channels your customer is not in."
+        }
+      ],
+      "seatNote": [
+        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your plant and your guests. A production channel with three shifts of leads needs Pro; a customer quality channel fits inside Starter. ",
+        {
+          "label": "Compare plans",
+          "href": "/pricing#compare-plans"
+        },
+        "."
+      ]
+    },
+    "requests": {
+      "id": "ncrs",
+      "title": "NCRs, changes and downtime with a number on them",
+      "lede": "Non-conformances, engineering changes, downtime, supplier issues and delivery risks as tracked items with an owner and a due time. What is holding a shipment is visible, including to the customer waiting for it.",
+      "image": {
+        "file": "f2-requests",
+        "alt": "Request management for the plant: an NCR on bore diameter, an engineering change notice, line downtime, a short shipment risk and supplier issues in one table"
+      },
+      "cards": [
+        {
+          "title": "Categories that match the floor",
+          "body": "Non-conformance, engineering change, downtime, supplier, delivery. Each routed to quality, production or planning, not to a shared inbox."
+        },
+        {
+          "title": "Containment clocks",
+          "body": "Four hours to notify, same day to contain, a week to root cause. The customer sees the same deadlines your quality manager does."
+        },
+        {
+          "title": "A measurement becomes an NCR",
+          "body": "The inspector posts the CMM result in the channel; one step raises the NCR with the report attached and the batch quarantined."
+        }
+      ]
+    },
+    "split": {
+      "id": "quality",
+      "title": "Night shift contains it the way day shift would",
+      "lede": "The procedure lives on the customer’s channel wiki: how far back to quarantine, who to tell in what order, and what a disposition actually commits you to.",
+      "points": [
+        {
+          "title": "Quarantine wider than feels necessary",
+          "body": "Back to the last verified good first-off, not the last part somebody happened to measure. Sorting is cheaper than a customer line stoppage."
+        },
+        {
+          "title": "Tell the customer within four hours",
+          "body": "Before they find it on their line. Late notification turns a defect into a supplier audit finding, and one of those outlives the other."
+        },
+        {
+          "title": "Close it with evidence, not assurance",
+          "body": "Measurements after the fix, an updated control plan, revised tool life. “We spoke to the operator” is not a corrective action."
+        }
+      ],
+      "image": {
+        "file": "f2-wiki",
+        "alt": "The customer wiki article Raising and containing an NCR: four steps, a disposition code table covering use-as-is, rework, sort and scrap, and the notification to send the customer"
+      }
+    },
+    "site": {
+      "id": "mobile",
+      "title": "Nobody on the floor is at a desk",
+      "lede": "Supervisors, inspectors and maintenance leads spend the shift on their feet. The measurement gets posted at the gauge, the tool change gets logged at the press, and the handover is a channel the next shift can read.",
+      "image": {
+        "file": "f3-mobile",
+        "alt": "Kolabr on a phone: the quality manager reporting the measurement and quarantine, the supervisor confirming the reamer change, and the customer asking for a containment plan by 16:00"
+      },
+      "cards": [
+        {
+          "title": "Report at the machine",
+          "body": "Photograph the part and the reading where it happened, not from memory at shift end."
+        },
+        {
+          "title": "Handover that survives",
+          "body": "The next shift reads the channel instead of decoding a whiteboard."
+        },
+        {
+          "title": "Notifications per channel",
+          "body": "A containment deadline reaches the quality manager at home. A booking query does not."
+        },
+        {
+          "title": "Works in a plant",
+          "body": "Thick walls and poor signal are the normal case, not the exception."
+        }
+      ]
+    },
+    "calendar": {
+      "title": "Containment deadlines, cut-overs and the audit",
+      "lede": "The 14:00 containment deadline, Friday’s 8D review with the customer, the ECN going live on line 2, PPAP submission and the October audit. In the channel they belong to, synced to Outlook and Google.",
+      "image": {
+        "file": "f2-events",
+        "alt": "The plant calendar: shift handovers, the NCR containment bridge and deadline, the line 2 production review, the 8D review with the customer and the ECN go-live"
+      }
+    },
+    "oversight": {
+      "title": "Which customers are calm, and which are about to audit you",
+      "lede": "Open NCRs per customer, what is waiting on their approval, and the line generating a quality problem every second week.",
+      "image": {
+        "file": "f2-dashboard",
+        "alt": "The plant dashboard: open items across plant channels, open NCRs, items awaiting customer approval, what is due today and NCR volume for the fortnight"
+      },
+      "wide": {
+        "title": "Every customer on one screen",
+        "body": "Open NCRs, overdue 8Ds, approvals outstanding. A plant manager sees the supplier scorecard forming before the customer sends it.",
+        "link": {
+          "label": "Administration and controls",
+          "href": "/product/administration"
+        },
+        "rows": [
+          {
+            "label": "Torque Automotive",
+            "value": "12 open NCRs"
+          },
+          {
+            "label": "Vandermeer Rail",
+            "value": "1 8D due"
+          },
+          {
+            "label": "Helix Appliances",
+            "value": "On track"
+          },
+          {
+            "label": "Awaiting customer approval",
+            "value": "5",
+            "total": true
+          }
+        ]
+      },
+      "deep": {
+        "title": "Ready for the audit",
+        "body": "When a customer auditor asks how a non-conformance was handled in March, the channel has the measurement, the disposition, the approval and the dates.",
+        "rows": [
+          {
+            "label": "Audit log",
+            "value": "who dispositioned what"
+          },
+          {
+            "label": "Retention",
+            "value": "to your IATF requirement",
+            "highlight": true
+          },
+          {
+            "label": "Archive",
+            "value": "at end of production"
+          }
+        ]
+      },
+      "cards": [
+        {
+          "title": "Customers see their parts",
+          "body": "Torque sees Torque. Not another customer’s NCR rate, and not the competitor you build for on the next line."
+        },
+        {
+          "title": "Who may disposition",
+          "body": "An inspector raises, a quality manager dispositions, nobody ships use-as-is without written approval. Enforced by role."
+        },
+        {
+          "title": "The part, not the person",
+          "body": [
+            "When a quality manager leaves, the NCR history and the control plans stay with the part. ",
+            {
+              "label": "How the wiki works",
+              "href": "/product/wiki"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "stages": {
+      "title": "Launch through end of production",
+      "lede": "A programme has a life, and the channel should follow it.",
+      "cards": [
+        {
+          "title": "Start with the demanding customer",
+          "body": "Pick the account with the tightest supplier quality requirements. One channel, their SQE invited, one NCR. They will notice the difference before you do."
+        },
+        {
+          "title": "Next programme in one step",
+          "body": "Build it from a channel template: categories, containment times, the NCR procedure and the change-control process already there."
+        },
+        {
+          "title": "You pay for the plant",
+          "body": [
+            "Customer engineers, buyers and auditors are guests and are never billed. The plan covers your own people. ",
+            {
+              "label": "See pricing",
+              "href": "/pricing"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Try it on one customer.",
+      "body": "Fourteen days free on Max, every option included, no card. Invite their supplier quality engineer and run one NCR through it.",
+      "primary": "Start free trial"
+    }
+  },
+  "marketing-agencies": {
+    "hero": {
+      "eyebrow": "Kolabr for marketing agencies",
+      "title": "Round three was approved in writing. Before you started it.",
+      "lede": "Feedback from five stakeholders, a legal review nobody mentioned, a print slot at 16:00 and a revision that quietly became free work. One channel per client, where the version, the approval and the estimate all live together. Clients join as guests, free, on every plan.",
+      "image": {
+        "file": "m2-chat",
+        "alt": "The Creative review channel for Verde Health: a pinned scope note about two rounds per asset, the client asking for a claim change, and the reply flagging it as round three"
+      }
+    },
+    "channels": {
+      "title": "Where an agency puts its channels",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the approvals and scope requests, the calendar and the wiki. Most agencies run one per client, then split by workstream.",
+      "cards": [
+        {
+          "title": "One channel per client",
+          "body": "Verde Health in one place: the brand lead, the marketing manager, their legal reviewer. They join as guests, free, and never see another client’s work."
+        },
+        {
+          "title": "Campaign",
+          "body": "The live piece of work (film, print, landing page) with its dates and its deliverables. It ends when the campaign ends."
+        },
+        {
+          "title": "Creative review",
+          "body": "Where rounds go out and approvals come back, against a version number. The one place a “yes” counts."
+        },
+        {
+          "title": "Always-on social",
+          "body": "Monthly content packs that never stop. Separate from the campaign so the retainer work is not drowned by the launch."
+        },
+        {
+          "title": "Scope & billing",
+          "body": "Estimates, the retainer, what is in and what is extra. Uncomfortable to make visible, and precisely why it should be."
+        },
+        {
+          "title": "Studio",
+          "body": "Your own team only. Resourcing, fee conversations, the honest critique of work the client is about to see."
+        }
+      ],
+      "seatNote": [
+        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your team and your guests. A client with four stakeholders and your account team of five sits well inside a Starter channel. ",
+        {
+          "label": "Compare plans",
+          "href": "/pricing#compare-plans"
+        },
+        "."
+      ]
+    },
+    "requests": {
+      "id": "scope",
+      "title": "The work you did for free, made visible",
+      "lede": "Approvals, scope requests, brand queries and delivery deadlines as numbered items with an owner and a clock. At the end of the month the over-servicing is a number you can point at, not a feeling in the studio.",
+      "image": {
+        "file": "m2-requests",
+        "alt": "Request management for the agency: sign-offs, out-of-scope revisions, legal reviews, print deadlines and asset deliveries in one table with owner, channel, category and SLA"
+      },
+      "cards": [
+        {
+          "title": "Categories that match the work",
+          "body": "Approval, scope, brand, asset delivery, deadline. Each routes to the person who actually owns it, often the producer, not the designer."
+        },
+        {
+          "title": "A clock on approvals",
+          "body": "“Waiting on client” stops being invisible. Set an SLA on sign-off and the delay is on the record when the launch date slips."
+        },
+        {
+          "title": "A message becomes an estimate",
+          "body": "The client asks for one more thing in the channel; one step turns it into a scope request with a number attached, before anyone opens a file."
+        }
+      ]
+    },
+    "split": {
+      "id": "rounds",
+      "title": "Everyone agrees what a round is. In advance.",
+      "lede": "The rules of engagement live on the channel wiki where the client can read them, not in a contract nobody opened since signature.",
+      "points": [
+        {
+          "title": "Send the round with a deadline on it",
+          "body": "Silence is not approval, but a stated deadline makes silence someone else’s problem rather than your late night."
+        },
+        {
+          "title": "One voice, not five",
+          "body": "Five stakeholders commenting separately is not a round. The client nominates someone to resolve contradictions before it reaches a designer."
+        },
+        {
+          "title": "Round three is a quote, not a favour",
+          "body": "The moment it crosses the retainer it is a scope request with an estimate, approved in the channel. Doing it quietly loses the margin and the relationship."
+        }
+      ],
+      "image": {
+        "file": "m2-wiki",
+        "alt": "The client wiki article Rounds, revisions and what is in scope: four steps, a table defining rounds one through three, and the message to send when a request crosses the retainer"
+      }
+    },
+    "site": {
+      "id": "mobile",
+      "title": "Approvals do not wait for someone to reach a laptop",
+      "lede": "A brand lead between meetings, a producer on a shoot, a client at an airport. The sign-off that unblocks a print slot takes ten seconds on a phone, and it still lands against the version, in the channel, where the record needs it.",
+      "image": {
+        "file": "m3-mobile",
+        "alt": "Kolabr on a phone: the art director confirming v3 is rendering, legal clearing the claim line, and the client asking to see it before the board meets"
+      },
+      "cards": [
+        {
+          "title": "Approve from anywhere",
+          "body": "The yes is logged against the version, not buried in a text message."
+        },
+        {
+          "title": "On set and on site",
+          "body": "Shoot days happen away from desks. The channel travels with the producer."
+        },
+        {
+          "title": "Notifications that respect a weekend",
+          "body": "Per-channel, so a launch week does not train people to mute everything."
+        },
+        {
+          "title": "No WhatsApp group",
+          "body": "Client conversations stop living on personal phones that leave with the account handler."
+        }
+      ]
+    },
+    "calendar": {
+      "title": "Reviews, print slots and the day the campaign goes live",
+      "lede": "Creative reviews, the legal sign-off call, the copy deadline, the print slot, the launch. Scheduled in the channel they belong to, synced to Outlook and Google, and tied to the request they came from.",
+      "image": {
+        "file": "m2-events",
+        "alt": "The agency calendar: studio work-in-progress, v3 creative review with the client, the out-of-scope estimate walkthrough, the print deadline and the campaign live date on one month view"
+      }
+    },
+    "oversight": {
+      "title": "Which accounts are profitable, and which just feel busy",
+      "lede": "Unbilled scope, approvals the client is sitting on, and the account quietly consuming a third of the studio.",
+      "image": {
+        "file": "m2-dashboard",
+        "alt": "The agency dashboard: open items across client channels, items awaiting approval, out-of-scope work quoted but unbilled, what is due today and approval volume for the fortnight"
+      },
+      "wide": {
+        "title": "Every client on one screen",
+        "body": "Open rounds, unbilled scope, approvals overdue. The conversation with a client about over-servicing goes better with a list than with a grievance.",
+        "link": {
+          "label": "Administration and controls",
+          "href": "/product/administration"
+        },
+        "rows": [
+          {
+            "label": "Verde Health",
+            "value": "R148k unbilled"
+          },
+          {
+            "label": "Kestrel Bank",
+            "value": "4 awaiting sign-off"
+          },
+          {
+            "label": "Maru Foods",
+            "value": "On plan"
+          },
+          {
+            "label": "Out-of-scope, quoted",
+            "value": "6",
+            "total": true
+          }
+        ]
+      },
+      "deep": {
+        "title": "The pitch you can prove",
+        "body": "When a client questions an invoice, the channel answers: what was approved, by whom, on which version, and what they asked for after that.",
+        "rows": [
+          {
+            "label": "Audit log",
+            "value": "who approved what"
+          },
+          {
+            "label": "Retention",
+            "value": "set by policy",
+            "highlight": true
+          },
+          {
+            "label": "Archive",
+            "value": "when the account ends"
+          }
+        ]
+      },
+      "cards": [
+        {
+          "title": "Clients see one account",
+          "body": "Verde Health sees Verde Health. Not your fee conversation, and certainly not the competitor two channels over."
+        },
+        {
+          "title": "Roles for the studio",
+          "body": "Who can approve an estimate, who can release assets, who can close a round. Set once, applied on every account."
+        },
+        {
+          "title": "The account, not the handler",
+          "body": [
+            "When an account director leaves, the history stays with the client instead of walking out in a mailbox. ",
+            {
+              "label": "How the wiki works",
+              "href": "/product/wiki"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "stages": {
+      "title": "Pitch through renewal",
+      "lede": "An account has a shape, and the channel should follow it.",
+      "cards": [
+        {
+          "title": "Start with the account that hurts",
+          "body": "Pick the client whose feedback arrives from four people at once. One channel, the stakeholders invited, two weeks. You will know by the second round."
+        },
+        {
+          "title": "Next client in one step",
+          "body": "Build it from a channel template: categories, SLAs, the rounds policy and the brand section already there. Archive the old account and keep it readable."
+        },
+        {
+          "title": "You pay for the agency only",
+          "body": [
+            "Clients, their legal reviewers and freelance collaborators are guests and are never billed. The plan covers your own people. ",
+            {
+              "label": "See pricing",
+              "href": "/pricing"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Try it on one account.",
+      "body": "Fourteen days free on Max, every option included, no card. Invite the client and run one campaign through it.",
+      "primary": "Start free trial"
+    }
+  },
+  "nonprofits": {
+    "hero": {
+      "eyebrow": "Kolabr for nonprofits",
+      "title": "The report writes itself, because the work was recorded as it happened.",
+      "lede": "Four field sites, forty volunteers, three funders and a quarterly narrative report that currently takes two weeks to assemble from memory and WhatsApp. One channel per programme instead: where attendance, receipts and safeguarding all land the day they happen. Volunteers, trustees and funders join as guests, free, on every plan.",
+      "image": {
+        "file": "n2-chat",
+        "alt": "The Early learning programme channel for Thusanang Trust: a pinned funder report deadline, a field coordinator reporting short attendance with the reason, and the funder reading along"
+      }
+    },
+    "channels": {
+      "title": "Where an organisation puts its channels",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the requests, the calendar and the wiki. Most organisations run one per programme, plus the people who fund and govern it.",
+      "cards": [
+        {
+          "title": "Programme",
+          "body": "The work itself: curriculum, delivery, the numbers that describe whether it is working. Staff, facilitators and your M&E person in one place."
+        },
+        {
+          "title": "Field sites",
+          "body": "Four sites, one channel each or one between them. Facilitators report from the site, on a phone, the same day, not on a form driven to head office on Friday."
+        },
+        {
+          "title": "Volunteers",
+          "body": "Screening, clearances, rotas and the safeguarding refresher. Volunteers join as guests, free, however many of them there are."
+        },
+        {
+          "title": "Board & governance",
+          "body": "Audit schedules, board packs, the finance conversation. Trustees join as guests and see governance without seeing every field message."
+        },
+        {
+          "title": "Funders",
+          "body": "A channel per funder. They watch the work as it happens instead of waiting for a quarterly PDF, which is, quietly, the thing that renews grants."
+        },
+        {
+          "title": "Partners",
+          "body": "Referrals and joint programmes with other organisations. Shared work without either side giving up its own systems."
+        }
+      ],
+      "seatNote": [
+        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your staff and your guests. Volunteers and funders are guests, so a small team supporting forty volunteers is not a forty-person bill. ",
+        {
+          "label": "Compare plans",
+          "href": "/pricing#compare-plans"
+        },
+        "."
+      ]
+    },
+    "requests": {
+      "id": "reporting",
+      "title": "Reporting stops being a fortnight of archaeology",
+      "lede": "Data requests, expense receipts, safeguarding items, volunteer screening and funder deadlines as numbered items with an owner and a date. When the quarter closes, the evidence is already in one place.",
+      "image": {
+        "file": "n2-requests",
+        "alt": "Request management for the trust: funder reporting, missing attendance data, outstanding receipts, a safeguarding concern and volunteer screening in one table with owner, channel and category"
+      },
+      "cards": [
+        {
+          "title": "Categories that match the work",
+          "body": "Reporting, data, finance, safeguarding, volunteers. Each with an owner, because “someone should follow up” never means anyone."
+        },
+        {
+          "title": "Deadlines you cannot miss",
+          "body": "Funder returns and compliance dates carry a clock. Missing one costs more than any of them will say out loud."
+        },
+        {
+          "title": "A message becomes a record",
+          "body": "A facilitator reports a shortfall in the channel; one step makes it a tracked item with the photographed register attached."
+        }
+      ]
+    },
+    "split": {
+      "id": "safeguarding",
+      "title": "The procedure is on the phone of the person who needs it",
+      "lede": "How to capture attendance, what to do when the numbers do not match, how to report a safeguarding concern. On the channel wiki, readable by a facilitator standing at a site, not in an induction pack from 2023.",
+      "points": [
+        {
+          "title": "Record it the same day",
+          "body": "A register written up from memory on Friday is a guess. Funders reading four sites of guesses can tell, and so can an auditor."
+        },
+        {
+          "title": "Explain the variance, do not smooth it",
+          "body": "If a number is short, say why in the same breath. Illness, weather, transport. An explained dip is data; a silent one is a finding."
+        },
+        {
+          "title": "Safeguarding follows one path, always",
+          "body": "Reported through the channel within the hour, logged, and visible to the people responsible, never a WhatsApp to whoever happens to be awake."
+        }
+      ],
+      "image": {
+        "file": "n2-wiki",
+        "alt": "The programme wiki article Capturing attendance at a site: four steps, a table of variance reasons, and the wording to use in a funder report when a site misses its target"
+      }
+    },
+    "site": {
+      "id": "field",
+      "title": "Built for a site with one bar of signal",
+      "lede": "Your facilitators are not at desks. They are in a community hall three hours from the office, on their own phones, with a paper register and a patchy connection. The app has to work there or it does not work at all.",
+      "image": {
+        "file": "n4-mobile",
+        "alt": "Kolabr on a phone: the field coordinator with no signal photographing the paper register, the shortfall reported with its reason, and the funder asking about the Q3 narrative"
+      },
+      "cards": [
+        {
+          "title": "Photograph the paper",
+          "body": "No signal is normal. The photographed register is the evidence until it is captured."
+        },
+        {
+          "title": "On their own devices",
+          "body": "No fleet of tablets to buy, lose and replace. It works on the phone they already carry."
+        },
+        {
+          "title": "Light on data",
+          "body": "Built for expensive, unreliable mobile data, not office fibre."
+        },
+        {
+          "title": "No personal numbers",
+          "body": "Volunteers come and go. Nobody’s mobile number becomes the safeguarding hotline by accident."
+        }
+      ]
+    },
+    "calendar": {
+      "title": "Site visits, funder reviews and the date the report is due",
+      "lede": "Daily site check-ins, safeguarding training, the month-end receipts cut-off, the quarterly funder review and the narrative report deadline. In the channel they belong to, synced to Outlook and Google.",
+      "image": {
+        "file": "n2-events",
+        "alt": "The programme calendar: site check-ins, volunteer screening, safeguarding training, the quarterly funder review, month-end receipts and the Q3 report deadline on one month view"
+      }
+    },
+    "oversight": {
+      "title": "What the programme manager knows before the funder asks",
+      "lede": "Which site has not reported, which receipts are missing, and whether a safeguarding item is still open at the end of the week.",
+      "image": {
+        "file": "n2-dashboard",
+        "alt": "The programme dashboard: open items across programme channels, reporting due to funders and province, data outstanding from field sites, safeguarding items open, and field reporting activity"
+      },
+      "wide": {
+        "title": "Every site and every funder on one screen",
+        "body": "Who has reported, what is outstanding, what is due this week. The Monday question answered without four phone calls to four districts.",
+        "link": {
+          "label": "Administration and controls",
+          "href": "/product/administration"
+        },
+        "rows": [
+          {
+            "label": "Mthatha",
+            "value": "Reported"
+          },
+          {
+            "label": "Lusikisiki",
+            "value": "Week 6 short"
+          },
+          {
+            "label": "Bizana",
+            "value": "Reported"
+          },
+          {
+            "label": "Receipts outstanding",
+            "value": "3 sites",
+            "total": true
+          }
+        ]
+      },
+      "deep": {
+        "title": "Ready for the audit, and the next grant",
+        "body": "Who recorded what, when, and with which document attached. The same record satisfies an auditor, a funder and a board that asks hard questions.",
+        "rows": [
+          {
+            "label": "Audit log",
+            "value": "who did what"
+          },
+          {
+            "label": "Retention",
+            "value": "set by policy",
+            "highlight": true
+          },
+          {
+            "label": "Archive",
+            "value": "when a grant closes"
+          }
+        ]
+      },
+      "cards": [
+        {
+          "title": "Funders see their programme",
+          "body": "Meridian sees what Meridian funds. Not another funder’s grant, and not your internal conversation about cash flow."
+        },
+        {
+          "title": "Roles, including volunteers",
+          "body": "Who can see a safeguarding item, who can approve spend, who can only post from a site. Set once, applied everywhere."
+        },
+        {
+          "title": "The programme, not the person",
+          "body": [
+            "Staff turnover is a fact of this sector. When a coordinator leaves, the history stays with the programme. ",
+            {
+              "label": "How the wiki works",
+              "href": "/product/wiki"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "stages": {
+      "title": "Grant through acquittal",
+      "lede": "A programme has a funding cycle, and the channel should follow it.",
+      "cards": [
+        {
+          "title": "Start with the report you dread",
+          "body": "Pick the funder whose quarterly return takes two weeks. One channel, the sites reporting into it, one quarter. The difference shows up in the writing."
+        },
+        {
+          "title": "Next programme in one step",
+          "body": "Build it from a channel template: categories, the safeguarding procedure and the reporting calendar already in place. Archive the last grant and keep it readable for the audit."
+        },
+        {
+          "title": "You pay for staff, not volunteers",
+          "body": [
+            "Volunteers, trustees and funders are guests and are never billed. The plan covers the people on your payroll. ",
+            {
+              "label": "See pricing",
+              "href": "/pricing"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Try it on one programme.",
+      "body": "Fourteen days free on Max, every option included, no card. Invite your field team and one funder, and see what the next report costs you.",
+      "primary": "Start free trial"
+    }
+  },
+  "property-management": {
+    "hero": {
+      "eyebrow": "Kolabr for property management",
+      "title": "Take the building off your personal phone.",
+      "lede": "A geyser bursts at six, three residents WhatsApp the portfolio manager directly, and the trustees hear about it at the next meeting. One channel per building instead: where the report, the quote, the approval and the notice all live together. Trustees and residents join as guests, free, on every plan.",
+      "image": {
+        "file": "p2-chat",
+        "alt": "The Maintenance channel for Meadowridge Estate: a pinned definition of what counts as an emergency, three roof quotes posted for the trustees, and a resident reporting a burst geyser"
+      }
+    },
+    "channels": {
+      "title": "Where a managing agent puts its channels",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the jobs, the calendar and the wiki. Most agents run one per building, split by who is allowed to see what.",
+      "cards": [
+        {
+          "title": "One channel per building",
+          "body": "Meadowridge in one place: the trustees, the residents, your site staff. Owners and trustees join as guests, free, and see only their own building."
+        },
+        {
+          "title": "Maintenance",
+          "body": "Where a resident reports a burst geyser and it becomes a numbered job with a contractor and a clock: instead of a voicenote to somebody’s personal phone."
+        },
+        {
+          "title": "Trustees",
+          "body": "Quotes, approvals and the meeting pack. The decision and the three quotes it was made on stay together, which is what the next AGM will ask about."
+        },
+        {
+          "title": "Residents",
+          "body": "Notices, outages and the questions everyone asks. One announcement replaces forty phone calls to the office."
+        },
+        {
+          "title": "Levies & arrears",
+          "body": "Collections and the policy behind them. Sensitive, so it stays out of the residents channel and in front of the people who decide."
+        },
+        {
+          "title": "Agency",
+          "body": "Your own portfolio. Rota, contractors, and the honest view of a building before the trustees are in the room."
+        }
+      ],
+      "seatNote": [
+        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your staff and your guests. A residents channel for an eighty-unit scheme needs Pro; a trustees channel fits inside Starter. ",
+        {
+          "label": "Compare plans",
+          "href": "/pricing#compare-plans"
+        },
+        "."
+      ]
+    },
+    "requests": {
+      "id": "jobs",
+      "title": "Every job has a number, an owner and a clock",
+      "lede": "Emergencies, resident queries, quote approvals, compliance and arrears as tracked items. When a trustee asks what happened to the lift, the answer is a record rather than a recollection.",
+      "image": {
+        "file": "p2-requests",
+        "alt": "Request management for the agency: a burst geyser emergency, roof quotes awaiting trustees, a parking dispute, levy arrears and compliance inspections in one table"
+      },
+      "cards": [
+        {
+          "title": "Categories that match the portfolio",
+          "body": "Emergency, resident query, quote approval, compliance, arrears. Each routed to the person who handles it, not to whoever answered the phone."
+        },
+        {
+          "title": "Response times per category",
+          "body": "An emergency has minutes, a parking dispute has days. Trustees see the same clock you do, which ends the argument about responsiveness."
+        },
+        {
+          "title": "A report becomes a job",
+          "body": "The resident describes it in the channel with photographs; one step turns it into a job with the contractor assigned and the images attached."
+        }
+      ]
+    },
+    "split": {
+      "id": "emergency",
+      "title": "Two in the morning is not the time to guess your mandate",
+      "lede": "The procedure lives on the building’s wiki: what counts as an emergency, what you may spend before phoning a trustee, and what has to be photographed before anyone touches it.",
+      "points": [
+        {
+          "title": "Contain it before you cost it",
+          "body": "Close the main, isolate the board, get people out of the lift. The invoice conversation happens afterwards and is always cheaper than the delay."
+        },
+        {
+          "title": "Photograph everything, immediately",
+          "body": "Both units, both sides of the damage, the failed part. No insurer has ever accepted a claim on a description alone."
+        },
+        {
+          "title": "Spend to the mandate, then ask",
+          "body": "Up to the agreed limit you proceed and report. Above it you phone the trustee on duty and record their answer in the channel, at the time it was given."
+        }
+      ],
+      "image": {
+        "file": "p2-wiki",
+        "alt": "The building wiki article Handling an after-hours emergency: four steps, a table defining water, power, entrapment and security emergencies, and the notice to post for residents"
+      }
+    },
+    "site": {
+      "id": "mobile",
+      "title": "Your supervisor is on a roof, not at a desk",
+      "lede": "Site staff work from a phone all day and always have. The difference is that what they photograph, quote and confirm now lands on the building’s record instead of in a chat nobody else can see.",
+      "image": {
+        "file": "p3-mobile",
+        "alt": "Kolabr on a phone: the building supervisor quoting the geyser replacement from site, the manager approving within the mandate, and a resident asking about hot water"
+      },
+      "cards": [
+        {
+          "title": "Photographs from the job",
+          "body": "Attached to the request, timestamped, ready for the insurer."
+        },
+        {
+          "title": "Approval in a minute",
+          "body": "The spend decision is recorded against the job, at the time it was made."
+        },
+        {
+          "title": "Notifications per building",
+          "body": "An emergency at Meadowridge wakes you. A parking query does not."
+        },
+        {
+          "title": "No personal number",
+          "body": "Residents stop phoning a portfolio manager at nine on a Sunday because they once got the number."
+        }
+      ]
+    },
+    "calendar": {
+      "title": "Inspections, trustee meetings and the AGM",
+      "lede": "Fire equipment, the lift service, the levy run, Thursday’s trustee meeting and the annual general meeting. In the channel they belong to, synced to Outlook and Google.",
+      "image": {
+        "file": "p2-events",
+        "alt": "The building calendar: site walks, the emergency plumber call, fire equipment inspection, the roof quote walkthrough, trustee meeting, levy deadlines and the annual general meeting"
+      }
+    },
+    "oversight": {
+      "title": "Which buildings are running, and which are running you",
+      "lede": "Job volume per building, what the trustees have been sitting on for nine days, and the scheme generating three times the work it is priced for.",
+      "image": {
+        "file": "p2-dashboard",
+        "alt": "The agency dashboard: requests this month across buildings, open requests, items awaiting trustees, open emergencies with the next breach time, and resident satisfaction"
+      },
+      "wide": {
+        "title": "Every building on one screen",
+        "body": "Open jobs, emergencies, approvals outstanding. The fee review with a body corporate goes better with a list than with a feeling.",
+        "link": {
+          "label": "Administration and controls",
+          "href": "/product/administration"
+        },
+        "rows": [
+          {
+            "label": "Meadowridge Estate",
+            "value": "47 open"
+          },
+          {
+            "label": "Harbour Point",
+            "value": "2 emergencies"
+          },
+          {
+            "label": "Oak Row Offices",
+            "value": "On track"
+          },
+          {
+            "label": "Awaiting trustee approval",
+            "value": "8",
+            "total": true
+          }
+        ]
+      },
+      "deep": {
+        "title": "The answer at the AGM",
+        "body": "What was reported, when it was attended, what it cost and who approved it. The meeting where a body corporate questions your management becomes a short one.",
+        "rows": [
+          {
+            "label": "Audit log",
+            "value": "who approved what"
+          },
+          {
+            "label": "Retention",
+            "value": "set by policy",
+            "highlight": true
+          },
+          {
+            "label": "Handover",
+            "value": "if the mandate moves"
+          }
+        ]
+      },
+      "cards": [
+        {
+          "title": "Residents see their building",
+          "body": "Meadowridge sees Meadowridge. Not another scheme’s arrears, and not the trustees’ discussion about unit 22."
+        },
+        {
+          "title": "Trustees see more than residents",
+          "body": "Arrears, quotes and legal matters sit in a channel the residents are not in. Same building, different rooms."
+        },
+        {
+          "title": "The building, not the manager",
+          "body": [
+            "When a portfolio manager leaves, the history stays with the building instead of on a personal phone. ",
+            {
+              "label": "How the wiki works",
+              "href": "/product/wiki"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "stages": {
+      "title": "Takeover through handover",
+      "lede": "A mandate has a life, and the channel should follow it.",
+      "cards": [
+        {
+          "title": "Start with the loudest building",
+          "body": "Pick the scheme whose trustees phone you most. One channel, the trustees invited, one month. The first trustee meeting run off the record will make the case."
+        },
+        {
+          "title": "Next building in one step",
+          "body": "Build it from a channel template: categories, response times, the emergency procedure and the contractor list already there. Taking on a scheme stops being a week of setup."
+        },
+        {
+          "title": "You pay for your staff",
+          "body": [
+            "Trustees, owners and residents are guests and are never billed, however many of them report a leak. ",
+            {
+              "label": "See pricing",
+              "href": "/pricing"
+            },
+            "."
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Try it on one building.",
+      "body": "Fourteen days free on Max, every option included, no card. Invite the trustees and run one month of maintenance through it.",
+      "primary": "Start free trial"
+    }
+  }
+}

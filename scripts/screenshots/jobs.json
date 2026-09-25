@@ -1,0 +1,604 @@
+[
+ {
+  "used": "a5-chat",
+  "src": "design/screens/Arch - Chat.dc.html",
+  "out": "design/assets/screens/a5-chat.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "a5-requests",
+  "src": "design/screens/Arch - Requests.dc.html",
+  "out": "design/assets/screens/a5-requests.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "a7-wiki-crop",
+  "src": "design/screens/Arch - Wiki.dc.html",
+  "out": "design/assets/screens/a7-wiki-crop.png",
+  "mode": "wikicard",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "a3-mobile",
+  "src": "design/screens/Arch - Mobile.dc.html",
+  "out": "design/assets/screens/a3-mobile.png",
+  "mode": "viewport",
+  "w": 520,
+  "h": 912
+ },
+ {
+  "used": "a5-events",
+  "src": "design/screens/Arch - Events.dc.html",
+  "out": "design/assets/screens/a5-events.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "a5-dashboard",
+  "src": "design/screens/Arch - Dashboard.dc.html",
+  "out": "design/assets/screens/a5-dashboard.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "ac2-chat",
+  "src": "design/screens/ACC - Chat.dc.html",
+  "out": "design/assets/screens/ac2-chat.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "ac2-requests",
+  "src": "design/screens/ACC - Requests.dc.html",
+  "out": "design/assets/screens/ac2-requests.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "ac2-wiki",
+  "src": "design/screens/ACC - Wiki.dc.html",
+  "out": "design/assets/screens/ac2-wiki.png",
+  "mode": "wikicard",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "ac3-mobile",
+  "src": "design/screens/ACC - Mobile.dc.html",
+  "out": "design/assets/screens/ac3-mobile.png",
+  "mode": "viewport",
+  "w": 520,
+  "h": 912
+ },
+ {
+  "used": "ac2-events",
+  "src": "design/screens/ACC - Events.dc.html",
+  "out": "design/assets/screens/ac2-events.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "ac2-dashboard",
+  "src": "design/screens/ACC - Dashboard.dc.html",
+  "out": "design/assets/screens/ac2-dashboard.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "c3-chat",
+  "src": "design/screens/CLN - Chat.dc.html",
+  "out": "design/assets/screens/c3-chat.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "c5-requests",
+  "src": "design/screens/CLN - Requests.dc.html",
+  "out": "design/assets/screens/c5-requests.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "c6-wiki",
+  "src": "design/screens/CLN - Wiki.dc.html",
+  "out": "design/assets/screens/c6-wiki.png",
+  "mode": "wikicard",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "c8-mobile",
+  "src": "design/screens/CLN - Mobile.dc.html",
+  "out": "design/assets/screens/c8-mobile.png",
+  "mode": "viewport",
+  "w": 520,
+  "h": 912
+ },
+ {
+  "used": "c6-events",
+  "src": "design/screens/CLN - Events.dc.html",
+  "out": "design/assets/screens/c6-events.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "c5-dashboard",
+  "src": "design/screens/CLN - Dashboard.dc.html",
+  "out": "design/assets/screens/c5-dashboard.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "c4-requests",
+  "src": "design/screens/CLN - Requests.dc.html",
+  "out": "design/assets/screens/c4-requests.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "c6-mobile",
+  "src": "design/screens/Con - Mobile.dc.html",
+  "out": "design/assets/screens/c6-mobile.png",
+  "mode": "viewport",
+  "w": 520,
+  "h": 912
+ },
+ {
+  "used": "c5-events",
+  "src": "design/screens/CLN - Events.dc.html",
+  "out": "design/assets/screens/c5-events.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "e2-chat",
+  "src": "design/screens/ENG - Chat.dc.html",
+  "out": "design/assets/screens/e2-chat.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "e2-requests",
+  "src": "design/screens/ENG - Requests.dc.html",
+  "out": "design/assets/screens/e2-requests.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "e2-wiki",
+  "src": "design/screens/ENG - Wiki.dc.html",
+  "out": "design/assets/screens/e2-wiki.png",
+  "mode": "wikicard",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "e4-mobile",
+  "src": "design/screens/ENG - Mobile.dc.html",
+  "out": "design/assets/screens/e4-mobile.png",
+  "mode": "viewport",
+  "w": 520,
+  "h": 912
+ },
+ {
+  "used": "e2-events",
+  "src": "design/screens/ENG - Events.dc.html",
+  "out": "design/assets/screens/e2-events.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "e2-dashboard",
+  "src": "design/screens/ENG - Dashboard.dc.html",
+  "out": "design/assets/screens/e2-dashboard.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "i2-chat",
+  "src": "design/screens/ITSP - Chat.dc.html",
+  "out": "design/assets/screens/i2-chat.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "i2-requests",
+  "src": "design/screens/ITSP - Requests.dc.html",
+  "out": "design/assets/screens/i2-requests.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "i2-wiki",
+  "src": "design/screens/ITSP - Wiki.dc.html",
+  "out": "design/assets/screens/i2-wiki.png",
+  "mode": "wikicard",
+  "w": 1604,
+  "h": 912,
+  "minHeight": 1646
+ },
+ {
+  "used": "i2-mobile",
+  "src": "design/screens/ITSP - Mobile.dc.html",
+  "out": "design/assets/screens/i2-mobile.png",
+  "mode": "viewport",
+  "w": 520,
+  "h": 912
+ },
+ {
+  "used": "i2-events",
+  "src": "design/screens/ITSP - Events.dc.html",
+  "out": "design/assets/screens/i2-events.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "i2-dashboard",
+  "src": "design/screens/ITSP - Dashboard.dc.html",
+  "out": "design/assets/screens/i2-dashboard.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "l3-chat",
+  "src": "design/screens/LAW - Chat.dc.html",
+  "out": "design/assets/screens/l3-chat.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "l3-requests",
+  "src": "design/screens/LAW - Requests.dc.html",
+  "out": "design/assets/screens/l3-requests.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "l3-wiki",
+  "src": "design/screens/LAW - Wiki.dc.html",
+  "out": "design/assets/screens/l3-wiki.png",
+  "mode": "wikicard",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "l4-mobile",
+  "src": "design/screens/LAW - Mobile.dc.html",
+  "out": "design/assets/screens/l4-mobile.png",
+  "mode": "viewport",
+  "w": 520,
+  "h": 912
+ },
+ {
+  "used": "l3-events",
+  "src": "design/screens/LAW - Events.dc.html",
+  "out": "design/assets/screens/l3-events.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "l3-dashboard",
+  "src": "design/screens/LAW - Dashboard.dc.html",
+  "out": "design/assets/screens/l3-dashboard.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "g2-chat",
+  "src": "design/screens/LOG - Chat.dc.html",
+  "out": "design/assets/screens/g2-chat.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "g2-requests",
+  "src": "design/screens/LOG - Requests.dc.html",
+  "out": "design/assets/screens/g2-requests.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "g2-wiki",
+  "src": "design/screens/LOG - Wiki.dc.html",
+  "out": "design/assets/screens/g2-wiki.png",
+  "mode": "wikicard",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "g3-mobile",
+  "src": "design/screens/LOG - Mobile.dc.html",
+  "out": "design/assets/screens/g3-mobile.png",
+  "mode": "viewport",
+  "w": 520,
+  "h": 912
+ },
+ {
+  "used": "g2-events",
+  "src": "design/screens/LOG - Events.dc.html",
+  "out": "design/assets/screens/g2-events.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "g2-dashboard",
+  "src": "design/screens/LOG - Dashboard.dc.html",
+  "out": "design/assets/screens/g2-dashboard.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "f2-chat",
+  "src": "design/screens/MFG - Chat.dc.html",
+  "out": "design/assets/screens/f2-chat.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "f2-requests",
+  "src": "design/screens/MFG - Requests.dc.html",
+  "out": "design/assets/screens/f2-requests.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "f2-wiki",
+  "src": "design/screens/MFG - Wiki.dc.html",
+  "out": "design/assets/screens/f2-wiki.png",
+  "mode": "wikicard",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "f3-mobile",
+  "src": "design/screens/MFG - Mobile.dc.html",
+  "out": "design/assets/screens/f3-mobile.png",
+  "mode": "viewport",
+  "w": 520,
+  "h": 912
+ },
+ {
+  "used": "f2-events",
+  "src": "design/screens/MFG - Events.dc.html",
+  "out": "design/assets/screens/f2-events.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "f2-dashboard",
+  "src": "design/screens/MFG - Dashboard.dc.html",
+  "out": "design/assets/screens/f2-dashboard.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "m2-chat",
+  "src": "design/screens/Mkt - Chat.dc.html",
+  "out": "design/assets/screens/m2-chat.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "m2-requests",
+  "src": "design/screens/Mkt - Requests.dc.html",
+  "out": "design/assets/screens/m2-requests.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "m2-wiki",
+  "src": "design/screens/Mkt - Wiki.dc.html",
+  "out": "design/assets/screens/m2-wiki.png",
+  "mode": "wikicard",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "m3-mobile",
+  "src": "design/screens/Mkt - Mobile.dc.html",
+  "out": "design/assets/screens/m3-mobile.png",
+  "mode": "viewport",
+  "w": 520,
+  "h": 912
+ },
+ {
+  "used": "m2-events",
+  "src": "design/screens/Mkt - Events.dc.html",
+  "out": "design/assets/screens/m2-events.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "m2-dashboard",
+  "src": "design/screens/Mkt - Dashboard.dc.html",
+  "out": "design/assets/screens/m2-dashboard.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "n2-chat",
+  "src": "design/screens/NPO - Chat.dc.html",
+  "out": "design/assets/screens/n2-chat.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "n2-requests",
+  "src": "design/screens/NPO - Requests.dc.html",
+  "out": "design/assets/screens/n2-requests.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "n2-wiki",
+  "src": "design/screens/NPO - Wiki.dc.html",
+  "out": "design/assets/screens/n2-wiki.png",
+  "mode": "wikicard",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "n4-mobile",
+  "src": "design/screens/NPO - Mobile.dc.html",
+  "out": "design/assets/screens/n4-mobile.png",
+  "mode": "viewport",
+  "w": 520,
+  "h": 912
+ },
+ {
+  "used": "n2-events",
+  "src": "design/screens/NPO - Events.dc.html",
+  "out": "design/assets/screens/n2-events.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "n2-dashboard",
+  "src": "design/screens/NPO - Dashboard.dc.html",
+  "out": "design/assets/screens/n2-dashboard.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "p2-chat",
+  "src": "design/screens/PM - Chat.dc.html",
+  "out": "design/assets/screens/p2-chat.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "p2-requests",
+  "src": "design/screens/PM - Requests.dc.html",
+  "out": "design/assets/screens/p2-requests.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "p2-wiki",
+  "src": "design/screens/PM - Wiki.dc.html",
+  "out": "design/assets/screens/p2-wiki.png",
+  "mode": "wikicard",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "p3-mobile",
+  "src": "design/screens/PM - Mobile.dc.html",
+  "out": "design/assets/screens/p3-mobile.png",
+  "mode": "viewport",
+  "w": 520,
+  "h": 912
+ },
+ {
+  "used": "p2-events",
+  "src": "design/screens/PM - Events.dc.html",
+  "out": "design/assets/screens/p2-events.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "p2-dashboard",
+  "src": "design/screens/PM - Dashboard.dc.html",
+  "out": "design/assets/screens/p2-dashboard.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "shot-chat",
+  "src": "design/Screen - School Channel Chat.dc.html",
+  "out": "design/assets/screens/shot-chat.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "shot-mobile",
+  "src": "design/Screen - Mobile Chat.dc.html",
+  "out": "design/assets/screens/shot-mobile.png",
+  "mode": "viewport",
+  "w": 520,
+  "h": 912
+ },
+ {
+  "used": "shot-requests",
+  "src": "design/Screen - Requests.dc.html",
+  "out": "design/assets/screens/shot-requests.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "shot-events",
+  "src": "design/Screen - Events.dc.html",
+  "out": "design/assets/screens/shot-events.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ },
+ {
+  "used": "shot-wiki",
+  "src": "design/Screen - Wiki.dc.html",
+  "out": "design/assets/screens/shot-wiki.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912,
+  "tweak": "const m=document.querySelector('main'); const r=m.children[m.children.length-1]; r.style.marginLeft='10px'; r.style.marginRight='-10px';"
+ },
+ {
+  "used": "shot-dashboard-final",
+  "src": "design/Screen - Dashboard.dc.html",
+  "out": "design/assets/screens/shot-dashboard-final.png",
+  "mode": "viewport",
+  "w": 1604,
+  "h": 912
+ }
+]

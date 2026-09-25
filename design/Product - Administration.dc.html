@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Kolabr | Administration</title>
+<meta name="description" content="Administration in Kolabr: users and roles, channel management, SLA profiles, routing rules, playbooks and a full audit log: all in one place.">
+<link rel="canonical" href="https://kolabr.com/">
+<meta property="og:title" content="Kolabr | Administration">
+<meta property="og:description" content="Users, channels, SLAs, routing and an audit log: the controls that keep a growing Kolabr tidy.">
+<meta property="og:url" content="https://kolabr.com/">
+<meta property="og:image" content="https://kolabr.com/og/home.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400,600,800&amp;display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Kolabr","url":"https://kolabr.com","logo":"https://kolabr.com/assets/logo.svg"},{"@type":"WebSite","name":"Kolabr","url":"https://kolabr.com"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://kolabr.com/"}]}]}</script>
+<style>
+:root{--ink:#33505B;--ink-muted:#5D7380;--accent:#15C0E8;--surface:#FFFFFF;--surface-tint:#F2F6FA;--border:#DDE6ED;--glass:rgba(255,255,255,.68);--glass-line:rgba(255,255,255,.75);--shadow-sm:0 2px 8px rgba(51,80,91,.06);--shadow:0 18px 50px -12px rgba(51,80,91,.22);--shadow-lg:0 60px 120px -40px rgba(51,80,91,.45);--deep:#33505B;--footer:#22363E;--on-deep:#FFFFFF;--on-deep-muted:#C3D2DA}
+[data-theme="dark"]{--ink:#EAF1F5;--ink-muted:#A7B8C1;--surface:#0D161B;--surface-tint:#141F26;--border:#243541;--glass:rgba(23,36,44,.7);--glass-line:rgba(255,255,255,.08);--shadow-sm:0 2px 8px rgba(0,0,0,.4);--shadow:0 18px 50px -12px rgba(0,0,0,.6);--shadow-lg:0 60px 120px -40px rgba(0,0,0,.8);--deep:#0A1216;--footer:#070E11;--on-deep:#FFFFFF;--on-deep-muted:#A7B8C1}
+html,body{margin:0;padding:0;background:#fff}
+html{scroll-behavior:smooth;scroll-padding-top:104px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:'Switzer',ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--ink);text-decoration:none}a:hover{color:var(--accent)}
+h1,h2,h3,h4,p,figure{margin:0}
+img{display:block}
+@keyframes kJoin{from{opacity:0;transform:translateY(10px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes kFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes kPulse{0%,100%{box-shadow:0 0 0 0 rgba(21,192,232,.45)}70%{box-shadow:0 0 0 12px rgba(21,192,232,0)}}
+summary{list-style:none}summary::-webkit-details-marker{display:none}
+@keyframes kMenu{from{opacity:0;transform:translate(-50%,-8px)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes kSheet{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}}
+@media (max-width:1080px){
+[data-grid="split"]{grid-template-columns:minmax(0,1fr)!important;gap:48px!important}
+[data-grid="bento"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+[data-grid="steps"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+[data-stepline]{display:none!important}
+[data-grid="bento"]>*{grid-column:auto!important}
+[data-reqcard]{grid-template-columns:minmax(0,1fr)!important;gap:22px!important}
+[data-grid="footer"]{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))!important}
+[data-herofig]{min-height:0!important}
+[data-heroframe]{position:static!important;transform:none!important;width:100%!important;opacity:1!important}
+[data-heroframe]:not([data-pos="0"]){display:none!important}
+[data-herofig]{perspective:none!important}
+[data-chip]{display:none!important}
+[data-phonefig]{min-height:0!important;padding:40px 0!important}
+[data-navlinks]{display:none!important}
+[data-navmenu]{display:block!important}
+}
+@media (max-width:700px){
+section,footer{padding-left:20px!important;padding-right:20px!important;padding-top:86px!important;padding-bottom:86px!important}
+[data-grid]{padding-left:0!important;padding-right:0!important}
+[data-hero]{padding-top:124px!important;padding-bottom:0!important}
+[data-grid="bento"],[data-grid="two"]{grid-template-columns:minmax(0,1fr)!important}
+[data-signin]{display:none!important}
+}
+</style>
+</helmet>
+<div data-theme="{{ theme }}" style="background:var(--surface);color:var(--ink-muted);font-size:18px;line-height:1.62;letter-spacing:-.003em;overflow-x:hidden">
+          <div style="position:fixed;top:14px;left:0;right:0;z-index:60;padding:0 24px;pointer-events:none">
+          <div onMouseLeave="{{ closeMenu }}" style="pointer-events:auto;max-width:1400px;margin:0 auto;position:relative">
+          <nav aria-label="Main" style="position:relative;border-radius:20px;box-shadow:var(--shadow-sm);height:62px;padding:0 14px 0 22px;display:flex;align-items:center;justify-content:space-between;gap:20px"><span aria-hidden="true" style="position:absolute;inset:0;border-radius:20px;background:var(--glass);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);z-index:0"></span>
+          <a href="Home.dc.html" aria-label="Kolabr home" style="display:flex;align-items:center;flex:none;position:relative;z-index:1"><svg viewBox="0 0 538.39 105.77" role="img" aria-label="Kolabr" fill="currentColor" shape-rendering="geometricPrecision" style="height:23px;width:auto;display:block;color:var(--ink);position:relative;z-index:1"><path d="M391.35,17.76c-9.5,0-18.29,3.03-25.47,8.17V0h-26.68v105.49h26.68v-8.23c7.18,5.14,15.97,8.17,25.47,8.17,24.21,0,43.83-19.62,43.83-43.83s-19.62-43.83-43.83-43.83ZM390.09,81.34c-10.91,0-19.75-8.84-19.75-19.75s8.84-19.75,19.75-19.75,19.75,8.84,19.75,19.75-8.84,19.75-19.75,19.75Z"></path><path d="M0,105.77V0h26.68v105.77H0Z"></path><path d="M187.03,105.77V0h26.68v105.77h-26.68Z"></path><path d="M295.95,18.55v7.67c-7.18-5.14-15.97-8.17-25.47-8.17-24.21,0-43.83,19.62-43.83,43.83s19.62,43.83,43.83,43.83c9.5,0,18.29-3.03,25.47-8.17v8.23h26.68V18.55h-26.68ZM271.74,81.63c-10.91,0-19.75-8.84-19.75-19.75s8.84-19.75,19.75-19.75,19.75,8.84,19.75,19.75-8.84,19.75-19.75,19.75Z"></path><path d="M169.44,39.16c-4.04-6.64-9.56-11.87-16.55-15.68-6.99-3.81-14.81-5.72-23.47-5.72s-16.8,1.94-23.73,5.8c-6.93,3.87-12.39,9.1-16.37,15.68-3.98,6.58-5.98,13.98-5.98,22.18s2.02,15.83,6.06,22.52c4.04,6.7,9.53,12.01,16.46,15.94,6.93,3.93,14.78,5.89,23.56,5.89s16.63-1.96,23.56-5.89c6.93-3.93,12.41-9.21,16.46-15.85,4.04-6.64,6.06-14.18,6.06-22.61s-2.02-15.62-6.06-22.26ZM129.41,81.63c-10.91,0-19.75-8.84-19.75-19.75s8.84-19.75,19.75-19.75,19.75,8.84,19.75,19.75-8.84,19.75-19.75,19.75Z"></path><circle cx="523.71" cy="91.09" r="14.68" fill="#15c0e8"></circle><path d="M494.81,18.11c-7.66,0-14.85,1.97-21.12,5.42v-4.98h-26.68v87.23h26.68v-45.54c.87-10.11,9.32-18.05,19.65-18.05,4.8,0,9.19,1.71,12.61,4.56l17.75-17.75c-7.72-6.77-17.82-10.89-28.9-10.89Z"></path><path d="M88.14,17.76l-30.79,44,30.79,44h-30.67s-30.79-44-30.79-44l30.79-44h30.67Z"></path></svg></a>
+          <div data-navlinks="" style="position:relative;z-index:1;display:flex;gap:2px;font-size:15.5px;font-weight:600;color:var(--ink)">
+          <a href="Home.dc.html" onMouseEnter="{{ closeMenu }}" style="color:var(--ink);padding:9px 13px;border-radius:12px;transition:background .25s" style-hover="background:var(--surface-tint);color:var(--ink)">Home</a>
+          <a href="#" onMouseEnter="{{ openProduct }}" onFocus="{{ openProduct }}" onClick="{{ toggleProduct }}" aria-expanded="{{ productOpen }}" aria-haspopup="true" style="color:var(--ink);padding:9px 13px;border-radius:12px;display:flex;align-items:center;gap:6px;background:{{ productBg }};transition:background .25s">Product<span aria-hidden="true" style="display:block;width:6px;height:6px;border-right:1.6px solid var(--ink-muted);border-bottom:1.6px solid var(--ink-muted);transform:rotate({{ productCaret }});transition:transform .3s cubic-bezier(.2,.7,.2,1);margin-top:-3px"></span></a>
+          <a href="Pricing.dc.html" onMouseEnter="{{ closeMenu }}" style="color:var(--ink);padding:9px 13px;border-radius:12px;transition:background .25s" style-hover="background:var(--surface-tint);color:var(--ink)">Pricing</a>
+          <a href="#" onMouseEnter="{{ openCases }}" onFocus="{{ openCases }}" onClick="{{ toggleCases }}" aria-expanded="{{ casesOpen }}" aria-haspopup="true" style="color:var(--ink);padding:9px 13px;border-radius:12px;display:flex;align-items:center;gap:6px;background:{{ casesBg }};transition:background .25s">Use cases<span aria-hidden="true" style="display:block;width:6px;height:6px;border-right:1.6px solid var(--ink-muted);border-bottom:1.6px solid var(--ink-muted);transform:rotate({{ casesCaret }});transition:transform .3s cubic-bezier(.2,.7,.2,1);margin-top:-3px"></span></a>
+          <a href="Compare - Teams.dc.html" onMouseEnter="{{ openCompare }}" onFocus="{{ openCompare }}" onClick="{{ toggleCompare }}" aria-expanded="{{ compareOpen }}" aria-haspopup="true" style="color:var(--ink);padding:9px 13px;border-radius:12px;display:flex;align-items:center;gap:6px;background:{{ compareBg }};transition:background .25s">Compare<span aria-hidden="true" style="display:block;width:6px;height:6px;border-right:1.6px solid var(--ink-muted);border-bottom:1.6px solid var(--ink-muted);transform:rotate({{ compareCaret }});transition:transform .3s cubic-bezier(.2,.7,.2,1);margin-top:-3px"></span></a>
+          <a href="Contact.dc.html" onMouseEnter="{{ closeMenu }}" style="color:var(--ink);padding:9px 13px;border-radius:12px;transition:background .25s" style-hover="background:var(--surface-tint);color:var(--ink)">Contact us</a>
+          <sc-if value="{{ showBlog }}" hint-placeholder-val="{{ false }}"><a href="#" onMouseEnter="{{ closeMenu }}" style="color:var(--ink);padding:9px 13px;border-radius:12px">Blog</a></sc-if>
+          </div>
+          <div style="position:relative;z-index:1;display:flex;align-items:center;gap:8px;flex:none">
+          <button data-navmenu="" type="button" onClick="{{ toggleSheet }}" aria-expanded="{{ sheetOpen }}" style="display:none;font-family:inherit;cursor:pointer;border:0;font-size:15.5px;font-weight:600;color:var(--ink);padding:11px 15px;background:var(--surface-tint);border-radius:12px">{{ sheetLabel }}</button>
+          <a href="#" data-signin="" style="font-size:15.5px;font-weight:600;color:var(--ink);padding:11px 18px;border-radius:13px;border:1px solid var(--border);background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s" style-hover="transform:translateY(-2px);box-shadow:var(--shadow-sm)">Sign in</a>
+          <a href="#cta" style="background:var(--ink);color:#fff;font-weight:600;font-size:15.5px;padding:11px 18px;border-radius:13px;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s" style-hover="transform:translateY(-2px);box-shadow:var(--shadow);color:#fff">Get started</a>
+          </div>
+          </nav>
+          <sc-if value="{{ productOpen }}" hint-placeholder-val="{{ false }}">
+          <div onMouseEnter="{{ keepMenu }}" onMouseLeave="{{ closeMenu }}" style="width:min(1080px,100%);margin:10px auto 0;background:var(--glass);backdrop-filter:blur(26px) saturate(180%);-webkit-backdrop-filter:blur(26px) saturate(180%);border-radius:24px;box-shadow:var(--shadow);padding:26px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 290px;gap:26px;animation:kSheet .3s cubic-bezier(.2,.7,.2,1) both">
+          <div style="display:flex;flex-direction:column;gap:4px">
+          <a href="Channels.dc.html" style="padding:11px 12px;border-radius:13px;display:flex;flex-direction:column;gap:2px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)"><span style="font-size:15.5px;font-weight:600;color:var(--ink)">Channels</span><span style="font-size:13.5px;color:var(--ink-muted);line-height:1.4">The shared workspace everything else sits in</span></a>
+          <a href="Product - Channel Chat.dc.html" style="padding:11px 12px;border-radius:13px;display:flex;flex-direction:column;gap:2px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)"><span style="font-size:15.5px;font-weight:600;color:var(--ink)">Channel chat</span><span style="font-size:13.5px;color:var(--ink-muted);line-height:1.4">One conversation, plus direct and group chats</span></a>
+          <a href="Product - Requests.dc.html" style="padding:11px 12px;border-radius:13px;display:flex;flex-direction:column;gap:2px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)"><span style="font-size:15.5px;font-weight:600;color:var(--ink)">Requests</span><span style="font-size:13.5px;color:var(--ink-muted);line-height:1.4">Owner, category, SLA and status on every item</span></a>
+          <a href="Product - Meetings.dc.html" style="padding:11px 12px;border-radius:13px;display:flex;flex-direction:column;gap:2px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)"><span style="font-size:15.5px;font-weight:600;color:var(--ink)">Scheduled Events</span><span style="font-size:13.5px;color:var(--ink-muted);line-height:1.4">Meetings and a channel calendar, synced with Google and Outlook</span></a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+          <a href="Product - Wiki.dc.html" style="padding:11px 12px;border-radius:13px;display:flex;flex-direction:column;gap:2px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)"><span style="font-size:15.5px;font-weight:600;color:var(--ink)">Wiki</span><span style="font-size:13.5px;color:var(--ink-muted);line-height:1.4">A knowledge base inside the channel</span></a>
+          <a href="Product - Administration.dc.html" style="padding:11px 12px;border-radius:13px;display:flex;flex-direction:column;gap:2px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)"><span style="font-size:15.5px;font-weight:600;color:var(--ink)">Administration</span><span style="font-size:13.5px;color:var(--ink-muted);line-height:1.4">Roles, routing, playbooks and the audit log</span></a>
+          <a href="Product - Mobile App.dc.html" style="padding:11px 12px;border-radius:13px;display:flex;flex-direction:column;gap:2px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)"><span style="font-size:15.5px;font-weight:600;color:var(--ink)">Mobile app</span><span style="font-size:13.5px;color:var(--ink-muted);line-height:1.4">The free companion app for iOS and Android</span></a>
+          <a href="Product - Details.dc.html" style="padding:11px 12px;border-radius:13px;display:flex;flex-direction:column;gap:2px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)"><span style="font-size:15.5px;font-weight:600;color:var(--ink)">Small details</span><span style="font-size:13.5px;color:var(--ink-muted);line-height:1.4">Light and dark mode, several accounts, and more</span></a>
+          </div>
+          <a href="#cta" style="background:var(--deep);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px;color:var(--on-deep);overflow:hidden;position:relative" style-hover="color:var(--on-deep)">
+          <span style="position:absolute;inset:0;background:radial-gradient(320px 220px at 80% 0%,rgba(21,192,232,.34),transparent 70%)"></span>
+          <span style="position:relative;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)">Free trial</span>
+          <span style="position:relative;font-size:20px;font-weight:600;letter-spacing:-.02em;line-height:1.15">Want to see it at work?</span>
+          <span style="position:relative;font-size:13.5px;color:var(--on-deep-muted);line-height:1.45">Two weeks of the whole channel: chat, requests, events and the Wiki. No card required.</span>
+          <span style="position:relative;margin-top:auto;align-self:flex-start;background:var(--on-deep);color:#22363E;font-weight:600;font-size:14px;padding:10px 16px;border-radius:12px">Start your free trial</span>
+          </a>
+          </div>
+          </sc-if>
+          <sc-if value="{{ casesOpen }}" hint-placeholder-val="{{ false }}">
+          <div onMouseEnter="{{ keepMenu }}" onMouseLeave="{{ closeMenu }}" style="width:min(1080px,100%);margin:10px auto 0;background:var(--glass);backdrop-filter:blur(26px) saturate(180%);-webkit-backdrop-filter:blur(26px) saturate(180%);border-radius:24px;box-shadow:var(--shadow);padding:26px;display:grid;grid-template-columns:minmax(0,2.6fr) minmax(0,1fr);gap:30px;animation:kSheet .3s cubic-bezier(.2,.7,.2,1) both">
+          <div style="display:flex;flex-direction:column;gap:12px">
+          <span style="font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);padding:0 10px">By industry</span>
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;font-size:15px;font-weight:600">
+          <a href="Use Case - Architecture Firms.dc.html" style="color:var(--ink);padding:9px 10px;border-radius:11px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)">Architecture firms</a>
+          <a href="Use Case - Engineering Firms.dc.html" style="color:var(--ink);padding:9px 10px;border-radius:11px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)">Engineering firms</a>
+          <a href="Use Case - Construction.dc.html" style="color:var(--ink);padding:9px 10px;border-radius:11px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)">Construction</a>
+          <a href="Use Case - Marketing Agencies.dc.html" style="color:var(--ink);padding:9px 10px;border-radius:11px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)">Marketing agencies</a>
+          <a href="Use Case - Accounting Firms.dc.html" style="color:var(--ink);padding:9px 10px;border-radius:11px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)">Accounting firms</a>
+          <a href="Use Case - Law Firms.dc.html" style="color:var(--ink);padding:9px 10px;border-radius:11px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)">Law firms</a>
+          <a href="Use Case - IT Service Providers.dc.html" style="color:var(--ink);padding:9px 10px;border-radius:11px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)">IT service providers</a>
+          <a href="Use Case - Property Management.dc.html" style="color:var(--ink);padding:9px 10px;border-radius:11px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)">Property management</a>
+          <a href="Use Case - Logistics.dc.html" style="color:var(--ink);padding:9px 10px;border-radius:11px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)">Logistics</a>
+          <a href="Use Case - Manufacturing.dc.html" style="color:var(--ink);padding:9px 10px;border-radius:11px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)">Manufacturing</a>
+          <a href="Use Case - Schools.dc.html" style="color:var(--ink);padding:9px 10px;border-radius:11px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)">Schools</a>
+          <a href="Use Case - Nonprofits.dc.html" style="color:var(--ink);padding:9px 10px;border-radius:11px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)">Nonprofits</a>
+          <a href="Use Case - Clinics.dc.html" style="color:var(--ink);padding:9px 10px;border-radius:11px;transition:background .2s" style-hover="background:var(--surface-tint);color:var(--ink)">Clinics</a>
+          </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+          <a href="Pricing.dc.html" style="margin-top:8px;background:var(--deep);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px;color:var(--on-deep);overflow:hidden;position:relative" style-hover="color:var(--on-deep)">
+            <span style="position:absolute;inset:0;background:radial-gradient(320px 220px at 80% 0%,rgba(21,192,232,.34),transparent 70%)"></span>
+            <span style="position:relative;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)">Free trial</span>
+            <span style="position:relative;font-size:20px;font-weight:600;letter-spacing:-.02em;line-height:1.15">Want to see it at work?</span>
+            <span style="position:relative;font-size:13.5px;color:var(--on-deep-muted);line-height:1.45">Two weeks of the whole channel: chat, requests, events and the Wiki. No card required.</span>
+            <span style="position:relative;margin-top:auto;align-self:flex-start;background:var(--on-deep);color:#22363E;font-weight:600;font-size:14px;padding:10px 16px;border-radius:12px">Start your free trial</span>
+          </a>
+          </div>
+          </div>
+          </sc-if>
+          <sc-if value="{{ compareOpen }}" hint-placeholder-val="{{ false }}">
+          <div onMouseEnter="{{ keepMenu }}" onMouseLeave="{{ closeMenu }}" style="width:min(820px,100%);margin:10px auto 0;background:var(--glass);backdrop-filter:blur(26px) saturate(180%);-webkit-backdrop-filter:blur(26px) saturate(180%);border-radius:24px;box-shadow:var(--shadow);padding:26px;display:flex;flex-direction:column;gap:16px;animation:kSheet .3s cubic-bezier(.2,.7,.2,1) both">
+          <span style="font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);padding:0 2px">Kolabr compared</span>
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">
+          <a href="Compare - Slack.dc.html" style="background:var(--surface-tint);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:4px" style-hover="color:var(--ink)"><span style="font-size:15.5px;font-weight:600;color:var(--ink)">vs Slack</span><span style="font-size:13px;color:var(--ink-muted);line-height:1.4">Chat everywhere, clients behind a paid account</span></a>
+          <a href="Compare - Teams.dc.html" style="background:var(--surface-tint);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:4px" style-hover="color:var(--ink)"><span style="font-size:15.5px;font-weight:600;color:var(--ink)">vs Teams</span><span style="font-size:13px;color:var(--ink-muted);line-height:1.4">Built for inside the company, three ways to add anyone else</span></a>
+          <a href="Compare - Basecamp.dc.html" style="background:var(--surface-tint);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:4px" style-hover="color:var(--ink)"><span style="font-size:15.5px;font-weight:600;color:var(--ink)">vs Basecamp</span><span style="font-size:13px;color:var(--ink-muted);line-height:1.4">Projects that end, and free-standing to-do lists</span></a>
+          <a href="Compare - Notion.dc.html" style="background:var(--surface-tint);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:4px" style-hover="color:var(--ink)"><span style="font-size:15.5px;font-weight:600;color:var(--ink)">vs Notion</span><span style="font-size:13px;color:var(--ink-muted);line-height:1.4">Documents in one place, the conversation somewhere else</span></a>
+          <a href="Compare - ClickUp.dc.html" style="background:var(--surface-tint);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:4px" style-hover="color:var(--ink)"><span style="font-size:15.5px;font-weight:600;color:var(--ink)">vs ClickUp</span><span style="font-size:13px;color:var(--ink-muted);line-height:1.4">Task tracking for your team, not for your clients</span></a>
+          <a href="Compare - Zendesk.dc.html" style="background:var(--surface-tint);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:4px" style-hover="color:var(--ink)"><span style="font-size:15.5px;font-weight:600;color:var(--ink)">vs Zendesk</span><span style="font-size:13px;color:var(--ink-muted);line-height:1.4">Helpdesk software, which Kolabr is not</span></a>
+          </div>
+          </div>
+          </sc-if>
+          <sc-if value="{{ sheetOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="margin:10px 0 0;background:var(--glass);backdrop-filter:blur(26px) saturate(180%);-webkit-backdrop-filter:blur(26px) saturate(180%);border-radius:22px;box-shadow:var(--shadow);padding:20px;max-height:calc(100vh - 130px);overflow:auto;display:flex;flex-direction:column;gap:22px;animation:kSheet .3s cubic-bezier(.2,.7,.2,1) both">
+          <div style="display:flex;flex-direction:column;gap:2px">
+          <span style="font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);padding:0 10px 8px">Product</span>
+          <a href="Home.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Home</a>
+          <a href="Channels.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Channels</a>
+          <a href="Product - Channel Chat.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Channel chat</a>
+          <a href="Product - Requests.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Requests</a>
+          <a href="Product - Meetings.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Scheduled Events</a>
+          <a href="Product - Wiki.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Wiki</a>
+          <a href="Product - Mobile App.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Mobile app</a>
+          <a href="Product - Details.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Small details</a>
+          <a href="Product - Administration.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Administration</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:2px">
+          <span style="font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);padding:0 10px 8px">Use cases</span>
+          <a href="Use Case - Architecture Firms.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Architecture firms</a>
+          <a href="Use Case - Engineering Firms.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Engineering firms</a>
+          <a href="Use Case - Accounting Firms.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Accounting firms</a>
+          <a href="Use Case - Law Firms.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Law firms</a>
+          <a href="Use Case - Property Management.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Property management</a>
+          <a href="Use Case - Logistics.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Logistics</a>
+          <a href="Use Case - Manufacturing.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Manufacturing</a>
+          <a href="Use Case - Clinics.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Clinics</a>
+          <a href="Use Case - Construction.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Construction</a>
+          <a href="Use Case - Schools.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Schools</a>
+          <a href="Use Case - Marketing Agencies.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Marketing agencies</a>
+          <a href="Use Case - IT Service Providers.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">IT service providers</a>
+          <a href="Use Case - Nonprofits.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Nonprofits</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:2px">
+          <span style="font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);padding:0 10px 8px">Compare</span>
+          <a href="Compare - Slack.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Kolabr vs Slack</a>
+          <a href="Compare - Teams.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Kolabr vs Teams</a>
+          <a href="Compare - Basecamp.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Kolabr vs Basecamp</a>
+          <a href="Compare - Notion.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Kolabr vs Notion</a>
+          <a href="Compare - ClickUp.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Kolabr vs ClickUp</a>
+          <a href="Compare - Zendesk.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Kolabr vs Zendesk</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:2px">
+          <a href="Pricing.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Pricing</a>
+          <a href="Contact.dc.html" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Contact us</a>
+          <a href="#" style="color:var(--ink);font-size:17px;font-weight:600;padding:11px 10px;border-radius:12px">Sign in</a>
+          </div>
+          </div>
+          </sc-if>
+          </div>
+</div>
+          <section aria-labelledby="ch-hero" style="position:relative;background:radial-gradient(1000px 620px at 78% 6%,rgba(21,192,232,.2),transparent 68%),radial-gradient(680px 460px at 2% 40%,rgba(51,80,91,.07),transparent 72%),var(--surface);padding:196px 40px 130px">
+          <div style="max-width:1400px;margin:0 auto">
+          <div data-rise="" style="max-width:820px;display:flex;flex-direction:column;gap:20px">
+          <h1 id="ch-hero" style="font-size:clamp(38px,4.6vw,66px);line-height:1;letter-spacing:-.04em;font-weight:800;color:var(--ink);text-wrap:balance">Run it all from one place</h1>
+          <p style="font-size:20.5px;line-height:1.5;color:var(--ink-muted);text-wrap:pretty;max-width:680px">Channels, people, roles, SLA profiles, routing and playbooks: the settings that decide how work reaches your team, in one admin area rather than scattered through each channel.</p>
+          </div>
+          <figure data-rise="" style="margin:64px 0 0;border-radius:20px;overflow:hidden;background:var(--surface);box-shadow:0 60px 120px -48px rgba(51,80,91,.3),0 40px 90px -38px rgba(21,192,232,.2)">
+          <img src="assets/ui-admin-channels.png" alt="Channel management: thirteen channel cards with their category, purpose, member count and SLA profile, each with Members and Edit actions" width="1920" height="965" style="width:100%;height:auto">
+          </figure>
+          </div>
+</section>
+          <section id="users" aria-labelledby="users-h" style="max-width:1400px;margin:0 auto;padding:110px 40px">
+          <div data-grid="split" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:96px;align-items:center">
+          <div data-rise="" style="display:flex;flex-direction:column;gap:24px;max-width:620px">
+          <h2 id="users-h" style="font-size:clamp(34px,3.7vw,54px);line-height:1.04;letter-spacing:-.03em;font-weight:600;color:var(--ink);text-wrap:balance">Who is in, and what they can do</h2>
+          <p style="font-size:20.5px;line-height:1.5;text-wrap:pretty">One list of everyone with access, your staff and the customers you invited, with the channel they belong to, their role and whether the account is still active.</p>
+          <div style="display:flex;flex-direction:column;gap:2px;margin-top:12px">
+          <div style="display:grid;grid-template-columns:44px 1fr;gap:18px;padding:22px 0;border-top:1px solid var(--border)">
+          <span style="width:44px;height:44px;border-radius:14px;background:var(--surface-tint);color:var(--ink);font-weight:600;font-size:15px;display:flex;align-items:center;justify-content:center">1</span>
+          <div style="display:flex;flex-direction:column;gap:6px"><h3 style="font-size:19.5px;font-weight:600;color:var(--ink);letter-spacing:-.015em">Staff and customers, one view</h3><p style="font-size:16.5px">Filter to staff or customers, search any column, export the lot. You can see at a glance who is a guest and which channel they were invited into.</p></div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px 1fr;gap:18px;padding:22px 0;border-top:1px solid var(--border)">
+          <span style="width:44px;height:44px;border-radius:14px;background:var(--surface-tint);color:var(--ink);font-weight:600;font-size:15px;display:flex;align-items:center;justify-content:center">2</span>
+          <div style="display:flex;flex-direction:column;gap:6px"><h3 style="font-size:19.5px;font-weight:600;color:var(--ink);letter-spacing:-.015em">Roles, not guesswork</h3><p style="font-size:16.5px">Admin, agent or participant: set per person, applied per channel. Changing someone’s role takes effect everywhere they are a member.</p></div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px 1fr;gap:18px;padding:22px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+          <span style="width:44px;height:44px;border-radius:14px;background:var(--surface-tint);color:var(--ink);font-weight:600;font-size:15px;display:flex;align-items:center;justify-content:center">3</span>
+          <div style="display:flex;flex-direction:column;gap:6px"><h3 style="font-size:19.5px;font-weight:600;color:var(--ink);letter-spacing:-.015em">Disable without deleting</h3><p style="font-size:16.5px">Someone leaves, an account goes quiet: switch it off and the history stays intact, including everything they wrote in the channel.</p></div>
+          </div>
+          </div>
+          </div>
+          <figure data-rise="" data-phonefig="" style="margin:0;position:relative;display:flex;justify-content:flex-start;align-items:center;min-height:620px">
+          <div style="position:absolute;inset:8% -8% 8% -4%;background:radial-gradient(600px 420px at 60% 30%,rgba(21,192,232,.14),transparent 70%),var(--surface-tint);border-radius:32px"></div>
+          <div style="position:relative;width:min(1040px,138%);border-radius:18px;overflow:hidden;background:var(--surface);box-shadow:0 60px 120px -48px rgba(51,80,91,.3)">
+          <img src="assets/ui-admin-users.png" alt="The Users admin list: email, name, type, channel, role, active state and created date, with filters for staff and customers and an Invite user button" width="1920" height="965" style="width:100%;height:auto">
+          </div>
+          </figure>
+          </div>
+</section>
+          <section id="configuration" aria-labelledby="config-h" style="padding:40px 40px 150px">
+          <div style="max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+          <div data-rise="" style="max-width:760px;display:flex;flex-direction:column;gap:20px">
+          <h2 id="config-h" style="font-size:clamp(34px,3.7vw,54px);line-height:1.04;letter-spacing:-.03em;font-weight:600;color:var(--ink);text-wrap:balance">Set the rules once</h2>
+          <p style="font-size:20px;text-wrap:pretty">Categories, SLA profiles, routing, rules, playbooks, custom fields and service notices: the configuration behind every request, on tabs instead of buried in menus.</p>
+          </div>
+          <figure data-rise="" style="margin:0;border-radius:20px;overflow:hidden;background:var(--surface);box-shadow:0 60px 120px -48px rgba(51,80,91,.3),0 40px 90px -38px rgba(21,192,232,.2)">
+          <img src="assets/ui-admin-config.png" alt="The Configuration area: tabs for platform, categories, SLA profiles, rules, routing, playbooks, custom fields, knowledge base and service notices, showing appearance and general platform settings" width="1920" height="965" style="width:100%;height:auto">
+          </figure>
+          </div>
+</section>
+          <section id="audit" aria-labelledby="audit-h" style="padding:0 40px 150px">
+          <div style="max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+          <div data-rise="" style="max-width:760px;display:flex;flex-direction:column;gap:20px">
+          <h2 id="audit-h" style="font-size:clamp(34px,3.7vw,54px);line-height:1.04;letter-spacing:-.03em;font-weight:600;color:var(--ink);text-wrap:balance">Everything that happened, with a name on it</h2>
+          <p style="font-size:20px;text-wrap:pretty">Logins, role changes, members added, requests reassigned, every email the system sent, with the user, the entity, the ID and the IP. Retained for 24 months and exportable as CSV.</p>
+          </div>
+          <figure data-rise="" style="margin:0;border-radius:20px;overflow:hidden;background:var(--surface);box-shadow:0 60px 120px -48px rgba(51,80,91,.3),0 40px 90px -38px rgba(21,192,232,.2)">
+          <img src="assets/ui-admin-audit.png" alt="The audit log: timestamped platform activity with the user, the action, the entity type, entity ID and IP address, filterable by email, user, request or channel" width="1920" height="965" style="width:100%;height:auto">
+          </figure>
+          </div>
+</section>
+          <section id="admin-details" aria-labelledby="admin-h" style="padding:0 40px 150px">
+          <div style="max-width:1400px;margin:0 auto">
+          <div data-rise="" style="max-width:760px;display:flex;flex-direction:column;gap:20px;margin-bottom:56px">
+          <h2 id="admin-h" style="font-size:clamp(34px,3.7vw,54px);line-height:1.04;letter-spacing:-.03em;font-weight:600;color:var(--ink);text-wrap:balance">The controls that matter as you grow</h2>
+          <p style="font-size:20px;text-wrap:pretty">Enough control to run a real operation, without a week of setup. <a href="Product - Requests.dc.html" style="color:var(--ink);border-bottom:2px solid var(--accent);padding-bottom:1px">See what it does to requests</a>.</p>
+          </div>
+          <div data-rise-group="" data-grid="bento" style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px">
+          <div data-rise="" data-reqcard="" style="grid-column:span 4;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:32px;align-items:start;background:var(--glass);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-radius:24px;padding:34px;box-shadow:var(--shadow);color:var(--ink)">
+          <div style="display:flex;flex-direction:column;gap:12px;align-self:stretch;min-height:100%">
+          <h3 style="font-size:27px;font-weight:600;letter-spacing:-.02em">Channels, created and retired</h3>
+          <p style="font-size:16.5px;color:var(--ink-muted)">Spin up a channel for a new client, give it a category, an SLA profile and members, and archive it when the work ends. Cards or a list, whichever you prefer.</p>
+          <span style="margin-top:auto;padding-top:22px;align-self:flex-start"><a href="Channels.dc.html" style="font-size:15.5px;font-weight:600;color:var(--ink);border-bottom:2px solid var(--accent);padding-bottom:1px">How a channel fits together</a></span>
+          </div>
+          <div style="background:var(--surface);border-radius:16px;box-shadow:var(--shadow-sm);padding:20px 22px;display:flex;flex-direction:column;font-size:14px">
+          <span style="font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);padding-bottom:6px">Roles</span>
+          <span style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--border)"><span style="display:flex;flex-direction:column"><span style="font-weight:600;color:var(--ink)">Admin</span><span style="font-size:13px;color:var(--ink-muted)">Configuration, users, channels, audit log</span></span><span style="flex:none;font-size:12px;font-weight:600;border-radius:999px;padding:4px 10px;background:var(--surface-tint);color:var(--ink)">Staff</span></span>
+          <span style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--border)"><span style="display:flex;flex-direction:column"><span style="font-weight:600;color:var(--ink)">Agent</span><span style="font-size:13px;color:var(--ink-muted)">Works requests in the channels they are in</span></span><span style="flex:none;font-size:12px;font-weight:600;border-radius:999px;padding:4px 10px;background:var(--surface-tint);color:var(--ink)">Staff</span></span>
+          <span style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--border)"><span style="display:flex;flex-direction:column"><span style="font-weight:600;color:var(--ink)">Participant</span><span style="font-size:13px;color:var(--ink-muted)">Raises and follows their own requests</span></span><span style="flex:none;font-size:12px;font-weight:600;border-radius:999px;padding:4px 10px;background:rgba(21,192,232,.16);color:var(--ink)">Guest ok</span></span>
+          </div>
+          </div>
+          <div data-rise="" style="grid-column:span 2;align-self:start;display:flex;flex-direction:column;gap:16px;background:var(--deep);border-radius:24px;padding:34px;color:var(--on-deep-muted);box-shadow:var(--shadow)">
+          <h3 style="font-size:24px;font-weight:600;letter-spacing:-.02em;color:var(--on-deep)">SLA profiles and routing</h3>
+          <p style="font-size:16px">Attach a profile to a channel, Standard, Enhanced, Priority, and let rules route new requests to the right team by category, keyword or client.</p>
+          <div style="display:flex;flex-direction:column;gap:9px">
+          <div style="background:rgba(255,255,255,.07);border-radius:13px;padding:12px 14px;display:flex;justify-content:space-between;gap:10px"><span style="font-size:14.5px;font-weight:600;color:var(--on-deep)">Priority</span><span style="font-size:13px">1h / 4h</span></div>
+          <div style="background:rgba(21,192,232,.14);border-radius:13px;padding:12px 14px;display:flex;justify-content:space-between;gap:10px"><span style="font-size:14.5px;font-weight:600;color:var(--on-deep)">Enhanced</span><span style="font-size:13px">4h / 1d</span></div>
+          <div style="background:rgba(255,255,255,.07);border-radius:13px;padding:12px 14px;display:flex;justify-content:space-between;gap:10px"><span style="font-size:14.5px;font-weight:600;color:var(--on-deep)">Standard</span><span style="font-size:13px">1d / 3d</span></div>
+          <div style="background:rgba(255,255,255,.07);border-radius:13px;padding:12px 14px;display:flex;justify-content:space-between;gap:10px"><span style="font-size:14.5px;font-weight:600;color:var(--on-deep)">Routing</span><span style="font-size:13px">by category or client</span></div>
+          </div>
+          </div>
+          <div data-rise="" style="grid-column:span 2;display:flex;flex-direction:column;gap:14px;background:var(--surface);box-shadow:var(--shadow-sm);border-radius:24px;padding:34px;color:var(--ink)"><h3 style="font-size:24px;font-weight:600;letter-spacing:-.02em">Seats you can see</h3><p style="font-size:16px;color:var(--ink-muted)">Usage sits in the sidebar: staff seats and channels against your plan, so a limit never arrives as a surprise mid-week.</p><div style="margin-top:auto;display:flex;flex-direction:column;gap:8px;font-size:13.5px"><span style="display:flex;justify-content:space-between;gap:10px;background:var(--surface-tint);border-radius:12px;padding:11px 13px;color:var(--ink)"><span style="font-weight:600">Staff seats</span><span style="color:var(--ink-muted)">7 / 10</span></span><span style="display:flex;justify-content:space-between;gap:10px;background:var(--surface-tint);border-radius:12px;padding:11px 13px;color:var(--ink)"><span style="font-weight:600">Channels</span><span style="color:var(--ink-muted)">4 / 5</span></span></div></div>
+          <div data-rise="" style="grid-column:span 2;display:flex;flex-direction:column;gap:14px;background:var(--surface);box-shadow:var(--shadow-sm);border-radius:24px;padding:34px;color:var(--ink)"><h3 style="font-size:24px;font-weight:600;letter-spacing:-.02em">Playbooks and custom fields</h3><p style="font-size:16px;color:var(--ink-muted)">Standardise the work that repeats, and capture the one extra field your sector needs on every request.</p><div style="margin-top:auto;display:flex;gap:8px;font-size:13px;font-weight:600"><span style="background:var(--surface-tint);border-radius:11px;padding:9px 13px;color:var(--ink)">Playbooks</span><span style="background:var(--surface-tint);border-radius:11px;padding:9px 13px;color:var(--ink)">Custom fields</span><span style="background:var(--surface-tint);border-radius:11px;padding:9px 13px;color:var(--ink)">Service notices</span></div></div>
+          <div data-rise="" style="grid-column:span 2;display:flex;flex-direction:column;gap:14px;background:var(--surface);box-shadow:var(--shadow-sm);border-radius:24px;padding:34px;color:var(--ink)"><h3 style="font-size:24px;font-weight:600;letter-spacing:-.02em">Maintenance and branding</h3><p style="font-size:16px;color:var(--ink-muted)">Set the platform name on the login screen and outbound email, choose the default theme, and put the place in maintenance mode when you need to.</p><div style="margin-top:auto;display:flex;flex-direction:column;gap:8px;font-size:13.5px"><span style="display:flex;justify-content:space-between;gap:10px;align-items:center;color:var(--ink)">Light and dark mode switching<span style="width:34px;height:19px;border-radius:999px;background:var(--accent);flex:none;position:relative"><span style="position:absolute;top:2px;right:2px;width:15px;height:15px;border-radius:50%;background:#fff"></span></span></span><span style="display:flex;justify-content:space-between;gap:10px;align-items:center;color:var(--ink)">Accent colour picker<span style="width:34px;height:19px;border-radius:999px;background:var(--accent);flex:none;position:relative"><span style="position:absolute;top:2px;right:2px;width:15px;height:15px;border-radius:50%;background:#fff"></span></span></span><span style="display:flex;justify-content:space-between;gap:10px;align-items:center;color:var(--ink-muted)">Maintenance mode<span style="width:34px;height:19px;border-radius:999px;background:var(--border);flex:none;position:relative"><span style="position:absolute;top:2px;left:2px;width:15px;height:15px;border-radius:50%;background:#fff"></span></span></span></div></div>
+          </div>
+          </div>
+</section>
+          <section aria-labelledby="both-h" style="max-width:1400px;margin:0 auto;padding:0 40px 150px">
+          <div data-rise="" style="max-width:720px;display:flex;flex-direction:column;gap:18px;margin-bottom:48px">
+          <h2 id="both-h" style="font-size:clamp(32px,3.4vw,48px);line-height:1.05;letter-spacing:-.03em;font-weight:600;color:var(--ink);text-wrap:balance">Is this a lot to set up?</h2>
+          <p style="font-size:20px;text-wrap:pretty">No. The defaults work on day one: create a channel, invite people, start. The rest is there when your operation is big enough to need it.</p>
+          </div>
+          <div data-rise-group="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px">
+          <div data-rise="" style="background:var(--surface-tint);border-radius:24px;padding:36px;display:flex;flex-direction:column;gap:12px"><h3 style="font-size:21px;font-weight:600;color:var(--ink);letter-spacing:-.02em">Start with the defaults</h3><p style="font-size:16.5px">One SLA profile, one category set, no routing rules. Add a profile the first time a client needs a tighter promise than the rest.</p></div>
+          <div data-rise="" style="background:var(--surface-tint);border-radius:24px;padding:36px;display:flex;flex-direction:column;gap:12px"><h3 style="font-size:21px;font-weight:600;color:var(--ink);letter-spacing:-.02em">Guests stay out of it</h3><p style="font-size:16.5px">Administration is yours. The people you invite see their channels and their requests, and nothing about how the place is configured.</p></div>
+          <div data-rise="" style="background:var(--surface-tint);border-radius:24px;padding:36px;display:flex;flex-direction:column;gap:12px"><h3 style="font-size:21px;font-weight:600;color:var(--ink);letter-spacing:-.02em">Answers for auditors</h3><p style="font-size:16.5px">Who had access, who changed what, when a request was reassigned. Exportable, so the annual review takes an afternoon rather than a fortnight.</p></div>
+          </div>
+</section>
+          <section id="cta" aria-labelledby="cta-h" style="position:relative;padding:150px 40px 170px;background:radial-gradient(760px 460px at 50% 0%,rgba(21,192,232,.16),transparent 70%),var(--surface);text-align:center">
+          <div data-rise="" style="display:flex;flex-direction:column;align-items:center;gap:26px;max-width:660px;margin:0 auto">
+          <h2 id="cta-h" style="font-size:clamp(40px,4.6vw,66px);line-height:.99;letter-spacing:-.035em;font-weight:600;color:var(--ink);text-wrap:balance">Set it up once.</h2>
+          <p style="font-size:20px;text-wrap:pretty">Create a channel, invite your team, and tune the rest when the work asks for it.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+          <a href="#" style="background:var(--ink);color:#fff;font-weight:600;font-size:17px;padding:16px 28px;border-radius:15px;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s" style-hover="transform:translateY(-3px);box-shadow:var(--shadow);color:#fff">Get started</a>
+          <a href="Contact.dc.html" style="color:var(--ink);font-weight:600;font-size:17px;padding:16px 28px;border-radius:15px;border:1px solid var(--border);background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:transform .35s cubic-bezier(.2,.7,.2,1)" style-hover="transform:translateY(-3px)">Talk to us</a>
+          </div>
+          </div>
+</section>
+          <footer style="background:var(--footer);color:var(--on-deep-muted);padding:76px 40px 40px">
+          <div data-grid="footer" style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:2fr repeat(4,minmax(0,1fr));gap:40px;font-size:15px">
+          <div style="display:flex;flex-direction:column;gap:18px;max-width:300px">
+          <svg viewBox="0 0 538.39 105.77" role="img" aria-label="Kolabr" fill="currentColor" shape-rendering="geometricPrecision" style="align-self:flex-start;height:24px;width:auto;color:#fff"><path d="M391.35,17.76c-9.5,0-18.29,3.03-25.47,8.17V0h-26.68v105.49h26.68v-8.23c7.18,5.14,15.97,8.17,25.47,8.17,24.21,0,43.83-19.62,43.83-43.83s-19.62-43.83-43.83-43.83ZM390.09,81.34c-10.91,0-19.75-8.84-19.75-19.75s8.84-19.75,19.75-19.75,19.75,8.84,19.75,19.75-8.84,19.75-19.75,19.75Z"></path><path d="M0,105.77V0h26.68v105.77H0Z"></path><path d="M187.03,105.77V0h26.68v105.77h-26.68Z"></path><path d="M295.95,18.55v7.67c-7.18-5.14-15.97-8.17-25.47-8.17-24.21,0-43.83,19.62-43.83,43.83s19.62,43.83,43.83,43.83c9.5,0,18.29-3.03,25.47-8.17v8.23h26.68V18.55h-26.68ZM271.74,81.63c-10.91,0-19.75-8.84-19.75-19.75s8.84-19.75,19.75-19.75,19.75,8.84,19.75,19.75-8.84,19.75-19.75,19.75Z"></path><path d="M169.44,39.16c-4.04-6.64-9.56-11.87-16.55-15.68-6.99-3.81-14.81-5.72-23.47-5.72s-16.8,1.94-23.73,5.8c-6.93,3.87-12.39,9.1-16.37,15.68-3.98,6.58-5.98,13.98-5.98,22.18s2.02,15.83,6.06,22.52c4.04,6.7,9.53,12.01,16.46,15.94,6.93,3.93,14.78,5.89,23.56,5.89s16.63-1.96,23.56-5.89c6.93-3.93,12.41-9.21,16.46-15.85,4.04-6.64,6.06-14.18,6.06-22.61s-2.02-15.62-6.06-22.26ZM129.41,81.63c-10.91,0-19.75-8.84-19.75-19.75s8.84-19.75,19.75-19.75,19.75,8.84,19.75,19.75-8.84,19.75-19.75,19.75Z"></path><circle cx="523.71" cy="91.09" r="14.68" fill="#15c0e8"></circle><path d="M494.81,18.11c-7.66,0-14.85,1.97-21.12,5.42v-4.98h-26.68v87.23h26.68v-45.54c.87-10.11,9.32-18.05,19.65-18.05,4.8,0,9.19,1.71,12.61,4.56l17.75-17.75c-7.72-6.77-17.82-10.89-28.9-10.89Z"></path><path d="M88.14,17.76l-30.79,44,30.79,44h-30.67s-30.79-44-30.79-44l30.79-44h30.67Z"></path></svg>
+          <p style="line-height:1.55">One shared channel for your team and the clients, partners and suppliers you work with.</p>
+          <p style="line-height:1.55">You pay for your team. Guests you invite join free.</p>
+          <a href="#cta" style="align-self:flex-start;background:var(--on-deep);color:#22363E;font-weight:600;font-size:15px;padding:11px 18px;border-radius:13px;transition:transform .3s cubic-bezier(.2,.7,.2,1)" style-hover="transform:translateY(-2px);color:#22363E">Get started</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:11px"><span style="font-weight:600;color:var(--on-deep)">Product</span><a href="#" style="color:var(--on-deep-muted)">Product overview</a><a href="Channels.dc.html" style="color:var(--on-deep-muted)">Channels</a><a href="Product - Channel Chat.dc.html" style="color:var(--on-deep-muted)">Channel chat</a><a href="Product - Requests.dc.html" style="color:var(--on-deep-muted)">Requests</a><a href="Product - Meetings.dc.html" style="color:var(--on-deep-muted)">Scheduled Events</a><a href="Product - Wiki.dc.html" style="color:var(--on-deep-muted)">Wiki</a><a href="Product - Mobile App.dc.html" style="color:var(--on-deep-muted)">Mobile app</a><a href="Product - Details.dc.html" style="color:var(--on-deep-muted)">Small details</a><a href="Product - Administration.dc.html" style="color:var(--on-deep-muted)">Administration</a></div>
+          <div style="display:flex;flex-direction:column;gap:11px"><span style="font-weight:600;color:var(--on-deep)">Use cases</span><a href="Use Case - Architecture Firms.dc.html" style="color:var(--on-deep-muted)">Architecture firms</a><a href="Use Case - Construction.dc.html" style="color:var(--on-deep-muted)">Construction</a><a href="Use Case - Engineering Firms.dc.html" style="color:var(--on-deep-muted)">Engineering firms</a><a href="Use Case - Accounting Firms.dc.html" style="color:var(--on-deep-muted)">Accounting firms</a><a href="Use Case - Law Firms.dc.html" style="color:var(--on-deep-muted)">Law firms</a><a href="Use Case - Property Management.dc.html" style="color:var(--on-deep-muted)">Property management</a><a href="Use Case - Logistics.dc.html" style="color:var(--on-deep-muted)">Logistics</a><a href="Use Case - Manufacturing.dc.html" style="color:var(--on-deep-muted)">Manufacturing</a><a href="Use Case - Clinics.dc.html" style="color:var(--on-deep-muted)">Clinics</a><a href="Use Case - Marketing Agencies.dc.html" style="color:var(--on-deep-muted)">Marketing agencies</a><a href="Use Case - IT Service Providers.dc.html" style="color:var(--on-deep-muted)">IT service providers</a><a href="Use Case - Nonprofits.dc.html" style="color:var(--on-deep-muted)">Nonprofits</a><a href="Use Case - Schools.dc.html" style="color:var(--on-deep-muted)">Schools</a></div>
+          <div style="display:flex;flex-direction:column;gap:11px"><span style="font-weight:600;color:var(--on-deep)">Compare</span><a href="Compare - Slack.dc.html" style="color:var(--on-deep-muted)">Kolabr vs Slack</a><a href="Compare - Teams.dc.html" style="color:var(--on-deep-muted)">Kolabr vs Teams</a><a href="Compare - Basecamp.dc.html" style="color:var(--on-deep-muted)">Kolabr vs Basecamp</a><a href="Compare - Notion.dc.html" style="color:var(--on-deep-muted)">Kolabr vs Notion</a><a href="Compare - ClickUp.dc.html" style="color:var(--on-deep-muted)">Kolabr vs ClickUp</a><a href="Compare - Zendesk.dc.html" style="color:var(--on-deep-muted)">Kolabr vs Zendesk</a></div>
+          <div style="display:flex;flex-direction:column;gap:11px"><span style="font-weight:600;color:var(--on-deep)">Company</span><a href="Pricing.dc.html" style="color:var(--on-deep-muted)">Pricing</a><a href="Contact.dc.html" style="color:var(--on-deep-muted)">Contact us</a><a href="About.dc.html" style="color:var(--on-deep-muted)">About</a><a href="#" style="color:var(--on-deep-muted)">Sign up</a></div>
+          </div>
+          <div style="max-width:1400px;margin:48px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.13);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:14px">
+          <span>© 2026 Kolabr</span>
+          <div style="display:flex;gap:24px;flex-wrap:wrap"><a href="Privacy.dc.html" style="color:var(--on-deep-muted)">Privacy</a><a href="Terms.dc.html" style="color:var(--on-deep-muted)">Terms</a><a href="Refunds.dc.html" style="color:var(--on-deep-muted)">Refunds</a><a href="Cookies.dc.html" style="color:var(--on-deep-muted)">Cookies</a></div>
+          </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light' | 'dark'&quot;,&quot;section&quot;:&quot;Appearance&quot;},&quot;scrollMotion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;showBlog&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Navigation&quot;}}">
+class Component extends DCLogic {
+  state = { menu: null, sheet: false, shot: 0 };
+  shots = ['Dashboard', 'Scheduled events', 'Group Chat 1'];
+  // front card sits forward; the two behind step back and to the left, then rotate around
+  stack() {
+    const base = 'rotateY(-19deg) rotateX(5deg) rotate(.8deg)';
+    const ease = 'cubic-bezier(.16,.84,.28,1)';
+    const steps = [
+      // arriving in front: leads the move, comes up to full opacity fast
+      { t: `translateY(-50%) ${base} translate3d(0,0,0) scale(1)`, o: 1, z: 3,
+        tr: `transform .95s ${ease}, opacity .4s ease` },
+      // waiting on deck
+      { t: `translateY(-44%) ${base} translate3d(3%,0,-110px) scale(.975)`, o: .6, z: 2,
+        tr: `transform .95s ${ease} .12s, opacity .5s ease .25s` },
+      // just left the front: fades out where it stands, then slips back unseen
+      { t: `translateY(-38%) ${base} translate3d(6%,0,-220px) scale(.95)`, o: .32, z: 1,
+        tr: `transform .8s ${ease} .34s, opacity .3s ease` }
+    ];
+    const out = {};
+    for (let i = 0; i < 3; i++) {
+      const pos = (i - this.state.shot + 3) % 3, s = steps[pos];
+      out['tf' + i] = s.t; out['op' + i] = s.o; out['z' + i] = s.z; out['pos' + i] = String(pos); out['tr' + i] = s.tr;
+    }
+    return out;
+  }
+  set(menu) { clearTimeout(this._t); if (this.state.menu !== menu) this.setState({ menu }); }
+  toggle(menu) { clearTimeout(this._t); this.setState(s => ({ menu: s.menu === menu ? null : menu })); }
+  scheduleClose() { clearTimeout(this._t); this._t = setTimeout(() => this.setState({ menu: null }), 260); }
+  renderVals() {
+    const m = this.state.menu, on = 'var(--surface-tint)';
+    return {
+      theme: this.props.theme ?? 'light',
+      showBlog: this.props.showBlog ?? false,
+      productOpen: m === 'product', casesOpen: m === 'cases', compareOpen: m === 'compare',
+      productBg: m === 'product' ? on : 'transparent',
+      casesBg: m === 'cases' ? on : 'transparent',
+      compareBg: m === 'compare' ? on : 'transparent',
+      productCaret: m === 'product' ? '225deg' : '45deg',
+      casesCaret: m === 'cases' ? '225deg' : '45deg',
+      compareCaret: m === 'compare' ? '225deg' : '45deg',
+      openProduct: () => this.set('product'),
+      openCases: () => this.set('cases'),
+      openCompare: () => this.set('compare'),
+      toggleProduct: e => { e.preventDefault(); this.toggle('product'); },
+      toggleCases: e => { e.preventDefault(); this.toggle('cases'); },
+      toggleCompare: e => { e.preventDefault(); this.toggle('compare'); },
+      closeMenu: () => this.scheduleClose(),
+      keepMenu: () => clearTimeout(this._t),
+      ...this.stack(),
+      sheetOpen: this.state.sheet,
+      sheetLabel: this.state.sheet ? 'Close' : 'Menu',
+      toggleSheet: () => this.setState(s => ({ sheet: !s.sheet, menu: null }))
+    };
+  }
+  componentDidMount() {
+    this._esc = e => { if (e.key === 'Escape') this.setState({ menu: null, sheet: false }); };
+    document.addEventListener('keydown', this._esc);
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      this._shots = setInterval(() => this.setState(s => ({ shot: (s.shot + 1) % 3 })), 4200);
+    }
+    if (this.props.scrollMotion === false) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const els = [...document.querySelectorAll('[data-rise]')].filter(el => el.getBoundingClientRect().top > window.innerHeight * 0.92);
+    els.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(26px)'; el.style.transition = 'opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1)'; });
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target, group = el.closest('[data-rise-group]');
+        const i = group ? [...group.querySelectorAll('[data-rise]')].indexOf(el) : 0;
+        el.style.transitionDelay = Math.min(i, 6) * 75 + 'ms';
+        el.style.opacity = '1'; el.style.transform = 'none';
+        io.unobserve(el);
+      });
+    }, { threshold: 0.1 });
+    els.forEach(el => io.observe(el));
+    this._io = io;
+  }
+  componentWillUnmount() { this._io && this._io.disconnect(); document.removeEventListener('keydown', this._esc); clearTimeout(this._t); clearInterval(this._shots); }
+}
+</script>
+</body>
+</html>

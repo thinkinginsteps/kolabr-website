@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Kolabr">
+  <rect width="64" height="64" rx="14" fill="#33505B"/>
+  <g transform="translate(5.5 10.00) scale(0.416)" fill="#FFFFFF">
+    <path d="M0,105.77V0h26.68v105.77H0Z"/>
+    <path d="M88.14,17.76l-30.79,44,30.79,44h-30.67s-30.79-44-30.79-44l30.79-44h30.67Z"/>
+  </g>
+  <circle cx="52.27" cy="47.90" r="6.1" fill="#15C0E8"/>
+</svg>

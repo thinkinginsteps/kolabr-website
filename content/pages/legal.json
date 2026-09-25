@@ -1,0 +1,1067 @@
+{
+  "privacy": {
+    "eyebrow": "Legal",
+    "title": "Privacy policy",
+    "lede": "How [COMPANY NAME], trading as Kolabr, collects, uses and protects personal information when you visit our website or use the Kolabr service.",
+    "chips": [
+      "Last updated 21 September 2026",
+      "Applies to kolabr.com and the Kolabr apps"
+    ],
+    "nav": [
+      {
+        "id": "pp-who",
+        "label": "1. Who we are"
+      },
+      {
+        "id": "pp-collect",
+        "label": "2. What we collect"
+      },
+      {
+        "id": "pp-why",
+        "label": "3. Why we use it, and on what basis"
+      },
+      {
+        "id": "pp-guests",
+        "label": "4. Guests and people you invite"
+      },
+      {
+        "id": "pp-share",
+        "label": "5. Who we share information with"
+      },
+      {
+        "id": "pp-transfer",
+        "label": "6. Where information is stored"
+      },
+      {
+        "id": "pp-retain",
+        "label": "7. How long we keep it"
+      },
+      {
+        "id": "pp-delete",
+        "label": "8. Deletion and export"
+      },
+      {
+        "id": "pp-rights",
+        "label": "9. Your rights"
+      },
+      {
+        "id": "pp-security",
+        "label": "10. Security"
+      },
+      {
+        "id": "pp-children",
+        "label": "11. Children"
+      },
+      {
+        "id": "pp-changes",
+        "label": "12. Changes to this policy"
+      }
+    ],
+    "short": {
+      "title": "In short",
+      "body": "We collect what we need to run the service and bill for it, nothing more. We do not sell personal information, we do not use your content to train models, and content you put into a channel belongs to the organisation that put it there, not to us."
+    },
+    "sections": [
+      {
+        "id": "pp-who",
+        "num": "1",
+        "title": "Who we are",
+        "blocks": [
+          {
+            "p": "Kolabr is operated by [COMPANY NAME] (“we”, “us”, “our”). For the purposes of the Protection of Personal Information Act 4 of 2013 (POPIA) we are the responsible party for personal information we collect about visitors to our website and about the people who administer and pay for a Kolabr account."
+          },
+          {
+            "p": "For content that customers put into their channels we act as an operator, processing that information on the customer’s instructions. The customer organisation is the responsible party for its own channel content. Where the General Data Protection Regulation applies, read “responsible party” as controller and “operator” as processor."
+          },
+          {
+            "p": [
+              "Our information officer can be reached through the ",
+              {
+                "label": "contact form",
+                "href": "/contact"
+              },
+              ", marked for the attention of the information officer."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pp-collect",
+        "num": "2",
+        "title": "What we collect",
+        "blocks": [
+          {
+            "p": "We collect three kinds of information, and it is worth keeping them separate because we treat them differently."
+          },
+          {
+            "h4": "Account information"
+          },
+          {
+            "p": "The name, work email address and password of each user on your account, the organisation name, your plan, and the billing contact and payment details needed to charge you. Payment card details are handled by our payment processor and are never stored on our systems."
+          },
+          {
+            "h4": "Channel content"
+          },
+          {
+            "p": "Everything you and your guests put into a channel: messages, files, requests and their tasks, wiki pages, scheduled events and the membership of the channel itself. We hold this on your behalf. We do not read it except where you ask us to in support, or where we are legally compelled to."
+          },
+          {
+            "h4": "Technical and usage information"
+          },
+          {
+            "p": "IP address, browser and device type, operating system, time zone, the pages you visit on our website, and diagnostic logs from the apps. We use this to keep the service running, investigate faults and abuse, and understand which parts of the product are used."
+          },
+          {
+            "p": "We do not collect special personal information, and we ask that you do not put health records, biometric data, criminal records or children’s personal information into a channel unless your own lawful basis for doing so is in place."
+          }
+        ]
+      },
+      {
+        "id": "pp-why",
+        "num": "3",
+        "title": "Why we use it, and on what basis",
+        "blocks": [
+          {
+            "table": {
+              "head": [
+                "Purpose",
+                "Information used",
+                "Lawful basis"
+              ],
+              "rows": [
+                [
+                  "Providing the service",
+                  "Account information, channel content",
+                  "Performance of the contract with you"
+                ],
+                [
+                  "Billing and collections",
+                  "Account and billing information",
+                  "Performance of the contract"
+                ],
+                [
+                  "Support and troubleshooting",
+                  "Account information, technical logs, channel content where you share it",
+                  "Legitimate interest in supporting customers"
+                ],
+                [
+                  "Security, fraud and abuse prevention",
+                  "Technical information, account information",
+                  "Legitimate interest in protecting the service"
+                ],
+                [
+                  "Product improvement",
+                  "Aggregated usage information",
+                  "Legitimate interest in improving the product"
+                ],
+                [
+                  "Service notices",
+                  "Account information",
+                  "Performance of the contract"
+                ],
+                [
+                  "Marketing emails",
+                  "Name and email address",
+                  "Consent, withdrawable at any time"
+                ],
+                [
+                  "Legal and tax obligations",
+                  "Billing records",
+                  "Compliance with the law"
+                ]
+              ]
+            }
+          },
+          {
+            "p": "We do not use channel content to train machine-learning models, and we do not sell, rent or trade personal information to anybody."
+          }
+        ]
+      },
+      {
+        "id": "pp-guests",
+        "num": "4",
+        "title": "Guests and people you invite",
+        "blocks": [
+          {
+            "p": "Guests are free on every Kolabr plan, which means channels routinely contain people who are not employees of the customer: clients, contractors, parents, suppliers, funders. Two things follow from that."
+          },
+          {
+            "ul": [
+              "The customer organisation that created the channel decides who is invited and what they can see. If you are a guest and want your information removed, ask the organisation that invited you first, because they control the channel.",
+              "A guest sees only the channels they have been added to. They do not see the customer’s other channels, other clients, member lists outside those channels, or billing information."
+            ]
+          },
+          {
+            "p": "If a guest contacts us directly about their information we will respond, but in most cases we will need to refer the request to the customer organisation, and we will tell you when we do."
+          }
+        ]
+      },
+      {
+        "id": "pp-share",
+        "num": "5",
+        "title": "Who we share information with",
+        "blocks": [
+          {
+            "p": "We share personal information with a small number of service providers who help us run Kolabr, each bound by contract to process it only on our instructions:"
+          },
+          {
+            "ul": [
+              "Cloud hosting and storage providers, for running the service and holding your data.",
+              "Payment processors, for taking payment and issuing invoices.",
+              "Email delivery providers, for service notices and notifications.",
+              "Error and performance monitoring providers, for diagnosing faults.",
+              "Customer support tooling, for handling enquiries you send us."
+            ]
+          },
+          {
+            "p": "We will also disclose information where we are legally required to, where it is necessary to establish or defend a legal claim, or to protect the rights and safety of people using the service. If we are compelled to disclose customer content we will tell the customer unless we are prohibited from doing so."
+          },
+          {
+            "p": "If Kolabr is acquired or merged, information may transfer to the acquiring entity. You would be told before that happened and before your information became subject to a different privacy policy."
+          }
+        ]
+      },
+      {
+        "id": "pp-transfer",
+        "num": "6",
+        "title": "Where information is stored",
+        "blocks": [
+          {
+            "p": "Your data is stored with cloud providers whose facilities may be located outside South Africa. Where personal information is transferred across borders we rely on the conditions in section 72 of POPIA, and where the GDPR applies we rely on standard contractual clauses or an adequacy decision."
+          },
+          {
+            "p": "Customers on the Max plan can ask about the region their data is held in before signing up, and we will tell you plainly what is possible."
+          }
+        ]
+      },
+      {
+        "id": "pp-retain",
+        "num": "7",
+        "title": "How long we keep it",
+        "blocks": [
+          {
+            "table": {
+              "head": [
+                "Information",
+                "Retention"
+              ],
+              "rows": [
+                [
+                  "Channel content",
+                  "For as long as the account is active, then per the deletion rules in section 8"
+                ],
+                [
+                  "Archived channels",
+                  "Held read-only for the period the customer sets, which may extend past the project"
+                ],
+                [
+                  "Account records",
+                  "For the life of the account"
+                ],
+                [
+                  "Billing and tax records",
+                  "Five years after the transaction, as required by South African tax law"
+                ],
+                [
+                  "Technical and security logs",
+                  "Twelve months"
+                ],
+                [
+                  "Support correspondence",
+                  "Two years after the enquiry is closed"
+                ]
+              ]
+            }
+          },
+          {
+            "p": "Customers on paid plans can set their own retention rules for channel content. Where your rule is shorter than ours, yours applies to your content."
+          }
+        ]
+      },
+      {
+        "id": "pp-delete",
+        "num": "8",
+        "title": "Deletion and export",
+        "blocks": [
+          {
+            "p": "You can export your channel content at any time while your account is active. When an account is closed we keep the content for thirty days so it can be recovered if the closure was a mistake, then delete it from live systems. Backups holding that content are overwritten on a rolling ninety-day cycle."
+          },
+          {
+            "p": "A customer can ask us to delete content immediately rather than waiting out the thirty days, and we will do so in writing. Deletion is not reversible and we will say so before acting."
+          }
+        ]
+      },
+      {
+        "id": "pp-rights",
+        "num": "9",
+        "title": "Your rights",
+        "blocks": [
+          {
+            "p": "Under POPIA, and under the GDPR where it applies to you, you have the right to:"
+          },
+          {
+            "ul": [
+              "Ask what personal information we hold about you and get a copy of it.",
+              "Have information that is inaccurate corrected, or information we no longer have grounds to keep deleted.",
+              "Object to processing we carry out on the basis of legitimate interest.",
+              "Withdraw consent to marketing at any time, without affecting anything that happened before.",
+              "Receive your information in a portable format.",
+              "Complain to the Information Regulator of South Africa, or to your local supervisory authority."
+            ]
+          },
+          {
+            "p": "To exercise any of these, use the contact form. We will respond within thirty days. We may need to verify who you are first, and if you are a guest in someone else’s channel we may need to route the request through that organisation."
+          }
+        ]
+      },
+      {
+        "id": "pp-security",
+        "num": "10",
+        "title": "Security",
+        "blocks": [
+          {
+            "p": "Data is encrypted in transit and at rest. Access to production systems is limited to the people who need it, logged, and protected by multi-factor authentication. We keep audit logs of administrative actions inside customer accounts, which customers can inspect."
+          },
+          {
+            "p": "No system is perfectly secure. If a breach affects your personal information we will notify you and the Information Regulator as required by section 22 of POPIA, with what we know, what we are doing about it, and what you should do."
+          }
+        ]
+      },
+      {
+        "id": "pp-children",
+        "num": "11",
+        "title": "Children",
+        "blocks": [
+          {
+            "p": "Kolabr is a business product and is not directed at children. Where a school or similar organisation uses Kolabr, channels should contain staff, parents and suppliers rather than pupils. If a customer needs to process children’s information through the service, they are responsible for obtaining the authorisation POPIA requires and should speak to us before doing so."
+          }
+        ]
+      },
+      {
+        "id": "pp-changes",
+        "num": "12",
+        "title": "Changes to this policy",
+        "blocks": [
+          {
+            "p": "We will update this policy when the service or the law changes. The date at the top always reflects the current version. Where a change materially affects how we handle your information we will tell account administrators by email at least thirty days before it takes effect, and continued use after that date means you accept the updated policy."
+          }
+        ]
+      }
+    ],
+    "closing": {
+      "title": "Questions about this policy",
+      "body": [
+        "Send them through the ",
+        {
+          "label": "contact form",
+          "href": "/contact"
+        },
+        " and a person will answer. If you are an existing customer, raise it in your channel and it goes to the same place with the context attached."
+      ]
+    }
+  },
+  "terms": {
+    "eyebrow": "Legal",
+    "title": "Terms of service",
+    "lede": "The agreement between you and [COMPANY NAME], trading as Kolabr, covering what we provide, what you pay, and what each of us is responsible for.",
+    "chips": [
+      "Last updated 21 September 2026",
+      "Applies to kolabr.com and the Kolabr apps"
+    ],
+    "nav": [
+      {
+        "id": "tc-agree",
+        "label": "1. The agreement"
+      },
+      {
+        "id": "tc-service",
+        "label": "2. What Kolabr provides"
+      },
+      {
+        "id": "tc-accounts",
+        "label": "3. Accounts, seats and guests"
+      },
+      {
+        "id": "tc-payment",
+        "label": "4. Payment"
+      },
+      {
+        "id": "tc-trial",
+        "label": "5. Free trial"
+      },
+      {
+        "id": "tc-content",
+        "label": "6. Your content"
+      },
+      {
+        "id": "tc-use",
+        "label": "7. Acceptable use"
+      },
+      {
+        "id": "tc-availability",
+        "label": "8. Availability and support"
+      },
+      {
+        "id": "tc-liability",
+        "label": "9. Liability"
+      },
+      {
+        "id": "tc-term",
+        "label": "10. Ending the agreement"
+      },
+      {
+        "id": "tc-law",
+        "label": "11. Law and disputes"
+      },
+      {
+        "id": "tc-changes",
+        "label": "12. Changes to these terms"
+      }
+    ],
+    "short": {
+      "title": "In short",
+      "body": "You own your content and can take it with you. We charge per user on your own team and never for guests. Either side can end the agreement; if we end it without cause we refund the unused portion."
+    },
+    "sections": [
+      {
+        "id": "tc-agree",
+        "num": "1",
+        "title": "The agreement",
+        "blocks": [
+          {
+            "p": "These terms form a binding agreement between [COMPANY NAME] (“Kolabr”, “we”) and the organisation or person that opens an account (“you”, “the customer”). By creating an account, using the service or paying an invoice you accept them. If you are accepting on behalf of an organisation, you confirm you are authorised to bind it."
+          },
+          {
+            "p": "Where we have signed a separate written agreement with you, that agreement prevails over these terms to the extent of any conflict."
+          }
+        ]
+      },
+      {
+        "id": "tc-service",
+        "num": "2",
+        "title": "What Kolabr provides",
+        "blocks": [
+          {
+            "p": "Kolabr is a collaboration service organised around channels. A channel holds conversation, requests and their tasks, scheduled events, a wiki and a membership that can include people outside your organisation."
+          },
+          {
+            "p": "We provide the service on a subscription basis and will make reasonable efforts to keep improving it. Features may be added, changed or withdrawn. Where we withdraw something material to how you use the product we will give at least sixty days’ notice, and you may cancel and take a pro-rata refund if the change does not work for you."
+          },
+          {
+            "p": "Tasks in Kolabr exist inside a request and end with it. Kolabr is not a general project-planning or task-management tool and we do not represent it as one."
+          }
+        ]
+      },
+      {
+        "id": "tc-accounts",
+        "num": "3",
+        "title": "Accounts, seats and guests",
+        "blocks": [
+          {
+            "p": "Each person using Kolabr on your team needs their own account. Sharing login credentials between people is not permitted and is grounds for suspension."
+          },
+          {
+            "p": "Plans are priced per user on your own team. Guests, meaning people outside your organisation whom you invite into a channel, are never charged for on any plan."
+          },
+          {
+            "p": "Each channel has a seat limit set by your plan: thirty on Starter, one hundred on Pro, and unlimited on Max. That limit counts everyone in the channel, your own team and your guests together. If a channel reaches its limit you will need to remove someone or move up a plan."
+          },
+          {
+            "p": "You are responsible for what happens under your account, for keeping credentials secure, and for the conduct of the guests you invite."
+          }
+        ]
+      },
+      {
+        "id": "tc-payment",
+        "num": "4",
+        "title": "Payment",
+        "blocks": [
+          {
+            "p": "Subscriptions are billed monthly or annually in advance, in South African rand unless we have agreed otherwise in writing. Prices exclude VAT, which is added where applicable."
+          },
+          {
+            "p": "Payment is due on the invoice date. If payment fails we will retry and notify you. Accounts more than fourteen days in arrears may be suspended, and accounts more than sixty days in arrears may be closed with the data handling described in section 10."
+          },
+          {
+            "p": "You can change plan at any time. Upgrades take effect immediately and are charged pro-rata. Downgrades take effect at the start of the next billing period, and you keep the higher plan until then."
+          },
+          {
+            "p": "We may change prices with sixty days’ notice. A price change never applies to a billing period you have already paid for. If you do not accept a price change you may cancel before it takes effect and we will refund the unused portion of any period already paid."
+          }
+        ]
+      },
+      {
+        "id": "tc-trial",
+        "num": "5",
+        "title": "Free trial",
+        "blocks": [
+          {
+            "p": "New accounts get fourteen days on the Max plan at no cost, with every option included and no payment card required. We will not charge you at the end of a trial. If you do not choose a plan the account is suspended, and the content is kept for thirty days so you can pick it up if you change your mind."
+          }
+        ]
+      },
+      {
+        "id": "tc-content",
+        "num": "6",
+        "title": "Your content",
+        "blocks": [
+          {
+            "p": "Everything you and your guests put into Kolabr remains yours. We claim no ownership over it. You grant us only the licence we need to host, transmit, back up and display it in order to run the service for you."
+          },
+          {
+            "p": [
+              "You are responsible for having the right to put content into Kolabr, for the lawfulness of what you upload, and for the personal information of the people you invite. Our handling of that information is set out in the ",
+              {
+                "label": "privacy policy",
+                "href": "/privacy"
+              },
+              "."
+            ]
+          },
+          {
+            "p": "You can export your content at any time while the account is active."
+          }
+        ]
+      },
+      {
+        "id": "tc-use",
+        "num": "7",
+        "title": "Acceptable use",
+        "blocks": [
+          {
+            "p": "You may not use Kolabr to:"
+          },
+          {
+            "ul": [
+              "Break the law, or help anyone else to.",
+              "Send unsolicited bulk messages, or use channels to distribute malware or phishing content.",
+              "Upload content you do not have the right to share, or that infringes someone else’s intellectual property.",
+              "Harass, threaten or abuse other users, including guests.",
+              "Attempt to access another customer’s data, probe or test the security of the service without our written permission, or interfere with its operation.",
+              "Resell or white-label the service without a written agreement with us."
+            ]
+          },
+          {
+            "p": "We may suspend access without notice where there is a serious or ongoing breach, a security risk, or a legal obligation to act. We will tell you why as soon as we reasonably can."
+          }
+        ]
+      },
+      {
+        "id": "tc-availability",
+        "num": "8",
+        "title": "Availability and support",
+        "blocks": [
+          {
+            "p": "We aim for 99.5% monthly availability, excluding scheduled maintenance, which we announce in advance and run outside South African business hours wherever possible."
+          },
+          {
+            "p": "Support is provided through the contact form and through your channels. We do not guarantee a response time on Starter. Pro and Max accounts have the response targets set out on the pricing page."
+          },
+          {
+            "p": "The service is otherwise provided as is. We do not warrant that it will be uninterrupted, error-free, or fit for a particular purpose beyond what is described on this website."
+          }
+        ]
+      },
+      {
+        "id": "tc-liability",
+        "num": "9",
+        "title": "Liability",
+        "blocks": [
+          {
+            "p": "Nothing in these terms excludes liability for fraud, for death or personal injury caused by negligence, or for anything else that cannot lawfully be excluded."
+          },
+          {
+            "p": "Subject to that, neither side is liable for indirect or consequential loss, loss of profit, loss of business, or loss of anticipated savings. Our total liability in any twelve-month period is limited to the fees you paid us in that period."
+          },
+          {
+            "p": "You remain responsible for keeping your own records where your profession or regulator requires it. Kolabr keeps a durable record of what happened in a channel, but it is not a substitute for your statutory obligations."
+          }
+        ]
+      },
+      {
+        "id": "tc-term",
+        "num": "10",
+        "title": "Ending the agreement",
+        "blocks": [
+          {
+            "p": [
+              "You can cancel at any time from your account settings. Cancellation takes effect at the end of the current billing period and we do not refund the remainder of a period you chose to leave early, except where section 5 or the ",
+              {
+                "label": "refund policy",
+                "href": "/refunds"
+              },
+              " says otherwise."
+            ]
+          },
+          {
+            "p": "We can end the agreement on sixty days’ notice, in which case we refund the unused portion of anything you have paid. We can end it immediately for serious breach of section 7 or for non-payment beyond sixty days."
+          },
+          {
+            "p": "When an account closes, content is available for export for thirty days, then deleted from live systems and cycled out of backups within ninety days."
+          }
+        ]
+      },
+      {
+        "id": "tc-law",
+        "num": "11",
+        "title": "Law and disputes",
+        "blocks": [
+          {
+            "p": "This agreement is governed by South African law, and the courts of South Africa have jurisdiction. Before starting proceedings, both sides agree to raise the issue in writing and give the other thirty days to resolve it."
+          },
+          {
+            "p": "If any provision is found unenforceable, the rest continues to apply."
+          }
+        ]
+      },
+      {
+        "id": "tc-changes",
+        "num": "12",
+        "title": "Changes to these terms",
+        "blocks": [
+          {
+            "p": "We will update these terms as the service changes. Material changes are notified to account administrators by email at least thirty days before they take effect. If you do not accept a change, you may cancel before it applies and we will refund the unused portion of any period already paid."
+          }
+        ]
+      }
+    ],
+    "closing": {
+      "title": "Questions about this agreement",
+      "body": [
+        "Send them through the ",
+        {
+          "label": "contact form",
+          "href": "/contact"
+        },
+        " and a person will answer. If you are an existing customer, raise it in your channel and it goes to the same place with the context attached."
+      ]
+    }
+  },
+  "cookies": {
+    "eyebrow": "Legal",
+    "title": "Cookie policy",
+    "lede": "What [COMPANY NAME], trading as Kolabr, stores on your device, why, and how to control it.",
+    "chips": [
+      "Last updated 21 September 2026",
+      "Applies to kolabr.com and the Kolabr apps"
+    ],
+    "nav": [
+      {
+        "id": "ck-what",
+        "label": "1. What cookies are"
+      },
+      {
+        "id": "ck-use",
+        "label": "2. What we use, and why"
+      },
+      {
+        "id": "ck-third",
+        "label": "3. Third parties"
+      },
+      {
+        "id": "ck-control",
+        "label": "4. Controlling cookies"
+      },
+      {
+        "id": "ck-app",
+        "label": "5. The mobile apps"
+      },
+      {
+        "id": "ck-changes",
+        "label": "6. Changes to this policy"
+      }
+    ],
+    "short": {
+      "title": "In short",
+      "body": "We use the cookies needed to log you in and keep the service secure, plus a small amount of privacy-respecting analytics. No advertising cookies, no third-party trackers, and nothing that follows you around other websites."
+    },
+    "sections": [
+      {
+        "id": "ck-what",
+        "num": "1",
+        "title": "What cookies are",
+        "blocks": [
+          {
+            "p": "Cookies are small text files a website stores on your device so it can recognise you on your next request. Related technologies do much the same job: local storage keeps settings in your browser, and session storage forgets them when you close the tab. We use all three, and refer to them together as cookies here."
+          }
+        ]
+      },
+      {
+        "id": "ck-use",
+        "num": "2",
+        "title": "What we use, and why",
+        "blocks": [
+          {
+            "h4": "Strictly necessary"
+          },
+          {
+            "p": "These make the service work. They cannot be switched off without breaking sign-in, and they do not require consent."
+          },
+          {
+            "table": {
+              "head": [
+                "Purpose",
+                "What it does",
+                "Lifetime"
+              ],
+              "rows": [
+                [
+                  "Session",
+                  "Keeps you signed in as you move between pages",
+                  "Session, or 30 days if you choose to stay signed in"
+                ],
+                [
+                  "Authentication token",
+                  "Confirms your identity on each request",
+                  "Session"
+                ],
+                [
+                  "Security",
+                  "Protects against cross-site request forgery",
+                  "Session"
+                ],
+                [
+                  "Load balancing",
+                  "Routes your request to a working server",
+                  "Session"
+                ],
+                [
+                  "Preferences",
+                  "Remembers light or dark mode, language and which channel you had open",
+                  "12 months"
+                ]
+              ]
+            }
+          },
+          {
+            "h4": "Analytics"
+          },
+          {
+            "p": "We use privacy-respecting analytics to understand which pages are read and where people get stuck. It is aggregated, it does not build a profile of you, and it is not shared with advertisers."
+          },
+          {
+            "table": {
+              "head": [
+                "Purpose",
+                "What it does",
+                "Lifetime"
+              ],
+              "rows": [
+                [
+                  "Page analytics",
+                  "Counts visits and pages viewed, in aggregate",
+                  "12 months"
+                ],
+                [
+                  "Error monitoring",
+                  "Records faults so we can fix them",
+                  "Session"
+                ]
+              ]
+            }
+          },
+          {
+            "h4": "What we do not use"
+          },
+          {
+            "p": "No advertising cookies. No retargeting pixels. No social media trackers. No cross-site tracking, and no selling of behavioural data to anyone."
+          }
+        ]
+      },
+      {
+        "id": "ck-third",
+        "num": "3",
+        "title": "Third parties",
+        "blocks": [
+          {
+            "p": "A small number of providers set cookies when their functionality is used: our payment processor during checkout, and our analytics and error-monitoring providers. Each is contractually limited to processing data on our instructions, and none of them is permitted to use it for advertising."
+          },
+          {
+            "p": "Video calls started from a channel may set a cookie for the duration of the call to hold media settings. It expires when the call ends."
+          }
+        ]
+      },
+      {
+        "id": "ck-control",
+        "num": "4",
+        "title": "Controlling cookies",
+        "blocks": [
+          {
+            "p": "When you first visit our website you can accept or decline analytics cookies. You can change that choice at any time from the link in the website footer, and declining does not degrade the service."
+          },
+          {
+            "p": "Your browser also lets you block or delete cookies:"
+          },
+          {
+            "ul": [
+              "Chrome: Settings, then Privacy and security, then Third-party cookies.",
+              "Safari: Settings, then Privacy.",
+              "Firefox: Settings, then Privacy and Security.",
+              "Edge: Settings, then Cookies and site permissions."
+            ]
+          },
+          {
+            "p": "Blocking strictly necessary cookies will stop you being able to sign in, because there is no other way for the service to know who you are between one request and the next."
+          }
+        ]
+      },
+      {
+        "id": "ck-app",
+        "num": "5",
+        "title": "The mobile apps",
+        "blocks": [
+          {
+            "p": "The iOS and Android apps do not use browser cookies. They store an authentication token and your preferences in the device’s secure storage, and clear both when you sign out or remove the app. They contain no advertising identifiers."
+          }
+        ]
+      },
+      {
+        "id": "ck-changes",
+        "num": "6",
+        "title": "Changes to this policy",
+        "blocks": [
+          {
+            "p": "If we add or remove a cookie we will update the tables above and the date at the top of this page. Where a new cookie requires consent we will ask for it before setting it."
+          },
+          {
+            "p": [
+              "More detail on how we handle personal information is in the ",
+              {
+                "label": "privacy policy",
+                "href": "/privacy"
+              },
+              "."
+            ]
+          }
+        ]
+      }
+    ],
+    "closing": {
+      "title": "Questions about this policy",
+      "body": [
+        "Send them through the ",
+        {
+          "label": "contact form",
+          "href": "/contact"
+        },
+        " and a person will answer. If you are an existing customer, raise it in your channel and it goes to the same place with the context attached."
+      ]
+    }
+  },
+  "refunds": {
+    "eyebrow": "Legal",
+    "title": "Refund policy",
+    "lede": "When [COMPANY NAME], trading as Kolabr, refunds a subscription, how to ask, and how long it takes.",
+    "chips": [
+      "Last updated 21 September 2026",
+      "Applies to kolabr.com and the Kolabr apps"
+    ],
+    "nav": [
+      {
+        "id": "rf-trial",
+        "label": "1. Before you pay anything"
+      },
+      {
+        "id": "rf-thirty",
+        "label": "2. The first thirty days"
+      },
+      {
+        "id": "rf-annual",
+        "label": "3. Annual plans after thirty days"
+      },
+      {
+        "id": "rf-monthly",
+        "label": "4. Monthly plans"
+      },
+      {
+        "id": "rf-downgrade",
+        "label": "5. Downgrades and seat changes"
+      },
+      {
+        "id": "rf-billing",
+        "label": "6. Billing errors"
+      },
+      {
+        "id": "rf-outage",
+        "label": "7. Outages"
+      },
+      {
+        "id": "rf-how",
+        "label": "8. How to ask, and how long it takes"
+      },
+      {
+        "id": "rf-consumer",
+        "label": "9. Your statutory rights"
+      }
+    ],
+    "short": {
+      "title": "In short",
+      "body": "Fourteen days free before you pay anything. Thirty days after your first payment, if it is not working for you, we refund it in full. After that we refund the unused part of an annual plan on request, and we always refund our own billing mistakes."
+    },
+    "sections": [
+      {
+        "id": "rf-trial",
+        "num": "1",
+        "title": "Before you pay anything",
+        "blocks": [
+          {
+            "p": "Every new account gets fourteen days on Max with no payment card. Nothing is charged at the end of a trial and nothing starts automatically. If you do nothing, the account is simply suspended."
+          },
+          {
+            "p": "That is deliberate. We would rather you found out the product does not suit you before any money changes hands than argue about a refund afterwards."
+          }
+        ]
+      },
+      {
+        "id": "rf-thirty",
+        "num": "2",
+        "title": "The first thirty days",
+        "blocks": [
+          {
+            "p": "If you pay for a plan and decide within thirty days of your first payment that Kolabr is not right for you, tell us and we will refund that payment in full. You do not need to explain why, and we will not put you through a retention conversation."
+          },
+          {
+            "p": "This applies once per organisation, to the first payment on the account. It covers both monthly and annual plans."
+          }
+        ]
+      },
+      {
+        "id": "rf-annual",
+        "num": "3",
+        "title": "Annual plans after thirty days",
+        "blocks": [
+          {
+            "p": "Annual plans are discounted because the commitment helps us plan. If you cancel part-way through a year we refund the unused whole months, calculated from the end of the month in which you cancel, less the discount you received for committing annually."
+          },
+          {
+            "table": {
+              "head": [
+                "Situation",
+                "What we refund"
+              ],
+              "rows": [
+                [
+                  "Cancel within 30 days of first payment",
+                  "The full amount paid"
+                ],
+                [
+                  "Cancel later in an annual term",
+                  "Unused whole months, less the annual discount already taken"
+                ],
+                [
+                  "Cancel a monthly plan",
+                  "Nothing further; the plan runs to the end of the paid month"
+                ],
+                [
+                  "We end the agreement without cause",
+                  "The unused portion in full"
+                ],
+                [
+                  "We materially withdraw a feature you rely on",
+                  "The unused portion in full"
+                ],
+                [
+                  "A price increase you do not accept",
+                  "The unused portion in full"
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "rf-monthly",
+        "num": "4",
+        "title": "Monthly plans",
+        "blocks": [
+          {
+            "p": "Monthly subscriptions are not refunded part-way through a month. Cancel at any time and the plan runs to the end of the period you have paid for, with no further charge after that. There is no notice period and no cancellation fee."
+          }
+        ]
+      },
+      {
+        "id": "rf-downgrade",
+        "num": "5",
+        "title": "Downgrades and seat changes",
+        "blocks": [
+          {
+            "p": "Removing users or moving to a lower plan takes effect at the start of the next billing period rather than immediately, and we do not refund the difference for the current period. You keep the higher plan and the seats until the period ends."
+          },
+          {
+            "p": "Adding users mid-period is charged pro-rata, so you only pay for the part of the period they are actually on the account."
+          }
+        ]
+      },
+      {
+        "id": "rf-billing",
+        "num": "6",
+        "title": "Billing errors",
+        "blocks": [
+          {
+            "p": "If we charge you the wrong amount, charge you after you cancelled, or bill you for guests, that is our mistake and we refund it in full as soon as we confirm it. Tell us through the contact form with the invoice number and we will deal with it without argument."
+          },
+          {
+            "p": "Guests are never billable on any plan. If a guest ever appears on an invoice, it is an error."
+          }
+        ]
+      },
+      {
+        "id": "rf-outage",
+        "num": "7",
+        "title": "Outages",
+        "blocks": [
+          {
+            "p": "If monthly availability falls below 99.5% for reasons within our control, Pro and Max customers can request a credit against the following month: ten per cent of the monthly fee for availability between 99% and 99.5%, and twenty-five per cent below 99%."
+          },
+          {
+            "p": "Credits are applied to the next invoice rather than paid out, and must be requested within thirty days of the month in question."
+          }
+        ]
+      },
+      {
+        "id": "rf-how",
+        "num": "8",
+        "title": "How to ask, and how long it takes",
+        "blocks": [
+          {
+            "p": [
+              "Use the ",
+              {
+                "label": "contact form",
+                "href": "/contact"
+              },
+              ", or raise it in your channel if you are already a customer, with the invoice number and what happened."
+            ]
+          },
+          {
+            "p": "We confirm within two business days. Approved refunds are returned to the original payment method within ten business days, subject to your bank’s own timing, which we do not control."
+          },
+          {
+            "p": "Refunds are made in the currency you were charged in. Where a currency conversion or bank fee was applied by your provider, the amount you receive may differ slightly, and we cannot recover those fees."
+          }
+        ]
+      },
+      {
+        "id": "rf-consumer",
+        "num": "9",
+        "title": "Your statutory rights",
+        "blocks": [
+          {
+            "p": "Nothing here limits any right you have under the Consumer Protection Act 68 of 2008 or the Electronic Communications and Transactions Act 25 of 2002, including the cooling-off rights that apply to certain electronic transactions. Where this policy gives you more than the law requires, this policy applies."
+          }
+        ]
+      }
+    ],
+    "closing": {
+      "title": "Questions about this policy",
+      "body": [
+        "Send them through the ",
+        {
+          "label": "contact form",
+          "href": "/contact"
+        },
+        " and a person will answer. If you are an existing customer, raise it in your channel and it goes to the same place with the context attached."
+      ]
+    }
+  }
+}

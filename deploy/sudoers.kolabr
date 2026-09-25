@@ -1,0 +1,10 @@
+# /etc/sudoers.d/kolabr    install with: visudo -c -f this-file && install -m 0440 ...
+#
+# The back office runs the deploy as root, and nothing else. The script must be root-owned and
+# NOT writable by the kolabr user: if kolabr could edit deploy.sh, this line would hand it root.
+#
+#   chown root:root /opt/kolabr/deploy.sh
+#   chmod 0755 /opt/kolabr/deploy.sh
+#
+# No wildcard in the command: the arguments are free, the program is not.
+kolabr ALL=(root) NOPASSWD: /opt/kolabr/deploy.sh, /opt/kolabr/rebuild.sh
