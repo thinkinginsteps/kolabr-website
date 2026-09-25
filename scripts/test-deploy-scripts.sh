@@ -157,6 +157,21 @@ check "the new build is live" "" "$(cat "$PREFIX/app/marker" 2>/dev/null)"
 check "the previous build is kept" yes "$([[ -d "$PREFIX/app.previous" ]] && echo yes || echo no)"
 check "the staging directory is cleaned up" "" "$(ls "$PREFIX/.deploy-work" 2>/dev/null)"
 
+echo "  the very first deploy, on an empty server, succeeds"
+# What a fresh install looks like: no app, no previous build, no backups, service never started.
+# This path once died after a successful swap, because pruning backups listed a glob that matched
+# nothing and pipefail turned ls's exit 2 into the script's.
+rm -rf "$PREFIX"
+mkdir -p "$PREFIX"
+echo stopped > "$SERVICE_STATE"
+rm -f "$CURL_BROKEN" "$START_REFUSES" "$BUILD_FAILS"
+deploy "$GOOD_ZIP" d0
+check "the site is running" running "$(service_state)"
+check "the deploy succeeded" succeeded "$(field "$PREFIX/deploy-logs/d0.json" status)"
+check "it reached the end" done "$(field "$PREFIX/deploy-logs/d0.json" step)"
+check "the build is in place" yes "$([[ -d "$PREFIX/app/.next" ]] && echo yes || echo no)"
+check "there is no previous build to keep" no "$([[ -d "$PREFIX/app.previous" ]] && echo yes || echo no)"
+
 echo "  a service that will not start is rolled back"
 reset_prefix
 touch "$START_REFUSES"

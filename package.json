@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "assets": "node scripts/sync-assets.mjs",
-    "verify:package": "tsc --noEmit && eslint app components lib && next build",
+    "admin:password": "node --experimental-strip-types --no-warnings scripts/create-admin-password.mjs",
+    "verify:package": "next typegen && tsc --noEmit && eslint app components lib && next build",
     "publish:package": "node scripts/create-deploy-zip.mjs",
     "test:deploy": "bash scripts/test-deploy-scripts.sh",
     "publish:prepare": "npm run verify:package && npm run publish:package"

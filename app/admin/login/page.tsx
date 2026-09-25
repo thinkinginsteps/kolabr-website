@@ -23,7 +23,7 @@ export default async function AdminLogin() {
             No admin account is configured on this server. Set <code className="text-ink">ADMIN_EMAIL</code> and{" "}
             <code className="text-ink">ADMIN_PASSWORD_HASH</code> in <code className="text-ink">/opt/kolabr/.env.production</code>,
             then restart the service. Generate the hash with{" "}
-            <code className="text-ink">node scripts/create-admin-password.mjs</code>.
+            <code className="text-ink">npm run admin:password</code>.
           </p>
         )}
       </div>

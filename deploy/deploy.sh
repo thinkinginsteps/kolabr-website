@@ -378,7 +378,14 @@ if [[ "$SWAP_RC" -eq 0 ]]; then
   fi
 
   [[ "$OWNS_PACKAGE" -eq 1 ]] && rm -f "$PKG_PATH"
-  ls -1t "$BACKUP_ROOT"/app-*.tgz 2>/dev/null | tail -n +$((KEEP_BACKUPS + 1)) | xargs -r rm -f
+  # Keep the newest $KEEP_BACKUPS. nullglob, not `ls glob | ...`: on the first deploy there are no
+  # backups, ls exits 2, and pipefail + set -e used to kill the script right after a good deploy.
+  shopt -s nullglob
+  backups=("$BACKUP_ROOT"/app-*.tgz)
+  shopt -u nullglob
+  if (( ${#backups[@]} > KEEP_BACKUPS )); then
+    ls -1t -- "${backups[@]}" | tail -n +$((KEEP_BACKUPS + 1)) | xargs -r -d '\n' rm -f --
+  fi
   # $PREVIOUS_ROOT is deliberately kept until the next deploy: it is the fastest rollback there
   # is, and it costs one copy of the build rather than a rebuild from a tarball.
   step done "deploy complete"

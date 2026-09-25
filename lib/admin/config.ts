@@ -10,7 +10,9 @@ import path from "node:path";
  * The defaults are the local ones, so `npm run dev` works with no environment set.
  */
 
-const local = (...parts: string[]) => path.join(process.cwd(), ...parts);
+// Runtime data, never code: the ignore comment stops Turbopack tracing the whole project into
+// the build output because of the open-ended path.
+const local = (...parts: string[]) => path.join(/*turbopackIgnore: true*/ process.cwd(), ...parts);
 
 /** Sessions, and later the contact form's own record of what it received. */
 export const STATE_DIR = process.env.STATE_DIR ?? local(".local-state");
@@ -33,8 +35,7 @@ export const REBUILD_SCRIPT = process.env.REBUILD_SCRIPT ?? "/opt/kolabr/rebuild
 /** Where those scripts write their log and status files. Outside the app for the same reason. */
 export const DEPLOY_LOG_DIR = process.env.DEPLOY_LOG_DIR ?? "/opt/kolabr/deploy-logs";
 
-/** A package is ~15MB today; the ceiling is for a mistake, not a limit to work to. */
-export const MAX_UPLOAD_BYTES = 200 * 1024 * 1024;
+export { MAX_UPLOAD_BYTES } from "./limits";
 
 /**
  * A deploy that has said nothing for this long is stalled, not running: deploy.sh writes a

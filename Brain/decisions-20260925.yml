@@ -1,0 +1,131 @@
+- time: "14:08"
+  title: Deploy package contents are defined by git (.gitignore), not a separate glob list
+  tags: [deploy, packaging, gitignore, secrets]
+  context: server.md with SSH details was found inside a deploy zip because the packager kept its own ignore list.
+  choice: >
+    Package = git ls-files (cached + others, exclude-standard) minus design/, .claude/, Brain/,
+    .vscode/, with a hard refusal on secret-looking files.
+  alternatives_considered:
+    - option: Add server.md and .local-state to the packager's glob ignore list
+      rejected_because: Keeps two lists that already drifted; the next stray local file ships again.
+    - option: Package only committed files (git archive HEAD)
+      rejected_because: Forces a commit before every deploy and silently drops uncommitted work being deployed.
+  implications: >
+    Anything that must never reach the server goes in .gitignore. Packaging requires git and a
+    repo checkout. Brain/ and design/ never ship.
+  revisit_if: Deploys ever need to run from somewhere without git.
+
+- time: "14:08"
+  title: Server access details live in repo-root server.md (gitignored), key at %USERPROFILE%\kolabr.key
+  tags: [server, ssh, access, secrets]
+  context: Dom supplied server.md and asked for it to be gitignored and used for server access.
+  choice: >
+    server.md is the authoritative source for the SSH target; read it fresh before every remote
+    command. Its contents (host/IP) are never copied into Brain, commits, or packages.
+  implications: Connection details must be re-read from server.md, never recalled from context or logs.
+
+- time: "14:08"
+  title: First deployment serves preview.kolabr.com behind Cloudflare with an origin certificate
+  tags: [deploy, nginx, cloudflare, tls, preview]
+  context: Dom wants the server prepared for a first manual deployment, reachable at preview.kolabr.com until go-live.
+  choice: >
+    nginx answers for preview.kolabr.com only, TLS via a Cloudflare origin certificate (supplied by
+    Dom), not certbot. Cloudflare real-IP restore is required so rate limiting sees visitors, not
+    Cloudflare edges.
+  alternatives_considered:
+    - option: certbot / Let's Encrypt as in the original nginx.conf and DEPLOY.md
+      rejected_because: Dom is supplying a Cloudflare origin cert; site is proxied through Cloudflare.
+  implications: >
+    Preview must not be indexed (noindex header). Origin cert needs no renewal hook (long-lived,
+    not certbot), so the certbot deploy-hook rule does not apply. Go-live = add kolabr.com/www
+    server_names (and cert coverage) and drop noindex.
+  revisit_if: The origin cert does not cover both kolabr.com and preview.kolabr.com.
+
+- time: "14:19"
+  title: Server setup is a script (deploy/install-server.sh), not manual steps
+  tags: [deploy, server, install, handoff]
+  context: First server install; DEPLOY.md had eight manual steps with two first-run bugs.
+  choice: >
+    Idempotent installer run from a copy of deploy/. Re-run after installing the certificate
+    (enables preview) and after the first deploy (enables the watchdog). Never overwrites secrets,
+    content, state or certs.
+  alternatives_considered:
+    - option: Follow DEPLOY.md by hand over SSH
+      rejected_because: Not repeatable, and it pre-created app/ and enabled the watchdog too early.
+  implications: Changes to the unit, nginx or root scripts are applied by re-running the installer, never by deploy.sh.
+
+- time: "14:19"
+  title: nginx config split into shared snippets; live kolabr.com installed but disabled until go-live
+  tags: [nginx, preview, go-live]
+  context: Preview and live must serve identically; the old single file had path and header bugs.
+  choice: >
+    conf.d + snippets + sites. Preview and live include the same kolabr-site.conf. noindex is a
+    per-host map (preview only). Go-live = enable kolabr.com.conf, disable preview (DEPLOY.md).
+  alternatives_considered:
+    - option: Two full copies of the server block (preview and live)
+      rejected_because: They would drift; the old file had already drifted from the server layout.
+  implications: Any site-level nginx change goes in snippets/kolabr-site.conf and applies to both hosts.
+  revisit_if: Preview needs to differ from live (e.g. basic auth on preview).
+
+- time: "14:19"
+  title: Repository line endings pinned to LF
+  tags: [git, line-endings, gitattributes]
+  context: autocrlf=true on Windows produced CRLF in the working tree; the deploy package and server files come from the working tree.
+  choice: .gitattributes `* text=auto eol=lf`, binaries marked.
+  implications: Working tree is LF on every machine regardless of core.autocrlf; the installer refuses CRLF input.
+
+- time: "15:23"
+  title: Before launch, kolabr.com is a static holding page served by nginx; the site runs only on preview
+  tags: [holding-page, coming-soon, nginx, preview, launch]
+  context: Dom asked for the server to serve the site only on preview.kolabr.com and for kolabr.com to show a coming-soon page with the logo centred.
+  choice: >
+    deploy/holding/index.html (logo exactly centred, "Coming soon" below, noindex) served by nginx
+    from /var/www/kolabr-holding via kolabr.com-holding.conf, with no proxy to the app. Other paths
+    302 to /. www and http 301 to https://kolabr.com/.
+  alternatives_considered:
+    - option: A route or mode inside the Next app that shows the holding page on kolabr.com
+      rejected_because: The app would still answer on kolabr.com (/admin, /api, direct page URLs), and it adds host logic to a site that must stay static.
+    - option: Leave kolabr.com unanswered until launch
+      rejected_because: Dom wants a visible holding page.
+  implications: >
+    Launch = enable kolabr.com.conf and remove kolabr.com-holding.conf; the installer never re-enables
+    the holding page while the live site is enabled. The holding page is noindex, so nothing needs
+    de-indexing at launch.
+  revisit_if: The holding page needs dynamic content (e.g. an email signup), which would need a BFF handler.
+
+- time: "15:23"
+  title: First deploy went ahead with an empty .env.production
+  tags: [deploy, env, admin]
+  context: Dom said "deploy" without supplying admin credentials or other settings.
+  choice: >
+    Deployed with an empty .env.production. Admin logins are refused, contact messages are stored
+    but not emailed, and /signup/ is 404 until NEXT_PUBLIC_APP_URL is set.
+  implications: >
+    Admin and Resend values take effect with a service restart. NEXT_PUBLIC_APP_URL needs a redeploy,
+    done over SSH until the back office works.
+
+- time: "15:30"
+  title: Cloudflare set to bypass cache for everything (origin TTL honoured if caching is ever enabled)
+  tags: [cloudflare, cache, performance]
+  context: >
+    Next sends Cache-Control s-maxage=31536000 on static pages; a Cloudflare "cache everything" rule
+    would have hidden back office publishes for up to a year.
+  choice: Dom configured Cloudflare to bypass the cache for everything and honour the origin TTL.
+  alternatives_considered:
+    - option: Edge-cache /_next/static/* only (hashed, immutable) while HTML bypasses
+      rejected_because: Not needed at current traffic; kept as the first optimisation if origin load grows.
+  implications: >
+    Verified 15:30: every response (HTML, /_next/static, holding page) is cf-cache-status DYNAMIC.
+    Publishes appear at once. Every uncached asset request reaches nginx (served from disk). Browsers
+    still cache hashed assets for a year.
+  revisit_if: Origin load or asset latency matters, or edge caching of HTML is wanted (would need a purge on publish).
+
+- time: "15:44"
+  title: The single admin account is shared by Dom and one other person
+  tags: [admin, access, sessions]
+  context: Two admin logins at 11:38Z (Firefox/Windows and Firefox/Mac) showed up during setup.
+  choice: Dom confirmed both were him and another person. One shared account (dom.hardy@paypump.net) stays as it is.
+  implications: >
+    The back office cannot tell the two people apart: no per-user audit trail, and one password
+    change affects both. The password lives in creds.md and has been shared out of band.
+  revisit_if: More people need access, an audit trail matters, or the second person's access has to be revoked separately (that would need multi-user support in lib/admin).

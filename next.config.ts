@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { SERVER_ACTION_BODY_LIMIT_BYTES } from "./lib/admin/limits";
 
 const appUrl = process.env.NEXT_PUBLIC_APP_URL;
 
@@ -17,6 +18,10 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   typedRoutes: true,
   poweredByHeader: false,
+  experimental: {
+    // Deployment packages are uploaded through a Server Action, which Next otherwise caps at 1MB.
+    serverActions: { bodySizeLimit: SERVER_ACTION_BODY_LIMIT_BYTES },
+  },
   images: {
     formats: ["image/webp"],
     qualities: [75, 85],

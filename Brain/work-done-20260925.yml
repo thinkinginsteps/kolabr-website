@@ -1,0 +1,273 @@
+- time: "14:08"
+  type: fix
+  title: Local verify/package flow failed on a clean checkout; fixed, plus build tracing warning
+  tags: [build, typescript, next-typegen, verify-package, publish-prepare, turbopack, tracing, standalone]
+  files: [package.json, lib/admin/config.ts]
+  root_cause: >
+    `npm run verify:package` (and so `publish:prepare`, the first step of every deploy) ran
+    `tsc --noEmit` before `next build`. tsc depends on files Next generates and git ignores:
+    next-env.d.ts (declares *.webp image modules) and .next/types (global PageProps/LayoutProps).
+    On any fresh clone those do not exist, so tsc failed with ~130 errors before the build ran.
+    The server was unaffected (deploy.sh / rebuild.sh only run `npm run build`, which generates
+    them itself). Separately, lib/admin/config.ts built default data paths with an open-ended
+    path.join(process.cwd(), ...parts), which made Turbopack trace the entire repo (design/,
+    docs/, etc.) into .next/standalone: 145MB.
+  what_changed: >
+    verify:package now runs `next typegen` first (Next 16 command that writes next-env.d.ts and
+    .next/types without a full build). Added a /*turbopackIgnore: true*/ comment on process.cwd()
+    in lib/admin/config.ts's `local()` helper, which only builds runtime data paths
+    (state, content, uploads), never code.
+  result: >
+    From a clean state (rm .next, next-env.d.ts, tsbuildinfo) `npm run verify:package` passes:
+    typegen, tsc, eslint, build. No tracing warning; .next/standalone 145MB -> 55MB. All public
+    pages static; only /admin/* and /api/* are dynamic, as documented. Remaining warning is
+    environmental: a stray package.json + package-lock.json in C:\Users\domin makes Next note it
+    ignored that lockfile (harmless, left alone, outside the repo).
+
+- time: "14:08"
+  type: fix
+  title: Deploy packager shipped untracked local files (server access notes); now built from git's file list
+  tags: [deploy, packaging, create-deploy-zip, secrets, gitignore, server.md]
+  files: [scripts/create-deploy-zip.mjs, .gitignore]
+  root_cause: >
+    create-deploy-zip.mjs globbed **/* minus its own hand-kept ignore list, separate from
+    .gitignore. Anything untracked in the repo that the list did not name was packaged and
+    uploaded to the server: server.md (SSH user@host and key path) went into a zip, as would
+    .local-state/ (local admin sessions, contact messages, uploaded zips), .claude/, and generated
+    files. Two exclusion lists had already drifted.
+  what_changed: >
+    The packager now takes its file list from `git ls-files -z --cached --others
+    --exclude-standard` (tracked + new-but-not-ignored), so .gitignore is the single source of
+    what is local. A small PACKAGE_EXCLUDE drops committed-but-not-needed paths (design/, .claude/,
+    Brain/, .vscode/). A pre-write guard refuses the whole package (no file written) if any listed
+    file looks secret: .env* other than .env.example, *.key/.pem/.p12/.pfx, server.md anywhere.
+    Deleted-but-uncommitted files are skipped. Fails clearly if git is unavailable.
+    .gitignore now ignores /server.md and *.key. The zip that contained server.md was deleted
+    (local only, never uploaded).
+  decision: >
+    git-based listing over adding more entries to the glob ignore list: one list cannot drift,
+    and a new local file is excluded by the same rule that keeps it out of the repo.
+    Uncommitted new files still ship (so a deploy does not require committing first).
+  result: >
+    Package: 296 files, 14.19MB, no server.md/.claude/.env/tsbuildinfo/next-env/design. A planted
+    zz-test/server.md made the packager refuse with the file named and write no zip.
+
+- time: "14:19"
+  type: fix
+  title: Back office deploy upload would be refused (Server Action 1MB body cap); limit raised from a shared constant
+  tags: [admin, deploy, server-actions, bodySizeLimit, upload, next-config]
+  files: [next.config.ts, lib/admin/limits.ts, lib/admin/config.ts]
+  root_cause: >
+    Deployment packages (~14MB) are uploaded via the deployPackage Server Action. Next caps Server
+    Action request bodies at 1MB unless experimental.serverActions.bodySizeLimit is set, and it was
+    not, so every upload in the back office would have been rejected before reaching the code.
+    Never hit before because the back office had never run on a real server.
+  what_changed: >
+    New lib/admin/limits.ts (no "server-only", importable by next.config.ts) holds
+    MAX_UPLOAD_BYTES (200MB) and SERVER_ACTION_BODY_LIMIT_BYTES (+1MB multipart headroom).
+    next.config.ts sets experimental.serverActions.bodySizeLimit from it; lib/admin/config.ts
+    re-exports MAX_UPLOAD_BYTES so existing imports are unchanged. nginx /admin allows 201m to match.
+  decision: >
+    One constant for both limits so the app check and the framework cap cannot drift. The limit is
+    global to all Server Actions, but they all live under /admin, and nginx only admits bodies over
+    1MB on /admin; every action but login requires an admin session first.
+  result: verify:package passes; public pages still all static.
+
+- time: "14:19"
+  type: fix
+  title: Windows checkout shipped CRLF to Linux; repo now pins LF via .gitattributes
+  tags: [line-endings, crlf, gitattributes, deploy, sudoers, bash, windows]
+  files: [.gitattributes, deploy/install-server.sh]
+  root_cause: >
+    core.autocrlf=true on Dom's machine checks text files out as CRLF (repo blobs are LF). The deploy
+    package and the server setup files are taken from the working tree, so the server received CRLF
+    shell scripts, systemd units and sudoers. visudo rejected sudoers ("syntax error" at end of
+    line); bash would fail on $'\r'. First seen when running the new installer on the server.
+  what_changed: >
+    Added .gitattributes `* text=auto eol=lf` plus binary markers for images/fonts/zip/xlsx.
+    Converted the 300+ CRLF working-tree files to LF in place (content identical to HEAD; git's
+    real diff is unchanged). install-server.sh now refuses to run if any source file has CRLF.
+    Side effect: `git status` lists ~300 files as " M" with no content diff (stale index stat after
+    the attribute change; `git update-index --refresh` reports "needs update"). Cosmetic; clears when
+    the files are next staged/committed.
+  result: Rebuilt package contains zero CR characters (checked deploy/deploy.sh and package.json in the zip).
+
+- time: "14:19"
+  type: fix
+  title: nginx config pointed at /srv/kolabr (would 404 all JS/CSS), dropped security headers, and was not Cloudflare-aware
+  tags: [nginx, cloudflare, real-ip, rate-limit, headers, preview, tls, origin-certificate]
+  files: [deploy/nginx.conf (deleted), deploy/nginx/conf.d/kolabr.conf, deploy/nginx/conf.d/cloudflare-realip.conf,
+          deploy/nginx/snippets/kolabr-site.conf, deploy/nginx/snippets/kolabr-headers.conf,
+          deploy/nginx/snippets/kolabr-proxy.conf, deploy/nginx/snippets/kolabr-tls.conf,
+          deploy/nginx/sites/00-default.conf, deploy/nginx/sites/preview.kolabr.com.conf,
+          deploy/nginx/sites/kolabr.com.conf, app/api/contact/route.ts]
+  root_cause: >
+    deploy/nginx.conf used root /srv/kolabr/public and alias /srv/kolabr/.next/static while the app
+    lives in /opt/kolabr/app: every /_next/static asset would 404 (no fallback), site unstyled and
+    without JS. Locations with their own add_header (/admin, /_next/static, static files) silently
+    dropped all server-level security headers (nginx inheritance rule). expires + add_header
+    Cache-Control produced duplicate Cache-Control. Behind Cloudflare, $remote_addr is the CF edge,
+    so the contact-form and admin-login rate limiters (X-Real-IP) would bucket all visitors together.
+    It assumed certbot/Let's Encrypt and used `http2 on;`, which nginx 1.24 (Ubuntu 24.04) lacks.
+  what_changed: >
+    Split into conf.d (upstream; map $host -> X-Robots-Tag noindex for preview.kolabr.com;
+    Cloudflare set_real_ip_from ranges + real_ip_header CF-Connecting-IP), snippets (site body shared
+    by preview and live; headers snippet re-included in every add_header location; proxy snippet;
+    TLS snippet on /etc/ssl/kolabr/origin.{pem,key}), and sites (00-default rejects unknown hosts:
+    444 on 80, ssl_reject_handshake on 443; preview.kolabr.com; kolabr.com + www redirect, installed
+    but not enabled). Paths fixed to /opt/kolabr/app. `^~ /_next/static/` so the image regex cannot
+    steal hashed assets. `listen 443 ssl http2` for 1.24. /admin body 201m.
+  result: >
+    On the server, nginx -t passes for the enabled set, and for preview + live together using a
+    throwaway self-signed cert in a scratch config. Bare-IP HTTP request gets connection closed (444).
+
+- time: "14:19"
+  type: deployment
+  title: Server prepared for first manual deployment (preview.kolabr.com), pending origin certificate
+  tags: [server, install, ubuntu, node, nginx, systemd, sudoers, watchdog, preview]
+  files: [deploy/install-server.sh, DEPLOY.md, README.md]
+  root_cause: >
+    Server (hostname kolabr-us-01, Ubuntu 24.04.4, 8 CPU, 15GB RAM, 51GB free; access per server.md)
+    was fresh: no Node, nginx, user or directories. UFW already allows 80/443 from anywhere and 22
+    from two IPs only. DEPLOY.md's first install was manual steps that also pre-created an empty
+    app/ (a first deploy would back it up as app.previous, so a failed first deploy would "roll back"
+    to nothing) and enabled the watchdog before any build existed.
+  what_changed: >
+    Wrote deploy/install-server.sh (idempotent, root): NodeSource Node 22 + nginx + unzip; kolabr
+    system user; /opt/kolabr 0755 with state/uploads/deploy-logs/backups 0750 and content 0755 (no
+    app/); root-owned deploy/rebuild/watchdog scripts; sudoers validated with visudo before and after
+    install; empty 0600 .env.production (never overwritten); kolabr.service enabled not started;
+    watchdog timer enabled only once /opt/kolabr/app/.next exists; nginx files installed, Ubuntu
+    default site removed, 00-default enabled, preview enabled only when cert+key exist (prints expiry).
+    Ran it on the server (idempotent re-runs). Installed `zip` on the server to run the deploy test
+    suite there. DEPLOY.md "First install" rewritten around the installer, Cloudflare origin cert,
+    Full (strict), preview host; added "Going live"; checks mention preview. README notes
+    test:deploy needs Linux.
+  result: >
+    Installed node v22.23.3, npm 10.9.9, nginx 1.24.0. kolabr may sudo only deploy.sh/rebuild.sh.
+    Enabled sites: 00-default only. npm run test:deploy on the server: 42 passed, 0 failed (locally
+    in Git Bash 11 fail only because `zip` is missing). Package ready:
+    publish/kolabr-20260925-101915.zip (307 files, 14.2MB, LF). NOT yet done: certificate,
+    .env.production values, the first deploy itself, watchdog enable, Cloudflare DNS/SSL mode.
+
+- time: "15:13"
+  type: deployment
+  title: Cloudflare origin certificate installed; preview.kolabr.com enabled in nginx
+  tags: [tls, cloudflare, origin-certificate, nginx, preview, secrets]
+  files: [.gitignore]
+  root_cause: >
+    Dom supplied the origin cert + key in Brain/Cloudflare Certs/kolabr.com.md. Brain/ is not
+    gitignored, so a private key would have been committed with the next Brain log commit.
+  what_changed: >
+    Gitignored /Brain/Cloudflare Certs/ first. Extracted cert and key to the session scratchpad
+    (umask 077), verified: SAN *.kolabr.com + kolabr.com, valid 2026-09-25 to 2041-09-21, key's
+    public key matches the cert. Copied via a private mktemp dir to the server, installed
+    /etc/ssl/kolabr/origin.pem (root 0644) and origin.key (root 0600), shredded the temp copies on
+    both sides. Re-ran install-server.sh: it found the cert and enabled preview.kolabr.com.conf.
+  result: >
+    On the server via --resolve: https://preview.kolabr.com/ answers HTTP/2 502 (no app yet) with
+    HSTS, nosniff and x-robots-tag noindex,nofollow; http redirects 301 to https; unknown host on
+    443 has its handshake rejected. Public DNS for preview.kolabr.com does not exist yet
+    (NXDOMAIN via 1.1.1.1). Cert expiry to remember: 2041-09-21.
+
+- time: "15:14"
+  type: investigation
+  title: preview.kolabr.com DNS live; Cloudflare to origin path verified end to end
+  tags: [cloudflare, dns, preview, real-ip, tls]
+  files: []
+  root_cause: Dom created the Cloudflare DNS records; needed to confirm the proxy, TLS mode and real-IP restore before the first deploy.
+  what_changed: Nothing changed; verification only.
+  result: >
+    preview.kolabr.com resolves to Cloudflare (104.21.4.75, 172.67.131.197, v6). HTTPS through
+    Cloudflare reaches nginx on 443 as HTTP/2 for server preview.kolabr.com (so SSL mode is Full or
+    Full (strict), not Flexible); HTTP gets a 301 to HTTPS. The nginx access log shows the client's
+    real public IP, not a Cloudflare edge, so cloudflare-realip.conf works. The 502 is upstream
+    connection refused on 127.0.0.1:3000, because the app is not deployed yet.
+
+- time: "15:23"
+  type: fix
+  title: First deploy died after a successful swap (backup pruning under pipefail); fixed with a regression test
+  tags: [deploy, deploy.sh, pipefail, first-deploy, backups, test-deploy-scripts]
+  files: [deploy/deploy.sh, scripts/test-deploy-scripts.sh]
+  root_cause: >
+    After verify passed, deploy.sh pruned old backups with `ls -1t $BACKUP_ROOT/app-*.tgz | tail |
+    xargs rm`. On a first deploy there are no backups (there was no app to back up), so ls exits 2;
+    with `set -euo pipefail` that killed the script. The exit handler reported "terminated
+    unexpectedly during 'verify' (exit 2); the site is running". The new build was live and fine,
+    but the deploy reported failed and skipped its final steps. The test suite missed it because
+    every case starts from a prefix with an existing app, so a backup always exists.
+  what_changed: >
+    Wrote the failing test first: "the very first deploy, on an empty server, succeeds" (no app, no
+    previous, no backups, service never started) -> 2 FAIL (status failed at verify). Fixed pruning
+    to collect backups with nullglob into an array and only prune when there are more than
+    KEEP_BACKUPS (ls -1t -- ... | xargs -r -d '\n' rm -f --). Installed via install-server.sh.
+  result: >
+    Suite on the server: 47 passed, 0 failed. Redeployed kolabr-20260925-112055: every step through
+    "done", status succeeded, backup taken, app.previous kept.
+
+- time: "15:23"
+  type: deployment
+  title: Site deployed to preview.kolabr.com; watchdog on; kolabr.com serves a static coming-soon page
+  tags: [deploy, preview, holding-page, coming-soon, nginx, watchdog, cloudflare]
+  files: [deploy/holding/index.html, deploy/holding/favicon.svg, deploy/holding/Switzer-Regular.woff2,
+          deploy/nginx/sites/kolabr.com-holding.conf, deploy/nginx/sites/preview.kolabr.com.conf,
+          deploy/install-server.sh, DEPLOY.md]
+  root_cause: >
+    Dom asked to deploy with the server answering only for preview.kolabr.com, and for kolabr.com to
+    show a holding "coming soon" page with the logo in the centre until launch.
+  what_changed: >
+    First deploy with an empty .env.production (admin locked, contact messages stored but not
+    emailed, /signup/ 404 until NEXT_PUBLIC_APP_URL). Holding page: a static HTML file generated
+    from public/logo.svg (inlined, currentColor for the ink parts, accent dot kept) and app/icon.svg,
+    Switzer Regular self-hosted, site colour tokens, logo exactly centred with "Coming soon" hanging
+    below out of the layout, fade-in that respects prefers-reduced-motion, noindex meta + header,
+    no em dashes. Served by nginx alone from /var/www/kolabr-holding (no proxy to the app): / serves
+    the page (no-cache), favicon and font served, robots.txt allows, every other path 302s to /;
+    www and http 301 to https://kolabr.com/. install-server.sh installs the files and enables the
+    holding site whenever the cert exists and kolabr.com.conf (live) is NOT enabled, so the two can
+    never both claim kolabr.com. It also enabled the watchdog timer now that a build exists.
+    DEPLOY.md "Going live" rewritten: swap holding for live.
+  result: >
+    Through Cloudflare: preview /, /pricing/, /product/requests/, /use-cases/architecture-firms/,
+    /compare/slack/, /blog/, /contact/, /sitemap.xml all 200; /pricing 308 to /pricing/; /admin/
+    307 to login; /signup/ 404 (expected, no app URL); robots.txt correct; x-robots-tag noindex on
+    pages and assets; /_next/static served by nginx with immutable caching; canonical points to
+    https://kolabr.com. kolabr.com: 200 holding page, noindex, no-cache; /admin/ and /pricing/ 302 to
+    /; www and http 301. Playwright at 390x844: logo centre exactly (195, 422), no horizontal
+    scroll; desktop 1440x900 checked visually. Server nginx sites: 00-default, kolabr.com-holding,
+    preview. The server's preview conf differs from the repo only by a comment (syncs on next
+    installer run).
+
+- time: "15:41"
+  type: config
+  title: Back office admin account configured (dom.hardy@paypump.net); password-hash script fixed for Node 22.15
+  tags: [admin, credentials, env, scrypt, password, node, strip-types, sessions]
+  files: [package.json, scripts/create-admin-password.mjs, scripts/create-deploy-zip.mjs, .gitignore,
+          .env.example, README.md, DEPLOY.md, app/admin/login/page.tsx, creds.md (local, gitignored)]
+  root_cause: >
+    Dom asked for the admin to be dom.hardy@paypump.net with a random password stored in creds.md.
+    Doing it exposed that `node scripts/create-admin-password.mjs` fails on Dom's Node 22.15
+    (ERR_UNKNOWN_FILE_EXTENSION): it imports lib/admin/password.ts, and Node only strips TypeScript
+    types by default from 22.18. The server (22.23) would have worked; the documented local step
+    did not.
+  what_changed: >
+    creds.md gitignored (/creds.md) and added to the packager's refuse-to-package list before it was
+    written. Generated a 28-char password (57-char alphabet without look-alike characters,
+    crypto.randomInt, about 163 bits) straight into creds.md (mode 0600) and hashed it over stdin,
+    so it never appeared in argv or output. Added `npm run admin:password` (node
+    --experimental-strip-types --no-warnings) and pointed README, DEPLOY.md, .env.example, the
+    admin login page hint and the script's own usage at it. Wrote /opt/kolabr/.env.production
+    (kolabr 0600; refused if it was not empty): ADMIN_EMAIL, ADMIN_PASSWORD_HASH (scrypt, dot
+    separated so .env $-expansion cannot mangle it), the other settings as commented placeholders,
+    and deliberately no empty NEXT_PUBLIC_GTM_ID (empty switches GTM off). Restarted kolabr.
+  result: >
+    Playwright login at https://preview.kolabr.com/admin/login/ (password read from creds.md via a
+    file:// page, never shown) landed on /admin/ with Deploy, Recent deploys, The server and the upload
+    control. Sign-out was aborted by my navigation (POST /admin/ 400, ECONNRESET in the journal), so
+    I removed only that test session (created 11:39:05Z) from state/sessions.json with an atomic
+    rewrite as kolabr. Two sessions remain, created at 11:38:50Z (Firefox/Windows,
+    102.117.179.134, same IP as this machine) and 11:38:54Z (Firefox/Mac, 102.117.174.50); both
+    browsed /admin/copy and /admin/messages. A WhatsApp link preview also fetched /admin. Presumed
+    Dom; asked him to confirm the Mac. Temporary hash files in the scratchpad were deleted.
+    Noticed: the dashboard shows the live build time in UTC ("since 11:21") next to deploy times in
+    local time (15:21). Not fixed.

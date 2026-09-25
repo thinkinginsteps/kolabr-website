@@ -1,0 +1,49 @@
+updated: "2026-09-25 15:44"
+
+active_task: >
+  The Kolabr website is deployed at https://preview.kolabr.com (noindex) and kolabr.com serves a
+  static "coming soon" holding page. Next: settings (.env.production), then launch when Dom says.
+
+working_assumption: >
+  Cloudflare proxies preview, kolabr.com and www (SSL mode Full or Full (strict); Dom to confirm
+  strict). The origin cert (SAN kolabr.com + *.kolabr.com, expires 2041-09-21) covers everything.
+  Launch = swap kolabr.com-holding.conf for kolabr.com.conf (DEPLOY.md, "Going live").
+
+last_action: >
+  Deployed kolabr-20260925-112055 (succeeded; backup + app.previous in place), enabled the watchdog,
+  installed the holding page, verified both hosts through Cloudflare, logged everything.
+
+next_action: >
+  Get from Dom: ADMIN_EMAIL + ADMIN_PASSWORD_HASH (then put them in /opt/kolabr/.env.production and
+  `sudo systemctl restart kolabr`; runtime values need no redeploy), NEXT_PUBLIC_APP_URL (build time:
+  needs a redeploy), Resend key/from/to (runtime). Once admin works, later deploys go through
+  https://preview.kolabr.com/admin/. Commit the day's work when Dom asks.
+
+locked:
+  - "server.md: local only, gitignored, never copied into Brain, commits or packages"
+  - "Brain/Cloudflare Certs/: gitignored; contains the origin private key; never commit or print it"
+  - "creds.md: gitignored and refused by the packager; holds the admin password; never print it"
+  - "kolabr.com must serve only the holding page until Dom says launch"
+
+open_questions:
+  - "NEXT_PUBLIC_APP_URL (needs a redeploy) and Resend settings (restart only) for .env.production. Admin is done (dom.hardy@paypump.net; password in gitignored creds.md)"
+  - "Dashboard shows the live build time in UTC next to deploy times in local time: small display fix, not done"
+  - "Cloudflare SSL mode: confirm Full (strict)"
+  - "Restrict UFW 80/443 to Cloudflare ranges only? Recommended; not done."
+  - "Delete the plaintext key file in Brain/Cloudflare Certs/ now that it is on the server?"
+  - "Cloudflare cache: bypass for everything (Dom, 15:30), verified cf-cache-status DYNAMIC everywhere. Option later: edge-cache /_next/static/* only."
+  - "All changes are uncommitted (no commit requested yet)."
+
+do_not_suggest:
+  - "certbot / Let's Encrypt: the site uses a Cloudflare origin certificate (installed)"
+  - "`http2 on;` directive: nginx is 1.24 on Ubuntu 24.04"
+  - "Running npm run test:deploy in Git Bash: it needs zip/flock/perl; run it on the server or in WSL"
+  - "Serving the holding page from the Next app: kept in nginx on purpose so nothing of the site is reachable on kolabr.com"
+
+assumptions_in_play:
+  - "The server hosts only Kolabr (hostname kolabr-us-01), so http-level Cloudflare real-IP config is fine."
+  - "SSH as ubuntu with passwordless sudo; root SSH is not used."
+  - "Two people use the back office with the one admin account (Dom and a colleague; Dom confirmed the 11:38Z logins 2026-09-25)."
+  - "The ~300 ' M' entries in git status are stale index stat after .gitattributes (no content diff); they clear on the next commit."
+  - "Site canonicals are https://kolabr.com even on preview (SITE_URL hardcoded), which is intended."
+  - "The server's preview.kolabr.com.conf differs from the repo only by a comment; the next installer run syncs it."

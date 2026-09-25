@@ -49,3 +49,11 @@ next-env.d.ts
 publish/
 .local-state/
 .next-build/
+
+# server access notes and keys: local only, never committed or packaged
+/server.md
+/creds.md
+*.key
+
+# TLS material handed over locally: never committed or packaged
+/Brain/Cloudflare Certs/

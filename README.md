@@ -17,7 +17,7 @@ The site runs with no configuration. The back office needs an account: see
 [.env.example](.env.example) and
 
 ```bash
-node scripts/create-admin-password.mjs 'a long password'
+npm run admin:password -- 'a long password'
 ```
 
 Put `ADMIN_EMAIL` and the printed `ADMIN_PASSWORD_HASH` in `.env.local`, then sign in at
@@ -32,7 +32,7 @@ Put `ADMIN_EMAIL` and the printed `ADMIN_PASSWORD_HASH` in `.env.local`, then si
 | `npm run assets` | Copies fonts from `design/` and converts its images to WebP in `assets/` |
 | `npm run publish:prepare` | Type-check, lint, build, then write the deployment package |
 | `npm run publish:package` | Just the package, into `publish/` |
-| `npm run test:deploy` | Runs the deploy, rebuild and watchdog scripts against a fake server |
+| `npm run test:deploy` | Runs the deploy, rebuild and watchdog scripts against a fake server. Needs Linux (`zip`, `flock`, `perl`): run it on the server or in WSL, not Git Bash |
 
 ## How it is laid out
 

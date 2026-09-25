@@ -1,0 +1,17 @@
+# LF everywhere, on every machine. The site is built and run on Linux, and the deploy package is
+# zipped from the working tree: with core.autocrlf=true on Windows, the shell scripts, systemd
+# units and sudoers file were checked out with CRLF and broke on the server (sudoers failed
+# visudo; bash chokes on $'\r'). This overrides autocrlf for this repository.
+* text=auto eol=lf
+
+# Binary, never touched.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.woff2 binary
+*.otf binary
+*.xlsx binary
+*.zip binary

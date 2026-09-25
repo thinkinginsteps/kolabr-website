@@ -1,0 +1,27 @@
+- time: "14:19"
+  topic: Cloudflare IP ranges for nginx real-IP restore
+  tags: [cloudflare, nginx, real-ip, rate-limit]
+  reason: Site is proxied through Cloudflare; nginx must trust CF-Connecting-IP only from Cloudflare so the app's rate limiters see real visitors.
+  sources:
+    - https://www.cloudflare.com/ips-v4
+    - https://www.cloudflare.com/ips-v6
+  findings: |
+    15 IPv4 and 7 IPv6 ranges as of 2026-09-25 (listed in deploy/nginx/conf.d/cloudflare-realip.conf).
+    Use real_ip_header CF-Connecting-IP with set_real_ip_from per range.
+  action_taken: Written into deploy/nginx/conf.d/cloudflare-realip.conf with a TODO to re-check before go-live.
+
+- time: "14:19"
+  topic: Next.js 16 typegen, Turbopack tracing warning, Server Action body limit
+  tags: [nextjs, typegen, turbopack, server-actions, bodySizeLimit]
+  reason: Clean-checkout type-check failed; build warned about whole-project tracing; deploy uploads go through a Server Action.
+  sources:
+    - node_modules/next/dist/docs/01-app/03-api-reference/08-turbopack.md
+    - node_modules/next/dist/docs/01-app/02-guides/server-actions.md
+    - node_modules/next/dist/docs/01-app/03-api-reference/05-config/01-next-config-js/serverActions.md
+    - npx next --help (typegen command)
+  findings: |
+    `next typegen` generates next-env.d.ts and .next/types without a build. An open-ended
+    path.join(process.cwd(), ...) triggers whole-project tracing; the fix is /*turbopackIgnore: true*/
+    on the call. Server Actions cap bodies at 1MB by default; experimental.serverActions.bodySizeLimit
+    accepts bytes and counts the raw multipart body (leave headroom).
+  action_taken: verify:package runs next typegen first; ignore comment in lib/admin/config.ts; bodySizeLimit set from lib/admin/limits.ts.

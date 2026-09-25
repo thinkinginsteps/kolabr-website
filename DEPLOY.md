@@ -32,7 +32,7 @@ npm run publish:prepare
 That type-checks, lints, builds, and then writes `publish/kolabr-<timestamp>.zip` (about 15MB). Use
 `npm run publish:package` to skip the checks when you have already run them.
 
-Then sign in at `https://kolabr.com/admin/`, choose the file, and press **Upload and deploy**.
+Then sign in at `https://kolabr.com/admin/` (`https://preview.kolabr.com/admin/` until launch), choose the file, and press **Upload and deploy**.
 
 The panel shows each step: extracting, checking, backing up, **building**, stopping, swapping,
 starting, watching, verifying. The site serves the old version throughout the build, which is the
@@ -140,91 +140,127 @@ serving, so erring low is safe.
 
 ## First install
 
-On a fresh Ubuntu server, as root.
+On a fresh Ubuntu 24.04 server. SSH access is as a sudo user (not root); the target and key are in
+`server.md` at the repo root, which is local only and never committed or packaged.
 
-**1. Node 20+, nginx, unzip, curl**
+The site sits behind **Cloudflare** (proxied, SSL mode **Full (strict)**) with a **Cloudflare
+origin certificate** on the server. There is no certbot: origin certificates last years and are
+replaced by hand before they expire.
+
+Until launch it answers only on **preview.kolabr.com**, with `X-Robots-Tag: noindex` on every
+response. See [Going live](#going-live) for the switch.
+
+**1. Run the installer**
+
+[`deploy/install-server.sh`](deploy/install-server.sh) does the whole setup: Node 22 and nginx, the
+`kolabr` user and directories, the root-owned scripts, sudoers, the systemd units and the nginx
+configuration. It is safe to run again, and never overwrites `.env.production`, content, state or
+the certificate. From the repo, on your machine:
 
 ```bash
-curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
-apt-get install -y nodejs nginx unzip curl
+scp -r deploy <user@host>:/tmp/kolabr-setup
+ssh <user@host> 'sudo bash /tmp/kolabr-setup/install-server.sh'
 ```
 
-**2. The user and the directories**
+The files must have LF line endings. The repo's `.gitattributes` guarantees that on any checkout,
+and the installer refuses CRLF files rather than half-installing them.
+
+What it leaves for you, and says so at the end:
+
+- the site is not enabled in nginx until the certificate is installed (step 2);
+- the watchdog stays off until the first deploy has produced a build (step 4);
+- `.env.production` is created empty (step 3).
+
+**2. The origin certificate**
+
+Create it in Cloudflare (SSL/TLS, Origin Server), covering `kolabr.com` and `*.kolabr.com`, then on
+the server:
 
 ```bash
-adduser --system --group --home /opt/kolabr --shell /usr/sbin/nologin kolabr
-mkdir -p /opt/kolabr/{app,content,state,uploads,backups,deploy-logs}
-chown -R kolabr:kolabr /opt/kolabr
+sudo install -m 0644 -o root -g root origin.pem /etc/ssl/kolabr/origin.pem
+sudo install -m 0600 -o root -g root origin.key /etc/ssl/kolabr/origin.key
+sudo bash /tmp/kolabr-setup/install-server.sh     # enables preview.kolabr.com, prints the expiry
 ```
 
-**3. The server scripts, owned by root**
+Put the expiry date somewhere it will be seen. Nothing renews it.
+
+In Cloudflare: a proxied (orange cloud) DNS record for `preview` pointing at the server, and SSL
+mode **Full (strict)**. Any other mode is wrong: "Flexible" talks HTTP to port 80, which redirects
+to HTTPS, and the visitor loops forever.
+
+nginx restores the visitor's address from `CF-Connecting-IP`, trusting it only from Cloudflare's
+ranges ([`cloudflare-realip.conf`](deploy/nginx/conf.d/cloudflare-realip.conf)). The contact form
+and admin login rate limits depend on it. Re-check the ranges against
+<https://www.cloudflare.com/ips/> before launch.
+
+**3. Secrets**
+
+`/opt/kolabr/.env.production` (owner `kolabr`, mode 0600). Fill it in from
+[.env.example](.env.example): `NEXT_PUBLIC_APP_URL`, the three Resend variables, and the admin
+account. Generate the password hash on your own machine:
 
 ```bash
-install -o root -g root -m 0755 deploy/deploy.sh /opt/kolabr/deploy.sh
-install -o root -g root -m 0755 deploy/rebuild.sh /opt/kolabr/rebuild.sh
-install -o root -g root -m 0755 deploy/watchdog.sh /opt/kolabr/watchdog.sh
-```
-
-None may be writable by `kolabr`. If one were, the sudoers line below would hand that user root.
-
-**4. sudoers**
-
-```bash
-visudo -cf deploy/sudoers.kolabr && install -m 0440 deploy/sudoers.kolabr /etc/sudoers.d/kolabr
-```
-
-**5. Secrets**
-
-```bash
-install -o kolabr -g kolabr -m 0600 /dev/null /opt/kolabr/.env.production
-```
-
-Fill it in (see [.env.example](.env.example)): `NEXT_PUBLIC_APP_URL`, the three Resend variables,
-and the admin account. Generate the password hash on your own machine:
-
-```bash
-node scripts/create-admin-password.mjs 'a long password'
+npm run admin:password -- 'a long password'
 ```
 
 Every `NEXT_PUBLIC_*` value is baked in at build time, so changing one means deploying again, not
-just restarting. The others are read at runtime.
+just restarting. The others are read at runtime (`sudo systemctl restart kolabr`).
 
-**6. The service and nginx**
+The site builds and runs with the file empty: sign-up links go nowhere, the back office refuses
+every login, and contact messages are kept under Messages but not emailed.
 
-```bash
-install -m 0644 deploy/kolabr.service /etc/systemd/system/kolabr.service
-systemctl daemon-reload && systemctl enable kolabr
-install -m 0644 deploy/nginx.conf /etc/nginx/sites-available/kolabr.com
-ln -s /etc/nginx/sites-available/kolabr.com /etc/nginx/sites-enabled/
-certbot --nginx -d kolabr.com -d www.kolabr.com
-nginx -t && systemctl reload nginx
-```
+**4. The first deploy**
 
-**7. The watchdog**
+There is no back office yet, because there is no app yet. Build the package, copy it up and run
+the script by hand:
 
 ```bash
-install -m 0644 deploy/kolabr-watchdog.service /etc/systemd/system/
-install -m 0644 deploy/kolabr-watchdog.timer /etc/systemd/system/
-systemctl daemon-reload && systemctl enable --now kolabr-watchdog.timer
-systemctl list-timers kolabr-watchdog.timer      # should show a next run within the minute
-```
-
-**8. The first deploy**
-
-There is no back office yet, because there is no app yet. Copy the first package up and run the
-script by hand:
-
-```bash
-scp publish/kolabr-*.zip root@server:/tmp/
-ssh root@server '/opt/kolabr/deploy.sh /tmp/kolabr-*.zip --foreground'
+npm run publish:prepare
+scp publish/kolabr-<stamp>.zip <user@host>:/tmp/
+ssh <user@host> 'sudo /opt/kolabr/deploy.sh /tmp/kolabr-<stamp>.zip --foreground'
 ```
 
 `--foreground` is right here: an SSH session is its own scope, so stopping the service does not kill
-the script. Never use it from the app.
+the script. Never use it from the app. The deploy logs to `/opt/kolabr/deploy-logs/<id>.log`;
+follow it from a second session.
+
+Then run the installer once more to switch the watchdog on:
+
+```bash
+ssh <user@host> 'sudo bash /tmp/kolabr-setup/install-server.sh'
+```
 
 After that, deploys happen in the back office.
 
+## Going live
+
+Before launch, nginx answers for two names:
+
+- **preview.kolabr.com**: the site, with `X-Robots-Tag: noindex` on every response.
+- **kolabr.com** (and www, which redirects to it): a static "coming soon" page with the logo, from
+  [`deploy/holding/`](deploy/holding/) installed to `/var/www/kolabr-holding`. It is served by nginx
+  alone, so nothing of the site (no pages, no `/admin`, no API) is reachable there; every other
+  path redirects to `/`. Also noindex.
+
+Anything else, including the bare IP, is refused.
+
+To launch, swap the holding page for the live site (the certificate already covers `kolabr.com`
+and `www.kolabr.com`):
+
+```bash
+sudo ln -s /etc/nginx/sites-available/kolabr.com.conf /etc/nginx/sites-enabled/
+sudo rm /etc/nginx/sites-enabled/kolabr.com-holding.conf
+sudo nginx -t && sudo systemctl reload nginx
+```
+
+The installer respects this: once `kolabr.com.conf` is enabled it leaves the holding page off, so
+running it again after launch cannot bring the holding page back. The noindex header on the site
+is sent only for the preview hostname, so kolabr.com is indexable as soon as it serves the site.
+Keep preview enabled if it is still wanted: it stays noindex either way.
+
 ## Checks after a deploy
+
+Use `preview.kolabr.com` until launch, `kolabr.com` after.
 
 ```bash
 curl -I https://kolabr.com/                   # 200
@@ -233,6 +269,8 @@ curl -s https://kolabr.com/robots.txt         # names the sitemap, disallows /ad
 curl -I https://kolabr.com/signup/            # 307 to the app, not 404
 curl -I https://kolabr.com/admin/             # 307 to /admin/login/
 ```
+
+On preview, every response should also carry `x-robots-tag: noindex, nofollow`.
 
 Then send one message through the contact form and confirm it arrives with the sender as reply-to.
 It should also appear under Messages in the back office, marked "Emailed".

@@ -51,7 +51,7 @@ function rateLimited(ip: string, now = Date.now()) {
   return false;
 }
 
-/** nginx sets X-Real-IP / X-Forwarded-For (see deploy/nginx.conf); the app is not exposed directly. */
+/** nginx sets X-Real-IP / X-Forwarded-For (see deploy/nginx/snippets/kolabr-proxy.conf); the app is not exposed directly. */
 function clientIp(req: Request) {
   return req.headers.get("x-real-ip") ?? req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
 }
