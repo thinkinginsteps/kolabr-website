@@ -33,6 +33,17 @@ const EXTRA_IMAGES = [
   "assets/screens/con-events.png",
   "assets/screens/con-wiki.png",
 ];
+// The Home hero, which shows the real app rather than the design's mockups. The files are
+// numbered in the order they appear in the rotating stack, and are renamed on the way in because
+// the source names carry that number and the app should not.
+const HERO_DIR = "Homepage Screenshots";
+const HERO_SHOTS = [
+  ["Screenshot - 01 - Dashboard.png", "hero-dashboard.webp"],
+  ["Screenshot - 02 - Group Chat.png", "hero-chat.webp"],
+  ["Screenshot - 03 - Event Scheduler.png", "hero-events.webp"],
+  ["Screenshot - 04 - Video Call.png", "hero-call.webp"],
+  ["Screenshot - 05 - Wiki.png", "hero-wiki.webp"],
+];
 const WEBP = { quality: 85, effort: 6, smartSubsample: true };
 
 async function isFresh(src, dest) {
@@ -96,13 +107,24 @@ async function referencedImages() {
   return [...refs].sort();
 }
 
-async function convertImages() {
+async function imageJobs() {
+  const images = path.join(root, "assets", "images");
   const refs = await referencedImages();
+  const jobs = refs.map((rel) => ({
+    src: path.join(design, rel),
+    dest: path.join(images, rel.replace(/^assets\//, "").replace(/\.(png|jpe?g)$/i, ".webp")),
+  }));
+  for (const [file, name] of HERO_SHOTS) {
+    jobs.push({ src: path.join(design, HERO_DIR, file), dest: path.join(images, name) });
+  }
+  return jobs;
+}
+
+async function convertImages() {
+  const jobs = await imageJobs();
   let converted = 0;
   let skipped = 0;
-  for (const rel of refs) {
-    const src = path.join(design, rel);
-    const dest = path.join(root, "assets", "images", rel.replace(/^assets\//, "").replace(/\.(png|jpe?g)$/i, ".webp"));
+  for (const { src, dest } of jobs) {
     if (await isFresh(src, dest)) {
       skipped++;
       continue;
@@ -111,7 +133,7 @@ async function convertImages() {
     await sharp(src).webp(WEBP).toFile(dest);
     converted++;
   }
-  console.log(`images: ${refs.length} referenced, ${converted} converted, ${skipped} up to date`);
+  console.log(`images: ${jobs.length} to keep, ${converted} converted, ${skipped} up to date`);
 }
 
 await syncFonts();
