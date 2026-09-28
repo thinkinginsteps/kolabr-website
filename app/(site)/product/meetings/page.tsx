@@ -20,8 +20,8 @@ import {
 import { breadcrumbJsonLd, graph, pageMetadata } from "@/lib/seo";
 import { SIGNUP_PATH } from "@/lib/site";
 
-import uiEventsDay from "@/assets/images/ui-events-day.webp";
-import uiEventsPage from "@/assets/images/ui-events-page.webp";
+import screenEventsDay from "@/assets/images/screen-events-day.webp";
+import screenEvents from "@/assets/images/screen-events.webp";
 import uiMeetingCall from "@/assets/images/ui-meeting-call.webp";
 import uiScheduleModal from "@/assets/images/ui-schedule-modal.webp";
 
@@ -39,8 +39,8 @@ export default function MeetingsPage() {
         <Screenshot
           preload
           className="mt-16"
-          image={uiEventsPage}
-          alt="Scheduled events: the selected day’s four meetings with Join buttons beside a month calendar of the channel’s events"
+          image={screenEvents}
+          alt="Scheduled events: the selected day’s four meetings, two of them ready to join, beside a month calendar of the channel’s events"
         />
       </ProductHero>
 
@@ -89,8 +89,8 @@ export default function MeetingsPage() {
           aside={
             <CardImage
               maxHeight={300}
-              image={uiEventsDay}
-              alt="The selected day's events: a standup, a client walkthrough, a document review and an escalation review, each with duration, channel, attendees and a Join button"
+              image={screenEventsDay}
+              alt="The selected day’s events: a standup, a client walkthrough, a document review and an escalation review, each with its duration, channel and attendees, and a Join button on the two video calls"
             />
           }
         />

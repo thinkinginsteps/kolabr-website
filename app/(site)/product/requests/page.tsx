@@ -20,7 +20,7 @@ import { breadcrumbJsonLd, graph, pageMetadata } from "@/lib/seo";
 import { SIGNUP_PATH } from "@/lib/site";
 
 import uiRequestDetail from "@/assets/images/ui-request-detail.webp";
-import uiRequestsList from "@/assets/images/ui-requests-list.webp";
+import screenRequests from "@/assets/images/screen-requests.webp";
 
 export const metadata = pageMetadata("/product/requests/");
 
@@ -36,7 +36,7 @@ export default function RequestsPage() {
         <Screenshot
           preload
           className="mt-16"
-          image={uiRequestsList}
+          image={screenRequests}
           // Design alt said "ticket number"; Kolabr's items are requests (Dom's copy rule).
           alt="The Requests list: request number, title, status, priority, owner, assigned team, channel, category, SLA state and created date for ten requests"
         />

@@ -33,6 +33,30 @@ const EXTRA_IMAGES = [
   "assets/screens/con-events.png",
   "assets/screens/con-wiki.png",
 ];
+// Screenshots of the real app, replacing the design's mockups page by page. They are dropped in
+// this folder as they are captured and renamed on the way in: the numbers in the source names are
+// the order of the Home hero's stack, which is no business of the other pages that use them.
+const SCREEN_DIR = "Homepage Screenshots";
+const SCREEN_SHOTS = [
+  ["Screenshot - 01 - Dashboard.png", "screen-dashboard.webp"],
+  ["Screenshot - 02 - Group Chat.png", "screen-chat.webp"],
+  ["Screenshot - 03 - Event Scheduler.png", "screen-events.webp"],
+  ["Screenshot - 04 - Video Call.png", "screen-call.webp"],
+  ["Screenshot - 05 - Wiki.png", "screen-wiki.webp"],
+  ["Screenshot - Requests.png", "screen-requests.webp"],
+  ["Screenshot - Channels.png", "screen-channels.webp"],
+];
+// Pieces of those screenshots, for the places a page shows one panel rather than a whole screen.
+// Cropping here rather than keeping a separate file means a recapture carries through: drop the
+// new screenshot in, run this, and the crop follows it.
+const SCREEN_CROPS = [
+  {
+    from: "Screenshot - 03 - Event Scheduler.png",
+    to: "screen-events-day.webp",
+    // The day's list on the left of the scheduled events screen, framed as the old crop was.
+    rect: { left: 265, top: 78, width: 485, height: 618 },
+  },
+];
 const WEBP = { quality: 85, effort: 6, smartSubsample: true };
 
 async function isFresh(src, dest) {
@@ -96,22 +120,37 @@ async function referencedImages() {
   return [...refs].sort();
 }
 
-async function convertImages() {
+async function imageJobs() {
+  const images = path.join(root, "assets", "images");
   const refs = await referencedImages();
+  const jobs = refs.map((rel) => ({
+    src: path.join(design, rel),
+    dest: path.join(images, rel.replace(/^assets\//, "").replace(/\.(png|jpe?g)$/i, ".webp")),
+  }));
+  for (const [file, name] of SCREEN_SHOTS) {
+    jobs.push({ src: path.join(design, SCREEN_DIR, file), dest: path.join(images, name) });
+  }
+  for (const { from, to, rect } of SCREEN_CROPS) {
+    jobs.push({ src: path.join(design, SCREEN_DIR, from), dest: path.join(images, to), rect });
+  }
+  return jobs;
+}
+
+async function convertImages() {
+  const jobs = await imageJobs();
   let converted = 0;
   let skipped = 0;
-  for (const rel of refs) {
-    const src = path.join(design, rel);
-    const dest = path.join(root, "assets", "images", rel.replace(/^assets\//, "").replace(/\.(png|jpe?g)$/i, ".webp"));
+  for (const { src, dest, rect } of jobs) {
     if (await isFresh(src, dest)) {
       skipped++;
       continue;
     }
     await mkdir(path.dirname(dest), { recursive: true });
-    await sharp(src).webp(WEBP).toFile(dest);
+    const image = sharp(src);
+    await (rect ? image.extract(rect) : image).webp(WEBP).toFile(dest);
     converted++;
   }
-  console.log(`images: ${refs.length} referenced, ${converted} converted, ${skipped} up to date`);
+  console.log(`images: ${jobs.length} to keep, ${converted} converted, ${skipped} up to date`);
 }
 
 await syncFonts();
