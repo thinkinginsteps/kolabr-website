@@ -390,6 +390,13 @@ privacy policy, which currently describes enquiries as handled by support toolin
   destroyed by the next deploy, or break the build.
 - **`deploy.sh` stays root-owned and not writable by `kolabr`**, or the sudoers line becomes a root
   escalation.
+- **`kolabr.service` must not set `NoNewPrivileges`.** It blocks every setuid binary for the
+  service, `sudo` included, so the back office cannot start a deploy: "the no new privileges flag
+  is set, which prevents sudo from running as root". The sudoers rule, naming two root-owned
+  scripts and nothing else, is what limits this service.
+- **A changed unit needs a restart, not just a `daemon-reload`.** The installer compares the file
+  and restarts the site when it differs, because the failure mode otherwise is a setting that
+  reads correctly in `/etc/systemd/system` and is not in force.
 - **Never package secrets.** `.env*` is excluded and the packager refuses to add one; check anyway.
 - **A rebuild must not be able to break the live build.** It builds into `.next-build` and only
   swaps it in once the build has succeeded, keeping the previous one until the next rebuild.

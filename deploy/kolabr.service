@@ -26,7 +26,12 @@ Restart=always
 RestartSec=2
 
 # The app writes uploads and state, and nothing else.
-NoNewPrivileges=true
+#
+# NoNewPrivileges is deliberately NOT set, and must not be: it blocks every setuid binary for this
+# service, sudo included, so the back office could not start a deploy at all ("the no new
+# privileges flag is set, which prevents sudo from running as root"). The escalation this service
+# is allowed is the sudoers rule, which names two root-owned scripts it cannot edit and nothing
+# else; that rule is the control, and this flag would only break it.
 ProtectSystem=strict
 ProtectHome=true
 ReadWritePaths=/opt/kolabr/uploads /opt/kolabr/state /opt/kolabr/content

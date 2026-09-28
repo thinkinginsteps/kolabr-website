@@ -119,11 +119,19 @@ fi
 # ---------------------------------------------------------------- systemd
 
 say "systemd"
+# A changed unit does nothing until the service is restarted, and the symptom of forgetting is a
+# setting that looks right in the file and is not in force. Notice, and restart.
+unit_changed=0
+cmp -s "$SRC/kolabr.service" /etc/systemd/system/kolabr.service || unit_changed=1
 install -m 0644 "$SRC/kolabr.service" /etc/systemd/system/kolabr.service
 install -m 0644 "$SRC/kolabr-watchdog.service" /etc/systemd/system/kolabr-watchdog.service
 install -m 0644 "$SRC/kolabr-watchdog.timer" /etc/systemd/system/kolabr-watchdog.timer
 systemctl daemon-reload
 systemctl enable kolabr >/dev/null 2>&1
+if [[ "$unit_changed" -eq 1 ]] && systemctl is-active --quiet kolabr; then
+  note "kolabr.service changed: restarting the site to pick it up"
+  systemctl restart kolabr
+fi
 # Before the first deploy there is nothing to keep running: the watchdog would try to start a
 # service with no code every minute and log an alert each time.
 if [[ -d "$PREFIX/app/.next" ]]; then
