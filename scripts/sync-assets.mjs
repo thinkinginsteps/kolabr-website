@@ -44,6 +44,7 @@ const SCREEN_SHOTS = [
   ["Screenshot - 04 - Video Call.png", "screen-call.webp"],
   ["Screenshot - 05 - Wiki.png", "screen-wiki.webp"],
   ["Screenshot - Requests.png", "screen-requests.webp"],
+  ["Screenshot - Channels.png", "screen-channels.webp"],
 ];
 // Pieces of those screenshots, for the places a page shows one panel rather than a whole screen.
 // Cropping here rather than keeping a separate file means a recapture carries through: drop the

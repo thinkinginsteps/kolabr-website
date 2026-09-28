@@ -21,7 +21,7 @@ import { breadcrumbJsonLd, graph, pageMetadata } from "@/lib/seo";
 import { SIGNUP_PATH } from "@/lib/site";
 
 import uiAdminAudit from "@/assets/images/ui-admin-audit.webp";
-import uiAdminChannels from "@/assets/images/ui-admin-channels.webp";
+import screenChannels from "@/assets/images/screen-channels.webp";
 import uiAdminConfig from "@/assets/images/ui-admin-config.webp";
 import uiAdminUsers from "@/assets/images/ui-admin-users.webp";
 
@@ -39,7 +39,7 @@ export default function AdministrationPage() {
         <Screenshot
           preload
           className="mt-16"
-          image={uiAdminChannels}
+          image={screenChannels}
           alt="Channel management: thirteen channel cards with their category, purpose, member count and SLA profile, each with Members and Edit actions"
         />
       </ProductHero>
