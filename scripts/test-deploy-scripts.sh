@@ -303,6 +303,22 @@ echo stopped > "$SERVICE_STATE"
 watchdog
 check "the site is running again" running "$(service_state)"
 
+# ---------------------------------------------------------------- the service unit
+
+echo
+echo "kolabr.service"
+
+# The back office starts deploy.sh and rebuild.sh through sudo, from inside this service. These
+# settings stop sudo from ever becoming root, so the Deploy button and Publish fail with "The
+# 'no new privileges' flag is set" (it shipped once and did exactly that). The stubs above call the
+# scripts directly, so only this check stands between the unit and that failure.
+UNIT="$HERE/deploy/kolabr.service"
+echo "  the back office can still sudo the deploy scripts"
+nnp="$(grep -Ei '^[[:space:]]*NoNewPrivileges[[:space:]]*=[[:space:]]*(yes|true|on|1)[[:space:]]*$' "$UNIT" || true)"
+check "NoNewPrivileges is not switched on" "" "$nnp"
+caps="$(grep -Ei '^[[:space:]]*(CapabilityBoundingSet[[:space:]]*=[[:space:]]*$|SystemCallFilter[[:space:]]*=.*@privileged)' "$UNIT" || true)"
+check "root keeps its capabilities under sudo" "" "$caps"
+
 # ----------------------------------------------------------------
 
 echo

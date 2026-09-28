@@ -26,7 +26,14 @@ Restart=always
 RestartSec=2
 
 # The app writes uploads and state, and nothing else.
-NoNewPrivileges=true
+#
+# NoNewPrivileges is deliberately NOT set. The back office starts deploy.sh and rebuild.sh through
+# sudo from inside this service, and with that flag sudo refuses to become root ("The 'no new
+# privileges' flag is set"), so Deploy and Publish both fail. What kolabr may do as root is bounded
+# by /etc/sudoers.d/kolabr instead: exactly those two root-owned scripts, nothing else. The rest of
+# this sandbox stays; sudo works under it (checked on the server), and the scripts escape it by
+# re-execing into their own systemd unit. scripts/test-deploy-scripts.sh guards against this
+# flag coming back.
 ProtectSystem=strict
 ProtectHome=true
 ReadWritePaths=/opt/kolabr/uploads /opt/kolabr/state /opt/kolabr/content

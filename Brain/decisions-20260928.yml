@@ -1,0 +1,23 @@
+- time: "14:05"
+  title: Keep sudo-from-the-app for deploys; drop NoNewPrivileges rather than redesign the trigger
+  tags: [deploy, security, systemd, sudo, sandbox]
+  context: >
+    NoNewPrivileges=true on kolabr.service made the back office unable to start deploy.sh or
+    rebuild.sh through sudo.
+  choice: >
+    Remove NoNewPrivileges from kolabr.service; keep the rest of the sandbox. Root access stays
+    bounded by sudoers (two root-owned scripts, fixed paths, no wildcards). A test guards the unit.
+  alternatives_considered:
+    - option: Replace sudo with a root-owned systemd path/socket unit the app triggers by dropping a request file
+      rejected_because: >
+        Removes setuid from the web process entirely, but means new units, request-file parsing
+        as root, and changes to both server actions and the tests. More moving parts than the
+        current risk justifies; the sudoers rule is already narrow.
+    - option: Keep NoNewPrivileges and do deploys only over SSH
+      rejected_because: Defeats the back office deploy and publish features Dom uses.
+  implications: >
+    The kolabr user can become root, but only to run /opt/kolabr/deploy.sh and rebuild.sh. Those
+    scripts must stay root-owned and not writable by kolabr (install-server.sh enforces it).
+    Never re-add NoNewPrivileges, an empty CapabilityBoundingSet or a @privileged syscall filter
+    to kolabr.service.
+  revisit_if: The app gains untrusted-input surfaces beyond the admin, or a compromise of the app user becomes a bigger concern; then move to the path-unit trigger.

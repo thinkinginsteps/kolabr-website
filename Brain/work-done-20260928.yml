@@ -1,0 +1,30 @@
+- time: "14:05"
+  type: fix
+  title: Back office Deploy and Publish failed ("no new privileges" flag blocks sudo); dropped NoNewPrivileges from kolabr.service
+  tags: [deploy, rebuild, publish, systemd, sudo, NoNewPrivileges, sandbox, kolabr.service, back-office]
+  files: [deploy/kolabr.service, deploy/install-server.sh, scripts/test-deploy-scripts.sh]
+  root_cause: >
+    kolabr.service had NoNewPrivileges=true. The back office starts deploy.sh (Deploy) and
+    rebuild.sh (Publish for Blog/Copy) with `sudo` from inside that service, and with the flag set
+    sudo refuses to become root: "The 'no new privileges' flag is set, which prevents sudo from
+    running as root". Dom hit it uploading kolabr-20260928-100157 through /admin. The deploy
+    test suite calls the scripts directly with stubs, never via sudo from inside the unit, so it
+    could not catch this; all first deploys were done manually over SSH.
+  what_changed: >
+    Reproduced on the server with throwaway systemd-run units as kolabr, using the service's
+    sandbox: with NoNewPrivileges=true sudo fails with the exact error; with everything else
+    (ProtectSystem=strict, ProtectHome, ReadWritePaths, PrivateTmp=false) and no NNP, sudo reaches
+    deploy.sh. Wrote the failing test first: a "kolabr.service" section asserting the unit sets no
+    NoNewPrivileges=yes/true and no empty CapabilityBoundingSet or @privileged syscall filter
+    (48 passed, 1 failed). Removed NoNewPrivileges from the unit with a comment explaining why and
+    what bounds root instead (sudoers: exactly deploy.sh and rebuild.sh, both root-owned). Checked
+    that both scripts only mkdir folders that already exist before detaching into their own
+    systemd unit, so ProtectSystem=strict does not break them under sudo. install-server.sh now
+    restarts kolabr when kolabr.service changed and the service is running (it used to reload
+    systemd only, so a unit change silently did not apply until the next restart).
+  result: >
+    Suite on the server: 49 passed, 0 failed. Installed: the installer restarted the site; live
+    unit NoNewPrivileges=no, ProtectSystem=strict, active; the running process shows NoNewPrivs 0;
+    `sudo -n -l /opt/kolabr/deploy.sh` as kolabr inside the service's mount namespace is allowed;
+    local site 200. The failed attempt left nothing behind (the app deleted the upload, no deploy
+    log written, live build untouched). Not re-run end to end through the UI: Dom to retry his upload.
