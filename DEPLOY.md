@@ -101,6 +101,41 @@ Content and state are reached through absolute paths, **not symlinks inside the 
 that leaves the project root makes Turbopack fail the build outright with "leaves the filesystem
 root", which is a confusing way to discover this.
 
+Everything else the server needs lives outside that directory, where a deploy cannot reach it.
+[`install-server.sh`](deploy/install-server.sh) puts it all there, from the matching file in
+`deploy/`, and it is the only thing that does:
+
+```
+/etc/systemd/system/
+  kolabr.service                    the site
+  kolabr-watchdog.service           one check
+  kolabr-watchdog.timer             every minute. Off until the first deploy has built something
+
+/etc/sudoers.d/
+  kolabr                            lets the app run deploy.sh and rebuild.sh as root, nothing else
+
+/etc/nginx/
+  conf.d/kolabr.conf                the upstream, and the noindex header for the preview host
+  conf.d/cloudflare-realip.conf     the visitor's real address, trusted only from Cloudflare
+  snippets/kolabr-site.conf         the site itself, shared by the preview and live blocks
+  snippets/kolabr-{tls,proxy,headers}.conf
+  sites-available/00-default.conf   anything that is not a Kolabr hostname gets 444
+  sites-available/kolabr.com.conf           the live site. Enabled by hand at go-live
+  sites-available/kolabr.com-holding.conf   the holding page. Enabled until then
+  sites-available/preview.kolabr.com.conf   the site before launch
+  sites-enabled/                    symlinks to the above. Ubuntu's own "default" is removed
+
+/var/www/kolabr-holding/            the holding page's files, from deploy/holding/
+
+/etc/ssl/kolabr/
+  origin.pem                        the Cloudflare origin certificate  root:root 0644
+  origin.key                        its private key                    root:root 0600
+```
+
+The certificate is the one thing installed by hand, because it is a secret and it comes from
+Cloudflare rather than this repository. Everything else in that list is in git: change it there,
+copy `deploy/` up, and run the installer again.
+
 ## The site is never left stopped
 
 Both scripts end by making sure the service is running, whatever happened on the way, including
