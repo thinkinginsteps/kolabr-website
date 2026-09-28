@@ -45,6 +45,17 @@ const SCREEN_SHOTS = [
   ["Screenshot - 05 - Wiki.png", "screen-wiki.webp"],
   ["Screenshot - Requests.png", "screen-requests.webp"],
 ];
+// Pieces of those screenshots, for the places a page shows one panel rather than a whole screen.
+// Cropping here rather than keeping a separate file means a recapture carries through: drop the
+// new screenshot in, run this, and the crop follows it.
+const SCREEN_CROPS = [
+  {
+    from: "Screenshot - 03 - Event Scheduler.png",
+    to: "screen-events-day.webp",
+    // The day's list on the left of the scheduled events screen, framed as the old crop was.
+    rect: { left: 265, top: 78, width: 485, height: 618 },
+  },
+];
 const WEBP = { quality: 85, effort: 6, smartSubsample: true };
 
 async function isFresh(src, dest) {
@@ -118,6 +129,9 @@ async function imageJobs() {
   for (const [file, name] of SCREEN_SHOTS) {
     jobs.push({ src: path.join(design, SCREEN_DIR, file), dest: path.join(images, name) });
   }
+  for (const { from, to, rect } of SCREEN_CROPS) {
+    jobs.push({ src: path.join(design, SCREEN_DIR, from), dest: path.join(images, to), rect });
+  }
   return jobs;
 }
 
@@ -125,13 +139,14 @@ async function convertImages() {
   const jobs = await imageJobs();
   let converted = 0;
   let skipped = 0;
-  for (const { src, dest } of jobs) {
+  for (const { src, dest, rect } of jobs) {
     if (await isFresh(src, dest)) {
       skipped++;
       continue;
     }
     await mkdir(path.dirname(dest), { recursive: true });
-    await sharp(src).webp(WEBP).toFile(dest);
+    const image = sharp(src);
+    await (rect ? image.extract(rect) : image).webp(WEBP).toFile(dest);
     converted++;
   }
   console.log(`images: ${jobs.length} to keep, ${converted} converted, ${skipped} up to date`);
