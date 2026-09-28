@@ -119,12 +119,8 @@ fi
 # ---------------------------------------------------------------- systemd
 
 say "systemd"
-<<<<<<< HEAD
-# A changed unit only takes effect when the service restarts: remember whether it changed.
-=======
-# A changed unit does nothing until the service is restarted, and the symptom of forgetting is a
-# setting that looks right in the file and is not in force. Notice, and restart.
->>>>>>> 4646a579c067b0461a45b74607ff1f5defd6dcb4
+# A changed unit does nothing until the service restarts, and the symptom of forgetting is a
+# setting that reads correctly in the file and is not in force. Notice, and restart.
 unit_changed=0
 cmp -s "$SRC/kolabr.service" /etc/systemd/system/kolabr.service || unit_changed=1
 install -m 0644 "$SRC/kolabr.service" /etc/systemd/system/kolabr.service
@@ -133,14 +129,9 @@ install -m 0644 "$SRC/kolabr-watchdog.timer" /etc/systemd/system/kolabr-watchdog
 systemctl daemon-reload
 systemctl enable kolabr >/dev/null 2>&1
 if [[ "$unit_changed" -eq 1 ]] && systemctl is-active --quiet kolabr; then
-<<<<<<< HEAD
   # A few seconds down. Sessions and messages live on disk, so nobody is signed out.
   systemctl restart kolabr
   note "kolabr.service changed: restarted the site to apply it"
-=======
-  note "kolabr.service changed: restarting the site to pick it up"
-  systemctl restart kolabr
->>>>>>> 4646a579c067b0461a45b74607ff1f5defd6dcb4
 fi
 # Before the first deploy there is nothing to keep running: the watchdog would try to start a
 # service with no code every minute and log an alert each time.
