@@ -21,7 +21,7 @@ import { breadcrumbJsonLd, graph, pageMetadata } from "@/lib/seo";
 import { SIGNUP_PATH } from "@/lib/site";
 
 import uiEventsDay from "@/assets/images/ui-events-day.webp";
-import uiEventsPage from "@/assets/images/ui-events-page.webp";
+import screenEvents from "@/assets/images/screen-events.webp";
 import uiMeetingCall from "@/assets/images/ui-meeting-call.webp";
 import uiScheduleModal from "@/assets/images/ui-schedule-modal.webp";
 
@@ -39,8 +39,8 @@ export default function MeetingsPage() {
         <Screenshot
           preload
           className="mt-16"
-          image={uiEventsPage}
-          alt="Scheduled events: the selected day’s four meetings with Join buttons beside a month calendar of the channel’s events"
+          image={screenEvents}
+          alt="Scheduled events: the selected day’s four meetings, two of them ready to join, beside a month calendar of the channel’s events"
         />
       </ProductHero>
 

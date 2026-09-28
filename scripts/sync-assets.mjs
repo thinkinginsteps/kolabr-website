@@ -33,16 +33,17 @@ const EXTRA_IMAGES = [
   "assets/screens/con-events.png",
   "assets/screens/con-wiki.png",
 ];
-// The Home hero, which shows the real app rather than the design's mockups. The files are
-// numbered in the order they appear in the rotating stack, and are renamed on the way in because
-// the source names carry that number and the app should not.
-const HERO_DIR = "Homepage Screenshots";
-const HERO_SHOTS = [
-  ["Screenshot - 01 - Dashboard.png", "hero-dashboard.webp"],
-  ["Screenshot - 02 - Group Chat.png", "hero-chat.webp"],
-  ["Screenshot - 03 - Event Scheduler.png", "hero-events.webp"],
-  ["Screenshot - 04 - Video Call.png", "hero-call.webp"],
-  ["Screenshot - 05 - Wiki.png", "hero-wiki.webp"],
+// Screenshots of the real app, replacing the design's mockups page by page. They are dropped in
+// this folder as they are captured and renamed on the way in: the numbers in the source names are
+// the order of the Home hero's stack, which is no business of the other pages that use them.
+const SCREEN_DIR = "Homepage Screenshots";
+const SCREEN_SHOTS = [
+  ["Screenshot - 01 - Dashboard.png", "screen-dashboard.webp"],
+  ["Screenshot - 02 - Group Chat.png", "screen-chat.webp"],
+  ["Screenshot - 03 - Event Scheduler.png", "screen-events.webp"],
+  ["Screenshot - 04 - Video Call.png", "screen-call.webp"],
+  ["Screenshot - 05 - Wiki.png", "screen-wiki.webp"],
+  ["Screenshot - Requests.png", "screen-requests.webp"],
 ];
 const WEBP = { quality: 85, effort: 6, smartSubsample: true };
 
@@ -114,8 +115,8 @@ async function imageJobs() {
     src: path.join(design, rel),
     dest: path.join(images, rel.replace(/^assets\//, "").replace(/\.(png|jpe?g)$/i, ".webp")),
   }));
-  for (const [file, name] of HERO_SHOTS) {
-    jobs.push({ src: path.join(design, HERO_DIR, file), dest: path.join(images, name) });
+  for (const [file, name] of SCREEN_SHOTS) {
+    jobs.push({ src: path.join(design, SCREEN_DIR, file), dest: path.join(images, name) });
   }
   return jobs;
 }

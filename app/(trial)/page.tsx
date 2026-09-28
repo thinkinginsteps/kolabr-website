@@ -19,11 +19,11 @@ import { compare, megaMenu, product } from "@/lib/navigation";
 import { breadcrumbJsonLd, graph, organizationJsonLd, pageMetadata, websiteJsonLd } from "@/lib/seo";
 import { SIGNUP_PATH } from "@/lib/site";
 
-import heroCall from "@/assets/images/hero-call.webp";
-import heroChat from "@/assets/images/hero-chat.webp";
-import heroDashboard from "@/assets/images/hero-dashboard.webp";
-import heroEvents from "@/assets/images/hero-events.webp";
-import heroWiki from "@/assets/images/hero-wiki.webp";
+import screenCall from "@/assets/images/screen-call.webp";
+import screenChat from "@/assets/images/screen-chat.webp";
+import screenDashboard from "@/assets/images/screen-dashboard.webp";
+import screenEvents from "@/assets/images/screen-events.webp";
+import screenWiki from "@/assets/images/screen-wiki.webp";
 import logoBasecamp from "@/assets/images/logo-basecamp.webp";
 import logoClickup from "@/assets/images/logo-clickup.webp";
 import logoNotion from "@/assets/images/logo-notion.webp";
@@ -78,11 +78,11 @@ export default function HomePage() {
 
           <HeroStack
             shots={[
-              { label: "Dashboard", image: heroDashboard, alt: "The Kolabr dashboard: request totals, SLA at risk, request volume over the last fortnight and the requests assigned to you" },
-              { label: "Channel chat", image: heroChat, alt: "The Payments channel: a pinned notice, a request raised from a message, and a scheduled deploy review in the same thread" },
-              { label: "Scheduled events", image: heroEvents, alt: "Scheduled events: the day’s four meetings beside a month calendar" },
-              { label: "Video call", image: heroCall, alt: "A video call inside the channel, linked to request TK-025430, with someone waiting to be admitted" },
-              { label: "Wiki", image: heroWiki, alt: "A wiki page in the channel: a reviewed runbook for failed debit-order mandates, with its steps and attachments" },
+              { label: "Dashboard", image: screenDashboard, alt: "The Kolabr dashboard: request totals, SLA at risk, request volume over the last fortnight and the requests assigned to you" },
+              { label: "Channel chat", image: screenChat, alt: "The Payments channel: a pinned notice, a request raised from a message, and a scheduled deploy review in the same thread" },
+              { label: "Scheduled events", image: screenEvents, alt: "Scheduled events: the day’s four meetings beside a month calendar" },
+              { label: "Video call", image: screenCall, alt: "A video call inside the channel, linked to request TK-025430, with someone waiting to be admitted" },
+              { label: "Wiki", image: screenWiki, alt: "A wiki page in the channel: a reviewed runbook for failed debit-order mandates, with its steps and attachments" },
             ]}
           />
         </div>
