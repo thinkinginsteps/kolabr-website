@@ -118,7 +118,7 @@
             [
               "Smallest team you can pay for",
               "One person.",
-              "Pro and Business Plus carry a three-user minimum."
+              "One person."
             ],
             [
               "SSO / SAML",
@@ -187,7 +187,7 @@
     "cost": {
       "title": "What each one actually costs you",
       "paragraphs": [
-        "Slack Pro is $7.25 per active user per month on annual billing and $8.75 monthly; Business Plus is $15 and $18, with Enterprise Grid quoted. Pro and Business Plus carry a three-user minimum. Kolabr is $9.99, $19.99 or $39.99 per user per month, with requests, wiki and scheduled events included rather than bought separately.",
+        "Slack Pro is $7.25 per active user per month on annual billing and $8.75 monthly; Business Plus is $15 and $18, with Enterprise Grid quoted. Kolabr is $9.99, $19.99 or $39.99 per user per month, with requests, wiki and scheduled events included rather than bought separately.",
         "The number that decides it is the one outside your company. Take an agency of twelve with forty client contacts who each need more than one channel. In Slack those forty are billable members. In Kolabr they are guests, and the bill is twelve people. What your plan buys is seats per channel: 30 on Starter, 100 on Pro, unlimited on Max, shared between your people and your guests."
       ],
       "note": [
@@ -608,17 +608,17 @@
             [
               "List price",
               "$9.99, $19.99 or $39.99 per user per month. Guests free.",
-              "Plus is $15 per user per month, billed monthly. Pro Unlimited is a flat $299 per month billed annually, or $349 monthly."
+              "A flat fee for the whole account, not per user: $25 a month for up to 20 people, $59 and $99 a month with no limit on people, and $299 a month billed annually."
             ],
             [
               "Free plan",
               "14 days free on Max, every option included.",
-              "One project and 1 GB of storage."
+              "One project, 1 GB of storage and up to five people."
             ],
             [
               "SSO / SAML, audit log export, retention",
               "On Max.",
-              "Not offered at the Plus tier."
+              "Not offered."
             ]
           ]
         }
@@ -704,8 +704,8 @@
     "cost": {
       "title": "What each one actually costs you",
       "paragraphs": [
-        "Basecamp Plus is $15 per user per month billed monthly, and Pro Unlimited is a flat $299 per month billed annually, or $349 monthly, for any number of people. Kolabr is $9.99, $19.99 or $39.99 per user per month. Neither product charges for clients or contractors.",
-        "Above about twenty staff the flat plan is the lower number, so compare what the number buys. Kolabr includes requests with response targets, a wiki in every channel, video calls and scheduled events with calendar sync. What your plan buys is seats per channel: 30 on Starter, 100 on Pro, unlimited on Max, shared between your people and your guests."
+        "Basecamp charges for the account rather than the person: $25 a month for up to twenty people, $59 and $99 a month with no limit on people, and $299 a month billed annually at the top. Kolabr is $9.99, $19.99 or $39.99 per user per month. Neither product charges extra for clients or contractors, though on Basecamp's two smallest plans they count towards the head count.",
+        "A flat fee is the smaller bill for most teams, so the question is what the number buys. A Basecamp project gives you a message board, to-dos, a schedule and a chat room. Kolabr gives every channel requests with owners and response targets, a wiki, video calls and scheduled events with calendar sync, and keeps each client separate rather than each project. What your plan buys is seats per channel: 30 on Starter, 100 on Pro, unlimited on Max, shared between your people and your guests."
       ],
       "note": [
         "If you currently pay for a helpdesk or a knowledge base alongside your project tool, add those in before you compare. ",
@@ -722,8 +722,8 @@
       },
       "other": {
         "name": "Basecamp",
-        "price": "$15, or $299 flat",
-        "text": "per user per month on Plus, or a flat monthly fee on Pro Unlimited for any number of users. Clients and contractors are free."
+        "price": "$25 to $299 flat",
+        "text": "a month for the whole account, not per user. $25 covers twenty people, $59 and $99 cover any number, $299 is billed annually. Clients and contractors count towards the capped tiers."
       }
     },
     "faq": {
@@ -747,7 +747,7 @@
         },
         {
           "title": "Which is cheaper?",
-          "body": "At a flat $299 per month, Basecamp stops charging per person after a certain size, so for a large team it is the lower number. Below roughly twenty people, per-seat pricing applies on both sides and they are closer. The more useful question is what each price includes: Kolabr covers requests with SLAs, a wiki, video calls and scheduled events without another subscription."
+          "body": "Usually Basecamp, and we would rather say so than dress it up. It charges one flat fee for the account, from $25 a month for up to twenty people and $59 with no limit on people, where Kolabr charges per user. What the fee buys is where they part: Kolabr covers requests with owners and response targets, a wiki in every channel, video calls and scheduled events, and organises around the client rather than the project. If a shared to-do list is all the structure your work needs, Basecamp is cheaper and will stay cheaper."
         },
         {
           "title": "Can we move from Basecamp to Kolabr?",
