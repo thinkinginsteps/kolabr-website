@@ -2,28 +2,10 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { CtaBand } from "@/components/CtaBand";
 import { JsonLd } from "@/components/JsonLd";
 import { HeroLede, PageHero } from "@/components/PageHero";
+import { CONTACT_STEPS } from "@/lib/contact";
 import { breadcrumbJsonLd, graph, pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata("/contact/");
-
-const steps = [
-  {
-    title: "A person reads it",
-    body: "Someone who knows the product answers, usually the same day. If your question is one line, so is the reply.",
-  },
-  {
-    title: "A call only if it helps",
-    body: "Thirty minutes, screen shared, your actual clients on the whiteboard. We will not book one just to have booked one.",
-  },
-  {
-    title: "A straight answer on fit",
-    body: "If you need a contact centre, a planning tool or a company wiki, we will tell you and point you somewhere sensible.",
-  },
-  {
-    title: "Help with the first channel",
-    body: "Categories, response targets and the wiki pages worth writing first, set up with you rather than left as homework.",
-  },
-];
 
 export default function ContactPage() {
   return (
@@ -54,7 +36,7 @@ export default function ContactPage() {
               <p className="text-[16px] text-pretty text-ink-muted">No sequence of nurture emails, and nobody phoning your switchboard.</p>
             </div>
             <ol className="flex flex-col gap-1.5">
-              {steps.map((s, i) => (
+              {CONTACT_STEPS.map((s, i) => (
                 <li key={s.title} className="grid grid-cols-[34px_1fr] gap-4 border-t border-border py-5">
                   <span
                     aria-hidden="true"

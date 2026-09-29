@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import { CONTACT_SIZES, CONTACT_TOPICS, type ContactSize, type ContactTopic } from "@/lib/contact";
 
@@ -29,6 +30,7 @@ const NOTES: Record<Status, string> = {
  * mistakes before a round trip.
  */
 export function ContactForm() {
+  const router = useRouter();
   const [topic, setTopic] = useState<ContactTopic>("A trial");
   const [size, setSize] = useState<ContactSize>("6 to 20");
   const [status, setStatus] = useState<Status>("idle");
@@ -82,6 +84,16 @@ export function ContactForm() {
       setTopic("A trial");
       setSize("6 to 20");
       setStatus("sent");
+
+      // The named event a GA4 tag in the container can turn into a conversion, pushed before
+      // the navigation so it cannot be lost to it. dataLayer only exists once the visitor has
+      // accepted analytics, so this is a no-op for everyone else.
+      window.dataLayer?.push({ event: "generate_lead", form_name: "contact", contact_topic: topic });
+
+      // A page of its own, rather than a line of text under the button: the address changes, so
+      // something visibly happened, the back button cannot resubmit, and there is a URL for
+      // analytics to count. The "sent" state above still shows if this navigation is slow.
+      router.push("/contact/thank-you");
     } catch {
       setStatus("error");
     }

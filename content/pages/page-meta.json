@@ -24,6 +24,12 @@
     "description": "Tell us how you work with clients, contractors and suppliers and we will say honestly whether Kolabr fits. A person replies within one working day.",
     "name": "Contact"
   },
+  "/contact/thank-you/": {
+    "title": "Thank you, your message has reached the Kolabr team",
+    "description": "Your message is with us and a person replies within one working day, to the address you gave. Here is what happens next, and what we will not do.",
+    "name": "Thank you",
+    "noindex": true
+  },
   "/product/channels/": {
     "title": "Shared channels for your team and your clients | Kolabr",
     "description": "A channel is one shared workspace for your team and the people you work with, holding chat, requests, meetings and a wiki behind a single membership list.",

@@ -17,6 +17,7 @@ export const META_ROUTES = [
   "/blog/",
   "/about/",
   "/contact/",
+  "/contact/thank-you/",
   "/product/channels/",
   "/product/chat/",
   "/product/requests/",

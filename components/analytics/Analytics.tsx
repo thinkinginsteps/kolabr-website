@@ -62,7 +62,38 @@ function RouteChanges() {
   useEffect(() => {
     if (last.current === pathname) return;
     last.current = pathname;
-    window.dataLayer?.push({ event: "page_view", page_path: pathname, page_title: document.title });
+
+    /**
+     * Wait for the title before reporting the page. Next writes it after this effect runs, and
+     * it replaces the <title> element rather than editing the old one, so this watches the head
+     * for that swap and compares against the title we arrived with. Reading it straight away
+     * sends the previous page's title, which makes the Pages report in GA4 useless.
+     */
+    const before = document.title;
+    let sent = false;
+    let observer: MutationObserver | null = null;
+    let timer = 0;
+
+    const send = () => {
+      if (sent) return;
+      sent = true;
+      observer?.disconnect();
+      window.clearTimeout(timer);
+      window.dataLayer?.push({ event: "page_view", page_path: pathname, page_title: document.title });
+    };
+
+    observer = new MutationObserver(() => {
+      if (document.title !== before) send();
+    });
+    observer.observe(document.head, { childList: true, subtree: true });
+    // Two pages can share a title, and then nothing changes. Report anyway rather than never.
+    timer = window.setTimeout(send, 600);
+
+    return () => {
+      sent = true;
+      observer?.disconnect();
+      window.clearTimeout(timer);
+    };
   }, [pathname]);
   return null;
 }
