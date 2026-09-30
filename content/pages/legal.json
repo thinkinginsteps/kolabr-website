@@ -882,16 +882,12 @@
         "label": "6. Billing errors"
       },
       {
-        "id": "rf-outage",
-        "label": "7. Outages"
-      },
-      {
         "id": "rf-how",
-        "label": "8. How to ask, and how long it takes"
+        "label": "7. How to ask, and how long it takes"
       },
       {
         "id": "rf-consumer",
-        "label": "9. Your statutory rights"
+        "label": "8. Your statutory rights"
       }
     ],
     "short": {
@@ -1002,19 +998,6 @@
           },
           {
             "p": "Guests are never billable on any plan. If a guest ever appears on an invoice, it is an error."
-          }
-        ]
-      },
-      {
-        "id": "rf-outage",
-        "num": "7",
-        "title": "Outages",
-        "blocks": [
-          {
-            "p": "If monthly availability falls below 99.5% for reasons within our control, Pro and Business customers can request a credit against the following month: ten per cent of the monthly fee for availability between 99% and 99.5%, and twenty-five per cent below 99%."
-          },
-          {
-            "p": "Credits are applied to the next invoice rather than paid out, and must be requested within thirty days of the month in question."
           }
         ]
       },
