@@ -126,5 +126,6 @@ export const footer = {
     { label: "Terms", href: "/terms" },
     { label: "Refunds", href: "/refunds" },
     { label: "Cookies", href: "/cookies" },
+    { label: "DPA", href: "/dpa" },
   ] satisfies NavLink[],
 };

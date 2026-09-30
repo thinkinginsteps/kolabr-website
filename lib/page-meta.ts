@@ -49,6 +49,7 @@ export const META_ROUTES = [
   "/terms/",
   "/cookies/",
   "/refunds/",
+  "/dpa/",
 ] as const;
 
 export type MetaRoute = (typeof META_ROUTES)[number];

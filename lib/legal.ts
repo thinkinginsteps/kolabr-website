@@ -33,6 +33,7 @@ export const LEGAL_SLUGS = [
   "terms",
   "cookies",
   "refunds",
+  "dpa",
 ] as const;
 
 export type LegalSlug = (typeof LEGAL_SLUGS)[number];

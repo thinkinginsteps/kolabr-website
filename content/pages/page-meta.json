@@ -188,5 +188,11 @@
     "description": "When Kolabr issues refunds: the free trial, the first thirty days, annual plans, downgrades, outages and billing errors, and how to ask for one.",
     "name": "Refunds",
     "noindex": true
+  },
+  "/dpa/": {
+    "title": "Data processing addendum | Kolabr for your customers",
+    "description": "The terms on which Kolabr processes the personal information your team and your clients put into a channel, and what we will never do with it.",
+    "name": "Data processing addendum",
+    "noindex": true
   }
 }

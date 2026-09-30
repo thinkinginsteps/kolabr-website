@@ -68,19 +68,19 @@
         "title": "Who we are",
         "blocks": [
           {
-            "p": "Kolabr is operated by [COMPANY NAME] (“we”, “us”, “our”). For the purposes of the Protection of Personal Information Act 4 of 2013 (POPIA) we are the responsible party for personal information we collect about visitors to our website and about the people who administer and pay for a Kolabr account."
+            "p": "Kolabr is operated by [COMPANY NAME] (“we”, “us”, “our”). For personal information we collect about visitors to our website and about the people who administer and pay for a Kolabr account, we are the business that decides why and how it is used."
           },
           {
-            "p": "For content that customers put into their channels we act as an operator, processing that information on the customer’s instructions. The customer organisation is the responsible party for its own channel content. Where the General Data Protection Regulation applies, read “responsible party” as controller and “operator” as processor."
+            "p": "For content that customers put into their channels we act as a service provider, processing that information only on the customer’s instructions and only to provide the service. The customer organisation decides what goes in and why. Where the GDPR or UK GDPR applies, read “business” as controller and “service provider” as processor."
           },
           {
             "p": [
-              "Our information officer can be reached through the ",
+              "Our privacy contact can be reached through the ",
               {
                 "label": "contact form",
                 "href": "/contact"
               },
-              ", marked for the attention of the information officer."
+              ", marked for the attention of the privacy team."
             ]
           }
         ]
@@ -205,19 +205,43 @@
             "p": "We share personal information with a small number of service providers who help us run Kolabr, each bound by contract to process it only on our instructions:"
           },
           {
-            "ul": [
-              "Cloud hosting and storage providers, for running the service and holding your data.",
-              "Payment processors, for taking payment and issuing invoices.",
-              "Email delivery providers, for service notices and notifications.",
-              "Error and performance monitoring providers, for diagnosing faults.",
-              "Customer support tooling, for handling enquiries you send us."
-            ]
+            "table": {
+              "head": [
+                "Provider",
+                "What they do",
+                "Where"
+              ],
+              "rows": [
+                [
+                  "[HOSTING PROVIDER]",
+                  "Runs the service and holds your data",
+                  "[DATA REGION]"
+                ],
+                [
+                  "[PAYMENT PROCESSOR]",
+                  "Takes payment and issues invoices",
+                  "[REGION]"
+                ],
+                [
+                  "Resend",
+                  "Delivers service notices and notifications by email",
+                  "United States"
+                ],
+                [
+                  "[MONITORING PROVIDER]",
+                  "Diagnoses faults and performance problems",
+                  "[REGION]"
+                ],
+                [
+                  "Google",
+                  "Website analytics, only after you accept the cookie banner",
+                  "United States"
+                ]
+              ]
+            }
           },
           {
-            "p": "We will also disclose information where we are legally required to, where it is necessary to establish or defend a legal claim, or to protect the rights and safety of people using the service. If we are compelled to disclose customer content we will tell the customer unless we are prohibited from doing so."
-          },
-          {
-            "p": "If Kolabr is acquired or merged, information may transfer to the acquiring entity. You would be told before that happened and before your information became subject to a different privacy policy."
+            "p": "We update this list when it changes. We will also disclose information where we are legally required to, and we will tell the customer unless we are prohibited from doing so."
           }
         ]
       },
@@ -227,7 +251,7 @@
         "title": "Where information is stored",
         "blocks": [
           {
-            "p": "Your data is stored with cloud providers whose facilities may be located outside South Africa. Where personal information is transferred across borders we rely on the conditions in section 72 of POPIA, and where the GDPR applies we rely on standard contractual clauses or an adequacy decision."
+            "p": "Your data is stored with cloud providers whose facilities are located in [DATA REGION]. Where we transfer personal information out of the EEA or the UK for customers there, we rely on standard contractual clauses or an adequacy decision."
           },
           {
             "p": "You can ask where your data is held before signing up, and we will tell you plainly what is possible."
@@ -260,7 +284,7 @@
                 ],
                 [
                   "Billing and tax records",
-                  "Five years after the transaction, as required by South African tax law"
+                  "Seven years after the transaction, for tax and accounting purposes"
                 ],
                 [
                   "Technical and security logs",
@@ -297,20 +321,22 @@
         "title": "Your rights",
         "blocks": [
           {
-            "p": "Under POPIA, and under the GDPR where it applies to you, you have the right to:"
+            "p": "Depending on where you live, state privacy laws such as the California Consumer Privacy Act give you the rights below. We extend them to everyone rather than checking your address first, and where the GDPR or UK GDPR applies to you, you have these rights under that law too."
           },
           {
             "ul": [
               "Ask what personal information we hold about you and get a copy of it.",
               "Have information that is inaccurate corrected, or information we no longer have grounds to keep deleted.",
-              "Object to processing we carry out on the basis of legitimate interest.",
-              "Withdraw consent to marketing at any time, without affecting anything that happened before.",
+              "Opt out of the sale or sharing of your personal information. We do not sell or share it, and never have, so there is nothing to opt out of.",
+              "Limit how we use sensitive personal information. We do not collect any.",
+              "Object to processing we carry out on the basis of legitimate interest, and withdraw consent to marketing at any time.",
               "Receive your information in a portable format.",
-              "Complain to the Information Regulator of South Africa, or to your local supervisory authority."
+              "Be treated no differently for exercising any of these rights.",
+              "Complain to your state attorney general, to the California Privacy Protection Agency if you are in California, or to your local supervisory authority elsewhere."
             ]
           },
           {
-            "p": "To exercise any of these, use the contact form. We will respond within thirty days. We may need to verify who you are first, and if you are a guest in someone else’s channel we may need to route the request through that organisation."
+            "p": "To exercise any of these, use the contact form. We will respond within forty-five days, and will tell you if we need longer. We may need to verify who you are first, and if you are a guest in someone else’s channel we may need to route the request through that organisation. You can name an authorised agent to make a request for you."
           }
         ]
       },
@@ -323,7 +349,7 @@
             "p": "Data is encrypted in transit and at rest. Access to production systems is limited to the people who need it, logged, and protected by multi-factor authentication. We keep audit logs of administrative actions inside customer accounts, which customers can inspect."
           },
           {
-            "p": "No system is perfectly secure. If a breach affects your personal information we will notify you and the Information Regulator as required by section 22 of POPIA, with what we know, what we are doing about it, and what you should do."
+            "p": "No system is perfectly secure. If a breach affects your personal information we will notify you without unreasonable delay, and any regulator we are required to notify under the law of your state, with what we know, what we are doing about it, and what you should do."
           }
         ]
       },
@@ -333,7 +359,7 @@
         "title": "Children",
         "blocks": [
           {
-            "p": "Kolabr is a business product and is not directed at children. Where a school or similar organisation uses Kolabr, channels should contain staff, parents and suppliers rather than pupils. If a customer needs to process children’s information through the service, they are responsible for obtaining the authorisation POPIA requires and should speak to us before doing so."
+            "p": "Kolabr is a business product, is not directed at children, and we do not knowingly collect personal information from anyone under 13. Where a school or similar organisation uses Kolabr, channels are for staff, parents, coaches and suppliers, not for pupils. A customer must not create accounts for children under 13 or put pupil records into a channel. If you believe a child has given us personal information, contact us and we will delete it. Schools subject to FERPA or to state student-privacy laws should speak to us before using the service for anything touching student records."
           }
         ]
       },
@@ -477,7 +503,10 @@
         "title": "Payment",
         "blocks": [
           {
-            "p": "Subscriptions are billed monthly or annually in advance, in South African rand unless we have agreed otherwise in writing. Prices exclude VAT, which is added where applicable."
+            "p": "Subscriptions are billed monthly or annually in advance, in US dollars unless we have agreed otherwise in writing. Prices exclude sales tax, which we add where we are required to collect it."
+          },
+          {
+            "p": "Subscriptions renew automatically at the end of each billing period, monthly or annually, at the then-current price, until you cancel. You can cancel at any time from the account settings, and cancelling stops the next renewal rather than ending the period you have paid for. We send a reminder before an annual plan renews."
           },
           {
             "p": "Payment is due on the invoice date. If payment fails we will retry and notify you. Accounts more than fourteen days in arrears may be suspended, and accounts more than sixty days in arrears may be closed with the data handling described in section 10."
@@ -552,7 +581,7 @@
         "title": "Availability and support",
         "blocks": [
           {
-            "p": "We aim for 99.5% monthly availability, excluding scheduled maintenance, which we announce in advance and run outside South African business hours wherever possible."
+            "p": "We aim for 99.5% monthly availability, excluding scheduled maintenance, which we announce in advance and run outside peak hours for the majority of our customers wherever possible."
           },
           {
             "p": "Support is provided through the contact form and through your channels. We do not guarantee a response time, though Pro and Business accounts are answered first."
@@ -607,7 +636,7 @@
         "title": "Law and disputes",
         "blocks": [
           {
-            "p": "This agreement is governed by South African law, and the courts of South Africa have jurisdiction. Before starting proceedings, both sides agree to raise the issue in writing and give the other thirty days to resolve it."
+            "p": "This agreement is governed by the laws of the State of [STATE NAME], without regard to its conflict of laws rules, and the state and federal courts located in [COUNTY OR CITY], [STATE NAME] have exclusive jurisdiction. Before starting proceedings, both sides agree to raise the issue in writing and give the other thirty days to resolve it."
           },
           {
             "p": "If any provision is found unenforceable, the rest continues to apply."
@@ -1030,7 +1059,7 @@
         "title": "Your statutory rights",
         "blocks": [
           {
-            "p": "Nothing here limits any right you have under the Consumer Protection Act 68 of 2008 or the Electronic Communications and Transactions Act 25 of 2002, including the cooling-off rights that apply to certain electronic transactions. Where this policy gives you more than the law requires, this policy applies."
+            "p": "Nothing here limits any right you have under the law of your state, including any right to cancel an automatically renewing subscription. Where this policy gives you more than the law requires, this policy applies."
           }
         ]
       }
@@ -1044,6 +1073,246 @@
           "href": "/contact"
         },
         " and a person will answer. If you are an existing customer, raise it in your channel and it goes to the same place with the context attached."
+      ]
+    }
+  },
+  "dpa": {
+    "eyebrow": "Legal",
+    "title": "Data processing addendum",
+    "lede": "The terms on which [COMPANY NAME], trading as Kolabr, processes personal information that a customer puts into its channels. This addendum forms part of the agreement and applies whenever the customer is the controller and Kolabr is the processor.",
+    "chips": [
+      "Last updated 30 September 2026",
+      "Forms part of the Kolabr terms of service"
+    ],
+    "nav": [
+      {
+        "id": "dpa-scope",
+        "label": "1. Scope and roles"
+      },
+      {
+        "id": "dpa-what",
+        "label": "2. What we process"
+      },
+      {
+        "id": "dpa-instructions",
+        "label": "3. Instructions and confidentiality"
+      },
+      {
+        "id": "dpa-security",
+        "label": "4. Security"
+      },
+      {
+        "id": "dpa-sub",
+        "label": "5. Sub-processors"
+      },
+      {
+        "id": "dpa-help",
+        "label": "6. Helping you meet your obligations"
+      },
+      {
+        "id": "dpa-breach",
+        "label": "7. Breaches"
+      },
+      {
+        "id": "dpa-transfer",
+        "label": "8. International transfers"
+      },
+      {
+        "id": "dpa-end",
+        "label": "9. Return and deletion"
+      },
+      {
+        "id": "dpa-audit",
+        "label": "10. Audits"
+      },
+      {
+        "id": "dpa-order",
+        "label": "11. Order of precedence"
+      }
+    ],
+    "short": {
+      "title": "In short",
+      "body": "What your people and your clients write in a channel is yours. We process it only to run the service, only on your instructions, and we do not use it to train anything or sell it to anyone. If you need a signed copy for procurement, ask and we will send one."
+    },
+    "sections": [
+      {
+        "id": "dpa-scope",
+        "num": "1",
+        "title": "Scope and roles",
+        "blocks": [
+          {
+            "p": "This addendum applies to personal information contained in customer content: everything your team and the people you invite put into a channel. For that information you are the controller, or the business, and we are the processor, or the service provider."
+          },
+          {
+            "p": "For information we collect about you directly, such as the person who administers the account, who pays and who contacts support, we are the controller and our privacy policy applies instead."
+          }
+        ]
+      },
+      {
+        "id": "dpa-what",
+        "num": "2",
+        "title": "What we process",
+        "blocks": [
+          {
+            "table": {
+              "head": [
+                "",
+                "What it covers"
+              ],
+              "rows": [
+                [
+                  "Subject matter",
+                  "Providing the Kolabr service: channels, chat, requests, meetings, scheduled events and the wiki"
+                ],
+                [
+                  "Duration",
+                  "For as long as the account is active, then as set out in section 9"
+                ],
+                [
+                  "Categories of people",
+                  "Your staff, and the clients, partners, suppliers and other guests you invite into channels"
+                ],
+                [
+                  "Categories of information",
+                  "Names, email addresses, profile images, message and file content, request records and activity logs"
+                ],
+                [
+                  "Special categories",
+                  "None is required by the service. You should not put it into a channel without agreeing that with us first"
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "dpa-instructions",
+        "num": "3",
+        "title": "Instructions and confidentiality",
+        "blocks": [
+          {
+            "p": "We process customer content only on your documented instructions, which are the agreement, this addendum and your use of the product's own settings. If we believe an instruction breaks data protection law, we will tell you rather than carry it out."
+          },
+          {
+            "p": "We do not use customer content to train machine learning models, to build profiles, or for any purpose of our own. We do not sell it or share it for advertising."
+          },
+          {
+            "p": "Everyone at Kolabr who can reach customer content is bound by confidentiality obligations that survive the end of their engagement, and access is limited to the people who need it to do their job."
+          }
+        ]
+      },
+      {
+        "id": "dpa-security",
+        "num": "4",
+        "title": "Security",
+        "blocks": [
+          {
+            "p": "We keep appropriate technical and organisational measures, described in the security section of our privacy policy: encryption in transit and at rest, multi-factor authentication on production access, least-privilege access, and audit logging of administrative actions inside customer accounts."
+          },
+          {
+            "p": "Customers on Business can enforce single sign-on, set their own retention rules and export the audit log."
+          }
+        ]
+      },
+      {
+        "id": "dpa-sub",
+        "num": "5",
+        "title": "Sub-processors",
+        "blocks": [
+          {
+            "p": [
+              "You give general authorisation for us to engage sub-processors. The current list, with what each one does and where, is in the ",
+              {
+                "label": "privacy policy",
+                "href": "/privacy"
+              },
+              "."
+            ]
+          },
+          {
+            "p": "We stay responsible for what a sub-processor does, and we impose the same obligations on them that this addendum imposes on us. We will give at least thirty days' notice before adding or replacing one, and if you reasonably object on data protection grounds you may end the affected part of the service without penalty for the unused period."
+          }
+        ]
+      },
+      {
+        "id": "dpa-help",
+        "num": "6",
+        "title": "Helping you meet your obligations",
+        "blocks": [
+          {
+            "p": "If someone exercises a data protection right and the information is in your channels, the request is yours to answer, because it is your content and you decide what happens to it. The product lets you find, export, correct and delete it yourself. Where you cannot, we will help within a reasonable time."
+          },
+          {
+            "p": "We will give you the information you reasonably need for a data protection impact assessment or a consultation with a regulator, so far as it relates to our processing."
+          }
+        ]
+      },
+      {
+        "id": "dpa-breach",
+        "num": "7",
+        "title": "Breaches",
+        "blocks": [
+          {
+            "p": "If we become aware of a personal data breach affecting customer content, we will notify you without undue delay and in any event within seventy-two hours of becoming aware, with what we know, what we are doing about it and what we suggest you do. We will not notify your regulator or your people on your behalf unless you ask us to."
+          }
+        ]
+      },
+      {
+        "id": "dpa-transfer",
+        "num": "8",
+        "title": "International transfers",
+        "blocks": [
+          {
+            "p": "Customer content is held in [DATA REGION]. Where we transfer personal information out of the EEA, the UK or Switzerland, we rely on the standard contractual clauses, with the UK addendum where the UK GDPR applies, or on an adequacy decision where one covers the transfer."
+          }
+        ]
+      },
+      {
+        "id": "dpa-end",
+        "num": "9",
+        "title": "Return and deletion",
+        "blocks": [
+          {
+            "p": "You can export your content at any time while the account is active. When the agreement ends, you have thirty days to export it. After that we delete it, and it is removed from backups within a further ninety days."
+          },
+          {
+            "p": "We will keep information for longer only where the law requires it, and where we do, this addendum keeps applying to it."
+          }
+        ]
+      },
+      {
+        "id": "dpa-audit",
+        "num": "10",
+        "title": "Audits",
+        "blocks": [
+          {
+            "p": "We will give you the information you need to show that we are meeting this addendum. Where that is not enough, you may audit us once in any twelve month period, on thirty days' notice, at your cost, during business hours and without disrupting the service. A recognised third-party report, where we hold one, satisfies this."
+          }
+        ]
+      },
+      {
+        "id": "dpa-order",
+        "num": "11",
+        "title": "Order of precedence",
+        "blocks": [
+          {
+            "p": "If this addendum conflicts with the agreement, this addendum wins for anything to do with the processing of personal information. Everything else in the agreement continues to apply."
+          },
+          {
+            "p": "If you need a signed copy, or your own paper, ask through the contact form and we will work with you."
+          }
+        ]
+      }
+    ],
+    "closing": {
+      "title": "Questions about this addendum",
+      "body": [
+        "Send them through the ",
+        {
+          "label": "contact form",
+          "href": "/contact"
+        },
+        " and mark them for the privacy team."
       ]
     }
   }
