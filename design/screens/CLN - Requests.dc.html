@@ -383,11 +383,11 @@ input, textarea, select { caret-color: transparent !important; }
             <span style="flex: none; font-weight: 550;">21/30</span>
           </div>
           <div style="display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--muted, #6e6e73);">
-            <span style="width: 52px; flex: none;">Channels</span>
+            <span style="width: 52px; flex: none;">Storage</span>
             <span style="display: block; flex: 1; height: 3px; border-radius: 980px; overflow: hidden; background: var(--chip, rgba(0,0,0,0.05));">
               <span style="display: block; width: 80%; height: 100%; border-radius: 980px; background: var(--muted, #6e6e73); opacity: 0.42;"></span>
             </span>
-            <span style="flex: none; font-weight: 550;">9/30</span>
+            <span style="flex: none; font-weight: 550;">6.2 / 10 GB</span>
           </div>
         </div>
       </div>
@@ -431,7 +431,7 @@ input, textarea, select { caret-color: transparent !important; }
       <div style="display: flex; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 22px;">
         <div style="flex: 1; min-width: 260px;">
           <h1 style="margin: 0; font-size: 34px; font-weight: 700; letter-spacing: -0.028em; line-height: 1.08;">Request Management</h1>
-          <p style="margin: 10px 0 0; font-size: 15px; color: var(--muted, #6b8290);">Every channel · 77 records</p>
+          <p style="margin: 10px 0 0; font-size: 15px; color: var(--muted, #6b8290);">77 records</p>
         </div>
       </div>
 
@@ -504,8 +504,8 @@ input, textarea, select { caret-color: transparent !important; }
         </sc-if>
 
         <div style="overflow-x: auto;">
-          <div style="min-width: 1120px;">
-            <div style="display: grid; grid-template-columns: 96px minmax(240px, 1.6fr) 100px 92px minmax(116px, 1fr) minmax(130px, 1fr) 88px minmax(112px, 0.9fr) 92px minmax(150px, 1fr); gap: 4px; align-items: center; box-sizing: border-box; padding: 11px 22px; background: var(--tabTrack, #e9e9ec); font-size: 10.5px; font-weight: 600; letter-spacing: 0.1em; color: var(--muted, #6b8290);">
+          <div style="min-width: 1032px;">
+            <div style="display: grid; grid-template-columns: 96px minmax(240px, 1.6fr) 100px 92px minmax(116px, 1fr) minmax(130px, 1fr) minmax(112px, 0.9fr) 92px minmax(150px, 1fr); gap: 4px; align-items: center; box-sizing: border-box; padding: 11px 22px; background: var(--tabTrack, #e9e9ec); font-size: 10.5px; font-weight: 600; letter-spacing: 0.1em; color: var(--muted, #6b8290);">
               <sc-for list="{{ columns }}" as="c" hint-placeholder-count="10">
                 <div style="display: flex; align-items: center; gap: 4px; cursor: pointer; white-space: nowrap;">
                   {{ c.label }}
@@ -515,14 +515,13 @@ input, textarea, select { caret-color: transparent !important; }
             </div>
 
             <sc-for list="{{ rows }}" as="r" hint-placeholder-count="6">
-              <div sc-camel-on-click="{{ openRequestChat }}" style="display: grid; grid-template-columns: 96px minmax(240px, 1.6fr) 100px 92px minmax(116px, 1fr) minmax(130px, 1fr) 88px minmax(112px, 0.9fr) 92px minmax(150px, 1fr); gap: 4px; align-items: center; box-sizing: border-box; padding: 13px 22px; border-top: 1px solid var(--hairline, rgba(0,0,0,0.07)); font-size: 13.5px; cursor: pointer; transition: background 120ms ease;" style-hover="background: var(--rowHover, rgba(0,0,0,0.022));">
+              <div sc-camel-on-click="{{ openRequestChat }}" style="display: grid; grid-template-columns: 96px minmax(240px, 1.6fr) 100px 92px minmax(116px, 1fr) minmax(130px, 1fr) minmax(112px, 0.9fr) 92px minmax(150px, 1fr); gap: 4px; align-items: center; box-sizing: border-box; padding: 13px 22px; border-top: 1px solid var(--hairline, rgba(0,0,0,0.07)); font-size: 13.5px; cursor: pointer; transition: background 120ms ease;" style-hover="background: var(--rowHover, rgba(0,0,0,0.022));">
                 <div style="font-size: 12.5px; color: var(--muted, #6b8290); letter-spacing: -0.01em;">{{ r.id }}</div>
                 <div style="min-width: 0; font-weight: 500; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-wrap: pretty;">{{ r.title }}</div>
                 <div><span style="display: inline-block; font-size: 11.5px; font-weight: 600; padding: 4px 10px; border-radius: 8px; background: {{ r.statusBg }}; color: {{ r.statusFg }};">{{ r.status }}</span></div>
                 <div><span style="display: inline-block; font-size: 11.5px; font-weight: 600; padding: 4px 10px; border-radius: 8px; background: {{ r.prioBg }}; color: {{ r.prioFg }};">{{ r.priority }}</span></div>
                 <div style="min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ r.owner }}</div>
                 <div style="min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted, #6b8290);">{{ r.assigned }}</div>
-                <div style="color: var(--muted, #6b8290);">{{ r.channel }}</div>
                 <div style="min-width: 0; color: var(--muted, #6b8290); font-size: 12.5px;">{{ r.category }}</div>
                 <div style="display: flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 500; color: {{ r.slaColor }};">
                   <span style="width: 7px; height: 7px; border-radius: 50%; background: {{ r.slaColor }};"></span>
@@ -999,7 +998,7 @@ class Component extends DCLogic {
         shadow: t === this.state.tab ? '0 1px 3px var(--shadowStrong, rgba(0,0,0,0.14))' : 'none',
         onClick: () => this.setState({ tab: t, page: 1 })
       })),
-      columns: ['TICKET #', 'TITLE', 'STATUS', 'PRIORITY', 'OWNER', 'ASSIGNED TO', 'CHANNEL', 'CATEGORY', 'SLA', 'CREATED'].map(label => ({ label })),
+      columns: ['REQUEST #', 'TITLE', 'STATUS', 'PRIORITY', 'OWNER', 'ASSIGNED TO', 'CATEGORY', 'SLA', 'CREATED'].map(label => ({ label })),
       query: this.state.query,
       onQuery: (e) => this.setState({ query: e.target.value, page: 1 }),
       pager: [

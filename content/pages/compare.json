@@ -147,7 +147,7 @@
         "lede": "Ask a Slack workspace what is outstanding for a client and the answer lives in someone’s memory, or in whichever tracker you bought and now maintain alongside it. Kolabr answers in the channel: any message becomes a numbered request with a category, an owner, a due date and a response target the client can see.",
         "image": {
           "file": "m2-requests",
-          "alt": "Kolabr request management: approvals, out-of-scope work, deadlines and asset deliveries in one table with owner, channel, category and SLA state"
+          "alt": "Kolabr request management: approvals, out-of-scope work, deadlines and asset deliveries in one table with owner, category and SLA state"
         },
         "cards": [
           {
@@ -421,7 +421,7 @@
         "lede": "Both products are good at conversation. Neither conversation, on its own, tells you what was promised, to whom, by when. Teams answers that by adding something alongside it: Planner, Lists, or a helpdesk product. That means a second tool, a second place to look and a second thing to keep tidy. Kolabr answers it in the same channel: any message becomes a numbered request with a category, an owner, a due date and a response-time target the client can see.",
         "image": {
           "file": "i2-requests",
-          "alt": "Kolabr request management: incidents, service requests, changes and security items in one table with owner, channel, category and SLA state"
+          "alt": "Kolabr request management: incidents, service requests, changes and security items in one table with owner, category and SLA state"
         },
         "cards": [
           {

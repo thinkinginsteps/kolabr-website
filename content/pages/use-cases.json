@@ -136,28 +136,28 @@
         "alt": "The practice dashboard: open items across client channels, filings due, items awaiting client documents, deadlines at risk, and query volume for the fortnight"
       },
       "wide": {
-        "title": "Every client on one screen",
-        "body": "Deadlines, outstanding documents and how long each client has been sitting on a request. The fee conversation goes better with a list.",
+        "title": "Every client keeps its own score",
+        "body": "Deadlines, outstanding documents and how long this client has been sitting on a request, on their own channel dashboard. The fee conversation goes better with a list.",
         "link": {
           "label": "Administration and controls",
           "href": "/product/administration"
         },
         "rows": [
           {
-            "label": "Harlow Foods",
-            "value": "3 due this week"
+            "label": "Due this week",
+            "value": "3"
           },
           {
-            "label": "Brightline Retail",
-            "value": "Audit fieldwork"
+            "label": "Awaiting client",
+            "value": "5"
           },
           {
-            "label": "Kestrel Logistics",
-            "value": "On track"
+            "label": "Filed this month",
+            "value": "12"
           },
           {
-            "label": "Awaiting client documents",
-            "value": "9",
+            "label": "Overdue",
+            "value": "2",
             "total": true
           }
         ]
@@ -364,35 +364,35 @@
       }
     },
     "oversight": {
-      "title": "Nothing hides between projects",
+      "title": "Nothing hides inside a project",
       "lede": "Which schemes are waiting on you, which are waiting on the client, and which RFI is quietly turning into a delay claim.",
       "image": {
         "file": "a5-dashboard",
         "alt": "The practice dashboard: open items across project channels, open RFIs, items awaiting client sign-off, what is due today, RFI volume for the fortnight and the requests assigned to this architect"
       },
       "wide": {
-        "title": "One view across every project",
-        "body": "Open RFIs per project, what is overdue, which client has been sitting on an approval for four days. The whole practice on one dashboard instead of chasing six people for a status.",
+        "title": "Every project keeps its own score",
+        "body": "Open RFIs, what is overdue, which client has been sitting on an approval for four days, on the dashboard of the project channel it belongs to. You open the job and it tells you, instead of chasing six people for a status.",
         "link": {
           "label": "Administration and controls",
           "href": "/product/administration"
         },
         "rows": [
           {
-            "label": "Sable Bay Precinct",
-            "value": "18 open"
+            "label": "Open RFIs",
+            "value": "18"
           },
           {
-            "label": "Mount Rise Villas",
-            "value": "9 open"
+            "label": "Awaiting client approval",
+            "value": "5"
           },
           {
-            "label": "Ridge Street Offices",
-            "value": "4 in review"
+            "label": "Issued this week",
+            "value": "9"
           },
           {
-            "label": "Awaiting client sign-off",
-            "value": "6",
+            "label": "Overdue",
+            "value": "3",
             "total": true
           }
         ]
@@ -607,8 +607,8 @@
         "alt": "The practice dashboard: open items across practice channels, open tasks, items awaiting partners, what is overdue today and task volume for the fortnight"
       },
       "wide": {
-        "title": "The practice on one screen",
-        "body": "Overdue results, outstanding referrals, compliance due. A practice manager can see the risk without walking the building.",
+        "title": "Every channel keeps its own score",
+        "body": "Overdue results, outstanding referrals and compliance due, on the dashboard of the channel they belong to. A practice manager sees the risk without walking the building.",
         "link": {
           "label": "Administration and controls",
           "href": "/product/administration"
@@ -616,10 +616,10 @@
         "rows": [
           {
             "label": "Urgent results open",
-            "value": "1 overdue"
+            "value": "1"
           },
           {
-            "label": "Referrals awaiting partners",
+            "label": "Referrals awaiting",
             "value": "6"
           },
           {
@@ -627,8 +627,8 @@
             "value": "On track"
           },
           {
-            "label": "Medical aid rejections",
-            "value": "8 claims",
+            "label": "Overdue",
+            "value": "2",
             "total": true
           }
         ]
@@ -759,7 +759,7 @@
       "lede": "Variations, delay notices, quality sign-offs, safety incidents and snags: one table, categorised the way a site actually works, each item owned by a name. At valuation you produce the record instead of reconstructing it.",
       "image": {
         "file": "con-requests",
-        "alt": "Request management for the site: variations, quality checks, delay notices, safety incidents and snags in one table with owner, channel, category and SLA"
+        "alt": "Request management for the site: variations, quality checks, delay notices, safety incidents and snags in one table with owner, category and SLA"
       },
       "cards": [
         {
@@ -835,35 +835,35 @@
       }
     },
     "oversight": {
-      "title": "What the contracts manager sees across every site",
+      "title": "What the contracts manager sees on a site",
       "lede": "Which variations are unpriced, what the client has been sitting on, and which safety item is still open at the end of the week.",
       "image": {
         "file": "con-dashboard",
         "alt": "The site dashboard: open items across site channels, open variations with the value claimed to date, items awaiting the client, safety items open, and variation volume for the fortnight"
       },
       "wide": {
-        "title": "Every site on one screen",
-        "body": "Unpriced variations, overdue claims, open safety items. You find out on Tuesday, not when the valuation comes back short.",
+        "title": "Every site keeps its own score",
+        "body": "Unpriced variations, overdue claims, open safety items, on that site's own dashboard. You find out on Tuesday, not when the valuation comes back short.",
         "link": {
           "label": "Administration and controls",
           "href": "/product/administration"
         },
         "rows": [
           {
-            "label": "Harbour Yard",
-            "value": "12 variations"
+            "label": "Unpriced variations",
+            "value": "12"
           },
           {
-            "label": "Kloof Interchange",
-            "value": "7 variations"
+            "label": "Claims overdue",
+            "value": "4"
           },
           {
-            "label": "Silverton Depot",
-            "value": "3 in snagging"
+            "label": "Open safety items",
+            "value": "6"
           },
           {
-            "label": "Unpriced, awaiting client",
-            "value": "5",
+            "label": "Overdue",
+            "value": "3",
             "total": true
           }
         ]
@@ -1070,35 +1070,35 @@
       }
     },
     "oversight": {
-      "title": "What is waiting on a signature, across every project",
+      "title": "What is waiting on a signature",
       "lede": "Which inspections are due, what work is on hold, and which certificate a client is quietly waiting for.",
       "image": {
         "file": "e2-dashboard",
         "alt": "The practice dashboard: open items across project channels, inspections due, items awaiting sign-off, work currently on hold, and inspection volume for the fortnight"
       },
       "wide": {
-        "title": "Every project on one screen",
-        "body": "Inspections due, work on hold, certificates outstanding. A principal can see where the practice is exposed without asking five engineers.",
+        "title": "Every project keeps its own score",
+        "body": "Inspections due, work on hold, certificates outstanding, on the dashboard of the project they belong to. A principal opens the job and sees where it is exposed, without asking five engineers.",
         "link": {
           "label": "Administration and controls",
           "href": "/product/administration"
         },
         "rows": [
           {
-            "label": "Cavendish Mall",
-            "value": "11 inspections"
+            "label": "Inspections due",
+            "value": "11"
           },
           {
-            "label": "N2 bridge",
-            "value": "6 open"
+            "label": "Work on hold",
+            "value": "6"
           },
           {
-            "label": "Rosslyn plant",
-            "value": "In design"
+            "label": "Certificates outstanding",
+            "value": "4"
           },
           {
-            "label": "Awaiting sign-off",
-            "value": "5",
+            "label": "Overdue",
+            "value": "2",
             "total": true
           }
         ]
@@ -1229,7 +1229,7 @@
       "lede": "Incidents, service requests, changes and security items with an owner, a priority and an SLA that runs in the open. Raised by typing in a channel, no portal login, no “did you get my email?”.",
       "image": {
         "file": "i2-requests",
-        "alt": "Request management for the provider: a P1 mail incident, onboarding, MFA rollout, backup failures and change requests in one table with owner, channel, category and SLA state"
+        "alt": "Request management for the provider: a P1 mail incident, onboarding, MFA rollout, backup failures and change requests in one table with owner, category and SLA state"
       },
       "cards": [
         {
@@ -1312,28 +1312,28 @@
         "alt": "The provider dashboard: requests this month across client channels, open requests, unassigned, SLA at risk with the next breach time, request volume for the fortnight and CSAT"
       },
       "wide": {
-        "title": "Every client on one screen",
-        "body": "Volume, breaches and satisfaction per contract. The renewal conversation and the price-increase conversation both start here.",
+        "title": "Every client keeps its own score",
+        "body": "Volume, breaches and satisfaction for this contract, on the client's own channel dashboard. The renewal conversation and the price-increase conversation both start here.",
         "link": {
           "label": "Administration and controls",
           "href": "/product/administration"
         },
         "rows": [
           {
-            "label": "Rossgrove Legal",
-            "value": "38 open"
-          },
-          {
-            "label": "Bellview Clinics",
-            "value": "21 open"
-          },
-          {
-            "label": "Harbour Freight",
-            "value": "9 open"
+            "label": "Open",
+            "value": "38"
           },
           {
             "label": "Breaching today",
-            "value": "2",
+            "value": "2"
+          },
+          {
+            "label": "Resolved this week",
+            "value": "24"
+          },
+          {
+            "label": "Overdue",
+            "value": "3",
             "total": true
           }
         ]
@@ -1547,28 +1547,28 @@
         "alt": "The firm dashboard: open items across matter channels, court deadlines, items awaiting client instruction, at-risk matters and activity for the fortnight"
       },
       "wide": {
-        "title": "Every matter on one screen",
-        "body": "Deadlines, outstanding instructions and matters going quiet. A supervising partner sees the risk without reading forty files.",
+        "title": "Every matter keeps its own score",
+        "body": "Deadlines, outstanding instructions and whether the matter has gone quiet, on that matter's own dashboard. A supervising partner sees the risk without reading the file.",
         "link": {
           "label": "Administration and controls",
           "href": "/product/administration"
         },
         "rows": [
           {
-            "label": "Kingsway acquisition",
-            "value": "Signing Friday"
+            "label": "Open items",
+            "value": "14"
           },
           {
-            "label": "Supplier dispute",
-            "value": "Filing Thursday"
+            "label": "Awaiting instruction",
+            "value": "5"
           },
           {
-            "label": "Delport estate",
-            "value": "On track"
+            "label": "Filing this week",
+            "value": "2"
           },
           {
-            "label": "Awaiting client instruction",
-            "value": "7",
+            "label": "Overdue",
+            "value": "1",
             "total": true
           }
         ]
@@ -1782,28 +1782,28 @@
         "alt": "The carrier dashboard: loads this month across account channels, open exceptions, PODs outstanding, items at risk today with the next breach time, and exception volume for the fortnight"
       },
       "wide": {
-        "title": "Every account on one screen",
-        "body": "Exceptions, claims and PODs per contract. The rate conversation at renewal goes better when the service record is a number.",
+        "title": "Every account keeps its own score",
+        "body": "Exceptions, claims and PODs for this contract, on its own channel dashboard. The rate conversation at renewal goes better when the service record is a number.",
         "link": {
           "label": "Administration and controls",
           "href": "/product/administration"
         },
         "rows": [
           {
-            "label": "Cold Harvest Foods",
-            "value": "19 open"
+            "label": "Open exceptions",
+            "value": "19"
           },
           {
-            "label": "Verity Pharma",
-            "value": "1 claim"
-          },
-          {
-            "label": "Brackwater Mills",
-            "value": "On track"
+            "label": "Claims",
+            "value": "1"
           },
           {
             "label": "PODs blocking invoices",
-            "value": "6",
+            "value": "4"
+          },
+          {
+            "label": "Overdue",
+            "value": "2",
             "total": true
           }
         ]
@@ -2017,28 +2017,28 @@
         "alt": "The plant dashboard: open items across plant channels, open NCRs, items awaiting customer approval, what is due today and NCR volume for the fortnight"
       },
       "wide": {
-        "title": "Every customer on one screen",
-        "body": "Open NCRs, overdue 8Ds, approvals outstanding. A plant manager sees the supplier scorecard forming before the customer sends it.",
+        "title": "Every customer keeps its own score",
+        "body": "Open NCRs, overdue 8Ds and approvals outstanding, on that customer's own channel dashboard. A plant manager sees the scorecard forming before the customer sends it.",
         "link": {
           "label": "Administration and controls",
           "href": "/product/administration"
         },
         "rows": [
           {
-            "label": "Torque Automotive",
-            "value": "12 open NCRs"
+            "label": "Open NCRs",
+            "value": "12"
           },
           {
-            "label": "Vandermeer Rail",
-            "value": "1 8D due"
-          },
-          {
-            "label": "Helix Appliances",
-            "value": "On track"
+            "label": "8Ds due",
+            "value": "1"
           },
           {
             "label": "Awaiting customer approval",
-            "value": "5",
+            "value": "4"
+          },
+          {
+            "label": "Overdue",
+            "value": "2",
             "total": true
           }
         ]
@@ -2169,7 +2169,7 @@
       "lede": "Approvals, scope requests, brand queries and delivery deadlines as numbered items with an owner and a clock. At the end of the month the over-servicing is a number you can point at, not a feeling in the studio.",
       "image": {
         "file": "m2-requests",
-        "alt": "Request management for the agency: sign-offs, out-of-scope revisions, legal reviews, print deadlines and asset deliveries in one table with owner, channel, category and SLA"
+        "alt": "Request management for the agency: sign-offs, out-of-scope revisions, legal reviews, print deadlines and asset deliveries in one table with owner, category and SLA"
       },
       "cards": [
         {
@@ -2252,28 +2252,28 @@
         "alt": "The agency dashboard: open items across client channels, items awaiting approval, out-of-scope work quoted but unbilled, what is due today and approval volume for the fortnight"
       },
       "wide": {
-        "title": "Every client on one screen",
-        "body": "Open rounds, unbilled scope, approvals overdue. The conversation with a client about over-servicing goes better with a list than with a grievance.",
+        "title": "Every client keeps its own score",
+        "body": "Open rounds, unbilled scope and approvals overdue, on that client's own channel dashboard. The conversation about over-servicing goes better with a list than with a grievance.",
         "link": {
           "label": "Administration and controls",
           "href": "/product/administration"
         },
         "rows": [
           {
-            "label": "Verde Health",
-            "value": "$148k unbilled"
+            "label": "Unbilled scope",
+            "value": "$148k"
           },
           {
-            "label": "Kestrel Bank",
-            "value": "4 awaiting sign-off"
-          },
-          {
-            "label": "Maru Foods",
-            "value": "On plan"
+            "label": "Awaiting sign-off",
+            "value": "4"
           },
           {
             "label": "Out-of-scope, quoted",
-            "value": "6",
+            "value": "6"
+          },
+          {
+            "label": "Overdue",
+            "value": "2",
             "total": true
           }
         ]
@@ -2487,28 +2487,28 @@
         "alt": "The programme dashboard: open items across programme channels, reporting due to funders and province, data outstanding from field sites, safeguarding items open, and field reporting activity"
       },
       "wide": {
-        "title": "Every site and every funder on one screen",
-        "body": "Who has reported, what is outstanding, what is due this week. The Monday question answered without four phone calls to four districts.",
+        "title": "Every programme keeps its own score",
+        "body": "Who has reported, what is outstanding and what is due this week, on that programme's own channel dashboard. The Monday question answered without four phone calls.",
         "link": {
           "label": "Administration and controls",
           "href": "/product/administration"
         },
         "rows": [
           {
-            "label": "Mthatha",
-            "value": "Reported"
+            "label": "Reports in",
+            "value": "8"
           },
           {
-            "label": "Lusikisiki",
-            "value": "Week 6 short"
+            "label": "Outstanding",
+            "value": "3"
           },
           {
-            "label": "Bizana",
-            "value": "Reported"
+            "label": "Due this week",
+            "value": "5"
           },
           {
-            "label": "Receipts outstanding",
-            "value": "3 sites",
+            "label": "Overdue",
+            "value": "2",
             "total": true
           }
         ]
@@ -2722,28 +2722,28 @@
         "alt": "The agency dashboard: requests this month across buildings, open requests, items awaiting trustees, open emergencies with the next breach time, and resident satisfaction"
       },
       "wide": {
-        "title": "Every building on one screen",
-        "body": "Open jobs, emergencies, approvals outstanding. The fee review with a body corporate goes better with a list than with a feeling.",
+        "title": "Every building keeps its own score",
+        "body": "Open jobs, emergencies and approvals outstanding, on that building's own channel dashboard. The fee review goes better with a list than with a feeling.",
         "link": {
           "label": "Administration and controls",
           "href": "/product/administration"
         },
         "rows": [
           {
-            "label": "Meadowridge Estate",
-            "value": "47 open"
+            "label": "Open jobs",
+            "value": "47"
           },
           {
-            "label": "Harbour Point",
-            "value": "2 emergencies"
+            "label": "Emergencies",
+            "value": "2"
           },
           {
-            "label": "Oak Row Offices",
-            "value": "On track"
+            "label": "Awaiting board approval",
+            "value": "6"
           },
           {
-            "label": "Awaiting trustee approval",
-            "value": "8",
+            "label": "Overdue",
+            "value": "3",
             "total": true
           }
         ]
