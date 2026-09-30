@@ -143,24 +143,24 @@
       "alt": "The Kolabr dashboard for a school: request volume for the fortnight, open and unassigned counts, what is due today, and the requests assigned to this teacher"
     },
     "wide": {
-      "title": "One view across every channel",
-      "body": "Open requests per department, what is overdue, which classes are waiting on the office. The whole school on one dashboard instead of asking six people how it is going.",
+      "title": "Every channel keeps its own score",
+      "body": "Open requests, what is overdue and who is waiting on the office, on the dashboard of the channel it belongs to. Admissions answers for admissions, without anyone compiling a report to find out.",
       "link": {
         "label": "Administration and controls",
         "href": "/product/administration"
       },
       "rows": [
         {
-          "label": "Facilities",
-          "value": "14 open"
+          "label": "Open",
+          "value": "14"
         },
         {
-          "label": "IT and accounts",
-          "value": "6 open"
+          "label": "Waiting on the office",
+          "value": "6"
         },
         {
-          "label": "Admissions",
-          "value": "23 in progress"
+          "label": "In progress",
+          "value": "23"
         },
         {
           "label": "Overdue",

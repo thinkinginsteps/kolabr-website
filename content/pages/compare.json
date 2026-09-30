@@ -79,11 +79,6 @@
               "Turning a message into a request",
               "One step, with the thread attached.",
               "Copy it into whichever tool you added for the purpose."
-            ],
-            [
-              "Seeing open work across every client",
-              "One org-wide view of what is open, overdue or unassigned.",
-              "Per-channel. No single view without building one."
             ]
           ]
         },
@@ -139,7 +134,7 @@
         "type": "shotCards",
         "id": "requests",
         "title": "A conversation does not tell you what was promised",
-        "lede": "Ask a Slack workspace what is outstanding for a client and the answer lives in someone’s memory, or in whichever tracker you bought and now maintain alongside it. Kolabr answers in the channel: any message becomes a numbered request with a category, an owner, a due date and a response target the client can see, and one view shows everything open across every client at once.",
+        "lede": "Ask a Slack workspace what is outstanding for a client and the answer lives in someone’s memory, or in whichever tracker you bought and now maintain alongside it. Kolabr answers in the channel: any message becomes a numbered request with a category, an owner, a due date and a response target the client can see.",
         "image": {
           "file": "m2-requests",
           "alt": "Kolabr request management: approvals, out-of-scope work, deadlines and asset deliveries in one table with owner, channel, category and SLA state"
@@ -324,11 +319,6 @@
               "Turning a message into a request",
               "One step, with the whole thread attached.",
               "Copy into Planner or a ticketing tool by hand."
-            ],
-            [
-              "Cross-channel view of open work",
-              "Org-wide request views across every channel.",
-              "Per-tool, per-team. No single view without building one."
             ]
           ]
         },
@@ -399,8 +389,8 @@
             "body": "Response targets are visible to the people waiting. Uncomfortable at first, and then it is the reason they stop phoning to ask."
           },
           {
-            "title": "A view across every channel",
-            "body": "What is open, overdue or unassigned across all your clients at once, rather than opening eleven teams in turn."
+            "title": "Everything for one client, in one place",
+            "body": "The request, the conversation that created it, the meeting it was discussed in and the note that came out of it, all in that client’s channel rather than spread across a team, a file store and a tracker."
           }
         ]
       },
@@ -566,11 +556,6 @@
               "Copy it into a to-do by hand."
             ],
             [
-              "Seeing open work across every client",
-              "One org-wide view of what is open, overdue or unassigned.",
-              "Per project, or the account-wide activity feed."
-            ],
-            [
               "Tasks",
               "Inside a request only. A task belongs to the request that created it, and closes with it.",
               "Free-standing to-do lists that outlive whatever prompted them."
@@ -671,8 +656,8 @@
             "body": "The client describes the problem in the channel and one step turns it into a numbered request with the thread attached. Nothing is retyped."
           },
           {
-            "title": "Requests roll up",
-            "body": "One view shows what is open, overdue or unassigned across every client at once, instead of opening each project in turn."
+            "title": "A channel knows its own state",
+            "body": "Open the client’s channel and what is outstanding, overdue or unassigned for them is already on the dashboard, rather than reconstructed from a project you have to remember the name of."
           }
         ]
       },
@@ -836,11 +821,6 @@
               "Tasks",
               "Inside a request only. A task belongs to the request that created it and closes with it.",
               "Free-standing task databases that outlive whatever prompted them."
-            ],
-            [
-              "Seeing open work across every client",
-              "One org-wide view of what is open, overdue or unassigned, ready on day one.",
-              "Possible with linked databases and filtered views, once somebody builds them."
             ]
           ]
         },
@@ -950,7 +930,7 @@
           },
           {
             "title": "Reporting that exists already",
-            "body": "What is open, overdue or unassigned across every channel is a view you open, not a set of linked databases somebody configures."
+            "body": "What is open, overdue or unassigned in a client’s channel is on its dashboard the day you create it, not a set of linked databases somebody configures."
           },
           {
             "title": "Tasks that cannot sprawl",
@@ -1017,7 +997,7 @@
         },
         {
           "title": "Can I build a request tracker in Notion?",
-          "body": "Yes, and people build good ones. The question is who maintains it. A Notion tracker is a database somebody designed, with views somebody configured and automations somebody keeps working, and it usually belongs to one person who eventually leaves. In Kolabr requests are part of the product: categories, owners, statuses, response targets and a cross-channel view exist the moment you create a channel."
+          "body": "Yes, and people build good ones. The question is who maintains it. A Notion tracker is a database somebody designed, with views somebody configured and automations somebody keeps working, and it usually belongs to one person who eventually leaves. In Kolabr requests are part of the product: categories, owners, statuses, response targets and the channel’s own dashboard exist the moment you create it."
         },
         {
           "title": "Both offer free guests, so what is the difference?",
@@ -1128,11 +1108,6 @@
               "Tasks",
               "Inside a request only. A task belongs to the request that created it and closes with it.",
               "The centre of the product. Tasks, subtasks, checklists and boards that live on their own."
-            ],
-            [
-              "Seeing open work across every client",
-              "One org-wide view, ready on day one.",
-              "Dashboards and filtered views, once somebody builds them."
             ]
           ]
         },
@@ -1232,7 +1207,7 @@
           },
           {
             "title": "Reporting that exists already",
-            "body": "What is open, overdue or unassigned across every client is a view you open, not a dashboard somebody builds."
+            "body": "What is open, overdue or unassigned in a client’s channel is on its dashboard the day you create it, not a dashboard somebody builds."
           },
           {
             "title": "One plan for everyone",

@@ -1,4 +1,4 @@
-// Full feature comparison on /pricing. Agreed 30 September 2026, 46 rows.
+// Full feature comparison on /pricing. Agreed 30 September 2026, 43 rows.
 // icon: "yes" / "no" are labelled Included / Not included; "tick" is a decorative tick before a qualifier.
 //
 // Nothing here is capped by the number of clients a customer has. Channels are unlimited on both
@@ -71,9 +71,6 @@ export const featureGroups: FeatureGroup[] = [
     title: "Analytics",
     rows: [
       { name: "Channel status dashboard", values: [{ icon: "yes" }, { icon: "yes" }, { icon: "yes" }] },
-      { name: "Custom reports", values: [{ icon: "no" }, { icon: "no" }, { icon: "yes" }] },
-      { name: "Client reporting (branded, scheduled to counterparts)", values: [{ icon: "no" }, { icon: "no" }, { icon: "yes" }] },
-      { name: "Executive business health dashboard", values: [{ icon: "no" }, { icon: "no" }, { icon: "yes" }] },
       { name: "Data export", values: [{ text: "CSV" }, { text: "CSV and XLS" }, { text: "CSV, XLS, API and warehouse sync" }] },
     ],
   },
