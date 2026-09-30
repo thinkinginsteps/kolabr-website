@@ -665,7 +665,7 @@ input, textarea, select { caret-color: transparent !important; }
               </label>
               <label style="display: flex; flex-direction: column; gap: 6px;">
                 <span style="font-size: 11.5px; font-weight: 600; color: var(--muted, #6b8290);">Channel</span>
-                <sc-raw-select style="height: 40px; padding: 0 11px; border: 1px solid var(--hairline, rgba(0,0,0,0.12)); border-radius: 11px; background: transparent; font-family: inherit; font-size: 13.5px; color: inherit; outline: none;"><option>Clinical team</option><option>Front desk &amp; bookings</option><option>Practice operations</option><option>Billing &amp; medical aid</option></sc-raw-select>
+                <sc-raw-select style="height: 40px; padding: 0 11px; border: 1px solid var(--hairline, rgba(0,0,0,0.12)); border-radius: 11px; background: transparent; font-family: inherit; font-size: 13.5px; color: inherit; outline: none;"><option>Clinical team</option><option>Front desk &amp; bookings</option><option>Practice operations</option><option>Billing &amp; insurance</option></sc-raw-select>
               </label>
             </div>
             <label style="display: flex; flex-direction: column; gap: 6px;">
@@ -911,7 +911,7 @@ const CHANNELS = [
   { tenant: 'Northfield Health', category: 'Clinical team', members: '14 members', unread: '' },
   { tenant: 'Northfield Health', category: 'Front desk & bookings', members: '9 members', unread: '4' },
   { tenant: 'Northfield Health', category: 'Practice operations', members: '7 members', unread: '' },
-  { tenant: 'Northfield Health', category: 'Billing & medical aid', members: '6 members', unread: '' },
+  { tenant: 'Northfield Health', category: 'Billing & insurance', members: '6 members', unread: '' },
   { tenant: 'Partners & referrals', category: 'MedLab Diagnostics', members: '8 members', unread: '12' },
   { tenant: 'Partners & referrals', category: 'Radiology partners', members: '5 members', unread: '' }
 ];
@@ -926,27 +926,27 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'TK', name: 'Thandeka Khumalo', role: 'Partner · Radiology bookings', email: 'thandeka.khumalo@capewestradiology.co.za', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'TK', name: 'Thandeka Khumalo', role: 'Partner · Radiology bookings', email: 'thandeka.khumalo@capewestradiology.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'LM', name: 'Lerato Mabaso', admin: true, role: 'Channel admin · Practice manager', email: 'lerato.mabaso@northfieldhealth.co.za', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'RS', name: 'Riaan Steyn', role: 'General practitioner', email: 'riaan.steyn@northfieldhealth.co.za', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'SV', name: 'Sanele Vilakazi', role: 'Practice nurse', email: 'sanele.vilakazi@northfieldhealth.co.za', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'FN', name: 'Fatima Nkosi', role: 'Reception lead', email: 'fatima.nkosi@northfieldhealth.co.za', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GP', name: 'Grant Pretorius', role: 'Partner · MedLab account', email: 'grant.pretorius@medlabdiagnostics.co.za', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'AM', name: 'Anja Meyer', role: 'Locum · Tue and Thu', email: 'anja.meyer@northfieldhealth.co.za', since: '27 May 2026', status: 'offline', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'LM', name: 'Lerato Mabaso', admin: true, role: 'Channel admin · Practice manager', email: 'lerato.mabaso@northfieldhealth.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'RS', name: 'Riaan Steyn', role: 'General practitioner', email: 'riaan.steyn@northfieldhealth.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'SV', name: 'Sanele Vilakazi', role: 'Practice nurse', email: 'sanele.vilakazi@northfieldhealth.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'FN', name: 'Fatima Nkosi', role: 'Reception lead', email: 'fatima.nkosi@northfieldhealth.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GP', name: 'Grant Pretorius', role: 'Partner · MedLab account', email: 'grant.pretorius@medlabdiagnostics.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'AM', name: 'Anja Meyer', role: 'Locum · Tue and Thu', email: 'anja.meyer@northfieldhealth.com', since: '27 May 2026', status: 'offline', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const CH_CATS = ['All', 'Clinical', 'Operations', 'Admin', 'Partners'];
 
 const PEOPLE = {
-  LM: { name: 'Lerato Mabaso', email: 'lerato.mabaso@northfieldhealth.co.za', role: 'Practice manager' },
-  RS: { name: 'Riaan Steyn', email: 'riaan.steyn@northfieldhealth.co.za', role: 'General practitioner' },
-  SV: { name: 'Sanele Vilakazi', email: 'sanele.vilakazi@northfieldhealth.co.za', role: 'Practice nurse' },
-  FN: { name: 'Fatima Nkosi', email: 'fatima.nkosi@northfieldhealth.co.za', role: 'Reception lead' },
-  AM: { name: 'Anja Meyer', email: 'anja.meyer@northfieldhealth.co.za', role: 'Locum · Tue and Thu' },
-  GP: { name: 'Grant Pretorius', email: 'grant.pretorius@medlabdiagnostics.co.za', role: 'Partner · MedLab' },
-  TK: { name: 'Thandeka Khumalo', email: 'thandeka.khumalo@capewestradiology.co.za', role: 'Partner · Radiology' }
+  LM: { name: 'Lerato Mabaso', email: 'lerato.mabaso@northfieldhealth.com', role: 'Practice manager' },
+  RS: { name: 'Riaan Steyn', email: 'riaan.steyn@northfieldhealth.com', role: 'General practitioner' },
+  SV: { name: 'Sanele Vilakazi', email: 'sanele.vilakazi@northfieldhealth.com', role: 'Practice nurse' },
+  FN: { name: 'Fatima Nkosi', email: 'fatima.nkosi@northfieldhealth.com', role: 'Reception lead' },
+  AM: { name: 'Anja Meyer', email: 'anja.meyer@northfieldhealth.com', role: 'Locum · Tue and Thu' },
+  GP: { name: 'Grant Pretorius', email: 'grant.pretorius@medlabdiagnostics.com', role: 'Partner · MedLab' },
+  TK: { name: 'Thandeka Khumalo', email: 'thandeka.khumalo@capewestradiology.com', role: 'Partner · Radiology' }
 };
 
 const AVATAR_BGS = ['linear-gradient(150deg, #33505b, #557a88)', 'linear-gradient(150deg, #00c3ff, #0a9fd4)', 'linear-gradient(150deg, #7c6cf0, #5c4bd8)'];
@@ -955,7 +955,7 @@ const CHANNEL_LIST = [
   { name: 'Clinical team', category: 'Clinical', desc: 'Results, handover, cover', members: 5, sla: 'Priority', people: ['RS', 'SV', 'LM', 'AM', 'FN'] },
   { name: 'Front desk & bookings', category: 'Operations', desc: 'Lists, scripts, patients', members: 4, sla: 'Priority', people: ['FN', 'LM', 'SV', 'RS'] },
   { name: 'Practice operations', category: 'Operations', desc: 'Compliance and staffing', members: 4, sla: 'Standard', people: ['LM', 'SV', 'FN', 'AM'] },
-  { name: 'Billing & medical aid', category: 'Admin', desc: 'Claims and authorisations', members: 3, sla: 'Standard', people: ['LM', 'FN', 'RS'] },
+  { name: 'Billing & insurance', category: 'Admin', desc: 'Claims and authorisations', members: 3, sla: 'Standard', people: ['LM', 'FN', 'RS'] },
   { name: 'MedLab Diagnostics', category: 'Partners', desc: 'Pathology results', members: 3, sla: 'Priority', people: ['GP', 'RS', 'SV'] },
   { name: 'Radiology partners', category: 'Partners', desc: 'Referrals and reports', members: 3, sla: 'Enhanced', people: ['TK', 'RS', 'FN'] },
   { name: 'Practice', category: 'Internal', desc: 'Roster and meetings', members: 5, sla: 'Standard', people: ['LM', 'RS', 'SV', 'FN', 'AM'] }
@@ -977,7 +977,7 @@ const EVENTS = [
   { id: 'e20', date: '2026-08-04', start: '07:45', mins: 15, title: 'Morning huddle', type: 'call', chan: 'Clinical team', src: 'kolabr', people: ['RS', 'SV', 'FN'] },
   { id: 'e21', date: '2026-08-06', start: '13:00', mins: 60, title: 'Practice meeting', type: 'meeting', chan: 'Practice', src: 'google', people: ['LM', 'RS', 'SV'] },
   { id: 'e22', date: '2026-08-11', start: '08:00', mins: 20, title: 'Vaccine fridge check', type: 'review', chan: 'Practice operations', src: 'kolabr', people: ['SV'] },
-  { id: 'e23', date: '2026-08-13', start: '16:00', mins: 0, title: 'Medical aid claims submission', type: 'deadline', chan: 'Billing & medical aid', src: 'outlook', people: ['LM'] },
+  { id: 'e23', date: '2026-08-13', start: '16:00', mins: 0, title: 'Insurance claims submission', type: 'deadline', chan: 'Billing & insurance', src: 'outlook', people: ['LM'] },
   { id: 'e24', date: '2026-08-14', start: '11:00', mins: 45, title: 'MedLab quarterly review', type: 'meeting', chan: 'MedLab Diagnostics', src: 'kolabr', people: ['GP', 'LM', 'RS'] },
   { id: 'e25', date: '2026-08-18', start: '09:00', mins: 30, title: 'Emergency trolley check', type: 'review', chan: 'Clinical team', src: 'kolabr', people: ['SV'] },
   { id: 'e26', date: '2026-08-19', start: '14:00', mins: 45, title: 'Radiology referral pathway review', type: 'review', chan: 'Radiology partners', src: 'google', people: ['TK', 'RS'] },
@@ -989,7 +989,7 @@ const EVENTS = [
   { id: 'e6', date: '2026-08-26', start: '13:00', mins: 60, title: 'Practice meeting', type: 'meeting', chan: 'Practice', src: 'google', people: ['LM', 'RS', 'SV', 'FN'] },
   { id: 'e7', date: '2026-08-26', start: '16:30', mins: 30, title: 'Repeat script backlog', type: 'review', chan: 'Front desk & bookings', src: 'kolabr', people: ['FN', 'RS'] },
   { id: 'e8', date: '2026-08-27', start: '08:00', mins: 20, title: 'Vaccine fridge check', type: 'review', chan: 'Practice operations', src: 'kolabr', people: ['SV'] },
-  { id: 'e9', date: '2026-08-27', start: '14:00', mins: 45, title: 'Medical aid rejections review', type: 'meeting', chan: 'Billing & medical aid', src: 'google', people: ['LM', 'FN'] },
+  { id: 'e9', date: '2026-08-27', start: '14:00', mins: 45, title: 'Insurance denials review', type: 'meeting', chan: 'Billing & insurance', src: 'google', people: ['LM', 'FN'] },
   { id: 'e10', date: '2026-08-28', start: '09:00', mins: 0, title: 'Locum access live for Tuesday', type: 'deadline', chan: 'Practice operations', src: 'kolabr', people: ['LM', 'AM'] },
   { id: 'e11', date: '2026-08-28', start: '11:00', mins: 45, title: 'Sharps and waste collection', type: 'review', chan: 'Practice operations', src: 'outlook', people: ['SV'] },
   { id: 'e12', date: '2026-08-31', start: '10:00', mins: 60, title: 'Monthly compliance review', type: 'review', chan: 'Practice operations', src: 'kolabr', people: ['LM', 'SV'] },
@@ -1005,15 +1005,15 @@ const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
 const CAL_VIEWS = ['Day', 'Week', 'Month', 'Year'];
 
 const ACCOUNTS = [
-  { name: 'Lerato Mabaso', email: 'lerato.mabaso@northfieldhealth.co.za', role: 'Practice manager · Northfield Health', initials: 'LM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Practice' },
-  { name: 'Lerato Mabaso', email: 'lerato@medlabdiagnostics.co.za', initials: 'LM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Referring practice · MedLab' }
+  { name: 'Lerato Mabaso', email: 'lerato.mabaso@northfieldhealth.com', role: 'Practice manager · Northfield Health', initials: 'LM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Practice' },
+  { name: 'Lerato Mabaso', email: 'lerato@medlabdiagnostics.com', initials: 'LM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Referring practice · MedLab' }
 ];
 
 const LINKABLE_REQUESTS = [
   { id: '#512', subject: 'Urgent result unactioned: file 22841', channel: 'Clinical team', status: 'In progress' },
   { id: '#510', subject: 'Referral not acknowledged: 5 days', channel: 'Radiology partners', status: 'Waiting' },
   { id: '#508', subject: 'Locum access for Tuesday, Dr Meyer', channel: 'Practice operations', status: 'New' },
-  { id: '#505', subject: 'Medical aid rejection: code 3014, 8 claims', channel: 'Billing & medical aid', status: 'Waiting' },
+  { id: '#505', subject: 'Insurance denial: code 3014, 8 claims', channel: 'Billing & insurance', status: 'Waiting' },
   { id: '#498', subject: 'Vaccine fridge temperature log, weekly', channel: 'Practice operations', status: 'In progress' }
 ];
 
@@ -1329,8 +1329,8 @@ class Component extends DCLogic {
         };
       })(),
       providers: [
-        { icon: 'event', name: 'Google Calendar', detail: conn.google ? 'dylan@northfieldhealth.co.za · two-way' : 'Bring in events and free/busy', connected: conn.google },
-        { icon: 'mail', name: 'Microsoft Outlook', detail: conn.outlook ? 'support@northfieldhealth.co.za · two-way' : 'Bring in events and free/busy', connected: conn.outlook },
+        { icon: 'event', name: 'Google Calendar', detail: conn.google ? 'dylan@northfieldhealth.com · two-way' : 'Bring in events and free/busy', connected: conn.google },
+        { icon: 'mail', name: 'Microsoft Outlook', detail: conn.outlook ? 'support@northfieldhealth.com · two-way' : 'Bring in events and free/busy', connected: conn.outlook },
         { icon: 'devices', name: 'Apple Calendar', detail: 'Sync via iCloud', connected: conn.apple },
         { icon: 'link', name: 'CalDAV / other', detail: 'Connect any CalDAV server', connected: conn.caldav }
       ].map(p => ({

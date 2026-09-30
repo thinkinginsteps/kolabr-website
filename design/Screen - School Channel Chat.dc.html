@@ -748,7 +748,7 @@ const MEMBERS = [
   { initials: 'ZD', name: 'Zanele Dube', role: 'Parent · Grade 4B', email: 'zanele.dube@ridgeway-parents.org', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
-const PINNED = { text: 'Planetarium outing: permission slips and R120 due Thursday 14:00.', meta: 'Pieter Malan · Tue' };
+const PINNED = { text: 'Planetarium outing: permission slips and $12 due Thursday 14:00.', meta: 'Pieter Malan · Tue' };
 
 const THREAD = {
   author: 'Marcus Adams', photo: '', initials: 'MA', time: '09:12',
@@ -892,13 +892,13 @@ class Component extends DCLogic {
     const base = [
       { kind: 'divider', label: 'Yesterday' },
       { kind: 'event', icon: 'group_add', label: 'Hannah Bekker joined #grade-4b', meta: 'invited by Nadia Fourie · 29 members', time: '16:02' },
-      { kind: 'msg', author: 'Pieter Malan', photo: '', initials: 'PM', time: '16:20', mention: true, text: '@channel permission slips for the Planetarium outing are due Thursday 14:00. R120 covers the bus and entry. Pay through the office or the school app.', reactions: [{ emoji: '👍', count: 11 }] },
+      { kind: 'msg', author: 'Pieter Malan', photo: '', initials: 'PM', time: '16:20', mention: true, text: '@channel permission slips for the Planetarium outing are due Thursday 14:00. $12 covers the bus and entry. Pay through the office or the school app.', reactions: [{ emoji: '👍', count: 11 }] },
       { kind: 'divider', label: 'Today' },
       { kind: 'msg', author: 'Marcus Adams', photo: '', initials: 'MA', time: '09:12', text: 'Morning. Amelia is off today and probably tomorrow, chest infection. Doctor’s note attached. Could she get the maths worksheets?', thread: '4 replies · last 09:18' },
       { kind: 'msg', author: 'Grant Wessels', photo: '', initials: 'GW', time: '09:19', text: 'For everyone: Week 6 worksheets, the reading log and the outing letter are all on the class wiki now, so you do not have to scroll back through the channel to find them.', reactions: [{ emoji: '🙌', count: 7 }] },
       { kind: 'event', icon: 'confirmation_number', label: 'Request #2184 created from a message (Absence: Amelia Adams)', meta: 'Thabo Mokoena · In progress · due today', time: '09:26' },
-      { kind: 'msg', author: 'Nadia Fourie', photo: '', initials: 'NF', time: '09:31', text: 'Reminder that Friday is a civvies day for the outing fund, R10, no uniform. Swimming moves to Monday because the pool is being serviced.' },
-      { kind: 'msg', author: 'Thabo Mokoena', photo: '', initials: 'TM', time: '09:36', text: 'Three families have asked about lift arrangements for the outing. I have started a wiki page with who is driving and how many seats are left.', thread: '2 replies · last 09:39' },
+      { kind: 'msg', author: 'Nadia Fourie', photo: '', initials: 'NF', time: '09:31', text: 'Reminder that Friday is a free dress day for the outing fund, $2, no uniform. Swimming moves to Monday because the pool is being serviced.' },
+      { kind: 'msg', author: 'Thabo Mokoena', photo: '', initials: 'TM', time: '09:36', text: 'Three families have asked about carpool arrangements for the outing. I have started a wiki page with who is driving and how many seats are left.', thread: '2 replies · last 09:39' },
       { kind: 'event', icon: 'event_available', label: 'Parent evening slots open, Thu 17:00–19:30', meta: 'Pieter Malan · 29 invited', time: '09:38' },
       { kind: 'msg', author: 'Grant Wessels', photo: '', initials: 'GW', time: '09:41', text: 'Booking opens at noon. Ten-minute slots, and I will post the leftover ones here on Wednesday for anyone who cannot make Thursday.' }
     ].concat(this.state.sent.map(m => ({ kind: 'msg', ...m })));

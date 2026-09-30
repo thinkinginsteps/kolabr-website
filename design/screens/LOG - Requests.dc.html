@@ -609,15 +609,15 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'JV', name: 'Janine Venter', role: 'Client · Head of logistics', email: 'janine.venter@coldharvest.co.za', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'JV', name: 'Janine Venter', role: 'Client · Head of logistics', email: 'janine.venter@coldharvest.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'MR', name: 'Marlise Roux', admin: true, role: 'Channel admin · Account manager', email: 'marlise.roux@rouxlogistics.co.za', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'TN', name: 'Thabang Nkosi', role: 'Controller · Night shift', email: 'thabang.nkosi@rouxlogistics.co.za', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'GB', name: 'Gert Badenhorst', role: 'Fleet supervisor', email: 'gert.badenhorst@rouxlogistics.co.za', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'FA', name: 'Farhana Adams', role: 'Claims and compliance', email: 'farhana.adams@rouxlogistics.co.za', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'CS', name: 'Craig Stevens', role: 'Client · Supply chain manager', email: 'craig.stevens@coldharvest.co.za', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'ZM', name: 'Zola Mbatha', role: 'Client · Depot receiving', email: 'zola.mbatha@coldharvest.co.za', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'MR', name: 'Marlise Roux', admin: true, role: 'Channel admin · Account manager', email: 'marlise.roux@rouxlogistics.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'TN', name: 'Thabang Nkosi', role: 'Controller · Night shift', email: 'thabang.nkosi@rouxlogistics.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'GB', name: 'Gert Badenhorst', role: 'Fleet supervisor', email: 'gert.badenhorst@rouxlogistics.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'FA', name: 'Farhana Adams', role: 'Claims and compliance', email: 'farhana.adams@rouxlogistics.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'CS', name: 'Craig Stevens', role: 'Client · Supply chain manager', email: 'craig.stevens@coldharvest.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'ZM', name: 'Zola Mbatha', role: 'Client · Depot receiving', email: 'zola.mbatha@coldharvest.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const TITLES = [
@@ -626,14 +626,14 @@ const TITLES = [
   ['Missing POD: CH-4462, 6 days', 'POD', 'Claims & PODs', 'Farhana Adams'],
   ['Border delay at Beitbridge, 9 hours', 'Delay', 'Exceptions & delays', 'Thabang Nkosi'],
   ['Weekly booking plan, week 36', 'Booking', 'Bookings & planning', 'Marlise Roux'],
-  ['Rate review for the Durban lane', 'Booking', 'Bookings & planning', 'Marlise Roux'],
+  ['Rate review for the Savannah lane', 'Booking', 'Bookings & planning', 'Marlise Roux'],
   ['Damaged stock on arrival, 4 cartons', 'Claim', 'Verity Pharma', 'Farhana Adams'],
   ['Breakdown on the N1: CH-4466', 'Delay', 'Exceptions & delays', 'Gert Badenhorst'],
   ['Driver hours exceeded, rerouting', 'Delay', 'Exceptions & delays', 'Gert Badenhorst'],
   ['Temperature log request from the auditor', 'Cold chain', 'Claims & PODs', 'Farhana Adams'],
   ['Extra collection, Paarl depot Friday', 'Booking', 'Bookings & planning', 'Ridwaan Patel'],
   ['Seal mismatch on arrival: CH-4459', 'Claim', 'Claims & PODs', 'Zola Mbatha'],
-  ['Backhaul opportunity, Gqeberha return', 'Booking', 'Bookings & planning', 'Ridwaan Patel'],
+  ['Backhaul opportunity, Memphis return', 'Booking', 'Bookings & planning', 'Ridwaan Patel'],
   ['Cold room down at the Midrand depot', 'Cold chain', 'Exceptions & delays', 'Gert Badenhorst'],
   ['Weekend slot change, week 37', 'Booking', 'Bookings & planning', 'Marlise Roux']
 ];
@@ -690,8 +690,8 @@ function matchFilter(cell, cond, raw) {
 }
 
 const ACCOUNTS = [
-  { name: 'Marlise Roux', email: 'marlise.roux@rouxlogistics.co.za', role: 'Account manager · Roux Logistics', initials: 'MR', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Carrier' },
-  { name: 'Marlise Roux', email: 'marlise@coldharvest.co.za', initials: 'MR', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Logistics team · Cold Harvest' }
+  { name: 'Marlise Roux', email: 'marlise.roux@rouxlogistics.com', role: 'Account manager · Roux Logistics', initials: 'MR', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Carrier' },
+  { name: 'Marlise Roux', email: 'marlise@coldharvest.com', initials: 'MR', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Logistics team · Cold Harvest' }
 ];
 
 const goPage = (href) => (e) => {

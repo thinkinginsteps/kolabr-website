@@ -709,8 +709,8 @@ const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
   { initials: 'BM', name: 'Bianca Meyer', preview: 'Still no hot water in unit 14.', unread: true, customer: true },
   { initials: 'G1', name: 'Site team', unread: true, preview: 'Dirk: plumber is on site now', customer: false, href: '' },
-  { initials: 'GT', name: 'Graham Tait', preview: 'Trustees need the quotes by Monday.', unread: false, customer: true },
-  { initials: 'SM', name: 'Sifiso Mahlangu', preview: 'Third quote came in R18k lower.', unread: false, customer: false }
+  { initials: 'GT', name: 'Graham Tait', preview: 'The board need the quotes by Monday.', unread: false, customer: true },
+  { initials: 'SM', name: 'Sifiso Mahlangu', preview: 'Third quote came in $18k lower.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -720,9 +720,9 @@ const TENANTS = [
 
 const CHANNELS = [
   { tenant: 'Meadowridge Estate', category: 'Maintenance', members: '12 members', unread: '' },
-  { tenant: 'Meadowridge Estate', category: 'Trustees', members: '8 members', unread: '4' },
+  { tenant: 'Meadowridge Estate', category: 'The board', members: '8 members', unread: '4' },
   { tenant: 'Meadowridge Estate', category: 'Residents', members: '86 members', unread: '' },
-  { tenant: 'Meadowridge Estate', category: 'Levies & arrears', members: '6 members', unread: '' },
+  { tenant: 'Meadowridge Estate', category: 'Dues & arrears', members: '6 members', unread: '' },
   { tenant: 'Other buildings', category: 'Harbour Point', members: '14 members', unread: '12' },
   { tenant: 'Other buildings', category: 'Oak Row Offices', members: '9 members', unread: '' }
 ];
@@ -737,48 +737,48 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'NZ', name: 'Noluthando Zulu', role: 'Trustee · Treasurer', email: 'noluthando.zulu@meadowridge-bc.co.za', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'NZ', name: 'Noluthando Zulu', role: 'Board member · Treasurer', email: 'noluthando.zulu@meadowridge-hoa.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'CV', name: 'Colette Viljoen', admin: true, role: 'Channel admin · Portfolio manager', email: 'colette.viljoen@viljoenprop.co.za', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'SM', name: 'Sifiso Mahlangu', role: 'Maintenance coordinator', email: 'sifiso.mahlangu@viljoenprop.co.za', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'DK', name: 'Dirk Koekemoer', role: 'Building supervisor', email: 'dirk.koekemoer@viljoenprop.co.za', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'YP', name: 'Yusuf Parker', role: 'Levies and accounts', email: 'yusuf.parker@viljoenprop.co.za', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GT', name: 'Graham Tait', role: 'Trustee · Chairperson', email: 'graham.tait@meadowridge-bc.co.za', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'BM', name: 'Bianca Meyer', role: 'Resident · Unit 14', email: 'bianca.meyer@meadowridge-bc.co.za', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'CV', name: 'Colette Viljoen', admin: true, role: 'Channel admin · Portfolio manager', email: 'colette.viljoen@viljoenprop.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'SM', name: 'Sifiso Mahlangu', role: 'Maintenance coordinator', email: 'sifiso.mahlangu@viljoenprop.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'DK', name: 'Dirk Koekemoer', role: 'Building supervisor', email: 'dirk.koekemoer@viljoenprop.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'YP', name: 'Yusuf Parker', role: 'Dues and accounts', email: 'yusuf.parker@viljoenprop.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GT', name: 'Graham Tait', role: 'Board member · President', email: 'graham.tait@meadowridge-hoa.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'BM', name: 'Bianca Meyer', role: 'Resident · Unit 14', email: 'bianca.meyer@meadowridge-hoa.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
-const PINNED = { text: 'Emergencies: burst pipes, no power, lift entrapment, security. Everything else goes in as a normal request and is scheduled.', meta: 'Colette Viljoen · Tue' };
+const PINNED = { text: 'Emergencies: burst pipes, no power, elevator entrapment, security. Everything else goes in as a normal request and is scheduled.', meta: 'Colette Viljoen · Tue' };
 
 const THREAD = {
   author: 'Bianca Meyer', photo: '', initials: 'BM', time: '09:12',
-  text: 'The geyser in unit 14 has burst. Water is coming through into unit 10’s ceiling. I have closed the main but there is already damage downstairs.',
+  text: 'The water heater in unit 14 has burst. Water is coming through into unit 10’s ceiling. I have closed the main but there is already damage downstairs.',
   replies: [
     { author: 'Dirk Koekemoer', initials: 'DK', bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', time: '09:14', text: 'On my way up. Plumber called, he is fifteen minutes out. Photograph the ceiling in unit 10 now for the insurance claim.' },
-    { author: 'Colette Viljoen', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', time: '09:16', text: 'Logged as an emergency. Geyser is the owner’s, ceiling damage is the body corporate’s insurance. Both parts recorded against the same request.' },
-    { author: 'Graham Tait', initials: 'GT', bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', time: '09:17', text: 'Does this need trustee approval, or can you proceed?' },
-    { author: 'Colette Viljoen', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', time: '09:18', text: 'Under the emergency mandate I can proceed up to R15 000. Anything above that comes back here for the trustees before the work starts.' }
+    { author: 'Colette Viljoen', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', time: '09:16', text: 'Logged as an emergency. The water heater is the owner’s, ceiling damage is the HOA’s insurance. Both parts recorded against the same request.' },
+    { author: 'Graham Tait', initials: 'GT', bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', time: '09:17', text: 'Does this need board approval, or can you proceed?' },
+    { author: 'Colette Viljoen', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', time: '09:18', text: 'Under the emergency mandate I can proceed up to $15,000. Anything above that comes back here for the board before the work starts.' }
   ]
 };
 
 const GROUP = [
-  { initials: 'CV', name: 'Colette Viljoen', role: 'Channel admin · Support lead', email: 'colette.viljoen@viljoenprop.co.za', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'DK', name: 'Dirk Koekemoer', role: 'Building supervisor', email: 'dirk.koekemoer@viljoenprop.co.za', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'YP', name: 'Yusuf Parker', role: 'Levies and accounts', email: 'yusuf.parker@viljoenprop.co.za', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GT', name: 'Graham Tait', role: 'Trustee · Meadowridge', email: 'graham.tait@meadowridge-bc.co.za', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'SM', name: 'Sifiso Mahlangu', role: 'Maintenance coordinator', email: 'sifiso.mahlangu@viljoenprop.co.za', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'BM', name: 'Bianca Meyer', role: 'Trustee · Meadowridge', email: 'bianca.meyer@meadowridge-bc.co.za', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
-  { initials: 'NZ', name: 'Noluthando Zulu', role: 'Trustee · Meadowridge', email: 'noluthando.zulu@meadowridge-bc.co.za', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
-  { initials: 'RJ', name: 'Rashid Jappie', role: 'Contractor liaison', email: 'rashid.jappie@viljoenprop.co.za', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'HS', name: 'Hendrik Smit', role: 'Compliance officer', email: 'hendrik.smit@viljoenprop.co.za', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'PM', name: 'Palesa Mahlaba', role: 'Maintenance coordinator', email: 'palesa.mahlaba@viljoenprop.co.za', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'WL', name: 'Wesley Louw', role: 'Trustee · Treasurer', email: 'wesley.louw@meadowridge-bc.co.za', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'AF', name: 'Amira Fakier', role: 'Portfolio director', email: 'amira.fakier@viljoenprop.co.za', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'CV', name: 'Colette Viljoen', role: 'Channel admin · Support lead', email: 'colette.viljoen@viljoenprop.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'DK', name: 'Dirk Koekemoer', role: 'Building supervisor', email: 'dirk.koekemoer@viljoenprop.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'YP', name: 'Yusuf Parker', role: 'Dues and accounts', email: 'yusuf.parker@viljoenprop.com', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GT', name: 'Graham Tait', role: 'Board member · Meadowridge', email: 'graham.tait@meadowridge-hoa.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'SM', name: 'Sifiso Mahlangu', role: 'Maintenance coordinator', email: 'sifiso.mahlangu@viljoenprop.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'BM', name: 'Bianca Meyer', role: 'Board member · Meadowridge', email: 'bianca.meyer@meadowridge-hoa.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
+  { initials: 'NZ', name: 'Noluthando Zulu', role: 'Board member · Meadowridge', email: 'noluthando.zulu@meadowridge-hoa.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
+  { initials: 'RJ', name: 'Rashid Jappie', role: 'Contractor liaison', email: 'rashid.jappie@viljoenprop.com', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'HS', name: 'Hendrik Smit', role: 'Compliance officer', email: 'hendrik.smit@viljoenprop.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'PM', name: 'Palesa Mahlaba', role: 'Maintenance coordinator', email: 'palesa.mahlaba@viljoenprop.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'WL', name: 'Wesley Louw', role: 'Board member · Treasurer', email: 'wesley.louw@meadowridge-hoa.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'AF', name: 'Amira Fakier', role: 'Portfolio director', email: 'amira.fakier@viljoenprop.com', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const ACCOUNTS = [
-  { name: 'Colette Viljoen', email: 'colette.viljoen@viljoenprop.co.za', role: 'Portfolio manager · Viljoen Property', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Managing agent' },
-  { name: 'Colette Viljoen', email: 'colette@meadowridge-bc.co.za', initials: 'CV', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Managing agent · Meadowridge' }
+  { name: 'Colette Viljoen', email: 'colette.viljoen@viljoenprop.com', role: 'Portfolio manager · Viljoen Property', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Property manager' },
+  { name: 'Colette Viljoen', email: 'colette@meadowridge-hoa.com', initials: 'CV', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Property manager · Meadowridge' }
 ];
 
 const goPage = (href) => (e) => {
@@ -874,16 +874,16 @@ class Component extends DCLogic {
 
     const base = [
       { kind: 'divider', label: 'Yesterday' },
-      { kind: 'event', icon: 'group_add', label: 'Noluthando Zulu joined #trustees', meta: 'invited by Colette Viljoen · 8 members', time: '16:02' },
-      { kind: 'msg', author: 'Sifiso Mahlangu', photo: '', initials: 'SM', time: '16:20', mention: true, text: '@channel three quotes for the roof repair are in: R186k, R204k and R168k. All on the wiki with scope comparisons, because the cheapest one excludes the flashing.', reactions: [{ emoji: '👍', count: 6 }] },
+      { kind: 'event', icon: 'group_add', label: 'Noluthando Zulu joined #board', meta: 'invited by Colette Viljoen · 8 members', time: '16:02' },
+      { kind: 'msg', author: 'Sifiso Mahlangu', photo: '', initials: 'SM', time: '16:20', mention: true, text: '@channel three quotes for the roof repair are in: $186k, $204k and $168k. All on the wiki with scope comparisons, because the cheapest one excludes the flashing.', reactions: [{ emoji: '👍', count: 6 }] },
       { kind: 'divider', label: 'Today' },
-      { kind: 'msg', author: 'Bianca Meyer', photo: '', initials: 'BM', time: '09:12', text: 'The geyser in unit 14 has burst. Water is coming through into unit 10’s ceiling. I have closed the main but there is already damage downstairs.', thread: '4 replies · last 09:18' },
-      { kind: 'msg', author: 'Dirk Koekemoer', photo: '', initials: 'DK', time: '09:19', text: 'On site. Geyser is a 2009 unit, well past life. Replacement quoted at R11 400, inside the emergency mandate, so proceeding. Photographs of both units attached to #914.', reactions: [{ emoji: '🙌', count: 8 }] },
-      { kind: 'event', icon: 'confirmation_number', label: 'Request #914 raised from a message (emergency: geyser burst, unit 14)', meta: 'Dirk Koekemoer · In progress · breach in 40m', time: '09:26' },
+      { kind: 'msg', author: 'Bianca Meyer', photo: '', initials: 'BM', time: '09:12', text: 'The water heater in unit 14 has burst. Water is coming through into unit 10’s ceiling. I have closed the main but there is already damage downstairs.', thread: '4 replies · last 09:18' },
+      { kind: 'msg', author: 'Dirk Koekemoer', photo: '', initials: 'DK', time: '09:19', text: 'On site. The water heater is a 2009 unit, well past life. Replacement quoted at $11,400, inside the emergency mandate, so proceeding. Photographs of both units attached to #914.', reactions: [{ emoji: '🙌', count: 8 }] },
+      { kind: 'event', icon: 'confirmation_number', label: 'Request #914 raised from a message (emergency: water heater burst, unit 14)', meta: 'Dirk Koekemoer · In progress · breach in 40m', time: '09:26' },
       { kind: 'msg', author: 'Colette Viljoen', photo: '', initials: 'CV', time: '09:31', text: 'For the residents asking privately: please put maintenance in the channel and not on my mobile. It is not rudeness: a request in here has a number, an owner and a record for the insurer.' },
-      { kind: 'msg', author: 'Yusuf Parker', photo: '', initials: 'YP', time: '09:36', text: 'Unit 22 is now 90 days in arrears on levies. Third reminder sent. Putting it in front of the trustees with the collection policy attached rather than deciding it myself.', thread: '2 replies · last 09:39' },
-      { kind: 'event', icon: 'event_available', label: 'Trustee meeting, Thu 18:00', meta: 'Colette Viljoen · 8 invited', time: '09:38' },
-      { kind: 'msg', author: 'Graham Tait', photo: '', initials: 'GT', time: '09:41', text: 'Trustees will decide the roof quote on Thursday. Please have the scope comparison in the channel by Monday so we are not reading it in the meeting.' }
+      { kind: 'msg', author: 'Yusuf Parker', photo: '', initials: 'YP', time: '09:36', text: 'Unit 22 is now 90 days in arrears on dues. Third reminder sent. Putting it in front of the board with the collection policy attached rather than deciding it myself.', thread: '2 replies · last 09:39' },
+      { kind: 'event', icon: 'event_available', label: 'Board meeting, Thu 18:00', meta: 'Colette Viljoen · 8 invited', time: '09:38' },
+      { kind: 'msg', author: 'Graham Tait', photo: '', initials: 'GT', time: '09:41', text: 'The board will decide the roof quote on Thursday. Please have the scope comparison in the channel by Monday so we are not reading it in the meeting.' }
     ].concat(this.state.sent.map(m => ({ kind: 'msg', ...m })));
 
     let prev = null;
@@ -994,10 +994,10 @@ class Component extends DCLogic {
       toggleSettings: () => this.setMenu('settings'),
 
       notifications: [
-        { icon: 'priority_high', text: 'Emergency: “Geyser burst, unit 14, water to units below”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Noluthando Zulu joined Trustees as a guest', time: '26 min ago', unread: true },
+        { icon: 'priority_high', text: 'Emergency: “Water heater burst, unit 14, water to units below”', time: '4 min ago', unread: true },
+        { icon: 'person_add', text: 'Noluthando Zulu joined The board as a guest', time: '26 min ago', unread: true },
         { icon: 'assignment_ind', text: 'Graham Tait assigned you the roof repair quotes', time: '1 hr ago', unread: true },
-        { icon: 'task_alt', text: 'Lift service completed: certificate filed', time: '2 hr ago', unread: false },
+        { icon: 'task_alt', text: 'Elevator service completed: certificate filed', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Site team', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
       chatQuery: this.state.chatQuery,
@@ -1194,10 +1194,10 @@ class Component extends DCLogic {
       ],
 
       requests: [
-        { id: '#914', subject: 'Geyser burst, unit 14: water damage below', channel: 'Maintenance', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Breach in 40m', slaColor: bad },
-        { id: '#909', subject: 'Roof repair: three quotes for trustees', channel: 'Trustees', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: dark ? '#8ba3ae' : '#6b8290', sla: 'Due in 6h', slaColor: warn },
+        { id: '#914', subject: 'Water heater burst, unit 14: water damage below', channel: 'Maintenance', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Breach in 40m', slaColor: bad },
+        { id: '#909', subject: 'Roof repair: three quotes for the board', channel: 'The board', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: dark ? '#8ba3ae' : '#6b8290', sla: 'Due in 6h', slaColor: warn },
         { id: '#906', subject: 'Parking bay dispute, units 8 and 9', channel: 'Residents', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due Monday', slaColor: dark ? '#8ba3ae' : '#6b8290' },
-        { id: '#911', subject: 'Levy arrears: unit 22, 90 days', channel: 'Levies & arrears', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 2d', slaColor: bad },
+        { id: '#911', subject: 'Dues arrears: unit 22, 90 days', channel: 'Dues & arrears', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 2d', slaColor: bad },
         { id: '#898', subject: 'Annual fire equipment inspection', channel: 'Maintenance', status: 'Resolved', statusBg: dark ? 'rgba(61,220,151,0.14)' : 'rgba(18,160,106,0.12)', statusFg: ok, sla: 'Met · 3h 40m', slaColor: ok }
       ]
     };

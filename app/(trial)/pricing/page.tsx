@@ -15,7 +15,7 @@ export default function PricingPage() {
     <>
       <JsonLd data={graph(softwareApplicationJsonLd, breadcrumbJsonLd("/pricing/"))} />
 
-      <Section id="pricing" aria-labelledby="pricing-h" className="pt-[176px] pb-[130px]">
+      <Section id="pricing" aria-labelledby="pricing-h" className="relative bg-hero-glow pt-[176px] pb-[130px]">
         <Container>
           <div data-rise="" className="mb-[22px] flex max-w-[820px] flex-col gap-[18px]">
             <Eyebrow>Pricing</Eyebrow>

@@ -708,7 +708,7 @@ const THEMES = {
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
   { initials: 'RC', name: 'Rita Coetzer', preview: 'Is the Q3 narrative report on track?', unread: true, customer: true },
-  { initials: 'G1', name: 'Programme team', unread: true, preview: 'Sarah: attendance data is in from Mthatha', customer: false, href: '' },
+  { initials: 'G1', name: 'Programme team', unread: true, preview: 'Sarah: attendance data is in from Danville', customer: false, href: '' },
   { initials: 'PM', name: 'Palesa Mokoena', preview: 'Two facilitators off sick this week.', unread: false, customer: false },
   { initials: 'DM', name: 'David Moloi', preview: 'Need the receipts before month-end.', unread: false, customer: false }
 ];
@@ -737,22 +737,22 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'PM', name: 'Palesa Mokoena', role: 'Site facilitator · Lusikisiki', email: 'palesa.mokoena@thusanang.org.za', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'PM', name: 'Palesa Mokoena', role: 'Site facilitator · Fairmont', email: 'palesa.mokoena@thusanang.org', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'TM', name: 'Thandeka Mabaso', admin: true, role: 'Channel admin · Programme manager', email: 'thandeka.mabaso@thusanang.org.za', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'JP', name: 'Johan Prinsloo', role: 'Monitoring & evaluation', email: 'johan.prinsloo@thusanang.org.za', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'SB', name: 'Sarah Bhengu', role: 'Field coordinator · Mthatha', email: 'sarah.bhengu@thusanang.org.za', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'DM', name: 'David Moloi', role: 'Finance & grants', email: 'david.moloi@thusanang.org.za', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'TM', name: 'Thandeka Mabaso', admin: true, role: 'Channel admin · Programme manager', email: 'thandeka.mabaso@thusanang.org', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'JP', name: 'Johan Prinsloo', role: 'Monitoring & evaluation', email: 'johan.prinsloo@thusanang.org', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'SB', name: 'Sarah Bhengu', role: 'Field coordinator · Danville', email: 'sarah.bhengu@thusanang.org', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'DM', name: 'David Moloi', role: 'Finance & grants', email: 'david.moloi@thusanang.org', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'RC', name: 'Rita Coetzer', role: 'Funder · Meridian Foundation', email: 'rita.coetzer@meridianfoundation.org', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'KN', name: 'Kate Nel', role: 'Volunteer coordinator', email: 'kate.nel@thusanang.org.za', since: '27 May 2026', status: 'offline', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'KN', name: 'Kate Nel', role: 'Volunteer coordinator', email: 'kate.nel@thusanang.org', since: '27 May 2026', status: 'offline', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const PINNED = { text: 'Q3 narrative report to Meridian is due Friday 15:00. Attendance data from all four sites must be in by Wednesday.', meta: 'Thandeka Mabaso · Tue' };
 
 const THREAD = {
   author: 'Sarah Bhengu', photo: '', initials: 'SB', time: '09:12',
-  text: 'Lusikisiki attendance for week 6 is short. Two facilitators were off sick and the register was kept on paper. I have photographed it but the numbers will not match the app.',
+  text: 'Fairmont attendance for week 6 is short. Two facilitators were off sick and the register was kept on paper. I have photographed it but the numbers will not match the app.',
   replies: [
     { author: 'Johan Prinsloo', initials: 'JP', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', time: '09:14', text: 'Send the photographs here and I will capture them against week 6 with a note explaining the gap. Better an explained variance than a silent one.' },
     { author: 'Thandeka Mabaso', initials: 'TM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', time: '09:16', text: 'Agreed. Meridian would far rather read why a number dipped than discover we smoothed it.' },
@@ -762,22 +762,22 @@ const THREAD = {
 };
 
 const GROUP = [
-  { initials: 'TM', name: 'Thandeka Mabaso', role: 'Channel admin · Support lead', email: 'thandeka.mabaso@thusanang.org.za', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'SB', name: 'Sarah Bhengu', role: 'Field coordinator', email: 'sarah.bhengu@thusanang.org.za', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'DM', name: 'David Moloi', role: 'Finance & grants', email: 'david.moloi@thusanang.org.za', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'TM', name: 'Thandeka Mabaso', role: 'Channel admin · Support lead', email: 'thandeka.mabaso@thusanang.org', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'SB', name: 'Sarah Bhengu', role: 'Field coordinator', email: 'sarah.bhengu@thusanang.org', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'DM', name: 'David Moloi', role: 'Finance & grants', email: 'david.moloi@thusanang.org', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'RC', name: 'Rita Coetzer', role: 'Funder · Meridian Foundation', email: 'rita.coetzer@meridianfoundation.org', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'JP', name: 'Johan Prinsloo', role: 'Monitoring & evaluation', email: 'johan.prinsloo@thusanang.org.za', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'JP', name: 'Johan Prinsloo', role: 'Monitoring & evaluation', email: 'johan.prinsloo@thusanang.org', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
   { initials: 'KN', name: 'Kate Nel', role: 'Funder · Meridian Foundation', email: 'kate.nel@meridianfoundation.org', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
   { initials: 'PM', name: 'Palesa Mokoena', role: 'Funder · Meridian Foundation', email: 'palesa.mokoena@meridianfoundation.org', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
-  { initials: 'AH', name: 'Ayesha Hoosen', role: 'Site facilitator', email: 'ayesha.hoosen@thusanang.org.za', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GV', name: 'Grace van Zyl', role: 'Volunteer coordinator', email: 'grace.vanzyl@thusanang.org.za', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'SD', name: 'Sipho Dlamini', role: 'Monitoring & evaluation', email: 'sipho.dlamini@thusanang.org.za', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'AH', name: 'Ayesha Hoosen', role: 'Site facilitator', email: 'ayesha.hoosen@thusanang.org', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GV', name: 'Grace van Zyl', role: 'Volunteer coordinator', email: 'grace.vanzyl@thusanang.org', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'SD', name: 'Sipho Dlamini', role: 'Monitoring & evaluation', email: 'sipho.dlamini@thusanang.org', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
   { initials: 'LN', name: 'Lerato Ngwenya', role: 'Funder · Meridian Foundation', email: 'lerato.ngwenya@meridianfoundation.org', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'MF', name: 'Martin Fischer', role: 'Partnerships lead', email: 'martin.fischer@thusanang.org.za', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'MF', name: 'Martin Fischer', role: 'Partnerships lead', email: 'martin.fischer@thusanang.org', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const ACCOUNTS = [
-  { name: 'Thandeka Mabaso', email: 'thandeka.mabaso@thusanang.org.za', role: 'Programme manager · Thusanang', initials: 'TM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Staff' },
+  { name: 'Thandeka Mabaso', email: 'thandeka.mabaso@thusanang.org', role: 'Programme manager · Thusanang', initials: 'TM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Staff' },
   { name: 'Thandeka Mabaso', email: 'thandeka@meridianfoundation.org', initials: 'TM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Grantee · Meridian Foundation' }
 ];
 
@@ -877,11 +877,11 @@ class Component extends DCLogic {
       { kind: 'event', icon: 'group_add', label: 'Rita Coetzer joined #meridian-foundation', meta: 'invited by Thandeka Mabaso · 6 members', time: '16:02' },
       { kind: 'msg', author: 'Kate Nel', photo: '', initials: 'KN', time: '16:20', mention: true, text: '@channel safeguarding refresher is compulsory before anyone works with children this term. Eighteen volunteers have completed it; the outstanding list is on the wiki.', reactions: [{ emoji: '👍', count: 12 }] },
       { kind: 'divider', label: 'Today' },
-      { kind: 'msg', author: 'Sarah Bhengu', photo: '', initials: 'SB', time: '09:12', text: 'Lusikisiki attendance for week 6 is short. Two facilitators were off sick and the register was kept on paper. I have photographed it but the numbers will not match the app.', thread: '4 replies · last 09:18' },
-      { kind: 'msg', author: 'Johan Prinsloo', photo: '', initials: 'JP', time: '09:19', text: 'Summarising out of the thread: week 6 at Lusikisiki is 214 against a target of 260, cause recorded as facilitator illness. Logged as a data request so it appears in the Q3 report with its explanation attached.', reactions: [{ emoji: '🙌', count: 6 }] },
-      { kind: 'event', icon: 'confirmation_number', label: 'Request #508 created from a message: attendance data, Lusikisiki week 6', meta: 'Johan Prinsloo · In progress · due today', time: '09:26' },
-      { kind: 'msg', author: 'David Moloi', photo: '', initials: 'DM', time: '09:31', text: 'Expense receipts from three sites are still outstanding and month-end is Friday. Unreceipted spend is what turns a clean audit into a qualified one, so please do not leave them in a bakkie.' },
-      { kind: 'msg', author: 'Palesa Mokoena', photo: '', initials: 'PM', time: '09:36', text: 'A parent raised a safeguarding concern at Mthatha yesterday afternoon. Reported through the proper channel within the hour and logged, following the wiki procedure, not a WhatsApp to me.', thread: '2 replies · last 09:39' },
+      { kind: 'msg', author: 'Sarah Bhengu', photo: '', initials: 'SB', time: '09:12', text: 'Fairmont attendance for week 6 is short. Two facilitators were off sick and the register was kept on paper. I have photographed it but the numbers will not match the app.', thread: '4 replies · last 09:18' },
+      { kind: 'msg', author: 'Johan Prinsloo', photo: '', initials: 'JP', time: '09:19', text: 'Summarising out of the thread: week 6 at Fairmont is 214 against a target of 260, cause recorded as facilitator illness. Logged as a data request so it appears in the Q3 report with its explanation attached.', reactions: [{ emoji: '🙌', count: 6 }] },
+      { kind: 'event', icon: 'confirmation_number', label: 'Request #508 created from a message: attendance data, Fairmont week 6', meta: 'Johan Prinsloo · In progress · due today', time: '09:26' },
+      { kind: 'msg', author: 'David Moloi', photo: '', initials: 'DM', time: '09:31', text: 'Expense receipts from three sites are still outstanding and month-end is Friday. Unreceipted spend is what turns a clean audit into a qualified one, so please do not leave them in a pickup.' },
+      { kind: 'msg', author: 'Palesa Mokoena', photo: '', initials: 'PM', time: '09:36', text: 'A parent raised a safeguarding concern at Danville yesterday afternoon. Reported through the proper channel within the hour and logged, following the wiki procedure, not a WhatsApp to me.', thread: '2 replies · last 09:39' },
       { kind: 'event', icon: 'event_available', label: 'Quarterly funder review, Thu 10:00', meta: 'Thandeka Mabaso · 6 invited', time: '09:38' },
       { kind: 'msg', author: 'Rita Coetzer', photo: '', initials: 'RC', time: '09:41', text: 'From our side: the transport line variation is approved. Reallocate it in the Q3 report rather than submitting a separate request, one less form for both of us.' }
     ].concat(this.state.sent.map(m => ({ kind: 'msg', ...m })));
@@ -996,7 +996,7 @@ class Component extends DCLogic {
       notifications: [
         { icon: 'priority_high', text: 'Due today: “Q3 narrative report to Meridian”', time: '4 min ago', unread: true },
         { icon: 'person_add', text: 'Rita Coetzer joined Meridian Foundation as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'David Moloi assigned you the Lusikisiki expense pack', time: '1 hr ago', unread: true },
+        { icon: 'assignment_ind', text: 'David Moloi assigned you the Fairmont expense pack', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Safeguarding refresher completed: 18 volunteers', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Programme team', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
@@ -1195,9 +1195,9 @@ class Component extends DCLogic {
 
       requests: [
         { id: '#512', subject: 'Q3 narrative report to Meridian Foundation', channel: 'Meridian Foundation', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due in 4h', slaColor: bad },
-        { id: '#508', subject: 'Attendance data missing: Lusikisiki, week 6', channel: 'Field sites', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: dark ? '#8ba3ae' : '#6b8290', sla: 'Due in 6h', slaColor: warn },
+        { id: '#508', subject: 'Attendance data missing: Fairmont, week 6', channel: 'Field sites', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: dark ? '#8ba3ae' : '#6b8290', sla: 'Due in 6h', slaColor: warn },
         { id: '#505', subject: 'Expense receipts outstanding: 3 sites', channel: 'Board & governance', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due Friday', slaColor: dark ? '#8ba3ae' : '#6b8290' },
-        { id: '#509', subject: 'Safeguarding incident reported at Mthatha', channel: 'Field sites', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 2d', slaColor: bad },
+        { id: '#509', subject: 'Safeguarding incident reported at Danville', channel: 'Field sites', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 2d', slaColor: bad },
         { id: '#498', subject: 'Volunteer intake: 14 to be screened', channel: 'Volunteers', status: 'Resolved', statusBg: dark ? 'rgba(61,220,151,0.14)' : 'rgba(18,160,106,0.12)', statusFg: ok, sla: 'Met · 1d 4h', slaColor: ok }
       ]
     };

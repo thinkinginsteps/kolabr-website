@@ -737,15 +737,15 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'TS', name: 'Thandi Sithole', role: 'Client · Sable Bay', email: 'thandi.sithole@sablebay.co.za', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'TS', name: 'Thandi Sithole', role: 'Client · Sable Bay', email: 'thandi.sithole@sablebay.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
   { initials: 'SR', name: 'Sasha Reyes', admin: true, role: 'Channel admin · Project architect', email: 'sasha.reyes@reyesmalan.studio', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
   { initials: 'DO', name: 'Daniel Okafor', role: 'Architectural technologist', email: 'daniel.okafor@reyesmalan.studio', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
   { initials: 'HM', name: 'Hester Malan', role: 'Practice principal', email: 'hester.malan@reyesmalan.studio', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
   { initials: 'PC', name: 'Priya Chetty', role: 'Documentation lead', email: 'priya.chetty@reyesmalan.studio', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'WB', name: 'Warren Beck', role: 'Client · Sable Bay', email: 'warren.beck@sablebay.co.za', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'NG', name: 'Nadia Gouws', role: 'Quantity surveyor', email: 'nadia.gouws@gouwsqs.co.za', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'WB', name: 'Warren Beck', role: 'Client · Sable Bay', email: 'warren.beck@sablebay.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'NG', name: 'Nadia Gouws', role: 'Quantity surveyor', email: 'nadia.gouws@gouwsqs.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const PINNED = { text: 'Rev C set issued 12 Aug, supersedes Rev B for construction. Do not price off Rev B.', meta: 'Priya Chetty · Tue' };
@@ -757,7 +757,7 @@ const THREAD = {
     { author: 'Daniel Okafor', initials: 'DO', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', time: '09:14', text: 'Raised it as RFI 214 with the section marked up, so the answer lands in the drawing record rather than in an email.' },
     { author: 'Johan Viljoen', initials: 'JV', bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)', time: '09:16', text: 'Face-fixing to the upstand works if we add a 12mm plate. No effect on the slab reinforcement.' },
     { author: 'Warren Beck', initials: 'WB', bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', time: '09:17', text: 'And the cost? We are already over on the balustrade line.' },
-    { author: 'Nadia Gouws', initials: 'NG', bg: 'linear-gradient(150deg, #8b8394, #635c6d)', time: '09:18', text: 'Roughly R41 000 across 18 balconies. I will price it properly against Variation 07 today.' }
+    { author: 'Nadia Gouws', initials: 'NG', bg: 'linear-gradient(150deg, #8b8394, #635c6d)', time: '09:18', text: 'Roughly $41,000 across 18 balconies. I will price it properly against Variation 07 today.' }
   ]
 };
 
@@ -765,20 +765,20 @@ const GROUP = [
   { initials: 'SR', name: 'Sasha Reyes', role: 'Channel admin · Support lead', email: 'sasha.reyes@reyesmalan.studio', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
   { initials: 'HM', name: 'Hester Malan', role: 'Practice principal', email: 'hester.malan@reyesmalan.studio', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
   { initials: 'PC', name: 'Priya Chetty', role: 'Documentation lead', email: 'priya.chetty@reyesmalan.studio', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'WB', name: 'Warren Beck', role: 'Client · Sable Bay', email: 'warren.beck@sablebay.co.za', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'WB', name: 'Warren Beck', role: 'Client · Sable Bay', email: 'warren.beck@sablebay.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
   { initials: 'DO', name: 'Daniel Okafor', role: 'Architectural technologist', email: 'daniel.okafor@reyesmalan.studio', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'NG', name: 'Nadia Gouws', role: 'Client · Sable Bay', email: 'nadia.gouws@sablebay.co.za', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
-  { initials: 'TS', name: 'Thandi Sithole', role: 'Client · Sable Bay', email: 'thandi.sithole@sablebay.co.za', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
+  { initials: 'NG', name: 'Nadia Gouws', role: 'Client · Sable Bay', email: 'nadia.gouws@sablebay.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
+  { initials: 'TS', name: 'Thandi Sithole', role: 'Client · Sable Bay', email: 'thandi.sithole@sablebay.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
   { initials: 'JV', name: 'Johan Viljoen', role: 'Structural engineer', email: 'johan.viljoen@reyesmalan.studio', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'FA', name: 'Faye Abrahams', role: 'Landscape architect', email: 'faye.abrahams@reyesmalan.studio', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
   { initials: 'MB', name: 'Marius Botha', role: 'Architectural technologist', email: 'marius.botha@reyesmalan.studio', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'LD', name: 'Lindiwe Dube', role: 'Client · Sable Bay', email: 'lindiwe.dube@sablebay.co.za', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'LD', name: 'Lindiwe Dube', role: 'Client · Sable Bay', email: 'lindiwe.dube@sablebay.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
   { initials: 'GP', name: 'Gareth Pike', role: 'Contracts administrator', email: 'gareth.pike@reyesmalan.studio', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const ACCOUNTS = [
   { name: 'Sasha Reyes', email: 'sasha.reyes@reyesmalan.studio', role: 'Project architect · Reyes + Malan', initials: 'SR', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Studio' },
-  { name: 'Sasha Reyes', email: 'sasha@sablebay.co.za', initials: 'SR', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Design team · Sable Bay' }
+  { name: 'Sasha Reyes', email: 'sasha@sablebay.com', initials: 'SR', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Design team · Sable Bay' }
 ];
 
 const goPage = (href) => (e) => {
@@ -883,7 +883,7 @@ class Component extends DCLogic {
       { kind: 'msg', author: 'Hester Malan', photo: '', initials: 'HM', time: '09:31', text: 'Variation 07 must be priced and signed before the contractor cuts anything. Nadia, put the number in this channel rather than a separate email chain to Warren.' },
       { kind: 'msg', author: 'Marius Botha', photo: '', initials: 'MB', time: '09:36', text: 'Site: the soffit at grid E is clashing with the duct run. Photos attached, raised as site instruction 09 so it does not get lost between us and the engineer.', thread: '2 replies · last 09:39' },
       { kind: 'event', icon: 'event_available', label: 'Design review with the client, Thu 14:00', meta: 'Sasha Reyes · 9 invited', time: '09:38' },
-      { kind: 'msg', author: 'Nadia Gouws', photo: '', initials: 'NG', time: '09:41', text: 'Variation 07 priced at R41 380. Posting the breakdown here so the approval sits against the RFI and not in my sent items.' }
+      { kind: 'msg', author: 'Nadia Gouws', photo: '', initials: 'NG', time: '09:41', text: 'Variation 07 priced at $41,380. Posting the breakdown here so the approval sits against the RFI and not in my sent items.' }
     ].concat(this.state.sent.map(m => ({ kind: 'msg', ...m })));
 
     let prev = null;

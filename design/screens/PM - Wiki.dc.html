@@ -503,13 +503,13 @@ input, textarea, select { caret-color: transparent !important; }
 
           <div style="display: flex; align-items: flex-start; gap: 11px; margin-top: 20px; padding: 13px 15px; border-radius: 14px; background: rgba(245,165,36,0.10);">
             <span style="font-family: 'Material Symbols Rounded'; font-size: 19px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: #f5a524;">campaign</span>
-            <span style="flex: 1; font-size: 13px; line-height: 1.5; text-wrap: pretty;">From 1 September the emergency mandate is R15 000 per incident, agreed by resolution. The steps below reflect that: above it, you wake a trustee rather than guess.</span>
+            <span style="flex: 1; font-size: 13px; line-height: 1.5; text-wrap: pretty;">From 1 September the emergency mandate is $15,000 per incident, agreed by resolution. The steps below reflect that: above it, you wake a board member rather than guess.</span>
           </div>
 
           <p style="margin: 22px 0 0; font-size: 15.5px; line-height: 1.62; color: var(--muted, #6b8290); text-wrap: pretty;">What to do when something breaks at two in the morning: what counts as an emergency, what you may spend, and what has to be photographed before anyone touches it. Written for supervisors and after-hours staff.</p>
 
           <h2 data-anchor="Before you start" style="margin: 30px 0 0; font-size: 19px; font-weight: 650; letter-spacing: -0.02em;">Before you start</h2>
-          <p style="margin: 10px 0 0; font-size: 14.5px; line-height: 1.68; text-wrap: pretty;">Confirm it is genuinely an emergency: water, power, lift entrapment or security. If it is a dripping tap at 21:00, this is not the right page. Log it as a normal request and schedule it. Anything above the mandate needs a trustee on the phone, not an assumption.</p>
+          <p style="margin: 10px 0 0; font-size: 14.5px; line-height: 1.68; text-wrap: pretty;">Confirm it is genuinely an emergency: water, power, elevator entrapment or security. If it is a dripping tap at 21:00, this is not the right page. Log it as a normal request and schedule it. Anything above the mandate needs a board member on the phone, not an assumption.</p>
 
           <div data-anchor="You will need" style="display: flex; flex-direction: column; gap: 9px; margin-top: 18px; padding: 16px 18px; border-radius: 16px; background: var(--page, #edf3f7);">
             <span style="font-size: 10.5px; font-weight: 650; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted, #6b8290);">You will need</span>
@@ -550,7 +550,7 @@ input, textarea, select { caret-color: transparent !important; }
 
           <h2 data-anchor="Notice to residents" style="margin: 32px 0 0; font-size: 19px; font-weight: 650; letter-spacing: -0.02em;">Notice to residents</h2>
           <p style="margin: 10px 0 0; font-size: 14.5px; line-height: 1.68; text-wrap: pretty;">Post this in the residents channel as soon as the situation is contained. Residents tolerate a great deal if they are told what is happening; silence is what produces the committee.</p>
-          <div style="margin-top: 14px; padding: 15px 17px; border-radius: 14px; background: var(--page, #edf3f7); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; line-height: 1.7; color: var(--muted, #6b8290); text-wrap: pretty;">Water to block A was shut off at 09:05 after a geyser burst in unit 14. A plumber is on site and we expect water back by 11:00. Unit 10 has ceiling damage and an insurance claim is open. Reference #914. Updates will be posted here, no need to phone the office.</div>
+          <div style="margin-top: 14px; padding: 15px 17px; border-radius: 14px; background: var(--page, #edf3f7); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; line-height: 1.7; color: var(--muted, #6b8290); text-wrap: pretty;">Water to block A was shut off at 09:05 after a water heater burst in unit 14. A plumber is on site and we expect water back by 11:00. Unit 10 has ceiling damage and an insurance claim is open. Reference #914. Updates will be posted here, no need to phone the office.</div>
 
           <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 34px; padding-top: 20px; border-top: 1px solid var(--hairline, rgba(0,0,0,0.09));">
             <span style="font-size: 13.5px; font-weight: 500;">Was this page helpful?</span>
@@ -639,8 +639,8 @@ const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
   { initials: 'BM', name: 'Bianca Meyer', preview: 'Still no hot water in unit 14.', unread: true, customer: true },
   { initials: 'G1', name: 'Site team', unread: true, preview: 'Dirk: plumber is on site now', customer: false, href: '' },
-  { initials: 'GT', name: 'Graham Tait', preview: 'Trustees need the quotes by Monday.', unread: false, customer: true },
-  { initials: 'SM', name: 'Sifiso Mahlangu', preview: 'Third quote came in R18k lower.', unread: false, customer: false }
+  { initials: 'GT', name: 'Graham Tait', preview: 'The board need the quotes by Monday.', unread: false, customer: true },
+  { initials: 'SM', name: 'Sifiso Mahlangu', preview: 'Third quote came in $18k lower.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -650,9 +650,9 @@ const TENANTS = [
 
 const CHANNELS = [
   { tenant: 'Meadowridge Estate', category: 'Maintenance', members: '12 members', unread: '' },
-  { tenant: 'Meadowridge Estate', category: 'Trustees', members: '8 members', unread: '4' },
+  { tenant: 'Meadowridge Estate', category: 'The board', members: '8 members', unread: '4' },
   { tenant: 'Meadowridge Estate', category: 'Residents', members: '86 members', unread: '' },
-  { tenant: 'Meadowridge Estate', category: 'Levies & arrears', members: '6 members', unread: '' },
+  { tenant: 'Meadowridge Estate', category: 'Dues & arrears', members: '6 members', unread: '' },
   { tenant: 'Other buildings', category: 'Harbour Point', members: '14 members', unread: '12' },
   { tenant: 'Other buildings', category: 'Oak Row Offices', members: '9 members', unread: '' }
 ];
@@ -667,36 +667,36 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'NZ', name: 'Noluthando Zulu', role: 'Trustee · Treasurer', email: 'noluthando.zulu@meadowridge-bc.co.za', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'NZ', name: 'Noluthando Zulu', role: 'Board member · Treasurer', email: 'noluthando.zulu@meadowridge-hoa.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'CV', name: 'Colette Viljoen', admin: true, role: 'Channel admin · Portfolio manager', email: 'colette.viljoen@viljoenprop.co.za', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'SM', name: 'Sifiso Mahlangu', role: 'Maintenance coordinator', email: 'sifiso.mahlangu@viljoenprop.co.za', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'DK', name: 'Dirk Koekemoer', role: 'Building supervisor', email: 'dirk.koekemoer@viljoenprop.co.za', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'YP', name: 'Yusuf Parker', role: 'Levies and accounts', email: 'yusuf.parker@viljoenprop.co.za', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GT', name: 'Graham Tait', role: 'Trustee · Chairperson', email: 'graham.tait@meadowridge-bc.co.za', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'BM', name: 'Bianca Meyer', role: 'Resident · Unit 14', email: 'bianca.meyer@meadowridge-bc.co.za', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'CV', name: 'Colette Viljoen', admin: true, role: 'Channel admin · Portfolio manager', email: 'colette.viljoen@viljoenprop.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'SM', name: 'Sifiso Mahlangu', role: 'Maintenance coordinator', email: 'sifiso.mahlangu@viljoenprop.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'DK', name: 'Dirk Koekemoer', role: 'Building supervisor', email: 'dirk.koekemoer@viljoenprop.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'YP', name: 'Yusuf Parker', role: 'Dues and accounts', email: 'yusuf.parker@viljoenprop.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GT', name: 'Graham Tait', role: 'Board member · President', email: 'graham.tait@meadowridge-hoa.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'BM', name: 'Bianca Meyer', role: 'Resident · Unit 14', email: 'bianca.meyer@meadowridge-hoa.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const CH_CATS = ['All', 'Operations', 'Governance', 'Community', 'Other buildings'];
 
 const PEOPLE = {
-  CV: { name: 'Colette Viljoen', email: 'colette.viljoen@viljoenprop.co.za', role: 'Portfolio manager' },
-  SM: { name: 'Sifiso Mahlangu', email: 'sifiso.mahlangu@viljoenprop.co.za', role: 'Maintenance coordinator' },
-  DK: { name: 'Dirk Koekemoer', email: 'dirk.koekemoer@viljoenprop.co.za', role: 'Building supervisor' },
-  YP: { name: 'Yusuf Parker', email: 'yusuf.parker@viljoenprop.co.za', role: 'Levies and accounts' },
-  GT: { name: 'Graham Tait', email: 'graham.tait@meadowridge-bc.co.za', role: 'Trustee · Chairperson' },
-  NZ: { name: 'Noluthando Zulu', email: 'noluthando.zulu@meadowridge-bc.co.za', role: 'Trustee · Treasurer' },
-  BM: { name: 'Bianca Meyer', email: 'bianca.meyer@meadowridge-bc.co.za', role: 'Resident · Unit 14' }
+  CV: { name: 'Colette Viljoen', email: 'colette.viljoen@viljoenprop.com', role: 'Portfolio manager' },
+  SM: { name: 'Sifiso Mahlangu', email: 'sifiso.mahlangu@viljoenprop.com', role: 'Maintenance coordinator' },
+  DK: { name: 'Dirk Koekemoer', email: 'dirk.koekemoer@viljoenprop.com', role: 'Building supervisor' },
+  YP: { name: 'Yusuf Parker', email: 'yusuf.parker@viljoenprop.com', role: 'Dues and accounts' },
+  GT: { name: 'Graham Tait', email: 'graham.tait@meadowridge-hoa.com', role: 'Board member · President' },
+  NZ: { name: 'Noluthando Zulu', email: 'noluthando.zulu@meadowridge-hoa.com', role: 'Board member · Treasurer' },
+  BM: { name: 'Bianca Meyer', email: 'bianca.meyer@meadowridge-hoa.com', role: 'Resident · Unit 14' }
 };
 
 const AVATAR_BGS = ['linear-gradient(150deg, #33505b, #557a88)', 'linear-gradient(150deg, #00c3ff, #0a9fd4)', 'linear-gradient(150deg, #7c6cf0, #5c4bd8)'];
 
 const CHANNEL_LIST = [
   { name: 'Maintenance', category: 'Operations', desc: 'Repairs and contractors', members: 6, sla: 'Priority', people: ['SM', 'DK', 'CV', 'BM', 'GT', 'YP'] },
-  { name: 'Trustees', category: 'Governance', desc: 'Approvals and meetings', members: 4, sla: 'Enhanced', people: ['CV', 'GT', 'NZ', 'SM'] },
+  { name: 'The board', category: 'Governance', desc: 'Approvals and meetings', members: 4, sla: 'Enhanced', people: ['CV', 'GT', 'NZ', 'SM'] },
   { name: 'Residents', category: 'Community', desc: 'Notices and queries', members: 4, sla: 'Standard', people: ['CV', 'BM', 'DK', 'GT'] },
-  { name: 'Levies & arrears', category: 'Governance', desc: 'Collections and policy', members: 3, sla: 'Standard', people: ['YP', 'CV', 'NZ'] },
+  { name: 'Dues & arrears', category: 'Governance', desc: 'Collections and policy', members: 3, sla: 'Standard', people: ['YP', 'CV', 'NZ'] },
   { name: 'Harbour Point', category: 'Other buildings', desc: 'Managed building', members: 3, sla: 'Priority', people: ['DK', 'CV', 'SM'] },
   { name: 'Oak Row Offices', category: 'Other buildings', desc: 'Commercial block', members: 3, sla: 'Standard', people: ['CV', 'SM', 'YP'] },
   { name: 'Agency', category: 'Internal', desc: 'Portfolio and rota', members: 5, sla: 'Standard', people: ['CV', 'SM', 'DK', 'YP', 'NZ'] }
@@ -714,12 +714,12 @@ const WIKI_TREE = [
     { id: 'w4', title: 'Handling an after-hours emergency' },
     { id: 'w5', title: 'Getting and comparing quotes' },
     { id: 'w6', title: 'Approved contractor list' },
-    { id: 'w7', title: 'Owner versus body corporate liability' }
+    { id: 'w7', title: 'Owner versus HOA liability' }
   ] },
   { name: 'Governance', icon: 'gavel', pages: [
-    { id: 'w8', title: 'Trustee meetings and resolutions' },
-    { id: 'w9', title: 'Levy collection and arrears policy' },
-    { id: 'w10', title: 'Special levies and the reserve fund' }
+    { id: 'w8', title: 'Board meetings and resolutions' },
+    { id: 'w9', title: 'Dues collection and arrears policy' },
+    { id: 'w10', title: 'Special dues and the reserve fund' }
   ] },
   { name: 'Compliance', icon: 'verified', pages: [
     { id: 'w11', title: 'Annual certificates and inspections' },
@@ -732,8 +732,8 @@ const WIKI_TREE = [
 const WIKI_SECTION_OF = { w4: 'Maintenance' };
 
 const ACCOUNTS = [
-  { name: 'Colette Viljoen', email: 'colette.viljoen@viljoenprop.co.za', role: 'Portfolio manager · Viljoen Property', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Managing agent' },
-  { name: 'Colette Viljoen', email: 'colette@meadowridge-bc.co.za', initials: 'CV', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Managing agent · Meadowridge' }
+  { name: 'Colette Viljoen', email: 'colette.viljoen@viljoenprop.com', role: 'Portfolio manager · Viljoen Property', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Property manager' },
+  { name: 'Colette Viljoen', email: 'colette@meadowridge-hoa.com', initials: 'CV', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Property manager · Meadowridge' }
 ];
 
 const goPage = (href) => (e) => {
@@ -839,20 +839,20 @@ class Component extends DCLogic {
       starFg: this.state.star ? '#ffcc00' : 'var(--topIcon, #33505b)',
       toggleStar: () => this.setState(s => ({ star: !s.star })),
       needList: [
-        { text: 'The after-hours contact list, and the trustee on duty' },
+        { text: 'The after-hours contact list, and the board member on duty' },
         { text: 'Your phone: photographs before anything is moved or repaired' },
         { text: 'The approved contractor list for that trade' }
       ],
       steps: [
-        { n: '1', title: 'Contain it before you cost it', text: 'Close the main, isolate the board, get people out of the lift. The invoice conversation happens afterwards and is always cheaper than the delay.' },
+        { n: '1', title: 'Contain it before you cost it', text: 'Close the main, isolate the board, get people out of the elevator. The invoice conversation happens afterwards and is always cheaper than the delay.' },
         { n: '2', title: 'Photograph everything, immediately', text: 'Both units, both sides of the damage, the failed part. No insurer has ever accepted a claim on a description alone.' },
-        { n: '3', title: 'Spend to the mandate, then ask', text: 'Up to R15 000 you proceed and report. Above it you phone the trustee on duty and record their answer in the channel, at the time it was given.' },
+        { n: '3', title: 'Spend to the mandate, then ask', text: 'Up to $15,000 you proceed and report. Above it you phone the board member on duty and record their answer in the channel, at the time it was given.' },
         { n: '4', title: 'Tell the residents before they ask', text: 'One notice in the residents channel with what happened, what is being done and when it will be back. It replaces forty phone calls.' }
       ],
       codes: [
-        { code: 'Water', meaning: 'Burst pipe, geyser, flooding', action: 'Attend immediately; isolate; photograph both units' },
+        { code: 'Water', meaning: 'Burst pipe, water heater, flooding', action: 'Attend immediately; isolate; photograph both units' },
         { code: 'Power', meaning: 'Common area or whole-block outage', action: 'Attend immediately; check utility fault first' },
-        { code: 'Entrapment', meaning: 'Person trapped in a lift', action: 'Lift company and emergency services at once' },
+        { code: 'Entrapment', meaning: 'Person trapped in an elevator', action: 'Elevator company and emergency services at once' },
         { code: 'Security', meaning: 'Breach, gate or fence failure', action: 'Guarding on site before the repair is scheduled' }
       ],
       toc: [selTitle, 'Before you start', 'You will need', 'Working the emergency', 'What counts as an emergency', 'Notice to residents'].map((l) => ({
@@ -974,10 +974,10 @@ class Component extends DCLogic {
       toggleSettings: () => this.setMenu('settings'),
 
       notifications: [
-        { icon: 'priority_high', text: 'Emergency: “Geyser burst, unit 14, water to units below”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Noluthando Zulu joined Trustees as a guest', time: '26 min ago', unread: true },
+        { icon: 'priority_high', text: 'Emergency: “Water heater burst, unit 14, water to units below”', time: '4 min ago', unread: true },
+        { icon: 'person_add', text: 'Noluthando Zulu joined The board as a guest', time: '26 min ago', unread: true },
         { icon: 'assignment_ind', text: 'Graham Tait assigned you the roof repair quotes', time: '1 hr ago', unread: true },
-        { icon: 'task_alt', text: 'Lift service completed: certificate filed', time: '2 hr ago', unread: false },
+        { icon: 'task_alt', text: 'Elevator service completed: certificate filed', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Site team', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
       chatQuery: this.state.chatQuery,
@@ -1107,7 +1107,7 @@ class Component extends DCLogic {
       inviteQuery: this.state.invite,
       onInvite: (e) => this.setState({ invite: e.target.value }),
       memberList: (mc ? mc.people : []).map((k, j) => {
-        const pr = PEOPLE[k] || { name: k, email: '-', role: 'Managing agent' };
+        const pr = PEOPLE[k] || { name: k, email: '-', role: 'Property manager' };
         return {
           initials: k, name: pr.name, email: pr.email, role: pr.role,
           bg: AVATAR_BGS[j % 3],

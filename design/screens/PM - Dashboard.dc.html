@@ -575,8 +575,8 @@ const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
   { initials: 'BM', name: 'Bianca Meyer', preview: 'Still no hot water in unit 14.', unread: true, customer: true },
   { initials: 'G1', name: 'Site team', unread: true, preview: 'Dirk: plumber is on site now', customer: false, href: '' },
-  { initials: 'GT', name: 'Graham Tait', preview: 'Trustees need the quotes by Monday.', unread: false, customer: true },
-  { initials: 'SM', name: 'Sifiso Mahlangu', preview: 'Third quote came in R18k lower.', unread: false, customer: false }
+  { initials: 'GT', name: 'Graham Tait', preview: 'The board need the quotes by Monday.', unread: false, customer: true },
+  { initials: 'SM', name: 'Sifiso Mahlangu', preview: 'Third quote came in $18k lower.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -586,9 +586,9 @@ const TENANTS = [
 
 const CHANNELS = [
   { tenant: 'Meadowridge Estate', category: 'Maintenance', members: '12 members', unread: '' },
-  { tenant: 'Meadowridge Estate', category: 'Trustees', members: '8 members', unread: '4' },
+  { tenant: 'Meadowridge Estate', category: 'The board', members: '8 members', unread: '4' },
   { tenant: 'Meadowridge Estate', category: 'Residents', members: '86 members', unread: '' },
-  { tenant: 'Meadowridge Estate', category: 'Levies & arrears', members: '6 members', unread: '' },
+  { tenant: 'Meadowridge Estate', category: 'Dues & arrears', members: '6 members', unread: '' },
   { tenant: 'Other buildings', category: 'Harbour Point', members: '14 members', unread: '12' },
   { tenant: 'Other buildings', category: 'Oak Row Offices', members: '9 members', unread: '' }
 ];
@@ -603,20 +603,20 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'NZ', name: 'Noluthando Zulu', role: 'Trustee · Treasurer', email: 'noluthando.zulu@meadowridge-bc.co.za', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'NZ', name: 'Noluthando Zulu', role: 'Board member · Treasurer', email: 'noluthando.zulu@meadowridge-hoa.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'CV', name: 'Colette Viljoen', admin: true, role: 'Channel admin · Portfolio manager', email: 'colette.viljoen@viljoenprop.co.za', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'SM', name: 'Sifiso Mahlangu', role: 'Maintenance coordinator', email: 'sifiso.mahlangu@viljoenprop.co.za', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'DK', name: 'Dirk Koekemoer', role: 'Building supervisor', email: 'dirk.koekemoer@viljoenprop.co.za', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'YP', name: 'Yusuf Parker', role: 'Levies and accounts', email: 'yusuf.parker@viljoenprop.co.za', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GT', name: 'Graham Tait', role: 'Trustee · Chairperson', email: 'graham.tait@meadowridge-bc.co.za', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'BM', name: 'Bianca Meyer', role: 'Resident · Unit 14', email: 'bianca.meyer@meadowridge-bc.co.za', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'CV', name: 'Colette Viljoen', admin: true, role: 'Channel admin · Portfolio manager', email: 'colette.viljoen@viljoenprop.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'SM', name: 'Sifiso Mahlangu', role: 'Maintenance coordinator', email: 'sifiso.mahlangu@viljoenprop.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'DK', name: 'Dirk Koekemoer', role: 'Building supervisor', email: 'dirk.koekemoer@viljoenprop.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'YP', name: 'Yusuf Parker', role: 'Dues and accounts', email: 'yusuf.parker@viljoenprop.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GT', name: 'Graham Tait', role: 'Board member · President', email: 'graham.tait@meadowridge-hoa.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'BM', name: 'Bianca Meyer', role: 'Resident · Unit 14', email: 'bianca.meyer@meadowridge-hoa.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const ACCOUNTS = [
-  { name: 'Colette Viljoen', email: 'colette.viljoen@viljoenprop.co.za', role: 'Portfolio manager · Viljoen Property', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Managing agent' },
-  { name: 'Colette Viljoen', email: 'colette@meadowridge-bc.co.za', initials: 'CV', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Managing agent · Meadowridge' }
+  { name: 'Colette Viljoen', email: 'colette.viljoen@viljoenprop.com', role: 'Portfolio manager · Viljoen Property', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Property manager' },
+  { name: 'Colette Viljoen', email: 'colette@meadowridge-hoa.com', initials: 'CV', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Property manager · Meadowridge' }
 ];
 
 const goPage = (href) => (e) => {
@@ -756,10 +756,10 @@ class Component extends DCLogic {
       toggleSettings: () => this.setMenu('settings'),
 
       notifications: [
-        { icon: 'priority_high', text: 'Emergency: “Geyser burst, unit 14, water to units below”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Noluthando Zulu joined Trustees as a guest', time: '26 min ago', unread: true },
+        { icon: 'priority_high', text: 'Emergency: “Water heater burst, unit 14, water to units below”', time: '4 min ago', unread: true },
+        { icon: 'person_add', text: 'Noluthando Zulu joined The board as a guest', time: '26 min ago', unread: true },
         { icon: 'assignment_ind', text: 'Graham Tait assigned you the roof repair quotes', time: '1 hr ago', unread: true },
-        { icon: 'task_alt', text: 'Lift service completed: certificate filed', time: '2 hr ago', unread: false },
+        { icon: 'task_alt', text: 'Elevator service completed: certificate filed', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Site team', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
       chatQuery: this.state.chatQuery,
@@ -851,8 +851,8 @@ class Component extends DCLogic {
       metrics: [
         { icon: 'confirmation_number', label: 'Requests this month', value: '186', delta: '+22 this week', note: 'Across 12 buildings', color: 'inherit', deltaColor: '#00c3ff' },
         { icon: 'pending_actions', label: 'Open requests', value: '47', delta: '+6 vs last week', note: 'Median age 2.1 days', color: 'inherit', deltaColor: ok },
-        { icon: 'person_search', label: 'Awaiting trustees', value: '8', delta: 'Oldest 9 days', note: 'Quotes pending approval', color: 'inherit', deltaColor: warn },
-        { icon: 'timer_off', label: 'Emergencies open', value: '2', delta: 'Next breach in 40m', note: 'Geyser and a lift call', color: 'inherit', deltaColor: bad }
+        { icon: 'person_search', label: 'Awaiting the board', value: '8', delta: 'Oldest 9 days', note: 'Quotes pending approval', color: 'inherit', deltaColor: warn },
+        { icon: 'timer_off', label: 'Emergencies open', value: '2', delta: 'Next breach in 40m', note: 'Water heater and an elevator call', color: 'inherit', deltaColor: bad }
       ],
 
       bars: [
@@ -864,10 +864,10 @@ class Component extends DCLogic {
       ],
 
       requests: [
-        { id: '#914', subject: 'Geyser burst, unit 14: water damage below', channel: 'Maintenance', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Breach in 40m', slaColor: bad },
-        { id: '#909', subject: 'Roof repair: three quotes for trustees', channel: 'Trustees', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: dark ? '#8ba3ae' : '#6b8290', sla: 'Due in 6h', slaColor: warn },
+        { id: '#914', subject: 'Water heater burst, unit 14: water damage below', channel: 'Maintenance', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Breach in 40m', slaColor: bad },
+        { id: '#909', subject: 'Roof repair: three quotes for the board', channel: 'The board', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: dark ? '#8ba3ae' : '#6b8290', sla: 'Due in 6h', slaColor: warn },
         { id: '#906', subject: 'Parking bay dispute, units 8 and 9', channel: 'Residents', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due Monday', slaColor: dark ? '#8ba3ae' : '#6b8290' },
-        { id: '#911', subject: 'Levy arrears: unit 22, 90 days', channel: 'Levies & arrears', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 2d', slaColor: bad },
+        { id: '#911', subject: 'Dues arrears: unit 22, 90 days', channel: 'Dues & arrears', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 2d', slaColor: bad },
         { id: '#898', subject: 'Annual fire equipment inspection', channel: 'Maintenance', status: 'Resolved', statusBg: dark ? 'rgba(61,220,151,0.14)' : 'rgba(18,160,106,0.12)', statusFg: ok, sla: 'Met · 3h 40m', slaColor: ok }
       ]
     };

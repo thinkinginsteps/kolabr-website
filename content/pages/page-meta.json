@@ -77,7 +77,7 @@
   },
   "/use-cases/nonprofits/": {
     "title": "Collaboration software for nonprofits and funders | Kolabr",
-    "description": "A channel per programme. Field sites, volunteers, trustees and funders in one place, and none of them cost anything, because guests are free on every plan.",
+    "description": "A channel per programme. Field sites, volunteers, board members and funders in one place, and none of them cost anything, because guests are free.",
     "name": "Nonprofits"
   },
   "/use-cases/architecture-firms/": {
@@ -117,7 +117,7 @@
   },
   "/use-cases/property-management/": {
     "title": "Collaboration software for property managers | Kolabr",
-    "description": "A channel per building. Maintenance, trustee approvals, resident notices and arrears in one place, with contractors and trustees joining free as guests.",
+    "description": "A channel per building. Maintenance, board approvals, resident notices and arrears in one place, with contractors and owners joining free as guests.",
     "name": "Property management"
   },
   "/use-cases/clinics/": {

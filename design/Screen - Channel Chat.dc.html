@@ -755,7 +755,7 @@ const THREAD = {
   text: 'Morning all, invoice sync is still failing on our side. Finance has 41 unsynced invoices from Monday onward.',
   replies: [
     { author: 'Adam Bekker', initials: 'AB', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', time: '09:14', text: 'Pulled the gateway logs: every failure is a 422 on the same batch id.' },
-    { author: 'Ruben Pienaar', initials: '', bg: 'url(assets/screens/sm-photo-richard-potgieter.png)', time: '09:16', text: 'That batch has three invoices under MUR 50. Those are the ones being rejected.' },
+    { author: 'Ruben Pienaar', initials: '', bg: 'url(assets/screens/sm-photo-richard-potgieter.png)', time: '09:16', text: 'That batch has three invoices under $50. Those are the ones being rejected.' },
     { author: 'Dean Harlow', initials: '', bg: 'url(assets/screens/sm-photo-dom-hardy.png)', time: '09:17', text: 'Those are courier surcharges. They have always been that small.' },
     { author: 'Ruben Pienaar', initials: '', bg: 'url(assets/screens/sm-photo-richard-potgieter.png)', time: '09:18', text: 'Then the floor check is wrong, not your data. Moving this to the main channel.' }
   ]
@@ -878,10 +878,10 @@ class Component extends DCLogic {
       { kind: 'msg', author: 'Nathan Sorensen', photo: 'assets/screens/sm-photo-neville-september.png', time: '16:20', mention: true, text: '@channel release freeze starts Friday 14:00 and runs through month-end. Anything that has to ship before then needs to be merged by Thursday lunch.', reactions: [{ emoji: '👍', count: 6 }] },
       { kind: 'divider', label: 'Today' },
       { kind: 'msg', author: 'Dean Harlow', photo: 'assets/screens/sm-photo-dom-hardy.png', time: '09:12', text: 'Morning all, invoice sync is still failing on our side. Finance has 41 unsynced invoices from Monday onward.', thread: '4 replies · last 09:18' },
-      { kind: 'msg', author: 'Ruben Pienaar', photo: 'assets/screens/sm-photo-richard-potgieter.png', time: '09:19', text: 'Summarising out of the thread: the gateway rejects anything under MUR 50 and the retry queue never clears the rejected batch, so everything behind it stalls. Fix is a two-line change to the batch handler.', reactions: [{ emoji: '🙌', count: 3 }] },
+      { kind: 'msg', author: 'Ruben Pienaar', photo: 'assets/screens/sm-photo-richard-potgieter.png', time: '09:19', text: 'Summarising out of the thread: the gateway rejects anything under $50 and the retry queue never clears the rejected batch, so everything behind it stalls. Fix is a two-line change to the batch handler.', reactions: [{ emoji: '🙌', count: 3 }] },
       { kind: 'event', icon: 'confirmation_number', label: 'Request #4821 created from a message', meta: 'Ruben Pienaar · In progress · SLA 4h', time: '09:26' },
       { kind: 'msg', author: 'Dylan Sorensen', photo: 'assets/screens/sm-photo-dom-september.png', time: '09:31', text: 'Staging first please: replay the 41 stalled invoices there before it touches production, and I want someone from Northwind finance on the totals check.' },
-      { kind: 'msg', author: 'Adam Bekker', photo: '', initials: 'AB', time: '09:36', text: 'Added a Wiki page for the MUR 50 floor with the replay steps, so the next agent does not have to dig through this channel.', thread: '2 replies · last 09:39' },
+      { kind: 'msg', author: 'Adam Bekker', photo: '', initials: 'AB', time: '09:36', text: 'Added a Wiki page for the $50 floor with the replay steps, so the next agent does not have to dig through this channel.', thread: '2 replies · last 09:39' },
       { kind: 'event', icon: 'event_available', label: 'Deploy review scheduled: today 15:00', meta: 'Nathan Sorensen · 5 invited', time: '09:38' },
       { kind: 'msg', author: 'Ruben Pienaar', photo: 'assets/screens/sm-photo-richard-potgieter.png', time: '09:41', text: 'Deploying to staging now. I will drop the replay window in here as soon as the build is up.' }
     ].concat(this.state.sent.map(m => ({ kind: 'msg', ...m })));

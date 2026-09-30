@@ -24,11 +24,11 @@
   "nonprofits": [
     {
       "q": "Will we be billed for our volunteers?",
-      "a": "No. Volunteers, trustees and funders join as guests and are never billed; the plan covers the people on your payroll. A small team supporting forty volunteers is not a forty-person bill, and channels are unlimited on Pro and Business, so a channel per programme costs nothing extra."
+      "a": "No. Volunteers, the board and funders join as guests and are never billed; the plan covers the people on your payroll. A small team supporting forty volunteers is not a forty-person bill, and channels are unlimited on Pro and Business, so a channel per programme costs nothing extra."
     },
     {
       "q": "Can funders see our internal conversations or other funders' grants?",
-      "a": "No. Each funder gets their own channel and sees only the programme they fund, not another funder's grant and not your internal conversation about cash flow. They can watch the work as it happens instead of waiting for a quarterly PDF. Trustees likewise see governance without seeing every field message."
+      "a": "No. Each funder gets their own channel and sees only the programme they fund, not another funder's grant and not your internal conversation about cash flow. They can watch the work as it happens instead of waiting for a quarterly PDF. The board likewise see governance without seeing every field message."
     },
     {
       "q": "Our facilitators work at sites with almost no signal. Will it work?",
@@ -199,16 +199,16 @@
   ],
   "property-management": [
     {
-      "q": "Do trustees and residents have to pay to use Kolabr?",
-      "a": "No. Trustees, owners and residents join as guests, free, and are never billed however many of them report a leak. You pay for your staff, and channels are unlimited on Pro and Business, so a channel per building is not a bigger bill."
+      "q": "Do the board and residents have to pay to use Kolabr?",
+      "a": "No. The board, owners and residents join as guests, free, and are never billed however many of them report a leak. You pay for your staff, and channels are unlimited on Pro and Business, so a channel per building is not a bigger bill."
     },
     {
-      "q": "How should a managing agent set up channels for each building?",
-      "a": "Most managing agents run one channel per building, split by who is allowed to see what. Typical channels are Maintenance, Trustees, Residents, Levies & arrears, and your own Agency channel. Owners and trustees see only their own building, and sensitive matters like arrears stay out of the residents channel."
+      "q": "How should a property manager set up channels for each building?",
+      "a": "Most property managers run one channel per building, split by who is allowed to see what. Typical channels are Maintenance, The board, Residents, Dues & arrears, and your own Agency channel. Owners and the board see only their own building, and sensitive matters like arrears stay out of the residents channel."
     },
     {
       "q": "How do response times work for emergencies versus everyday queries?",
-      "a": "Every job has a number, an owner and a clock. Categories such as emergency, resident query, quote approval, compliance and arrears are each routed to the person who handles them, with their own response time: an emergency has minutes, a parking dispute has days. Trustees see the same clock you do."
+      "a": "Every job has a number, an owner and a clock. Categories such as emergency, resident query, quote approval, compliance and arrears are each routed to the person who handles them, with their own response time: an emergency has minutes, a parking dispute has days. The board see the same clock you do."
     },
     {
       "q": "Can our site supervisors use it from their phones on site?",

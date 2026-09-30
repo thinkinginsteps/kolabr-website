@@ -588,7 +588,7 @@ const CHANNELS = [
   { tenant: 'Northfield Health', category: 'Clinical team', members: '14 members', unread: '' },
   { tenant: 'Northfield Health', category: 'Front desk & bookings', members: '9 members', unread: '4' },
   { tenant: 'Northfield Health', category: 'Practice operations', members: '7 members', unread: '' },
-  { tenant: 'Northfield Health', category: 'Billing & medical aid', members: '6 members', unread: '' },
+  { tenant: 'Northfield Health', category: 'Billing & insurance', members: '6 members', unread: '' },
   { tenant: 'Partners & referrals', category: 'MedLab Diagnostics', members: '8 members', unread: '12' },
   { tenant: 'Partners & referrals', category: 'Radiology partners', members: '5 members', unread: '' }
 ];
@@ -603,20 +603,20 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'TK', name: 'Thandeka Khumalo', role: 'Partner · Radiology bookings', email: 'thandeka.khumalo@capewestradiology.co.za', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'TK', name: 'Thandeka Khumalo', role: 'Partner · Radiology bookings', email: 'thandeka.khumalo@capewestradiology.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'LM', name: 'Lerato Mabaso', admin: true, role: 'Channel admin · Practice manager', email: 'lerato.mabaso@northfieldhealth.co.za', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'RS', name: 'Riaan Steyn', role: 'General practitioner', email: 'riaan.steyn@northfieldhealth.co.za', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'SV', name: 'Sanele Vilakazi', role: 'Practice nurse', email: 'sanele.vilakazi@northfieldhealth.co.za', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'FN', name: 'Fatima Nkosi', role: 'Reception lead', email: 'fatima.nkosi@northfieldhealth.co.za', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GP', name: 'Grant Pretorius', role: 'Partner · MedLab account', email: 'grant.pretorius@medlabdiagnostics.co.za', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'AM', name: 'Anja Meyer', role: 'Locum · Tue and Thu', email: 'anja.meyer@northfieldhealth.co.za', since: '27 May 2026', status: 'offline', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'LM', name: 'Lerato Mabaso', admin: true, role: 'Channel admin · Practice manager', email: 'lerato.mabaso@northfieldhealth.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'RS', name: 'Riaan Steyn', role: 'General practitioner', email: 'riaan.steyn@northfieldhealth.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'SV', name: 'Sanele Vilakazi', role: 'Practice nurse', email: 'sanele.vilakazi@northfieldhealth.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'FN', name: 'Fatima Nkosi', role: 'Reception lead', email: 'fatima.nkosi@northfieldhealth.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GP', name: 'Grant Pretorius', role: 'Partner · MedLab account', email: 'grant.pretorius@medlabdiagnostics.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'AM', name: 'Anja Meyer', role: 'Locum · Tue and Thu', email: 'anja.meyer@northfieldhealth.com', since: '27 May 2026', status: 'offline', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const ACCOUNTS = [
-  { name: 'Lerato Mabaso', email: 'lerato.mabaso@northfieldhealth.co.za', role: 'Practice manager · Northfield Health', initials: 'LM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Practice' },
-  { name: 'Lerato Mabaso', email: 'lerato@medlabdiagnostics.co.za', initials: 'LM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Referring practice · MedLab' }
+  { name: 'Lerato Mabaso', email: 'lerato.mabaso@northfieldhealth.com', role: 'Practice manager · Northfield Health', initials: 'LM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Practice' },
+  { name: 'Lerato Mabaso', email: 'lerato@medlabdiagnostics.com', initials: 'LM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Referring practice · MedLab' }
 ];
 
 const goPage = (href) => (e) => {
@@ -866,7 +866,7 @@ class Component extends DCLogic {
       requests: [
         { id: '#512', subject: 'Urgent result unactioned: abnormal potassium', channel: 'Clinical team', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Overdue 2h', slaColor: bad },
         { id: '#508', subject: 'Locum access for Tuesday, Dr Meyer', channel: 'Practice operations', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: dark ? '#8ba3ae' : '#6b8290', sla: 'Due in 6h', slaColor: warn },
-        { id: '#505', subject: 'Medical aid rejection: code 3014, 8 claims', channel: 'Billing & medical aid', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due tomorrow', slaColor: dark ? '#8ba3ae' : '#6b8290' },
+        { id: '#505', subject: 'Insurance denial: code 3014, 8 claims', channel: 'Billing & insurance', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due tomorrow', slaColor: dark ? '#8ba3ae' : '#6b8290' },
         { id: '#510', subject: 'Referral not acknowledged: 5 days', channel: 'Radiology partners', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 5d', slaColor: bad },
         { id: '#498', subject: 'Vaccine fridge temperature log, weekly', channel: 'Practice operations', status: 'Resolved', statusBg: dark ? 'rgba(61,220,151,0.14)' : 'rgba(18,160,106,0.12)', statusFg: ok, sla: 'Met · 1h 40m', slaColor: ok }
       ]

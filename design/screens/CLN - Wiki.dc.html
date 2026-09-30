@@ -652,7 +652,7 @@ const CHANNELS = [
   { tenant: 'Northfield Health', category: 'Clinical team', members: '14 members', unread: '' },
   { tenant: 'Northfield Health', category: 'Front desk & bookings', members: '9 members', unread: '4' },
   { tenant: 'Northfield Health', category: 'Practice operations', members: '7 members', unread: '' },
-  { tenant: 'Northfield Health', category: 'Billing & medical aid', members: '6 members', unread: '' },
+  { tenant: 'Northfield Health', category: 'Billing & insurance', members: '6 members', unread: '' },
   { tenant: 'Partners & referrals', category: 'MedLab Diagnostics', members: '8 members', unread: '12' },
   { tenant: 'Partners & referrals', category: 'Radiology partners', members: '5 members', unread: '' }
 ];
@@ -667,27 +667,27 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'TK', name: 'Thandeka Khumalo', role: 'Partner · Radiology bookings', email: 'thandeka.khumalo@capewestradiology.co.za', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'TK', name: 'Thandeka Khumalo', role: 'Partner · Radiology bookings', email: 'thandeka.khumalo@capewestradiology.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'LM', name: 'Lerato Mabaso', admin: true, role: 'Channel admin · Practice manager', email: 'lerato.mabaso@northfieldhealth.co.za', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'RS', name: 'Riaan Steyn', role: 'General practitioner', email: 'riaan.steyn@northfieldhealth.co.za', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'SV', name: 'Sanele Vilakazi', role: 'Practice nurse', email: 'sanele.vilakazi@northfieldhealth.co.za', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'FN', name: 'Fatima Nkosi', role: 'Reception lead', email: 'fatima.nkosi@northfieldhealth.co.za', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GP', name: 'Grant Pretorius', role: 'Partner · MedLab account', email: 'grant.pretorius@medlabdiagnostics.co.za', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'AM', name: 'Anja Meyer', role: 'Locum · Tue and Thu', email: 'anja.meyer@northfieldhealth.co.za', since: '27 May 2026', status: 'offline', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'LM', name: 'Lerato Mabaso', admin: true, role: 'Channel admin · Practice manager', email: 'lerato.mabaso@northfieldhealth.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'RS', name: 'Riaan Steyn', role: 'General practitioner', email: 'riaan.steyn@northfieldhealth.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'SV', name: 'Sanele Vilakazi', role: 'Practice nurse', email: 'sanele.vilakazi@northfieldhealth.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'FN', name: 'Fatima Nkosi', role: 'Reception lead', email: 'fatima.nkosi@northfieldhealth.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GP', name: 'Grant Pretorius', role: 'Partner · MedLab account', email: 'grant.pretorius@medlabdiagnostics.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'AM', name: 'Anja Meyer', role: 'Locum · Tue and Thu', email: 'anja.meyer@northfieldhealth.com', since: '27 May 2026', status: 'offline', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const CH_CATS = ['All', 'Clinical', 'Operations', 'Admin', 'Partners'];
 
 const PEOPLE = {
-  LM: { name: 'Lerato Mabaso', email: 'lerato.mabaso@northfieldhealth.co.za', role: 'Practice manager' },
-  RS: { name: 'Riaan Steyn', email: 'riaan.steyn@northfieldhealth.co.za', role: 'General practitioner' },
-  SV: { name: 'Sanele Vilakazi', email: 'sanele.vilakazi@northfieldhealth.co.za', role: 'Practice nurse' },
-  FN: { name: 'Fatima Nkosi', email: 'fatima.nkosi@northfieldhealth.co.za', role: 'Reception lead' },
-  AM: { name: 'Anja Meyer', email: 'anja.meyer@northfieldhealth.co.za', role: 'Locum · Tue and Thu' },
-  GP: { name: 'Grant Pretorius', email: 'grant.pretorius@medlabdiagnostics.co.za', role: 'Partner · MedLab' },
-  TK: { name: 'Thandeka Khumalo', email: 'thandeka.khumalo@capewestradiology.co.za', role: 'Partner · Radiology' }
+  LM: { name: 'Lerato Mabaso', email: 'lerato.mabaso@northfieldhealth.com', role: 'Practice manager' },
+  RS: { name: 'Riaan Steyn', email: 'riaan.steyn@northfieldhealth.com', role: 'General practitioner' },
+  SV: { name: 'Sanele Vilakazi', email: 'sanele.vilakazi@northfieldhealth.com', role: 'Practice nurse' },
+  FN: { name: 'Fatima Nkosi', email: 'fatima.nkosi@northfieldhealth.com', role: 'Reception lead' },
+  AM: { name: 'Anja Meyer', email: 'anja.meyer@northfieldhealth.com', role: 'Locum · Tue and Thu' },
+  GP: { name: 'Grant Pretorius', email: 'grant.pretorius@medlabdiagnostics.com', role: 'Partner · MedLab' },
+  TK: { name: 'Thandeka Khumalo', email: 'thandeka.khumalo@capewestradiology.com', role: 'Partner · Radiology' }
 };
 
 const AVATAR_BGS = ['linear-gradient(150deg, #33505b, #557a88)', 'linear-gradient(150deg, #00c3ff, #0a9fd4)', 'linear-gradient(150deg, #7c6cf0, #5c4bd8)'];
@@ -696,7 +696,7 @@ const CHANNEL_LIST = [
   { name: 'Clinical team', category: 'Clinical', desc: 'Results, handover, cover', members: 5, sla: 'Priority', people: ['RS', 'SV', 'LM', 'AM', 'FN'] },
   { name: 'Front desk & bookings', category: 'Operations', desc: 'Lists, scripts, patients', members: 4, sla: 'Priority', people: ['FN', 'LM', 'SV', 'RS'] },
   { name: 'Practice operations', category: 'Operations', desc: 'Compliance and staffing', members: 4, sla: 'Standard', people: ['LM', 'SV', 'FN', 'AM'] },
-  { name: 'Billing & medical aid', category: 'Admin', desc: 'Claims and authorisations', members: 3, sla: 'Standard', people: ['LM', 'FN', 'RS'] },
+  { name: 'Billing & insurance', category: 'Admin', desc: 'Claims and authorisations', members: 3, sla: 'Standard', people: ['LM', 'FN', 'RS'] },
   { name: 'MedLab Diagnostics', category: 'Partners', desc: 'Pathology results', members: 3, sla: 'Priority', people: ['GP', 'RS', 'SV'] },
   { name: 'Radiology partners', category: 'Partners', desc: 'Referrals and reports', members: 3, sla: 'Enhanced', people: ['TK', 'RS', 'FN'] },
   { name: 'Practice', category: 'Internal', desc: 'Roster and meetings', members: 5, sla: 'Standard', people: ['LM', 'RS', 'SV', 'FN', 'AM'] }
@@ -722,7 +722,7 @@ const WIKI_TREE = [
     { id: 'w10', title: 'Emergency trolley and resus checks' }
   ] },
   { name: 'Administration', icon: 'receipt_long', pages: [
-    { id: 'w11', title: 'Medical aid claims and rejections' },
+    { id: 'w11', title: 'Insurance claims and denials' },
     { id: 'w12', title: 'Pre-authorisations' },
     { id: 'w13', title: 'Patient complaints procedure' }
   ] }
@@ -732,8 +732,8 @@ const WIKI_TREE = [
 const WIKI_SECTION_OF = { w4: 'Clinical' };
 
 const ACCOUNTS = [
-  { name: 'Lerato Mabaso', email: 'lerato.mabaso@northfieldhealth.co.za', role: 'Practice manager · Northfield Health', initials: 'LM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Practice' },
-  { name: 'Lerato Mabaso', email: 'lerato@medlabdiagnostics.co.za', initials: 'LM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Referring practice · MedLab' }
+  { name: 'Lerato Mabaso', email: 'lerato.mabaso@northfieldhealth.com', role: 'Practice manager · Northfield Health', initials: 'LM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Practice' },
+  { name: 'Lerato Mabaso', email: 'lerato@medlabdiagnostics.com', initials: 'LM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Referring practice · MedLab' }
 ];
 
 const goPage = (href) => (e) => {

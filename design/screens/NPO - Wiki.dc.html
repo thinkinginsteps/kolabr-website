@@ -550,7 +550,7 @@ input, textarea, select { caret-color: transparent !important; }
 
           <h2 data-anchor="Note for the funder report" style="margin: 32px 0 0; font-size: 19px; font-weight: 650; letter-spacing: -0.02em;">Note for the funder report</h2>
           <p style="margin: 10px 0 0; font-size: 14.5px; line-height: 1.68; text-wrap: pretty;">Use this wording when a site misses its target. Funders do not punish an explained dip; they lose confidence in an unexplained one, and far more in one they discover themselves.</p>
-          <div style="margin-top: 14px; padding: 15px 17px; border-radius: 14px; background: var(--page, #edf3f7); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; line-height: 1.7; color: var(--muted, #6b8290); text-wrap: pretty;">Lusikisiki, week 6: 214 children attended against a target of 260. Two facilitators were on sick leave and sessions ran at reduced capacity on the Tuesday and Wednesday. Paper registers photographed and captured on 13 August. Cover arranged from week 7; attendance has returned to 251.</div>
+          <div style="margin-top: 14px; padding: 15px 17px; border-radius: 14px; background: var(--page, #edf3f7); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; line-height: 1.7; color: var(--muted, #6b8290); text-wrap: pretty;">Fairmont, week 6: 214 children attended against a target of 260. Two facilitators were on sick leave and sessions ran at reduced capacity on the Tuesday and Wednesday. Paper registers photographed and captured on 13 August. Cover arranged from week 7; attendance has returned to 251.</div>
 
           <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 34px; padding-top: 20px; border-top: 1px solid var(--hairline, rgba(0,0,0,0.09));">
             <span style="font-size: 13.5px; font-weight: 500;">Was this page helpful?</span>
@@ -638,7 +638,7 @@ const THEMES = {
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
   { initials: 'RC', name: 'Rita Coetzer', preview: 'Is the Q3 narrative report on track?', unread: true, customer: true },
-  { initials: 'G1', name: 'Programme team', unread: true, preview: 'Sarah: attendance data is in from Mthatha', customer: false, href: '' },
+  { initials: 'G1', name: 'Programme team', unread: true, preview: 'Sarah: attendance data is in from Danville', customer: false, href: '' },
   { initials: 'PM', name: 'Palesa Mokoena', preview: 'Two facilitators off sick this week.', unread: false, customer: false },
   { initials: 'DM', name: 'David Moloi', preview: 'Need the receipts before month-end.', unread: false, customer: false }
 ];
@@ -667,26 +667,26 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'PM', name: 'Palesa Mokoena', role: 'Site facilitator · Lusikisiki', email: 'palesa.mokoena@thusanang.org.za', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'PM', name: 'Palesa Mokoena', role: 'Site facilitator · Fairmont', email: 'palesa.mokoena@thusanang.org', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'TM', name: 'Thandeka Mabaso', admin: true, role: 'Channel admin · Programme manager', email: 'thandeka.mabaso@thusanang.org.za', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'JP', name: 'Johan Prinsloo', role: 'Monitoring & evaluation', email: 'johan.prinsloo@thusanang.org.za', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'SB', name: 'Sarah Bhengu', role: 'Field coordinator · Mthatha', email: 'sarah.bhengu@thusanang.org.za', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'DM', name: 'David Moloi', role: 'Finance & grants', email: 'david.moloi@thusanang.org.za', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'TM', name: 'Thandeka Mabaso', admin: true, role: 'Channel admin · Programme manager', email: 'thandeka.mabaso@thusanang.org', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'JP', name: 'Johan Prinsloo', role: 'Monitoring & evaluation', email: 'johan.prinsloo@thusanang.org', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'SB', name: 'Sarah Bhengu', role: 'Field coordinator · Danville', email: 'sarah.bhengu@thusanang.org', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'DM', name: 'David Moloi', role: 'Finance & grants', email: 'david.moloi@thusanang.org', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'RC', name: 'Rita Coetzer', role: 'Funder · Meridian Foundation', email: 'rita.coetzer@meridianfoundation.org', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'KN', name: 'Kate Nel', role: 'Volunteer coordinator', email: 'kate.nel@thusanang.org.za', since: '27 May 2026', status: 'offline', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'KN', name: 'Kate Nel', role: 'Volunteer coordinator', email: 'kate.nel@thusanang.org', since: '27 May 2026', status: 'offline', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const CH_CATS = ['All', 'Programme', 'Field', 'Funders', 'Governance'];
 
 const PEOPLE = {
-  TM: { name: 'Thandeka Mabaso', email: 'thandeka.mabaso@thusanang.org.za', role: 'Programme manager' },
-  JP: { name: 'Johan Prinsloo', email: 'johan.prinsloo@thusanang.org.za', role: 'Monitoring & evaluation' },
-  SB: { name: 'Sarah Bhengu', email: 'sarah.bhengu@thusanang.org.za', role: 'Field coordinator' },
-  DM: { name: 'David Moloi', email: 'david.moloi@thusanang.org.za', role: 'Finance & grants' },
-  KN: { name: 'Kate Nel', email: 'kate.nel@thusanang.org.za', role: 'Volunteer coordinator' },
-  PM: { name: 'Palesa Mokoena', email: 'palesa.mokoena@thusanang.org.za', role: 'Site facilitator' },
+  TM: { name: 'Thandeka Mabaso', email: 'thandeka.mabaso@thusanang.org', role: 'Programme manager' },
+  JP: { name: 'Johan Prinsloo', email: 'johan.prinsloo@thusanang.org', role: 'Monitoring & evaluation' },
+  SB: { name: 'Sarah Bhengu', email: 'sarah.bhengu@thusanang.org', role: 'Field coordinator' },
+  DM: { name: 'David Moloi', email: 'david.moloi@thusanang.org', role: 'Finance & grants' },
+  KN: { name: 'Kate Nel', email: 'kate.nel@thusanang.org', role: 'Volunteer coordinator' },
+  PM: { name: 'Palesa Mokoena', email: 'palesa.mokoena@thusanang.org', role: 'Site facilitator' },
   RC: { name: 'Rita Coetzer', email: 'rita.coetzer@meridianfoundation.org', role: 'Funder' }
 };
 
@@ -732,7 +732,7 @@ const WIKI_TREE = [
 const WIKI_SECTION_OF = { w4: 'Field reporting' };
 
 const ACCOUNTS = [
-  { name: 'Thandeka Mabaso', email: 'thandeka.mabaso@thusanang.org.za', role: 'Programme manager · Thusanang', initials: 'TM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Staff' },
+  { name: 'Thandeka Mabaso', email: 'thandeka.mabaso@thusanang.org', role: 'Programme manager · Thusanang', initials: 'TM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Staff' },
   { name: 'Thandeka Mabaso', email: 'thandeka@meridianfoundation.org', initials: 'TM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Grantee · Meridian Foundation' }
 ];
 
@@ -871,7 +871,7 @@ class Component extends DCLogic {
 
       tags: ['attendance', 'field sites', 'reporting', 'procedure'].map(l => ({ label: l })),
       files: [
-        { icon: 'picture_as_pdf', name: 'Paper register, Lusikisiki wk6.pdf', size: '164 KB' },
+        { icon: 'picture_as_pdf', name: 'Paper register, Fairmont wk6.pdf', size: '164 KB' },
         { icon: 'table', name: 'Attendance master, Q3.xlsx', size: '96 KB' }
       ],
 
@@ -976,7 +976,7 @@ class Component extends DCLogic {
       notifications: [
         { icon: 'priority_high', text: 'Due today: “Q3 narrative report to Meridian”', time: '4 min ago', unread: true },
         { icon: 'person_add', text: 'Rita Coetzer joined Meridian Foundation as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'David Moloi assigned you the Lusikisiki expense pack', time: '1 hr ago', unread: true },
+        { icon: 'assignment_ind', text: 'David Moloi assigned you the Fairmont expense pack', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Safeguarding refresher completed: 18 volunteers', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Programme team', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),

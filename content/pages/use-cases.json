@@ -497,7 +497,7 @@
           "body": "Fridge logs, sharps collections, emergency trolley checks. Compliance as recurring tasks with a name against each one."
         },
         {
-          "title": "Billing & medical aid",
+          "title": "Billing & insurance",
           "body": "Rejections, pre-authorisations and the claims that need chasing: away from clinical traffic."
         },
         {
@@ -521,10 +521,10 @@
     "requests": {
       "id": "tasks",
       "title": "The admin that surrounds care, with an owner on each item",
-      "lede": "Urgent results, referrals, compliance checks, medical aid rejections and locum access as tracked tasks. Nothing clinical in the chat: a file number, a priority and a name.",
+      "lede": "Urgent results, referrals, compliance checks, insurance denials and locum access as tracked tasks. Nothing clinical in the chat: a file number, a priority and a name.",
       "image": {
         "file": "c5-requests",
-        "alt": "Request management for the practice: an unactioned urgent result, locum access, a medical aid rejection, an unacknowledged referral and the weekly fridge log in one table"
+        "alt": "Request management for the practice: an unactioned urgent result, locum access, a insurance denial, an unacknowledged referral and the weekly fridge log in one table"
       },
       "cards": [
         {
@@ -802,7 +802,7 @@
     "site": {
       "id": "site",
       "title": "Built for a man in a hard hat, not a desk",
-      "lede": "Your foreman has one bar of signal, gloves on and a bakkie to unload. He can photograph the clash, raise the variation and be done before the concrete arrives, without learning a system.",
+      "lede": "Your foreman has one bar of signal, gloves on and a pickup to unload. He can photograph the clash, raise the variation and be done before the concrete arrives, without learning a system.",
       "image": {
         "file": "c6-mobile",
         "alt": "Kolabr on a phone: the foreman reporting rock at grid C, the reply telling him to photograph it before backfill, and the day's open requests"
@@ -947,7 +947,7 @@
       "lede": "A pour booked for Thursday, spacing that looks wrong in a photograph, and a contractor who will say you approved it verbally. One channel per project, where the inspection, the measurement and the decision carry a name and a timestamp. Clients and contractors join as guests, free, on every plan.",
       "image": {
         "file": "e2-chat",
-        "alt": "The Structural channel for the Cavendish Mall upgrade: a pinned rule that no pour proceeds without a signed inspection, cube results flagged under spec, and the contractor asking whether to stop"
+        "alt": "The Structural channel for the Riverside Mall upgrade: a pinned rule that no pour proceeds without a signed inspection, cube results flagged under spec, and the contractor asking whether to stop"
       }
     },
     "channels": {
@@ -956,7 +956,7 @@
       "cards": [
         {
           "title": "One channel per project",
-          "body": "Cavendish Mall in one place: the client, the contractor, and each of your disciplines. They join as guests, free, and see only this project."
+          "body": "Riverside Mall in one place: the client, the contractor, and each of your disciplines. They join as guests, free, and see only this project."
         },
         {
           "title": "Per discipline",
@@ -1125,7 +1125,7 @@
       "cards": [
         {
           "title": "Guests see one project",
-          "body": "The contractor on Cavendish sees Cavendish. Not your fee, and not the tender they are bidding against you on next month."
+          "body": "The contractor on Riverside sees Riverside. Not your fee, and not the tender they are bidding against you on next month."
         },
         {
           "title": "Who may sign",
@@ -2354,7 +2354,7 @@
     "hero": {
       "eyebrow": "Kolabr for nonprofits",
       "title": "The report writes itself, because the work was recorded as it happened.",
-      "lede": "Four field sites, forty volunteers, three funders and a quarterly narrative report that currently takes two weeks to assemble from memory and WhatsApp. One channel per programme instead: where attendance, receipts and safeguarding all land the day they happen. Volunteers, trustees and funders join as guests, free, on every plan.",
+      "lede": "Four field sites, forty volunteers, three funders and a quarterly narrative report that currently takes two weeks to assemble from memory and WhatsApp. One channel per programme instead: where attendance, receipts and safeguarding all land the day they happen. Volunteers, the board and funders join as guests, free, on every plan.",
       "image": {
         "file": "n2-chat",
         "alt": "The Early learning programme channel for Thusanang Trust: a pinned funder report deadline, a field coordinator reporting short attendance with the reason, and the funder reading along"
@@ -2378,7 +2378,7 @@
         },
         {
           "title": "Board & governance",
-          "body": "Audit schedules, board packs, the finance conversation. Trustees join as guests and see governance without seeing every field message."
+          "body": "Audit schedules, board packs, the finance conversation. The board join as guests and see governance without seeing every field message."
         },
         {
           "title": "Funders",
@@ -2569,7 +2569,7 @@
         {
           "title": "You pay for staff, not volunteers",
           "body": [
-            "Volunteers, trustees and funders are guests and are never billed. The plan covers the people on your payroll. ",
+            "Volunteers, the board and funders are guests and are never billed. The plan covers the people on your payroll. ",
             {
               "label": "See pricing",
               "href": "/pricing"
@@ -2589,26 +2589,26 @@
     "hero": {
       "eyebrow": "Kolabr for property management",
       "title": "Take the building off your personal phone.",
-      "lede": "A geyser bursts at six, three residents WhatsApp the portfolio manager directly, and the trustees hear about it at the next meeting. One channel per building instead: where the report, the quote, the approval and the notice all live together. Trustees and residents join as guests, free, on every plan.",
+      "lede": "A water heater bursts at six, three residents WhatsApp the portfolio manager directly, and the board hears about it at the next meeting. One channel per building instead: where the report, the quote, the approval and the notice all live together. The board and residents join as guests, free, on every plan.",
       "image": {
         "file": "p2-chat",
-        "alt": "The Maintenance channel for Meadowridge Estate: a pinned definition of what counts as an emergency, three roof quotes posted for the trustees, and a resident reporting a burst geyser"
+        "alt": "The Maintenance channel for Meadowridge Estate: a pinned definition of what counts as an emergency, three roof quotes posted for the board, and a resident reporting a burst water heater"
       }
     },
     "channels": {
-      "title": "Where a managing agent puts its channels",
+      "title": "Where a property manager puts its channels",
       "lede": "A channel is a group of people plus the work they share: the conversation, the jobs, the calendar and the wiki. Most agents run one per building, split by who is allowed to see what.",
       "cards": [
         {
           "title": "One channel per building",
-          "body": "Meadowridge in one place: the trustees, the residents, your site staff. Owners and trustees join as guests, free, and see only their own building."
+          "body": "Meadowridge in one place: the board, the residents and your site staff. Owners and board members join as guests, free, and see only their own building."
         },
         {
           "title": "Maintenance",
-          "body": "Where a resident reports a burst geyser and it becomes a numbered job with a contractor and a clock: instead of a voicenote to somebody’s personal phone."
+          "body": "Where a resident reports a burst water heater and it becomes a numbered job with a contractor and a clock: instead of a voicenote to somebody’s personal phone."
         },
         {
-          "title": "Trustees",
+          "title": "The board",
           "body": "Quotes, approvals and the meeting pack. The decision and the three quotes it was made on stay together, which is what the next AGM will ask about."
         },
         {
@@ -2616,12 +2616,12 @@
           "body": "Notices, outages and the questions everyone asks. One announcement replaces forty phone calls to the office."
         },
         {
-          "title": "Levies & arrears",
+          "title": "Dues & arrears",
           "body": "Collections and the policy behind them. Sensitive, so it stays out of the residents channel and in front of the people who decide."
         },
         {
           "title": "Agency",
-          "body": "Your own portfolio. Rota, contractors, and the honest view of a building before the trustees are in the room."
+          "body": "Your own portfolio. Rota, contractors, and the honest view of a building before the board is in the room."
         }
       ],
       "seatNote": [
@@ -2636,10 +2636,10 @@
     "requests": {
       "id": "jobs",
       "title": "Every job has a number, an owner and a clock",
-      "lede": "Emergencies, resident queries, quote approvals, compliance and arrears as tracked items. When a trustee asks what happened to the lift, the answer is a record rather than a recollection.",
+      "lede": "Emergencies, resident queries, quote approvals, compliance and arrears as tracked items. When a board member asks what happened to the elevator, the answer is a record rather than a recollection.",
       "image": {
         "file": "p2-requests",
-        "alt": "Request management for the agency: a burst geyser emergency, roof quotes awaiting trustees, a parking dispute, levy arrears and compliance inspections in one table"
+        "alt": "Request management for the agency: a burst water heater emergency, roof quotes awaiting the board, a parking dispute, dues arrears and compliance inspections in one table"
       },
       "cards": [
         {
@@ -2648,7 +2648,7 @@
         },
         {
           "title": "Response times per category",
-          "body": "An emergency has minutes, a parking dispute has days. Trustees see the same clock you do, which ends the argument about responsiveness."
+          "body": "An emergency has minutes, a parking dispute has days. The board see the same clock you do, which ends the argument about responsiveness."
         },
         {
           "title": "A report becomes a job",
@@ -2659,11 +2659,11 @@
     "split": {
       "id": "emergency",
       "title": "Two in the morning is not the time to guess your mandate",
-      "lede": "The procedure lives on the building’s wiki: what counts as an emergency, what you may spend before phoning a trustee, and what has to be photographed before anyone touches it.",
+      "lede": "The procedure lives on the building’s wiki: what counts as an emergency, what you may spend before phoning a board member, and what has to be photographed before anyone touches it.",
       "points": [
         {
           "title": "Contain it before you cost it",
-          "body": "Close the main, isolate the board, get people out of the lift. The invoice conversation happens afterwards and is always cheaper than the delay."
+          "body": "Close the main, isolate the board, get people out of the elevator. The invoice conversation happens afterwards and is always cheaper than the delay."
         },
         {
           "title": "Photograph everything, immediately",
@@ -2671,7 +2671,7 @@
         },
         {
           "title": "Spend to the mandate, then ask",
-          "body": "Up to the agreed limit you proceed and report. Above it you phone the trustee on duty and record their answer in the channel, at the time it was given."
+          "body": "Up to the agreed limit you proceed and report. Above it you phone the board member on duty and record their answer in the channel, at the time it was given."
         }
       ],
       "image": {
@@ -2685,7 +2685,7 @@
       "lede": "Site staff work from a phone all day and always have. The difference is that what they photograph, quote and confirm now lands on the building’s record instead of in a chat nobody else can see.",
       "image": {
         "file": "p3-mobile",
-        "alt": "Kolabr on a phone: the building supervisor quoting the geyser replacement from site, the manager approving within the mandate, and a resident asking about hot water"
+        "alt": "Kolabr on a phone: the building supervisor quoting the water heater replacement from site, the manager approving within the mandate, and a resident asking about hot water"
       },
       "cards": [
         {
@@ -2707,19 +2707,19 @@
       ]
     },
     "calendar": {
-      "title": "Inspections, trustee meetings and the AGM",
-      "lede": "Fire equipment, the lift service, the levy run, Thursday’s trustee meeting and the annual general meeting. In the channel they belong to, synced to Outlook and Google.",
+      "title": "Inspections, board meetings and the AGM",
+      "lede": "Fire equipment, the elevator service, the dues run, Thursday’s board meeting and the annual general meeting. In the channel they belong to, synced to Outlook and Google.",
       "image": {
         "file": "p2-events",
-        "alt": "The building calendar: site walks, the emergency plumber call, fire equipment inspection, the roof quote walkthrough, trustee meeting, levy deadlines and the annual general meeting"
+        "alt": "The building calendar: site walks, the emergency plumber call, fire equipment inspection, the roof quote walkthrough, board meeting, dues deadlines and the annual general meeting"
       }
     },
     "oversight": {
       "title": "Which buildings are running, and which are running you",
-      "lede": "Job volume per building, what the trustees have been sitting on for nine days, and the scheme generating three times the work it is priced for.",
+      "lede": "Job volume per building, what the board has been sitting on for nine days, and the scheme generating three times the work it is priced for.",
       "image": {
         "file": "p2-dashboard",
-        "alt": "The agency dashboard: requests this month across buildings, open requests, items awaiting trustees, open emergencies with the next breach time, and resident satisfaction"
+        "alt": "The agency dashboard: requests this month across buildings, open requests, items awaiting the board, open emergencies with the next breach time, and resident satisfaction"
       },
       "wide": {
         "title": "Every building keeps its own score",
@@ -2750,7 +2750,7 @@
       },
       "deep": {
         "title": "The answer at the AGM",
-        "body": "What was reported, when it was attended, what it cost and who approved it. The meeting where a body corporate questions your management becomes a short one.",
+        "body": "What was reported, when it was attended, what it cost and who approved it. The meeting where an HOA board questions your management becomes a short one.",
         "rows": [
           {
             "label": "Audit log",
@@ -2770,10 +2770,10 @@
       "cards": [
         {
           "title": "Residents see their building",
-          "body": "Meadowridge sees Meadowridge. Not another scheme’s arrears, and not the trustees’ discussion about unit 22."
+          "body": "Meadowridge sees Meadowridge. Not another scheme’s arrears, and not the board’s discussion about unit 22."
         },
         {
-          "title": "Trustees see more than residents",
+          "title": "The board see more than residents",
           "body": "Arrears, quotes and legal matters sit in a channel the residents are not in. Same building, different rooms."
         },
         {
@@ -2795,7 +2795,7 @@
       "cards": [
         {
           "title": "Start with the loudest building",
-          "body": "Pick the scheme whose trustees phone you most. One channel, the trustees invited, one month. The first trustee meeting run off the record will make the case."
+          "body": "Pick the scheme whose board calls you most. One channel, the board invited, one month. The first board meeting run off the record will make the case."
         },
         {
           "title": "Next building in one step",
@@ -2804,7 +2804,7 @@
         {
           "title": "You pay for your staff",
           "body": [
-            "Trustees, owners and residents are guests and are never billed, however many of them report a leak. ",
+            "The board, owners and residents are guests and are never billed, however many of them report a leak. ",
             {
               "label": "See pricing",
               "href": "/pricing"
@@ -2816,7 +2816,7 @@
     },
     "cta": {
       "title": "Try it on one building.",
-      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Invite the trustees and run one month of maintenance through it.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Invite the board and run one month of maintenance through it.",
       "primary": "Start free trial"
     }
   }

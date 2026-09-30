@@ -433,7 +433,7 @@ input, textarea, select { caret-color: transparent !important; }
       <div style="display: flex; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 30px;">
         <div style="flex: 1; min-width: 260px;">
           <h1 style="margin: 0; font-size: 34px; font-weight: 700; letter-spacing: -0.028em; line-height: 1.08;">Welcome back, Erika</h1>
-          <p style="margin: 10px 0 0; font-size: 15px; color: var(--muted, #6b8290);">Cavendish Mall upgrade · Tuesday, 12 August</p>
+          <p style="margin: 10px 0 0; font-size: 15px; color: var(--muted, #6b8290);">Riverside Mall upgrade · Tuesday, 12 August</p>
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
           <button style="display: flex; align-items: center; gap: 7px; height: 38px; padding: 0 18px; border-radius: 980px; cursor: pointer; font-family: inherit; font-size: 13.5px; font-weight: 500; color: inherit; background: var(--chip, rgba(51,80,91,0.07)); border: none;" style-hover="background: rgba(0,195,255,0.14);">
@@ -580,17 +580,17 @@ const ALL_CHATS = [
 ];
 
 const TENANTS = [
-  { name: 'Cavendish Mall upgrade', unread: '' },
+  { name: 'Riverside Mall upgrade', unread: '' },
   { name: 'Other projects', unread: '7' }
 ];
 
 const CHANNELS = [
-  { tenant: 'Cavendish Mall upgrade', category: 'Structural', members: '12 members', unread: '' },
-  { tenant: 'Cavendish Mall upgrade', category: 'Wet services', members: '8 members', unread: '4' },
-  { tenant: 'Cavendish Mall upgrade', category: 'Inspections & certification', members: '9 members', unread: '' },
-  { tenant: 'Cavendish Mall upgrade', category: 'Client & approvals', members: '6 members', unread: '' },
-  { tenant: 'Other projects', category: 'N2 bridge rehabilitation', members: '7 members', unread: '12' },
-  { tenant: 'Other projects', category: 'Rosslyn plant expansion', members: '6 members', unread: '' }
+  { tenant: 'Riverside Mall upgrade', category: 'Structural', members: '12 members', unread: '' },
+  { tenant: 'Riverside Mall upgrade', category: 'Wet services', members: '8 members', unread: '4' },
+  { tenant: 'Riverside Mall upgrade', category: 'Inspections & certification', members: '9 members', unread: '' },
+  { tenant: 'Riverside Mall upgrade', category: 'Client & approvals', members: '6 members', unread: '' },
+  { tenant: 'Other projects', category: 'Route 9 bridge rehabilitation', members: '7 members', unread: '12' },
+  { tenant: 'Other projects', category: 'Fairview plant expansion', members: '6 members', unread: '' }
 ];
 
 const chansFor = (t) => CHANNELS.filter((c) => c.tenant === t);
@@ -603,20 +603,20 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'MV', name: 'Marize Visser', role: 'Client · Facilities', email: 'marize.visser@cavendishproperties.co.za', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'MV', name: 'Marize Visser', role: 'Client · Facilities', email: 'marize.visser@cavendishproperties.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'EL', name: 'Erika Lombard', admin: true, role: 'Channel admin · Pr Eng, project lead', email: 'erika.lombard@lombardconsulting.co.za', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'KN', name: 'Kabelo Ntuli', role: 'Structural engineer', email: 'kabelo.ntuli@lombardconsulting.co.za', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'WG', name: 'Willem Greyling', role: 'Wet services engineer', email: 'willem.greyling@lombardconsulting.co.za', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'AS', name: 'Anele Sithole', role: 'Candidate engineer', email: 'anele.sithole@lombardconsulting.co.za', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'BT', name: 'Brett Turner', role: 'Client · Development manager', email: 'brett.turner@cavendishproperties.co.za', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'NP', name: 'Nicola Prinsloo', role: 'Contractor · Site agent', email: 'nicola.prinsloo@vermeulenbuild.co.za', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'EL', name: 'Erika Lombard', admin: true, role: 'Channel admin · Pr Eng, project lead', email: 'erika.lombard@lombardconsulting.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'KN', name: 'Kabelo Ntuli', role: 'Structural engineer', email: 'kabelo.ntuli@lombardconsulting.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'WG', name: 'Willem Greyling', role: 'Wet services engineer', email: 'willem.greyling@lombardconsulting.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'AS', name: 'Anele Sithole', role: 'Candidate engineer', email: 'anele.sithole@lombardconsulting.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'BT', name: 'Brett Turner', role: 'Client · Development manager', email: 'brett.turner@cavendishproperties.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'NP', name: 'Nicola Prinsloo', role: 'Contractor · Site agent', email: 'nicola.prinsloo@vermeulenbuild.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const ACCOUNTS = [
-  { name: 'Erika Lombard', email: 'erika.lombard@lombardconsulting.co.za', role: 'Pr Eng · Lombard Consulting', initials: 'EL', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Practice' },
-  { name: 'Erika Lombard', email: 'erika@cavendishproperties.co.za', initials: 'EL', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Engineering team · Cavendish' }
+  { name: 'Erika Lombard', email: 'erika.lombard@lombardconsulting.com', role: 'Pr Eng · Lombard Consulting', initials: 'EL', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Practice' },
+  { name: 'Erika Lombard', email: 'erika@cavendishproperties.com', initials: 'EL', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Engineering team · Riverside' }
 ];
 
 const goPage = (href) => (e) => {

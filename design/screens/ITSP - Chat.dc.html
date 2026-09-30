@@ -737,15 +737,15 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'HF', name: 'Helen Fry', role: 'Client · Managing partner', email: 'helen.fry@rossgrove.co.za', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'HF', name: 'Helen Fry', role: 'Client · Managing partner', email: 'helen.fry@rossgrove.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'LG', name: 'Lauren Geldenhuys', admin: true, role: 'Channel admin · Service delivery manager', email: 'lauren.geldenhuys@meridian-it.co.za', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'SM', name: 'Sizwe Mthembu', role: 'Second-line engineer', email: 'sizwe.mthembu@meridian-it.co.za', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'PK', name: 'Pieter Krause', role: 'Infrastructure lead', email: 'pieter.krause@meridian-it.co.za', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'AC', name: 'Anita Chetty', role: 'Security analyst', email: 'anita.chetty@meridian-it.co.za', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GR', name: 'Gareth Roos', role: 'Client · Practice manager', email: 'gareth.roos@rossgrove.co.za', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'NM', name: 'Nomsa Mbeki', role: 'Client · Office administrator', email: 'nomsa.mbeki@rossgrove.co.za', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'LG', name: 'Lauren Geldenhuys', admin: true, role: 'Channel admin · Service delivery manager', email: 'lauren.geldenhuys@meridian-it.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'SM', name: 'Sizwe Mthembu', role: 'Second-line engineer', email: 'sizwe.mthembu@meridian-it.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'PK', name: 'Pieter Krause', role: 'Infrastructure lead', email: 'pieter.krause@meridian-it.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'AC', name: 'Anita Chetty', role: 'Security analyst', email: 'anita.chetty@meridian-it.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GR', name: 'Gareth Roos', role: 'Client · Practice manager', email: 'gareth.roos@rossgrove.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'NM', name: 'Nomsa Mbeki', role: 'Client · Office administrator', email: 'nomsa.mbeki@rossgrove.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const PINNED = { text: 'P1 open: mail flow degraded since 08:40. Status updates every 30 minutes in this channel until resolved.', meta: 'Lauren Geldenhuys · 09:00' };
@@ -762,23 +762,23 @@ const THREAD = {
 };
 
 const GROUP = [
-  { initials: 'LG', name: 'Lauren Geldenhuys', role: 'Channel admin · Support lead', email: 'lauren.geldenhuys@meridian-it.co.za', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'PK', name: 'Pieter Krause', role: 'Infrastructure lead', email: 'pieter.krause@meridian-it.co.za', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'AC', name: 'Anita Chetty', role: 'Security analyst', email: 'anita.chetty@meridian-it.co.za', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GR', name: 'Gareth Roos', role: 'Client · Rossgrove Legal', email: 'gareth.roos@rossgrove.co.za', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'SM', name: 'Sizwe Mthembu', role: 'Second-line engineer', email: 'sizwe.mthembu@meridian-it.co.za', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'NM', name: 'Nomsa Mbeki', role: 'Client · Rossgrove Legal', email: 'nomsa.mbeki@rossgrove.co.za', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
-  { initials: 'HF', name: 'Helen Fry', role: 'Client · Rossgrove Legal', email: 'helen.fry@rossgrove.co.za', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
-  { initials: 'VR', name: 'Vikash Ramjee', role: 'Network engineer', email: 'vikash.ramjee@meridian-it.co.za', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'CD', name: 'Chantal du Toit', role: 'First-line technician', email: 'chantal.dutoit@meridian-it.co.za', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'MS', name: 'Morne Steyn', role: 'Second-line engineer', email: 'morne.steyn@meridian-it.co.za', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'BN', name: 'Bongi Nkosi', role: 'Client · Finance', email: 'bongi.nkosi@rossgrove.co.za', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'JW', name: 'Jason Wills', role: 'Account manager', email: 'jason.wills@meridian-it.co.za', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'LG', name: 'Lauren Geldenhuys', role: 'Channel admin · Support lead', email: 'lauren.geldenhuys@meridian-it.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'PK', name: 'Pieter Krause', role: 'Infrastructure lead', email: 'pieter.krause@meridian-it.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'AC', name: 'Anita Chetty', role: 'Security analyst', email: 'anita.chetty@meridian-it.com', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GR', name: 'Gareth Roos', role: 'Client · Rossgrove Legal', email: 'gareth.roos@rossgrove.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'SM', name: 'Sizwe Mthembu', role: 'Second-line engineer', email: 'sizwe.mthembu@meridian-it.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'NM', name: 'Nomsa Mbeki', role: 'Client · Rossgrove Legal', email: 'nomsa.mbeki@rossgrove.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
+  { initials: 'HF', name: 'Helen Fry', role: 'Client · Rossgrove Legal', email: 'helen.fry@rossgrove.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
+  { initials: 'VR', name: 'Vikash Ramjee', role: 'Network engineer', email: 'vikash.ramjee@meridian-it.com', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'CD', name: 'Chantal du Toit', role: 'First-line technician', email: 'chantal.dutoit@meridian-it.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'MS', name: 'Morne Steyn', role: 'Second-line engineer', email: 'morne.steyn@meridian-it.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'BN', name: 'Bongi Nkosi', role: 'Client · Finance', email: 'bongi.nkosi@rossgrove.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'JW', name: 'Jason Wills', role: 'Account manager', email: 'jason.wills@meridian-it.com', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const ACCOUNTS = [
-  { name: 'Lauren Geldenhuys', email: 'lauren.geldenhuys@meridian-it.co.za', role: 'Service delivery · Meridian IT', initials: 'LG', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Provider' },
-  { name: 'Lauren Geldenhuys', email: 'lauren@rossgrove.co.za', initials: 'LG', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'IT team · Rossgrove Legal' }
+  { name: 'Lauren Geldenhuys', email: 'lauren.geldenhuys@meridian-it.com', role: 'Service delivery · Meridian IT', initials: 'LG', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Provider' },
+  { name: 'Lauren Geldenhuys', email: 'lauren@rossgrove.com', initials: 'LG', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'IT team · Rossgrove Legal' }
 ];
 
 const goPage = (href) => (e) => {

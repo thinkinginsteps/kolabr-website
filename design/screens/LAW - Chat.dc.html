@@ -737,15 +737,15 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'TB', name: 'Thulani Buthelezi', role: 'Client · Chief executive', email: 'thulani.buthelezi@arcadiaholdings.co.za', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'TB', name: 'Thulani Buthelezi', role: 'Client · Chief executive', email: 'thulani.buthelezi@arcadiaholdings.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'AM', name: 'Adele Moodley', admin: true, role: 'Channel admin · Partner', email: 'adele.moodley@moodleyattorneys.co.za', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'JK', name: 'Jarred Kemp', role: 'Senior associate', email: 'jarred.kemp@moodleyattorneys.co.za', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'ZN', name: 'Zanele Ngcobo', role: 'Associate · Litigation', email: 'zanele.ngcobo@moodleyattorneys.co.za', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'PF', name: 'Pieter Fourie', role: 'Candidate attorney', email: 'pieter.fourie@moodleyattorneys.co.za', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'RH', name: 'Roger Hendricks', role: 'Client · General counsel', email: 'roger.hendricks@arcadiaholdings.co.za', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'CM', name: 'Celeste Mostert', role: 'Client · Company secretary', email: 'celeste.mostert@arcadiaholdings.co.za', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'AM', name: 'Adele Moodley', admin: true, role: 'Channel admin · Partner', email: 'adele.moodley@moodleyattorneys.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'JK', name: 'Jarred Kemp', role: 'Senior associate', email: 'jarred.kemp@moodleyattorneys.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'ZN', name: 'Zanele Ngcobo', role: 'Associate · Litigation', email: 'zanele.ngcobo@moodleyattorneys.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'PF', name: 'Pieter Fourie', role: 'Candidate attorney', email: 'pieter.fourie@moodleyattorneys.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'RH', name: 'Roger Hendricks', role: 'Client · General counsel', email: 'roger.hendricks@arcadiaholdings.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'CM', name: 'Celeste Mostert', role: 'Client · Company secretary', email: 'celeste.mostert@arcadiaholdings.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const PINNED = { text: 'Signature date is Friday 11:00. Anything that has to change in the agreement must be raised here by Wednesday 17:00.', meta: 'Adele Moodley · Tue' };
@@ -762,23 +762,23 @@ const THREAD = {
 };
 
 const GROUP = [
-  { initials: 'AM', name: 'Adele Moodley', role: 'Channel admin · Support lead', email: 'adele.moodley@moodleyattorneys.co.za', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'ZN', name: 'Zanele Ngcobo', role: 'Associate · Litigation', email: 'zanele.ngcobo@moodleyattorneys.co.za', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'PF', name: 'Pieter Fourie', role: 'Candidate attorney', email: 'pieter.fourie@moodleyattorneys.co.za', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'RH', name: 'Roger Hendricks', role: 'Client · Arcadia Holdings', email: 'roger.hendricks@arcadiaholdings.co.za', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'JK', name: 'Jarred Kemp', role: 'Senior associate', email: 'jarred.kemp@moodleyattorneys.co.za', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'CM', name: 'Celeste Mostert', role: 'Client · Arcadia Holdings', email: 'celeste.mostert@arcadiaholdings.co.za', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
-  { initials: 'TB', name: 'Thulani Buthelezi', role: 'Client · Arcadia Holdings', email: 'thulani.buthelezi@arcadiaholdings.co.za', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
-  { initials: 'NV', name: 'Nadia Vermaak', role: 'Conveyancing secretary', email: 'nadia.vermaak@moodleyattorneys.co.za', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GS', name: 'Gareth Sithole', role: 'Paralegal', email: 'gareth.sithole@moodleyattorneys.co.za', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'LD', name: 'Lerato Dube', role: 'Senior associate', email: 'lerato.dube@moodleyattorneys.co.za', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'MR', name: 'Mark Reddy', role: 'Client · General counsel', email: 'mark.reddy@arcadiaholdings.co.za', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'EK', name: 'Emma Kruger', role: 'Practice manager', email: 'emma.kruger@moodleyattorneys.co.za', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'AM', name: 'Adele Moodley', role: 'Channel admin · Support lead', email: 'adele.moodley@moodleyattorneys.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'ZN', name: 'Zanele Ngcobo', role: 'Associate · Litigation', email: 'zanele.ngcobo@moodleyattorneys.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'PF', name: 'Pieter Fourie', role: 'Candidate attorney', email: 'pieter.fourie@moodleyattorneys.com', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'RH', name: 'Roger Hendricks', role: 'Client · Arcadia Holdings', email: 'roger.hendricks@arcadiaholdings.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'JK', name: 'Jarred Kemp', role: 'Senior associate', email: 'jarred.kemp@moodleyattorneys.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'CM', name: 'Celeste Mostert', role: 'Client · Arcadia Holdings', email: 'celeste.mostert@arcadiaholdings.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
+  { initials: 'TB', name: 'Thulani Buthelezi', role: 'Client · Arcadia Holdings', email: 'thulani.buthelezi@arcadiaholdings.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
+  { initials: 'NV', name: 'Nadia Vermaak', role: 'Conveyancing secretary', email: 'nadia.vermaak@moodleyattorneys.com', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GS', name: 'Gareth Sithole', role: 'Paralegal', email: 'gareth.sithole@moodleyattorneys.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'LD', name: 'Lerato Dube', role: 'Senior associate', email: 'lerato.dube@moodleyattorneys.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'MR', name: 'Mark Reddy', role: 'Client · General counsel', email: 'mark.reddy@arcadiaholdings.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'EK', name: 'Emma Kruger', role: 'Practice manager', email: 'emma.kruger@moodleyattorneys.com', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const ACCOUNTS = [
-  { name: 'Adele Moodley', email: 'adele.moodley@moodleyattorneys.co.za', role: 'Partner · Moodley Attorneys', initials: 'AM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Firm' },
-  { name: 'Adele Moodley', email: 'adele@arcadiaholdings.co.za', initials: 'AM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Legal team · Arcadia Holdings' }
+  { name: 'Adele Moodley', email: 'adele.moodley@moodleyattorneys.com', role: 'Partner · Moodley Attorneys', initials: 'AM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Firm' },
+  { name: 'Adele Moodley', email: 'adele@arcadiaholdings.com', initials: 'AM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Legal team · Arcadia Holdings' }
 ];
 
 const goPage = (href) => (e) => {

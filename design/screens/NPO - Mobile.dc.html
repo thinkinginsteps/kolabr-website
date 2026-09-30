@@ -417,7 +417,7 @@ const TAB_MENUS = {
 };
 
 const ACCOUNTS = [
-  { name: 'Thandeka Mabaso', email: 'thandeka.mabaso@thusanang.org.za', role: 'Programme manager · Thusanang', initials: 'TM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Staff' },
+  { name: 'Thandeka Mabaso', email: 'thandeka.mabaso@thusanang.org', role: 'Programme manager · Thusanang', initials: 'TM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Staff' },
   { name: 'Thandeka Mabaso', email: 'thandeka@meridianfoundation.org', initials: 'TM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Grantee · Meridian Foundation' }
 ];
 
@@ -679,8 +679,8 @@ class Component extends DCLogic {
 
       requests: [
         { id: '#512', subject: 'Q3 narrative report to Meridian Foundation', channel: 'Meridian Foundation', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due in 4h', slaColor: bad },
-        { id: '#509', subject: 'Safeguarding incident reported at Mthatha', channel: 'Field sites', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 2d', slaColor: bad },
-        { id: '#508', subject: 'Attendance data missing: Lusikisiki, week 6', channel: 'Field sites', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: muted, sla: 'Due in 6h', slaColor: warn }
+        { id: '#509', subject: 'Safeguarding incident reported at Danville', channel: 'Field sites', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 2d', slaColor: bad },
+        { id: '#508', subject: 'Attendance data missing: Fairmont, week 6', channel: 'Field sites', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: muted, sla: 'Due in 6h', slaColor: warn }
       ],
 
       events: [
@@ -691,7 +691,7 @@ class Component extends DCLogic {
       notifications: [
         { icon: 'priority_high', text: 'Due today: “Q3 narrative report to Meridian”', time: '4 min ago', unread: true },
         { icon: 'person_add', text: 'Rita Coetzer joined Meridian Foundation as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'David Moloi assigned you the Lusikisiki expense pack', time: '1 hr ago', unread: true },
+        { icon: 'assignment_ind', text: 'David Moloi assigned you the Fairmont expense pack', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Safeguarding refresher completed: 18 volunteers', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Programme team', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' }))

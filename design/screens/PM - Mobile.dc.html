@@ -152,7 +152,7 @@ input, textarea, select { caret-color: transparent !important; }
       <div style="align-self: center; padding: 4px 12px; border-radius: 999px; background: var(--chip, rgba(51,80,91,0.07)); font-size: 11px; font-weight: 500; color: var(--muted, #6b8290);">Today</div>
       <div style="display: flex; align-items: flex-end; gap: 9px;">
         <span style="width: 28px; height: 28px; flex: none; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, #8a7f76, #6b6159); color: #fff; font-size: 10px; font-weight: 600;">DK</span>        <div style="max-width: 78%;">
-          <div style="font-size: 11px; color: var(--muted, #6b8290); margin: 0 0 4px 3px;">Dirk Koekemoer</div>          <div sc-camel-on-click="{{ msgTap0 }}" style="position: relative; cursor: pointer; padding: 10px 13px; border-radius: 16px 16px 16px 5px; background: var(--card, #f4f7f8); font-size: 13.5px; line-height: 1.4; text-wrap: pretty;">Plumber is on site. Geyser is a 2009 unit, replacement quoted R11 400.</div>
+          <div style="font-size: 11px; color: var(--muted, #6b8290); margin: 0 0 4px 3px;">Dirk Koekemoer</div>          <div sc-camel-on-click="{{ msgTap0 }}" style="position: relative; cursor: pointer; padding: 10px 13px; border-radius: 16px 16px 16px 5px; background: var(--card, #f4f7f8); font-size: 13.5px; line-height: 1.4; text-wrap: pretty;">Plumber is on site. The water heater is a 2009 unit, replacement quoted $11,400.</div>
           <div style="font-size: 10.5px; color: var(--muted, #6b8290); margin: 4px 0 0 3px;">09:12</div>
         </div>
       </div>
@@ -172,7 +172,7 @@ input, textarea, select { caret-color: transparent !important; }
       </div>
       <div style="display: flex; justify-content: flex-end;">
         <div style="max-width: 78%;">
-          <div sc-camel-on-click="{{ msgTap3 }}" style="position: relative; cursor: pointer; padding: 10px 13px; border-radius: 16px 16px 5px 16px; background: #00c3ff; color: #fff; font-size: 13.5px; line-height: 1.4; text-wrap: pretty;">Log the ceiling repair separately. That one is the body corporate’s insurance.</div>
+          <div sc-camel-on-click="{{ msgTap3 }}" style="position: relative; cursor: pointer; padding: 10px 13px; border-radius: 16px 16px 5px 16px; background: #00c3ff; color: #fff; font-size: 13.5px; line-height: 1.4; text-wrap: pretty;">Log the ceiling repair separately. That one is the HOA’s insurance.</div>
           <div style="text-align: right; font-size: 10.5px; color: var(--muted, #6b8290); margin-top: 4px;">09:33</div>
         </div>
       </div>
@@ -377,16 +377,16 @@ const TENANTS = [
 
 const CHANNELS = [
   { tenant: 0, name: 'Maintenance', sub: '12 members', unread: '' },
-  { tenant: 0, name: 'Trustees', sub: '8 members', unread: '4' },
+  { tenant: 0, name: 'The board', sub: '8 members', unread: '4' },
   { tenant: 0, name: 'Residents', sub: '86 members', unread: '' },
-  { tenant: 0, name: 'Levies & arrears', sub: '6 members', unread: '' },
+  { tenant: 0, name: 'Dues & arrears', sub: '6 members', unread: '' },
   { tenant: 0, name: 'Security', sub: '9 members', unread: '' },
   { tenant: 0, name: 'Compliance', sub: '5 members', unread: '2' },
   { tenant: 1, name: 'Maintenance', sub: '14 members', unread: '12' },
   { tenant: 2, name: 'Maintenance', sub: '9 members', unread: '4' },
   { tenant: 2, name: 'Tenants', sub: '22 members', unread: '' },
   { tenant: 3, name: 'Maintenance', sub: '11 members', unread: '' },
-  { tenant: 3, name: 'Trustees', sub: '6 members', unread: '3' },
+  { tenant: 3, name: 'The board', sub: '6 members', unread: '3' },
   { tenant: 4, name: 'Portfolio & rota', sub: '8 members', unread: '' }
 ];
 
@@ -413,8 +413,8 @@ const TAB_MENUS = {
 };
 
 const ACCOUNTS = [
-  { name: 'Colette Viljoen', email: 'colette.viljoen@viljoenprop.co.za', role: 'Portfolio manager · Viljoen Property', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Managing agent' },
-  { name: 'Colette Viljoen', email: 'colette@meadowridge-bc.co.za', initials: 'CV', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Managing agent · Meadowridge' }
+  { name: 'Colette Viljoen', email: 'colette.viljoen@viljoenprop.com', role: 'Portfolio manager · Viljoen Property', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Property manager' },
+  { name: 'Colette Viljoen', email: 'colette@meadowridge-hoa.com', initials: 'CV', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Property manager · Meadowridge' }
 ];
 
 class Component extends DCLogic {
@@ -669,26 +669,26 @@ class Component extends DCLogic {
       metrics: [
         { icon: 'pending_actions', label: 'Open', value: '47', delta: '+6 vs last week', deltaColor: warn },
         { icon: 'timer_off', label: 'Emergencies', value: '2', delta: 'Next breach 40m', deltaColor: bad },
-        { icon: 'person_search', label: 'Awaiting trustees', value: '8', delta: 'Oldest 9 days', deltaColor: warn },
+        { icon: 'person_search', label: 'Awaiting the board', value: '8', delta: 'Oldest 9 days', deltaColor: warn },
         { icon: 'task_alt', label: 'Closed today', value: '14', delta: 'Avg 3h 40m', deltaColor: 'var(--muted, #6b8290)' }
       ],
 
       requests: [
-        { id: '#914', subject: 'Geyser burst, unit 14: water damage below', channel: 'Maintenance', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Breach in 40m', slaColor: bad },
-        { id: '#911', subject: 'Levy arrears: unit 22, 90 days', channel: 'Levies & arrears', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 2d', slaColor: bad },
-        { id: '#909', subject: 'Roof repair: three quotes for trustees', channel: 'Trustees', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: muted, sla: 'Due in 6h', slaColor: warn }
+        { id: '#914', subject: 'Water heater burst, unit 14: water damage below', channel: 'Maintenance', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Breach in 40m', slaColor: bad },
+        { id: '#911', subject: 'Dues arrears: unit 22, 90 days', channel: 'Dues & arrears', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 2d', slaColor: bad },
+        { id: '#909', subject: 'Roof repair: three quotes for the board', channel: 'The board', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: muted, sla: 'Due in 6h', slaColor: warn }
       ],
 
       events: [
         { icon: 'videocam', title: 'Meadowridge weekly sync', meta: 'Now · 4 attending', live: true },
-        { icon: 'event', title: 'Trustee meeting', meta: '18:00 · Graham, Noluthando', live: false }
+        { icon: 'event', title: 'Board meeting', meta: '18:00 · Graham, Noluthando', live: false }
       ],
 
       notifications: [
-        { icon: 'priority_high', text: 'Emergency: “Geyser burst, unit 14, water to units below”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Noluthando Zulu joined Trustees as a guest', time: '26 min ago', unread: true },
+        { icon: 'priority_high', text: 'Emergency: “Water heater burst, unit 14, water to units below”', time: '4 min ago', unread: true },
+        { icon: 'person_add', text: 'Noluthando Zulu joined The board as a guest', time: '26 min ago', unread: true },
         { icon: 'assignment_ind', text: 'Graham Tait assigned you the roof repair quotes', time: '1 hr ago', unread: true },
-        { icon: 'task_alt', text: 'Lift service completed: certificate filed', time: '2 hr ago', unread: false },
+        { icon: 'task_alt', text: 'Elevator service completed: certificate filed', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Site team', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' }))
     };
