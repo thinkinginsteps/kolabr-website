@@ -4,6 +4,7 @@ import { UnderlineLink } from "@/components/UnderlineLink";
 import { PlanComparison } from "@/components/PlanComparison";
 import { PricingPlans } from "@/components/PricingPlans";
 import { Container, Eyebrow, Section } from "@/components/Section";
+import { TeamCostEstimate } from "@/components/TeamCostEstimate";
 import { TrialBanner, TrialButton } from "@/components/TrialBanner";
 import { breadcrumbJsonLd, graph, pageMetadata, softwareApplicationJsonLd } from "@/lib/seo";
 
@@ -31,6 +32,9 @@ export default function PricingPage() {
           </div>
           {/* Plan names are h2 here: they sit directly under the page h1. */}
           <PricingPlans headingLevel={2} />
+          <div data-rise="" className="mx-auto mt-[26px] w-full max-w-[720px]">
+            <TeamCostEstimate />
+          </div>
           <TrialBanner />
         </Container>
       </Section>

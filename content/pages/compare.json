@@ -30,7 +30,7 @@
     },
     "table": {
       "title": "Kolabr and Slack, feature by feature",
-      "lede": "Slack prices are list prices at the time of writing and are revised periodically, so check Slack’s own pricing page before you budget.",
+      "lede": "Slack prices are list prices at the time of writing and are revised periodically, so check Slack’s own pricing page before you budget. Checked 29 September 2026.",
       "groups": [
         {
           "title": "Working with people outside your company",
@@ -59,6 +59,16 @@
               "Keeping clients apart",
               "A channel per client, separate by design.",
               "One workspace, many channels. Separation depends on how channels and guest types are managed."
+            ],
+            [
+              "A client who needs three channels",
+              "Free. A guest sits in as many channels as the work needs.",
+              "A multi-channel guest, billed at your full member rate."
+            ],
+            [
+              "What the free plan gives an outside person",
+              "One channel, free, with 30 guests in it.",
+              "Nothing. Guest accounts need a paid plan."
             ]
           ]
         },
@@ -156,6 +166,30 @@
       },
       {
         "type": "cards",
+        "id": "only",
+        "title": "What only Kolabr does",
+        "lede": "The parts you cannot assemble out of what you already pay for.",
+        "cards": [
+          {
+            "title": "A message becomes a tracked request",
+            "body": "One step turns a line in the chat into a numbered request with an owner, a category, a due date and a response target the client can see."
+          },
+          {
+            "title": "The client is in the room, free",
+            "body": "Not a single-channel guest on an allowance. A person with an email address, in as many channels as the work needs, for ever."
+          },
+          {
+            "title": "A wiki where the conversation is",
+            "body": "The answer you gave last March is a page in that channel, not a search through four years of messages."
+          },
+          {
+            "title": "A clock everyone can see",
+            "body": "Response targets per category, visible to the person waiting, so nobody has to ask whether it is being looked at."
+          }
+        ]
+      },
+      {
+        "type": "cards",
         "id": "scope",
         "title": "What Kolabr does not try to be",
         "lede": "Worth knowing before you move, so nothing surprises you in month three.",
@@ -196,12 +230,12 @@
       "kolabr": {
         "name": "Kolabr",
         "price": "$0, $10 or $25",
-        "text": "per user per month, by plan. Guests unlimited and free in any number of channels, with requests, wiki and events included."
+        "text": "per user per month, or $8.50 and $21.25 on annual terms. Guests are free and unlimited on both paid plans, in as many channels as the work needs."
       },
       "other": {
         "name": "Slack",
-        "price": "$7.25 to $18",
-        "text": "per active user per month depending on plan and billing period. Multi-channel guests are charged at the same rate as members."
+        "price": "$8.75 to $18",
+        "text": "per active user per month, or $7.25 to $15 on annual terms. A guest who needs a second channel is billed at the member rate."
       }
     },
     "faq": {
@@ -217,7 +251,7 @@
         },
         {
           "title": "Is Kolabr cheaper than Slack?",
-          "body": "Per internal seat the two are in the same territory once you compare like for like. The difference is everyone who is not staff. If you work with clients who need more than one channel, those people are billable seats in Slack and cost nothing in Kolabr, which is where the gap opens for agencies, firms and providers with a long client list."
+          "body": "For almost anyone working with clients, yes, and the gap widens as you take more on. A twelve-person agency with forty client contacts pays $120 a month on Kolabr Pro. The same people on Slack Pro are fifty-two billable members at $8.75, which is $455. Per internal seat the two are close, $10 against $8.75 monthly. The difference is everyone who is not staff: in Slack a guest who needs a second channel becomes a full member, and in Kolabr guests are free in as many channels as the work needs."
         },
         {
           "title": "Can Kolabr replace Slack entirely?",
@@ -270,7 +304,7 @@
     },
     "table": {
       "title": "Kolabr and Microsoft Teams, feature by feature",
-      "lede": "Prices are list prices on annual billing at the time of writing and Microsoft revises them periodically, check Microsoft’s own pricing page before you budget.",
+      "lede": "Prices are list prices on annual billing at the time of writing and Microsoft revises them periodically, check Microsoft’s own pricing page before you budget. Checked 29 September 2026.",
       "groups": [
         {
           "title": "Channels and people",
@@ -299,6 +333,16 @@
               "Boundary between clients",
               "One channel per client or project, enforced by design.",
               "One tenant, many teams. Separation depends on how teams and permissions are configured."
+            ],
+            [
+              "A client who needs three channels",
+              "Free, in all three.",
+              "Guest access is included, but each team is its own membership to manage."
+            ],
+            [
+              "Taking on the fortieth client",
+              "The bill does not move. Channels and guests are both unlimited.",
+              "Another team, another set of guest invitations and another thing to govern."
             ]
           ]
         },
@@ -396,6 +440,30 @@
       },
       {
         "type": "cards",
+        "id": "only",
+        "title": "What only Kolabr does",
+        "lede": "The parts you cannot assemble out of what you already pay for.",
+        "cards": [
+          {
+            "title": "Work that outlives the conversation",
+            "body": "A request carries an owner, a category and a response target, so what was promised survives the chat it was promised in."
+          },
+          {
+            "title": "Nothing to govern for a guest",
+            "body": "No directory entry, no tenant, no review. A guest is a person in a channel who costs nothing and can be removed in a click."
+          },
+          {
+            "title": "A wiki in the channel",
+            "body": "Not a SharePoint site somebody has to find, and not a file. A page beside the conversation it came from."
+          },
+          {
+            "title": "Set up in an afternoon",
+            "body": "No licensing conversation, no admin centre, no consultant. One channel, the people who matter, and you are working."
+          }
+        ]
+      },
+      {
+        "type": "cards",
         "id": "teams-wins",
         "title": "What Kolabr does not try to be",
         "lede": "Worth knowing before you move, so nothing surprises you in month three. In every case below, the answer is to keep what you have and put the client-facing work in Kolabr: the two sit alongside each other without argument.",
@@ -436,12 +504,12 @@
       "kolabr": {
         "name": "Kolabr",
         "price": "$0, $10 or $25",
-        "text": "per user per month, by plan. Guests unlimited and free on every plan, with requests, wiki and scheduled events included rather than assembled."
+        "text": "per user per month, or $8.50 and $21.25 on annual terms. Guests are free and unlimited on both paid plans, in as many channels as the work needs."
       },
       "other": {
         "name": "Microsoft",
-        "price": "$4 – $22",
-        "text": "per user per month on annual billing, from Teams Essentials to Microsoft 365 Business Premium. Teams Phone, Teams Premium and Copilot are priced separately again."
+        "price": "$4 to $22",
+        "text": "per user per month on annual terms, from Teams Essentials to Microsoft 365 Business Premium. Teams Phone, Teams Premium and Copilot are priced separately again."
       }
     },
     "faq": {
@@ -510,7 +578,7 @@
     },
     "table": {
       "title": "Kolabr and Basecamp, feature by feature",
-      "lede": "Basecamp prices are list prices at the time of writing and are revised periodically, so check Basecamp’s own pricing page before you budget.",
+      "lede": "Basecamp prices are list prices at the time of writing and are revised periodically, so check Basecamp’s own pricing page before you budget. Checked 29 September 2026.",
       "groups": [
         {
           "title": "How the work is organised",
@@ -604,6 +672,11 @@
               "SSO / SAML, audit log export, retention",
               "On Business.",
               "Not offered."
+            ],
+            [
+              "Taking on the fortieth client",
+              "The bill does not move.",
+              "Fine above Studio, where users are unlimited; below it they count towards the cap."
             ]
           ]
         }
@@ -663,6 +736,30 @@
       },
       {
         "type": "cards",
+        "id": "only",
+        "title": "What only Kolabr does",
+        "lede": "The parts you cannot assemble out of what you already pay for.",
+        "cards": [
+          {
+            "title": "A clock on the promise",
+            "body": "Response targets per category, visible to the client, so a to-do that is quietly slipping shows as slipping."
+          },
+          {
+            "title": "Built around the client, not the project",
+            "body": "The channel does not end. Six years of requests, decisions and documents for that relationship stay in one place."
+          },
+          {
+            "title": "Real-time chat in the channel",
+            "body": "Threads, mentions, presence, voice notes and calls, rather than a message board you check."
+          },
+          {
+            "title": "Requests have owners and categories",
+            "body": "Not a checklist item with a name beside it: a numbered record with a state, a category and a history."
+          }
+        ]
+      },
+      {
+        "type": "cards",
         "id": "scope",
         "title": "What Kolabr does not try to be",
         "lede": "Worth knowing before you move, so nothing surprises you in month three.",
@@ -703,7 +800,7 @@
       "kolabr": {
         "name": "Kolabr",
         "price": "$0, $10 or $25",
-        "text": "per user per month, by plan. Guests unlimited and free, with requests, wiki, calls and events included."
+        "text": "per user per month, or $8.50 and $21.25 on annual terms. Guests are free and unlimited on both paid plans, in as many channels as the work needs."
       },
       "other": {
         "name": "Basecamp",
@@ -777,7 +874,7 @@
     },
     "table": {
       "title": "Kolabr and Notion, feature by feature",
-      "lede": "Notion prices are list prices at the time of writing and are revised periodically, so check Notion’s own pricing page before you budget.",
+      "lede": "Notion prices are list prices at the time of writing and are revised periodically, so check Notion’s own pricing page before you budget. Checked 29 September 2026.",
       "groups": [
         {
           "title": "Conversation",
@@ -841,6 +938,11 @@
               "What a guest gets",
               "A working relationship: they can raise requests, read the wiki and join calls.",
               "Access to the pages they were shared, and comments on them."
+            ],
+            [
+              "A client who needs to raise something",
+              "Posts, raises a request, reads the wiki, joins a call. Free.",
+              "A free guest can be given access to pages, but there is nothing to raise."
             ]
           ]
         },
@@ -940,6 +1042,30 @@
       },
       {
         "type": "cards",
+        "id": "only",
+        "title": "What only Kolabr does",
+        "lede": "The parts you cannot assemble out of what you already pay for.",
+        "cards": [
+          {
+            "title": "It works on the day you sign up",
+            "body": "Requests, categories, owners, response targets and the channel's dashboard exist the moment you create a channel. Nothing to design."
+          },
+          {
+            "title": "A conversation, not a comment thread",
+            "body": "Real-time chat with threads, mentions, presence, voice notes and calls, in the same place as the work."
+          },
+          {
+            "title": "Guests who can actually do something",
+            "body": "Post, raise a request, read the wiki, join a call. Not read a page they were invited to."
+          },
+          {
+            "title": "Nobody maintains it",
+            "body": "There is no database somebody built, no view somebody configured and no automation that breaks when they leave."
+          }
+        ]
+      },
+      {
+        "type": "cards",
         "id": "scope",
         "title": "What Kolabr does not try to be",
         "lede": "Worth knowing before you move, so nothing surprises you in month three.",
@@ -980,12 +1106,12 @@
       "kolabr": {
         "name": "Kolabr",
         "price": "$0, $10 or $25",
-        "text": "per user per month, by plan. Guests free, with chat, requests, wiki, calls and events in the one price."
+        "text": "per user per month, or $8.50 and $21.25 on annual terms. Guests are free and unlimited on both paid plans, in as many channels as the work needs."
       },
       "other": {
         "name": "Notion",
-        "price": "$0 to $20",
-        "text": "per member per month on annual billing, with Enterprise quoted. Guests do not consume a member seat."
+        "price": "$12 to $24",
+        "text": "per member per month, or $10 to $20 on annual terms, with Enterprise quoted. Guests are free and do not consume a member seat, but see only the pages they are invited to."
       }
     },
     "faq": {
@@ -1054,7 +1180,7 @@
     },
     "table": {
       "title": "Kolabr and ClickUp, feature by feature",
-      "lede": "ClickUp prices and guest allowances are list terms at the time of writing and are revised periodically, so check ClickUp’s own pricing page before you budget.",
+      "lede": "ClickUp prices and guest allowances are list terms at the time of writing and are revised periodically, so check ClickUp’s own pricing page before you budget. Checked 29 September 2026.",
       "groups": [
         {
           "title": "Working with people outside your company",
@@ -1083,6 +1209,11 @@
               "Keeping clients apart",
               "A channel per client, separate by design.",
               "Spaces, folders and permission settings you configure."
+            ],
+            [
+              "A client who needs to comment or approve",
+              "Free, and unlimited.",
+              "Draws on a guest allowance: five plus two per paid user, then a paid member."
             ]
           ]
         },
@@ -1217,6 +1348,30 @@
       },
       {
         "type": "cards",
+        "id": "only",
+        "title": "What only Kolabr does",
+        "lede": "The parts you cannot assemble out of what you already pay for.",
+        "cards": [
+          {
+            "title": "Built for the people outside",
+            "body": "A client is a guest who takes part, free and unlimited, rather than an allowance you spend and eventually pay for."
+          },
+          {
+            "title": "A conversation, not a comment field",
+            "body": "Threads, mentions, presence, voice notes and calls, beside the requests they created."
+          },
+          {
+            "title": "Nothing to configure first",
+            "body": "No spaces, folders, lists, statuses or custom fields to design before the first request. It works as it arrives."
+          },
+          {
+            "title": "A wiki per channel",
+            "body": "The answer lives next to the work it belongs to, not in a docs section somebody has to remember."
+          }
+        ]
+      },
+      {
+        "type": "cards",
         "id": "scope",
         "title": "What Kolabr does not try to be",
         "lede": "Worth knowing before you move, so nothing surprises you in month three.",
@@ -1257,12 +1412,12 @@
       "kolabr": {
         "name": "Kolabr",
         "price": "$0, $10 or $25",
-        "text": "per user per month, by plan. Guests free and fully participating, with chat, requests, wiki, calls and events included."
+        "text": "per user per month, or $8.50 and $21.25 on annual terms. Guests are free and unlimited on both paid plans, in as many channels as the work needs."
       },
       "other": {
         "name": "ClickUp",
-        "price": "$0 to $12",
-        "text": "per user per month on annual billing for the published tiers, with Enterprise quoted and AI per seat. Participating guests draw on an allowance."
+        "price": "$10 to $19",
+        "text": "per user per month, or $7 to $12 on annual terms, with Enterprise quoted and AI per seat. Read-only guests are free; a guest who can comment or approve draws on an allowance."
       }
     },
     "faq": {
@@ -1282,7 +1437,7 @@
         },
         {
           "title": "Which is cheaper?",
-          "body": "ClickUp Unlimited at $7 and Business at $12 per user per month are below Kolabr per internal seat. The number that moves is participating guests: if your clients need to comment, approve or raise anything, they consume guest seats and eventually become paid members, and in Kolabr they never do."
+          "body": "It depends entirely on whether your clients need to do anything. Per internal seat ClickUp is lower, $10 against our $10 on monthly terms and $7 against $8.50 annually, and both of us have a free plan. Read-only guests are free on both. The moment a client has to comment, approve or raise something, ClickUp meters them: five guest seats plus two per paid user on Unlimited, and past that they become paid members. In Kolabr a guest posts, raises requests, reads the wiki and joins calls, free, for ever."
         },
         {
           "title": "We have built a lot in ClickUp. Is that wasted?",
@@ -1331,7 +1486,7 @@
     },
     "table": {
       "title": "Kolabr and Zendesk, feature by feature",
-      "lede": "Zendesk prices are list prices on annual billing at the time of writing, and the plan line-up is revised periodically, so check Zendesk’s own pricing page before you budget.",
+      "lede": "Zendesk prices are list prices on annual billing at the time of writing, and the plan line-up is revised periodically, so check Zendesk’s own pricing page before you budget. Checked 29 September 2026.",
       "groups": [
         {
           "title": "How the customer reaches you",
@@ -1380,6 +1535,11 @@
               "Somebody who handles both customer and internal requests",
               "One person, one seat, any number of channels.",
               "Customer service and employee service are separate product lines with separate seats."
+            ],
+            [
+              "Everyone on your side who occasionally answers",
+              "Included. You pay per user, not per person allowed to reply.",
+              "An agent licence each, or they are limited to internal notes."
             ]
           ]
         },
@@ -1485,6 +1645,30 @@
       },
       {
         "type": "cards",
+        "id": "only",
+        "title": "What only Kolabr does",
+        "lede": "The parts you cannot assemble out of what you already pay for.",
+        "cards": [
+          {
+            "title": "No portal between you and the client",
+            "body": "They are in a channel with your team, by name, not filing a form into a queue and waiting for a reference number."
+          },
+          {
+            "title": "Everyone can answer",
+            "body": "You pay per user, not per person licensed to reply, so the person who knows the answer gives it."
+          },
+          {
+            "title": "A relationship, not a queue",
+            "body": "The channel holds every request, document and conversation with that client, for as long as they are a client."
+          },
+          {
+            "title": "The conversation is the tool",
+            "body": "Requests come out of chat and go back into it. No separate inbox, no macro library, no portal to maintain."
+          }
+        ]
+      },
+      {
+        "type": "cards",
         "id": "scope",
         "title": "What Kolabr does not try to be",
         "lede": "This is the comparison where scope matters most, so it is worth being plain about it.",
@@ -1525,12 +1709,12 @@
       "kolabr": {
         "name": "Kolabr",
         "price": "$0, $10 or $25",
-        "text": "per user per month, by plan. Guests free, and no add-ons on top."
+        "text": "per user per month, or $8.50 and $21.25 on annual terms. Guests are free and unlimited on both paid plans, in as many channels as the work needs."
       },
       "other": {
         "name": "Zendesk",
         "price": "$19 to $115",
-        "text": "per agent per month on annual billing for the published tiers, with Enterprise quoted, per-agent add-ons and per-resolution AI charges."
+        "text": "per agent per month on annual terms, monthly rates are not published. Enterprise is quoted, with per-agent add-ons and per-resolution AI charges on top."
       }
     },
     "faq": {

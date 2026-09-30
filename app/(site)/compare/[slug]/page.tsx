@@ -28,7 +28,7 @@ export default async function Compare({ params }: PageProps<"/compare/[slug]">) 
   return (
     <>
       <JsonLd data={graph(breadcrumbJsonLd(route(slug)), faqJsonLd(content.faq.items))} />
-      <ComparePage content={content} />
+      <ComparePage content={content} slug={slug} />
     </>
   );
 }

@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { ButtonLink } from "../ButtonLink";
 import { CtaBand } from "../CtaBand";
 import { Screenshot } from "../product/ProductSections";
+import { CostCalculator } from "./CostCalculator";
 import { Rich } from "../Rich";
 import { ShotBand } from "../use-case/UseCasePage";
 import type { Comparison, CompareSection } from "@/lib/compare";
@@ -205,12 +206,14 @@ function Middle({ section: s }: { section: CompareSection }) {
 
 /* ---------- Cost and FAQ ---------- */
 
-function Cost({ cost }: { cost: Comparison["cost"] }) {
-  const priceCard = (p: Comparison["cost"]["kolabr"], ours: boolean) => (
-    <div className="flex flex-col gap-2.5 rounded-3xl bg-surface p-[34px] text-ink shadow-subtle">
+function Cost({ cost, slug }: { cost: Comparison["cost"]; slug: string }) {
+  // The list prices stay, but small and underneath: a per-seat rate is the wrong unit for this
+  // decision, so the calculator leads and the rates are there to be checked against.
+  const rate = (p: Comparison["cost"]["kolabr"], ours: boolean) => (
+    <div className="flex flex-col gap-1">
       <span className={`text-[12px] font-semibold tracking-[0.11em] uppercase ${ours ? "text-accent-ink" : "text-ink-muted"}`}>{p.name}</span>
-      <span className="text-[34px] font-semibold tracking-[-0.03em]">{p.price}</span>
-      <span className="text-[16px] text-ink-muted">{p.text}</span>
+      <span className="text-[19px] font-semibold tracking-[-0.02em] text-ink">{p.price}</span>
+      <span className="text-[14.5px] leading-[1.45] text-pretty text-ink-muted">{p.text}</span>
     </div>
   );
   return (
@@ -225,9 +228,12 @@ function Cost({ cost }: { cost: Comparison["cost"] }) {
             <Rich text={cost.note} />
           </p>
         </div>
-        <div data-rise="" className="flex flex-col gap-3.5">
-          {priceCard(cost.kolabr, true)}
-          {priceCard(cost.other, false)}
+        <div data-rise="" className="flex flex-col gap-5">
+          <CostCalculator slug={slug} />
+          <div className="grid grid-cols-2 gap-6 rounded-3xl bg-surface-tint p-[26px] max-tab:grid-cols-1">
+            {rate(cost.kolabr, true)}
+            {rate(cost.other, false)}
+          </div>
         </div>
       </Split>
     </NarrowBand>
@@ -258,7 +264,7 @@ function Faq({ faq }: { faq: Comparison["faq"] }) {
 
 /* ---------- Page ---------- */
 
-export function ComparePage({ content: c }: { content: Comparison }) {
+export function ComparePage({ content: c, slug }: { content: Comparison; slug: string }) {
   return (
     <>
       <Hero hero={c.hero} />
@@ -277,7 +283,7 @@ export function ComparePage({ content: c }: { content: Comparison }) {
       {c.sections.map((s) => (
         <Middle key={s.id} section={s} />
       ))}
-      <Cost cost={c.cost} />
+      <Cost cost={c.cost} slug={slug} />
       <Faq faq={c.faq} />
       <CtaBand width={680} title={c.cta.title} body={c.cta.body} note={c.cta.disclaimer} />
     </>
