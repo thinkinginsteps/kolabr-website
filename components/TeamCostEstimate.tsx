@@ -54,7 +54,18 @@ export function TeamCostEstimate() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-3.5 border-t border-border pt-5 max-tab:grid-cols-1">
+      <div className="grid grid-cols-3 gap-3.5 border-t border-border pt-5 max-tab:grid-cols-1">
+        {/* Free is shown at every team size, and says plainly when it stops being an option:
+            one user is the whole limit, and a reader with a team of eight should see that. */}
+        <div className={`flex flex-col gap-1 rounded-2xl p-[18px] bg-surface-tint ${team > 1 ? "opacity-60" : ""}`}>
+          <span className="text-[12px] font-semibold tracking-[0.11em] text-ink-muted uppercase">Free</span>
+          <span className="text-[30px] leading-none font-semibold tracking-[-0.03em] text-ink">
+            $0<span className="text-[15px] font-normal text-ink-muted"> / month</span>
+          </span>
+          <span className="text-[13.5px] leading-[1.4] text-ink-muted">
+            {team > 1 ? `One user only, so not enough for ${team}` : "One user, one channel, 30 free guests"}
+          </span>
+        </div>
         {(["Pro", "Business"] as const).map((plan) => {
           const rate = RATES[plan][period];
           return (
@@ -68,7 +79,7 @@ export function TeamCostEstimate() {
                 {money(Math.round(team * rate * 100) / 100)}
                 <span className="text-[15px] font-normal text-ink-muted"> / month</span>
               </span>
-              <span className="text-[13.5px] text-ink-muted">
+              <span className="text-[13.5px] leading-[1.4] text-ink-muted">
                 {team} × {money(rate)}
                 {yearly ? ", billed yearly" : ""}
               </span>
