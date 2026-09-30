@@ -154,7 +154,7 @@ input, textarea, select { caret-color: transparent !important; }
         <span style="width: 28px; height: 28px; flex: none; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, #8a7f76, #6b6159); color: #fff; font-size: 10px; font-weight: 600;">GM</span>
         <div style="max-width: 78%;">
           <div style="font-size: 11px; color: var(--muted, #6b8290); margin: 0 0 4px 3px;">Gideon Muller</div>
-          <div sc-camel-on-click="{{ msgTap0 }}" style="position: relative; cursor: pointer; padding: 10px 13px; border-radius: 16px 16px 16px 5px; background: var(--card, #f4f7f8); font-size: 13.5px; line-height: 1.4; text-wrap: pretty;">SARS verification on the August refund: 21 days. Document list is up.</div>
+          <div sc-camel-on-click="{{ msgTap0 }}" style="position: relative; cursor: pointer; padding: 10px 13px; border-radius: 16px 16px 16px 5px; background: var(--card, #f4f7f8); font-size: 13.5px; line-height: 1.4; text-wrap: pretty;">IRS notice on the August refund: 30 days. Document list is up.</div>
           <div style="font-size: 10.5px; color: var(--muted, #6b8290); margin: 4px 0 0 3px;">09:12</div>
         </div>
       </div>
@@ -174,7 +174,7 @@ input, textarea, select { caret-color: transparent !important; }
       </div>
       <div style="display: flex; justify-content: flex-end;">
         <div style="max-width: 78%;">
-          <div sc-camel-on-click="{{ msgTap3 }}" style="position: relative; cursor: pointer; padding: 10px 13px; border-radius: 16px 16px 5px 16px; background: #00c3ff; color: #fff; font-size: 13.5px; line-height: 1.4; text-wrap: pretty;">Log those separately so the VAT201 on the 25th doesn’t slip behind this.</div>
+          <div sc-camel-on-click="{{ msgTap3 }}" style="position: relative; cursor: pointer; padding: 10px 13px; border-radius: 16px 16px 5px 16px; background: #00c3ff; color: #fff; font-size: 13.5px; line-height: 1.4; text-wrap: pretty;">Log those separately so the Form 941 on the 25th doesn’t slip behind this.</div>
           <div style="text-align: right; font-size: 10.5px; color: var(--muted, #6b8290); margin-top: 4px;">09:33</div>
         </div>
       </div>
@@ -380,7 +380,7 @@ const TENANTS = [
 ];
 
 const CHANNELS = [
-  { tenant: 0, name: 'Tax & SARS', sub: '12 members', unread: '' },
+  { tenant: 0, name: 'Tax & IRS', sub: '12 members', unread: '' },
   { tenant: 0, name: 'Monthly bookkeeping', sub: '9 members', unread: '4' },
   { tenant: 0, name: 'Year-end & audit', sub: '7 members', unread: '' },
   { tenant: 0, name: 'Payroll', sub: '6 members', unread: '' },
@@ -389,7 +389,7 @@ const CHANNELS = [
   { tenant: 1, name: 'Year-end & audit', sub: '8 members', unread: '12' },
   { tenant: 2, name: 'Monthly bookkeeping', sub: '6 members', unread: '4' },
   { tenant: 2, name: 'Payroll', sub: '5 members', unread: '' },
-  { tenant: 3, name: 'Tax & SARS', sub: '4 members', unread: '' },
+  { tenant: 3, name: 'Tax & IRS', sub: '4 members', unread: '' },
   { tenant: 3, name: 'Trust accounts', sub: '3 members', unread: '3' },
   { tenant: 4, name: 'Capacity & deadlines', sub: '7 members', unread: '' }
 ];
@@ -678,7 +678,7 @@ class Component extends DCLogic {
       ],
 
       requests: [
-        { id: '#718', subject: 'VAT201: August return, supporting schedules', channel: 'Tax & SARS', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due in 2 days', slaColor: bad },
+        { id: '#718', subject: 'Form 941: August return, supporting schedules', channel: 'Tax & IRS', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due in 2 days', slaColor: bad },
         { id: '#714', subject: 'Payroll variance: 4 employees, August', channel: 'Payroll', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 3d', slaColor: bad },
         { id: '#712', subject: 'Stock count queries: 6 items unresolved', channel: 'Year-end & audit', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: muted, sla: 'Due in 6h', slaColor: warn }
       ],
@@ -689,7 +689,7 @@ class Component extends DCLogic {
       ],
 
       notifications: [
-        { icon: 'priority_high', text: 'VAT201 due in 2 days: “August return, Harlow Foods”', time: '4 min ago', unread: true },
+        { icon: 'priority_high', text: 'Form 941 due in 2 days: “August return, Harlow Foods”', time: '4 min ago', unread: true },
         { icon: 'person_add', text: 'Lindiwe Buthelezi joined Year-end & audit as a guest', time: '26 min ago', unread: true },
         { icon: 'assignment_ind', text: 'Hannah Venter assigned you the stock count queries', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Bank reconciliation signed off to 31 July', time: '2 hr ago', unread: false },

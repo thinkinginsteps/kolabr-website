@@ -592,7 +592,7 @@ const TENANTS = [
 ];
 
 const CHANNELS = [
-  { tenant: 'Harlow Foods', category: 'Tax & SARS', members: '12 members', unread: '' },
+  { tenant: 'Harlow Foods', category: 'Tax & IRS', members: '12 members', unread: '' },
   { tenant: 'Harlow Foods', category: 'Monthly bookkeeping', members: '9 members', unread: '4' },
   { tenant: 'Harlow Foods', category: 'Year-end & audit', members: '7 members', unread: '' },
   { tenant: 'Harlow Foods', category: 'Payroll', members: '6 members', unread: '' },
@@ -622,26 +622,26 @@ const MEMBERS = [
 ];
 
 const TITLES = [
-  ['VAT201: August return, supporting schedules', 'Filing', 'Tax & SARS', 'Gideon Muller'],
-  ['SARS verification request: 21 day deadline', 'Query', 'Tax & SARS', 'Gideon Muller'],
+  ['Form 941: August return, supporting schedules', 'Filing', 'Tax & IRS', 'Gideon Muller'],
+  ['IRS notice: 30 day deadline', 'Query', 'Tax & IRS', 'Gideon Muller'],
   ['Stock count queries: 6 items unresolved', 'Audit', 'Year-end & audit', 'Tebogo Sekhukhune'],
   ['Creditors reconciliation outstanding', 'Bookkeeping', 'Monthly bookkeeping', 'Priya Ramlal'],
   ['Payroll variance: 4 employees, August', 'Payroll', 'Payroll', 'Nandi Khoza'],
   ['Management accounts pack, August', 'Bookkeeping', 'Monthly bookkeeping', 'Priya Ramlal'],
   ['Audit confirmation letters to banks', 'Audit', 'Brightline Retail', 'Tebogo Sekhukhune'],
-  ['Provisional tax IRP6, second period', 'Filing', 'Tax & SARS', 'Gideon Muller'],
-  ['Unidentified deposits: Durban account', 'Bookkeeping', 'Monthly bookkeeping', 'Priya Ramlal'],
+  ['Estimated tax, second quarter', 'Filing', 'Tax & IRS', 'Gideon Muller'],
+  ['Unidentified deposits: Portland account', 'Bookkeeping', 'Monthly bookkeeping', 'Priya Ramlal'],
   ['EMP501 reconciliation, interim', 'Payroll', 'Payroll', 'Nandi Khoza'],
   ['Fixed asset register verification', 'Audit', 'Year-end & audit', 'Ashwin Kallis'],
   ['Directors\u2019 loan account interest calculation', 'Query', 'Year-end & audit', 'Hannah Venter'],
-  ['CIPC annual return filing', 'Filing', 'Year-end & audit', 'Michelle de Wet'],
+  ['annual report annual return filing', 'Filing', 'Year-end & audit', 'Michelle de Wet'],
   ['Debtors provision: aged over 120 days', 'Audit', 'Year-end & audit', 'Tebogo Sekhukhune'],
   ['New employee tax directive query', 'Payroll', 'Payroll', 'Nandi Khoza']
 ];
 
 const OWNERS = ['Jared Kemp', 'Hannah Venter', 'Rosa Thiel', 'Oscar Bekker', 'Peach Group', 'Jules Marchand', 'Fabien Moreau', 'Stefan Coetzee'];
 const ASSIGNEES = ['-', 'Engagement team', 'Priya Ramlal', 'Gideon Muller', '-', 'Engagement team'];
-const CHANNELS_COL = ['Tax & SARS', 'Monthly bookkeeping', 'Year-end & audit', 'Payroll', 'Brightline Retail'];
+const CHANNELS_COL = ['Tax & IRS', 'Monthly bookkeeping', 'Year-end & audit', 'Payroll', 'Brightline Retail'];
 const TM_STATUSES = ['In Progress', 'In Progress', 'Waiting', 'New', 'In Progress', 'Closed', 'Resolved', 'New', 'Closed', 'Resolved'];
 const PRIORITIES = ['High', 'High', 'Medium', 'High', 'Low', 'Medium', 'High'];
 const SLAS = ['At risk', 'On track', 'Breached', 'On track', 'At risk', 'On track', '-', 'On track'];
@@ -876,7 +876,7 @@ class Component extends DCLogic {
       toggleSettings: () => this.setMenu('settings'),
 
       notifications: [
-        { icon: 'priority_high', text: 'VAT201 due in 2 days: “August return, Harlow Foods”', time: '4 min ago', unread: true },
+        { icon: 'priority_high', text: 'Form 941 due in 2 days: “August return, Harlow Foods”', time: '4 min ago', unread: true },
         { icon: 'person_add', text: 'Lindiwe Buthelezi joined Year-end & audit as a guest', time: '26 min ago', unread: true },
         { icon: 'assignment_ind', text: 'Hannah Venter assigned you the stock count queries', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Bank reconciliation signed off to 31 July', time: '2 hr ago', unread: false },
@@ -1032,7 +1032,7 @@ class Component extends DCLogic {
       ],
 
       requests: [
-        { id: '#718', subject: 'VAT201: August return, supporting schedules', channel: 'Tax & SARS', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due in 2 days', slaColor: bad },
+        { id: '#718', subject: 'Form 941: August return, supporting schedules', channel: 'Tax & IRS', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due in 2 days', slaColor: bad },
         { id: '#712', subject: 'Stock count queries: 6 items unresolved', channel: 'Year-end & audit', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: dark ? '#8ba3ae' : '#6b8290', sla: 'Due in 6h', slaColor: warn },
         { id: '#709', subject: 'Creditors reconciliation outstanding', channel: 'Monthly bookkeeping', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due Friday', slaColor: dark ? '#8ba3ae' : '#6b8290' },
         { id: '#714', subject: 'Payroll variance: 4 employees, August', channel: 'Payroll', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 3d', slaColor: bad },

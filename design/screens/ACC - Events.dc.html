@@ -665,7 +665,7 @@ input, textarea, select { caret-color: transparent !important; }
               </label>
               <label style="display: flex; flex-direction: column; gap: 6px;">
                 <span style="font-size: 11.5px; font-weight: 600; color: var(--muted, #6b8290);">Channel</span>
-                <sc-raw-select style="height: 40px; padding: 0 11px; border: 1px solid var(--hairline, rgba(0,0,0,0.12)); border-radius: 11px; background: transparent; font-family: inherit; font-size: 13.5px; color: inherit; outline: none;"><option>Tax &amp; SARS</option><option>Monthly bookkeeping</option><option>Year-end &amp; audit</option><option>Payroll</option></sc-raw-select>
+                <sc-raw-select style="height: 40px; padding: 0 11px; border: 1px solid var(--hairline, rgba(0,0,0,0.12)); border-radius: 11px; background: transparent; font-family: inherit; font-size: 13.5px; color: inherit; outline: none;"><option>Tax &amp; IRS</option><option>Monthly bookkeeping</option><option>Year-end &amp; audit</option><option>Payroll</option></sc-raw-select>
               </label>
             </div>
             <label style="display: flex; flex-direction: column; gap: 6px;">
@@ -794,7 +794,7 @@ input, textarea, select { caret-color: transparent !important; }
             <div style="height: 4px;"></div>
             <div style="font-size: 10.5px; font-weight: 650; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted, #6b8290);">Subscribe elsewhere</div>
             <div style="display: flex; align-items: center; gap: 8px; padding: 4px 4px 4px 13px; border: 1px solid var(--hairline, rgba(0,0,0,0.12)); border-radius: 12px;">
-              <span style="flex: 1; min-width: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; color: var(--muted, #6b8290); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">webcal://kolabr.com/ics/hannah.venter/tax-sars</span>
+              <span style="flex: 1; min-width: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; color: var(--muted, #6b8290); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">webcal://kolabr.com/ics/hannah.venter/tax-irs</span>
               <button style="height: 32px; padding: 0 13px; border: none; cursor: pointer; border-radius: 980px; font-family: inherit; font-size: 12.5px; font-weight: 600; color: inherit; background: var(--chip, rgba(51,80,91,0.07));">Copy</button>
             </div>
 
@@ -908,7 +908,7 @@ const TENANTS = [
 ];
 
 const CHANNELS = [
-  { tenant: 'Harlow Foods', category: 'Tax & SARS', members: '12 members', unread: '' },
+  { tenant: 'Harlow Foods', category: 'Tax & IRS', members: '12 members', unread: '' },
   { tenant: 'Harlow Foods', category: 'Monthly bookkeeping', members: '9 members', unread: '4' },
   { tenant: 'Harlow Foods', category: 'Year-end & audit', members: '7 members', unread: '' },
   { tenant: 'Harlow Foods', category: 'Payroll', members: '6 members', unread: '' },
@@ -955,7 +955,7 @@ const CHANNEL_LIST = [
   { name: 'Monthly bookkeeping', category: 'Compliance', desc: 'Recons and management accounts', members: 5, sla: 'Standard', people: ['PR', 'HV', 'JM', 'SC', 'NK'] },
   { name: 'Year-end & audit', category: 'Audit', desc: 'Fieldwork and sign-off', members: 5, sla: 'Priority', people: ['TS', 'HV', 'SC', 'PR', 'GM'] },
   { name: 'Payroll', category: 'Compliance', desc: 'Monthly runs and EMP501', members: 4, sla: 'Priority', people: ['NK', 'HV', 'JM', 'SC'] },
-  { name: 'Tax & SARS', category: 'Compliance', desc: 'Returns, queries, verifications', members: 4, sla: 'Priority', people: ['GM', 'HV', 'SC', 'TS'] },
+  { name: 'Tax & IRS', category: 'Compliance', desc: 'Returns, queries, verifications', members: 4, sla: 'Priority', people: ['GM', 'HV', 'SC', 'TS'] },
   { name: 'Brightline Retail', category: 'Other clients', desc: 'Audit engagement', members: 3, sla: 'Standard', people: ['TS', 'HV', 'PR'] },
   { name: 'Kestrel Logistics', category: 'Other clients', desc: 'Monthly bookkeeping', members: 3, sla: 'Standard', people: ['PR', 'NK', 'HV'] },
   { name: 'Practice', category: 'Internal', desc: 'Capacity and deadlines', members: 5, sla: 'Standard', people: ['HV', 'TS', 'GM', 'PR', 'NK'] }
@@ -976,24 +976,24 @@ const SRC_LABELS = { kolabr: 'Kolabr', google: 'Google Calendar', outlook: 'Outl
 const EVENTS = [
   { id: 'e20', date: '2026-08-04', start: '08:30', mins: 30, title: 'Practice deadline review', type: 'call', chan: 'Practice', src: 'kolabr', people: ['HV', 'TS', 'GM'] },
   { id: 'e21', date: '2026-08-06', start: '10:00', mins: 60, title: 'Audit planning: Harlow Foods', type: 'meeting', chan: 'Year-end & audit', src: 'google', people: ['TS', 'HV', 'SC'] },
-  { id: 'e22', date: '2026-08-07', start: '12:00', mins: 0, title: 'PAYE EMP201 due', type: 'deadline', chan: 'Payroll', src: 'outlook', people: ['NK'] },
+  { id: 'e22', date: '2026-08-07', start: '12:00', mins: 0, title: 'State withholding due', type: 'deadline', chan: 'Payroll', src: 'outlook', people: ['NK'] },
   { id: 'e23', date: '2026-08-11', start: '11:00', mins: 45, title: 'Management accounts walkthrough', type: 'review', chan: 'Monthly bookkeeping', src: 'kolabr', people: ['PR', 'SC'] },
   { id: 'e24', date: '2026-08-13', start: '14:00', mins: 60, title: 'Stock count query session', type: 'review', chan: 'Year-end & audit', src: 'kolabr', people: ['TS', 'JM'] },
-  { id: 'e25', date: '2026-08-18', start: '09:00', mins: 45, title: 'SARS verification document review', type: 'review', chan: 'Tax & SARS', src: 'kolabr', people: ['GM', 'JM'] },
+  { id: 'e25', date: '2026-08-18', start: '09:00', mins: 45, title: 'IRS notice document review', type: 'review', chan: 'Tax & IRS', src: 'kolabr', people: ['GM', 'JM'] },
   { id: 'e26', date: '2026-08-19', start: '13:30', mins: 60, title: 'Brightline audit fieldwork', type: 'meeting', chan: 'Brightline Retail', src: 'google', people: ['TS', 'HV'] },
   { id: 'e1', date: '2026-08-20', start: '15:00', mins: 45, title: 'Internal file review', type: 'review', chan: 'Practice', src: 'kolabr', people: ['HV', 'TS'] },
   { id: 'e2', date: '2026-08-24', start: '08:30', mins: 30, title: 'Practice deadline review', type: 'call', chan: 'Practice', src: 'kolabr', people: ['HV', 'TS', 'GM', 'PR'] },
-  { id: 'e3', date: '2026-08-25', start: '12:00', mins: 0, title: 'VAT201 August return due', type: 'deadline', chan: 'Tax & SARS', src: 'outlook', people: ['GM'] },
+  { id: 'e3', date: '2026-08-25', start: '12:00', mins: 0, title: 'Form 941 quarterly return due', type: 'deadline', chan: 'Tax & IRS', src: 'outlook', people: ['GM'] },
   { id: 'e4', date: '2026-08-26', start: '09:00', mins: 45, title: 'Payroll variance review', type: 'review', chan: 'Payroll', src: 'kolabr', people: ['NK', 'JM'] },
   { id: 'e5', date: '2026-08-26', start: '14:00', mins: 60, title: 'Year-end planning meeting', type: 'meeting', chan: 'Year-end & audit', src: 'google', people: ['HV', 'TS', 'SC'] },
   { id: 'e6', date: '2026-08-26', start: '16:00', mins: 30, title: 'Creditors recon catch-up', type: 'call', chan: 'Monthly bookkeeping', src: 'kolabr', people: ['PR', 'JM'] },
   { id: 'e7', date: '2026-08-27', start: '10:00', mins: 45, title: 'Directors loan account discussion', type: 'meeting', chan: 'Year-end & audit', src: 'kolabr', people: ['HV', 'SC'] },
-  { id: 'e8', date: '2026-08-28', start: '12:00', mins: 0, title: 'SARS verification documents due', type: 'deadline', chan: 'Tax & SARS', src: 'kolabr', people: ['GM', 'JM'] },
+  { id: 'e8', date: '2026-08-28', start: '12:00', mins: 0, title: 'IRS notice documents due', type: 'deadline', chan: 'Tax & IRS', src: 'kolabr', people: ['GM', 'JM'] },
   { id: 'e9', date: '2026-08-28', start: '09:00', mins: 60, title: 'Fixed asset verification', type: 'review', chan: 'Year-end & audit', src: 'google', people: ['TS'] },
   { id: 'e10', date: '2026-08-31', start: '10:00', mins: 90, title: 'Monthly client review', type: 'meeting', chan: 'Monthly bookkeeping', src: 'kolabr', people: ['HV', 'PR', 'SC'] },
   { id: 'e11', date: '2026-08-31', start: '16:00', mins: 0, title: 'Management accounts pack due', type: 'deadline', chan: 'Monthly bookkeeping', src: 'outlook', people: ['PR'] },
   { id: 'e12', date: '2026-09-01', start: '11:00', mins: 45, title: 'Audit sign-off meeting', type: 'review', chan: 'Year-end & audit', src: 'kolabr', people: ['HV', 'TS', 'SC'] },
-  { id: 'e13', date: '2026-09-02', start: '13:00', mins: 60, title: 'IRP6 provisional tax prep', type: 'review', chan: 'Tax & SARS', src: 'google', people: ['GM', 'HV'] },
+  { id: 'e13', date: '2026-09-02', start: '13:00', mins: 60, title: 'Form 1120-W estimated tax prep', type: 'review', chan: 'Tax & IRS', src: 'google', people: ['GM', 'HV'] },
   { id: 'e14', date: '2026-09-03', start: '13:00', mins: 60, title: 'Workpaper standards refresh', type: 'meeting', chan: 'Practice', src: 'kolabr', people: ['TS', 'PR'] }
 ];
 
@@ -1010,8 +1010,8 @@ const ACCOUNTS = [
 ];
 
 const LINKABLE_REQUESTS = [
-  { id: '#718', subject: 'VAT201: August return, supporting schedules', channel: 'Tax & SARS', status: 'In progress' },
-  { id: '#714', subject: 'SARS verification request: 21 day deadline', channel: 'Tax & SARS', status: 'In progress' },
+  { id: '#718', subject: 'Form 941: August return, supporting schedules', channel: 'Tax & IRS', status: 'In progress' },
+  { id: '#714', subject: 'the IRS verification request: 21 day deadline', channel: 'Tax & IRS', status: 'In progress' },
   { id: '#712', subject: 'Stock count queries: 6 items unresolved', channel: 'Year-end & audit', status: 'Waiting' },
   { id: '#709', subject: 'Creditors reconciliation outstanding', channel: 'Monthly bookkeeping', status: 'New' },
   { id: '#701', subject: 'Management accounts pack, August', channel: 'Monthly bookkeeping', status: 'Resolved' }
@@ -1462,7 +1462,7 @@ class Component extends DCLogic {
       toggleSettings: () => this.setMenu('settings'),
 
       notifications: [
-        { icon: 'priority_high', text: 'VAT201 due in 2 days: “August return, Harlow Foods”', time: '4 min ago', unread: true },
+        { icon: 'priority_high', text: 'Form 941 due in 2 days: “August return, Harlow Foods”', time: '4 min ago', unread: true },
         { icon: 'person_add', text: 'Lindiwe Buthelezi joined Year-end & audit as a guest', time: '26 min ago', unread: true },
         { icon: 'assignment_ind', text: 'Hannah Venter assigned you the stock count queries', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Bank reconciliation signed off to 31 July', time: '2 hr ago', unread: false },

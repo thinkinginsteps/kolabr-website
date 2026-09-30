@@ -431,7 +431,7 @@ input, textarea, select { caret-color: transparent !important; }
       <div style="flex: none; display: flex; align-items: center; gap: 16px; margin: 20px 24px 0; padding: 14px 22px; border-radius: 18px 18px 0 0; background: var(--card, #ffffff); border-bottom: 1px solid var(--hairline, rgba(0,0,0,0.07));">
         <div style="flex: 1 1 auto; min-width: 0; overflow: hidden;">
           <div style="display: flex; align-items: center; gap: 8px; min-width: 0; flex-wrap: wrap;">
-            <h1 style="margin: 0; font-size: 19px; font-weight: 700; letter-spacing: -0.018em; flex: none; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Tax &amp; SARS</h1>
+            <h1 style="margin: 0; font-size: 19px; font-weight: 700; letter-spacing: -0.018em; flex: none; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Tax &amp; IRS</h1>
             <sc-if value="{{ muted }}" hint-placeholder-val="{{ false }}">
               <span style="display: flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 7px; background: var(--chip, rgba(0,0,0,0.05)); color: var(--muted, #6b8290); flex: none;">
                 <span style="font-family: 'Material Symbols Rounded'; font-size: 14px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600;">notifications_off</span>
@@ -610,7 +610,7 @@ input, textarea, select { caret-color: transparent !important; }
               <span title="{{ t.label }}" style="display: grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; cursor: pointer; font-family: 'Material Symbols Rounded'; font-size: 17px; line-height: 1; font-variation-settings: 'FILL' 0, 'wght' 500; color: var(--muted, #6b8290); transition: background 140ms ease, color 140ms ease;" style-hover="background: var(--iconHover, rgba(0,0,0,0.08)); color: var(--text, #1d1d1f);">{{ t.icon }}</span>
             </sc-for>
           </div>
-          <textarea value="{{ draft }}" sc-camel-on-change="{{ onDraft }}" sc-camel-on-key-down="{{ onDraftKey }}" placeholder="Message #tax-sars…  /request to raise a request, @ to mention" rows="3" style="display: block; width: 100%; box-sizing: border-box; resize: none; border: none; outline: none; background: transparent; padding: 14px 16px 6px; font-family: inherit; font-size: 14px; line-height: 1.55; color: inherit;"></textarea>
+          <textarea value="{{ draft }}" sc-camel-on-change="{{ onDraft }}" sc-camel-on-key-down="{{ onDraftKey }}" placeholder="Message #tax-irs…  /request to raise a request, @ to mention" rows="3" style="display: block; width: 100%; box-sizing: border-box; resize: none; border: none; outline: none; background: transparent; padding: 14px 16px 6px; font-family: inherit; font-size: 14px; line-height: 1.55; color: inherit;"></textarea>
           <div style="display: flex; align-items: center; gap: 6px; padding: 6px 10px 10px 12px;">
             <sc-for list="{{ composerIcons }}" as="c" hint-placeholder-count="3">
               <span title="{{ c.label }}" style="display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 0, 'wght' 500; color: var(--muted, #6b8290); transition: background 140ms ease, color 140ms ease;" style-hover="background: var(--iconHover, rgba(0,0,0,0.08)); color: var(--text, #1d1d1f);">{{ c.icon }}</span>
@@ -674,7 +674,7 @@ input, textarea, select { caret-color: transparent !important; }
           </div>
           <div sc-camel-on-click="{{ toggleAlsoSend }}" style="display: flex; align-items: center; gap: 8px; margin-top: 10px; padding: 0 4px; cursor: pointer; font-size: 12px; color: var(--muted, #6b8290);">
             <span style="display: grid; place-items: center; width: 16px; height: 16px; flex: none; border-radius: 4px; background: {{ alsoSendBg }}; color: #ffffff; font-family: 'Material Symbols Rounded'; font-size: 13px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 700;">{{ alsoSendIcon }}</span>
-            Also send to #tax-sars
+            Also send to #tax-irs
           </div>
         </div>
       </aside>
@@ -719,7 +719,7 @@ const TENANTS = [
 ];
 
 const CHANNELS = [
-  { tenant: 'Harlow Foods', category: 'Tax & SARS', members: '12 members', unread: '' },
+  { tenant: 'Harlow Foods', category: 'Tax & IRS', members: '12 members', unread: '' },
   { tenant: 'Harlow Foods', category: 'Monthly bookkeeping', members: '9 members', unread: '4' },
   { tenant: 'Harlow Foods', category: 'Year-end & audit', members: '7 members', unread: '' },
   { tenant: 'Harlow Foods', category: 'Payroll', members: '6 members', unread: '' },
@@ -748,14 +748,14 @@ const MEMBERS = [
   { initials: 'JM', name: 'Jolene Marais', role: 'Client · Creditors clerk', email: 'jolene.marais@harlowfoods.co.za', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
-const PINNED = { text: 'VAT201 for August is due on the 25th. Supporting schedules must be in this channel by the 22nd, not emailed to anyone individually.', meta: 'Hannah Venter · Tue' };
+const PINNED = { text: 'Form 941 for August is due on the 25th. Supporting schedules must be in this channel by the 22nd, not emailed to anyone individually.', meta: 'Hannah Venter · Tue' };
 
 const THREAD = {
   author: 'Stefan Coetzee', photo: '', initials: 'SC', time: '09:12',
-  text: 'SARS has come back with a verification request on the August VAT refund. Twenty-one days. What do you need from us and can we still file the September return on time?',
+  text: 'The IRS has come back with a notice on the August payroll return. Thirty days. What do you need from us and can we still file the September return on time?',
   replies: [
-    { author: 'Gideon Muller', initials: 'GM', bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', time: '09:14', text: 'Standard verification, not an audit. They want invoices over R50 000 and the import documents for the two cold-chain shipments.' },
-    { author: 'Jolene Marais', initials: 'JM', bg: 'linear-gradient(150deg, #8b8394, #635c6d)', time: '09:16', text: 'I have those. Do I upload them here or through the portal? Last time we did both and nobody could tell which version SARS actually received.' },
+    { author: 'Gideon Muller', initials: 'GM', bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', time: '09:14', text: 'Standard verification, not an audit. They want invoices over $50,000 and the import documents for the two cold-chain shipments.' },
+    { author: 'Jolene Marais', initials: 'JM', bg: 'linear-gradient(150deg, #8b8394, #635c6d)', time: '09:16', text: 'I have those. Do I upload them here or through the portal? Last time we did both and nobody could tell which version the IRS actually received.' },
     { author: 'Gideon Muller', initials: 'GM', bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', time: '09:17', text: 'Here first so we check them, then I submit once from our side and post the submission reference in this channel.' },
     { author: 'Stefan Coetzee', initials: 'SC', bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', time: '09:18', text: 'Good. And September is unaffected. I do not want one query delaying the next filing.' }
   ]
@@ -877,13 +877,13 @@ class Component extends DCLogic {
       { kind: 'event', icon: 'group_add', label: 'Lindiwe Buthelezi joined #year-end-audit', meta: 'invited by Hannah Venter · 7 members', time: '16:02' },
       { kind: 'msg', author: 'Tebogo Sekhukhune', photo: '', initials: 'TS', time: '16:20', mention: true, text: '@channel six stock count queries are still open from the June count. We cannot sign the audit with them outstanding. The list is on the wiki with what we need for each.', reactions: [{ emoji: '👍', count: 8 }] },
       { kind: 'divider', label: 'Today' },
-      { kind: 'msg', author: 'Stefan Coetzee', photo: '', initials: 'SC', time: '09:12', text: 'SARS has come back with a verification request on the August VAT refund. Twenty-one days. What do you need from us and can we still file the September return on time?', thread: '4 replies · last 09:18' },
+      { kind: 'msg', author: 'Stefan Coetzee', photo: '', initials: 'SC', time: '09:12', text: 'The IRS has come back with a notice on the August payroll return. Thirty days. What do you need from us and can we still file the September return on time?', thread: '4 replies · last 09:18' },
       { kind: 'msg', author: 'Gideon Muller', photo: '', initials: 'GM', time: '09:19', text: 'For the record: verification on the August refund, documents needed by the 18th so we submit with a week in hand. Raised as request #714 with the document list attached, rather than living in this scroll.', reactions: [{ emoji: '🙌', count: 5 }] },
-      { kind: 'event', icon: 'confirmation_number', label: 'Request #714 raised from a message: SARS verification, 21 day deadline', meta: 'Gideon Muller · In progress · due Friday', time: '09:26' },
+      { kind: 'event', icon: 'confirmation_number', label: 'Request #714 raised from a message: IRS notice, 30 day deadline', meta: 'Gideon Muller · In progress · due Friday', time: '09:26' },
       { kind: 'msg', author: 'Hannah Venter', photo: '', initials: 'HV', time: '09:31', text: 'Everything supporting a filing goes in the channel, not into someone’s inbox. If it is in a personal mailbox the day a query lands, it does not exist as far as I am concerned.' },
-      { kind: 'msg', author: 'Priya Ramlal', photo: '', initials: 'PR', time: '09:36', text: 'Bank reconciliation is done to 31 July and posted. Two unidentified deposits from Harlow’s Durban account, flagged rather than guessed at, and the query is on the wiki.', thread: '2 replies · last 09:39' },
+      { kind: 'msg', author: 'Priya Ramlal', photo: '', initials: 'PR', time: '09:36', text: 'Bank reconciliation is done to 31 July and posted. Two unidentified deposits from Harlow’s Portland account, flagged rather than guessed at, and the query is on the wiki.', thread: '2 replies · last 09:39' },
       { kind: 'event', icon: 'event_available', label: 'Year-end planning meeting, Thu 14:00', meta: 'Hannah Venter · 7 invited', time: '09:38' },
-      { kind: 'msg', author: 'Jolene Marais', photo: '', initials: 'JM', time: '09:41', text: 'Creditors recon uploaded here. Also, payroll shows a variance on four employees for August, probably the shift allowance change. Logged separately so it does not get lost behind the SARS query.' }
+      { kind: 'msg', author: 'Jolene Marais', photo: '', initials: 'JM', time: '09:41', text: 'Creditors recon uploaded here. Also, payroll shows a variance on four employees for August, probably the shift allowance change. Logged separately so it does not get lost behind the the IRS query.' }
     ].concat(this.state.sent.map(m => ({ kind: 'msg', ...m })));
 
     let prev = null;
@@ -994,7 +994,7 @@ class Component extends DCLogic {
       toggleSettings: () => this.setMenu('settings'),
 
       notifications: [
-        { icon: 'priority_high', text: 'VAT201 due in 2 days: “August return, Harlow Foods”', time: '4 min ago', unread: true },
+        { icon: 'priority_high', text: 'Form 941 due in 2 days: “August return, Harlow Foods”', time: '4 min ago', unread: true },
         { icon: 'person_add', text: 'Lindiwe Buthelezi joined Year-end & audit as a guest', time: '26 min ago', unread: true },
         { icon: 'assignment_ind', text: 'Hannah Venter assigned you the stock count queries', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Bank reconciliation signed off to 31 July', time: '2 hr ago', unread: false },
@@ -1104,7 +1104,7 @@ class Component extends DCLogic {
       openPins: () => this.setState({ thread: null }),
       threadOpen: this.state.thread !== null && this.state.thread !== undefined,
       closeThread: () => this.setState({ thread: null }),
-      threadMeta: '#tax-sars · 5 people following',
+      threadMeta: '#tax-irs · 5 people following',
       threadRootAuthor: THREAD.author,
       threadRootPhoto: THREAD.photo,
       threadRootTime: THREAD.time,
@@ -1194,7 +1194,7 @@ class Component extends DCLogic {
       ],
 
       requests: [
-        { id: '#718', subject: 'VAT201: August return, supporting schedules', channel: 'Tax & SARS', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due in 2 days', slaColor: bad },
+        { id: '#718', subject: 'Form 941: August return, supporting schedules', channel: 'Tax & IRS', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due in 2 days', slaColor: bad },
         { id: '#712', subject: 'Stock count queries: 6 items unresolved', channel: 'Year-end & audit', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: dark ? '#8ba3ae' : '#6b8290', sla: 'Due in 6h', slaColor: warn },
         { id: '#709', subject: 'Creditors reconciliation outstanding', channel: 'Monthly bookkeeping', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due Friday', slaColor: dark ? '#8ba3ae' : '#6b8290' },
         { id: '#714', subject: 'Payroll variance: 4 employees, August', channel: 'Payroll', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 3d', slaColor: bad },

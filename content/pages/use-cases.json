@@ -3,10 +3,10 @@
     "hero": {
       "eyebrow": "Kolabr for accounting firms",
       "title": "Stop chasing documents through four inboxes.",
-      "lede": "A SARS letter with twenty-one days on it, a client who forwards invoices to whoever they spoke to last, and a junior reconstructing what was asked for in March. One channel per client, where the request, the document and the deadline all live together. Clients join as guests, free, on every plan.",
+      "lede": "An IRS notice with thirty days on it, a client who forwards invoices to whoever they spoke to last, and a junior reconstructing what was asked for in March. One channel per client, where the request, the document and the deadline all live together. Clients join as guests, free, on every plan.",
       "image": {
         "file": "ac2-chat",
-        "alt": "The Tax and SARS channel for Harlow Foods: a pinned VAT201 deadline, open stock count queries, and the client reporting a SARS verification request"
+        "alt": "The Tax and IRS channel for Harlow Foods: a pinned Form 941 deadline, open inventory count queries, and the client reporting an IRS notice"
       }
     },
     "channels": {
@@ -30,7 +30,7 @@
           "body": "Monthly runs, variances and EMP501. Separate, because payroll questions are urgent and personal and should not sit behind an audit thread."
         },
         {
-          "title": "Tax & SARS",
+          "title": "Tax & IRS",
           "body": "Returns, verifications, assessments. When a letter arrives with twenty-one days on it, everyone can see the clock."
         },
         {
@@ -53,7 +53,7 @@
       "lede": "Filings, queries, audit items and bookkeeping tasks as numbered items with an owner and a due date. What is outstanding from the client is a list, not a feeling, and the client can see it too.",
       "image": {
         "file": "ac2-requests",
-        "alt": "Request management for the firm: VAT201 filings, a SARS verification, stock count queries, creditors reconciliation and payroll variances in one table with owner, channel and deadline"
+        "alt": "Request management for the firm: payroll tax filings, an IRS notice, inventory count queries, accounts payable reconciliation and payroll variances in one table with owner, category and deadline"
       },
       "cards": [
         {
@@ -62,17 +62,17 @@
         },
         {
           "title": "Statutory dates with a clock",
-          "body": "VAT201, EMP201, provisional tax, CIPC. The deadline is on the item, and “waiting on client” is visible to the client."
+          "body": "Form 941, estimated tax, the state sales tax return, the annual report. The deadline is on the item, and “waiting on client” is visible to the client."
         },
         {
           "title": "A message becomes a request",
-          "body": "The client mentions a SARS letter in the channel; one step turns it into a tracked item with the document list attached."
+          "body": "The client mentions an IRS notice in the channel; one step turns it into a tracked item with the document list attached."
         }
       ]
     },
     "split": {
-      "id": "sars",
-      "title": "Every junior handles a SARS letter the way you would",
+      "id": "irs",
+      "title": "Every junior handles an IRS notice the way you would",
       "lede": "The procedure sits on the channel wiki beside the client it concerns: what kind of letter it is, what to ask for, and who reviews before anything is submitted.",
       "points": [
         {
@@ -90,7 +90,7 @@
       ],
       "image": {
         "file": "ac2-wiki",
-        "alt": "The client wiki article Responding to a SARS query: four steps, a table of letter types from verification to final demand, and the message to send the client the day a letter arrives"
+        "alt": "The client wiki article Responding to an IRS notice: four steps, a table of notice types from CP2000 to a final demand, and the message to send the client the day one arrives"
       }
     },
     "site": {
@@ -99,7 +99,7 @@
       "lede": "Year-end runs on site visits, stock counts and a partner answering a client between two meetings. The channel goes with them, and what they agree lands on the file, not in a text message.",
       "image": {
         "file": "ac3-mobile",
-        "alt": "Kolabr on a phone: the tax specialist reporting a SARS verification with the document list up, and the client's managing director asking whether the VAT201 can still be filed on time"
+        "alt": "Kolabr on a phone: the tax specialist reporting an IRS notice with the document list up, and the client's finance director asking whether the payroll return can still be filed on time"
       },
       "cards": [
         {
@@ -122,10 +122,10 @@
     },
     "calendar": {
       "title": "The compliance calendar, per client, in one place",
-      "lede": "VAT on the 25th, EMP201 on the 7th, provisional tax, the audit sign-off meeting and the management accounts pack. In the channel it belongs to, synced to Outlook and Google.",
+      "lede": "Form 941 at the end of the month after each quarter, estimated tax on the 15th, the state sales tax return, the audit sign-off meeting and the management accounts pack. In the channel it belongs to.",
       "image": {
         "file": "ac2-events",
-        "alt": "The firm's calendar: practice deadline reviews, PAYE and VAT201 due dates, audit planning, the stock count query session and the management accounts deadline on one month view"
+        "alt": "The firm's calendar: practice deadline reviews, payroll and sales tax due dates, audit planning, the inventory count query session and the management accounts deadline on one month view"
       }
     },
     "oversight": {
@@ -213,7 +213,7 @@
         },
         {
           "title": "Next client in one step",
-          "body": "Build it from a channel template: service lines, the compliance calendar, the SARS procedure and the records checklist already there. Onboarding stops being a week of setup."
+          "body": "Build it from a channel template: service lines, the compliance calendar, the IRS notice procedure and the records checklist already there. Onboarding stops being a week of setup."
         },
         {
           "title": "You pay for your staff",

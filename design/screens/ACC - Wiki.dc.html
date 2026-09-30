@@ -506,10 +506,10 @@ input, textarea, select { caret-color: transparent !important; }
             <span style="flex: 1; font-size: 13px; line-height: 1.5; text-wrap: pretty;">From 1 September every document supporting a filing lives in the client channel, not in a mailbox. The steps below reflect that: if it is in someone’s inbox when a query lands, it does not exist.</span>
           </div>
 
-          <p style="margin: 22px 0 0; font-size: 15.5px; line-height: 1.62; color: var(--muted, #6b8290); text-wrap: pretty;">How to handle a verification or audit letter from SARS, from the day it arrives to the day the reference comes back. Written for bookkeepers and juniors; a partner reviews before anything is submitted.</p>
+          <p style="margin: 22px 0 0; font-size: 15.5px; line-height: 1.62; color: var(--muted, #6b8290); text-wrap: pretty;">How to handle a notice or examination letter from the IRS, from the day it arrives to the day the reference comes back. Written for bookkeepers and juniors; a partner reviews before anything is submitted.</p>
 
           <h2 data-anchor="Before you start" style="margin: 30px 0 0; font-size: 19px; font-weight: 650; letter-spacing: -0.02em;">Before you start</h2>
-          <p style="margin: 10px 0 0; font-size: 14.5px; line-height: 1.68; text-wrap: pretty;">Check what kind of letter it is and diarise the deadline the same day it arrives. If it is an assessment or an objection, this is not the right page. Escalate to the tax specialist directly. Nothing is submitted to SARS without a partner reviewing it first.</p>
+          <p style="margin: 10px 0 0; font-size: 14.5px; line-height: 1.68; text-wrap: pretty;">Check what kind of letter it is and diarise the deadline the same day it arrives. If it is an assessment or an objection, this is not the right page. Escalate to the tax specialist directly. Nothing is submitted to the IRS without a partner reviewing it first.</p>
 
           <div data-anchor="You will need" style="display: flex; flex-direction: column; gap: 9px; margin-top: 18px; padding: 16px 18px; border-radius: 16px; background: var(--page, #edf3f7);">
             <span style="font-size: 10.5px; font-weight: 650; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted, #6b8290);">You will need</span>
@@ -534,7 +534,7 @@ input, textarea, select { caret-color: transparent !important; }
             </sc-for>
           </div>
 
-          <h2 data-anchor="Types of SARS letter" style="margin: 32px 0 0; font-size: 19px; font-weight: 650; letter-spacing: -0.02em;">Types of SARS letter</h2>
+          <h2 data-anchor="Types of the IRS letter" style="margin: 32px 0 0; font-size: 19px; font-weight: 650; letter-spacing: -0.02em;">Types of the IRS letter</h2>
           <div style="margin-top: 14px; border-radius: 14px; overflow: hidden; border: 1px solid var(--hairline, rgba(0,0,0,0.09));">
             <div style="display: grid; grid-template-columns: 84px minmax(0, 1fr) minmax(0, 1.1fr); padding: 10px 14px; background: var(--page, #edf3f7); font-size: 10.5px; font-weight: 650; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted, #6b8290);">
               <span>Code</span><span>Meaning</span><span>What to do</span>
@@ -549,8 +549,8 @@ input, textarea, select { caret-color: transparent !important; }
           </div>
 
           <h2 data-anchor="Message the client" style="margin: 32px 0 0; font-size: 19px; font-weight: 650; letter-spacing: -0.02em;">Message the client</h2>
-          <p style="margin: 10px 0 0; font-size: 14.5px; line-height: 1.68; text-wrap: pretty;">Post this the day the letter arrives. Clients panic about SARS letters; a clear list of what you need and by when converts panic into documents.</p>
-          <div style="margin-top: 14px; padding: 15px 17px; border-radius: 14px; background: var(--page, #edf3f7); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; line-height: 1.7; color: var(--muted, #6b8290); text-wrap: pretty;">SARS has issued a verification on the August VAT refund. This is routine, not an audit. We need: tax invoices over R50 000 for August, the two cold-chain import documents, and the customs release notices. Please upload them in this channel by the 18th so we submit with a week in hand. Deadline is 9 September; we will post the submission reference here.</div>
+          <p style="margin: 10px 0 0; font-size: 14.5px; line-height: 1.68; text-wrap: pretty;">Post this the day the letter arrives. Clients panic about IRS notices; a clear list of what you need and by when converts panic into documents.</p>
+          <div style="margin-top: 14px; padding: 15px 17px; border-radius: 14px; background: var(--page, #edf3f7); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; line-height: 1.7; color: var(--muted, #6b8290); text-wrap: pretty;">The IRS has issued a notice on the August payroll return. This is routine, not an audit. We need: tax invoices over $50,000 for August, the two cold-chain import documents, and the customs release notices. Please upload them in this channel by the 18th so we submit with a week in hand. Deadline is 9 September; we will post the submission reference here.</div>
 
           <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 34px; padding-top: 20px; border-top: 1px solid var(--hairline, rgba(0,0,0,0.09));">
             <span style="font-size: 13.5px; font-weight: 500;">Was this page helpful?</span>
@@ -649,7 +649,7 @@ const TENANTS = [
 ];
 
 const CHANNELS = [
-  { tenant: 'Harlow Foods', category: 'Tax & SARS', members: '12 members', unread: '' },
+  { tenant: 'Harlow Foods', category: 'Tax & IRS', members: '12 members', unread: '' },
   { tenant: 'Harlow Foods', category: 'Monthly bookkeeping', members: '9 members', unread: '4' },
   { tenant: 'Harlow Foods', category: 'Year-end & audit', members: '7 members', unread: '' },
   { tenant: 'Harlow Foods', category: 'Payroll', members: '6 members', unread: '' },
@@ -696,7 +696,7 @@ const CHANNEL_LIST = [
   { name: 'Monthly bookkeeping', category: 'Compliance', desc: 'Recons and management accounts', members: 5, sla: 'Standard', people: ['PR', 'HV', 'JM', 'SC', 'NK'] },
   { name: 'Year-end & audit', category: 'Audit', desc: 'Fieldwork and sign-off', members: 5, sla: 'Priority', people: ['TS', 'HV', 'SC', 'PR', 'GM'] },
   { name: 'Payroll', category: 'Compliance', desc: 'Monthly runs and EMP501', members: 4, sla: 'Priority', people: ['NK', 'HV', 'JM', 'SC'] },
-  { name: 'Tax & SARS', category: 'Compliance', desc: 'Returns, queries, verifications', members: 4, sla: 'Priority', people: ['GM', 'HV', 'SC', 'TS'] },
+  { name: 'Tax & IRS', category: 'Compliance', desc: 'Returns, queries, verifications', members: 4, sla: 'Priority', people: ['GM', 'HV', 'SC', 'TS'] },
   { name: 'Brightline Retail', category: 'Other clients', desc: 'Audit engagement', members: 3, sla: 'Standard', people: ['TS', 'HV', 'PR'] },
   { name: 'Kestrel Logistics', category: 'Other clients', desc: 'Monthly bookkeeping', members: 3, sla: 'Standard', people: ['PR', 'NK', 'HV'] },
   { name: 'Practice', category: 'Internal', desc: 'Capacity and deadlines', members: 5, sla: 'Standard', people: ['HV', 'TS', 'GM', 'PR', 'NK'] }
@@ -711,10 +711,10 @@ const WIKI_TREE = [
     { id: 'w3', title: 'Harlow Foods client profile', badge: 'NEW' }
   ] },
   { name: 'Deadlines', icon: 'event', pages: [
-    { id: 'w4', title: 'Responding to a SARS query' },
+    { id: 'w4', title: 'Responding to a the IRS query' },
     { id: 'w5', title: 'The monthly and annual calendar' },
     { id: 'w6', title: 'When a client misses a deadline' },
-    { id: 'w7', title: 'Provisional tax estimates' }
+    { id: 'w7', title: 'Estimated tax estimates' }
   ] },
   { name: 'Audit', icon: 'fact_check', pages: [
     { id: 'w8', title: 'Requesting records from a client' },
@@ -804,7 +804,7 @@ class Component extends DCLogic {
       DRAFT: { bg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', fg: 'var(--muted, #6b8290)' },
       REVIEW: { bg: 'rgba(245,165,36,0.16)', fg: '#f5a524' }
     };
-    let selTitle = 'Responding to a SARS query';
+    let selTitle = 'Responding to a the IRS query';
     let selSection = 'Deadlines';
     const tree = WIKI_TREE.map(s => {
       const pages = s.pages.filter(p => !q || p.title.toLowerCase().includes(q));
@@ -844,18 +844,18 @@ class Component extends DCLogic {
         { text: 'The original return and the schedules behind it' }
       ],
       steps: [
-        { n: '1', title: 'Diarise the deadline the day it arrives', text: 'Not the day you start working on it. Twenty-one days sounds generous until the client takes twelve of them to find an invoice.' },
+        { n: '1', title: 'Diarise the deadline the day it arrives', text: 'Not the day you start working on it. Thirty days sounds generous until the client takes twenty of them to find an invoice.' },
         { n: '2', title: 'Ask for everything at once', text: 'One consolidated list in the channel, not four messages across a fortnight. Every extra round trip is two days you do not have.' },
         { n: '3', title: 'A partner reviews before submission', text: 'What you send becomes part of the record. It is far harder to correct a submission than to check one.' },
-        { n: '4', title: 'Post the reference back in the channel', text: 'Submission reference, date, what was sent. When SARS asks again in eight months, nobody is reconstructing it from memory.' }
+        { n: '4', title: 'Post the reference back in the channel', text: 'Submission reference, date, what was sent. When the IRS asks again in eight months, nobody is reconstructing it from memory.' }
       ],
       codes: [
         { code: 'Verification', meaning: 'Routine check of a return', action: 'Supply documents; 21 days; no penalty implied' },
         { code: 'Audit letter', meaning: 'Formal audit of a period', action: 'Partner leads; scope the request before answering' },
-        { code: 'Additional assessment', meaning: 'SARS has changed the figures', action: 'Object within 30 business days or it stands' },
+        { code: 'Additional assessment', meaning: 'The IRS has changed the figures', action: 'Object within 30 business days or it stands' },
         { code: 'Final demand', meaning: 'Payment demanded', action: 'Same-day escalation; consider suspension of payment' }
       ],
-      toc: [selTitle, 'Before you start', 'You will need', 'Working the query', 'Types of SARS letter', 'Message the client'].map((l) => ({
+      toc: [selTitle, 'Before you start', 'You will need', 'Working the query', 'Types of the IRS letter', 'Message the client'].map((l) => ({
         label: l,
         fg: l === (this.state.toc || 'Working the query') ? 'var(--text, #1d1d1f)' : 'var(--muted, #6b8290)',
         bg: l === (this.state.toc || 'Working the query') ? 'var(--chip, rgba(51,80,91,0.07))' : 'transparent',
@@ -869,10 +869,10 @@ class Component extends DCLogic {
       })),
 
 
-      tags: ['sars', 'deadlines', 'vat', 'procedure'].map(l => ({ label: l })),
+      tags: ['irs', 'deadlines', 'payroll', 'procedure'].map(l => ({ label: l })),
       files: [
-        { icon: 'picture_as_pdf', name: 'SARS verification letter, Aug.pdf', size: '188 KB' },
-        { icon: 'table', name: 'VAT201 supporting schedule.xlsx', size: '112 KB' }
+        { icon: 'picture_as_pdf', name: 'the IRS verification letter, Aug.pdf', size: '188 KB' },
+        { icon: 'table', name: 'Form 941 supporting schedule.xlsx', size: '112 KB' }
       ],
 
       voteUp: () => this.setState({ vote: 'up' }),
@@ -974,7 +974,7 @@ class Component extends DCLogic {
       toggleSettings: () => this.setMenu('settings'),
 
       notifications: [
-        { icon: 'priority_high', text: 'VAT201 due in 2 days: “August return, Harlow Foods”', time: '4 min ago', unread: true },
+        { icon: 'priority_high', text: 'Form 941 due in 2 days: “August return, Harlow Foods”', time: '4 min ago', unread: true },
         { icon: 'person_add', text: 'Lindiwe Buthelezi joined Year-end & audit as a guest', time: '26 min ago', unread: true },
         { icon: 'assignment_ind', text: 'Hannah Venter assigned you the stock count queries', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Bank reconciliation signed off to 31 July', time: '2 hr ago', unread: false },

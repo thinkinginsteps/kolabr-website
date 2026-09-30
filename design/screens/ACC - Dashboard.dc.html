@@ -585,7 +585,7 @@ const TENANTS = [
 ];
 
 const CHANNELS = [
-  { tenant: 'Harlow Foods', category: 'Tax & SARS', members: '12 members', unread: '' },
+  { tenant: 'Harlow Foods', category: 'Tax & IRS', members: '12 members', unread: '' },
   { tenant: 'Harlow Foods', category: 'Monthly bookkeeping', members: '9 members', unread: '4' },
   { tenant: 'Harlow Foods', category: 'Year-end & audit', members: '7 members', unread: '' },
   { tenant: 'Harlow Foods', category: 'Payroll', members: '6 members', unread: '' },
@@ -756,7 +756,7 @@ class Component extends DCLogic {
       toggleSettings: () => this.setMenu('settings'),
 
       notifications: [
-        { icon: 'priority_high', text: 'VAT201 due in 2 days: “August return, Harlow Foods”', time: '4 min ago', unread: true },
+        { icon: 'priority_high', text: 'Form 941 due in 2 days: “August return, Harlow Foods”', time: '4 min ago', unread: true },
         { icon: 'person_add', text: 'Lindiwe Buthelezi joined Year-end & audit as a guest', time: '26 min ago', unread: true },
         { icon: 'assignment_ind', text: 'Hannah Venter assigned you the stock count queries', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Bank reconciliation signed off to 31 July', time: '2 hr ago', unread: false },
@@ -850,9 +850,9 @@ class Component extends DCLogic {
 
       metrics: [
         { icon: 'confirmation_number', label: 'Open items', value: '71', delta: '+14 this week', note: 'Across 11 client channels', color: 'inherit', deltaColor: '#00c3ff' },
-        { icon: 'pending_actions', label: 'Filings due', value: '8', delta: '3 this week', note: 'VAT, IRP6 and CIPC', color: 'inherit', deltaColor: ok },
+        { icon: 'pending_actions', label: 'Filings due', value: '8', delta: '3 this week', note: 'Payroll, estimated tax and annual report', color: 'inherit', deltaColor: ok },
         { icon: 'person_search', label: 'Awaiting client', value: '9', delta: 'Oldest 6 days', note: 'Documents outstanding', color: 'inherit', deltaColor: warn },
-        { icon: 'timer_off', label: 'Deadline at risk', value: '3', delta: 'Next due in 2 days', note: '1 VAT201, 2 audit items', color: 'inherit', deltaColor: bad }
+        { icon: 'timer_off', label: 'Deadline at risk', value: '3', delta: 'Next due in 2 days', note: '1 payroll filing, 2 audit items', color: 'inherit', deltaColor: bad }
       ],
 
       bars: [
@@ -864,7 +864,7 @@ class Component extends DCLogic {
       ],
 
       requests: [
-        { id: '#718', subject: 'VAT201: August return, supporting schedules', channel: 'Tax & SARS', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due in 2 days', slaColor: bad },
+        { id: '#718', subject: 'Form 941: August return, supporting schedules', channel: 'Tax & IRS', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due in 2 days', slaColor: bad },
         { id: '#712', subject: 'Stock count queries: 6 items unresolved', channel: 'Year-end & audit', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: dark ? '#8ba3ae' : '#6b8290', sla: 'Due in 6h', slaColor: warn },
         { id: '#709', subject: 'Creditors reconciliation outstanding', channel: 'Monthly bookkeeping', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due Friday', slaColor: dark ? '#8ba3ae' : '#6b8290' },
         { id: '#714', subject: 'Payroll variance: 4 employees, August', channel: 'Payroll', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 3d', slaColor: bad },

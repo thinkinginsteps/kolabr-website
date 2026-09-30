@@ -116,15 +116,15 @@
     },
     {
       "q": "How do we organise channels for each client?",
-      "a": "Most firms run one channel per client, split by service line: monthly bookkeeping, year-end and audit, payroll, and tax and SARS. Payroll sits separately because its questions are urgent and personal. A practice channel is for your own people. Clients see only their own affairs, never another client or your internal notes."
+      "a": "Most firms run one channel per client, split by service line: monthly bookkeeping, year-end and audit, payroll, and tax and IRS. Payroll sits separately because its questions are urgent and personal. A practice channel is for your own people. Clients see only their own affairs, never another client or your internal notes."
     },
     {
-      "q": "Can Kolabr track SARS and other statutory deadlines?",
-      "a": "Yes. Filings, queries, audit items and bookkeeping tasks are numbered items with an owner and a due date. Statutory dates such as VAT201, EMP201, provisional tax and CIPC carry a clock on the item, and \"waiting on client\" is visible to the client. Each client's compliance dates sit on that client's own channel calendar."
+      "q": "Can Kolabr track IRS and state filing deadlines?",
+      "a": "Yes. Filings, notices, audit items and bookkeeping tasks are numbered items with an owner and a due date. Dates such as Form 941, quarterly estimated tax, the state sales tax return and the annual report carry a clock on the item, and “waiting on client” is visible to the client. Each client's compliance dates sit on that client's own channel calendar."
     },
     {
       "q": "Can we stop a junior submitting without partner review?",
-      "a": "Yes. A junior prepares, a partner reviews and submits, and that is enforced by role rather than by a reminder in a team meeting. The SARS procedure can also sit on the channel wiki beside the client, setting out what to ask for and who reviews before anything is submitted."
+      "a": "Yes. A junior prepares, a partner reviews and files, and that is enforced by role rather than by a reminder in a team meeting. The IRS notice procedure can also sit on the channel wiki beside the client, setting out what to ask for and who reviews before anything is filed."
     },
     {
       "q": "What's the best way to try Kolabr in our practice?",
