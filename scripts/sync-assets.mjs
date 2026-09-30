@@ -42,8 +42,7 @@ const SCREEN_SHOTS = [
   ["Homepage Screenshots/Screenshot - 03 - Event Scheduler.png", "screen-events.webp"],
   ["Homepage Screenshots/Screenshot - 04 - Video Call.png", "screen-call.webp"],
   ["Homepage Screenshots/Screenshot - 05 - Wiki.png", "screen-wiki.webp"],
-  // Held back: the recapture introduces "Peach Group" as an owner and still has one em dash.
-  ["Homepage Screenshots/Screenshot - Requests.png", "screen-requests.webp"],
+  ["Screenshot - Requests - New.png", "screen-requests.webp"],
   ["Homepage Screenshots/Screenshot - Channels.png", "screen-channels.webp"],
 ];
 // Pieces of those screenshots, for the places a page shows one panel rather than a whole screen.

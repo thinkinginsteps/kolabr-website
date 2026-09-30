@@ -38,7 +38,7 @@ export default function RequestsPage() {
           className="mt-16"
           image={screenRequests}
           // Design alt said "ticket number"; Kolabr's items are requests (Dom's copy rule).
-          alt="The Requests list: request number, title, status, priority, owner, assigned team, channel, category, SLA state and created date for ten requests"
+          alt="The Requests list for one channel: request number, title, status, priority, owner, assigned team, category, SLA state and created date"
         />
       </ProductHero>
 
