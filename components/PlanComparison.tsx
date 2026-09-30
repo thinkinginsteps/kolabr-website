@@ -4,7 +4,7 @@ import { featureGroups, type Cell } from "@/lib/plan-features";
 // stick while scrolling) and given ARIA table roles so it reads as a table.
 const ROW = "grid grid-cols-[minmax(0,1.7fr)_repeat(3,minmax(0,1fr))]";
 const CELL = "flex min-w-0 items-center gap-2 px-[18px] py-3.5 text-[15px] leading-[1.35] text-ink";
-const PLANS = ["Starter", "Pro", "Max"] as const;
+const PLANS = ["Free", "Pro", "Business"] as const;
 
 /** The full feature comparison table on /pricing. Pro (the middle column) is tinted. */
 export function PlanComparison() {

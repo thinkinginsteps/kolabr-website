@@ -101,8 +101,8 @@
               "Free plans show 90 days. Full history comes with a paid plan."
             ],
             [
-              "Scheduled events with calendar sync",
-              "Built in, tied to the request they came from, syncing to Outlook and Google.",
+              "Scheduled events in the channel",
+              "Built in, tied to the request they came from.",
               "Reminders and third-party calendar apps, not tied to a request."
             ]
           ]
@@ -112,7 +112,7 @@
           "rows": [
             [
               "List price",
-              "$9.99, $19.99 or $39.99 per user per month. Guests free.",
+              "$10 or $25 per user per month. Guests free.",
               "Pro is $7.25 per active user per month on annual billing and $8.75 monthly. Business Plus is $15 annual and $18 monthly. Enterprise Grid is quoted."
             ],
             [
@@ -122,12 +122,12 @@
             ],
             [
               "SSO / SAML",
-              "On Max.",
+              "On Business.",
               "On Business Plus and above."
             ],
             [
               "Audit log export and retention policies",
-              "On Max.",
+              "On Business.",
               "Compliance-grade export is not available on Pro."
             ]
           ]
@@ -187,8 +187,8 @@
     "cost": {
       "title": "What each one actually costs you",
       "paragraphs": [
-        "Slack Pro is $7.25 per active user per month on annual billing and $8.75 monthly; Business Plus is $15 and $18, with Enterprise Grid quoted. Kolabr is $9.99, $19.99 or $39.99 per user per month, with requests, wiki and scheduled events included rather than bought separately.",
-        "The number that decides it is the one outside your company. Take an agency of twelve with forty client contacts who each need more than one channel. In Slack those forty are billable members. In Kolabr they are guests, and the bill is twelve people. What your plan buys is seats per channel: 30 on Starter, 100 on Pro, unlimited on Max, shared between your people and your guests."
+        "Slack Pro is $7.25 per active user per month on annual billing and $8.75 monthly; Business Plus is $15 and $18, with Enterprise Grid quoted. Kolabr is $10 or $25 per user per month, with requests, wiki and scheduled events included rather than bought separately.",
+        "The number that decides it is the one outside your company. Take an agency of twelve with forty client contacts who each need more than one channel. In Slack those forty are billable members. In Kolabr they are guests, and the bill is twelve people. Channels are unlimited on both paid plans and so are guests, so what you pay never depends on how many clients you have."
       ],
       "note": [
         "Add the tracker and the knowledge base you are paying for alongside Slack and the comparison moves again. ",
@@ -200,7 +200,7 @@
       ],
       "kolabr": {
         "name": "Kolabr",
-        "price": "$9.99 to $39.99",
+        "price": "$0, $10 or $25",
         "text": "per user per month, by plan. Guests unlimited and free in any number of channels, with requests, wiki and events included."
       },
       "other": {
@@ -240,7 +240,7 @@
     },
     "cta": {
       "title": "Invite the whole client, not one contact.",
-      "body": "Fourteen days free on Max, every option included, no card. Put one client in a channel and add everyone who matters, because it costs nothing.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Put one client in a channel and add everyone who matters, because it costs nothing.",
       "disclaimer": "Slack is a trademark of Slack Technologies, LLC, a Salesforce company. Kolabr is not affiliated with Slack. Feature and price details were checked against public sources and change over time."
     }
   },
@@ -341,8 +341,8 @@
               "The old Teams wiki was retired; knowledge lives in SharePoint or OneNote, configured per team."
             ],
             [
-              "Scheduled events with calendar sync",
-              "Built in, tied to the request they came from, syncing to Outlook and Google.",
+              "Scheduled events in the channel",
+              "Built in, tied to the request they came from.",
               "Syncs with Outlook and Exchange; not tied to a request object."
             ],
             [
@@ -357,7 +357,7 @@
           "rows": [
             [
               "List price",
-              "$9.99, $19.99 or $39.99 per user per month. Guests free.",
+              "$10 or $25 per user per month. Guests free.",
               "Teams Essentials from $4, Microsoft 365 Business Basic $7, Business Standard $14 and Business Premium $22 per user per month on annual billing."
             ],
             [
@@ -372,7 +372,7 @@
             ],
             [
               "SSO / SAML, audit log export, retention",
-              "On Max.",
+              "On Business.",
               "Across the Microsoft 365 and Entra stack, by plan."
             ]
           ]
@@ -432,8 +432,8 @@
     "cost": {
       "title": "What each one actually costs you",
       "paragraphs": [
-        "Both are priced per internal seat. Teams Essentials is $4 per user per month on annual billing, Microsoft 365 Business Basic $7, Business Standard $14 and Business Premium $22, with Teams Phone, Teams Premium and Copilot charged on top of whichever you pick. Kolabr is $9.99, $19.99 or $39.99 per user per month, with nothing underneath it and nothing beside it.",
-        "The number that decides it is the one outside your company. Kolabr never bills a guest, on any plan, however many of them there are. What your plan buys is seats per channel: 30 on Starter, 100 on Pro, unlimited on Max, shared between your people and your guests. A twelve-person practice with three hundred clients pays for twelve people, and adds the three hundred and first at no cost."
+        "Both are priced per internal seat. Teams Essentials is $4 per user per month on annual billing, Microsoft 365 Business Basic $7, Business Standard $14 and Business Premium $22, with Teams Phone, Teams Premium and Copilot charged on top of whichever you pick. Kolabr is $10 or $25 per user per month, with nothing underneath it and nothing beside it.",
+        "The number that decides it is the one outside your company. Kolabr never bills a guest, on any plan, however many of them there are. Channels are unlimited on both paid plans and so are guests, so what you pay never depends on how many clients you have. A twelve-person practice with three hundred clients pays for twelve people, and adds the three hundred and first at no cost."
       ],
       "note": [
         "Price is rarely what decides it. The question is whether the external side of your work runs through tenant configuration and three collaboration mechanisms, or through one channel with the client already in it. ",
@@ -445,7 +445,7 @@
       ],
       "kolabr": {
         "name": "Kolabr",
-        "price": "$9.99 – $39.99",
+        "price": "$0, $10 or $25",
         "text": "per user per month, by plan. Guests unlimited and free on every plan, with requests, wiki and scheduled events included rather than assembled."
       },
       "other": {
@@ -467,7 +467,7 @@
         },
         {
           "title": "Is Kolabr cheaper than Microsoft Teams?",
-          "body": "It depends on how many outside people you work with. Teams is priced per internal seat from $4, Kolabr from $9.99, but Kolabr never charges for a guest and needs nothing underneath it, so a ten-person firm working with two hundred clients pays for ten people. Once you add Teams Phone, Teams Premium or Copilot, the per-seat gap narrows or reverses. And if you already hold Microsoft 365 for mail and Office, cost is not the question worth asking: external collaboration is."
+          "body": "It depends on how many outside people you work with. Teams is priced per internal seat from $4 and Kolabr from $10, and there is a free Kolabr plan, but the number that moves is the guest: Kolabr never charges for one, so a ten-person firm working with two hundred clients pays for ten people. Once you add Teams Phone, Teams Premium or Copilot the per-seat gap narrows or reverses. And if you already hold Microsoft 365 for mail and Office, cost is not the question worth asking: external collaboration is."
         },
         {
           "title": "Can we use Kolabr and Microsoft Teams together?",
@@ -485,7 +485,7 @@
     },
     "cta": {
       "title": "Keep Teams. Try Kolabr on one client.",
-      "body": "Fourteen days free on Max, every option included, no card. Invite one client and see which conversations move.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Invite one client and see which conversations move.",
       "disclaimer": "Microsoft, Microsoft Teams and Microsoft 365 are trademarks of Microsoft Corporation. Kolabr is not affiliated with Microsoft. Feature and price details were checked against public sources and change over time."
     }
   },
@@ -596,8 +596,8 @@
               "Docs and files per project."
             ],
             [
-              "Scheduled events with calendar sync",
-              "Built in, tied to the request they came from, syncing to Outlook and Google.",
+              "Scheduled events in the channel",
+              "Built in, tied to the request they came from.",
               "Schedule per project, with calendar subscription."
             ]
           ]
@@ -607,17 +607,17 @@
           "rows": [
             [
               "List price",
-              "$9.99, $19.99 or $39.99 per user per month. Guests free.",
+              "$10 or $25 per user per month. Guests free.",
               "A flat fee for the whole account, not per user: $25 a month for up to 20 people, $59 and $99 a month with no limit on people, and $299 a month billed annually."
             ],
             [
               "Free plan",
-              "14 days free on Max, every option included.",
+              "seven days free on Pro or Business, every option included.",
               "One project, 1 GB of storage and up to five people."
             ],
             [
               "SSO / SAML, audit log export, retention",
-              "On Max.",
+              "On Business.",
               "Not offered."
             ]
           ]
@@ -704,8 +704,8 @@
     "cost": {
       "title": "What each one actually costs you",
       "paragraphs": [
-        "Basecamp charges for the account rather than the person: $25 a month for up to twenty people, $59 and $99 a month with no limit on people, and $299 a month billed annually at the top. Kolabr is $9.99, $19.99 or $39.99 per user per month. Neither product charges extra for clients or contractors, though on Basecamp's two smallest plans they count towards the head count.",
-        "A flat fee is the smaller bill for most teams, so the question is what the number buys. A Basecamp project gives you a message board, to-dos, a schedule and a chat room. Kolabr gives every channel requests with owners and response targets, a wiki, video calls and scheduled events with calendar sync, and keeps each client separate rather than each project. What your plan buys is seats per channel: 30 on Starter, 100 on Pro, unlimited on Max, shared between your people and your guests."
+        "Basecamp charges for the account rather than the person: $25 a month for up to twenty people, $59 and $99 a month with no limit on people, and $299 a month billed annually at the top. Kolabr is $10 or $25 per user per month. Neither product charges extra for clients or contractors, though on Basecamp's two smallest plans they count towards the head count.",
+        "A flat fee is the smaller bill for most teams, so the question is what the number buys. A Basecamp project gives you a message board, to-dos, a schedule and a chat room. Kolabr gives every channel requests with owners and response targets, a wiki, video calls and scheduled events, and keeps each client separate rather than each project. Channels are unlimited on both paid plans and so are guests, so what you pay never depends on how many clients you have."
       ],
       "note": [
         "If you currently pay for a helpdesk or a knowledge base alongside your project tool, add those in before you compare. ",
@@ -717,7 +717,7 @@
       ],
       "kolabr": {
         "name": "Kolabr",
-        "price": "$9.99 to $39.99",
+        "price": "$0, $10 or $25",
         "text": "per user per month, by plan. Guests unlimited and free, with requests, wiki, calls and events included."
       },
       "other": {
@@ -757,7 +757,7 @@
     },
     "cta": {
       "title": "Give the relationship a home.",
-      "body": "Fourteen days free on Max, every option included, no card. Start with the client whose work never really finishes.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Start with the client whose work never really finishes.",
       "disclaimer": "Basecamp is a trademark of 37signals, LLC. Kolabr is not affiliated with 37signals. Feature and price details were checked against public sources and change over time."
     }
   },
@@ -878,8 +878,8 @@
               "A workspace is built rather than opened, which is the appeal and the cost."
             ],
             [
-              "Scheduled events with calendar sync",
-              "Built in, tied to the request they came from, syncing to Outlook and Google.",
+              "Scheduled events in the channel",
+              "Built in, tied to the request they came from.",
               "Calendar database and a separate Notion Calendar app."
             ]
           ]
@@ -889,17 +889,17 @@
           "rows": [
             [
               "List price",
-              "$9.99, $19.99 or $39.99 per user per month. Guests free.",
+              "$10 or $25 per user per month. Guests free.",
               "Free, then Plus at $10 and Business at $20 per member per month on annual billing, or about $12 and $24 monthly. Enterprise is quoted."
             ],
             [
               "SSO / SAML",
-              "On Max.",
+              "On Business.",
               "On Business and above."
             ],
             [
               "Audit log export and retention",
-              "On Max.",
+              "On Business.",
               "Audit logs on Enterprise."
             ]
           ]
@@ -986,8 +986,8 @@
     "cost": {
       "title": "What each one actually costs you",
       "paragraphs": [
-        "Notion is free to start, then $10 per member per month on Plus and $20 on Business with annual billing, rising to roughly $12 and $24 paid monthly, with Enterprise quoted. Kolabr is $9.99, $19.99 or $39.99 per user per month. Neither charges for guests.",
-        "The comparison is only fair once you add what sits beside Notion. Most teams running it also pay for a chat tool, and often a tracker on top, because a page cannot hold a conversation or run a clock. Kolabr includes chat, requests with response targets, a wiki, video calls and scheduled events in one number. What your plan buys is seats per channel: 30 on Starter, 100 on Pro, unlimited on Max, shared between your people and your guests."
+        "Notion is free to start, then $10 per member per month on Plus and $20 on Business with annual billing, rising to roughly $12 and $24 paid monthly, with Enterprise quoted. Kolabr is $10 or $25 per user per month. Neither charges for guests.",
+        "The comparison is only fair once you add what sits beside Notion. Most teams running it also pay for a chat tool, and often a tracker on top, because a page cannot hold a conversation or run a clock. Kolabr includes chat, requests with response targets, a wiki, video calls and scheduled events in one number. Channels are unlimited on both paid plans and so are guests, so what you pay never depends on how many clients you have."
       ],
       "note": [
         "The cost nobody puts on an invoice is the time spent building and repairing a workspace. ",
@@ -999,7 +999,7 @@
       ],
       "kolabr": {
         "name": "Kolabr",
-        "price": "$9.99 to $39.99",
+        "price": "$0, $10 or $25",
         "text": "per user per month, by plan. Guests free, with chat, requests, wiki, calls and events in the one price."
       },
       "other": {
@@ -1029,7 +1029,7 @@
         },
         {
           "title": "Which is cheaper?",
-          "body": "Notion Plus at $10 per member per month is below Kolabr Starter, and Business at $20 sits between our tiers. The comparison changes when you count the chat tool you run alongside Notion, and the time spent building and maintaining the trackers that Kolabr includes."
+          "body": "On monthly billing Kolabr Pro is $10 and Notion Plus is $12, so we are the lower number; on annual terms Notion Plus is $10 and we are $8.50. Either way it is close, and the comparison changes once you count the chat tool you run alongside Notion and the time spent building and maintaining the trackers Kolabr includes."
         },
         {
           "title": "Can we use Kolabr and Notion together?",
@@ -1039,7 +1039,7 @@
     },
     "cta": {
       "title": "Nothing to design. Start working.",
-      "body": "Fourteen days free on Max, every option included, no card. Open a channel for one client and see it working the same afternoon.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Open a channel for one client and see it working the same afternoon.",
       "disclaimer": "Notion is a trademark of Notion Labs, Inc. Kolabr is not affiliated with Notion Labs. Feature and price details were checked against public sources and change over time."
     }
   },
@@ -1086,7 +1086,7 @@
             ],
             [
               "How many participating guests you get",
-              "As many as the channel seat count allows: 30 on Starter, 100 on Pro, unlimited on Max.",
+              "Any number. A guest in three channels costs the same as a guest in one: nothing.",
               "An allowance that grows with paid users. Unlimited gives 5 for a single-user workspace plus 2 per extra paid user; Business gives 10 plus 5 each."
             ],
             [
@@ -1155,8 +1155,8 @@
               "Docs, organised however you decide."
             ],
             [
-              "Scheduled events with calendar sync",
-              "Built in, tied to the request they came from, syncing to Outlook and Google.",
+              "Scheduled events in the channel",
+              "Built in, tied to the request they came from.",
               "Calendar view and integrations, not tied to a request."
             ]
           ]
@@ -1166,7 +1166,7 @@
           "rows": [
             [
               "List price",
-              "$9.99, $19.99 or $39.99 per user per month. Guests free.",
+              "$10 or $25 per user per month. Guests free.",
               "Free tier, then Unlimited at $7 and Business at $12 per user per month on annual billing, or $10 and $19 monthly. Enterprise is quoted."
             ],
             [
@@ -1268,8 +1268,8 @@
     "cost": {
       "title": "What each one actually costs you",
       "paragraphs": [
-        "ClickUp has a free tier, then Unlimited at $7 and Business at $12 per user per month on annual billing, rising to $10 and $19 paid monthly, with Enterprise quoted and AI charged per seat on top. Kolabr is $9.99, $19.99 or $39.99 per user per month.",
-        "Per internal seat ClickUp is the lower number. The figure that changes the answer is the client side: a guest who can comment or approve consumes an allowance, and past it becomes a paid member at the full rate. Kolabr never bills a guest, and what your plan buys is seats per channel: 30 on Starter, 100 on Pro, unlimited on Max, shared between your people and your guests."
+        "ClickUp has a free tier, then Unlimited at $7 and Business at $12 per user per month on annual billing, rising to $10 and $19 paid monthly, with Enterprise quoted and AI charged per seat on top. Kolabr is $10 or $25 per user per month.",
+        "Per internal seat ClickUp is the lower number. The figure that changes the answer is the client side: a guest who can comment or approve consumes an allowance, and past it becomes a paid member at the full rate. Kolabr never bills a guest. Channels are unlimited on both paid plans and so are guests, so what you pay never depends on how many clients you have."
       ],
       "note": [
         "Worth checking before you compare: whether a higher tier for one person means moving everybody onto it. ",
@@ -1281,7 +1281,7 @@
       ],
       "kolabr": {
         "name": "Kolabr",
-        "price": "$9.99 to $39.99",
+        "price": "$0, $10 or $25",
         "text": "per user per month, by plan. Guests free and fully participating, with chat, requests, wiki, calls and events included."
       },
       "other": {
@@ -1321,7 +1321,7 @@
     },
     "cta": {
       "title": "Let the client do more than watch.",
-      "body": "Fourteen days free on Max, every option included, no card. Open a channel and invite everyone on their side, because it costs nothing.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Open a channel and invite everyone on their side, because it costs nothing.",
       "disclaimer": "ClickUp is a trademark of Mango Technologies, Inc. Kolabr is not affiliated with ClickUp. Feature and price details were checked against public sources and change over time."
     }
   },
@@ -1432,8 +1432,8 @@
               "A help centre, built and published as its own property."
             ],
             [
-              "Scheduled events with calendar sync",
-              "Built in, tied to the request they came from, syncing to Outlook and Google.",
+              "Scheduled events in the channel",
+              "Built in, tied to the request they came from.",
               "Not part of the product."
             ]
           ]
@@ -1443,7 +1443,7 @@
           "rows": [
             [
               "List price",
-              "$9.99, $19.99 or $39.99 per user per month. Guests free.",
+              "$10 or $25 per user per month. Guests free.",
               "Support Team at $19 for ticketing only, Suite Team at $55 and Suite Professional at $115 per agent per month on annual billing, with Enterprise quoted."
             ],
             [
@@ -1536,8 +1536,8 @@
     "cost": {
       "title": "What each one actually costs you",
       "paragraphs": [
-        "Zendesk is priced per agent on annual terms: Support Team at $19 for ticketing only, Suite Team at $55 and Suite Professional at $115, with Enterprise quoted. Copilot and the other bundles are charged per agent on top, and AI agents are billed per automated resolution. Kolabr is $9.99, $19.99 or $39.99 per user per month, with nothing stacked on it.",
-        "The difference compounds with how many of your own people are involved. A ten-person firm where everybody occasionally answers a client pays for ten people in Kolabr. On per-agent pricing the same firm either buys ten seats at contact-centre rates or decides that six of them are not allowed to reply. What your plan buys is seats per channel: 30 on Starter, 100 on Pro, unlimited on Max, shared between your people and your guests."
+        "Zendesk is priced per agent on annual terms: Support Team at $19 for ticketing only, Suite Team at $55 and Suite Professional at $115, with Enterprise quoted. Copilot and the other bundles are charged per agent on top, and AI agents are billed per automated resolution. Kolabr is $10 or $25 per user per month, with nothing stacked on it.",
+        "The difference compounds with how many of your own people are involved. A ten-person firm where everybody occasionally answers a client pays for ten people in Kolabr. On per-agent pricing the same firm either buys ten seats at contact-centre rates or decides that six of them are not allowed to reply. Channels are unlimited on both paid plans and so are guests, so what you pay never depends on how many clients you have."
       ],
       "note": [
         "Also worth checking: whether somebody who answers both customer and internal requests needs a seat on two separate products. ",
@@ -1549,7 +1549,7 @@
       ],
       "kolabr": {
         "name": "Kolabr",
-        "price": "$9.99 to $39.99",
+        "price": "$0, $10 or $25",
         "text": "per user per month, by plan. Guests free, and no add-ons on top."
       },
       "other": {
@@ -1589,7 +1589,7 @@
     },
     "cta": {
       "title": "Take one client off the portal.",
-      "body": "Fourteen days free on Max, every option included, no card. Keep the owners, categories and clocks; lose the front door.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Keep the owners, categories and clocks; lose the front door.",
       "disclaimer": "Zendesk is a trademark of Zendesk, Inc. Kolabr is not affiliated with Zendesk. Feature and price details were checked against public sources and change over time."
     }
   }

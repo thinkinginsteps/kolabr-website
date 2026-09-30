@@ -176,7 +176,7 @@ export default function AboutPage() {
         title="Judge it by the product."
         body={
           <>
-            Fourteen days free on Max, every option included, no card. Open one channel, invite the people you currently email, and see
+            Free for one channel, no card. Seven days on Pro or Business when you want the rest. Open one channel, invite the people you currently email, and see
             whether any of the above holds up. If you would rather ask first,{" "}
             <UnderlineLink href="/contact" inline>
               tell us how you work

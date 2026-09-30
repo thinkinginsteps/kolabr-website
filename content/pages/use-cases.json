@@ -39,7 +39,7 @@
         }
       ],
       "seatNote": [
-        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your staff and your client’s. A client with three finance people and your team of five sits comfortably inside Starter. ",
+        "Channels are unlimited on Pro and Business, and so are guests: a client with three finance people in the channel adds nothing to the bill. You pay for your own team, and nothing else. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -230,7 +230,7 @@
     },
     "cta": {
       "title": "Try it on one client.",
-      "body": "Fourteen days free on Max, every option included, no card. Invite their finance team and run one month-end through it.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Invite their finance team and run one month-end through it.",
       "primary": "Start free trial"
     }
   },
@@ -274,7 +274,7 @@
         }
       ],
       "seatNote": [
-        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your studio and your guests. A project with a client, a contractor and four consultants sits comfortably inside a Starter channel. ",
+        "Channels are unlimited on Pro and Business, and so are guests: a project with a client, a contractor and four consultants adds nothing to the bill. You pay for your studio, and nothing else. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -465,7 +465,7 @@
     },
     "cta": {
       "title": "Try it on one project.",
-      "body": "Fourteen days free on Max, every option included, no card. Invite the client and the contractor and see what happens to your RFI log.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Invite the client and the contractor and see what happens to your RFI log.",
       "primary": "Start free trial"
     }
   },
@@ -510,7 +510,7 @@
         }
       ],
       "seatNote": [
-        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your staff and your guests. A single-site practice with a lab and a radiology partner sits comfortably inside Starter. ",
+        "Channels are unlimited on Pro and Business, and so are guests: a lab and a radiology partner in the channel add nothing to the bill. You pay for your own staff, and nothing else. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -701,7 +701,7 @@
     },
     "cta": {
       "title": "Try it on the results channel.",
-      "body": "Fourteen days free on Max, every option included, no card. Invite your lab and see what happens to the four o’clock result.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Invite your lab and see what happens to the four o’clock result.",
       "primary": "Start free trial"
     }
   },
@@ -745,7 +745,7 @@
         }
       ],
       "seatNote": [
-        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your own staff and your guests. A site with a client PM, a QS and six subcontractor foremen sits inside a Starter channel. ",
+        "Channels are unlimited on Pro and Business, and so are guests: a client PM, a QS and six subcontractor foremen add nothing to the bill. You pay for your own staff, and nothing else. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -936,7 +936,7 @@
     },
     "cta": {
       "title": "Try it on one site.",
-      "body": "Fourteen days free on Max, every option included, no card. Invite the client PM and two subcontractors and see what the next valuation looks like.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Invite the client PM and two subcontractors and see what the next valuation looks like.",
       "primary": "Start free trial"
     }
   },
@@ -980,7 +980,7 @@
         }
       ],
       "seatNote": [
-        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your engineers and your guests. A project with a client, a contractor and three disciplines sits inside a Starter channel. ",
+        "Channels are unlimited on Pro and Business, and so are guests: a client, a contractor and three disciplines in the channel add nothing to the bill. You pay for your engineers, and nothing else. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -1171,7 +1171,7 @@
     },
     "cta": {
       "title": "Try it on one project.",
-      "body": "Fourteen days free on Max, every option included, no card. Invite the contractor and run your next hold point through it.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Invite the contractor and run your next hold point through it.",
       "primary": "Start free trial"
     }
   },
@@ -1215,7 +1215,7 @@
         }
       ],
       "seatNote": [
-        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your engineers and your client’s staff. A forty-person client with your team of six needs Pro; a boutique practice sits inside Starter. ",
+        "Channels are unlimited on Pro and Business, and so are guests: a forty-person client adds nothing to the bill, and neither does the next one. You pay for your engineers, and nothing else. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -1406,7 +1406,7 @@
     },
     "cta": {
       "title": "Try it on one contract.",
-      "body": "Fourteen days free on Max, every option included, no card. Invite one client’s staff and watch where the requests come from.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Invite one client’s staff and watch where the requests come from.",
       "primary": "Start free trial"
     }
   },
@@ -1450,7 +1450,7 @@
         }
       ],
       "seatNote": [
-        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your fee earners and your guests. A matter with three client contacts and your team of five sits inside Starter. ",
+        "Channels are unlimited on Pro and Business, and so are guests: three client contacts on a matter add nothing to the bill. You pay for your fee earners, and nothing else. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -1641,7 +1641,7 @@
     },
     "cta": {
       "title": "Try it on one matter.",
-      "body": "Fourteen days free on Max, every option included, no card. Invite the client and run one transaction through it.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Invite the client and run one transaction through it.",
       "primary": "Start free trial"
     }
   },
@@ -1685,7 +1685,7 @@
         }
       ],
       "seatNote": [
-        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your controllers and the client’s depots. A national account with six receiving sites needs Pro; a single-lane customer fits in Starter. ",
+        "Channels are unlimited on Pro and Business, and so are guests: a national account with six receiving sites adds nothing to the bill. You pay for your controllers, and nothing else. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -1876,7 +1876,7 @@
     },
     "cta": {
       "title": "Try it on one account.",
-      "body": "Fourteen days free on Max, every option included, no card. Invite one client’s depot and run a fortnight of loads through it.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Invite one client’s depot and run a fortnight of loads through it.",
       "primary": "Start free trial"
     }
   },
@@ -1920,7 +1920,7 @@
         }
       ],
       "seatNote": [
-        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your plant and your guests. A production channel with three shifts of leads needs Pro; a customer quality channel fits inside Starter. ",
+        "Channels are unlimited on Pro and Business, and so are guests: a customer's quality team in the channel adds nothing to the bill. You pay for your plant, and nothing else. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -2111,7 +2111,7 @@
     },
     "cta": {
       "title": "Try it on one customer.",
-      "body": "Fourteen days free on Max, every option included, no card. Invite their supplier quality engineer and run one NCR through it.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Invite their supplier quality engineer and run one NCR through it.",
       "primary": "Start free trial"
     }
   },
@@ -2155,7 +2155,7 @@
         }
       ],
       "seatNote": [
-        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your team and your guests. A client with four stakeholders and your account team of five sits well inside a Starter channel. ",
+        "Channels are unlimited on Pro and Business, and so are guests: a client with four stakeholders adds nothing to the bill, and neither does the next client. You pay for your account team, and nothing else. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -2346,7 +2346,7 @@
     },
     "cta": {
       "title": "Try it on one account.",
-      "body": "Fourteen days free on Max, every option included, no card. Invite the client and run one campaign through it.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Invite the client and run one campaign through it.",
       "primary": "Start free trial"
     }
   },
@@ -2390,7 +2390,7 @@
         }
       ],
       "seatNote": [
-        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your staff and your guests. Volunteers and funders are guests, so a small team supporting forty volunteers is not a forty-person bill. ",
+        "Channels are unlimited on Pro and Business, and so are guests: forty volunteers and a funder add nothing to the bill. You pay for the people on your payroll, and nothing else. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -2581,7 +2581,7 @@
     },
     "cta": {
       "title": "Try it on one programme.",
-      "body": "Fourteen days free on Max, every option included, no card. Invite your field team and one funder, and see what the next report costs you.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Invite your field team and one funder, and see what the next report costs you.",
       "primary": "Start free trial"
     }
   },
@@ -2625,7 +2625,7 @@
         }
       ],
       "seatNote": [
-        "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your staff and your guests. A residents channel for an eighty-unit scheme needs Pro; a trustees channel fits inside Starter. ",
+        "Channels are unlimited on Pro and Business, and so are guests: an eighty-unit residents channel adds nothing to the bill. You pay for your own staff, and nothing else. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -2816,7 +2816,7 @@
     },
     "cta": {
       "title": "Try it on one building.",
-      "body": "Fourteen days free on Max, every option included, no card. Invite the trustees and run one month of maintenance through it.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Invite the trustees and run one month of maintenance through it.",
       "primary": "Start free trial"
     }
   }

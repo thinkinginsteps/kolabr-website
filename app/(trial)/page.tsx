@@ -201,7 +201,7 @@ export default function HomePage() {
               { title: "Channel chat", body: "One conversation for the channel, plus direct and group chats", href: product.chat.href },
               { title: "Requests", body: "Work items with an owner, a category, an SLA and a status", href: product.requests.href },
               { title: "Meetings", body: "Calls with screen share and a shared whiteboard", href: product.meetings.href },
-              { title: "Scheduled Events", body: "A channel calendar, synced with Google and Outlook", href: product.meetings.href },
+              { title: "Scheduled Events", body: "A calendar in every channel, tied to the work it is about", href: product.meetings.href },
               { title: "Wiki", body: "A knowledge base that lives inside the channel", href: product.wiki.href },
               { title: "Administration", body: "Roles, routing, playbooks and the audit log", href: product.administration.href },
             ]}
@@ -218,8 +218,8 @@ export default function HomePage() {
               Pay for your team, invite everyone else
             </h2>
             <p className={lede}>
-              Start with 14 days free on Max, every option included, no card needed. Then pick the size that fits your
-              team, and change it whenever.
+              Free for one channel, for as long as you like. Pro and Business are priced per person on your team, and
+              everyone you invite from outside it is free.
             </p>
           </div>
           <PricingPlans />

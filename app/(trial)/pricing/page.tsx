@@ -25,8 +25,8 @@ export default function PricingPage() {
               Pay for your team, invite everyone else
             </h1>
             <p className="text-[20px] leading-normal text-pretty text-ink-muted">
-              Start with 14 days free on Max, every option included, no card needed. Then pick the size that fits your
-              team, and change it whenever.
+              Free for one channel, for as long as you like. Pro and Business are priced per person on your team, and
+              the clients, partners and suppliers you invite are free on every plan, however many channels they sit in.
             </p>
           </div>
           {/* Plan names are h2 here: they sit directly under the page h1. */}
@@ -42,9 +42,8 @@ export default function PricingPage() {
               Full feature comparison
             </h2>
             <p className="text-[19px] text-pretty text-ink-muted">
-              Every account starts with 14 days free on Max, every option included, no card needed. Each channel has a
-              set number of seats on your plan, and your own team and your guests share them: 30 seats on Starter, 100 on
-              Pro, unlimited on Max.
+              Free covers one channel with one of your people in it. Pro and Business have no limit on channels, so what
+              you pay never depends on how many clients you have. Try either free for seven days, no card needed.
             </p>
           </div>
 
@@ -53,10 +52,11 @@ export default function PricingPage() {
           </div>
 
           <p id="guest-note" data-rise="" className="mt-4 max-w-[720px] text-[14.5px] leading-normal text-pretty text-ink-muted">
-            <span className="font-extrabold text-accent-ink">*</span> Guests are never billed, and there is no limit on
-            how many you invite across the org. Inside a channel, though, team members and guests draw on the same pool of
-            seats: a Starter channel with 29 of your own people has one seat left for a guest, and the other way round.
-            Max channels have no seat limit.
+            <span className="font-extrabold text-accent-ink">*</span> A guest is someone you work with rather than
+            someone you employ: they post, raise requests, read the wiki and join calls, in as many channels as you put
+            them in, and they are never billed. What they cannot do is own a request, create a channel, administer
+            anything, or see past the channels they are in. That is what a user is for, and it is the only thing you pay
+            for. Free is the exception to the count: it allows 30 guests.
           </p>
 
           <div data-rise="" className="mt-[34px] flex flex-wrap items-center gap-3.5">

@@ -83,7 +83,7 @@ export default function ChannelsPage() {
           // Design alt said "ticket number"; Kolabr's items are requests (Dom's copy rule).
           aside={<CardImage image={appRequests} alt="A list of requests with request number, title and status columns" />}
         />
-        <DeepCard title="Scheduled Events" body="A channel calendar, synced with Google and Outlook, with requests linked to their dates.">
+        <DeepCard title="Scheduled Events" body="A calendar in every channel, with requests linked to their dates.">
           <DeepRows
             stacked
             rows={[

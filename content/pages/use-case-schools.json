@@ -38,7 +38,7 @@
       }
     ],
     "seatNote": [
-      "Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, and your staff and your guests share those seats. A class of 27 parents and two teachers fits a Starter channel; a whole grade needs Pro. ",
+      "Channels are unlimited on Pro and Business, and so are guests: a class of 27 parents adds nothing to the bill. You pay for your teachers and office staff, and nothing else. ",
       {
         "label": "Compare plans",
         "href": "/pricing#compare-plans"
@@ -102,8 +102,8 @@
     },
     "cards": [
       {
-        "title": "Syncs to their calendar",
-        "body": "Google and Outlook, so a parent evening lands where parents already look."
+        "title": "Where parents already look",
+        "body": "On the channel calendar, where the parents in that channel already are."
       },
       {
         "title": "Recurring by default",
@@ -237,7 +237,7 @@
   },
   "cta": {
     "title": "Try it on one classroom.",
-    "body": "Fourteen days free on Max, every option included, no card. Invite one class and see what the teacher’s evenings look like afterwards.",
+    "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Invite one class and see what the teacher’s evenings look like afterwards.",
     "primary": "Start free trial"
   }
 }

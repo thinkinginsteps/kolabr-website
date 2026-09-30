@@ -91,4 +91,4 @@ Two weeks is early enough to fix, and late enough to know.
 
 None of it is difficult. It just has to happen before the work gets busy, because afterwards there
 is never an hour for it. If you want to try it on a live relationship, the
-[trial](/pricing/) runs for fourteen days on Max, which is long enough for the two week review.
+[trial](/pricing/) runs for seven days on Pro or Business, and the Free plan keeps one channel open after it.

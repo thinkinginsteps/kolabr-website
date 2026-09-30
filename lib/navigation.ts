@@ -15,7 +15,7 @@ export const product = {
   meetings: {
     label: "Scheduled Events",
     href: "/product/meetings",
-    blurb: "Meetings and a channel calendar, synced with Google and Outlook",
+    blurb: "Meetings and a calendar in every channel, tied to the work",
   },
   wiki: { label: "Wiki", href: "/product/wiki", blurb: "A knowledge base inside the channel" },
   administration: {

@@ -68,7 +68,7 @@ export default async function BlogPost({ params }: PageProps<"/blog/[slug]">) {
 
       <CtaBand
         title="Try it on one client."
-        body="Fourteen days free on Max, every option included, no card. Open one channel, invite the people you currently email, and see whether it holds up."
+        body="Free for one channel, no card. Seven days on Pro or Business when you want the rest. Open one channel, invite the people you currently email, and see whether it holds up."
       />
     </>
   );

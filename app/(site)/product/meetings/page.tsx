@@ -1,6 +1,6 @@
 import { CtaBand } from "@/components/CtaBand";
 import { JsonLd } from "@/components/JsonLd";
-import { BadgeList, Chips, TintRows } from "@/components/product/Illustrations";
+import { BadgeList, TintRows } from "@/components/product/Illustrations";
 import {
   BentoSection,
   CardImage,
@@ -34,7 +34,7 @@ export default function MeetingsPage() {
 
       <ProductHero
         title="The meetings this work needs, on one calendar"
-        lede="Every channel keeps its own calendar: the day in front of you on the left, the weeks ahead on the right, synced both ways with Google and Outlook. Book a meeting, and the call, with the request it is about, starts from the same place."
+        lede="Every channel keeps its own calendar: the day in front of you on the left, the weeks ahead on the right. Book a meeting, and the call, with the request it is about, starts from the same place."
       >
         <Screenshot
           preload
@@ -118,12 +118,6 @@ export default function MeetingsPage() {
               { label: "Northwind weekly sync", value: "Tuesdays 14:00" },
             ]}
           />
-        </PlainCard>
-        <PlainCard
-          title="Synced with the calendar you use"
-          body="Two-way sync with Google and Outlook. Kolabr knows when people are busy elsewhere, and their other calendar shows the channel’s meetings."
-        >
-          <Chips items={["Google Calendar", "Outlook"]} />
         </PlainCard>
         <PlainCard
           title="The outcome does not evaporate"

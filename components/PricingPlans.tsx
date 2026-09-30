@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { PER, plans, type Plan } from "@/lib/pricing";
+import { PER, YEARLY_DISCOUNT, plans, type Plan } from "@/lib/pricing";
 import { SIGNUP_PATH } from "@/lib/site";
 
 /**
@@ -23,7 +23,7 @@ export function PricingPlans({ headingLevel = 3 }: { headingLevel?: 2 | 3 }) {
           </ToggleButton>
           <ToggleButton active={yearly} onClick={() => setYearly(true)}>
             Yearly
-            <span className="rounded-[7px] bg-accent-wash px-[7px] py-[3px] text-[12px] font-extrabold text-accent-ink-strong">1 month free</span>
+            <span className="rounded-[7px] bg-accent-wash px-[7px] py-[3px] text-[12px] font-extrabold text-accent-ink-strong">{YEARLY_DISCOUNT}</span>
           </ToggleButton>
         </div>
       </div>
@@ -89,7 +89,7 @@ function PlanCard({ plan, yearly, headingLevel }: { plan: Plan; yearly: boolean;
       </div>
 
       <p className="text-[15.5px] leading-[1.45] text-ink-muted">{plan.blurb}</p>
-      <span className="text-[13.5px] font-semibold text-ink">Starts with 14 days free on Max</span>
+      <span className="text-[13.5px] font-semibold text-ink">{plan.note}</span>
 
       {plan.includesLabel ? (
         <p className="mt-1 border-t border-border pt-1 text-[14.5px] font-semibold text-ink">{plan.includesLabel}</p>
@@ -117,7 +117,7 @@ function PlanCard({ plan, yearly, headingLevel }: { plan: Plan; yearly: boolean;
             plan.highlighted ? "bg-ink text-on-ink" : "border border-border bg-surface text-ink"
           }`}
         >
-          Start free trial
+          {plan.cta}
         </span>
       </a>
     </div>

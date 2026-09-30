@@ -1,5 +1,9 @@
-// Full feature comparison on /pricing, parsed from design/Pricing.dc.html. Pricing is not final.
+// Full feature comparison on /pricing. Agreed 30 September 2026, 48 rows.
 // icon: "yes" / "no" are labelled Included / Not included; "tick" is a decorative tick before a qualifier.
+//
+// Nothing here is capped by the number of clients a customer has. Channels are unlimited on both
+// paid plans on purpose: charging for them would bill the very thing this product is for.
+// Storage is the volume meter instead, because it tracks what actually costs us money.
 
 export type Cell = { icon?: "yes" | "no" | "tick"; text?: string };
 export type FeatureRow = { name: string; note?: boolean; values: [Cell, Cell, Cell] };
@@ -9,11 +13,9 @@ export const featureGroups: FeatureGroup[] = [
   {
     title: "Channels and workspace",
     rows: [
-      { name: "Channels included", values: [{ text: "3" }, { text: "30" }, { text: "Unlimited" }] },
-      { name: "Guest users", note: true, values: [{ text: "Unlimited, free" }, { text: "Unlimited, free" }, { text: "Unlimited, free" }] },
-      { name: "Seats per channel (team + guests)", values: [{ text: "30" }, { text: "100" }, { text: "Unlimited" }] },
-      { name: "Channel templates", values: [{ icon: "no" }, { icon: "yes" }, { icon: "yes" }] },
-      { name: "Cross-channel request views (org-wide)", values: [{ icon: "no" }, { icon: "yes" }, { icon: "yes" }] },
+      { name: "Channels included", values: [{ text: "1" }, { text: "Unlimited" }, { text: "Unlimited" }] },
+      { name: "Team users", values: [{ text: "1" }, { text: "Unlimited" }, { text: "Unlimited" }] },
+      { name: "Guest users", note: true, values: [{ text: "30, free" }, { text: "Unlimited, free" }, { text: "Unlimited, free" }] },
       { name: "Channel archiving and export", values: [{ icon: "no" }, { icon: "yes" }, { icon: "yes" }] },
     ],
   },
@@ -21,8 +23,9 @@ export const featureGroups: FeatureGroup[] = [
     title: "Chat",
     rows: [
       { name: "Channel chat, threads, mentions, presence", values: [{ icon: "yes" }, { icon: "yes" }, { icon: "yes" }] },
+      { name: "Voice notes", values: [{ icon: "yes" }, { icon: "yes" }, { icon: "yes" }] },
       { name: "Private and group direct messages", values: [{ icon: "yes" }, { icon: "yes" }, { icon: "yes" }] },
-      { name: "File sharing and storage", values: [{ text: "1 GB per org" }, { text: "20 GB per org" }, { text: "500 GB per org, expandable" }] },
+      { name: "File sharing and storage", values: [{ text: "1 GB total" }, { text: "10 GB per user" }, { text: "50 GB per user" }] },
       { name: "Message history", values: [{ text: "30 days" }, { text: "Unlimited" }, { text: "Unlimited" }] },
       { name: "Announcements", values: [{ icon: "no" }, { icon: "yes" }, { icon: "yes" }] },
       { name: "Message and file retention policies", values: [{ icon: "no" }, { icon: "no" }, { icon: "yes" }] },
@@ -35,10 +38,10 @@ export const featureGroups: FeatureGroup[] = [
       { name: "Convert a message into a request", values: [{ icon: "yes" }, { icon: "yes" }, { icon: "yes" }] },
       { name: "Tasks inside a request (close with it)", values: [{ icon: "yes" }, { icon: "yes" }, { icon: "yes" }] },
       { name: "Custom categories", values: [{ text: "5" }, { text: "Unlimited" }, { text: "Unlimited" }] },
-      { name: "SLA profiles", values: [{ icon: "no" }, { text: "Up to 30" }, { text: "Unlimited, with escalation paths" }] },
-      { name: "Routing rules", values: [{ icon: "no" }, { icon: "yes" }, { icon: "tick", text: "conditional and multi-level" }] },
+      { name: "SLA profiles", values: [{ icon: "no" }, { icon: "yes" }, { icon: "tick", text: "with escalation paths" }] },
+      { name: "Routing rules", values: [{ icon: "no" }, { icon: "yes" }, { icon: "yes" }] },
       { name: "Automation rules", values: [{ icon: "no" }, { text: "Up to 30 active" }, { text: "Unlimited" }] },
-      { name: "Playbooks and workflows", values: [{ icon: "no" }, { icon: "yes" }, { icon: "tick", text: "with approval steps" }] },
+      { name: "Playbooks", values: [{ icon: "no" }, { icon: "yes" }, { icon: "tick", text: "with approval steps" }] },
       { name: "Custom fields on requests", values: [{ icon: "no" }, { icon: "yes" }, { icon: "yes" }] },
       { name: "Bulk request management", values: [{ icon: "no" }, { icon: "yes" }, { icon: "yes" }] },
       { name: "Service notices and status broadcasts", values: [{ icon: "no" }, { icon: "yes" }, { icon: "yes" }] },
@@ -47,19 +50,19 @@ export const featureGroups: FeatureGroup[] = [
   {
     title: "Meetings",
     rows: [
-      { name: "Video call from a channel", values: [{ icon: "tick", text: "capped at 45 mins" }, { icon: "tick", text: "unlimited" }, { icon: "tick", text: "unlimited" }] },
-      { name: "Screen sharing", values: [{ icon: "yes" }, { icon: "yes" }, { icon: "yes" }] },
+      { name: "Video calls", values: [{ icon: "no" }, { icon: "tick", text: "unlimited" }, { icon: "tick", text: "unlimited" }] },
+      { name: "Voice calls", values: [{ icon: "yes" }, { icon: "yes" }, { icon: "yes" }] },
+      { name: "Screen sharing", values: [{ icon: "no" }, { icon: "yes" }, { icon: "yes" }] },
       { name: "Whiteboard overlay on shared screen", values: [{ icon: "no" }, { icon: "yes" }, { icon: "yes" }] },
       { name: "Call recording", values: [{ icon: "no" }, { icon: "tick", text: "30 day retention" }, { icon: "tick", text: "custom retention" }] },
-      { name: "Meeting linked to a request", values: [{ icon: "no" }, { icon: "yes" }, { icon: "yes" }] },
+      { name: "Meeting linked to a request", values: [{ icon: "yes" }, { icon: "yes" }, { icon: "yes" }] },
       { name: "Scheduled events in channel", values: [{ icon: "yes" }, { icon: "tick", text: "recurring available" }, { icon: "tick", text: "recurring available" }] },
-      { name: "Calendar with sync capability (Google, Outlook)", values: [{ icon: "no" }, { icon: "yes" }, { icon: "yes" }] },
     ],
   },
   {
     title: "Wiki",
     rows: [
-      { name: "Channel wiki", values: [{ icon: "no" }, { text: "1 per channel" }, { text: "Unlimited" }] },
+      { name: "Channel wiki", values: [{ text: "1, up to 5 pages" }, { text: "1 per channel" }, { text: "Unlimited" }] },
       { name: "Page version history", values: [{ icon: "no" }, { text: "Unlimited" }, { text: "Unlimited" }] },
       { name: "Page ownership, review cycles and approvals", values: [{ icon: "no" }, { icon: "no" }, { icon: "yes" }] },
     ],
@@ -68,16 +71,13 @@ export const featureGroups: FeatureGroup[] = [
     title: "Analytics",
     rows: [
       { name: "Channel status dashboard", values: [{ icon: "yes" }, { icon: "yes" }, { icon: "yes" }] },
-      { name: "Worker performance analytics", values: [{ icon: "no" }, { icon: "yes" }, { icon: "yes" }] },
+      { name: "User performance analytics", values: [{ icon: "no" }, { icon: "yes" }, { icon: "yes" }] },
       { name: "Department performance tracking", values: [{ icon: "no" }, { icon: "yes" }, { icon: "yes" }] },
       { name: "Service quality tracking (SLA attainment, CSAT)", values: [{ icon: "no" }, { icon: "yes" }, { icon: "yes" }] },
-      { name: "Client timeline", values: [{ icon: "no" }, { icon: "yes" }, { icon: "yes" }] },
-      { name: "Client onboarding flows", values: [{ icon: "no" }, { icon: "yes" }, { icon: "yes" }] },
-      { name: "Customer journey tracking", values: [{ icon: "no" }, { icon: "no" }, { icon: "yes" }] },
       { name: "Custom reports", values: [{ icon: "no" }, { icon: "no" }, { icon: "yes" }] },
       { name: "Client reporting (branded, scheduled to counterparts)", values: [{ icon: "no" }, { icon: "no" }, { icon: "yes" }] },
       { name: "Executive business health dashboard", values: [{ icon: "no" }, { icon: "no" }, { icon: "yes" }] },
-      { name: "Data export", values: [{ text: "CSV" }, { text: "CSV" }, { text: "CSV, API and warehouse sync" }] },
+      { name: "Data export", values: [{ text: "CSV" }, { text: "CSV and XLS" }, { text: "CSV, XLS, API and warehouse sync" }] },
     ],
   },
   {
@@ -91,9 +91,7 @@ export const featureGroups: FeatureGroup[] = [
       { name: "Webhooks", values: [{ icon: "no" }, { icon: "tick", text: "outbound" }, { icon: "tick", text: "inbound and outbound" }] },
       { name: "Public API", values: [{ icon: "no" }, { icon: "tick", text: "rate limited" }, { icon: "tick", text: "higher limits" }] },
       { name: "Custom integrations and private connectors", values: [{ icon: "no" }, { icon: "no" }, { icon: "yes" }] },
-      { name: "Data residency and BYO retention policy", values: [{ icon: "no" }, { icon: "no" }, { icon: "yes" }] },
-      { name: "Onboarding and migration assistance", values: [{ icon: "no" }, { text: "Self-serve guides" }, { text: "Guided, with a named CSM" }] },
-      { name: "Uptime SLA", values: [{ icon: "no" }, { icon: "no" }, { text: "99.9%, contractual" }] },
+      { name: "Onboarding and migration assistance", values: [{ icon: "no" }, { text: "Self-serve guides" }, { text: "Guided" }] },
     ],
   },
 ];

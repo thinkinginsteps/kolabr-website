@@ -58,7 +58,7 @@ export default function ContactPage() {
       <CtaBand
         width={680}
         title="Or skip the conversation."
-        body="Fourteen days free on Max, every option included, no card. Open a channel for one client and see it working this afternoon."
+        body="Free for one channel, no card. Seven days on Pro or Business when you want the rest. Open a channel for one client and see it working this afternoon."
         secondary={{ label: "See pricing", href: "/pricing" }}
       />
     </>

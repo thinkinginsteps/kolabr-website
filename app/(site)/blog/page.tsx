@@ -79,7 +79,7 @@ export default async function BlogIndex() {
 
       <CtaBand
         title="See it on one of your own clients."
-        body="Fourteen days free on Max, every option included, no card. Open a channel, invite the people you currently email, and judge it from there."
+        body="Free for one channel, no card. Seven days on Pro or Business when you want the rest. Open a channel, invite the people you currently email, and judge it from there."
       />
     </>
   );

@@ -2,7 +2,7 @@
   "schools": [
     {
       "q": "Do we have to pay for parents to use Kolabr?",
-      "a": "No. Parents, coaches and suppliers join as guests, free, on every plan, and are never billed. The plan covers your own team. Each channel does have a seat count (30 on Starter, 100 on Pro, unlimited on Max) that staff and guests share, so a class of 27 parents and two teachers fits a Starter channel."
+      "a": "No. Parents, coaches and suppliers join as guests, free, and are never billed. The plan covers your own team. Channels are unlimited on Pro and Business too, so a class, a year group and a sports fixture list are three channels and the same bill."
     },
     {
       "q": "Can parents see other families or the staff room?",
@@ -18,13 +18,13 @@
     },
     {
       "q": "What is the best way to trial Kolabr at our school?",
-      "a": "Start with one class. Pick the teacher who is drowning in messages, create one channel, invite the parents and run it for two weeks. The trial is fourteen days free on Max, with every option included and no card required. It either helps by half-term or it does not."
+      "a": "Start with one class. Pick the teacher who is drowning in messages, create one channel, invite the parents and run it for two weeks. Start free on one channel, or take seven days on Pro or Business, no card required either way. It either helps by half-term or it does not."
     }
   ],
   "nonprofits": [
     {
       "q": "Will we be billed for our volunteers?",
-      "a": "No. Volunteers, trustees and funders join as guests and are never billed; the plan covers the people on your payroll. Each channel has a seat count (30 on Starter, 100 on Pro, unlimited on Max) shared between staff and guests, but a small team supporting forty volunteers is not a forty-person bill."
+      "a": "No. Volunteers, trustees and funders join as guests and are never billed; the plan covers the people on your payroll. A small team supporting forty volunteers is not a forty-person bill, and channels are unlimited on Pro and Business, so a channel per programme costs nothing extra."
     },
     {
       "q": "Can funders see our internal conversations or other funders' grants?",
@@ -46,7 +46,7 @@
   "architecture-firms": [
     {
       "q": "Do clients, contractors and consultants need to pay for a seat?",
-      "a": "No. Clients, contractors, engineers and QSs join as guests, free, on every plan, and are never billed. The plan covers your own people. Each channel has a seat count (30 on Starter, 100 on Pro, unlimited on Max) shared with guests, and a project with a client, a contractor and four consultants sits comfortably inside a Starter channel."
+      "a": "No. Clients, contractors, engineers and QSs join as guests, free, and are never billed. The plan covers your own people. Channels are unlimited on Pro and Business, so a channel per project adds nothing to what you pay."
     },
     {
       "q": "How are RFIs tracked in Kolabr?",
@@ -84,13 +84,13 @@
     },
     {
       "q": "Do we pay for clients and contractors, and how do we start?",
-      "a": "Clients, contractors and other consultants are guests and are never billed; the plan covers your own people. To start, pick the project with the most site queries and the least written record, invite the contractor and run it for two weeks. The trial is fourteen days free on Max, every option included, no card."
+      "a": "Clients, contractors and other consultants are guests and are never billed; the plan covers your own people. To start, pick the project with the most site queries and the least written record, invite the contractor and run it for two weeks. Start free on one channel, or take seven days on Pro or Business, no card either way."
     }
   ],
   "marketing-agencies": [
     {
       "q": "Do our clients have to pay to use Kolabr?",
-      "a": "No. Clients join as guests, free, on every plan, and that includes their legal reviewers and freelance collaborators. You pay for the agency only. Each channel has a seat count (30 on Starter, 100 on Pro, unlimited on Max), shared between your team and your guests."
+      "a": "No. Clients join as guests, free, and that includes their legal reviewers and freelance collaborators. You pay for the agency only, and channels are unlimited on Pro and Business, so the tenth client costs the same as the first."
     },
     {
       "q": "How should an agency set up its channels?",
@@ -112,7 +112,7 @@
   "accounting-firms": [
     {
       "q": "Do our clients' finance staff need paid accounts?",
-      "a": "No. Client finance teams join as guests and are never billed, however many of them send you documents. You pay for your staff. Each channel has a seat count (30 on Starter, 100 on Pro, unlimited on Max), shared between your staff and your client's. A client with three finance people and your team of five sits comfortably inside Starter."
+      "a": "No. Client finance teams join as guests and are never billed, however many of them send you documents. You pay for your staff. Channels are unlimited on Pro and Business, so a channel per client adds nothing to the bill."
     },
     {
       "q": "How do we organise channels for each client?",
@@ -120,7 +120,7 @@
     },
     {
       "q": "Can Kolabr track SARS and other statutory deadlines?",
-      "a": "Yes. Filings, queries, audit items and bookkeeping tasks are numbered items with an owner and a due date. Statutory dates such as VAT201, EMP201, provisional tax and CIPC carry a clock on the item, and \"waiting on client\" is visible to the client. Each client's compliance calendar syncs to Outlook and Google."
+      "a": "Yes. Filings, queries, audit items and bookkeeping tasks are numbered items with an owner and a due date. Statutory dates such as VAT201, EMP201, provisional tax and CIPC carry a clock on the item, and \"waiting on client\" is visible to the client. Each client's compliance dates sit on that client's own channel calendar."
     },
     {
       "q": "Can we stop a junior submitting without partner review?",
@@ -128,7 +128,7 @@
     },
     {
       "q": "What's the best way to try Kolabr in our practice?",
-      "a": "Start with the client who never sends anything. Set up one channel, invite their finance people and run one month-end through it. The trial is fourteen days free on Max, with every option included and no card. After that, each new client can be built from a channel template in one step."
+      "a": "Start with the client who never sends anything. Set up one channel, invite their finance people and run one month-end through it. Start free on one channel, or take seven days on Pro or Business, no card either way. After that, each new client can be built from a channel template in one step."
     }
   ],
   "law-firms": [
@@ -146,7 +146,7 @@
     },
     {
       "q": "Do clients and counsel have to pay?",
-      "a": "No. Clients, counsel and other advisers are guests and are never billed. The plan covers your fee earners. Each channel has a seat count (30 on Starter, 100 on Pro, unlimited on Max), shared between your fee earners and your guests. A matter with three client contacts and your team of five sits inside Starter."
+      "a": "No. Clients, counsel and other advisers are guests and are never billed. The plan covers your fee earners. Channels are unlimited on Pro and Business, so a channel per matter costs no more than a channel per client."
     },
     {
       "q": "How long is the matter record kept?",
@@ -172,13 +172,13 @@
     },
     {
       "q": "Which plan do we need for a forty-person client?",
-      "a": "Each channel has a seat count shared between your engineers and your client's staff: 30 on Starter, 100 on Pro, unlimited on Max. A forty-person client with your team of six needs Pro, while a boutique practice sits inside Starter. Client staff are guests and never billed, and the plan covers your own people."
+      "a": "Either paid plan, because neither counts your clients. A forty-person client is forty guests, and guests are free and unlimited. Channels are unlimited too, so the answer does not change at the hundredth client. Pro covers the day-to-day work; Business adds SSO, custom roles and the longer audit trail."
     }
   ],
   "construction": [
     {
       "q": "Do subcontractors cost us anything?",
-      "a": "No. Clients, QSs and subcontractors join as guests and are never billed. The plan covers the people on your payroll. Each channel has a seat count (30 on Starter, 100 on Pro, unlimited on Max) shared between your staff and your guests, and a site with a client PM, a QS and six subcontractor foremen sits inside a Starter channel."
+      "a": "No. Clients, QSs and subcontractors join as guests and are never billed. The plan covers the people on your payroll. Channels are unlimited on Pro and Business, so a channel per site costs nothing extra."
     },
     {
       "q": "Will our foremen actually use this on site?",
@@ -200,7 +200,7 @@
   "property-management": [
     {
       "q": "Do trustees and residents have to pay to use Kolabr?",
-      "a": "No. Trustees, owners and residents join as guests, free, on every plan, and are never billed however many of them report a leak. You pay for your staff. Guests do share each channel's seat count with your staff: 30 on Starter, 100 on Pro and unlimited on Max."
+      "a": "No. Trustees, owners and residents join as guests, free, and are never billed however many of them report a leak. You pay for your staff, and channels are unlimited on Pro and Business, so a channel per building is not a bigger bill."
     },
     {
       "q": "How should a managing agent set up channels for each building?",
@@ -226,7 +226,7 @@
     },
     {
       "q": "Do our lab and radiology partners need to pay?",
-      "a": "No. Labs, radiology practices and referral partners join as guests and are never billed; the plan covers your own people. Each partner sees only its own channel, not billing or the roster. Guests share the channel seat count with staff, and a single-site practice with a lab and a radiology partner sits comfortably inside Starter."
+      "a": "No. Labs, radiology practices and referral partners join as guests and are never billed; the plan covers your own people. Each partner sees only its own channel, not billing or the roster, and channels are unlimited on Pro and Business."
     },
     {
       "q": "What happens if nobody acknowledges an urgent result?",
@@ -244,7 +244,7 @@
   "logistics": [
     {
       "q": "Do our clients pay for access to their account channel?",
-      "a": "No. Client depots, receiving clerks and planners join as guests and are never billed; the plan covers your controllers. They do share each channel's seat count with your staff: 30 on Starter, 100 on Pro, unlimited on Max. A national account with six receiving sites needs Pro, while a single-lane customer fits in Starter."
+      "a": "No. Client depots, receiving clerks and planners join as guests and are never billed; the plan covers your controllers. A national account with six receiving sites is six sets of guests and one bill, and channels are unlimited on Pro and Business."
     },
     {
       "q": "Can one client see another shipper's loads or rates?",
@@ -266,7 +266,7 @@
   "manufacturing": [
     {
       "q": "Do our customers have to pay to join their channel?",
-      "a": "No. Customer engineers, buyers and auditors join as guests and are never billed; the plan covers your own people. Guests share each channel's seat count with your plant: 30 on Starter, 100 on Pro, unlimited on Max. A customer quality channel fits inside Starter, while a production channel with three shifts of leads needs Pro."
+      "a": "No. Customer engineers, buyers and auditors join as guests and are never billed; the plan covers your own people. Channels are unlimited on Pro and Business, so a channel per customer and a channel per line cost the same as one."
     },
     {
       "q": "Will a customer see our supplier problems or other customers' NCRs?",
@@ -282,7 +282,7 @@
     },
     {
       "q": "What is the best way to start rolling it out?",
-      "a": "Start with the account that has the tightest supplier quality requirements: one channel, their SQE invited, one NCR. The next programme is built from a channel template with categories, containment times, the NCR procedure and the change-control process already there. The trial is fourteen days free on Max, every option included, no card."
+      "a": "Start with the account that has the tightest supplier quality requirements: one channel, their SQE invited, one NCR. The next programme is built from a channel template with categories, containment times, the NCR procedure and the change-control process already there. Start free on one channel, or take seven days on Pro or Business, no card either way."
     }
   ]
 }

@@ -6,7 +6,7 @@
   },
   "/pricing/": {
     "title": "Pricing: per user plans, guests always free | Kolabr",
-    "description": "Kolabr pricing in full. Starter, Pro and Max compared per user, what each plan includes, and why every client or partner you invite is free on all of them.",
+    "description": "Kolabr pricing in full. Free, Pro and Business compared per user, what each plan includes, and why every client you invite is free on all of them.",
     "name": "Pricing"
   },
   "/blog/": {
@@ -47,7 +47,7 @@
   },
   "/product/meetings/": {
     "title": "Client meetings and scheduled events in a channel | Kolabr",
-    "description": "Schedule and run calls from the channel they belong to. Recurring events, calendar sync, and notes and decisions that land back on the work they relate to.",
+    "description": "Schedule and run calls from the channel they belong to. Recurring events, meetings tied to the request they are about, and decisions that stay.",
     "name": "Meetings"
   },
   "/product/wiki/": {

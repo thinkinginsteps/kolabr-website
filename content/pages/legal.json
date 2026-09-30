@@ -230,7 +230,7 @@
             "p": "Your data is stored with cloud providers whose facilities may be located outside South Africa. Where personal information is transferred across borders we rely on the conditions in section 72 of POPIA, and where the GDPR applies we rely on standard contractual clauses or an adequacy decision."
           },
           {
-            "p": "Customers on the Max plan can ask about the region their data is held in before signing up, and we will tell you plainly what is possible."
+            "p": "You can ask where your data is held before signing up, and we will tell you plainly what is possible."
           }
         ]
       },
@@ -464,7 +464,7 @@
             "p": "Plans are priced per user on your own team. Guests, meaning people outside your organisation whom you invite into a channel, are never charged for on any plan."
           },
           {
-            "p": "Each channel has a seat limit set by your plan: thirty on Starter, one hundred on Pro, and unlimited on Max. That limit counts everyone in the channel, your own team and your guests together. If a channel reaches its limit you will need to remove someone or move up a plan."
+            "p": "Free accounts have one channel and one user, with up to thirty guests in it. Pro and Business accounts have no limit on channels or on guests: you are billed for the users on your team. A user owns work, creates channels and administers the account. A guest takes part in the channels you add them to and is never billed."
           },
           {
             "p": "You are responsible for what happens under your account, for keeping credentials secure, and for the conduct of the guests you invite."
@@ -496,7 +496,7 @@
         "title": "Free trial",
         "blocks": [
           {
-            "p": "New accounts get fourteen days on the Max plan at no cost, with every option included and no payment card required. We will not charge you at the end of a trial. If you do not choose a plan the account is suspended, and the content is kept for thirty days so you can pick it up if you change your mind."
+            "p": "New accounts can stay on the Free plan for as long as they like. A seven day trial of Pro or Business, with every option included and no payment card required, is available once per account. We will not charge you at the end of a trial. If you do not choose a plan the account returns to Free, and nothing is deleted."
           }
         ]
       },
@@ -555,7 +555,7 @@
             "p": "We aim for 99.5% monthly availability, excluding scheduled maintenance, which we announce in advance and run outside South African business hours wherever possible."
           },
           {
-            "p": "Support is provided through the contact form and through your channels. We do not guarantee a response time on Starter. Pro and Max accounts have the response targets set out on the pricing page."
+            "p": "Support is provided through the contact form and through your channels. We do not guarantee a response time, though Pro and Business accounts are answered first."
           },
           {
             "p": "The service is otherwise provided as is. We do not warrant that it will be uninterrupted, error-free, or fit for a particular purpose beyond what is described on this website."
@@ -896,7 +896,7 @@
     ],
     "short": {
       "title": "In short",
-      "body": "Fourteen days free before you pay anything. Thirty days after your first payment, if it is not working for you, we refund it in full. After that we refund the unused part of an annual plan on request, and we always refund our own billing mistakes."
+      "body": "Free for as long as you like before you pay anything. Thirty days after your first payment, if it is not working for you, we refund it in full. After that we refund the unused part of an annual plan on request, and we always refund our own billing mistakes."
     },
     "sections": [
       {
@@ -905,7 +905,7 @@
         "title": "Before you pay anything",
         "blocks": [
           {
-            "p": "Every new account gets fourteen days on Max with no payment card. Nothing is charged at the end of a trial and nothing starts automatically. If you do nothing, the account is simply suspended."
+            "p": "Every new account starts on Free and can trial Pro or Business for seven days with no payment card. Nothing is charged at the end of a trial and nothing starts automatically. If you do nothing, the account returns to Free."
           },
           {
             "p": "That is deliberate. We would rather you found out the product does not suit you before any money changes hands than argue about a refund afterwards."
@@ -1011,7 +1011,7 @@
         "title": "Outages",
         "blocks": [
           {
-            "p": "If monthly availability falls below 99.5% for reasons within our control, Pro and Max customers can request a credit against the following month: ten per cent of the monthly fee for availability between 99% and 99.5%, and twenty-five per cent below 99%."
+            "p": "If monthly availability falls below 99.5% for reasons within our control, Pro and Business customers can request a credit against the following month: ten per cent of the monthly fee for availability between 99% and 99.5%, and twenty-five per cent below 99%."
           },
           {
             "p": "Credits are applied to the next invoice rather than paid out, and must be requested within thirty days of the month in question."

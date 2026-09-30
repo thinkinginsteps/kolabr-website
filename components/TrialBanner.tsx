@@ -2,14 +2,14 @@ import type { ReactNode } from "react";
 import { SIGNUP_PATH } from "@/lib/site";
 import { ButtonLink } from "./ButtonLink";
 
-/** "Start your 14-day free trial" strip under the plan cards (#buy). */
+/** The "start free" strip under the plan cards (#buy). */
 export function TrialBanner({ children }: { children?: ReactNode }) {
   return (
     <div data-rise="" id="buy" className="mt-10 flex flex-wrap items-center justify-between gap-5 rounded-[22px] bg-surface px-8 py-7">
       <div className="flex max-w-[620px] flex-col gap-1.5">
-        <span className="text-[19px] font-semibold text-ink">Start your 14-day free trial</span>
+        <span className="text-[19px] font-semibold text-ink">Start free, or trial the rest</span>
         <span className="text-[16px] text-pretty text-ink-muted">
-          Create an account and get 14 days free on Max, with every option included. No card needed. Pick the plan that
+          Create an account and start free on one channel, or take seven days on Pro or Business with every option included. No card needed. Pick the plan that
           fits when the trial ends.
           {children}
         </span>
