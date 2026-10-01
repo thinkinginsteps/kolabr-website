@@ -117,7 +117,8 @@ Everything else the server needs lives outside that directory, where a deploy ca
 /etc/nginx/
   conf.d/kolabr.conf                the upstream, and the noindex header for the preview host
   conf.d/cloudflare-realip.conf     the visitor's real address, trusted only from Cloudflare
-  snippets/kolabr-site.conf         the site itself, shared by the preview and live blocks
+  snippets/kolabr-site.conf         the site itself, shared by the preview and live blocks,
+                                    and the redirects for retired URLs
   snippets/kolabr-{tls,proxy,headers}.conf
   sites-available/00-default.conf   anything that is not a Kolabr hostname gets 444
   sites-available/kolabr.com.conf           the live site. Enabled by hand at go-live
