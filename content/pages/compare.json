@@ -435,7 +435,7 @@
         ],
         "image": {
           "file": "a5-requests",
-          "alt": "Kolabr request management: every item with a number, a category, an owner, a status and a due date, in one table across channels"
+          "alt": "Kolabr request management: every item with a number, a category, an owner, a status and a due date, in one table"
         },
         "reasons": [
           {
@@ -1079,7 +1079,7 @@
         ],
         "image": {
           "file": "l3-requests",
-          "alt": "Kolabr request management: every item with a number, a category, an owner, a status and a due date, in one table across channels"
+          "alt": "Kolabr request management: every item with a number, a category, an owner, a status and a due date, in one table"
         },
         "reasons": [
           {
@@ -1396,7 +1396,7 @@
         ],
         "image": {
           "file": "g2-requests",
-          "alt": "Kolabr request management: every item with a number, a category, an owner, a status and an SLA state, across channels"
+          "alt": "Kolabr request management: every item with a number, a category, an owner, a status and an SLA state"
         },
         "reasons": [
           {

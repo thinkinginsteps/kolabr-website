@@ -121,19 +121,19 @@
       ]
     },
     "calendar": {
-      "title": "The compliance calendar, per client, in one place",
+      "title": "Every deadline for this client, on one calendar",
       "lede": "Form 941 at the end of the month after each quarter, estimated tax on the 15th, the state sales tax return, the audit sign-off meeting and the management accounts pack. In the channel it belongs to.",
       "image": {
         "file": "ac2-events",
-        "alt": "The firm's calendar: practice deadline reviews, payroll and sales tax due dates, audit planning, the inventory count query session and the management accounts deadline on one month view"
+        "alt": "The client calendar: practice deadline reviews, payroll and sales tax due dates, audit planning, the inventory count query session and the management accounts deadline on one month view"
       }
     },
     "oversight": {
       "title": "Which deadlines are at risk, and whose fault that is",
-      "lede": "Filings due, documents outstanding from clients, and the engagement quietly consuming three times its fee in chasing.",
+      "lede": "Filings due, documents still outstanding from the client, and how much of this engagement has gone on chasing them.",
       "image": {
         "file": "ac2-dashboard",
-        "alt": "The practice dashboard: open items across client channels, filings due, items awaiting client documents, deadlines at risk, and query volume for the fortnight"
+        "alt": "The channel dashboard for one client: requests raised in this channel this month, filings due, documents outstanding from the client, deadlines at risk, the people in the channel, and queries and filings over the fortnight"
       },
       "wide": {
         "title": "Every client keeps its own score",
@@ -365,10 +365,10 @@
     },
     "oversight": {
       "title": "Nothing hides inside a project",
-      "lede": "Which schemes are waiting on you, which are waiting on the client, and which RFI is quietly turning into a delay claim.",
+      "lede": "What is waiting on you, what is waiting on the client, and which RFI is quietly turning into a delay claim.",
       "image": {
         "file": "a5-dashboard",
-        "alt": "The practice dashboard: open items across project channels, open RFIs, items awaiting client sign-off, what is due today, RFI volume for the fortnight and the requests assigned to this architect"
+        "alt": "The channel dashboard for one project: requests raised in this channel this month, open RFIs, items awaiting client sign-off, what is due today, the people in the channel, and RFI and variation volume over the fortnight"
       },
       "wide": {
         "title": "Every project keeps its own score",
@@ -604,7 +604,7 @@
       "lede": "Results not acknowledged, referrals a partner has sat on for five days, and the compliance check that quietly lapsed.",
       "image": {
         "file": "c5-dashboard",
-        "alt": "The practice dashboard: open items across practice channels, open tasks, items awaiting partners, what is overdue today and task volume for the fortnight"
+        "alt": "The channel dashboard for one practice channel: requests raised this month, open tasks, items awaiting partners, what is overdue today, the people in the channel, and task volume over the fortnight"
       },
       "wide": {
         "title": "Every channel keeps its own score",
@@ -839,7 +839,7 @@
       "lede": "Which variations are unpriced, what the client has been sitting on, and which safety item is still open at the end of the week.",
       "image": {
         "file": "con-dashboard",
-        "alt": "The site dashboard: open items across site channels, open variations with the value claimed to date, items awaiting the client, safety items open, and variation volume for the fortnight"
+        "alt": "The channel dashboard for one site: requests raised in this channel this month, open variations with the value claimed to date, items awaiting the client, safety items open, the people in the channel, and variations and RFIs raised over the fortnight"
       },
       "wide": {
         "title": "Every site keeps its own score",
@@ -1074,7 +1074,7 @@
       "lede": "Which inspections are due, what work is on hold, and which certificate a client is quietly waiting for.",
       "image": {
         "file": "e2-dashboard",
-        "alt": "The practice dashboard: open items across project channels, inspections due, items awaiting sign-off, work currently on hold, and inspection volume for the fortnight"
+        "alt": "The channel dashboard for one project: requests raised in this channel this month, inspections due, items awaiting sign-off, work currently on hold, the people in the channel, and inspections and queries over the fortnight"
       },
       "wide": {
         "title": "Every project keeps its own score",
@@ -1301,15 +1301,15 @@
       "lede": "The firewall window at eight on a Thursday night, the monthly service review, the day MFA enforcement goes live. In the channel it belongs to, synced to Outlook and Google, tied to the change it came from.",
       "image": {
         "file": "i2-events",
-        "alt": "The provider calendar: service desk stand-ups, a P1 incident bridge, the monthly service review, the firewall change window, the M365 pilot cutover and MFA enforcement going live"
+        "alt": "The client calendar: service desk stand-ups, a P1 incident bridge, the monthly service review, the firewall change window, the M365 pilot cutover and MFA enforcement going live"
       }
     },
     "oversight": {
-      "title": "Which contracts are healthy, and which are quietly losing money",
-      "lede": "Request volume per client, what is about to breach, and the estate generating three times the requests it is priced for.",
+      "title": "Whether this contract is healthy, or quietly losing money",
+      "lede": "Request volume on this contract, what is about to breach, and whether the estate generates more than it was priced for.",
       "image": {
         "file": "i2-dashboard",
-        "alt": "The provider dashboard: requests this month across client channels, open requests, unassigned, SLA at risk with the next breach time, request volume for the fortnight and CSAT"
+        "alt": "The channel dashboard for one client: requests raised in this channel this month, open requests, unassigned requests, SLA at risk with the next breach time, the people in the channel, request volume over the fortnight and the CSAT average"
       },
       "wide": {
         "title": "Every client keeps its own score",
@@ -1540,11 +1540,11 @@
       }
     },
     "oversight": {
-      "title": "Which matters are exposed, before they become complaints",
-      "lede": "Court deadlines approaching, instructions outstanding, and the matter where nobody has written anything down for a fortnight.",
+      "title": "Where this matter is exposed, before it becomes a complaint",
+      "lede": "Court deadlines approaching, instructions outstanding, and the fortnight nobody wrote anything down on this matter.",
       "image": {
         "file": "l3-dashboard",
-        "alt": "The firm dashboard: open items across matter channels, court deadlines, items awaiting client instruction, at-risk matters and activity for the fortnight"
+        "alt": "The channel dashboard for one matter: requests raised in this channel this month, court deadlines, items awaiting client instruction, what is at risk, the people in the channel, and matter activity over the fortnight"
       },
       "wide": {
         "title": "Every matter keeps its own score",
@@ -1775,11 +1775,11 @@
       }
     },
     "oversight": {
-      "title": "Which accounts run clean, and which eat the margin",
-      "lede": "Exception rate per account, PODs holding up invoicing, and the lane that generates a claim every second week.",
+      "title": "Whether this account runs clean, or eats the margin",
+      "lede": "The exception rate on this account, PODs holding up invoicing, and the lane that generates a claim every second week.",
       "image": {
         "file": "g2-dashboard",
-        "alt": "The carrier dashboard: loads this month across account channels, open exceptions, PODs outstanding, items at risk today with the next breach time, and exception volume for the fortnight"
+        "alt": "The channel dashboard for one account: loads handled in this channel this month, open exceptions, PODs outstanding, items at risk today with the next breach time, the people in the channel, and exception volume over the fortnight"
       },
       "wide": {
         "title": "Every account keeps its own score",
@@ -2010,11 +2010,11 @@
       }
     },
     "oversight": {
-      "title": "Which customers are calm, and which are about to audit you",
-      "lede": "Open NCRs per customer, what is waiting on their approval, and the line generating a quality problem every second week.",
+      "title": "Whether this customer is calm, or about to audit you",
+      "lede": "Open NCRs for this customer, what is waiting on their approval, and the line generating a quality problem every second week.",
       "image": {
         "file": "f2-dashboard",
-        "alt": "The plant dashboard: open items across plant channels, open NCRs, items awaiting customer approval, what is due today and NCR volume for the fortnight"
+        "alt": "The channel dashboard for one customer: requests raised in this channel this month, open NCRs, items awaiting customer approval, what is due today, the people in the channel, and NCR and change volume over the fortnight"
       },
       "wide": {
         "title": "Every customer keeps its own score",
@@ -2241,15 +2241,15 @@
       "lede": "Creative reviews, the legal sign-off call, the copy deadline, the print slot, the launch. Scheduled in the channel they belong to, synced to Outlook and Google, and tied to the request they came from.",
       "image": {
         "file": "m2-events",
-        "alt": "The agency calendar: studio work-in-progress, v3 creative review with the client, the out-of-scope estimate walkthrough, the print deadline and the campaign live date on one month view"
+        "alt": "The client calendar: studio work-in-progress, v3 creative review with the client, the out-of-scope estimate walkthrough, the print deadline and the campaign live date on one month view"
       }
     },
     "oversight": {
-      "title": "Which accounts are profitable, and which just feel busy",
-      "lede": "Unbilled scope, approvals the client is sitting on, and the account quietly consuming a third of the studio.",
+      "title": "Whether this account is profitable, or just feels busy",
+      "lede": "Unbilled scope, approvals the client is sitting on, and how much of the studio this account is quietly consuming.",
       "image": {
         "file": "m2-dashboard",
-        "alt": "The agency dashboard: open items across client channels, items awaiting approval, out-of-scope work quoted but unbilled, what is due today and approval volume for the fortnight"
+        "alt": "The channel dashboard for one client: requests raised in this channel this month, items awaiting approval, out-of-scope work quoted but unbilled, what is due today, the people in the channel, and approvals and revisions over the fortnight"
       },
       "wide": {
         "title": "Every client keeps its own score",
@@ -2484,7 +2484,7 @@
       "lede": "Which site has not reported, which receipts are missing, and whether a safeguarding item is still open at the end of the week.",
       "image": {
         "file": "n2-dashboard",
-        "alt": "The programme dashboard: open items across programme channels, reporting due to funders and province, data outstanding from field sites, safeguarding items open, and field reporting activity"
+        "alt": "The channel dashboard for one programme: requests raised in this channel this month, reporting due to funders and province, data outstanding from field sites, safeguarding items open, the people in the channel, and field reporting activity"
       },
       "wide": {
         "title": "Every programme keeps its own score",
@@ -2715,11 +2715,11 @@
       }
     },
     "oversight": {
-      "title": "Which buildings are running, and which are running you",
-      "lede": "Job volume per building, what the board has been sitting on for nine days, and the scheme generating three times the work it is priced for.",
+      "title": "Whether this building is running, or running you",
+      "lede": "Job volume for this building, what the board has been sitting on for nine days, and whether it generates more work than it was priced for.",
       "image": {
         "file": "p2-dashboard",
-        "alt": "The agency dashboard: requests this month across buildings, open requests, items awaiting the board, open emergencies with the next breach time, and resident satisfaction"
+        "alt": "The channel dashboard for one building: requests raised in this channel this month, open requests, items awaiting the board, emergencies open, the people in the channel, and request volume over the fortnight"
       },
       "wide": {
         "title": "Every building keeps its own score",

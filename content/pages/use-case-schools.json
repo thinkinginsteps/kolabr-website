@@ -140,7 +140,7 @@
     "lede": "Schools carry a duty of care for what is said to children and parents. Kolabr keeps that record by default instead of leaving it on staff phones.",
     "image": {
       "file": "shot-dashboard-final",
-      "alt": "The Kolabr dashboard for a school: request volume for the fortnight, open and unassigned counts, what is due today, and the requests assigned to this teacher"
+      "alt": "The channel dashboard for one class: requests raised in this channel this month, open and unassigned counts, what is due today, the people in the channel with parents counted as free guests, request volume for the fortnight, and the requests assigned to this teacher"
     },
     "wide": {
       "title": "Every channel keeps its own score",

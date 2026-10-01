@@ -1196,7 +1196,7 @@ class Component extends DCLogic {
       sendBg: this.state.draft.trim() ? '#00c3ff' : (dark ? 'rgba(0,195,255,0.45)' : 'rgba(0,195,255,0.45)'),
 
       metrics: [
-        { icon: 'confirmation_number', label: 'Total requests', value: '248', delta: '+12 this week', note: 'Across 18 channels', color: 'inherit', deltaColor: '#00c3ff' },
+        { icon: 'confirmation_number', label: 'Total requests', value: '248', delta: '+12 this week', note: 'Raised in this channel', color: 'inherit', deltaColor: '#00c3ff' },
         { icon: 'pending_actions', label: 'Open requests', value: '42', delta: '−8 vs last week', note: 'Median age 1.4 days', color: 'inherit', deltaColor: ok },
         { icon: 'person_search', label: 'Unassigned', value: '7', delta: 'Oldest 3h 12m', note: 'Needs an owner', color: 'inherit', deltaColor: warn },
         { icon: 'timer_off', label: 'SLA at risk', value: '3', delta: 'Next breach in 42m', note: '2 first-response, 1 resolution', color: 'inherit', deltaColor: bad }

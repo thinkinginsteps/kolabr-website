@@ -693,7 +693,7 @@ const PEOPLE = {
 const AVATAR_BGS = ['linear-gradient(150deg, #33505b, #557a88)', 'linear-gradient(150deg, #00c3ff, #0a9fd4)', 'linear-gradient(150deg, #7c6cf0, #5c4bd8)'];
 
 const CHANNEL_LIST = [
-  { name: 'Service desk', category: 'Support', desc: 'Day-to-day tickets', members: 6, sla: 'Priority', people: ['LG', 'SM', 'VR', 'GR', 'PK', 'AC'] },
+  { name: 'Service desk', category: 'Support', desc: 'Day-to-day requests', members: 6, sla: 'Priority', people: ['LG', 'SM', 'VR', 'GR', 'PK', 'AC'] },
   { name: 'Incidents & outages', category: 'Support', desc: 'P1 and P2 only', members: 5, sla: 'Priority', people: ['SM', 'PK', 'LG', 'GR', 'HF'] },
   { name: 'Projects: M365 migration', category: 'Projects', desc: 'Cutover and pilots', members: 4, sla: 'Standard', people: ['PK', 'LG', 'GR', 'SM'] },
   { name: 'Security & compliance', category: 'Security', desc: 'MFA, access, audits', members: 4, sla: 'Enhanced', people: ['AC', 'LG', 'PK', 'HF'] },
@@ -844,7 +844,7 @@ class Component extends DCLogic {
         { text: 'The client’s contracted response and resolution times' }
       ],
       steps: [
-        { n: '1', title: 'Declare it, do not debate it', text: 'Raise the ticket as a P1 the moment it looks like one. Downgrading later costs nothing; a P1 discovered at 11:00 that started at 08:40 costs the relationship.' },
+        { n: '1', title: 'Declare it, do not debate it', text: 'Raise the request as a P1 the moment it looks like one. Downgrading later costs nothing; a P1 discovered at 11:00 that started at 08:40 costs the relationship.' },
         { n: '2', title: 'One lead, one scribe', text: 'The lead fixes and decides. The scribe posts updates and keeps the client informed. An engineer doing both does neither well.' },
         { n: '3', title: 'Update on the clock, not on progress', text: 'Every thirty minutes, even when there is nothing new. Silence is what makes a client phone the managing partner instead of you.' },
         { n: '4', title: 'Close with a cause, not a shrug', text: 'Resolution is not the end. The RCA is a request with an owner and a due date, and the client sees it. That is what renews the contract.' }

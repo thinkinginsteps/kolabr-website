@@ -74,7 +74,7 @@ input, textarea, select { caret-color: transparent !important; }
 
       <span style="position: relative; flex: 0 1 auto; min-width: 0; display: flex;">
         <button data-menu-root="" sc-camel-on-click="{{ toggleChannels }}" title="Switch channel" style="display: flex; align-items: center; gap: 8px; min-width: 0; height: 40px; padding: 0 12px 0 10px; border-radius: 12px; cursor: pointer; font-family: inherit; color: inherit; text-align: left; background: transparent; border: none;" style-hover="background: var(--chanBtn, #f2f7fa);">
-          <span style="flex: none; font-family: 'Material Symbols Rounded'; font-size: 20px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--topIcon, #33505b);">workspaces</span>
+          <span style="flex: none; font-family: 'Material Symbols Rounded'; font-size: 20px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--topIcon, #33505b);">group</span>
           <span style="flex: 0 1 auto; min-width: 0; font-size: 13.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ chanName }}</span>
           <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--muted, #6b8290);">unfold_more</span>
         </button>
@@ -493,11 +493,11 @@ input, textarea, select { caret-color: transparent !important; }
           <div style="padding: 20px; border-radius: 20px; background: var(--card, #ffffff); display: flex; flex-direction: column; justify-content: space-between; transition: box-shadow 160ms ease;" style-hover="box-shadow: 0 6px 20px var(--cardHover, rgba(0,0,0,0.10));">
             <div style="display: flex; align-items: center; gap: 8px; color: var(--muted, #6b8290);">
               <span style="font-family: 'Material Symbols Rounded'; font-size: 18px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: var(--topIcon, #33505b);">workspaces</span>
-              <span style="font-size: 12.5px; font-weight: 500;">Channels</span>
+              <span style="font-size: 12.5px; font-weight: 500;">People in this channel</span>
             </div>
             <div style="display: flex; align-items: baseline; gap: 10px;">
-              <span style="font-size: 34px; font-weight: 600; letter-spacing: -0.03em; line-height: 1;">6</span>
-              <span style="font-size: 12px; color: var(--muted, #6b8290);">5 with the client and subbies in them</span>
+              <span style="font-size: 34px; font-weight: 600; letter-spacing: -0.03em; line-height: 1;">12</span>
+              <span style="font-size: 12px; color: var(--muted, #6b8290);">6 on your team, 6 guests</span>
             </div>
           </div>
           <div style="padding: 20px; border-radius: 20px; background: var(--card, #ffffff); display: flex; flex-direction: column; justify-content: space-between; transition: box-shadow 160ms ease;" style-hover="box-shadow: 0 6px 20px var(--cardHover, rgba(0,0,0,0.10));">
@@ -526,14 +526,13 @@ input, textarea, select { caret-color: transparent !important; }
           </div>
           <span style="font-size: 13px; color: #00a6d9; cursor: pointer;">View all</span>
         </div>
-        <div style="display: grid; grid-template-columns: 78px minmax(0, 2.4fr) minmax(0, 1.2fr) 116px 132px; gap: 16px; padding: 0 24px 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: var(--muted, #6b8290);">
-          <div>ID</div><div>SUBJECT</div><div>CHANNEL</div><div>STATUS</div><div>SLA</div>
+        <div style="display: grid; grid-template-columns: 78px minmax(0, 2.4fr) 116px 132px; gap: 16px; padding: 0 24px 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: var(--muted, #6b8290);">
+          <div>ID</div><div>SUBJECT</div><div>STATUS</div><div>SLA</div>
         </div>
         <sc-for list="{{ requests }}" as="t" hint-placeholder-count="5">
-          <div sc-camel-on-click="{{ openRequestChat }}" style="display: grid; grid-template-columns: 78px minmax(0, 2.4fr) minmax(0, 1.2fr) 116px 132px; gap: 16px; align-items: center; padding: 13px 24px;  font-size: 13.5px; cursor: pointer; transition: background 120ms ease;" style-hover="background: var(--iconHover, rgba(51,80,91,0.04));">
+          <div sc-camel-on-click="{{ openRequestChat }}" style="display: grid; grid-template-columns: 78px minmax(0, 2.4fr) 116px 132px; gap: 16px; align-items: center; padding: 13px 24px;  font-size: 13.5px; cursor: pointer; transition: background 120ms ease;" style-hover="background: var(--iconHover, rgba(51,80,91,0.04));">
             <div style="font-size: 12.5px; color: var(--muted, #6b8290);">{{ t.id }}</div>
             <div style="min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500;">{{ t.subject }}</div>
-            <div style="min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--muted, #6b8290); font-size: 12.5px;">{{ t.channel }}</div>
             <div>
               <span style="display: inline-block; font-size: 11.5px; font-weight: 600; padding: 4px 9px; border-radius: 8px; background: {{ t.statusBg }}; color: {{ t.statusFg }};">{{ t.status }}</span>
             </div>
@@ -849,7 +848,7 @@ class Component extends DCLogic {
       hideCard: () => this.scheduleHide(),
 
       metrics: [
-        { icon: 'confirmation_number', label: 'Open items', value: '84', delta: '+17 this week', note: 'Across 6 site channels', color: 'inherit', deltaColor: '#00c3ff' },
+        { icon: 'confirmation_number', label: 'Requests this month', value: '92', delta: '+17 this week', note: 'Raised in this channel', color: 'inherit', deltaColor: '#00c3ff' },
         { icon: 'pending_actions', label: 'Open variations', value: '12', delta: '+3 vs last week', note: '$840k claimed to date', color: 'inherit', deltaColor: ok },
         { icon: 'person_search', label: 'Awaiting client', value: '5', delta: 'Oldest 6 days', note: 'Variations unpriced', color: 'inherit', deltaColor: warn },
         { icon: 'timer_off', label: 'Safety open', value: '4', delta: 'Next due in 2h', note: '2 near misses, 2 inductions', color: 'inherit', deltaColor: bad }

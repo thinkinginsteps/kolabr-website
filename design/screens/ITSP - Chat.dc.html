@@ -442,7 +442,7 @@ input, textarea, select { caret-color: transparent !important; }
           <div style="display: flex; align-items: center; gap: 8px; margin-top: 3px; min-width: 0;">
             <p style="margin: 0; flex: none; font-size: 12.5px; font-weight: 600; color: var(--muted, #6b8290);">{{ groupCountLabel }}</p>
             <span style="flex: none; width: 3px; height: 3px; border-radius: 50%; background: var(--muted, #6b8290); opacity: 0.6;"></span>
-            <p style="margin: 0; min-width: 0; font-size: 12.5px; color: var(--muted, #6b8290); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Tickets, incidents and requests · Rossgrove Legal</p>
+            <p style="margin: 0; min-width: 0; font-size: 12.5px; color: var(--muted, #6b8290); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Incidents and requests · Rossgrove Legal</p>
           </div>
         </div>
         <div style="flex: none; display: flex; align-items: center; gap: 4px;">
@@ -878,7 +878,7 @@ class Component extends DCLogic {
       { kind: 'msg', author: 'Anita Chetty', photo: '', initials: 'AC', time: '16:20', mention: true, text: '@channel MFA enforcement goes live Monday 06:00. Fourteen users still have not enrolled. The list is on the wiki and they will be locked out, not warned again.', reactions: [{ emoji: '👍', count: 11 }] },
       { kind: 'divider', label: 'Today' },
       { kind: 'msg', author: 'Gareth Roos', photo: '', initials: 'GR', time: '09:12', text: 'Mail has been crawling since just before nine. Two partners have court at eleven and cannot get attachments out. How bad is this?', thread: '4 replies · last 09:18' },
-      { kind: 'msg', author: 'Sizwe Mthembu', photo: '', initials: 'SM', time: '09:19', text: 'Summarising out of the thread: one transport server throttling, failover in progress, queue draining. No mail lost. INC-4412 is the ticket and I am posting updates against it every thirty minutes.', reactions: [{ emoji: '🙌', count: 7 }] },
+      { kind: 'msg', author: 'Sizwe Mthembu', photo: '', initials: 'SM', time: '09:19', text: 'Summarising out of the thread: one transport server throttling, failover in progress, queue draining. No mail lost. INC-4412 is the request and I am posting updates against it every thirty minutes.', reactions: [{ emoji: '🙌', count: 7 }] },
       { kind: 'event', icon: 'confirmation_number', label: 'INC-4412 raised from a message: P1, mail flow degraded', meta: 'Sizwe Mthembu · In progress · breach in 38m', time: '09:26' },
       { kind: 'msg', author: 'Lauren Geldenhuys', photo: '', initials: 'LG', time: '09:31', text: 'Rossgrove sees the same clock we do on this one. If we are going to breach, they hear it from us first, not from a partner standing in a corridor.' },
       { kind: 'msg', author: 'Anita Chetty', photo: '', initials: 'AC', time: '09:36', text: 'Unrelated but worth flagging: reception forwarded a phishing attempt this morning. Reported, blocked, and I have added the sender pattern to the wiki so first-line recognises the next one.', thread: '2 replies · last 09:39' },
@@ -1179,7 +1179,7 @@ class Component extends DCLogic {
       sendBg: this.state.draft.trim() ? '#00c3ff' : (dark ? 'rgba(0,195,255,0.45)' : 'rgba(0,195,255,0.45)'),
 
       metrics: [
-        { icon: 'confirmation_number', label: 'Total requests', value: '248', delta: '+12 this week', note: 'Across 18 channels', color: 'inherit', deltaColor: '#00c3ff' },
+        { icon: 'confirmation_number', label: 'Total requests', value: '248', delta: '+12 this week', note: 'Raised in this channel', color: 'inherit', deltaColor: '#00c3ff' },
         { icon: 'pending_actions', label: 'Open requests', value: '42', delta: '−8 vs last week', note: 'Median age 1.4 days', color: 'inherit', deltaColor: ok },
         { icon: 'person_search', label: 'Unassigned', value: '7', delta: 'Oldest 3h 12m', note: 'Needs an owner', color: 'inherit', deltaColor: warn },
         { icon: 'timer_off', label: 'SLA at risk', value: '3', delta: 'Next breach in 42m', note: '2 first-response, 1 resolution', color: 'inherit', deltaColor: bad }
