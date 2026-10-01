@@ -52,15 +52,6 @@ export const MODELS: Record<string, CompetitorModel> = {
       };
     },
   },
-  teams: {
-    name: "Microsoft Teams",
-    plan: "Microsoft 365 Business Basic, annual terms",
-    guestsAreFreeToo: true,
-    price: (team) => ({
-      total: Math.round(team * 7),
-      basis: `${fmtSeats(team, 7)}. Guest access is included, so the outside people do not add to the licence bill.`,
-    }),
-  },
   basecamp: {
     name: "Basecamp",
     plan: "flat, whole account",

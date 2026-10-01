@@ -2,6 +2,8 @@
 
 Step 1 of the work order in `CLAUDE.md`. No project code has been written. Everything below comes from scanning `design/` on 22 September 2026.
 
+> **Later change, 1 October 2026.** `/compare/teams/` was removed from the site entirely. Microsoft Teams is a meetings tool whose closest free substitutes are Zoom and Skype, so it is not a category Kolabr compares itself against. The design file, the logo and every nav link to it are gone. Everything below still describes the state on the date given.
+
 **Short version**
 
 - 35 of the HTML files are site pages. They map cleanly onto 30 of the 43 expected routes, plus 4 extra pages (Mobile app, Small details, Cookies, Refunds).

@@ -40,7 +40,6 @@ export const META_ROUTES = [
   "/use-cases/logistics/",
   "/use-cases/manufacturing/",
   "/compare/slack/",
-  "/compare/teams/",
   "/compare/basecamp/",
   "/compare/notion/",
   "/compare/clickup/",

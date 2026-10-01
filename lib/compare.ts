@@ -34,7 +34,6 @@ import { loadContent, requireKeys } from "./content-store";
 
 export const COMPARE_SLUGS = [
   "slack",
-  "teams",
   "basecamp",
   "notion",
   "clickup",

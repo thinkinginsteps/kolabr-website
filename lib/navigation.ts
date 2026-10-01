@@ -45,7 +45,6 @@ export const useCases = {
 
 export const compare = {
   slack: { label: "Slack", href: "/compare/slack", blurb: "Chat everywhere, clients behind a paid account" },
-  teams: { label: "Teams", href: "/compare/teams", blurb: "Built for inside the company, three ways to add anyone else" },
   basecamp: { label: "Basecamp", href: "/compare/basecamp", blurb: "Projects that end, and free-standing to-do lists" },
   notion: { label: "Notion", href: "/compare/notion", blurb: "Documents in one place, the conversation somewhere else" },
   clickup: { label: "ClickUp", href: "/compare/clickup", blurb: "Task tracking for your team, not for your clients" },

@@ -140,11 +140,6 @@
     "description": "Kolabr and Slack compared feature by feature: what guests cost, how clients join, requests with response targets, the channel wiki, history and price.",
     "name": "Kolabr vs Slack"
   },
-  "/compare/teams/": {
-    "title": "Microsoft Teams alternative for clients | Kolabr vs Teams",
-    "description": "Kolabr and Microsoft Teams compared feature by feature: guest access and its cost, tracked requests, the channel wiki, pricing, and where Teams still wins.",
-    "name": "Kolabr vs Teams"
-  },
   "/compare/basecamp/": {
     "title": "Basecamp alternative for client work | Kolabr vs Basecamp",
     "description": "Kolabr and Basecamp compared feature by feature: channels against projects, requests with owners and response targets, tasks, the wiki and what each costs.",

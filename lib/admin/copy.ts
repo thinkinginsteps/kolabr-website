@@ -16,7 +16,7 @@ export const COPY_FILES = {
   "use-cases": { label: "Use case pages", note: "The twelve industry pages." },
   "use-case-schools": { label: "Schools page", note: "The schools use case, which has its own layout." },
   "use-case-faqs": { label: "Use case questions", note: "The FAQ shown on each use case page." },
-  compare: { label: "Compare pages", note: "Kolabr against Slack, Teams, Basecamp, Notion, ClickUp and Zendesk." },
+  compare: { label: "Compare pages", note: "Kolabr against Slack, Basecamp, Notion, ClickUp and Zendesk." },
   legal: { label: "Legal pages", note: "Privacy, terms, cookies and refunds." },
 } as const;
 

@@ -28,7 +28,6 @@ import logoBasecamp from "@/assets/images/logo-basecamp.webp";
 import logoClickup from "@/assets/images/logo-clickup.webp";
 import logoNotion from "@/assets/images/logo-notion.webp";
 import logoSlack from "@/assets/images/logo-slack.webp";
-import logoTeams from "@/assets/images/logo-teams.webp";
 import logoZendesk from "@/assets/images/logo-zendesk.webp";
 
 export const metadata = pageMetadata("/");
@@ -261,7 +260,6 @@ export default function HomePage() {
           <CompareLogoGrid
             items={[
               { name: "Slack", logo: logoSlack, alt: "Slack", href: compare.slack.href },
-              { name: "Teams", logo: logoTeams, alt: "Microsoft Teams", href: compare.teams.href },
               { name: "Basecamp", logo: logoBasecamp, alt: "Basecamp", href: compare.basecamp.href },
               { name: "Notion", logo: logoNotion, alt: "Notion", href: compare.notion.href },
               { name: "ClickUp", logo: logoClickup, alt: "ClickUp", href: compare.clickup.href },

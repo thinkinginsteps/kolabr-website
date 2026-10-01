@@ -3,6 +3,8 @@
 Revised 23 September 2026 for search intent and applied to `lib/page-meta.ts`. Every title is 50
 to 60 characters, every description 140 to 155, no em dashes, and the copy rules are kept.
 
+> **Later change, 1 October 2026.** `/compare/teams/` was removed from the site entirely. Microsoft Teams is a meetings tool whose closest free substitutes are Zoom and Skype, so it is not a category Kolabr compares itself against. The design file, the logo and every nav link to it are gone. Everything below still describes the state on the date given.
+
 ## What changed, and why
 
 1. **The search phrase leads, the brand comes last.** Titles read `Kolabr | thing` before. Nobody
