@@ -25,7 +25,7 @@ only visible three rows deep in the pricing table.
 | 1 | Business hours on the SLA clock | Zendesk | We show the clock to the client. A clock running through Saturday is wrong in front of the customer. |
 | 1 | Time on a request (a duration field and an export, not timesheets) | ClickUp | Agencies, law firms and accounting firms all bill by time. Three of our named use cases. |
 | 2 | Board and calendar views of a channel's requests | ClickUp, Basecamp, Notion | Table stakes. Within one channel, so it does not touch the channel boundary. |
-| 2 | Google Drive, OneDrive, Dropbox file pickers | All five | Clients keep files there. Re-uploading is where "one place for everything" starts to feel like a lie. Design note: [cloud-drive-links.md](cloud-drive-links.md). |
+| 2 | Google Drive, OneDrive, Dropbox file pickers | All five | Saves hunting for a file, nothing more. The file is still copied into the channel, because the channel has to hold the record. Design note: [file-attachments.md](file-attachments.md). |
 | 2 | Two-way calendar sync *(planned)* | All five | An event that does not reach the client's Outlook did not happen. |
 | 3 | Real-time co-editing on wiki pages | Notion, ClickUp, Basecamp | |
 | 3 | Published public help centre | Zendesk | |
