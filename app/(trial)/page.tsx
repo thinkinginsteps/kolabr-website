@@ -61,8 +61,8 @@ export default function HomePage() {
             </h1>
             <p className="max-w-[520px] text-[20.5px] leading-normal text-pretty text-ink-muted">
               Kolabr is a collaboration app that puts your team and the clients, partners and suppliers you work with in
-              one shared channel, with the chat, the requests it creates, the meetings about it and the wiki it leaves
-              behind all in the same place.
+              one shared channel, with the chat, the requests it creates, the meetings about it and the wiki that saves
+              explaining it twice, all in the same place.
             </p>
             <div className="flex flex-wrap gap-3 pt-1.5">
               <ButtonLink href={SIGNUP_PATH} size="lg">

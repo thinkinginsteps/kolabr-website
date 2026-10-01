@@ -96,7 +96,7 @@
           "title": "Knowledge and history",
           "rows": [
             [
-              "Finding the answer you already gave",
+              "Not explaining the same thing every month",
               "Built in, per channel, readable by guests.",
               "Canvases and pinned posts sit in a channel; there is no structured per-channel wiki."
             ],
@@ -160,7 +160,7 @@
           },
           {
             "title": "Nothing scrolls away",
-            "body": "Decisions become requests and articles instead of messages that were true last Tuesday and are now four thousand lines up."
+            "body": "A promise becomes a numbered request instead of a message that was true last Tuesday and is now four thousand lines up. How that client’s work is actually done is written up once on the channel’s wiki."
           }
         ]
       },
@@ -179,8 +179,8 @@
             "body": "Not a single-channel guest on an allowance. A person with an email address, in as many channels as the work needs, for ever."
           },
           {
-            "title": "A wiki where the conversation is",
-            "body": "The answer you gave last March is a page in that channel, not a search through four years of messages."
+            "title": "A wiki in the channel, written for that client",
+            "body": "Scope, process and the things this client always asks about, written up once and readable by them, so the same explanation is not typed into the chat every month."
           },
           {
             "title": "A clock everyone can see",
@@ -203,7 +203,7 @@
         },
         {
           "lead": "The same answer stops being typed twice",
-          "text": "What you explained in March is a page in that channel, so a new starter and a new client contact both find it without a search through four years of messages."
+          "text": "Scope, process and the quirks of that account go on the channel’s wiki once, so a new starter and a new client contact read it instead of asking you."
         },
         {
           "lead": "One renewal, not three",
@@ -409,7 +409,7 @@
               "Not included; use an outside service."
             ],
             [
-              "Finding the answer you already gave",
+              "Not explaining the same thing every month",
               "Built in, per channel, readable by guests.",
               "Docs and files per project."
             ],
@@ -537,8 +537,8 @@
           "text": "A to-do says what. A request says who, by when, and whether the clock has run out, and the client can read it without asking."
         },
         {
-          "lead": "The answer you gave last year is findable",
-          "text": "Each channel carries its own wiki, so scope notes, process and standing answers stop living in a message that scrolled past."
+          "lead": "You stop explaining the same things every job",
+          "text": "Each channel carries its own wiki, so the scope, the process and the way that client likes things done are written up once rather than re-explained at the start of the next piece of work."
         },
         {
           "lead": "Work with no end date fits",
@@ -652,7 +652,7 @@
     "hero": {
       "eyebrow": "Kolabr compared",
       "title": "Kolabr vs Notion",
-      "lede": "A Notion setup that runs client work is really three bills and one volunteer: Notion, the chat tool beside it, the tracker somebody built, and the person who keeps that tracker alive. Kolabr is one channel per client where the conversation, the numbered request and the article explaining it are already there on the day you open it. Here are the two side by side on what you build, what you maintain and what it costs.",
+      "lede": "A Notion setup that runs client work is really three bills and one volunteer: Notion, the chat tool beside it, the tracker somebody built, and the person who keeps that tracker alive. Kolabr is one channel per client where the conversation, the numbered request and the wiki article saying how that kind of work is handled are already there on the day you open it. Here are the two side by side on what you build, what you maintain and what it costs.",
       "summary": [
         {
           "title": "The short version",
@@ -754,7 +754,7 @@
           "title": "Knowledge",
           "rows": [
             [
-              "Finding the answer you already gave",
+              "Not explaining the same thing every month",
               "Built in, per channel, readable by guests, with no setup.",
               "Documents and databases in a workspace you structure yourself."
             ],
@@ -944,7 +944,7 @@
       "items": [
         {
           "title": "Can Notion replace a chat tool?",
-          "body": "Not really, and most teams do not ask it to. Notion carries comments on pages, but the running conversation of a working day happens somewhere else, which is why so many teams pay for Notion and a chat tool together. Kolabr puts the conversation, the request it produced and the article explaining it in one channel."
+          "body": "Not really, and most teams do not ask it to. Notion carries comments on pages, but the running conversation of a working day happens somewhere else, which is why so many teams pay for Notion and a chat tool together. Kolabr puts the conversation, the request it produced and the article saying how that kind of work is handled in one channel."
         },
         {
           "title": "Can I build a request tracker in Notion?",
@@ -978,7 +978,7 @@
         },
         {
           "lead": "By Friday",
-          "text": "The first requests have numbers, owners and dates, and the first wiki pages wrote themselves out of questions you were answering anyway."
+          "text": "The first requests have numbers, owners and dates, and you have written the two or three wiki articles that stop the same questions coming back."
         },
         {
           "lead": "Week four",
@@ -1099,7 +1099,7 @@
               "Through an integration."
             ],
             [
-              "Finding the answer you already gave",
+              "Not explaining the same thing every month",
               "Built in, per channel, readable by guests.",
               "Docs, organised however you decide."
             ],
@@ -1444,7 +1444,7 @@
               "Tasks are handled through the ticket itself or a connected tool."
             ],
             [
-              "Finding the answer you already gave",
+              "Not explaining the same thing every month",
               "Built in, per channel, readable by guests, with no separate build.",
               "A help centre, built and published as its own property."
             ],
