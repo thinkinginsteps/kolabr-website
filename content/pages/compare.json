@@ -236,29 +236,6 @@
         "text": "per active user per month, or $7.25 to $15 on annual terms. A guest who needs a second channel is billed at the member rate."
       }
     },
-    "concessions": {
-      "id": "scope",
-      "title": "Where Kolabr stops, and what you get for it",
-      "lede": "Four limits worth knowing before you move. Each one is a deliberate trade, and the second half of each line is what it buys you.",
-      "cards": [
-        {
-          "title": "An app marketplace",
-          "body": "There is no directory of integrations to browse. What a client project needs is already in the product, which is why a new channel works on the day you open it rather than after a week of wiring."
-        },
-        {
-          "title": "A developer platform",
-          "body": "If your engineers rely on bots and workflows they built, those stay in Slack. The client-facing half moves, and that is the half where the guest bill and the missing accountability actually live."
-        },
-        {
-          "title": "A place for everything at once",
-          "body": "A channel has a subject and a membership, so there is no single room holding your whole company. That is exactly why a client can be added to one channel without a conversation about what else they might see."
-        },
-        {
-          "title": "A one-day migration",
-          "body": "You start with a single client channel rather than a cutover weekend. Nothing has to be exported before you can see it working, and the internal side follows when people ask for it, usually inside a fortnight."
-        }
-      ]
-    },
     "faq": {
       "title": "Questions people ask before moving",
       "items": [
@@ -570,29 +547,6 @@
         "price": "$25 to $299 flat",
         "text": "a month for the whole account, not per user. $25 covers twenty people, $59 and $99 cover any number, $299 is billed annually. Clients and contractors count towards the capped tiers."
       }
-    },
-    "concessions": {
-      "id": "scope",
-      "title": "Where Kolabr stops, and what you get for it",
-      "lede": "Four limits worth knowing before you move. Each one is a deliberate trade, and the second half of each line is what it buys you.",
-      "cards": [
-        {
-          "title": "A planning tool",
-          "body": "No Gantt charts, dependency chains or resource levelling. Leaving the planning where it is costs you nothing, because the half that moves is the client-facing half, which is where the promises go missing today."
-        },
-        {
-          "title": "A standalone task manager",
-          "body": "Tasks exist inside a request and nowhere else. That is what stops a list filling with work nobody remembers agreeing to, and it is why closing a request closes everything underneath it."
-        },
-        {
-          "title": "A time-tracking system",
-          "body": "Requests record what was asked and when it was answered, not what to bill. Keep whatever you invoice from, and gain a record of the promise sitting next to the conversation that made it."
-        },
-        {
-          "title": "A one-day migration",
-          "body": "You start with one client channel rather than a cutover. Nothing has to be exported before you can see it working, and the Basecamp archive stays readable for as long as you want it."
-        }
-      ]
     },
     "faq": {
       "title": "Questions people ask before moving",
@@ -916,29 +870,6 @@
         "text": "per member per month, or $10 to $20 on annual terms, with Enterprise quoted. Guests are free and do not consume a member seat, but see only the pages they are invited to."
       }
     },
-    "concessions": {
-      "id": "scope",
-      "title": "Where Kolabr stops, and what you get for it",
-      "lede": "Four limits worth knowing before you move. Each one is a deliberate trade, and the second half of each line is what it buys you.",
-      "cards": [
-        {
-          "title": "A database builder",
-          "body": "No custom schemas, relations or formula fields. Every channel has the same shape, which is why a new one is useful immediately and still makes sense to somebody who joins in two years."
-        },
-        {
-          "title": "A company encyclopaedia",
-          "body": "The wiki is scoped to a channel on purpose. That is what keeps it short enough to stay true, and short enough that a client reads it instead of asking you the question."
-        },
-        {
-          "title": "A publishing tool",
-          "body": "No public sites or forms. Kolabr is for the named people in the channel, which is also why nothing has to be tidied up before a client can be let into it."
-        },
-        {
-          "title": "A one-day migration",
-          "body": "You start with one client channel rather than a restructure. Nothing has to be exported, and whatever lives in Notion today carries on living there."
-        }
-      ]
-    },
     "faq": {
       "title": "Questions people ask before moving",
       "items": [
@@ -1261,29 +1192,6 @@
         "text": "per user per month, or $7 to $12 on annual terms, with Enterprise quoted and AI per seat. Read-only guests are free; a guest who can comment or approve draws on an allowance."
       }
     },
-    "concessions": {
-      "id": "scope",
-      "title": "Where Kolabr stops, and what you get for it",
-      "lede": "Four limits worth knowing before you move. Each one is a deliberate trade, and the second half of each line is what it buys you.",
-      "cards": [
-        {
-          "title": "A planning tool",
-          "body": "No sprints, dependency chains, workload charts or Gantt views. Leaving the delivery planning where it is costs you nothing, because the half that moves is the client-facing half, which is the half ClickUp meters."
-        },
-        {
-          "title": "A standalone task manager",
-          "body": "Tasks exist inside a request and nowhere else. That is what stops a list filling with work nobody remembers agreeing to, and it is why closing a request closes everything underneath it."
-        },
-        {
-          "title": "An automation platform",
-          "body": "Routing, response targets and playbooks are built in, but there is no builder for arbitrary workflows. In exchange there is nothing to maintain, and nothing that breaks quietly a year after its author left."
-        },
-        {
-          "title": "A time-tracking system",
-          "body": "Requests record what was asked and when it was answered, not what to bill. Keep whatever you invoice from, and gain a record of the promise sitting next to the conversation that made it."
-        }
-      ]
-    },
     "faq": {
       "title": "Questions people ask before moving",
       "items": [
@@ -1596,29 +1504,6 @@
         "price": "$19 to $115",
         "text": "per agent per month on annual terms, monthly rates are not published. Enterprise is quoted, with per-agent add-ons and per-resolution AI charges on top."
       }
-    },
-    "concessions": {
-      "id": "scope",
-      "title": "Where Kolabr stops, and what you get for it",
-      "lede": "Four limits worth knowing before you move. Each one is a deliberate trade, and the second half of each line is what it buys you.",
-      "cards": [
-        {
-          "title": "A contact centre",
-          "body": "No IVR, call queues, skills-based routing or workforce management. If you run phone support at scale you need software built for it, and Kolabr is built for the forty accounts where the caller has a name."
-        },
-        {
-          "title": "A public help centre",
-          "body": "The wiki is for the people in the channel, not a published site for the general public. That is why it can carry the specifics of one client’s setup instead of being written for strangers."
-        },
-        {
-          "title": "A deflection engine",
-          "body": "Kolabr does not try to stop clients contacting you. With named accounts the contact is the relationship, and the thing worth reducing is how long an answer takes, not how many questions arrive."
-        },
-        {
-          "title": "Thousands of requests a month",
-          "body": "Kolabr suits tens of clients with real relationships rather than anonymous volume. That is the whole reason a channel can hold the history a queue throws away."
-        }
-      ]
     },
     "faq": {
       "title": "Questions people ask before moving",

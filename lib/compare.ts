@@ -30,11 +30,6 @@ export type Comparison = {
     kolabr: { name: string; price: string; text: string };
     other: { name: string; price: string; text: string };
   };
-  /**
-   * The limits, stated plainly, with what each one buys. Below the cost section on purpose: the
-   * same sentence read before the gain is a warning, and read after it is a reason.
-   */
-  concessions: { id: string; title: string; lede: Rich; cards: Card[] };
   faq: { title: string; items: Card[] };
   /** One week, three checkpoints. The last thing before the call to action. */
   proof: { title: string; lede: Rich; steps: Step[] };

@@ -289,17 +289,7 @@ function Faq({ faq }: { faq: Comparison["faq"] }) {
   );
 }
 
-/* ---------- Concessions and proof ---------- */
-
-/** The limits. Same card layout as the rest of the page, placed after the price. */
-function Concessions({ block }: { block: Comparison["concessions"] }) {
-  return (
-    <NarrowBand id={block.id} labelledBy={`${block.id}-h`}>
-      <BandHead id={`${block.id}-h`} title={block.title} lede={block.lede} />
-      <WhiteCards cards={block.cards} />
-    </NarrowBand>
-  );
-}
+/* ---------- Proof ---------- */
 
 /**
  * One week, three checkpoints, on a dark panel so it reads as the last word before the call to
@@ -358,7 +348,6 @@ export function ComparePage({ content: c, slug }: { content: Comparison; slug: s
       ))}
       <Outcome outcome={c.outcome} />
       <Cost cost={c.cost} slug={slug} />
-      <Concessions block={c.concessions} />
       <Faq faq={c.faq} />
       <Proof proof={c.proof} />
       <CtaBand width={680} title={c.cta.title} body={c.cta.body} note={c.cta.disclaimer} />
