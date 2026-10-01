@@ -109,31 +109,17 @@ These follow from the sealed-channel model and should never appear on a gap list
 - A personal "my work" queue spanning channels
 - Roll-up reporting across clients
 
-**But there is a contradiction on the live site about the third one.** Three use-case pages promise
-exactly the cross-channel roll-up the model forbids, in the section image alt text:
+**Decided, 1 October 2026.** A channel shows that channel, and nothing on the site may suggest
+otherwise. Settings already sit outside the channel system: they define things once and those
+definitions apply inside channels. Analytics will be a third area of that same kind, outside the
+channel system, owner-side only and never reachable by a guest, and that is where cross-channel
+numbers live. So the roll-up does exist as a product, it is simply not a channel view and must
+never be drawn as one.
 
-- `use-cases.accounting-firms.oversight` : "The practice dashboard: open items **across client channels**"
-- `use-cases.it-service-providers.oversight` : "The provider dashboard: requests this month **across client channels**"
-- `use-cases.marketing-agencies.oversight` : "The agency dashboard: open items **across client channels**"
-
-The body copy under each one is model-compliant ("on the client's own channel dashboard", "every
-client keeps its own score"), so the section is arguing with itself. The section headings lean the
-same way: "Which contracts are healthy, and which are quietly losing money" is a cross-client
-question.
-
-This needs a decision, because it is the commercial pressure point of the whole model. A firm with
-forty clients will want one number. Options, roughly:
-
-1. Hold the line. Fix the three alt texts and the headings, and accept that the owner's answer is
-   "open each channel".
-2. Allow a roll-up that is owner-only and counts only, never content: open, breaching, resolved,
-   per channel, visible to nobody outside your company. The channels stay sealed; the tally does not
-   leak anything a guest could see.
-3. Allow a full cross-channel view and drop the sealed-channel claim from the marketing.
-
-Option 2 looks like the one that keeps both promises, but it is a product decision, not a copy one.
-
----
+Applied in commit `bdc5110`: the twelve industry dashboards and the schools dashboard are now
+channel-scoped, and the copy around them with it. Nothing on the site markets Analytics yet,
+because it is not built and is not on `/pricing`. When it ships it needs its own page and its own
+feature row, drawn with its own chrome so a reader never mistakes it for something inside a channel.
 
 ## What to verify before using any of this
 
