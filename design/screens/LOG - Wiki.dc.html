@@ -485,7 +485,7 @@ input, textarea, select { caret-color: transparent !important; }
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 14px; padding-bottom: 18px; border-bottom: 1px solid var(--hairline, rgba(0,0,0,0.09));">
             <span style="display: inline-flex; align-items: center; gap: 7px;">
               <span aria-label="MR" style="width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, #4a6b78, #33505b); color: #ffffff; font-size: 9px; font-weight: 600;">MR</span>
-              <span style="font-size: 12.5px; font-weight: 500;">Marlise Roux</span>
+              <span style="font-size: 12.5px; font-weight: 500;">Melissa Rowe</span>
             </span>
             <span style="font-size: 12.5px; color: var(--muted, #6b8290);">updated 2 days ago · v14</span>
             <span style="width: 1px; height: 13px; background: var(--hairline, rgba(0,0,0,0.10));"></span>
@@ -638,9 +638,9 @@ const THEMES = {
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
   { initials: 'CS', name: 'Craig Stevens', preview: 'Will CH-4471 still make the 14:00 slot?', unread: true, customer: true },
-  { initials: 'G1', name: 'Control room', unread: true, preview: 'Thabang: reefer alarm on CH-4471', customer: false, href: '' },
-  { initials: 'ZM', name: 'Zola Mbatha', preview: 'POD signed short by two pallets.', unread: false, customer: true },
-  { initials: 'GB', name: 'Gert Badenhorst', preview: 'Backup unit is 40 min out.', unread: false, customer: false }
+  { initials: 'G1', name: 'Control room', unread: true, preview: 'Travis: reefer alarm on CH-4471', customer: false, href: '' },
+  { initials: 'ZM', name: 'Zara Mathews', preview: 'POD signed short by two pallets.', unread: false, customer: true },
+  { initials: 'GB', name: 'Glenn Barrett', preview: 'Backup unit is 40 min out.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -667,27 +667,27 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'JV', name: 'Janine Venter', role: 'Client · Head of logistics', email: 'janine.venter@coldharvest.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'JV', name: 'Janine Vance', role: 'Client · Head of logistics', email: 'janine.vance@coldharvest.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'MR', name: 'Marlise Roux', admin: true, role: 'Channel admin · Account manager', email: 'marlise.roux@rouxlogistics.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'TN', name: 'Thabang Nkosi', role: 'Controller · Night shift', email: 'thabang.nkosi@rouxlogistics.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'GB', name: 'Gert Badenhorst', role: 'Fleet supervisor', email: 'gert.badenhorst@rouxlogistics.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'FA', name: 'Farhana Adams', role: 'Claims and compliance', email: 'farhana.adams@rouxlogistics.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'MR', name: 'Melissa Rowe', admin: true, role: 'Channel admin · Account manager', email: 'melissa.rowe@rouxlogistics.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'TN', name: 'Travis Nelson', role: 'Controller · Night shift', email: 'travis.nelson@rouxlogistics.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'GB', name: 'Glenn Barrett', role: 'Fleet supervisor', email: 'glenn.barrett@rouxlogistics.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'FA', name: 'Farrah Adams', role: 'Claims and compliance', email: 'farrah.adams@rouxlogistics.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'CS', name: 'Craig Stevens', role: 'Client · Supply chain manager', email: 'craig.stevens@coldharvest.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'ZM', name: 'Zola Mbatha', role: 'Client · Depot receiving', email: 'zola.mbatha@coldharvest.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'ZM', name: 'Zara Mathews', role: 'Client · Depot receiving', email: 'zara.mathews@coldharvest.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const CH_CATS = ['All', 'Operations', 'Commercial', 'Other accounts', 'Internal'];
 
 const PEOPLE = {
-  MR: { name: 'Marlise Roux', email: 'marlise.roux@rouxlogistics.com', role: 'Account manager' },
-  TN: { name: 'Thabang Nkosi', email: 'thabang.nkosi@rouxlogistics.com', role: 'Controller · Night shift' },
-  GB: { name: 'Gert Badenhorst', email: 'gert.badenhorst@rouxlogistics.com', role: 'Fleet supervisor' },
-  FA: { name: 'Farhana Adams', email: 'farhana.adams@rouxlogistics.com', role: 'Claims and compliance' },
-  RP: { name: 'Ridwaan Patel', email: 'ridwaan.patel@rouxlogistics.com', role: 'Planner' },
+  MR: { name: 'Melissa Rowe', email: 'melissa.rowe@rouxlogistics.com', role: 'Account manager' },
+  TN: { name: 'Travis Nelson', email: 'travis.nelson@rouxlogistics.com', role: 'Controller · Night shift' },
+  GB: { name: 'Glenn Barrett', email: 'glenn.barrett@rouxlogistics.com', role: 'Fleet supervisor' },
+  FA: { name: 'Farrah Adams', email: 'farrah.adams@rouxlogistics.com', role: 'Claims and compliance' },
+  RP: { name: 'Rohan Patel', email: 'rohan.patel@rouxlogistics.com', role: 'Planner' },
   CS: { name: 'Craig Stevens', email: 'craig.stevens@coldharvest.com', role: 'Client · Supply chain manager' },
-  ZM: { name: 'Zola Mbatha', email: 'zola.mbatha@coldharvest.com', role: 'Client · Depot receiving' }
+  ZM: { name: 'Zara Mathews', email: 'zara.mathews@coldharvest.com', role: 'Client · Depot receiving' }
 };
 
 const AVATAR_BGS = ['linear-gradient(150deg, #33505b, #557a88)', 'linear-gradient(150deg, #00c3ff, #0a9fd4)', 'linear-gradient(150deg, #7c6cf0, #5c4bd8)'];
@@ -732,8 +732,8 @@ const WIKI_TREE = [
 const WIKI_SECTION_OF = { w4: 'Exceptions' };
 
 const ACCOUNTS = [
-  { name: 'Marlise Roux', email: 'marlise.roux@rouxlogistics.com', role: 'Account manager · Roux Logistics', initials: 'MR', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Carrier' },
-  { name: 'Marlise Roux', email: 'marlise@coldharvest.com', initials: 'MR', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Logistics team · Cold Harvest' }
+  { name: 'Melissa Rowe', email: 'melissa.rowe@rouxlogistics.com', role: 'Account manager · Rowe Logistics', initials: 'MR', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Carrier' },
+  { name: 'Melissa Rowe', email: 'melissa@coldharvest.com', initials: 'MR', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Logistics team · Cold Harvest' }
 ];
 
 const goPage = (href) => (e) => {
@@ -975,8 +975,8 @@ class Component extends DCLogic {
 
       notifications: [
         { icon: 'priority_high', text: 'Cold chain alert: “CH-4471 reefer at 10°F, spec 0°F”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Janine Venter joined Exceptions & delays as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Farhana Adams assigned you the short-delivery claim', time: '1 hr ago', unread: true },
+        { icon: 'person_add', text: 'Janine Vance joined Exceptions & delays as a guest', time: '26 min ago', unread: true },
+        { icon: 'assignment_ind', text: 'Farrah Adams assigned you the short-delivery claim', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'POD uploaded and matched: CH-4465', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Control room', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
@@ -1043,7 +1043,7 @@ class Component extends DCLogic {
       ].map(x => ({ ...x, onClick: goPage(x.href) })),
       chats: [
         { initials: '', group: true, name: 'Control room', unread: '2', avatarBg: dark ? 'rgba(255,255,255,0.12)' : 'rgba(51,80,91,0.12)', avatarFg: 'var(--topIcon, #33505b)', onClick: goPage('Desktop Admin - Group Chat.dc.html'), onEnter: () => {}, onLeave: () => {} },
-        { initials: 'JV', group: false, name: 'Janine Venter', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
+        { initials: 'JV', group: false, name: 'Janine Vance', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
           onEnter: (e) => this.showCard(SHARON, e.currentTarget), onLeave: () => this.scheduleHide() }
       ],
       members: MEMBERS.map((m, i) => ({

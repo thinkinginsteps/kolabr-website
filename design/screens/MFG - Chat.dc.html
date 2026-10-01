@@ -707,10 +707,10 @@ const THEMES = {
 
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
-  { initials: 'NH', name: 'Neil Hartzenberg', preview: 'Containment plan by 16:00 please.', unread: true, customer: true },
-  { initials: 'G1', name: 'Shift leads', unread: true, preview: 'Werner: line 2 down, tool change', customer: false, href: '' },
+  { initials: 'NH', name: 'Neil Hoffman', preview: 'Containment plan by 16:00 please.', unread: true, customer: true },
+  { initials: 'G1', name: 'Shift leads', unread: true, preview: 'Walter: line 2 down, tool change', customer: false, href: '' },
   { initials: 'TF', name: 'Tasneem Fisher', preview: 'Can you still ship Friday?', unread: false, customer: true },
-  { initials: 'KM', name: 'Kagiso Mokoena', preview: '8D is drafted for your review.', unread: false, customer: false }
+  { initials: 'KM', name: 'Kyle Mitchell', preview: '8D is drafted for your review.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -737,48 +737,48 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'BM', name: 'Bongani Mtshali', role: 'Customer · Programme manager', email: 'bongani.mtshali@torqueautomotive.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'BM', name: 'Brandon McCall', role: 'Customer · Programme manager', email: 'brandon.mccall@torqueautomotive.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'IB', name: 'Ilse Barnard', admin: true, role: 'Channel admin · Plant manager', email: 'ilse.barnard@barnardprecision.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'KM', name: 'Kagiso Mokoena', role: 'Quality manager', email: 'kagiso.mokoena@barnardprecision.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'WS', name: 'Werner Schoeman', role: 'Production supervisor', email: 'werner.schoeman@barnardprecision.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'PD', name: 'Priya Dlamini', role: 'Process engineer', email: 'priya.dlamini@barnardprecision.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'NH', name: 'Neil Hartzenberg', role: 'Customer · Supplier quality', email: 'neil.hartzenberg@torqueautomotive.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'IB', name: 'Iris Barnard', admin: true, role: 'Channel admin · Plant manager', email: 'iris.barnard@barnardprecision.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'KM', name: 'Kyle Mitchell', role: 'Quality manager', email: 'kyle.mitchell@barnardprecision.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'WS', name: 'Walter Shaw', role: 'Production supervisor', email: 'walter.shaw@barnardprecision.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'PD', name: 'Priya Dixon', role: 'Process engineer', email: 'priya.dixon@barnardprecision.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'NH', name: 'Neil Hoffman', role: 'Customer · Supplier quality', email: 'neil.hoffman@torqueautomotive.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
   { initials: 'TF', name: 'Tasneem Fisher', role: 'Customer · Buyer', email: 'tasneem.fisher@torqueautomotive.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
-const PINNED = { text: 'Suspect parts get quarantined and reported in this channel the same shift. Nothing ships on a maybe, and nobody sorts it quietly.', meta: 'Ilse Barnard · Tue' };
+const PINNED = { text: 'Suspect parts get quarantined and reported in this channel the same shift. Nothing ships on a maybe, and nobody sorts it quietly.', meta: 'Iris Barnard · Tue' };
 
 const THREAD = {
-  author: 'Kagiso Mokoena', photo: '', initials: 'KM', time: '09:12',
+  author: 'Kyle Mitchell', photo: '', initials: 'KM', time: '09:12',
   text: 'CMM flagged bore diameter on the housing at 42.06mm against 42.00 +0.03. Four parts out of a sample of twenty from last night’s run. Quarantining the batch now.',
   replies: [
-    { author: 'Werner Schoeman', initials: 'WS', bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', time: '09:14', text: 'That is the run after the tool change on die 7. Wear on the reamer would explain drift in one direction.' },
-    { author: 'Neil Hartzenberg', initials: 'NH', bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', time: '09:16', text: 'Torque here. How many are already with us, and do I need to stop our line 2? I need a containment plan by 16:00 today.' },
-    { author: 'Priya Dlamini', initials: 'PD', bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)', time: '09:17', text: 'Two pallets shipped Tuesday, 480 parts. Sorting data says the drift started mid-shift, so roughly a third are suspect, not all of them.' },
-    { author: 'Kagiso Mokoena', initials: 'KM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', time: '09:18', text: 'Containment on your side and ours by 14:00, 8D opened, root cause section by Friday. I will post it here rather than emailing it separately.' }
+    { author: 'Walter Shaw', initials: 'WS', bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', time: '09:14', text: 'That is the run after the tool change on die 7. Wear on the reamer would explain drift in one direction.' },
+    { author: 'Neil Hoffman', initials: 'NH', bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', time: '09:16', text: 'Torque here. How many are already with us, and do I need to stop our line 2? I need a containment plan by 16:00 today.' },
+    { author: 'Priya Dixon', initials: 'PD', bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)', time: '09:17', text: 'Two pallets shipped Tuesday, 480 parts. Sorting data says the drift started mid-shift, so roughly a third are suspect, not all of them.' },
+    { author: 'Kyle Mitchell', initials: 'KM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', time: '09:18', text: 'Containment on your side and ours by 14:00, 8D opened, root cause section by Friday. I will post it here rather than emailing it separately.' }
   ]
 };
 
 const GROUP = [
-  { initials: 'IB', name: 'Ilse Barnard', role: 'Channel admin · Support lead', email: 'ilse.barnard@barnardprecision.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'WS', name: 'Werner Schoeman', role: 'Production supervisor', email: 'werner.schoeman@barnardprecision.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'PD', name: 'Priya Dlamini', role: 'Process engineer', email: 'priya.dlamini@barnardprecision.com', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'NH', name: 'Neil Hartzenberg', role: 'Customer · Torque', email: 'neil.hartzenberg@torqueautomotive.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'KM', name: 'Kagiso Mokoena', role: 'Quality manager', email: 'kagiso.mokoena@barnardprecision.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'IB', name: 'Iris Barnard', role: 'Channel admin · Support lead', email: 'iris.barnard@barnardprecision.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'WS', name: 'Walter Shaw', role: 'Production supervisor', email: 'walter.shaw@barnardprecision.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'PD', name: 'Priya Dixon', role: 'Process engineer', email: 'priya.dixon@barnardprecision.com', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'NH', name: 'Neil Hoffman', role: 'Customer · Torque', email: 'neil.hoffman@torqueautomotive.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'KM', name: 'Kyle Mitchell', role: 'Quality manager', email: 'kyle.mitchell@barnardprecision.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
   { initials: 'TF', name: 'Tasneem Fisher', role: 'Customer · Torque', email: 'tasneem.fisher@torqueautomotive.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
-  { initials: 'BM', name: 'Bongani Mtshali', role: 'Customer · Torque', email: 'bongani.mtshali@torqueautomotive.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
-  { initials: 'RV', name: 'Ruan van Niekerk', role: 'Maintenance lead', email: 'ruan.vanniekerk@barnardprecision.com', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'CL', name: 'Carin Lategan', role: 'Metrology technician', email: 'carin.lategan@barnardprecision.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'SJ', name: 'Sipho Jali', role: 'Quality manager', email: 'sipho.jali@barnardprecision.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'MO', name: 'Mandla Oosthuizen', role: 'Customer · Buyer', email: 'mandla.oosthuizen@torqueautomotive.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'EB', name: 'Elmarie Bester', role: 'Planning manager', email: 'elmarie.bester@barnardprecision.com', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'BM', name: 'Brandon McCall', role: 'Customer · Torque', email: 'brandon.mccall@torqueautomotive.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
+  { initials: 'RV', name: 'Ross Vernon', role: 'Maintenance lead', email: 'ross.vanniekerk@barnardprecision.com', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'CL', name: 'Caroline Lawson', role: 'Metrology technician', email: 'caroline.lawson@barnardprecision.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'SJ', name: 'Shawn James', role: 'Quality manager', email: 'shawn.james@barnardprecision.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'MO', name: 'Malik Owens', role: 'Customer · Buyer', email: 'malik.owens@torqueautomotive.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'EB', name: 'Erin Barnes', role: 'Planning manager', email: 'erin.barnes@barnardprecision.com', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const ACCOUNTS = [
-  { name: 'Ilse Barnard', email: 'ilse.barnard@barnardprecision.com', role: 'Plant manager · Barnard Precision', initials: 'IB', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Plant' },
-  { name: 'Ilse Barnard', email: 'ilse@torqueautomotive.com', initials: 'IB', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Supplier portal · Torque' }
+  { name: 'Iris Barnard', email: 'iris.barnard@barnardprecision.com', role: 'Plant manager · Barnard Precision', initials: 'IB', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Plant' },
+  { name: 'Iris Barnard', email: 'iris@torqueautomotive.com', initials: 'IB', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Supplier portal · Torque' }
 ];
 
 const goPage = (href) => (e) => {
@@ -813,7 +813,7 @@ class Component extends DCLogic {
   sendDraft() {
     const text = this.state.draft.trim();
     if (!text) return;
-    this.setState(s => ({ draft: '', sent: [...s.sent, { author: 'Ilse Barnard', text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }] }),
+    this.setState(s => ({ draft: '', sent: [...s.sent, { author: 'Iris Barnard', text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }] }),
       () => { const el = this._stream; if (el) el.scrollTop = el.scrollHeight; });
   }
 
@@ -874,20 +874,20 @@ class Component extends DCLogic {
 
     const base = [
       { kind: 'divider', label: 'Yesterday' },
-      { kind: 'event', icon: 'group_add', label: 'Bongani Mtshali joined #quality-ncrs', meta: 'invited by Ilse Barnard · 9 members', time: '16:02' },
-      { kind: 'msg', author: 'Priya Dlamini', photo: '', initials: 'PD', time: '16:20', mention: true, text: '@channel ECN-091 lands Monday: customer drawing moves to revision C and the gasket face changes. Old stock is not interchangeable, so nothing on rev B ships after Friday.', reactions: [{ emoji: '👍', count: 9 }] },
+      { kind: 'event', icon: 'group_add', label: 'Brandon McCall joined #quality-ncrs', meta: 'invited by Iris Barnard · 9 members', time: '16:02' },
+      { kind: 'msg', author: 'Priya Dixon', photo: '', initials: 'PD', time: '16:20', mention: true, text: '@channel ECN-091 lands Monday: customer drawing moves to revision C and the gasket face changes. Old stock is not interchangeable, so nothing on rev B ships after Friday.', reactions: [{ emoji: '👍', count: 9 }] },
       { kind: 'divider', label: 'Today' },
-      { kind: 'msg', author: 'Kagiso Mokoena', photo: '', initials: 'KM', time: '09:12', text: 'CMM flagged bore diameter on the housing at 42.06mm against 42.00 +0.03. Four parts out of a sample of twenty from last night’s run. Quarantining the batch now.', thread: '4 replies · last 09:18' },
-      { kind: 'msg', author: 'Werner Schoeman', photo: '', initials: 'WS', time: '09:19', text: 'Summarising out of the thread: reamer wear on die 7, drift started mid-shift, 480 parts already with the customer of which about a third are suspect. NCR-312 raised with the CMM report attached.', reactions: [{ emoji: '🙌', count: 6 }] },
-      { kind: 'event', icon: 'confirmation_number', label: 'NCR-312 raised from a message: bore diameter out of tolerance', meta: 'Kagiso Mokoena · In progress · containment due 16:00', time: '09:26' },
-      { kind: 'msg', author: 'Ilse Barnard', photo: '', initials: 'IB', time: '09:31', text: 'Torque sees this at the same time we do. A customer who discovers a quality problem on their own line stops being a customer at the next sourcing round.' },
-      { kind: 'msg', author: 'Sipho Jali', photo: '', initials: 'SJ', time: '09:36', text: 'Maintenance: die 7 reamer replaced and first-off measured at 42.01. Tool life data updated on the wiki so the next change is scheduled on count, not on somebody noticing.', thread: '2 replies · last 09:39' },
-      { kind: 'event', icon: 'event_available', label: '8D review with the customer, Fri 10:00', meta: 'Kagiso Mokoena · 9 invited', time: '09:38' },
+      { kind: 'msg', author: 'Kyle Mitchell', photo: '', initials: 'KM', time: '09:12', text: 'CMM flagged bore diameter on the housing at 42.06mm against 42.00 +0.03. Four parts out of a sample of twenty from last night’s run. Quarantining the batch now.', thread: '4 replies · last 09:18' },
+      { kind: 'msg', author: 'Walter Shaw', photo: '', initials: 'WS', time: '09:19', text: 'Summarising out of the thread: reamer wear on die 7, drift started mid-shift, 480 parts already with the customer of which about a third are suspect. NCR-312 raised with the CMM report attached.', reactions: [{ emoji: '🙌', count: 6 }] },
+      { kind: 'event', icon: 'confirmation_number', label: 'NCR-312 raised from a message: bore diameter out of tolerance', meta: 'Kyle Mitchell · In progress · containment due 16:00', time: '09:26' },
+      { kind: 'msg', author: 'Iris Barnard', photo: '', initials: 'IB', time: '09:31', text: 'Torque sees this at the same time we do. A customer who discovers a quality problem on their own line stops being a customer at the next sourcing round.' },
+      { kind: 'msg', author: 'Shawn James', photo: '', initials: 'SJ', time: '09:36', text: 'Maintenance: die 7 reamer replaced and first-off measured at 42.01. Tool life data updated on the wiki so the next change is scheduled on count, not on somebody noticing.', thread: '2 replies · last 09:39' },
+      { kind: 'event', icon: 'event_available', label: '8D review with the customer, Fri 10:00', meta: 'Kyle Mitchell · 9 invited', time: '09:38' },
       { kind: 'msg', author: 'Tasneem Fisher', photo: '', initials: 'TF', time: '09:41', text: 'From purchasing: can you still ship the Friday order in full, or do I need to tell our planners to expect a short? I would rather know now than Friday afternoon.' }
     ].concat(this.state.sent.map(m => ({ kind: 'msg', ...m })));
 
     let prev = null;
-    const ME = 'Ilse Barnard';
+    const ME = 'Iris Barnard';
     const stream = base.map((m, i) => {
       const isMsg = m.kind === 'msg';
       const grouped = isMsg && prev && prev.author === m.author;
@@ -995,8 +995,8 @@ class Component extends DCLogic {
 
       notifications: [
         { icon: 'priority_high', text: 'Containment due 16:00: “NCR-312, bore diameter out of tolerance”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Bongani Mtshali joined Quality & NCRs as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Kagiso Mokoena assigned you the 8D root cause section', time: '1 hr ago', unread: true },
+        { icon: 'person_add', text: 'Brandon McCall joined Quality & NCRs as a guest', time: '26 min ago', unread: true },
+        { icon: 'assignment_ind', text: 'Kyle Mitchell assigned you the 8D root cause section', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'ECN-088 implemented: revised gasket spec', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Shift leads', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
@@ -1063,7 +1063,7 @@ class Component extends DCLogic {
       ].map(x => ({ ...x, onClick: goPage(x.href) })),
       chats: [
         { initials: '', group: true, name: 'Shift leads', unread: '2', avatarBg: dark ? 'rgba(255,255,255,0.12)' : 'rgba(51,80,91,0.12)', avatarFg: 'var(--topIcon, #33505b)', onClick: goPage('Desktop Admin - Group Chat.dc.html'), onEnter: () => {}, onLeave: () => {} },
-        { initials: 'BM', group: false, name: 'Bongani Mtshali', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
+        { initials: 'BM', group: false, name: 'Brandon McCall', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
           onEnter: (e) => this.showCard(SHARON, e.currentTarget), onLeave: () => this.scheduleHide() }
       ],
       members: MEMBERS.map((m, i) => ({

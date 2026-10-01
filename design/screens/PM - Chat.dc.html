@@ -708,9 +708,9 @@ const THEMES = {
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
   { initials: 'BM', name: 'Bianca Meyer', preview: 'Still no hot water in unit 14.', unread: true, customer: true },
-  { initials: 'G1', name: 'Site team', unread: true, preview: 'Dirk: plumber is on site now', customer: false, href: '' },
+  { initials: 'G1', name: 'Site team', unread: true, preview: 'Derek: plumber is on site now', customer: false, href: '' },
   { initials: 'GT', name: 'Graham Tait', preview: 'The board need the quotes by Monday.', unread: false, customer: true },
-  { initials: 'SM', name: 'Sifiso Mahlangu', preview: 'Third quote came in $18k lower.', unread: false, customer: false }
+  { initials: 'SM', name: 'Simon Mallory', preview: 'Third quote came in $18k lower.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -737,48 +737,48 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'NZ', name: 'Noluthando Zulu', role: 'Board member · Treasurer', email: 'noluthando.zulu@meadowridge-hoa.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'NZ', name: 'Natalie Zimmerman', role: 'Board member · Treasurer', email: 'natalie.zimmerman@meadowridge-hoa.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'CV', name: 'Colette Viljoen', admin: true, role: 'Channel admin · Portfolio manager', email: 'colette.viljoen@viljoenprop.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'SM', name: 'Sifiso Mahlangu', role: 'Maintenance coordinator', email: 'sifiso.mahlangu@viljoenprop.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'DK', name: 'Dirk Koekemoer', role: 'Building supervisor', email: 'dirk.koekemoer@viljoenprop.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'CV', name: 'Colette Vaughn', admin: true, role: 'Channel admin · Portfolio manager', email: 'colette.vaughn@viljoenprop.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'SM', name: 'Simon Mallory', role: 'Maintenance coordinator', email: 'simon.mallory@viljoenprop.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'DK', name: 'Derek Kane', role: 'Building supervisor', email: 'derek.kane@viljoenprop.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
   { initials: 'YP', name: 'Yusuf Parker', role: 'Dues and accounts', email: 'yusuf.parker@viljoenprop.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'GT', name: 'Graham Tait', role: 'Board member · President', email: 'graham.tait@meadowridge-hoa.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
   { initials: 'BM', name: 'Bianca Meyer', role: 'Resident · Unit 14', email: 'bianca.meyer@meadowridge-hoa.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
-const PINNED = { text: 'Emergencies: burst pipes, no power, elevator entrapment, security. Everything else goes in as a normal request and is scheduled.', meta: 'Colette Viljoen · Tue' };
+const PINNED = { text: 'Emergencies: burst pipes, no power, elevator entrapment, security. Everything else goes in as a normal request and is scheduled.', meta: 'Colette Vaughn · Tue' };
 
 const THREAD = {
   author: 'Bianca Meyer', photo: '', initials: 'BM', time: '09:12',
   text: 'The water heater in unit 14 has burst. Water is coming through into unit 10’s ceiling. I have closed the main but there is already damage downstairs.',
   replies: [
-    { author: 'Dirk Koekemoer', initials: 'DK', bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', time: '09:14', text: 'On my way up. Plumber called, he is fifteen minutes out. Photograph the ceiling in unit 10 now for the insurance claim.' },
-    { author: 'Colette Viljoen', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', time: '09:16', text: 'Logged as an emergency. The water heater is the owner’s, ceiling damage is the HOA’s insurance. Both parts recorded against the same request.' },
+    { author: 'Derek Kane', initials: 'DK', bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', time: '09:14', text: 'On my way up. Plumber called, he is fifteen minutes out. Photograph the ceiling in unit 10 now for the insurance claim.' },
+    { author: 'Colette Vaughn', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', time: '09:16', text: 'Logged as an emergency. The water heater is the owner’s, ceiling damage is the HOA’s insurance. Both parts recorded against the same request.' },
     { author: 'Graham Tait', initials: 'GT', bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', time: '09:17', text: 'Does this need board approval, or can you proceed?' },
-    { author: 'Colette Viljoen', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', time: '09:18', text: 'Under the emergency mandate I can proceed up to $15,000. Anything above that comes back here for the board before the work starts.' }
+    { author: 'Colette Vaughn', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', time: '09:18', text: 'Under the emergency mandate I can proceed up to $15,000. Anything above that comes back here for the board before the work starts.' }
   ]
 };
 
 const GROUP = [
-  { initials: 'CV', name: 'Colette Viljoen', role: 'Channel admin · Support lead', email: 'colette.viljoen@viljoenprop.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'DK', name: 'Dirk Koekemoer', role: 'Building supervisor', email: 'dirk.koekemoer@viljoenprop.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'CV', name: 'Colette Vaughn', role: 'Channel admin · Support lead', email: 'colette.vaughn@viljoenprop.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'DK', name: 'Derek Kane', role: 'Building supervisor', email: 'derek.kane@viljoenprop.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
   { initials: 'YP', name: 'Yusuf Parker', role: 'Dues and accounts', email: 'yusuf.parker@viljoenprop.com', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'GT', name: 'Graham Tait', role: 'Board member · Meadowridge', email: 'graham.tait@meadowridge-hoa.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'SM', name: 'Sifiso Mahlangu', role: 'Maintenance coordinator', email: 'sifiso.mahlangu@viljoenprop.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'SM', name: 'Simon Mallory', role: 'Maintenance coordinator', email: 'simon.mallory@viljoenprop.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
   { initials: 'BM', name: 'Bianca Meyer', role: 'Board member · Meadowridge', email: 'bianca.meyer@meadowridge-hoa.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
-  { initials: 'NZ', name: 'Noluthando Zulu', role: 'Board member · Meadowridge', email: 'noluthando.zulu@meadowridge-hoa.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
-  { initials: 'RJ', name: 'Rashid Jappie', role: 'Contractor liaison', email: 'rashid.jappie@viljoenprop.com', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'HS', name: 'Hendrik Smit', role: 'Compliance officer', email: 'hendrik.smit@viljoenprop.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'PM', name: 'Palesa Mahlaba', role: 'Maintenance coordinator', email: 'palesa.mahlaba@viljoenprop.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'WL', name: 'Wesley Louw', role: 'Board member · Treasurer', email: 'wesley.louw@meadowridge-hoa.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'AF', name: 'Amira Fakier', role: 'Portfolio director', email: 'amira.fakier@viljoenprop.com', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'NZ', name: 'Natalie Zimmerman', role: 'Board member · Meadowridge', email: 'natalie.zimmerman@meadowridge-hoa.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
+  { initials: 'RJ', name: 'Rashid Jamal', role: 'Contractor liaison', email: 'rashid.jamal@viljoenprop.com', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'HS', name: 'Henry Smith', role: 'Compliance officer', email: 'henry.smith@viljoenprop.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'PM', name: 'Paige Marks', role: 'Maintenance coordinator', email: 'paige.marks@viljoenprop.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'WL', name: 'Wesley Lowe', role: 'Board member · Treasurer', email: 'wesley.lowe@meadowridge-hoa.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'AF', name: 'Amira Farouk', role: 'Portfolio director', email: 'amira.farouk@viljoenprop.com', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const ACCOUNTS = [
-  { name: 'Colette Viljoen', email: 'colette.viljoen@viljoenprop.com', role: 'Portfolio manager · Viljoen Property', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Property manager' },
-  { name: 'Colette Viljoen', email: 'colette@meadowridge-hoa.com', initials: 'CV', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Property manager · Meadowridge' }
+  { name: 'Colette Vaughn', email: 'colette.vaughn@viljoenprop.com', role: 'Portfolio manager · Vaughn Property', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Property manager' },
+  { name: 'Colette Vaughn', email: 'colette@meadowridge-hoa.com', initials: 'CV', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Property manager · Meadowridge' }
 ];
 
 const goPage = (href) => (e) => {
@@ -813,7 +813,7 @@ class Component extends DCLogic {
   sendDraft() {
     const text = this.state.draft.trim();
     if (!text) return;
-    this.setState(s => ({ draft: '', sent: [...s.sent, { author: 'Colette Viljoen', text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }] }),
+    this.setState(s => ({ draft: '', sent: [...s.sent, { author: 'Colette Vaughn', text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }] }),
       () => { const el = this._stream; if (el) el.scrollTop = el.scrollHeight; });
   }
 
@@ -874,20 +874,20 @@ class Component extends DCLogic {
 
     const base = [
       { kind: 'divider', label: 'Yesterday' },
-      { kind: 'event', icon: 'group_add', label: 'Noluthando Zulu joined #board', meta: 'invited by Colette Viljoen · 8 members', time: '16:02' },
-      { kind: 'msg', author: 'Sifiso Mahlangu', photo: '', initials: 'SM', time: '16:20', mention: true, text: '@channel three quotes for the roof repair are in: $186k, $204k and $168k. All on the wiki with scope comparisons, because the cheapest one excludes the flashing.', reactions: [{ emoji: '👍', count: 6 }] },
+      { kind: 'event', icon: 'group_add', label: 'Natalie Zimmerman joined #board', meta: 'invited by Colette Vaughn · 8 members', time: '16:02' },
+      { kind: 'msg', author: 'Simon Mallory', photo: '', initials: 'SM', time: '16:20', mention: true, text: '@channel three quotes for the roof repair are in: $186k, $204k and $168k. All on the wiki with scope comparisons, because the cheapest one excludes the flashing.', reactions: [{ emoji: '👍', count: 6 }] },
       { kind: 'divider', label: 'Today' },
       { kind: 'msg', author: 'Bianca Meyer', photo: '', initials: 'BM', time: '09:12', text: 'The water heater in unit 14 has burst. Water is coming through into unit 10’s ceiling. I have closed the main but there is already damage downstairs.', thread: '4 replies · last 09:18' },
-      { kind: 'msg', author: 'Dirk Koekemoer', photo: '', initials: 'DK', time: '09:19', text: 'On site. The water heater is a 2009 unit, well past life. Replacement quoted at $11,400, inside the emergency mandate, so proceeding. Photographs of both units attached to #914.', reactions: [{ emoji: '🙌', count: 8 }] },
-      { kind: 'event', icon: 'confirmation_number', label: 'Request #914 raised from a message (emergency: water heater burst, unit 14)', meta: 'Dirk Koekemoer · In progress · breach in 40m', time: '09:26' },
-      { kind: 'msg', author: 'Colette Viljoen', photo: '', initials: 'CV', time: '09:31', text: 'For the residents asking privately: please put maintenance in the channel and not on my mobile. It is not rudeness: a request in here has a number, an owner and a record for the insurer.' },
+      { kind: 'msg', author: 'Derek Kane', photo: '', initials: 'DK', time: '09:19', text: 'On site. The water heater is a 2009 unit, well past life. Replacement quoted at $11,400, inside the emergency mandate, so proceeding. Photographs of both units attached to #914.', reactions: [{ emoji: '🙌', count: 8 }] },
+      { kind: 'event', icon: 'confirmation_number', label: 'Request #914 raised from a message (emergency: water heater burst, unit 14)', meta: 'Derek Kane · In progress · breach in 40m', time: '09:26' },
+      { kind: 'msg', author: 'Colette Vaughn', photo: '', initials: 'CV', time: '09:31', text: 'For the residents asking privately: please put maintenance in the channel and not on my mobile. It is not rudeness: a request in here has a number, an owner and a record for the insurer.' },
       { kind: 'msg', author: 'Yusuf Parker', photo: '', initials: 'YP', time: '09:36', text: 'Unit 22 is now 90 days in arrears on dues. Third reminder sent. Putting it in front of the board with the collection policy attached rather than deciding it myself.', thread: '2 replies · last 09:39' },
-      { kind: 'event', icon: 'event_available', label: 'Board meeting, Thu 18:00', meta: 'Colette Viljoen · 8 invited', time: '09:38' },
+      { kind: 'event', icon: 'event_available', label: 'Board meeting, Thu 18:00', meta: 'Colette Vaughn · 8 invited', time: '09:38' },
       { kind: 'msg', author: 'Graham Tait', photo: '', initials: 'GT', time: '09:41', text: 'The board will decide the roof quote on Thursday. Please have the scope comparison in the channel by Monday so we are not reading it in the meeting.' }
     ].concat(this.state.sent.map(m => ({ kind: 'msg', ...m })));
 
     let prev = null;
-    const ME = 'Colette Viljoen';
+    const ME = 'Colette Vaughn';
     const stream = base.map((m, i) => {
       const isMsg = m.kind === 'msg';
       const grouped = isMsg && prev && prev.author === m.author;
@@ -995,7 +995,7 @@ class Component extends DCLogic {
 
       notifications: [
         { icon: 'priority_high', text: 'Emergency: “Water heater burst, unit 14, water to units below”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Noluthando Zulu joined The board as a guest', time: '26 min ago', unread: true },
+        { icon: 'person_add', text: 'Natalie Zimmerman joined The board as a guest', time: '26 min ago', unread: true },
         { icon: 'assignment_ind', text: 'Graham Tait assigned you the roof repair quotes', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Elevator service completed: certificate filed', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Site team', time: 'Yesterday', unread: false }
@@ -1063,7 +1063,7 @@ class Component extends DCLogic {
       ].map(x => ({ ...x, onClick: goPage(x.href) })),
       chats: [
         { initials: '', group: true, name: 'Site team', unread: '2', avatarBg: dark ? 'rgba(255,255,255,0.12)' : 'rgba(51,80,91,0.12)', avatarFg: 'var(--topIcon, #33505b)', onClick: goPage('Desktop Admin - Group Chat.dc.html'), onEnter: () => {}, onLeave: () => {} },
-        { initials: 'NZ', group: false, name: 'Noluthando Zulu', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
+        { initials: 'NZ', group: false, name: 'Natalie Zimmerman', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
           onEnter: (e) => this.showCard(SHARON, e.currentTarget), onLeave: () => this.scheduleHide() }
       ],
       members: MEMBERS.map((m, i) => ({

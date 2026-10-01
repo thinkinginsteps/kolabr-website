@@ -572,10 +572,10 @@ const THEMES = {
 
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
-  { initials: 'HB', name: 'Hannah Bekker', preview: 'Is the outing form due today?', unread: true, customer: true },
-  { initials: 'G1', name: 'Grade 4 teachers', preview: 'Thabo: I can cover 4A after break', unread: true, customer: false, href: '' },
-  { initials: 'ZD', name: 'Zanele Dube', preview: 'Thank you. Sipho is back Monday.', unread: false, customer: true },
-  { initials: 'TM', name: 'Thabo Mokoena', preview: 'Can you take the 10:30 slot?', unread: false, customer: false }
+  { initials: 'HB', name: 'Hannah Brooks', preview: 'Is the outing form due today?', unread: true, customer: true },
+  { initials: 'G1', name: 'Grade 4 teachers', preview: 'Trevor: I can cover 4A after break', unread: true, customer: false, href: '' },
+  { initials: 'ZD', name: 'Zoey Dawson', preview: 'Thank you. Shawn is back Monday.', unread: false, customer: true },
+  { initials: 'TM', name: 'Trevor Mitchell', preview: 'Can you take the 10:30 slot?', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -602,20 +602,20 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'HB', name: 'Hannah Bekker', role: 'Parent · Ruby 4B', email: 'hannah.bekker@ridgeway-parents.org', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'HB', name: 'Hannah Brooks', role: 'Parent · Ruby 4B', email: 'hannah.brooks@ridgeway-parents.org', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'NF', name: 'Nadia Fourie', admin: true, role: 'Channel admin · Class teacher', email: 'nadia.fourie@ridgeway.school', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'TM', name: 'Thabo Mokoena', role: 'Teaching assistant', email: 'thabo.mokoena@ridgeway.school', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'GW', name: 'Grant Wessels', role: 'Head of Grade 4', email: 'grant.wessels@ridgeway.school', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'PM', name: 'Pieter Malan', role: 'School office', email: 'pieter.malan@ridgeway.school', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'NF', name: 'Nadia Foster', admin: true, role: 'Channel admin · Class teacher', email: 'nadia.foster@ridgeway.school', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'TM', name: 'Trevor Mitchell', role: 'Teaching assistant', email: 'trevor.mitchell@ridgeway.school', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'GW', name: 'Grant Wells', role: 'Head of Grade 4', email: 'grant.wells@ridgeway.school', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'PM', name: 'Peter Molina', role: 'School office', email: 'peter.molina@ridgeway.school', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'MA', name: 'Marcus Adams', role: 'Parent · Amelia 4B', email: 'marcus.adams@ridgeway-parents.org', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'ZD', name: 'Zanele Dube', role: 'Parent · Sipho 4B', email: 'zanele.dube@ridgeway-parents.org', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'ZD', name: 'Zoey Dawson', role: 'Parent · Shawn 4B', email: 'zoey.dawson@ridgeway-parents.org', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const ACCOUNTS = [
-  { name: 'Nadia Fourie', email: 'nadia.fourie@ridgeway.school', role: 'Class teacher · Grade 4B', initials: 'NF', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Staff' },
-  { name: 'Nadia Fourie', email: 'nadia@ridgeway-pta.org', initials: 'NF', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'PTA committee · Ridgeway' }
+  { name: 'Nadia Foster', email: 'nadia.foster@ridgeway.school', role: 'Class teacher · Grade 4B', initials: 'NF', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Staff' },
+  { name: 'Nadia Foster', email: 'nadia@ridgeway-pta.org', initials: 'NF', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'PTA committee · Ridgeway' }
 ];
 
 const goPage = (href) => (e) => {
@@ -756,8 +756,8 @@ class Component extends DCLogic {
 
       notifications: [
         { icon: 'priority_high', text: 'Due today: #2184 “Absence: Amelia Adams, Wed–Thu”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Hannah Bekker joined Grade 4B as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Pieter Malan assigned you request #2179: transport change', time: '1 hr ago', unread: true },
+        { icon: 'person_add', text: 'Hannah Brooks joined Grade 4B as a guest', time: '26 min ago', unread: true },
+        { icon: 'assignment_ind', text: 'Peter Molina assigned you request #2179: transport change', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Request #2170 resolved: projector replaced in 4B', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Grade 4 teachers', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
@@ -824,7 +824,7 @@ class Component extends DCLogic {
       ].map(x => ({ ...x, onClick: goPage(x.href) })),
       chats: [
         { initials: '', group: true, name: 'Grade 4 teachers', unread: '2', avatarBg: dark ? 'rgba(255,255,255,0.12)' : 'rgba(51,80,91,0.12)', avatarFg: 'var(--topIcon, #33505b)', onClick: goPage('Desktop Admin - Group Chat.dc.html'), onEnter: () => {}, onLeave: () => {} },
-        { initials: 'HB', group: false, name: 'Hannah Bekker', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
+        { initials: 'HB', group: false, name: 'Hannah Brooks', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
           onEnter: (e) => this.showCard(SHARON, e.currentTarget), onLeave: () => this.scheduleHide() }
       ],
       members: MEMBERS.map((m, i) => ({
@@ -864,7 +864,7 @@ class Component extends DCLogic {
 
       requests: [
         { id: '#2184', subject: 'Absence: Amelia Adams, Wed–Thu', channel: 'Grade 4B', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due in 3h', slaColor: bad },
-        { id: '#2179', subject: 'Transport change: Sipho off the afternoon bus', channel: 'Bus service', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: dark ? '#8ba3ae' : '#6b8290', sla: 'Due in 6h', slaColor: warn },
+        { id: '#2179', subject: 'Transport change: Shawn off the afternoon bus', channel: 'Bus service', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: dark ? '#8ba3ae' : '#6b8290', sla: 'Due in 6h', slaColor: warn },
         { id: '#2176', subject: 'Permission slip outstanding: Planetarium', channel: 'Grade 4B', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due Thursday', slaColor: dark ? '#8ba3ae' : '#6b8290' },
         { id: '#2171', subject: 'Broken window latch in 4B, room unsecured', channel: 'Facilities & IT', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 1d', slaColor: bad },
         { id: '#2165', subject: 'Login for the new substitute teacher', channel: 'Facilities & IT', status: 'Resolved', statusBg: dark ? 'rgba(61,220,151,0.14)' : 'rgba(18,160,106,0.12)', statusFg: ok, sla: 'Met · 1d 2h', slaColor: ok }

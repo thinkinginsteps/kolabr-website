@@ -897,9 +897,9 @@ const THEMES = {
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
   { initials: 'MH', name: 'Miles Hart', preview: 'Can we see v3 before the board sees it?', unread: true, customer: true },
-  { initials: 'G1', name: 'Creative team', unread: true, preview: 'Tumi: v3 is up for review', customer: false, href: '' },
+  { initials: 'G1', name: 'Creative team', unread: true, preview: 'Tessa: v3 is up for review', customer: false, href: '' },
   { initials: 'RS', name: 'Robyn Searle', preview: 'Approved, go to print.', unread: false, customer: true },
-  { initials: 'TO', name: 'Tumi Olifant', preview: 'Need copy locked by 15:00.', unread: false, customer: false }
+  { initials: 'TO', name: 'Tessa Olsen', preview: 'Need copy locked by 15:00.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -930,7 +930,7 @@ const SHARON = { initials: 'EV', name: 'Elena Vos', role: 'Client · Legal revie
 
 const MEMBERS = [
   { initials: 'NW', name: 'Nina Walsh', admin: true, role: 'Channel admin · Account director', email: 'nina.walsh@northlight.studio', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'TO', name: 'Tumi Olifant', role: 'Art director', email: 'tumi.olifant@northlight.studio', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'TO', name: 'Tessa Olsen', role: 'Art director', email: 'tessa.olsen@northlight.studio', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
   { initials: 'JD', name: 'Joss Devine', role: 'Copywriter', email: 'joss.devine@northlight.studio', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
   { initials: 'CB', name: 'Cara Bright', role: 'Producer', email: 'cara.bright@northlight.studio', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'MH', name: 'Miles Hart', role: 'Client · Head of brand', email: 'miles.hart@verdehealth.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
@@ -941,10 +941,10 @@ const CH_CATS = ['All', 'Client', 'Commercial', 'Other clients', 'Internal'];
 
 const PEOPLE = {
   NW: { name: 'Nina Walsh', email: 'nina.walsh@northlight.studio', role: 'Account director' },
-  TO: { name: 'Tumi Olifant', email: 'tumi.olifant@northlight.studio', role: 'Art director' },
+  TO: { name: 'Tessa Olsen', email: 'tessa.olsen@northlight.studio', role: 'Art director' },
   JD: { name: 'Joss Devine', email: 'joss.devine@northlight.studio', role: 'Copywriter' },
   CB: { name: 'Cara Bright', email: 'cara.bright@northlight.studio', role: 'Producer' },
-  DP: { name: 'Dane Pillay', email: 'dane.pillay@northlight.studio', role: 'Strategist' },
+  DP: { name: 'Dane Pierce', email: 'dane.pierce@northlight.studio', role: 'Strategist' },
   MH: { name: 'Miles Hart', email: 'miles.hart@verdehealth.com', role: 'Client · Head of brand' },
   EV: { name: 'Elena Vos', email: 'elena.vos@verdehealth.com', role: 'Client · Legal' }
 };
@@ -1293,8 +1293,8 @@ class Component extends DCLogic {
       formDate: selIso,
       formAttendees: [
         { initials: 'NW', name: 'Nina Walsh', bg: 'linear-gradient(150deg, #33505b, #557a88)' },
-        { initials: 'TO', name: 'Tumi Olifant', bg: 'linear-gradient(150deg, #00c3ff, #0a9fd4)' },
-        { initials: 'DP', name: 'Dane Pillay', bg: 'linear-gradient(150deg, #7c6cf0, #5c4bd8)' }
+        { initials: 'TO', name: 'Tessa Olsen', bg: 'linear-gradient(150deg, #00c3ff, #0a9fd4)' },
+        { initials: 'DP', name: 'Dane Pierce', bg: 'linear-gradient(150deg, #7c6cf0, #5c4bd8)' }
       ],
       formToggles: [
         { icon: 'videocam', label: 'Add a Kolabr video call', onClick: flip('video'), track: track(togs.video), knob: knob(togs.video) },

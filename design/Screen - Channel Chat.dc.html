@@ -596,7 +596,7 @@ input, textarea, select { caret-color: transparent !important; }
           <div style="display: flex; align-items: center; gap: 11px; padding: 6px 12px 2px;">
             <span style="display: flex; align-items: center;">
               <img src="assets/screens/sm-photo-neville-september.png" alt="Nathan Sorensen" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; display: block; box-shadow: 0 0 0 2px var(--card, #ffffff);">
-              <img src="assets/screens/sm-photo-richard-potgieter.png" alt="Ruben Pienaar" style="width: 30px; height: 30px; margin-left: -9px; border-radius: 50%; object-fit: cover; display: block; box-shadow: 0 0 0 2px var(--card, #ffffff);">
+              <img src="assets/screens/sm-photo-richard-potgieter.png" alt="Ruben Peralta" style="width: 30px; height: 30px; margin-left: -9px; border-radius: 50%; object-fit: cover; display: block; box-shadow: 0 0 0 2px var(--card, #ffffff);">
             </span>
             <span style="font-size: 12.5px; color: var(--muted, #6b8290);">Nathan and Ruben are typing…</span>
           </div>
@@ -709,8 +709,8 @@ const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
   { initials: 'SC', name: 'Simone Chavez', preview: 'Any update on the export bug?', unread: true, customer: true },
   { initials: 'G1', name: 'Group Chat 1', preview: 'Adam: pushing the fix at 4pm', unread: true, customer: false, href: 'Desktop Admin - Group Chat.dc.html' },
-  { initials: 'LP', name: 'Lena Pienaar', preview: 'Thanks, that worked.', unread: false, customer: true },
-  { initials: 'AB', name: 'Adam Bekker', preview: 'Can you take #4816?', unread: false, customer: false }
+  { initials: 'LP', name: 'Lena Peralta', preview: 'Thanks, that worked.', unread: false, customer: true },
+  { initials: 'AB', name: 'Adam Brooks', preview: 'Can you take #4816?', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -741,11 +741,11 @@ const SHARON = { initials: 'SC', name: 'Simone Chavez', role: 'Customer · North
 
 const MEMBERS = [
   { initials: 'DS', name: 'Dylan Sorensen', admin: true, role: 'Channel admin · Support lead', email: 'dylan.sorensen@kolabr.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)', photo: 'assets/screens/sm-photo-dom-september.png' },
-  { initials: 'AB', name: 'Adam Bekker', role: 'Support agent', email: 'adam.bekker@kolabr.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'RP', name: 'Ruben Pienaar', role: 'Engineer', email: 'ruben.pienaar@kolabr.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', photo: 'assets/screens/sm-photo-richard-potgieter.png' },
+  { initials: 'AB', name: 'Adam Brooks', role: 'Support agent', email: 'adam.brooks@kolabr.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'RP', name: 'Ruben Peralta', role: 'Engineer', email: 'ruben.peralta@kolabr.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', photo: 'assets/screens/sm-photo-richard-potgieter.png' },
   { initials: 'NS', name: 'Nathan Sorensen', role: 'Admin', email: 'nathan.sorensen@kolabr.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)', photo: 'assets/screens/sm-photo-neville-september.png' },
   { initials: 'DH', name: 'Dean Harlow', role: 'Customer · Northwind Trading', email: 'dean.harlow@northwindtrading.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', photo: 'assets/screens/sm-photo-dom-hardy.png' },
-  { initials: 'LP', name: 'Lena Pienaar', role: 'Customer · Northwind Trading', email: 'lena.pienaar@northwindtrading.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'LP', name: 'Lena Peralta', role: 'Customer · Northwind Trading', email: 'lena.peralta@northwindtrading.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const PINNED = { text: 'Release freeze from Fri 14:00: no production deploys over month-end.', meta: 'Nathan Sorensen · Tue' };
@@ -754,26 +754,26 @@ const THREAD = {
   author: 'Dean Harlow', photo: 'assets/screens/sm-photo-dom-hardy.png', time: '09:12',
   text: 'Morning all, invoice sync is still failing on our side. Finance has 41 unsynced invoices from Monday onward.',
   replies: [
-    { author: 'Adam Bekker', initials: 'AB', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', time: '09:14', text: 'Pulled the gateway logs: every failure is a 422 on the same batch id.' },
-    { author: 'Ruben Pienaar', initials: '', bg: 'url(assets/screens/sm-photo-richard-potgieter.png)', time: '09:16', text: 'That batch has three invoices under $50. Those are the ones being rejected.' },
+    { author: 'Adam Brooks', initials: 'AB', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', time: '09:14', text: 'Pulled the gateway logs: every failure is a 422 on the same batch id.' },
+    { author: 'Ruben Peralta', initials: '', bg: 'url(assets/screens/sm-photo-richard-potgieter.png)', time: '09:16', text: 'That batch has three invoices under $50. Those are the ones being rejected.' },
     { author: 'Dean Harlow', initials: '', bg: 'url(assets/screens/sm-photo-dom-hardy.png)', time: '09:17', text: 'Those are courier surcharges. They have always been that small.' },
-    { author: 'Ruben Pienaar', initials: '', bg: 'url(assets/screens/sm-photo-richard-potgieter.png)', time: '09:18', text: 'Then the floor check is wrong, not your data. Moving this to the main channel.' }
+    { author: 'Ruben Peralta', initials: '', bg: 'url(assets/screens/sm-photo-richard-potgieter.png)', time: '09:18', text: 'Then the floor check is wrong, not your data. Moving this to the main channel.' }
   ]
 };
 
 const GROUP = [
   { initials: 'DS', name: 'Dylan Sorensen', role: 'Channel admin · Support lead', email: 'dylan.sorensen@kolabr.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)', photo: 'assets/screens/sm-photo-dom-september.png' },
-  { initials: 'RP', name: 'Ruben Pienaar', role: 'Engineer', email: 'ruben.pienaar@kolabr.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', photo: 'assets/screens/sm-photo-richard-potgieter.png' },
+  { initials: 'RP', name: 'Ruben Peralta', role: 'Engineer', email: 'ruben.peralta@kolabr.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', photo: 'assets/screens/sm-photo-richard-potgieter.png' },
   { initials: 'NS', name: 'Nathan Sorensen', role: 'Admin', email: 'nathan.sorensen@kolabr.com', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)', photo: 'assets/screens/sm-photo-neville-september.png' },
   { initials: 'DH', name: 'Dean Harlow', role: 'Customer · Northwind Trading', email: 'dean.harlow@northwindtrading.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', photo: 'assets/screens/sm-photo-dom-hardy.png' },
-  { initials: 'AB', name: 'Adam Bekker', role: 'Support agent', email: 'adam.bekker@kolabr.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'LP', name: 'Lena Pienaar', role: 'Customer · Northwind Trading', email: 'lena.pienaar@northwindtrading.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
+  { initials: 'AB', name: 'Adam Brooks', role: 'Support agent', email: 'adam.brooks@kolabr.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'LP', name: 'Lena Peralta', role: 'Customer · Northwind Trading', email: 'lena.peralta@northwindtrading.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
   { initials: 'SC', name: 'Simone Chavez', role: 'Customer · Northwind Trading', email: 'simone.chavez@northwindtrading.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
   { initials: 'TI', name: 'Tasha Iyer', role: 'Platform engineer', email: 'tasha.iyer@kolabr.com', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'TB', name: 'Talia Bergh', role: 'QA lead', email: 'talia.bergh@kolabr.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'TB', name: 'Talia Bergman', role: 'QA lead', email: 'talia.bergman@kolabr.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
   { initials: 'KG', name: 'Kian Garza', role: 'Support agent', email: 'kian.garza@kolabr.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'TM', name: 'Themba Maseko', role: 'Finance · Northwind Trading', email: 'themba.maseko@northwindtrading.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'ND', name: 'Naledi Dube', role: 'Account manager', email: 'naledi.dube@kolabr.com', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'TM', name: 'Terrence Mack', role: 'Finance · Northwind Trading', email: 'terrence.mack@northwindtrading.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'ND', name: 'Nia Dawson', role: 'Account manager', email: 'nia.dawson@kolabr.com', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const ACCOUNTS = [
@@ -878,12 +878,12 @@ class Component extends DCLogic {
       { kind: 'msg', author: 'Nathan Sorensen', photo: 'assets/screens/sm-photo-neville-september.png', time: '16:20', mention: true, text: '@channel release freeze starts Friday 14:00 and runs through month-end. Anything that has to ship before then needs to be merged by Thursday lunch.', reactions: [{ emoji: '👍', count: 6 }] },
       { kind: 'divider', label: 'Today' },
       { kind: 'msg', author: 'Dean Harlow', photo: 'assets/screens/sm-photo-dom-hardy.png', time: '09:12', text: 'Morning all, invoice sync is still failing on our side. Finance has 41 unsynced invoices from Monday onward.', thread: '4 replies · last 09:18' },
-      { kind: 'msg', author: 'Ruben Pienaar', photo: 'assets/screens/sm-photo-richard-potgieter.png', time: '09:19', text: 'Summarising out of the thread: the gateway rejects anything under $50 and the retry queue never clears the rejected batch, so everything behind it stalls. Fix is a two-line change to the batch handler.', reactions: [{ emoji: '🙌', count: 3 }] },
-      { kind: 'event', icon: 'confirmation_number', label: 'Request #4821 created from a message', meta: 'Ruben Pienaar · In progress · SLA 4h', time: '09:26' },
+      { kind: 'msg', author: 'Ruben Peralta', photo: 'assets/screens/sm-photo-richard-potgieter.png', time: '09:19', text: 'Summarising out of the thread: the gateway rejects anything under $50 and the retry queue never clears the rejected batch, so everything behind it stalls. Fix is a two-line change to the batch handler.', reactions: [{ emoji: '🙌', count: 3 }] },
+      { kind: 'event', icon: 'confirmation_number', label: 'Request #4821 created from a message', meta: 'Ruben Peralta · In progress · SLA 4h', time: '09:26' },
       { kind: 'msg', author: 'Dylan Sorensen', photo: 'assets/screens/sm-photo-dom-september.png', time: '09:31', text: 'Staging first please: replay the 41 stalled invoices there before it touches production, and I want someone from Northwind finance on the totals check.' },
-      { kind: 'msg', author: 'Adam Bekker', photo: '', initials: 'AB', time: '09:36', text: 'Added a Wiki page for the $50 floor with the replay steps, so the next agent does not have to dig through this channel.', thread: '2 replies · last 09:39' },
+      { kind: 'msg', author: 'Adam Brooks', photo: '', initials: 'AB', time: '09:36', text: 'Added a Wiki page for the $50 floor with the replay steps, so the next agent does not have to dig through this channel.', thread: '2 replies · last 09:39' },
       { kind: 'event', icon: 'event_available', label: 'Deploy review scheduled: today 15:00', meta: 'Nathan Sorensen · 5 invited', time: '09:38' },
-      { kind: 'msg', author: 'Ruben Pienaar', photo: 'assets/screens/sm-photo-richard-potgieter.png', time: '09:41', text: 'Deploying to staging now. I will drop the replay window in here as soon as the build is up.' }
+      { kind: 'msg', author: 'Ruben Peralta', photo: 'assets/screens/sm-photo-richard-potgieter.png', time: '09:41', text: 'Deploying to staging now. I will drop the replay window in here as soon as the build is up.' }
     ].concat(this.state.sent.map(m => ({ kind: 'msg', ...m })));
 
     let prev = null;
@@ -996,7 +996,7 @@ class Component extends DCLogic {
       notifications: [
         { icon: 'priority_high', text: 'SLA at risk on #4821: “Invoice sync failing since Monday”', time: '4 min ago', unread: true },
         { icon: 'person_add', text: 'Simone Chavez joined Northwind Trading', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Adam Bekker assigned you request #4816', time: '1 hr ago', unread: true },
+        { icon: 'assignment_ind', text: 'Adam Brooks assigned you request #4816', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Request #4802 resolved and rated 5/5', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Group Chat 1', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),

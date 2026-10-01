@@ -152,7 +152,7 @@ input, textarea, select { caret-color: transparent !important; }
       <div style="align-self: center; padding: 4px 12px; border-radius: 999px; background: var(--chip, rgba(51,80,91,0.07)); font-size: 11px; font-weight: 500; color: var(--muted, #6b8290);">Today</div>
       <div style="display: flex; align-items: flex-end; gap: 9px;">
         <span style="width: 28px; height: 28px; flex: none; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, #8a7f76, #6b6159); color: #fff; font-size: 10px; font-weight: 600;">DK</span>        <div style="max-width: 78%;">
-          <div style="font-size: 11px; color: var(--muted, #6b8290); margin: 0 0 4px 3px;">Dirk Koekemoer</div>          <div sc-camel-on-click="{{ msgTap0 }}" style="position: relative; cursor: pointer; padding: 10px 13px; border-radius: 16px 16px 16px 5px; background: var(--card, #f4f7f8); font-size: 13.5px; line-height: 1.4; text-wrap: pretty;">Plumber is on site. The water heater is a 2009 unit, replacement quoted $11,400.</div>
+          <div style="font-size: 11px; color: var(--muted, #6b8290); margin: 0 0 4px 3px;">Derek Kane</div>          <div sc-camel-on-click="{{ msgTap0 }}" style="position: relative; cursor: pointer; padding: 10px 13px; border-radius: 16px 16px 16px 5px; background: var(--card, #f4f7f8); font-size: 13.5px; line-height: 1.4; text-wrap: pretty;">Plumber is on site. The water heater is a 2009 unit, replacement quoted $11,400.</div>
           <div style="font-size: 10.5px; color: var(--muted, #6b8290); margin: 4px 0 0 3px;">09:12</div>
         </div>
       </div>
@@ -165,7 +165,7 @@ input, textarea, select { caret-color: transparent !important; }
       <div style="display: flex; align-items: flex-end; gap: 9px;">
         <span style="width: 28px; height: 28px; flex: none; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, #8a7f76, #6b6159); color: #fff; font-size: 10px; font-weight: 600; background-image: url(&quot;&quot;); background-size: cover; background-position: center;"></span>
         <div style="max-width: 78%;">
-          <div style="font-size: 11px; color: var(--muted, #6b8290); margin: 0 0 4px 3px;">Dirk Koekemoer</div>
+          <div style="font-size: 11px; color: var(--muted, #6b8290); margin: 0 0 4px 3px;">Derek Kane</div>
           <div sc-camel-on-click="{{ msgTap2 }}" style="position: relative; cursor: pointer; padding: 10px 13px; border-radius: 16px 16px 16px 5px; background: var(--card, #f4f7f8); font-size: 13.5px; line-height: 1.4; text-wrap: pretty;">Done. Water back on by 11:00. Notice posted in the residents channel.</div>
           <div style="font-size: 10.5px; color: var(--muted, #6b8290); margin: 4px 0 0 3px;">09:31</div>
         </div>
@@ -413,8 +413,8 @@ const TAB_MENUS = {
 };
 
 const ACCOUNTS = [
-  { name: 'Colette Viljoen', email: 'colette.viljoen@viljoenprop.com', role: 'Portfolio manager · Viljoen Property', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Property manager' },
-  { name: 'Colette Viljoen', email: 'colette@meadowridge-hoa.com', initials: 'CV', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Property manager · Meadowridge' }
+  { name: 'Colette Vaughn', email: 'colette.vaughn@viljoenprop.com', role: 'Portfolio manager · Vaughn Property', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Property manager' },
+  { name: 'Colette Vaughn', email: 'colette@meadowridge-hoa.com', initials: 'CV', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Property manager · Meadowridge' }
 ];
 
 class Component extends DCLogic {
@@ -681,12 +681,12 @@ class Component extends DCLogic {
 
       events: [
         { icon: 'videocam', title: 'Meadowridge weekly sync', meta: 'Now · 4 attending', live: true },
-        { icon: 'event', title: 'Board meeting', meta: '18:00 · Graham, Noluthando', live: false }
+        { icon: 'event', title: 'Board meeting', meta: '18:00 · Graham, Natalie', live: false }
       ],
 
       notifications: [
         { icon: 'priority_high', text: 'Emergency: “Water heater burst, unit 14, water to units below”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Noluthando Zulu joined The board as a guest', time: '26 min ago', unread: true },
+        { icon: 'person_add', text: 'Natalie Zimmerman joined The board as a guest', time: '26 min ago', unread: true },
         { icon: 'assignment_ind', text: 'Graham Tait assigned you the roof repair quotes', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Elevator service completed: certificate filed', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Site team', time: 'Yesterday', unread: false }

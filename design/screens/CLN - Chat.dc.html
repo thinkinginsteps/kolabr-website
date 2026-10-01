@@ -707,10 +707,10 @@ const THEMES = {
 
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
-  { initials: 'GP', name: 'Grant Pretorius', preview: 'Two urgent results are ready.', unread: true, customer: true },
-  { initials: 'G1', name: 'Clinical team', unread: true, preview: 'Dr Steyn: room 3 running 25 min late', customer: false, href: '' },
-  { initials: 'AM', name: 'Anja Meyer', preview: 'Can I get access before Tuesday?', unread: false, customer: false },
-  { initials: 'SV', name: 'Sanele Vilakazi', preview: 'Vaccine fridge log done, 39°F.', unread: false, customer: false }
+  { initials: 'GP', name: 'Grant Palmer', preview: 'Two urgent results are ready.', unread: true, customer: true },
+  { initials: 'G1', name: 'Clinical team', unread: true, preview: 'Dr Sullivan: room 3 running 25 min late', customer: false, href: '' },
+  { initials: 'AM', name: 'Anna Meyer', preview: 'Can I get access before Tuesday?', unread: false, customer: false },
+  { initials: 'SV', name: 'Sierra Valentine', preview: 'Vaccine fridge log done, 39°F.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -737,48 +737,48 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'TK', name: 'Thandeka Khumalo', role: 'Partner · Radiology bookings', email: 'thandeka.khumalo@capewestradiology.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'TK', name: 'Taylor Kennedy', role: 'Partner · Radiology bookings', email: 'taylor.kennedy@capewestradiology.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'LM', name: 'Lerato Mabaso', admin: true, role: 'Channel admin · Practice manager', email: 'lerato.mabaso@northfieldhealth.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'RS', name: 'Riaan Steyn', role: 'General practitioner', email: 'riaan.steyn@northfieldhealth.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'SV', name: 'Sanele Vilakazi', role: 'Practice nurse', email: 'sanele.vilakazi@northfieldhealth.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'FN', name: 'Fatima Nkosi', role: 'Reception lead', email: 'fatima.nkosi@northfieldhealth.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GP', name: 'Grant Pretorius', role: 'Partner · MedLab account', email: 'grant.pretorius@medlabdiagnostics.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'AM', name: 'Anja Meyer', role: 'Locum · Tue and Thu', email: 'anja.meyer@northfieldhealth.com', since: '27 May 2026', status: 'offline', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'LM', name: 'Leah Mathis', admin: true, role: 'Channel admin · Practice manager', email: 'leah.mathis@northfieldhealth.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'RS', name: 'Ryan Sullivan', role: 'General practitioner', email: 'ryan.sullivan@northfieldhealth.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'SV', name: 'Sierra Valentine', role: 'Practice nurse', email: 'sierra.valentine@northfieldhealth.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'FN', name: 'Fatima Nelson', role: 'Reception lead', email: 'fatima.nelson@northfieldhealth.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GP', name: 'Grant Palmer', role: 'Partner · MedLab account', email: 'grant.palmer@medlabdiagnostics.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'AM', name: 'Anna Meyer', role: 'Locum · Tue and Thu', email: 'anna.meyer@northfieldhealth.com', since: '27 May 2026', status: 'offline', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
-const PINNED = { text: 'No patient identifiers in this channel. Use the file number only. Clinical detail belongs in the record, not in chat.', meta: 'Lerato Mabaso · Tue' };
+const PINNED = { text: 'No patient identifiers in this channel. Use the file number only. Clinical detail belongs in the record, not in chat.', meta: 'Leah Mathis · Tue' };
 
 const THREAD = {
-  author: 'Grant Pretorius', photo: '', initials: 'GP', time: '09:12',
+  author: 'Grant Palmer', photo: '', initials: 'GP', time: '09:12',
   text: 'MedLab here. Two urgent results went out yesterday afternoon on file 22841 and 23107. Neither has been acknowledged and one of them needs same-day action.',
   replies: [
-    { author: 'Fatima Nkosi', initials: 'FN', bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)', time: '09:14', text: 'They landed in the shared inbox after four. Nobody was on it, and Dr Steyn was in theatre until six.' },
-    { author: 'Riaan Steyn', initials: 'RS', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', time: '09:16', text: 'Looking now. 22841 is the potassium. That one I need to act on this morning, and I would rather not have found out at nine.' },
-    { author: 'Lerato Mabaso', initials: 'LM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', time: '09:17', text: 'Urgent results are going into this channel from today, not the shared inbox. Grant, can MedLab flag urgents here as well as on the report?' },
-    { author: 'Grant Pretorius', initials: 'GP', bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', time: '09:18', text: 'Yes. We will post the file number and the word urgent here and leave the result itself in the portal, so nothing clinical sits in a chat.' }
+    { author: 'Fatima Nelson', initials: 'FN', bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)', time: '09:14', text: 'They landed in the shared inbox after four. Nobody was on it, and Dr Sullivan was in theatre until six.' },
+    { author: 'Ryan Sullivan', initials: 'RS', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', time: '09:16', text: 'Looking now. 22841 is the potassium. That one I need to act on this morning, and I would rather not have found out at nine.' },
+    { author: 'Leah Mathis', initials: 'LM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', time: '09:17', text: 'Urgent results are going into this channel from today, not the shared inbox. Grant, can MedLab flag urgents here as well as on the report?' },
+    { author: 'Grant Palmer', initials: 'GP', bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', time: '09:18', text: 'Yes. We will post the file number and the word urgent here and leave the result itself in the portal, so nothing clinical sits in a chat.' }
   ]
 };
 
 const GROUP = [
-  { initials: 'LM', name: 'Lerato Mabaso', role: 'Channel admin · Support lead', email: 'lerato.mabaso@northfieldhealth.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'DR', name: 'Riaan Steyn', role: 'Practice nurse', email: 'riaan.steyn@northfieldhealth.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'FN', name: 'Fatima Nkosi', role: 'Reception lead', email: 'fatima.nkosi@northfieldhealth.com', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GP', name: 'Grant Pretorius', role: 'Partner · MedLab', email: 'grant.pretorius@medlabdiagnostics.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'SV', name: 'Sanele Vilakazi', role: 'Practice nurse', email: 'sanele.vilakazi@northfieldhealth.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'AM', name: 'Anja Meyer', role: 'Locum · Tue and Thu', email: 'anja.meyer@northfieldhealth.com', since: '27 May 2026', status: 'offline', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
-  { initials: 'TK', name: 'Thandeka Khumalo', role: 'Partner · Radiology', email: 'thandeka.khumalo@capewestradiology.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
+  { initials: 'LM', name: 'Leah Mathis', role: 'Channel admin · Support lead', email: 'leah.mathis@northfieldhealth.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'DR', name: 'Ryan Sullivan', role: 'Practice nurse', email: 'ryan.sullivan@northfieldhealth.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'FN', name: 'Fatima Nelson', role: 'Reception lead', email: 'fatima.nelson@northfieldhealth.com', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GP', name: 'Grant Palmer', role: 'Partner · MedLab', email: 'grant.palmer@medlabdiagnostics.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'SV', name: 'Sierra Valentine', role: 'Practice nurse', email: 'sierra.valentine@northfieldhealth.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'AM', name: 'Anna Meyer', role: 'Locum · Tue and Thu', email: 'anna.meyer@northfieldhealth.com', since: '27 May 2026', status: 'offline', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
+  { initials: 'TK', name: 'Taylor Kennedy', role: 'Partner · Radiology', email: 'taylor.kennedy@capewestradiology.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
   { initials: 'NS', name: 'Nisha Singh', role: 'Physiotherapist', email: 'nisha.singh@northfieldhealth.com', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'JB', name: 'Johan Brits', role: 'Billing administrator', email: 'johan.brits@northfieldhealth.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'PM', name: 'Portia Mnguni', role: 'General practitioner', email: 'portia.mnguni@northfieldhealth.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'JB', name: 'Jacob Briggs', role: 'Billing administrator', email: 'jacob.briggs@northfieldhealth.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'PM', name: 'Portia Meadows', role: 'General practitioner', email: 'portia.meadows@northfieldhealth.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
   { initials: 'WD', name: 'Wendy Daniels', role: 'Billing administrator', email: 'wendy.daniels@medlabdiagnostics.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'KR', name: 'Kabelo Radebe', role: 'Practice principal', email: 'kabelo.radebe@northfieldhealth.com', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'KR', name: 'Kendall Ramirez', role: 'Practice principal', email: 'kendall.ramirez@northfieldhealth.com', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const ACCOUNTS = [
-  { name: 'Lerato Mabaso', email: 'lerato.mabaso@northfieldhealth.com', role: 'Practice manager · Northfield Health', initials: 'LM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Practice' },
-  { name: 'Lerato Mabaso', email: 'lerato@medlabdiagnostics.com', initials: 'LM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Referring practice · MedLab' }
+  { name: 'Leah Mathis', email: 'leah.mathis@northfieldhealth.com', role: 'Practice manager · Northfield Health', initials: 'LM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Practice' },
+  { name: 'Leah Mathis', email: 'leah@medlabdiagnostics.com', initials: 'LM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Referring practice · MedLab' }
 ];
 
 const goPage = (href) => (e) => {
@@ -813,7 +813,7 @@ class Component extends DCLogic {
   sendDraft() {
     const text = this.state.draft.trim();
     if (!text) return;
-    this.setState(s => ({ draft: '', sent: [...s.sent, { author: 'Lerato Mabaso', text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }] }),
+    this.setState(s => ({ draft: '', sent: [...s.sent, { author: 'Leah Mathis', text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }] }),
       () => { const el = this._stream; if (el) el.scrollTop = el.scrollHeight; });
   }
 
@@ -874,20 +874,20 @@ class Component extends DCLogic {
 
     const base = [
       { kind: 'divider', label: 'Yesterday' },
-      { kind: 'event', icon: 'group_add', label: 'Thandeka Khumalo joined #radiology-partners', meta: 'invited by Lerato Mabaso · 5 members', time: '16:02' },
-      { kind: 'msg', author: 'Sanele Vilakazi', photo: '', initials: 'SV', time: '16:20', mention: true, text: '@channel vaccine fridge logged at 39°F this morning and again at close. Reminder that the log is a channel task now. If it is not ticked here, it did not happen as far as an inspection is concerned.', reactions: [{ emoji: '👍', count: 8 }] },
+      { kind: 'event', icon: 'group_add', label: 'Taylor Kennedy joined #radiology-partners', meta: 'invited by Leah Mathis · 5 members', time: '16:02' },
+      { kind: 'msg', author: 'Sierra Valentine', photo: '', initials: 'SV', time: '16:20', mention: true, text: '@channel vaccine fridge logged at 39°F this morning and again at close. Reminder that the log is a channel task now. If it is not ticked here, it did not happen as far as an inspection is concerned.', reactions: [{ emoji: '👍', count: 8 }] },
       { kind: 'divider', label: 'Today' },
-      { kind: 'msg', author: 'Grant Pretorius', photo: '', initials: 'GP', time: '09:12', text: 'MedLab here. Two urgent results went out yesterday afternoon on file 22841 and 23107. Neither has been acknowledged and one of them needs same-day action.', thread: '4 replies · last 09:18' },
-      { kind: 'msg', author: 'Lerato Mabaso', photo: '', initials: 'LM', time: '09:19', text: 'Recording the change out of the thread: urgent results are flagged in this channel by file number, results stay in the portal, and an unacknowledged urgent escalates after an hour. Raised as #512.', reactions: [{ emoji: '🙌', count: 6 }] },
-      { kind: 'event', icon: 'confirmation_number', label: 'Request #512 raised from a message: urgent result unactioned, file 22841', meta: 'Riaan Steyn · In progress · overdue 2h', time: '09:26' },
-      { kind: 'msg', author: 'Riaan Steyn', photo: '', initials: 'RS', time: '09:31', text: 'Room 3 is running about twenty-five minutes behind. Front desk, please tell the ten o’clock arrivals rather than letting them sit there wondering.' },
-      { kind: 'msg', author: 'Fatima Nkosi', photo: '', initials: 'FN', time: '09:36', text: 'Fourteen repeat script requests came in overnight. Working through them now, flagging that four are for patients who have not been seen in over six months.', thread: '2 replies · last 09:39' },
-      { kind: 'event', icon: 'event_available', label: 'Practice meeting, Thu 13:00', meta: 'Lerato Mabaso · 7 invited', time: '09:38' },
-      { kind: 'msg', author: 'Anja Meyer', photo: '', initials: 'AM', time: '09:41', text: 'Locum here. I am in on Tuesday. Can someone set up my access before then? Last time I spent the first hour of a full list waiting for a login.' }
+      { kind: 'msg', author: 'Grant Palmer', photo: '', initials: 'GP', time: '09:12', text: 'MedLab here. Two urgent results went out yesterday afternoon on file 22841 and 23107. Neither has been acknowledged and one of them needs same-day action.', thread: '4 replies · last 09:18' },
+      { kind: 'msg', author: 'Leah Mathis', photo: '', initials: 'LM', time: '09:19', text: 'Recording the change out of the thread: urgent results are flagged in this channel by file number, results stay in the portal, and an unacknowledged urgent escalates after an hour. Raised as #512.', reactions: [{ emoji: '🙌', count: 6 }] },
+      { kind: 'event', icon: 'confirmation_number', label: 'Request #512 raised from a message: urgent result unactioned, file 22841', meta: 'Ryan Sullivan · In progress · overdue 2h', time: '09:26' },
+      { kind: 'msg', author: 'Ryan Sullivan', photo: '', initials: 'RS', time: '09:31', text: 'Room 3 is running about twenty-five minutes behind. Front desk, please tell the ten o’clock arrivals rather than letting them sit there wondering.' },
+      { kind: 'msg', author: 'Fatima Nelson', photo: '', initials: 'FN', time: '09:36', text: 'Fourteen repeat script requests came in overnight. Working through them now, flagging that four are for patients who have not been seen in over six months.', thread: '2 replies · last 09:39' },
+      { kind: 'event', icon: 'event_available', label: 'Practice meeting, Thu 13:00', meta: 'Leah Mathis · 7 invited', time: '09:38' },
+      { kind: 'msg', author: 'Anna Meyer', photo: '', initials: 'AM', time: '09:41', text: 'Locum here. I am in on Tuesday. Can someone set up my access before then? Last time I spent the first hour of a full list waiting for a login.' }
     ].concat(this.state.sent.map(m => ({ kind: 'msg', ...m })));
 
     let prev = null;
-    const ME = 'Lerato Mabaso';
+    const ME = 'Leah Mathis';
     const stream = base.map((m, i) => {
       const isMsg = m.kind === 'msg';
       const grouped = isMsg && prev && prev.author === m.author;
@@ -995,8 +995,8 @@ class Component extends DCLogic {
 
       notifications: [
         { icon: 'priority_high', text: 'Urgent result unactioned 2h: “Abnormal potassium, ward round list”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Thandeka Khumalo joined Radiology partners as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Lerato Mabaso assigned you the locum onboarding', time: '1 hr ago', unread: true },
+        { icon: 'person_add', text: 'Taylor Kennedy joined Radiology partners as a guest', time: '26 min ago', unread: true },
+        { icon: 'assignment_ind', text: 'Leah Mathis assigned you the locum onboarding', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Cold chain log completed: vaccine fridge 39°F', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Clinical team', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
@@ -1063,7 +1063,7 @@ class Component extends DCLogic {
       ].map(x => ({ ...x, onClick: goPage(x.href) })),
       chats: [
         { initials: '', group: true, name: 'Clinical team', unread: '2', avatarBg: dark ? 'rgba(255,255,255,0.12)' : 'rgba(51,80,91,0.12)', avatarFg: 'var(--topIcon, #33505b)', onClick: goPage('Desktop Admin - Group Chat.dc.html'), onEnter: () => {}, onLeave: () => {} },
-        { initials: 'TK', group: false, name: 'Thandeka Khumalo', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
+        { initials: 'TK', group: false, name: 'Taylor Kennedy', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
           onEnter: (e) => this.showCard(SHARON, e.currentTarget), onLeave: () => this.scheduleHide() }
       ],
       members: MEMBERS.map((m, i) => ({

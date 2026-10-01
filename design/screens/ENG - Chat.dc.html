@@ -707,10 +707,10 @@ const THEMES = {
 
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
-  { initials: 'NP', name: 'Nicola Prinsloo', preview: 'Can we pour Thursday or not?', unread: true, customer: true },
-  { initials: 'G1', name: 'Engineering team', unread: true, preview: 'Kabelo: deflection check is done', customer: false, href: '' },
+  { initials: 'NP', name: 'Nicole Porter', preview: 'Can we pour Thursday or not?', unread: true, customer: true },
+  { initials: 'G1', name: 'Engineering team', unread: true, preview: 'Kendall: deflection check is done', customer: false, href: '' },
   { initials: 'BT', name: 'Brett Turner', preview: 'Need the certificate for the bank.', unread: false, customer: true },
-  { initials: 'WG', name: 'Willem Greyling', preview: 'Fire water pressure test Friday.', unread: false, customer: false }
+  { initials: 'WG', name: 'Wade Griffin', preview: 'Fire water pressure test Friday.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -737,48 +737,48 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'MV', name: 'Marize Visser', role: 'Client · Facilities', email: 'marize.visser@cavendishproperties.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'MV', name: 'Marissa Vega', role: 'Client · Facilities', email: 'marissa.vega@cavendishproperties.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'EL', name: 'Erika Lombard', admin: true, role: 'Channel admin · Pr Eng, project lead', email: 'erika.lombard@lombardconsulting.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'KN', name: 'Kabelo Ntuli', role: 'Structural engineer', email: 'kabelo.ntuli@lombardconsulting.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'WG', name: 'Willem Greyling', role: 'Wet services engineer', email: 'willem.greyling@lombardconsulting.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'AS', name: 'Anele Sithole', role: 'Candidate engineer', email: 'anele.sithole@lombardconsulting.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'EL', name: 'Erika Lowell', admin: true, role: 'Channel admin · Pr Eng, project lead', email: 'erika.lowell@lombardconsulting.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'KN', name: 'Kendall Nash', role: 'Structural engineer', email: 'kendall.nash@lombardconsulting.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'WG', name: 'Wade Griffin', role: 'Wet services engineer', email: 'wade.griffin@lombardconsulting.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'AS', name: 'Alicia Simmons', role: 'Candidate engineer', email: 'alicia.simmons@lombardconsulting.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'BT', name: 'Brett Turner', role: 'Client · Development manager', email: 'brett.turner@cavendishproperties.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'NP', name: 'Nicola Prinsloo', role: 'Contractor · Site agent', email: 'nicola.prinsloo@vermeulenbuild.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'NP', name: 'Nicole Porter', role: 'Contractor · Site agent', email: 'nicole.porter@vermeulenbuild.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
-const PINNED = { text: 'No pour proceeds without a signed inspection. If the engineer has not signed it in this channel, it has not been approved.', meta: 'Erika Lombard · Tue' };
+const PINNED = { text: 'No pour proceeds without a signed inspection. If the engineer has not signed it in this channel, it has not been approved.', meta: 'Erika Lowell · Tue' };
 
 const THREAD = {
-  author: 'Nicola Prinsloo', photo: '', initials: 'NP', time: '09:12',
+  author: 'Nicole Porter', photo: '', initials: 'NP', time: '09:12',
   text: 'Rebar is fixed for slab 4C and we are booked to pour Thursday 05:30. Spacing at the eastern edge looks wider than the bending schedule, photos attached. Can you confirm or do we stop?',
   replies: [
-    { author: 'Kabelo Ntuli', initials: 'KN', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', time: '09:14', text: 'Measuring off your photographs it is about 180mm against 150mm specified. That is outside tolerance. Do not pour on it.' },
-    { author: 'Erika Lombard', initials: 'EL', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', time: '09:16', text: 'Agreed, and I am not signing the inspection until it is corrected. I would rather hold a pour than carry that on my registration.' },
-    { author: 'Nicola Prinsloo', initials: 'NP', bg: 'linear-gradient(150deg, #8b8394, #635c6d)', time: '09:17', text: 'Understood. If we re-fix today, can you inspect tomorrow morning so we keep the Thursday slot?' },
-    { author: 'Kabelo Ntuli', initials: 'KN', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', time: '09:18', text: 'Booked for 07:00. Photograph the corrected spacing before I arrive so we are not standing there measuring in the rain.' }
+    { author: 'Kendall Nash', initials: 'KN', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', time: '09:14', text: 'Measuring off your photographs it is about 180mm against 150mm specified. That is outside tolerance. Do not pour on it.' },
+    { author: 'Erika Lowell', initials: 'EL', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', time: '09:16', text: 'Agreed, and I am not signing the inspection until it is corrected. I would rather hold a pour than carry that on my registration.' },
+    { author: 'Nicole Porter', initials: 'NP', bg: 'linear-gradient(150deg, #8b8394, #635c6d)', time: '09:17', text: 'Understood. If we re-fix today, can you inspect tomorrow morning so we keep the Thursday slot?' },
+    { author: 'Kendall Nash', initials: 'KN', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', time: '09:18', text: 'Booked for 07:00. Photograph the corrected spacing before I arrive so we are not standing there measuring in the rain.' }
   ]
 };
 
 const GROUP = [
-  { initials: 'EL', name: 'Erika Lombard', role: 'Channel admin · Support lead', email: 'erika.lombard@lombardconsulting.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'WG', name: 'Willem Greyling', role: 'Wet services engineer', email: 'willem.greyling@lombardconsulting.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'AS', name: 'Anele Sithole', role: 'Candidate engineer', email: 'anele.sithole@lombardconsulting.com', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'EL', name: 'Erika Lowell', role: 'Channel admin · Support lead', email: 'erika.lowell@lombardconsulting.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'WG', name: 'Wade Griffin', role: 'Wet services engineer', email: 'wade.griffin@lombardconsulting.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'AS', name: 'Alicia Simmons', role: 'Candidate engineer', email: 'alicia.simmons@lombardconsulting.com', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'BT', name: 'Brett Turner', role: 'Client · Riverside', email: 'brett.turner@cavendishproperties.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'KN', name: 'Kabelo Ntuli', role: 'Structural engineer', email: 'kabelo.ntuli@lombardconsulting.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'NP', name: 'Nicola Prinsloo', role: 'Client · Riverside', email: 'nicola.prinsloo@cavendishproperties.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
-  { initials: 'MV', name: 'Marize Visser', role: 'Client · Riverside', email: 'marize.visser@cavendishproperties.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
+  { initials: 'KN', name: 'Kendall Nash', role: 'Structural engineer', email: 'kendall.nash@lombardconsulting.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'NP', name: 'Nicole Porter', role: 'Client · Riverside', email: 'nicole.porter@cavendishproperties.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
+  { initials: 'MV', name: 'Marissa Vega', role: 'Client · Riverside', email: 'marissa.vega@cavendishproperties.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
   { initials: 'RS', name: 'Ravi Singh', role: 'Geotechnical engineer', email: 'ravi.singh@lombardconsulting.com', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'CJ', name: 'Carla Jacobs', role: 'Quality and testing', email: 'carla.jacobs@lombardconsulting.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'DN', name: 'Dumisani Ncube', role: 'Structural engineer', email: 'dumisani.ncube@lombardconsulting.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'FO', name: 'Fanie Oosthuizen', role: 'Client · Development manager', email: 'fanie.oosthuizen@cavendishproperties.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'DN', name: 'Darius Nunez', role: 'Structural engineer', email: 'darius.nunez@lombardconsulting.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'FO', name: 'Frank Owens', role: 'Client · Development manager', email: 'frank.owens@cavendishproperties.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
   { initials: 'LM', name: 'Leigh Marshall', role: 'Practice principal', email: 'leigh.marshall@lombardconsulting.com', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const ACCOUNTS = [
-  { name: 'Erika Lombard', email: 'erika.lombard@lombardconsulting.com', role: 'Pr Eng · Lombard Consulting', initials: 'EL', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Practice' },
-  { name: 'Erika Lombard', email: 'erika@cavendishproperties.com', initials: 'EL', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Engineering team · Riverside' }
+  { name: 'Erika Lowell', email: 'erika.lowell@lombardconsulting.com', role: 'Pr Eng · Lowell Consulting', initials: 'EL', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Practice' },
+  { name: 'Erika Lowell', email: 'erika@cavendishproperties.com', initials: 'EL', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Engineering team · Riverside' }
 ];
 
 const goPage = (href) => (e) => {
@@ -813,7 +813,7 @@ class Component extends DCLogic {
   sendDraft() {
     const text = this.state.draft.trim();
     if (!text) return;
-    this.setState(s => ({ draft: '', sent: [...s.sent, { author: 'Erika Lombard', text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }] }),
+    this.setState(s => ({ draft: '', sent: [...s.sent, { author: 'Erika Lowell', text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }] }),
       () => { const el = this._stream; if (el) el.scrollTop = el.scrollHeight; });
   }
 
@@ -874,20 +874,20 @@ class Component extends DCLogic {
 
     const base = [
       { kind: 'divider', label: 'Yesterday' },
-      { kind: 'event', icon: 'group_add', label: 'Marize Visser joined #client-approvals', meta: 'invited by Erika Lombard · 6 members', time: '16:02' },
-      { kind: 'msg', author: 'Anele Sithole', photo: '', initials: 'AS', time: '16:20', mention: true, text: '@channel 28-day cube results for the level 2 pour are in and they are 3MPa under spec. Flagging now rather than at the end of the week, testing report attached to INS-091.', reactions: [{ emoji: '👍', count: 7 }] },
+      { kind: 'event', icon: 'group_add', label: 'Marissa Vega joined #client-approvals', meta: 'invited by Erika Lowell · 6 members', time: '16:02' },
+      { kind: 'msg', author: 'Alicia Simmons', photo: '', initials: 'AS', time: '16:20', mention: true, text: '@channel 28-day cube results for the level 2 pour are in and they are 3MPa under spec. Flagging now rather than at the end of the week, testing report attached to INS-091.', reactions: [{ emoji: '👍', count: 7 }] },
       { kind: 'divider', label: 'Today' },
-      { kind: 'msg', author: 'Nicola Prinsloo', photo: '', initials: 'NP', time: '09:12', text: 'Rebar is fixed for slab 4C and we are booked to pour Thursday 05:30. Spacing at the eastern edge looks wider than the bending schedule, photos attached. Can you confirm or do we stop?', thread: '4 replies · last 09:18' },
-      { kind: 'msg', author: 'Kabelo Ntuli', photo: '', initials: 'KN', time: '09:19', text: 'For the record: spacing at the eastern edge of 4C is out of tolerance, pour is on hold, re-inspection booked 07:00 tomorrow. All of it against request #614 so the decision has a date and a name on it.', reactions: [{ emoji: '🙌', count: 5 }] },
-      { kind: 'event', icon: 'confirmation_number', label: 'Request #614 raised from a message: slab 4C rebar spacing, pour on hold', meta: 'Kabelo Ntuli · In progress · due in 3h', time: '09:26' },
-      { kind: 'msg', author: 'Erika Lombard', photo: '', initials: 'EL', time: '09:31', text: 'A verbal approval on site is worth nothing to me and less to my insurer. If it is not written in this channel with my name against it, it is not signed.' },
-      { kind: 'msg', author: 'Willem Greyling', photo: '', initials: 'WG', time: '09:36', text: 'Wet services: fire water pressure test is Friday 09:00 and needs a witness from our side plus the client. I have put the test procedure and the acceptance criteria on the wiki.', thread: '2 replies · last 09:39' },
-      { kind: 'event', icon: 'event_available', label: 'Re-inspection, slab 4C, Wed 07:00', meta: 'Kabelo Ntuli · 4 invited', time: '09:38' },
+      { kind: 'msg', author: 'Nicole Porter', photo: '', initials: 'NP', time: '09:12', text: 'Rebar is fixed for slab 4C and we are booked to pour Thursday 05:30. Spacing at the eastern edge looks wider than the bending schedule, photos attached. Can you confirm or do we stop?', thread: '4 replies · last 09:18' },
+      { kind: 'msg', author: 'Kendall Nash', photo: '', initials: 'KN', time: '09:19', text: 'For the record: spacing at the eastern edge of 4C is out of tolerance, pour is on hold, re-inspection booked 07:00 tomorrow. All of it against request #614 so the decision has a date and a name on it.', reactions: [{ emoji: '🙌', count: 5 }] },
+      { kind: 'event', icon: 'confirmation_number', label: 'Request #614 raised from a message: slab 4C rebar spacing, pour on hold', meta: 'Kendall Nash · In progress · due in 3h', time: '09:26' },
+      { kind: 'msg', author: 'Erika Lowell', photo: '', initials: 'EL', time: '09:31', text: 'A verbal approval on site is worth nothing to me and less to my insurer. If it is not written in this channel with my name against it, it is not signed.' },
+      { kind: 'msg', author: 'Wade Griffin', photo: '', initials: 'WG', time: '09:36', text: 'Wet services: fire water pressure test is Friday 09:00 and needs a witness from our side plus the client. I have put the test procedure and the acceptance criteria on the wiki.', thread: '2 replies · last 09:39' },
+      { kind: 'event', icon: 'event_available', label: 'Re-inspection, slab 4C, Wed 07:00', meta: 'Kendall Nash · 4 invited', time: '09:38' },
       { kind: 'msg', author: 'Brett Turner', photo: '', initials: 'BT', time: '09:41', text: 'From the client side: the bank needs the completion certificate for level 2 before they release the next drawdown. What is outstanding before you can issue it?' }
     ].concat(this.state.sent.map(m => ({ kind: 'msg', ...m })));
 
     let prev = null;
-    const ME = 'Erika Lombard';
+    const ME = 'Erika Lowell';
     const stream = base.map((m, i) => {
       const isMsg = m.kind === 'msg';
       const grouped = isMsg && prev && prev.author === m.author;
@@ -995,8 +995,8 @@ class Component extends DCLogic {
 
       notifications: [
         { icon: 'priority_high', text: 'Hold on pour: “Slab 4C, rebar spacing query” due in 3h', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Marize Visser joined Client & approvals as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Erika Lombard assigned you the completion certificate pack', time: '1 hr ago', unread: true },
+        { icon: 'person_add', text: 'Marissa Vega joined Client & approvals as a guest', time: '26 min ago', unread: true },
+        { icon: 'assignment_ind', text: 'Erika Lowell assigned you the completion certificate pack', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Inspection INS-091 signed off: level 2 slab', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Engineering team', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
@@ -1063,7 +1063,7 @@ class Component extends DCLogic {
       ].map(x => ({ ...x, onClick: goPage(x.href) })),
       chats: [
         { initials: '', group: true, name: 'Engineering team', unread: '2', avatarBg: dark ? 'rgba(255,255,255,0.12)' : 'rgba(51,80,91,0.12)', avatarFg: 'var(--topIcon, #33505b)', onClick: goPage('Desktop Admin - Group Chat.dc.html'), onEnter: () => {}, onLeave: () => {} },
-        { initials: 'MV', group: false, name: 'Marize Visser', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
+        { initials: 'MV', group: false, name: 'Marissa Vega', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
           onEnter: (e) => this.showCard(SHARON, e.currentTarget), onLeave: () => this.scheduleHide() }
       ],
       members: MEMBERS.map((m, i) => ({

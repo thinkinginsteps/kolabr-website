@@ -485,7 +485,7 @@ input, textarea, select { caret-color: transparent !important; }
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 14px; padding-bottom: 18px; border-bottom: 1px solid var(--hairline, rgba(0,0,0,0.09));">
             <span style="display: inline-flex; align-items: center; gap: 7px;">
               <span aria-label="LM" style="width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, #4a6b78, #33505b); color: #ffffff; font-size: 9px; font-weight: 600;">LM</span>
-              <span style="font-size: 12.5px; font-weight: 500;">Lerato Mabaso</span>
+              <span style="font-size: 12.5px; font-weight: 500;">Leah Mathis</span>
             </span>
             <span style="font-size: 12.5px; color: var(--muted, #6b8290);">updated 2 days ago · v14</span>
             <span style="width: 1px; height: 13px; background: var(--hairline, rgba(0,0,0,0.10));"></span>
@@ -550,7 +550,7 @@ input, textarea, select { caret-color: transparent !important; }
 
           <h2 data-anchor="Flagging it in the channel" style="margin: 32px 0 0; font-size: 19px; font-weight: 650; letter-spacing: -0.02em;">Flagging it in the channel</h2>
           <p style="margin: 10px 0 0; font-size: 14.5px; line-height: 1.68; text-wrap: pretty;">This is the whole message. File number, priority and who is being asked to act, nothing clinical, nothing identifying, and no assumption that somebody will open the portal unprompted.</p>
-          <div style="margin-top: 14px; padding: 15px 17px; border-radius: 14px; background: var(--page, #edf3f7); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; line-height: 1.7; color: var(--muted, #6b8290); text-wrap: pretty;">URGENT result in the portal for file 22841, received 16:42. Action needed today. Dr Steyn is on this list. Please acknowledge here within the hour or it escalates to the practice manager. No clinical detail in this channel.</div>
+          <div style="margin-top: 14px; padding: 15px 17px; border-radius: 14px; background: var(--page, #edf3f7); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; line-height: 1.7; color: var(--muted, #6b8290); text-wrap: pretty;">URGENT result in the portal for file 22841, received 16:42. Action needed today. Dr Sullivan is on this list. Please acknowledge here within the hour or it escalates to the practice manager. No clinical detail in this channel.</div>
 
           <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 34px; padding-top: 20px; border-top: 1px solid var(--hairline, rgba(0,0,0,0.09));">
             <span style="font-size: 13.5px; font-weight: 500;">Was this page helpful?</span>
@@ -637,10 +637,10 @@ const THEMES = {
 
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
-  { initials: 'GP', name: 'Grant Pretorius', preview: 'Two urgent results are ready.', unread: true, customer: true },
-  { initials: 'G1', name: 'Clinical team', unread: true, preview: 'Dr Steyn: room 3 running 25 min late', customer: false, href: '' },
-  { initials: 'AM', name: 'Anja Meyer', preview: 'Can I get access before Tuesday?', unread: false, customer: false },
-  { initials: 'SV', name: 'Sanele Vilakazi', preview: 'Vaccine fridge log done, 39°F.', unread: false, customer: false }
+  { initials: 'GP', name: 'Grant Palmer', preview: 'Two urgent results are ready.', unread: true, customer: true },
+  { initials: 'G1', name: 'Clinical team', unread: true, preview: 'Dr Sullivan: room 3 running 25 min late', customer: false, href: '' },
+  { initials: 'AM', name: 'Anna Meyer', preview: 'Can I get access before Tuesday?', unread: false, customer: false },
+  { initials: 'SV', name: 'Sierra Valentine', preview: 'Vaccine fridge log done, 39°F.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -667,27 +667,27 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'TK', name: 'Thandeka Khumalo', role: 'Partner · Radiology bookings', email: 'thandeka.khumalo@capewestradiology.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'TK', name: 'Taylor Kennedy', role: 'Partner · Radiology bookings', email: 'taylor.kennedy@capewestradiology.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'LM', name: 'Lerato Mabaso', admin: true, role: 'Channel admin · Practice manager', email: 'lerato.mabaso@northfieldhealth.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'RS', name: 'Riaan Steyn', role: 'General practitioner', email: 'riaan.steyn@northfieldhealth.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'SV', name: 'Sanele Vilakazi', role: 'Practice nurse', email: 'sanele.vilakazi@northfieldhealth.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'FN', name: 'Fatima Nkosi', role: 'Reception lead', email: 'fatima.nkosi@northfieldhealth.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GP', name: 'Grant Pretorius', role: 'Partner · MedLab account', email: 'grant.pretorius@medlabdiagnostics.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'AM', name: 'Anja Meyer', role: 'Locum · Tue and Thu', email: 'anja.meyer@northfieldhealth.com', since: '27 May 2026', status: 'offline', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'LM', name: 'Leah Mathis', admin: true, role: 'Channel admin · Practice manager', email: 'leah.mathis@northfieldhealth.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'RS', name: 'Ryan Sullivan', role: 'General practitioner', email: 'ryan.sullivan@northfieldhealth.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'SV', name: 'Sierra Valentine', role: 'Practice nurse', email: 'sierra.valentine@northfieldhealth.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'FN', name: 'Fatima Nelson', role: 'Reception lead', email: 'fatima.nelson@northfieldhealth.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GP', name: 'Grant Palmer', role: 'Partner · MedLab account', email: 'grant.palmer@medlabdiagnostics.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'AM', name: 'Anna Meyer', role: 'Locum · Tue and Thu', email: 'anna.meyer@northfieldhealth.com', since: '27 May 2026', status: 'offline', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const CH_CATS = ['All', 'Clinical', 'Operations', 'Admin', 'Partners'];
 
 const PEOPLE = {
-  LM: { name: 'Lerato Mabaso', email: 'lerato.mabaso@northfieldhealth.com', role: 'Practice manager' },
-  RS: { name: 'Riaan Steyn', email: 'riaan.steyn@northfieldhealth.com', role: 'General practitioner' },
-  SV: { name: 'Sanele Vilakazi', email: 'sanele.vilakazi@northfieldhealth.com', role: 'Practice nurse' },
-  FN: { name: 'Fatima Nkosi', email: 'fatima.nkosi@northfieldhealth.com', role: 'Reception lead' },
-  AM: { name: 'Anja Meyer', email: 'anja.meyer@northfieldhealth.com', role: 'Locum · Tue and Thu' },
-  GP: { name: 'Grant Pretorius', email: 'grant.pretorius@medlabdiagnostics.com', role: 'Partner · MedLab' },
-  TK: { name: 'Thandeka Khumalo', email: 'thandeka.khumalo@capewestradiology.com', role: 'Partner · Radiology' }
+  LM: { name: 'Leah Mathis', email: 'leah.mathis@northfieldhealth.com', role: 'Practice manager' },
+  RS: { name: 'Ryan Sullivan', email: 'ryan.sullivan@northfieldhealth.com', role: 'General practitioner' },
+  SV: { name: 'Sierra Valentine', email: 'sierra.valentine@northfieldhealth.com', role: 'Practice nurse' },
+  FN: { name: 'Fatima Nelson', email: 'fatima.nelson@northfieldhealth.com', role: 'Reception lead' },
+  AM: { name: 'Anna Meyer', email: 'anna.meyer@northfieldhealth.com', role: 'Locum · Tue and Thu' },
+  GP: { name: 'Grant Palmer', email: 'grant.palmer@medlabdiagnostics.com', role: 'Partner · MedLab' },
+  TK: { name: 'Taylor Kennedy', email: 'taylor.kennedy@capewestradiology.com', role: 'Partner · Radiology' }
 };
 
 const AVATAR_BGS = ['linear-gradient(150deg, #33505b, #557a88)', 'linear-gradient(150deg, #00c3ff, #0a9fd4)', 'linear-gradient(150deg, #7c6cf0, #5c4bd8)'];
@@ -732,8 +732,8 @@ const WIKI_TREE = [
 const WIKI_SECTION_OF = { w4: 'Clinical' };
 
 const ACCOUNTS = [
-  { name: 'Lerato Mabaso', email: 'lerato.mabaso@northfieldhealth.com', role: 'Practice manager · Northfield Health', initials: 'LM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Practice' },
-  { name: 'Lerato Mabaso', email: 'lerato@medlabdiagnostics.com', initials: 'LM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Referring practice · MedLab' }
+  { name: 'Leah Mathis', email: 'leah.mathis@northfieldhealth.com', role: 'Practice manager · Northfield Health', initials: 'LM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Practice' },
+  { name: 'Leah Mathis', email: 'leah@medlabdiagnostics.com', initials: 'LM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Referring practice · MedLab' }
 ];
 
 const goPage = (href) => (e) => {
@@ -975,8 +975,8 @@ class Component extends DCLogic {
 
       notifications: [
         { icon: 'priority_high', text: 'Urgent result unactioned 2h: “Abnormal potassium, ward round list”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Thandeka Khumalo joined Radiology partners as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Lerato Mabaso assigned you the locum onboarding', time: '1 hr ago', unread: true },
+        { icon: 'person_add', text: 'Taylor Kennedy joined Radiology partners as a guest', time: '26 min ago', unread: true },
+        { icon: 'assignment_ind', text: 'Leah Mathis assigned you the locum onboarding', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Cold chain log completed: vaccine fridge 39°F', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Clinical team', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
@@ -1043,7 +1043,7 @@ class Component extends DCLogic {
       ].map(x => ({ ...x, onClick: goPage(x.href) })),
       chats: [
         { initials: '', group: true, name: 'Clinical team', unread: '2', avatarBg: dark ? 'rgba(255,255,255,0.12)' : 'rgba(51,80,91,0.12)', avatarFg: 'var(--topIcon, #33505b)', onClick: goPage('Desktop Admin - Group Chat.dc.html'), onEnter: () => {}, onLeave: () => {} },
-        { initials: 'TK', group: false, name: 'Thandeka Khumalo', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
+        { initials: 'TK', group: false, name: 'Taylor Kennedy', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
           onEnter: (e) => this.showCard(SHARON, e.currentTarget), onLeave: () => this.scheduleHide() }
       ],
       members: MEMBERS.map((m, i) => ({

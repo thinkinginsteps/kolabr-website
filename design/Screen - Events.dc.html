@@ -794,7 +794,7 @@ input, textarea, select { caret-color: transparent !important; }
             <div style="height: 4px;"></div>
             <div style="font-size: 10.5px; font-weight: 650; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted, #6b8290);">Subscribe elsewhere</div>
             <div style="display: flex; align-items: center; gap: 8px; padding: 4px 4px 4px 13px; border: 1px solid var(--hairline, rgba(0,0,0,0.12)); border-radius: 12px;">
-              <span style="flex: 1; min-width: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; color: var(--muted, #6b8290); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">webcal://kolabr.com/ics/nadia.fourie/grade-4b</span>
+              <span style="flex: 1; min-width: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; color: var(--muted, #6b8290); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">webcal://kolabr.com/ics/nadia.foster/grade-4b</span>
               <button style="height: 32px; padding: 0 13px; border: none; cursor: pointer; border-radius: 980px; font-family: inherit; font-size: 12.5px; font-weight: 600; color: inherit; background: var(--chip, rgba(51,80,91,0.07));">Copy</button>
             </div>
 
@@ -896,10 +896,10 @@ const THEMES = {
 
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
-  { initials: 'HB', name: 'Hannah Bekker', preview: 'Is the outing form due today?', unread: true, customer: true },
-  { initials: 'G1', name: 'Grade 4 teachers', preview: 'Thabo: I can cover 4A after break', unread: true, customer: false, href: '' },
-  { initials: 'ZD', name: 'Zanele Dube', preview: 'Thank you. Sipho is back Monday.', unread: false, customer: true },
-  { initials: 'TM', name: 'Thabo Mokoena', preview: 'Can you take the 10:30 slot?', unread: false, customer: false }
+  { initials: 'HB', name: 'Hannah Brooks', preview: 'Is the outing form due today?', unread: true, customer: true },
+  { initials: 'G1', name: 'Grade 4 teachers', preview: 'Trevor: I can cover 4A after break', unread: true, customer: false, href: '' },
+  { initials: 'ZD', name: 'Zoey Dawson', preview: 'Thank you. Shawn is back Monday.', unread: false, customer: true },
+  { initials: 'TM', name: 'Trevor Mitchell', preview: 'Can you take the 10:30 slot?', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -926,35 +926,35 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'HB', name: 'Hannah Bekker', role: 'Parent · Ruby 4B', email: 'hannah.bekker@ridgeway-parents.org', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'HB', name: 'Hannah Brooks', role: 'Parent · Ruby 4B', email: 'hannah.brooks@ridgeway-parents.org', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'NF', name: 'Nadia Fourie', admin: true, role: 'Channel admin · Class teacher', email: 'nadia.fourie@ridgeway.school', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'TM', name: 'Thabo Mokoena', role: 'Teaching assistant', email: 'thabo.mokoena@ridgeway.school', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'GW', name: 'Grant Wessels', role: 'Head of Grade 4', email: 'grant.wessels@ridgeway.school', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'PM', name: 'Pieter Malan', role: 'School office', email: 'pieter.malan@ridgeway.school', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'NF', name: 'Nadia Foster', admin: true, role: 'Channel admin · Class teacher', email: 'nadia.foster@ridgeway.school', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'TM', name: 'Trevor Mitchell', role: 'Teaching assistant', email: 'trevor.mitchell@ridgeway.school', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'GW', name: 'Grant Wells', role: 'Head of Grade 4', email: 'grant.wells@ridgeway.school', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'PM', name: 'Peter Molina', role: 'School office', email: 'peter.molina@ridgeway.school', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'MA', name: 'Marcus Adams', role: 'Parent · Amelia 4B', email: 'marcus.adams@ridgeway-parents.org', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'ZD', name: 'Zanele Dube', role: 'Parent · Sipho 4B', email: 'zanele.dube@ridgeway-parents.org', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'ZD', name: 'Zoey Dawson', role: 'Parent · Shawn 4B', email: 'zoey.dawson@ridgeway-parents.org', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const CH_CATS = ['All', 'Classes', 'Staff', 'Facilities', 'Suppliers'];
 
 const PEOPLE = {
-  NF: { name: 'Nadia Fourie', email: 'nadia.fourie@ridgeway.school', role: 'Class teacher' },
-  PM: { name: 'Pieter Malan', email: 'pieter.malan@ridgeway.school', role: 'School office' },
-  TM: { name: 'Thabo Mokoena', email: 'thabo.mokoena@ridgeway.school', role: 'Staff' },
-  PN: { name: 'Priya Naidoo', email: 'priya.naidoo@ridgeway.school', role: 'Staff' },
-  GW: { name: 'Grant Wessels', email: 'grant.wessels@ridgeway.school', role: 'School office' },
-  RE: { name: 'Zanele Dube', email: 'zanele.dube@ridgeway-parents.org', role: 'Staff' },
-  HB: { name: 'Hannah Bekker', email: 'hannah.bekker@ridgeway-parents.org', role: 'Guest' }
+  NF: { name: 'Nadia Foster', email: 'nadia.foster@ridgeway.school', role: 'Class teacher' },
+  PM: { name: 'Peter Molina', email: 'peter.molina@ridgeway.school', role: 'School office' },
+  TM: { name: 'Trevor Mitchell', email: 'trevor.mitchell@ridgeway.school', role: 'Staff' },
+  PN: { name: 'Priya Nair', email: 'priya.nair@ridgeway.school', role: 'Staff' },
+  GW: { name: 'Grant Wells', email: 'grant.wells@ridgeway.school', role: 'School office' },
+  RE: { name: 'Zoey Dawson', email: 'zoey.dawson@ridgeway-parents.org', role: 'Staff' },
+  HB: { name: 'Hannah Brooks', email: 'hannah.brooks@ridgeway-parents.org', role: 'Guest' }
 };
 
 const AVATAR_BGS = ['linear-gradient(150deg, #33505b, #557a88)', 'linear-gradient(150deg, #00c3ff, #0a9fd4)', 'linear-gradient(150deg, #7c6cf0, #5c4bd8)'];
 
 const CHANNEL_LIST = [
-  { name: 'Grade 4B', category: 'Classes', desc: 'Mrs Fourie’s class', members: 6, sla: 'Priority', people: ['NF', 'PM', 'TM', 'PN', 'GW', 'RE'] },
-  { name: 'Grade 4A', category: 'Classes', desc: 'Mr Mokoena’s class', members: 4, sla: 'Standard', people: ['PM', 'PN', 'TM', 'NF'] },
-  { name: 'Grade 5A', category: 'Classes', desc: 'Miss Roux’s class', members: 2, sla: 'Standard', people: ['NF', 'GW'] },
+  { name: 'Grade 4B', category: 'Classes', desc: 'Mrs Foster’s class', members: 6, sla: 'Priority', people: ['NF', 'PM', 'TM', 'PN', 'GW', 'RE'] },
+  { name: 'Grade 4A', category: 'Classes', desc: 'Mr Mitchell’s class', members: 4, sla: 'Standard', people: ['PM', 'PN', 'TM', 'NF'] },
+  { name: 'Grade 5A', category: 'Classes', desc: 'Miss Rowe’s class', members: 2, sla: 'Standard', people: ['NF', 'GW'] },
   { name: 'Admissions', category: 'Staff', desc: 'Applications for 2027', members: 4, sla: 'Enhanced', people: ['RE', 'TM', 'NF', 'PN'] },
   { name: 'Sports & extramurals', category: 'Staff', desc: 'Fixtures and coaching', members: 4, sla: 'Standard', people: ['GW', 'NF', 'PM', 'TM'] },
   { name: 'Library', category: 'Staff', desc: 'Reading programme', members: 1, sla: 'Standard', people: ['PN'] },
@@ -992,7 +992,7 @@ const EVENTS = [
   { id: 'e4', date: '2026-08-26', start: '07:45', mins: 15, title: 'Morning staff briefing', type: 'call', chan: 'Staff room', src: 'kolabr', people: ['NF', 'TM', 'PN', 'PM'] },
   { id: 'e5', date: '2026-08-26', start: '11:00', mins: 60, title: 'Planetarium outing: final arrangements', type: 'meeting', chan: 'Grade 4B', src: 'google', people: ['NF', 'PM', 'PN'] },
   { id: 'e6', date: '2026-08-26', start: '14:00', mins: 45, title: 'Netball fixture vs Oakfield (home)', type: 'meeting', chan: 'Sports & extramurals', src: 'kolabr', people: ['RE', 'PN'] },
-  { id: 'e7', date: '2026-08-26', start: '16:30', mins: 30, title: 'Parent evening slot: Dube family', type: 'call', chan: 'Grade 4B', src: 'kolabr', people: ['NF', 'PM'] },
+  { id: 'e7', date: '2026-08-26', start: '16:30', mins: 30, title: 'Parent evening slot: Dawson family', type: 'call', chan: 'Grade 4B', src: 'kolabr', people: ['NF', 'PM'] },
   { id: 'e8', date: '2026-08-27', start: '08:15', mins: 0, title: 'Attendance return cut-off', type: 'deadline', chan: 'Staff room', src: 'kolabr', people: ['RE', 'TM'] },
   { id: 'e9', date: '2026-08-27', start: '13:00', mins: 60, title: 'Uniform shop stock count', type: 'meeting', chan: 'Uniform shop', src: 'google', people: ['NF', 'RE', 'TM'] },
   { id: 'e10', date: '2026-08-28', start: '09:00', mins: 30, title: 'Governing body agenda review', type: 'review', chan: 'Governing body', src: 'kolabr', people: ['NF', 'GW', 'PM'] },
@@ -1010,14 +1010,14 @@ const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
 const CAL_VIEWS = ['Day', 'Week', 'Month', 'Year'];
 
 const ACCOUNTS = [
-  { name: 'Nadia Fourie', email: 'nadia.fourie@ridgeway.school', role: 'Class teacher · Grade 4B', initials: 'NF', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Staff' },
-  { name: 'Nadia Fourie', email: 'nadia@ridgeway-pta.org', initials: 'NF', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'PTA committee · Ridgeway' }
+  { name: 'Nadia Foster', email: 'nadia.foster@ridgeway.school', role: 'Class teacher · Grade 4B', initials: 'NF', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Staff' },
+  { name: 'Nadia Foster', email: 'nadia@ridgeway-pta.org', initials: 'NF', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'PTA committee · Ridgeway' }
 ];
 
 const LINKABLE_REQUESTS = [
   { id: '#2184', subject: 'Absence: Amelia Adams, Wed–Thu', channel: 'Grade 4B', status: 'In progress' },
   { id: '#2171', subject: 'Broken window latch in 4B, room unsecured', channel: 'Facilities & IT', status: 'Escalated' },
-  { id: '#2179', subject: 'Transport change: Sipho off the afternoon bus', channel: 'Bus service', status: 'Waiting' },
+  { id: '#2179', subject: 'Transport change: Shawn off the afternoon bus', channel: 'Bus service', status: 'Waiting' },
   { id: '#2176', subject: 'Permission slip outstanding: Planetarium', channel: 'Grade 4B', status: 'In progress' },
   { id: '#2165', subject: 'Login for the new substitute teacher', channel: 'Facilities & IT', status: 'Resolved' }
 ];
@@ -1297,9 +1297,9 @@ class Component extends DCLogic {
       closePane: () => this.setState({ pane: null, evId: null }),
       formDate: selIso,
       formAttendees: [
-        { initials: 'NF', name: 'Nadia Fourie', bg: 'linear-gradient(150deg, #33505b, #557a88)' },
-        { initials: 'TM', name: 'Thabo Mokoena', bg: 'linear-gradient(150deg, #00c3ff, #0a9fd4)' },
-        { initials: 'PN', name: 'Priya Naidoo', bg: 'linear-gradient(150deg, #7c6cf0, #5c4bd8)' }
+        { initials: 'NF', name: 'Nadia Foster', bg: 'linear-gradient(150deg, #33505b, #557a88)' },
+        { initials: 'TM', name: 'Trevor Mitchell', bg: 'linear-gradient(150deg, #00c3ff, #0a9fd4)' },
+        { initials: 'PN', name: 'Priya Nair', bg: 'linear-gradient(150deg, #7c6cf0, #5c4bd8)' }
       ],
       formToggles: [
         { icon: 'videocam', label: 'Add a Kolabr video call', onClick: flip('video'), track: track(togs.video), knob: knob(togs.video) },
@@ -1468,8 +1468,8 @@ class Component extends DCLogic {
 
       notifications: [
         { icon: 'priority_high', text: 'Due today: #2184 “Absence: Amelia Adams, Wed–Thu”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Hannah Bekker joined Grade 4B as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Pieter Malan assigned you request #2179: transport change', time: '1 hr ago', unread: true },
+        { icon: 'person_add', text: 'Hannah Brooks joined Grade 4B as a guest', time: '26 min ago', unread: true },
+        { icon: 'assignment_ind', text: 'Peter Molina assigned you request #2179: transport change', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Request #2170 resolved: projector replaced in 4B', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Grade 4 teachers', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
@@ -1536,7 +1536,7 @@ class Component extends DCLogic {
       ].map(x => ({ ...x, onClick: goPage(x.href) })),
       chats: [
         { initials: '', group: true, name: 'Grade 4 teachers', unread: '2', avatarBg: dark ? 'rgba(255,255,255,0.12)' : 'rgba(51,80,91,0.12)', avatarFg: 'var(--topIcon, #33505b)', onClick: goPage('Desktop Admin - Group Chat.dc.html'), onEnter: () => {}, onLeave: () => {} },
-        { initials: 'HB', group: false, name: 'Hannah Bekker', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
+        { initials: 'HB', group: false, name: 'Hannah Brooks', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
           onEnter: (e) => this.showCard(SHARON, e.currentTarget), onLeave: () => this.scheduleHide() }
       ],
       members: MEMBERS.map((m, i) => ({

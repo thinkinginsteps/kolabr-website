@@ -148,7 +148,7 @@ a:hover { color: #00c3ff; }
       <div style="display: flex; align-items: flex-end; gap: 9px;">
         <span style="width: 28px; height: 28px; flex: none; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, #7f8b93, #5c6870); color: #fff; font-size: 10px; font-weight: 600;">AB</span>
         <div style="max-width: 78%;">
-          <div style="font-size: 11px; color: var(--muted, #6b8290); margin: 0 0 4px 3px;">Adam Bekker</div>
+          <div style="font-size: 11px; color: var(--muted, #6b8290); margin: 0 0 4px 3px;">Adam Brooks</div>
           <div sc-camel-on-click="{{ msgTap0 }}" style="position: relative; cursor: pointer; padding: 10px 13px; border-radius: 16px 16px 16px 5px; background: var(--card, #f4f7f8); font-size: 13.5px; line-height: 1.4; text-wrap: pretty;">Ruben is pushing the invoice-sync fix at 4pm. I’ll update #4821 after.</div>
           <div style="font-size: 10.5px; color: var(--muted, #6b8290); margin: 4px 0 0 3px;">09:12</div>
         </div>
@@ -162,7 +162,7 @@ a:hover { color: #00c3ff; }
       <div style="display: flex; align-items: flex-end; gap: 9px;">
         <span style="width: 28px; height: 28px; flex: none; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, #8a7f76, #6b6159); color: #fff; font-size: 10px; font-weight: 600; background-image: url(&quot;assets/screens/sm-photo-richard-potgieter.png&quot;); background-size: cover; background-position: center;"></span>
         <div style="max-width: 78%;">
-          <div style="font-size: 11px; color: var(--muted, #6b8290); margin: 0 0 4px 3px;">Ruben Pienaar</div>
+          <div style="font-size: 11px; color: var(--muted, #6b8290); margin: 0 0 4px 3px;">Ruben Peralta</div>
           <div sc-camel-on-click="{{ msgTap2 }}" style="position: relative; cursor: pointer; padding: 10px 13px; border-radius: 16px 16px 16px 5px; background: var(--card, #f4f7f8); font-size: 13.5px; line-height: 1.4; text-wrap: pretty;">Staging looks clean. One edge case left with multi-currency invoices.</div>
           <div style="font-size: 10.5px; color: var(--muted, #6b8290); margin: 4px 0 0 3px;">09:31</div>
         </div>
@@ -686,7 +686,7 @@ class Component extends DCLogic {
       notifications: [
         { icon: 'priority_high', text: 'SLA at risk on #4821: “Invoice sync failing since Monday”', time: '4 min ago', unread: true },
         { icon: 'person_add', text: 'Simone Chavez joined Northwind Trading', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Adam Bekker assigned you request #4816', time: '1 hr ago', unread: true },
+        { icon: 'assignment_ind', text: 'Adam Brooks assigned you request #4816', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Request #4802 resolved and rated 5/5', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Group Chat 1', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' }))

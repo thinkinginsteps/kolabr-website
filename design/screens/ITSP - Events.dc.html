@@ -794,7 +794,7 @@ input, textarea, select { caret-color: transparent !important; }
             <div style="height: 4px;"></div>
             <div style="font-size: 10.5px; font-weight: 650; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted, #6b8290);">Subscribe elsewhere</div>
             <div style="display: flex; align-items: center; gap: 8px; padding: 4px 4px 4px 13px; border: 1px solid var(--hairline, rgba(0,0,0,0.12)); border-radius: 12px;">
-              <span style="flex: 1; min-width: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; color: var(--muted, #6b8290); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">webcal://kolabr.com/ics/lauren.geldenhuys/service-desk</span>
+              <span style="flex: 1; min-width: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; color: var(--muted, #6b8290); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">webcal://kolabr.com/ics/lauren.gallagher/service-desk</span>
               <button style="height: 32px; padding: 0 13px; border: none; cursor: pointer; border-radius: 980px; font-family: inherit; font-size: 12.5px; font-weight: 600; color: inherit; background: var(--chip, rgba(51,80,91,0.07));">Copy</button>
             </div>
 
@@ -896,10 +896,10 @@ const THEMES = {
 
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
-  { initials: 'GR', name: 'Gareth Roos', preview: 'Any update on the mail delays?', unread: true, customer: true },
-  { initials: 'G1', name: 'Service desk team', unread: true, preview: 'Sizwe: failover holding, monitoring', customer: false, href: '' },
-  { initials: 'NM', name: 'Nomsa Mbeki', preview: 'New starter needs a laptop Monday.', unread: false, customer: true },
-  { initials: 'SM', name: 'Sizwe Mthembu', preview: 'P1 comms drafted. Check before I send.', unread: false, customer: false }
+  { initials: 'GR', name: 'Gavin Russo', preview: 'Any update on the mail delays?', unread: true, customer: true },
+  { initials: 'G1', name: 'Service desk team', unread: true, preview: 'Samuel: failover holding, monitoring', customer: false, href: '' },
+  { initials: 'NM', name: 'Nora Mullins', preview: 'New starter needs a laptop Monday.', unread: false, customer: true },
+  { initials: 'SM', name: 'Samuel Meyers', preview: 'P1 comms drafted. Check before I send.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -929,23 +929,23 @@ const STATUSES = [
 const SHARON = { initials: 'HF', name: 'Helen Fry', role: 'Client · Managing partner', email: 'helen.fry@rossgrove.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'LG', name: 'Lauren Geldenhuys', admin: true, role: 'Channel admin · Service delivery manager', email: 'lauren.geldenhuys@meridian-it.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'SM', name: 'Sizwe Mthembu', role: 'Second-line engineer', email: 'sizwe.mthembu@meridian-it.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'PK', name: 'Pieter Krause', role: 'Infrastructure lead', email: 'pieter.krause@meridian-it.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'AC', name: 'Anita Chetty', role: 'Security analyst', email: 'anita.chetty@meridian-it.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GR', name: 'Gareth Roos', role: 'Client · Practice manager', email: 'gareth.roos@rossgrove.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'NM', name: 'Nomsa Mbeki', role: 'Client · Office administrator', email: 'nomsa.mbeki@rossgrove.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'LG', name: 'Lauren Gallagher', admin: true, role: 'Channel admin · Service delivery manager', email: 'lauren.gallagher@meridian-it.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'SM', name: 'Samuel Meyers', role: 'Second-line engineer', email: 'samuel.meyers@meridian-it.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'PK', name: 'Peter Krause', role: 'Infrastructure lead', email: 'peter.krause@meridian-it.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'AC', name: 'Anita Cole', role: 'Security analyst', email: 'anita.cole@meridian-it.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GR', name: 'Gavin Russo', role: 'Client · Practice manager', email: 'gavin.russo@rossgrove.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'NM', name: 'Nora Mullins', role: 'Client · Office administrator', email: 'nora.mullins@rossgrove.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const CH_CATS = ['All', 'Support', 'Projects', 'Security', 'Other clients'];
 
 const PEOPLE = {
-  LG: { name: 'Lauren Geldenhuys', email: 'lauren.geldenhuys@meridian-it.com', role: 'Service delivery manager' },
-  SM: { name: 'Sizwe Mthembu', email: 'sizwe.mthembu@meridian-it.com', role: 'Second-line engineer' },
-  PK: { name: 'Pieter Krause', email: 'pieter.krause@meridian-it.com', role: 'Infrastructure lead' },
-  AC: { name: 'Anita Chetty', email: 'anita.chetty@meridian-it.com', role: 'Security analyst' },
-  VR: { name: 'Vikash Ramjee', email: 'vikash.ramjee@meridian-it.com', role: 'First-line technician' },
-  GR: { name: 'Gareth Roos', email: 'gareth.roos@rossgrove.com', role: 'Client · Practice manager' },
+  LG: { name: 'Lauren Gallagher', email: 'lauren.gallagher@meridian-it.com', role: 'Service delivery manager' },
+  SM: { name: 'Samuel Meyers', email: 'samuel.meyers@meridian-it.com', role: 'Second-line engineer' },
+  PK: { name: 'Peter Krause', email: 'peter.krause@meridian-it.com', role: 'Infrastructure lead' },
+  AC: { name: 'Anita Cole', email: 'anita.cole@meridian-it.com', role: 'Security analyst' },
+  VR: { name: 'Victor Ramos', email: 'victor.ramos@meridian-it.com', role: 'First-line technician' },
+  GR: { name: 'Gavin Russo', email: 'gavin.russo@rossgrove.com', role: 'Client · Practice manager' },
   HF: { name: 'Helen Fry', email: 'helen.fry@rossgrove.com', role: 'Client · Managing partner' }
 };
 
@@ -1005,8 +1005,8 @@ const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
 const CAL_VIEWS = ['Day', 'Week', 'Month', 'Year'];
 
 const ACCOUNTS = [
-  { name: 'Lauren Geldenhuys', email: 'lauren.geldenhuys@meridian-it.com', role: 'Service delivery · Meridian IT', initials: 'LG', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Provider' },
-  { name: 'Lauren Geldenhuys', email: 'lauren@rossgrove.com', initials: 'LG', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'IT team · Rossgrove Legal' }
+  { name: 'Lauren Gallagher', email: 'lauren.gallagher@meridian-it.com', role: 'Service delivery · Meridian IT', initials: 'LG', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Provider' },
+  { name: 'Lauren Gallagher', email: 'lauren@rossgrove.com', initials: 'LG', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'IT team · Rossgrove Legal' }
 ];
 
 const LINKABLE_REQUESTS = [
@@ -1292,9 +1292,9 @@ class Component extends DCLogic {
       closePane: () => this.setState({ pane: null, evId: null }),
       formDate: selIso,
       formAttendees: [
-        { initials: 'LG', name: 'Lauren Geldenhuys', bg: 'linear-gradient(150deg, #33505b, #557a88)' },
-        { initials: 'SM', name: 'Sizwe Mthembu', bg: 'linear-gradient(150deg, #00c3ff, #0a9fd4)' },
-        { initials: 'VR', name: 'Vikash Ramjee', bg: 'linear-gradient(150deg, #7c6cf0, #5c4bd8)' }
+        { initials: 'LG', name: 'Lauren Gallagher', bg: 'linear-gradient(150deg, #33505b, #557a88)' },
+        { initials: 'SM', name: 'Samuel Meyers', bg: 'linear-gradient(150deg, #00c3ff, #0a9fd4)' },
+        { initials: 'VR', name: 'Victor Ramos', bg: 'linear-gradient(150deg, #7c6cf0, #5c4bd8)' }
       ],
       formToggles: [
         { icon: 'videocam', label: 'Add a Kolabr video call', onClick: flip('video'), track: track(togs.video), knob: knob(togs.video) },
@@ -1464,7 +1464,7 @@ class Component extends DCLogic {
       notifications: [
         { icon: 'priority_high', text: 'P1 breach in 38m: “Mail flow degraded, Exchange hybrid”', time: '4 min ago', unread: true },
         { icon: 'person_add', text: 'Helen Fry joined Incidents & outages as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Pieter Krause assigned you the RCA for INC-4412', time: '1 hr ago', unread: true },
+        { icon: 'assignment_ind', text: 'Peter Krause assigned you the RCA for INC-4412', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Change CHG-238 completed: firewall firmware', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Service desk team', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),

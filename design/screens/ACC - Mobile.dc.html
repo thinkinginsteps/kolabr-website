@@ -181,7 +181,7 @@ input, textarea, select { caret-color: transparent !important; }
       <div style="display: flex; align-items: flex-end; gap: 9px;">
         <span style="width: 28px; height: 28px; flex: none; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, #8b8394, #635c6d); color: #fff; font-size: 10px; font-weight: 600;">LB</span>
         <div style="max-width: 78%;">
-          <div style="font-size: 11px; color: var(--muted, #6b8290); margin: 0 0 4px 3px;">Lindiwe Buthelezi</div>
+          <div style="font-size: 11px; color: var(--muted, #6b8290); margin: 0 0 4px 3px;">Lydia Bennett</div>
           <div sc-camel-on-click="{{ msgTap4 }}" style="position: relative; cursor: pointer; padding: 10px 13px; border-radius: 16px 16px 16px 5px; background: var(--card, #f4f7f8); font-size: 13.5px; line-height: 1.4; text-wrap: pretty;">Can we still file by the 25th? The board meets on the 27th.</div>
           <div style="font-size: 10.5px; color: var(--muted, #6b8290); margin: 4px 0 0 3px;">10:02</div>
         </div>
@@ -417,8 +417,8 @@ const TAB_MENUS = {
 };
 
 const ACCOUNTS = [
-  { name: 'Hannah Venter', email: 'hannah.venter@venterpartners.com', role: 'Engagement partner · Venter & Partners', initials: 'HV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Practice' },
-  { name: 'Hannah Venter', email: 'hannah@harlowfoods.com', initials: 'HV', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Finance team · Harlow Foods' }
+  { name: 'Hannah Vance', email: 'hannah.vance@venterpartners.com', role: 'Engagement partner · Vance & Partners', initials: 'HV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Practice' },
+  { name: 'Hannah Vance', email: 'hannah@harlowfoods.com', initials: 'HV', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Finance team · Harlow Foods' }
 ];
 
 class Component extends DCLogic {
@@ -685,13 +685,13 @@ class Component extends DCLogic {
 
       events: [
         { icon: 'videocam', title: 'Harlow weekly sync', meta: 'Now · 4 attending', live: true },
-        { icon: 'event', title: 'Year-end planning meeting', meta: '14:00 · Stefan, Tebogo', live: false }
+        { icon: 'event', title: 'Year-end planning meeting', meta: '14:00 · Stefan, Theo', live: false }
       ],
 
       notifications: [
         { icon: 'priority_high', text: 'Form 941 due in 2 days: “August return, Harlow Foods”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Lindiwe Buthelezi joined Year-end & audit as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Hannah Venter assigned you the stock count queries', time: '1 hr ago', unread: true },
+        { icon: 'person_add', text: 'Lydia Bennett joined Year-end & audit as a guest', time: '26 min ago', unread: true },
+        { icon: 'assignment_ind', text: 'Hannah Vance assigned you the stock count queries', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Bank reconciliation signed off to 31 July', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Engagement team', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' }))

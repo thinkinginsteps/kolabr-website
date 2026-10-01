@@ -794,7 +794,7 @@ input, textarea, select { caret-color: transparent !important; }
             <div style="height: 4px;"></div>
             <div style="font-size: 10.5px; font-weight: 650; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted, #6b8290);">Subscribe elsewhere</div>
             <div style="display: flex; align-items: center; gap: 8px; padding: 4px 4px 4px 13px; border: 1px solid var(--hairline, rgba(0,0,0,0.12)); border-radius: 12px;">
-              <span style="flex: 1; min-width: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; color: var(--muted, #6b8290); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">webcal://kolabr.com/ics/colette.viljoen/maintenance</span>
+              <span style="flex: 1; min-width: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; color: var(--muted, #6b8290); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">webcal://kolabr.com/ics/colette.vaughn/maintenance</span>
               <button style="height: 32px; padding: 0 13px; border: none; cursor: pointer; border-radius: 980px; font-family: inherit; font-size: 12.5px; font-weight: 600; color: inherit; background: var(--chip, rgba(51,80,91,0.07));">Copy</button>
             </div>
 
@@ -897,9 +897,9 @@ const THEMES = {
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
   { initials: 'BM', name: 'Bianca Meyer', preview: 'Still no hot water in unit 14.', unread: true, customer: true },
-  { initials: 'G1', name: 'Site team', unread: true, preview: 'Dirk: plumber is on site now', customer: false, href: '' },
+  { initials: 'G1', name: 'Site team', unread: true, preview: 'Derek: plumber is on site now', customer: false, href: '' },
   { initials: 'GT', name: 'Graham Tait', preview: 'The board need the quotes by Monday.', unread: false, customer: true },
-  { initials: 'SM', name: 'Sifiso Mahlangu', preview: 'Third quote came in $18k lower.', unread: false, customer: false }
+  { initials: 'SM', name: 'Simon Mallory', preview: 'Third quote came in $18k lower.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -926,12 +926,12 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'NZ', name: 'Noluthando Zulu', role: 'Board member · Treasurer', email: 'noluthando.zulu@meadowridge-hoa.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'NZ', name: 'Natalie Zimmerman', role: 'Board member · Treasurer', email: 'natalie.zimmerman@meadowridge-hoa.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'CV', name: 'Colette Viljoen', admin: true, role: 'Channel admin · Portfolio manager', email: 'colette.viljoen@viljoenprop.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'SM', name: 'Sifiso Mahlangu', role: 'Maintenance coordinator', email: 'sifiso.mahlangu@viljoenprop.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'DK', name: 'Dirk Koekemoer', role: 'Building supervisor', email: 'dirk.koekemoer@viljoenprop.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'CV', name: 'Colette Vaughn', admin: true, role: 'Channel admin · Portfolio manager', email: 'colette.vaughn@viljoenprop.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'SM', name: 'Simon Mallory', role: 'Maintenance coordinator', email: 'simon.mallory@viljoenprop.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'DK', name: 'Derek Kane', role: 'Building supervisor', email: 'derek.kane@viljoenprop.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
   { initials: 'YP', name: 'Yusuf Parker', role: 'Dues and accounts', email: 'yusuf.parker@viljoenprop.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'GT', name: 'Graham Tait', role: 'Board member · President', email: 'graham.tait@meadowridge-hoa.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
   { initials: 'BM', name: 'Bianca Meyer', role: 'Resident · Unit 14', email: 'bianca.meyer@meadowridge-hoa.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
@@ -940,12 +940,12 @@ const MEMBERS = [
 const CH_CATS = ['All', 'Operations', 'Governance', 'Community', 'Other buildings'];
 
 const PEOPLE = {
-  CV: { name: 'Colette Viljoen', email: 'colette.viljoen@viljoenprop.com', role: 'Portfolio manager' },
-  SM: { name: 'Sifiso Mahlangu', email: 'sifiso.mahlangu@viljoenprop.com', role: 'Maintenance coordinator' },
-  DK: { name: 'Dirk Koekemoer', email: 'dirk.koekemoer@viljoenprop.com', role: 'Building supervisor' },
+  CV: { name: 'Colette Vaughn', email: 'colette.vaughn@viljoenprop.com', role: 'Portfolio manager' },
+  SM: { name: 'Simon Mallory', email: 'simon.mallory@viljoenprop.com', role: 'Maintenance coordinator' },
+  DK: { name: 'Derek Kane', email: 'derek.kane@viljoenprop.com', role: 'Building supervisor' },
   YP: { name: 'Yusuf Parker', email: 'yusuf.parker@viljoenprop.com', role: 'Dues and accounts' },
   GT: { name: 'Graham Tait', email: 'graham.tait@meadowridge-hoa.com', role: 'Board member · President' },
-  NZ: { name: 'Noluthando Zulu', email: 'noluthando.zulu@meadowridge-hoa.com', role: 'Board member · Treasurer' },
+  NZ: { name: 'Natalie Zimmerman', email: 'natalie.zimmerman@meadowridge-hoa.com', role: 'Board member · Treasurer' },
   BM: { name: 'Bianca Meyer', email: 'bianca.meyer@meadowridge-hoa.com', role: 'Resident · Unit 14' }
 };
 
@@ -1005,8 +1005,8 @@ const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
 const CAL_VIEWS = ['Day', 'Week', 'Month', 'Year'];
 
 const ACCOUNTS = [
-  { name: 'Colette Viljoen', email: 'colette.viljoen@viljoenprop.com', role: 'Portfolio manager · Viljoen Property', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Property manager' },
-  { name: 'Colette Viljoen', email: 'colette@meadowridge-hoa.com', initials: 'CV', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Property manager · Meadowridge' }
+  { name: 'Colette Vaughn', email: 'colette.vaughn@viljoenprop.com', role: 'Portfolio manager · Vaughn Property', initials: 'CV', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Property manager' },
+  { name: 'Colette Vaughn', email: 'colette@meadowridge-hoa.com', initials: 'CV', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Property manager · Meadowridge' }
 ];
 
 const LINKABLE_REQUESTS = [
@@ -1292,9 +1292,9 @@ class Component extends DCLogic {
       closePane: () => this.setState({ pane: null, evId: null }),
       formDate: selIso,
       formAttendees: [
-        { initials: 'CV', name: 'Colette Viljoen', bg: 'linear-gradient(150deg, #33505b, #557a88)' },
-        { initials: 'SM', name: 'Sifiso Mahlangu', bg: 'linear-gradient(150deg, #00c3ff, #0a9fd4)' },
-        { initials: 'RJ', name: 'Rashid Jappie', bg: 'linear-gradient(150deg, #7c6cf0, #5c4bd8)' }
+        { initials: 'CV', name: 'Colette Vaughn', bg: 'linear-gradient(150deg, #33505b, #557a88)' },
+        { initials: 'SM', name: 'Simon Mallory', bg: 'linear-gradient(150deg, #00c3ff, #0a9fd4)' },
+        { initials: 'RJ', name: 'Rashid Jamal', bg: 'linear-gradient(150deg, #7c6cf0, #5c4bd8)' }
       ],
       formToggles: [
         { icon: 'videocam', label: 'Add a Kolabr video call', onClick: flip('video'), track: track(togs.video), knob: knob(togs.video) },
@@ -1463,7 +1463,7 @@ class Component extends DCLogic {
 
       notifications: [
         { icon: 'priority_high', text: 'Emergency: “Water heater burst, unit 14, water to units below”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Noluthando Zulu joined The board as a guest', time: '26 min ago', unread: true },
+        { icon: 'person_add', text: 'Natalie Zimmerman joined The board as a guest', time: '26 min ago', unread: true },
         { icon: 'assignment_ind', text: 'Graham Tait assigned you the roof repair quotes', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Elevator service completed: certificate filed', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Site team', time: 'Yesterday', unread: false }
@@ -1531,7 +1531,7 @@ class Component extends DCLogic {
       ].map(x => ({ ...x, onClick: goPage(x.href) })),
       chats: [
         { initials: '', group: true, name: 'Site team', unread: '2', avatarBg: dark ? 'rgba(255,255,255,0.12)' : 'rgba(51,80,91,0.12)', avatarFg: 'var(--topIcon, #33505b)', onClick: goPage('Desktop Admin - Group Chat.dc.html'), onEnter: () => {}, onLeave: () => {} },
-        { initials: 'NZ', group: false, name: 'Noluthando Zulu', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
+        { initials: 'NZ', group: false, name: 'Natalie Zimmerman', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
           onEnter: (e) => this.showCard(SHARON, e.currentTarget), onLeave: () => this.scheduleHide() }
       ],
       members: MEMBERS.map((m, i) => ({

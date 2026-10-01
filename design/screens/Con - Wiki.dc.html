@@ -485,7 +485,7 @@ input, textarea, select { caret-color: transparent !important; }
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 14px; padding-bottom: 18px; border-bottom: 1px solid var(--hairline, rgba(0,0,0,0.09));">
             <span style="display: inline-flex; align-items: center; gap: 7px;">
               <span aria-label="RM" style="width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, #4a6b78, #33505b); color: #ffffff; font-size: 9px; font-weight: 600;">RM</span>
-              <span style="font-size: 12.5px; font-weight: 500;">Riaan Marais</span>
+              <span style="font-size: 12.5px; font-weight: 500;">Ryan Marsh</span>
             </span>
             <span style="font-size: 12.5px; color: var(--muted, #6b8290);">updated 2 days ago · v14</span>
             <span style="width: 1px; height: 13px; background: var(--hairline, rgba(0,0,0,0.10));"></span>
@@ -637,10 +637,10 @@ const THEMES = {
 
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
-  { initials: 'GS', name: 'Grant Steyn', preview: 'Is the slab pour still on for Thursday?', unread: true, customer: true },
-  { initials: 'G1', name: 'Site management', unread: true, preview: 'Sipho: rebar inspection passed', customer: false, href: '' },
-  { initials: 'MK', name: 'Marlize Koen', preview: 'Variation 12 priced, sending through.', unread: false, customer: true },
-  { initials: 'SN', name: 'Sipho Ndlovu', preview: 'Need the revised setting-out by 06:00.', unread: false, customer: false }
+  { initials: 'GS', name: 'Grant Sullivan', preview: 'Is the slab pour still on for Thursday?', unread: true, customer: true },
+  { initials: 'G1', name: 'Site management', unread: true, preview: 'Shawn: rebar inspection passed', customer: false, href: '' },
+  { initials: 'MK', name: 'Mia Keller', preview: 'Variation 12 priced, sending through.', unread: false, customer: true },
+  { initials: 'SN', name: 'Shawn Nichols', preview: 'Need the revised setting-out by 06:00.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -667,27 +667,27 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'MK', name: 'Marlize Koen', role: 'Quantity surveyor', email: 'marlize.koen@koenqs.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'MK', name: 'Mia Keller', role: 'Quantity surveyor', email: 'mia.keller@koenqs.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'RM', name: 'Riaan Marais', admin: true, role: 'Channel admin · Site agent', email: 'riaan.marais@vermeulenbuild.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'SN', name: 'Sipho Ndlovu', role: 'Foreman · Structure', email: 'sipho.ndlovu@vermeulenbuild.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'KV', name: 'Karel Venter', role: 'Contracts manager', email: 'karel.venter@vermeulenbuild.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'LM', name: 'Lebo Mahlangu', role: 'Health & safety officer', email: 'lebo.mahlangu@vermeulenbuild.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GS', name: 'Grant Steyn', role: 'Client PM · Harbour Yard', email: 'grant.steyn@harbouryard.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'AD', name: 'Ayanda Dlamini', role: 'Electrical subcontractor', email: 'ayanda.dlamini@voltaelec.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'RM', name: 'Ryan Marsh', admin: true, role: 'Channel admin · Site agent', email: 'ryan.marsh@vermeulenbuild.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'SN', name: 'Shawn Nichols', role: 'Foreman · Structure', email: 'shawn.nichols@vermeulenbuild.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'KV', name: 'Keith Vance', role: 'Contracts manager', email: 'keith.vance@vermeulenbuild.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'LM', name: 'Logan Mallory', role: 'Health & safety officer', email: 'logan.mallory@vermeulenbuild.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GS', name: 'Grant Sullivan', role: 'Client PM · Harbour Yard', email: 'grant.sullivan@harbouryard.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'AD', name: 'Alana Dixon', role: 'Electrical subcontractor', email: 'alana.dixon@voltaelec.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const CH_CATS = ['All', 'Site', 'Client', 'Subcontractors', 'Handover'];
 
 const PEOPLE = {
-  RM: { name: 'Riaan Marais', email: 'riaan.marais@vermeulenbuild.com', role: 'Site agent' },
-  SN: { name: 'Sipho Ndlovu', email: 'sipho.ndlovu@vermeulenbuild.com', role: 'Foreman' },
-  KV: { name: 'Karel Venter', email: 'karel.venter@vermeulenbuild.com', role: 'Contracts manager' },
-  LM: { name: 'Lebo Mahlangu', email: 'lebo.mahlangu@vermeulenbuild.com', role: 'Health & safety' },
-  JB: { name: 'Jaco Brits', email: 'jaco.brits@vermeulenbuild.com', role: 'Setting-out engineer' },
-  MK: { name: 'Marlize Koen', email: 'marlize.koen@koenqs.com', role: 'Quantity surveyor' },
-  GS: { name: 'Grant Steyn', email: 'grant.steyn@harbouryard.com', role: 'Client PM' }
+  RM: { name: 'Ryan Marsh', email: 'ryan.marsh@vermeulenbuild.com', role: 'Site agent' },
+  SN: { name: 'Shawn Nichols', email: 'shawn.nichols@vermeulenbuild.com', role: 'Foreman' },
+  KV: { name: 'Keith Vance', email: 'keith.vance@vermeulenbuild.com', role: 'Contracts manager' },
+  LM: { name: 'Logan Mallory', email: 'logan.mallory@vermeulenbuild.com', role: 'Health & safety' },
+  JB: { name: 'Jake Briggs', email: 'jake.briggs@vermeulenbuild.com', role: 'Setting-out engineer' },
+  MK: { name: 'Mia Keller', email: 'mia.keller@koenqs.com', role: 'Quantity surveyor' },
+  GS: { name: 'Grant Sullivan', email: 'grant.sullivan@harbouryard.com', role: 'Client PM' }
 };
 
 const AVATAR_BGS = ['linear-gradient(150deg, #33505b, #557a88)', 'linear-gradient(150deg, #00c3ff, #0a9fd4)', 'linear-gradient(150deg, #7c6cf0, #5c4bd8)'];
@@ -732,8 +732,8 @@ const WIKI_TREE = [
 const WIKI_SECTION_OF = { w4: 'Commercial' };
 
 const ACCOUNTS = [
-  { name: 'Riaan Marais', email: 'riaan.marais@vermeulenbuild.com', role: 'Site agent · Vermeulen Build', initials: 'RM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Staff' },
-  { name: 'Riaan Marais', email: 'riaan@harbouryard.com', initials: 'RM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Site team · Harbour Yard' }
+  { name: 'Ryan Marsh', email: 'ryan.marsh@vermeulenbuild.com', role: 'Site agent · Vermeulen Build', initials: 'RM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Staff' },
+  { name: 'Ryan Marsh', email: 'ryan@harbouryard.com', initials: 'RM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Site team · Harbour Yard' }
 ];
 
 const goPage = (href) => (e) => {
@@ -975,8 +975,8 @@ class Component extends DCLogic {
 
       notifications: [
         { icon: 'priority_high', text: 'Due today: “Concrete cube results, grid C pour”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Ayanda Dlamini joined Electrical as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Karel Venter assigned you the wet-weather claim pack', time: '1 hr ago', unread: true },
+        { icon: 'person_add', text: 'Alana Dixon joined Electrical as a guest', time: '26 min ago', unread: true },
+        { icon: 'assignment_ind', text: 'Keith Vance assigned you the wet-weather claim pack', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Near miss NM-14 closed out: edge protection', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Site management', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
@@ -1043,7 +1043,7 @@ class Component extends DCLogic {
       ].map(x => ({ ...x, onClick: goPage(x.href) })),
       chats: [
         { initials: '', group: true, name: 'Site management', unread: '2', avatarBg: dark ? 'rgba(255,255,255,0.12)' : 'rgba(51,80,91,0.12)', avatarFg: 'var(--topIcon, #33505b)', onClick: goPage('Desktop Admin - Group Chat.dc.html'), onEnter: () => {}, onLeave: () => {} },
-        { initials: 'MK', group: false, name: 'Marlize Koen', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
+        { initials: 'MK', group: false, name: 'Mia Keller', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
           onEnter: (e) => this.showCard(SHARON, e.currentTarget), onLeave: () => this.scheduleHide() }
       ],
       members: MEMBERS.map((m, i) => ({

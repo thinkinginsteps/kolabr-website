@@ -572,9 +572,9 @@ const THEMES = {
 
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
-  { initials: 'TS', name: 'Thandi Sithole', preview: 'Can we see the revised balcony detail?', unread: true, customer: true },
+  { initials: 'TS', name: 'Tara Simmons', preview: 'Can we see the revised balcony detail?', unread: true, customer: true },
   { initials: 'G1', name: 'Design team', unread: true, preview: 'Daniel: Rev C is on the server', customer: false, href: '' },
-  { initials: 'NG', name: 'Nadia Gouws', preview: 'Priced the variation, sending through.', unread: false, customer: true },
+  { initials: 'NG', name: 'Nadia Greene', preview: 'Priced the variation, sending through.', unread: false, customer: true },
   { initials: 'DO', name: 'Daniel Okafor', preview: 'RFI 214 needs your sign-off.', unread: false, customer: false }
 ];
 
@@ -602,19 +602,19 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'TS', name: 'Thandi Sithole', role: 'Client · Sable Bay', email: 'thandi.sithole@sablebay.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'TS', name: 'Tara Simmons', role: 'Client · Sable Bay', email: 'tara.simmons@sablebay.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
   { initials: 'SR', name: 'Sasha Reyes', admin: true, role: 'Channel admin · Project architect', email: 'sasha.reyes@reyesmalan.studio', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
   { initials: 'DO', name: 'Daniel Okafor', role: 'Architectural technologist', email: 'daniel.okafor@reyesmalan.studio', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'HM', name: 'Hester Malan', role: 'Practice principal', email: 'hester.malan@reyesmalan.studio', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'PC', name: 'Priya Chetty', role: 'Documentation lead', email: 'priya.chetty@reyesmalan.studio', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'HM', name: 'Hailey Molina', role: 'Practice principal', email: 'hailey.molina@reyesmalan.studio', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'PC', name: 'Priya Cole', role: 'Documentation lead', email: 'priya.cole@reyesmalan.studio', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'WB', name: 'Warren Beck', role: 'Client · Sable Bay', email: 'warren.beck@sablebay.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'NG', name: 'Nadia Gouws', role: 'Quantity surveyor', email: 'nadia.gouws@gouwsqs.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'NG', name: 'Nadia Greene', role: 'Quantity surveyor', email: 'nadia.greene@gouwsqs.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const ACCOUNTS = [
-  { name: 'Sasha Reyes', email: 'sasha.reyes@reyesmalan.studio', role: 'Project architect · Reyes + Malan', initials: 'SR', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Studio' },
+  { name: 'Sasha Reyes', email: 'sasha.reyes@reyesmalan.studio', role: 'Project architect · Reyes + Molina', initials: 'SR', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Studio' },
   { name: 'Sasha Reyes', email: 'sasha@sablebay.com', initials: 'SR', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Design team · Sable Bay' }
 ];
 
@@ -756,8 +756,8 @@ class Component extends DCLogic {
 
       notifications: [
         { icon: 'priority_high', text: 'RFI 214 due today: “Balustrade fixing at slab edge”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Thandi Sithole joined Client review as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Hester Malan assigned you the Rev C issue sheet', time: '1 hr ago', unread: true },
+        { icon: 'person_add', text: 'Tara Simmons joined Client review as a guest', time: '26 min ago', unread: true },
+        { icon: 'assignment_ind', text: 'Hailey Molina assigned you the Rev C issue sheet', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Variation 07 approved: glazing spec change', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Design team', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
@@ -824,7 +824,7 @@ class Component extends DCLogic {
       ].map(x => ({ ...x, onClick: goPage(x.href) })),
       chats: [
         { initials: '', group: true, name: 'Design team', unread: '2', avatarBg: dark ? 'rgba(255,255,255,0.12)' : 'rgba(51,80,91,0.12)', avatarFg: 'var(--topIcon, #33505b)', onClick: goPage('Desktop Admin - Group Chat.dc.html'), onEnter: () => {}, onLeave: () => {} },
-        { initials: 'TS', group: false, name: 'Thandi Sithole', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
+        { initials: 'TS', group: false, name: 'Tara Simmons', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
           onEnter: (e) => this.showCard(SHARON, e.currentTarget), onLeave: () => this.scheduleHide() }
       ],
       members: MEMBERS.map((m, i) => ({

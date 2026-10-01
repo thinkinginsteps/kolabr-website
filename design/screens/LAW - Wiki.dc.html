@@ -485,7 +485,7 @@ input, textarea, select { caret-color: transparent !important; }
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 14px; padding-bottom: 18px; border-bottom: 1px solid var(--hairline, rgba(0,0,0,0.09));">
             <span style="display: inline-flex; align-items: center; gap: 7px;">
               <span aria-label="AM" style="width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, #4a6b78, #33505b); color: #ffffff; font-size: 9px; font-weight: 600;">AM</span>
-              <span style="font-size: 12.5px; font-weight: 500;">Adele Moodley</span>
+              <span style="font-size: 12.5px; font-weight: 500;">Adele Monroe</span>
             </span>
             <span style="font-size: 12.5px; color: var(--muted, #6b8290);">updated 2 days ago · v14</span>
             <span style="width: 1px; height: 13px; background: var(--hairline, rgba(0,0,0,0.10));"></span>
@@ -638,9 +638,9 @@ const THEMES = {
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
   { initials: 'RH', name: 'Roger Hendricks', preview: 'Are we still signing on Friday?', unread: true, customer: true },
-  { initials: 'G1', name: 'Matter team', unread: true, preview: 'Jarred: warranty schedule is out for review', customer: false, href: '' },
-  { initials: 'CM', name: 'Celeste Mostert', preview: 'Resolutions signed and uploaded.', unread: false, customer: true },
-  { initials: 'ZN', name: 'Zanele Ngcobo', preview: 'Discovery affidavit due Thursday.', unread: false, customer: false }
+  { initials: 'G1', name: 'Matter team', unread: true, preview: 'Jared: warranty schedule is out for review', customer: false, href: '' },
+  { initials: 'CM', name: 'Celeste Morgan', preview: 'Resolutions signed and uploaded.', unread: false, customer: true },
+  { initials: 'ZN', name: 'Zoey Newton', preview: 'Discovery affidavit due Thursday.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -667,27 +667,27 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'TB', name: 'Thulani Buthelezi', role: 'Client · Chief executive', email: 'thulani.buthelezi@arcadiaholdings.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'TB', name: 'Tyler Bennett', role: 'Client · Chief executive', email: 'tyler.bennett@arcadiaholdings.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'AM', name: 'Adele Moodley', admin: true, role: 'Channel admin · Partner', email: 'adele.moodley@moodleyattorneys.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'JK', name: 'Jarred Kemp', role: 'Senior associate', email: 'jarred.kemp@moodleyattorneys.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'ZN', name: 'Zanele Ngcobo', role: 'Associate · Litigation', email: 'zanele.ngcobo@moodleyattorneys.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'PF', name: 'Pieter Fourie', role: 'Candidate attorney', email: 'pieter.fourie@moodleyattorneys.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'AM', name: 'Adele Monroe', admin: true, role: 'Channel admin · Partner', email: 'adele.monroe@moodleyattorneys.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'JK', name: 'Jared Kemp', role: 'Senior associate', email: 'jared.kemp@moodleyattorneys.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'ZN', name: 'Zoey Newton', role: 'Associate · Litigation', email: 'zoey.newton@moodleyattorneys.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'PF', name: 'Peter Foster', role: 'Candidate attorney', email: 'peter.foster@moodleyattorneys.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'RH', name: 'Roger Hendricks', role: 'Client · General counsel', email: 'roger.hendricks@arcadiaholdings.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'CM', name: 'Celeste Mostert', role: 'Client · Company secretary', email: 'celeste.mostert@arcadiaholdings.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'CM', name: 'Celeste Morgan', role: 'Client · Company secretary', email: 'celeste.morgan@arcadiaholdings.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const CH_CATS = ['All', 'Corporate', 'Litigation', 'Advisory', 'Other matters'];
 
 const PEOPLE = {
-  AM: { name: 'Adele Moodley', email: 'adele.moodley@moodleyattorneys.com', role: 'Partner' },
-  JK: { name: 'Jarred Kemp', email: 'jarred.kemp@moodleyattorneys.com', role: 'Senior associate' },
-  ZN: { name: 'Zanele Ngcobo', email: 'zanele.ngcobo@moodleyattorneys.com', role: 'Associate · Litigation' },
-  PF: { name: 'Pieter Fourie', email: 'pieter.fourie@moodleyattorneys.com', role: 'Candidate attorney' },
+  AM: { name: 'Adele Monroe', email: 'adele.monroe@moodleyattorneys.com', role: 'Partner' },
+  JK: { name: 'Jared Kemp', email: 'jared.kemp@moodleyattorneys.com', role: 'Senior associate' },
+  ZN: { name: 'Zoey Newton', email: 'zoey.newton@moodleyattorneys.com', role: 'Associate · Litigation' },
+  PF: { name: 'Peter Foster', email: 'peter.foster@moodleyattorneys.com', role: 'Candidate attorney' },
   EK: { name: 'Emma Kruger', email: 'emma.kruger@moodleyattorneys.com', role: 'Paralegal' },
   RH: { name: 'Roger Hendricks', email: 'roger.hendricks@arcadiaholdings.com', role: 'Client · General counsel' },
-  CM: { name: 'Celeste Mostert', email: 'celeste.mostert@arcadiaholdings.com', role: 'Client · Company secretary' }
+  CM: { name: 'Celeste Morgan', email: 'celeste.morgan@arcadiaholdings.com', role: 'Client · Company secretary' }
 };
 
 const AVATAR_BGS = ['linear-gradient(150deg, #33505b, #557a88)', 'linear-gradient(150deg, #00c3ff, #0a9fd4)', 'linear-gradient(150deg, #7c6cf0, #5c4bd8)'];
@@ -732,8 +732,8 @@ const WIKI_TREE = [
 const WIKI_SECTION_OF = { w4: 'Matter management' };
 
 const ACCOUNTS = [
-  { name: 'Adele Moodley', email: 'adele.moodley@moodleyattorneys.com', role: 'Partner · Moodley Attorneys', initials: 'AM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Firm' },
-  { name: 'Adele Moodley', email: 'adele@arcadiaholdings.com', initials: 'AM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Legal team · Arcadia Holdings' }
+  { name: 'Adele Monroe', email: 'adele.monroe@moodleyattorneys.com', role: 'Partner · Monroe Attorneys', initials: 'AM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Firm' },
+  { name: 'Adele Monroe', email: 'adele@arcadiaholdings.com', initials: 'AM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Legal team · Arcadia Holdings' }
 ];
 
 const goPage = (href) => (e) => {
@@ -975,8 +975,8 @@ class Component extends DCLogic {
 
       notifications: [
         { icon: 'priority_high', text: 'Court deadline Thursday: “Discovery affidavit, supplier dispute”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Thulani Buthelezi joined Kingsway acquisition as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Adele Moodley assigned you the warranty schedule review', time: '1 hr ago', unread: true },
+        { icon: 'person_add', text: 'Tyler Bennett joined Kingsway acquisition as a guest', time: '26 min ago', unread: true },
+        { icon: 'assignment_ind', text: 'Adele Monroe assigned you the warranty schedule review', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Board resolutions signed and filed', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Matter team', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
@@ -1043,7 +1043,7 @@ class Component extends DCLogic {
       ].map(x => ({ ...x, onClick: goPage(x.href) })),
       chats: [
         { initials: '', group: true, name: 'Matter team', unread: '2', avatarBg: dark ? 'rgba(255,255,255,0.12)' : 'rgba(51,80,91,0.12)', avatarFg: 'var(--topIcon, #33505b)', onClick: goPage('Desktop Admin - Group Chat.dc.html'), onEnter: () => {}, onLeave: () => {} },
-        { initials: 'TB', group: false, name: 'Thulani Buthelezi', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
+        { initials: 'TB', group: false, name: 'Tyler Bennett', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
           onEnter: (e) => this.showCard(SHARON, e.currentTarget), onLeave: () => this.scheduleHide() }
       ],
       members: MEMBERS.map((m, i) => ({

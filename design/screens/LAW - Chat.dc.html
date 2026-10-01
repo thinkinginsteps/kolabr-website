@@ -708,9 +708,9 @@ const THEMES = {
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
   { initials: 'RH', name: 'Roger Hendricks', preview: 'Are we still signing on Friday?', unread: true, customer: true },
-  { initials: 'G1', name: 'Matter team', unread: true, preview: 'Jarred: warranty schedule is out for review', customer: false, href: '' },
-  { initials: 'CM', name: 'Celeste Mostert', preview: 'Resolutions signed and uploaded.', unread: false, customer: true },
-  { initials: 'ZN', name: 'Zanele Ngcobo', preview: 'Discovery affidavit due Thursday.', unread: false, customer: false }
+  { initials: 'G1', name: 'Matter team', unread: true, preview: 'Jared: warranty schedule is out for review', customer: false, href: '' },
+  { initials: 'CM', name: 'Celeste Morgan', preview: 'Resolutions signed and uploaded.', unread: false, customer: true },
+  { initials: 'ZN', name: 'Zoey Newton', preview: 'Discovery affidavit due Thursday.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -737,48 +737,48 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'TB', name: 'Thulani Buthelezi', role: 'Client · Chief executive', email: 'thulani.buthelezi@arcadiaholdings.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'TB', name: 'Tyler Bennett', role: 'Client · Chief executive', email: 'tyler.bennett@arcadiaholdings.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'AM', name: 'Adele Moodley', admin: true, role: 'Channel admin · Partner', email: 'adele.moodley@moodleyattorneys.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'JK', name: 'Jarred Kemp', role: 'Senior associate', email: 'jarred.kemp@moodleyattorneys.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'ZN', name: 'Zanele Ngcobo', role: 'Associate · Litigation', email: 'zanele.ngcobo@moodleyattorneys.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'PF', name: 'Pieter Fourie', role: 'Candidate attorney', email: 'pieter.fourie@moodleyattorneys.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'AM', name: 'Adele Monroe', admin: true, role: 'Channel admin · Partner', email: 'adele.monroe@moodleyattorneys.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'JK', name: 'Jared Kemp', role: 'Senior associate', email: 'jared.kemp@moodleyattorneys.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'ZN', name: 'Zoey Newton', role: 'Associate · Litigation', email: 'zoey.newton@moodleyattorneys.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'PF', name: 'Peter Foster', role: 'Candidate attorney', email: 'peter.foster@moodleyattorneys.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'RH', name: 'Roger Hendricks', role: 'Client · General counsel', email: 'roger.hendricks@arcadiaholdings.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'CM', name: 'Celeste Mostert', role: 'Client · Company secretary', email: 'celeste.mostert@arcadiaholdings.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'CM', name: 'Celeste Morgan', role: 'Client · Company secretary', email: 'celeste.morgan@arcadiaholdings.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
-const PINNED = { text: 'Signature date is Friday 11:00. Anything that has to change in the agreement must be raised here by Wednesday 17:00.', meta: 'Adele Moodley · Tue' };
+const PINNED = { text: 'Signature date is Friday 11:00. Anything that has to change in the agreement must be raised here by Wednesday 17:00.', meta: 'Adele Monroe · Tue' };
 
 const THREAD = {
   author: 'Roger Hendricks', photo: '', initials: 'RH', time: '09:12',
   text: 'The warranty schedule still has the seller capping liability at twelve months. Our board will not sign that. Can it move to twenty-four before Friday?',
   replies: [
-    { author: 'Jarred Kemp', initials: 'JK', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', time: '09:14', text: 'We asked for twenty-four in the second mark-up and they refused. Worth another attempt, but it will cost something elsewhere, probably the retention amount.' },
-    { author: 'Adele Moodley', initials: 'AM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', time: '09:16', text: 'Then let us be deliberate about the trade rather than discovering it at eleven on Friday. What does the board care about more, the period or the cap value?' },
+    { author: 'Jared Kemp', initials: 'JK', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', time: '09:14', text: 'We asked for twenty-four in the second mark-up and they refused. Worth another attempt, but it will cost something elsewhere, probably the retention amount.' },
+    { author: 'Adele Monroe', initials: 'AM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', time: '09:16', text: 'Then let us be deliberate about the trade rather than discovering it at eleven on Friday. What does the board care about more, the period or the cap value?' },
     { author: 'Roger Hendricks', initials: 'RH', bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', time: '09:17', text: 'The period. Most of what worries us would only surface after a full financial year.' },
-    { author: 'Adele Moodley', initials: 'AM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', time: '09:18', text: 'Then we push the period and concede on retention. I will put that in writing here so the mandate is on the record before I speak to the other side.' }
+    { author: 'Adele Monroe', initials: 'AM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', time: '09:18', text: 'Then we push the period and concede on retention. I will put that in writing here so the mandate is on the record before I speak to the other side.' }
   ]
 };
 
 const GROUP = [
-  { initials: 'AM', name: 'Adele Moodley', role: 'Channel admin · Support lead', email: 'adele.moodley@moodleyattorneys.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'ZN', name: 'Zanele Ngcobo', role: 'Associate · Litigation', email: 'zanele.ngcobo@moodleyattorneys.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'PF', name: 'Pieter Fourie', role: 'Candidate attorney', email: 'pieter.fourie@moodleyattorneys.com', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'AM', name: 'Adele Monroe', role: 'Channel admin · Support lead', email: 'adele.monroe@moodleyattorneys.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'ZN', name: 'Zoey Newton', role: 'Associate · Litigation', email: 'zoey.newton@moodleyattorneys.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'PF', name: 'Peter Foster', role: 'Candidate attorney', email: 'peter.foster@moodleyattorneys.com', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'RH', name: 'Roger Hendricks', role: 'Client · Arcadia Holdings', email: 'roger.hendricks@arcadiaholdings.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'JK', name: 'Jarred Kemp', role: 'Senior associate', email: 'jarred.kemp@moodleyattorneys.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'CM', name: 'Celeste Mostert', role: 'Client · Arcadia Holdings', email: 'celeste.mostert@arcadiaholdings.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
-  { initials: 'TB', name: 'Thulani Buthelezi', role: 'Client · Arcadia Holdings', email: 'thulani.buthelezi@arcadiaholdings.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
-  { initials: 'NV', name: 'Nadia Vermaak', role: 'Conveyancing secretary', email: 'nadia.vermaak@moodleyattorneys.com', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GS', name: 'Gareth Sithole', role: 'Paralegal', email: 'gareth.sithole@moodleyattorneys.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'LD', name: 'Lerato Dube', role: 'Senior associate', email: 'lerato.dube@moodleyattorneys.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'JK', name: 'Jared Kemp', role: 'Senior associate', email: 'jared.kemp@moodleyattorneys.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'CM', name: 'Celeste Morgan', role: 'Client · Arcadia Holdings', email: 'celeste.morgan@arcadiaholdings.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
+  { initials: 'TB', name: 'Tyler Bennett', role: 'Client · Arcadia Holdings', email: 'tyler.bennett@arcadiaholdings.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
+  { initials: 'NV', name: 'Nadia Vogel', role: 'Conveyancing secretary', email: 'nadia.vogel@moodleyattorneys.com', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GS', name: 'Gavin Simmons', role: 'Paralegal', email: 'gavin.simmons@moodleyattorneys.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'LD', name: 'Leah Dawson', role: 'Senior associate', email: 'leah.dawson@moodleyattorneys.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
   { initials: 'MR', name: 'Mark Reddy', role: 'Client · General counsel', email: 'mark.reddy@arcadiaholdings.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
   { initials: 'EK', name: 'Emma Kruger', role: 'Practice manager', email: 'emma.kruger@moodleyattorneys.com', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const ACCOUNTS = [
-  { name: 'Adele Moodley', email: 'adele.moodley@moodleyattorneys.com', role: 'Partner · Moodley Attorneys', initials: 'AM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Firm' },
-  { name: 'Adele Moodley', email: 'adele@arcadiaholdings.com', initials: 'AM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Legal team · Arcadia Holdings' }
+  { name: 'Adele Monroe', email: 'adele.monroe@moodleyattorneys.com', role: 'Partner · Monroe Attorneys', initials: 'AM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Firm' },
+  { name: 'Adele Monroe', email: 'adele@arcadiaholdings.com', initials: 'AM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Legal team · Arcadia Holdings' }
 ];
 
 const goPage = (href) => (e) => {
@@ -813,7 +813,7 @@ class Component extends DCLogic {
   sendDraft() {
     const text = this.state.draft.trim();
     if (!text) return;
-    this.setState(s => ({ draft: '', sent: [...s.sent, { author: 'Adele Moodley', text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }] }),
+    this.setState(s => ({ draft: '', sent: [...s.sent, { author: 'Adele Monroe', text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }] }),
       () => { const el = this._stream; if (el) el.scrollTop = el.scrollHeight; });
   }
 
@@ -874,20 +874,20 @@ class Component extends DCLogic {
 
     const base = [
       { kind: 'divider', label: 'Yesterday' },
-      { kind: 'event', icon: 'group_add', label: 'Thulani Buthelezi joined #kingsway-acquisition', meta: 'invited by Adele Moodley · 9 members', time: '16:02' },
-      { kind: 'msg', author: 'Zanele Ngcobo', photo: '', initials: 'ZN', time: '16:20', mention: true, text: '@channel discovery affidavit in the supplier dispute is due Thursday. Fourteen documents still to be reviewed for privilege. The list is on the wiki with who is reviewing what.', reactions: [{ emoji: '👍', count: 6 }] },
+      { kind: 'event', icon: 'group_add', label: 'Tyler Bennett joined #kingsway-acquisition', meta: 'invited by Adele Monroe · 9 members', time: '16:02' },
+      { kind: 'msg', author: 'Zoey Newton', photo: '', initials: 'ZN', time: '16:20', mention: true, text: '@channel discovery affidavit in the supplier dispute is due Thursday. Fourteen documents still to be reviewed for privilege. The list is on the wiki with who is reviewing what.', reactions: [{ emoji: '👍', count: 6 }] },
       { kind: 'divider', label: 'Today' },
       { kind: 'msg', author: 'Roger Hendricks', photo: '', initials: 'RH', time: '09:12', text: 'The warranty schedule still has the seller capping liability at twelve months. Our board will not sign that. Can it move to twenty-four before Friday?', thread: '4 replies · last 09:18' },
-      { kind: 'msg', author: 'Jarred Kemp', photo: '', initials: 'JK', time: '09:19', text: 'Recording the mandate out of the thread: push warranty period to 24 months, concede on retention if required. Client instruction from Roger, confirmed by Adele. Logged against request #809 before we go back to the other side.', reactions: [{ emoji: '🙌', count: 4 }] },
-      { kind: 'event', icon: 'confirmation_number', label: 'Request #809 updated: warranty schedule, client mandate recorded', meta: 'Jarred Kemp · In progress · due Friday', time: '09:26' },
-      { kind: 'msg', author: 'Adele Moodley', photo: '', initials: 'AM', time: '09:31', text: 'Instructions go in the channel or they did not happen. A telephone mandate that nobody wrote down is how a good matter becomes a complaint to the Legal Practice Council.' },
-      { kind: 'msg', author: 'Pieter Fourie', photo: '', initials: 'PF', time: '09:36', text: 'Due diligence: fourteen items still outstanding from the seller, mostly leases and two employment contracts. Chased again this morning and logged so it is visible rather than sitting in my inbox.', thread: '2 replies · last 09:39' },
-      { kind: 'event', icon: 'event_available', label: 'Signature meeting, Fri 11:00', meta: 'Adele Moodley · 9 invited', time: '09:38' },
-      { kind: 'msg', author: 'Celeste Mostert', photo: '', initials: 'CM', time: '09:41', text: 'Board resolutions for the share transfer are signed and uploaded here. Please confirm they are in the form you need before Friday rather than on the morning.' }
+      { kind: 'msg', author: 'Jared Kemp', photo: '', initials: 'JK', time: '09:19', text: 'Recording the mandate out of the thread: push warranty period to 24 months, concede on retention if required. Client instruction from Roger, confirmed by Adele. Logged against request #809 before we go back to the other side.', reactions: [{ emoji: '🙌', count: 4 }] },
+      { kind: 'event', icon: 'confirmation_number', label: 'Request #809 updated: warranty schedule, client mandate recorded', meta: 'Jared Kemp · In progress · due Friday', time: '09:26' },
+      { kind: 'msg', author: 'Adele Monroe', photo: '', initials: 'AM', time: '09:31', text: 'Instructions go in the channel or they did not happen. A telephone mandate that nobody wrote down is how a good matter becomes a complaint to the Legal Practice Council.' },
+      { kind: 'msg', author: 'Peter Foster', photo: '', initials: 'PF', time: '09:36', text: 'Due diligence: fourteen items still outstanding from the seller, mostly leases and two employment contracts. Chased again this morning and logged so it is visible rather than sitting in my inbox.', thread: '2 replies · last 09:39' },
+      { kind: 'event', icon: 'event_available', label: 'Signature meeting, Fri 11:00', meta: 'Adele Monroe · 9 invited', time: '09:38' },
+      { kind: 'msg', author: 'Celeste Morgan', photo: '', initials: 'CM', time: '09:41', text: 'Board resolutions for the share transfer are signed and uploaded here. Please confirm they are in the form you need before Friday rather than on the morning.' }
     ].concat(this.state.sent.map(m => ({ kind: 'msg', ...m })));
 
     let prev = null;
-    const ME = 'Adele Moodley';
+    const ME = 'Adele Monroe';
     const stream = base.map((m, i) => {
       const isMsg = m.kind === 'msg';
       const grouped = isMsg && prev && prev.author === m.author;
@@ -995,8 +995,8 @@ class Component extends DCLogic {
 
       notifications: [
         { icon: 'priority_high', text: 'Court deadline Thursday: “Discovery affidavit, supplier dispute”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Thulani Buthelezi joined Kingsway acquisition as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Adele Moodley assigned you the warranty schedule review', time: '1 hr ago', unread: true },
+        { icon: 'person_add', text: 'Tyler Bennett joined Kingsway acquisition as a guest', time: '26 min ago', unread: true },
+        { icon: 'assignment_ind', text: 'Adele Monroe assigned you the warranty schedule review', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Board resolutions signed and filed', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Matter team', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
@@ -1063,7 +1063,7 @@ class Component extends DCLogic {
       ].map(x => ({ ...x, onClick: goPage(x.href) })),
       chats: [
         { initials: '', group: true, name: 'Matter team', unread: '2', avatarBg: dark ? 'rgba(255,255,255,0.12)' : 'rgba(51,80,91,0.12)', avatarFg: 'var(--topIcon, #33505b)', onClick: goPage('Desktop Admin - Group Chat.dc.html'), onEnter: () => {}, onLeave: () => {} },
-        { initials: 'TB', group: false, name: 'Thulani Buthelezi', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
+        { initials: 'TB', group: false, name: 'Tyler Bennett', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
           onEnter: (e) => this.showCard(SHARON, e.currentTarget), onLeave: () => this.scheduleHide() }
       ],
       members: MEMBERS.map((m, i) => ({

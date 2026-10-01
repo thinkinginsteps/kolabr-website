@@ -485,7 +485,7 @@ input, textarea, select { caret-color: transparent !important; }
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 14px; padding-bottom: 18px; border-bottom: 1px solid var(--hairline, rgba(0,0,0,0.09));">
             <span style="display: inline-flex; align-items: center; gap: 7px;">
               <span aria-label="IB" style="width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, #4a6b78, #33505b); color: #ffffff; font-size: 9px; font-weight: 600;">IB</span>
-              <span style="font-size: 12.5px; font-weight: 500;">Ilse Barnard</span>
+              <span style="font-size: 12.5px; font-weight: 500;">Iris Barnard</span>
             </span>
             <span style="font-size: 12.5px; color: var(--muted, #6b8290);">updated 2 days ago · v14</span>
             <span style="width: 1px; height: 13px; background: var(--hairline, rgba(0,0,0,0.10));"></span>
@@ -637,10 +637,10 @@ const THEMES = {
 
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
-  { initials: 'NH', name: 'Neil Hartzenberg', preview: 'Containment plan by 16:00 please.', unread: true, customer: true },
-  { initials: 'G1', name: 'Shift leads', unread: true, preview: 'Werner: line 2 down, tool change', customer: false, href: '' },
+  { initials: 'NH', name: 'Neil Hoffman', preview: 'Containment plan by 16:00 please.', unread: true, customer: true },
+  { initials: 'G1', name: 'Shift leads', unread: true, preview: 'Walter: line 2 down, tool change', customer: false, href: '' },
   { initials: 'TF', name: 'Tasneem Fisher', preview: 'Can you still ship Friday?', unread: false, customer: true },
-  { initials: 'KM', name: 'Kagiso Mokoena', preview: '8D is drafted for your review.', unread: false, customer: false }
+  { initials: 'KM', name: 'Kyle Mitchell', preview: '8D is drafted for your review.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -667,26 +667,26 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'BM', name: 'Bongani Mtshali', role: 'Customer · Programme manager', email: 'bongani.mtshali@torqueautomotive.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'BM', name: 'Brandon McCall', role: 'Customer · Programme manager', email: 'brandon.mccall@torqueautomotive.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'IB', name: 'Ilse Barnard', admin: true, role: 'Channel admin · Plant manager', email: 'ilse.barnard@barnardprecision.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'KM', name: 'Kagiso Mokoena', role: 'Quality manager', email: 'kagiso.mokoena@barnardprecision.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'WS', name: 'Werner Schoeman', role: 'Production supervisor', email: 'werner.schoeman@barnardprecision.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'PD', name: 'Priya Dlamini', role: 'Process engineer', email: 'priya.dlamini@barnardprecision.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'NH', name: 'Neil Hartzenberg', role: 'Customer · Supplier quality', email: 'neil.hartzenberg@torqueautomotive.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'IB', name: 'Iris Barnard', admin: true, role: 'Channel admin · Plant manager', email: 'iris.barnard@barnardprecision.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'KM', name: 'Kyle Mitchell', role: 'Quality manager', email: 'kyle.mitchell@barnardprecision.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'WS', name: 'Walter Shaw', role: 'Production supervisor', email: 'walter.shaw@barnardprecision.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'PD', name: 'Priya Dixon', role: 'Process engineer', email: 'priya.dixon@barnardprecision.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'NH', name: 'Neil Hoffman', role: 'Customer · Supplier quality', email: 'neil.hoffman@torqueautomotive.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
   { initials: 'TF', name: 'Tasneem Fisher', role: 'Customer · Buyer', email: 'tasneem.fisher@torqueautomotive.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const CH_CATS = ['All', 'Quality', 'Operations', 'Commercial', 'Suppliers'];
 
 const PEOPLE = {
-  IB: { name: 'Ilse Barnard', email: 'ilse.barnard@barnardprecision.com', role: 'Plant manager' },
-  KM: { name: 'Kagiso Mokoena', email: 'kagiso.mokoena@barnardprecision.com', role: 'Quality manager' },
-  WS: { name: 'Werner Schoeman', email: 'werner.schoeman@barnardprecision.com', role: 'Production supervisor' },
-  PD: { name: 'Priya Dlamini', email: 'priya.dlamini@barnardprecision.com', role: 'Process engineer' },
-  SJ: { name: 'Sipho Jali', email: 'sipho.jali@barnardprecision.com', role: 'Maintenance lead' },
-  NH: { name: 'Neil Hartzenberg', email: 'neil.hartzenberg@torqueautomotive.com', role: 'Customer · Supplier quality' },
+  IB: { name: 'Iris Barnard', email: 'iris.barnard@barnardprecision.com', role: 'Plant manager' },
+  KM: { name: 'Kyle Mitchell', email: 'kyle.mitchell@barnardprecision.com', role: 'Quality manager' },
+  WS: { name: 'Walter Shaw', email: 'walter.shaw@barnardprecision.com', role: 'Production supervisor' },
+  PD: { name: 'Priya Dixon', email: 'priya.dixon@barnardprecision.com', role: 'Process engineer' },
+  SJ: { name: 'Shawn James', email: 'shawn.james@barnardprecision.com', role: 'Maintenance lead' },
+  NH: { name: 'Neil Hoffman', email: 'neil.hoffman@torqueautomotive.com', role: 'Customer · Supplier quality' },
   TF: { name: 'Tasneem Fisher', email: 'tasneem.fisher@torqueautomotive.com', role: 'Customer · Buyer' }
 };
 
@@ -732,8 +732,8 @@ const WIKI_TREE = [
 const WIKI_SECTION_OF = { w4: 'Quality' };
 
 const ACCOUNTS = [
-  { name: 'Ilse Barnard', email: 'ilse.barnard@barnardprecision.com', role: 'Plant manager · Barnard Precision', initials: 'IB', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Plant' },
-  { name: 'Ilse Barnard', email: 'ilse@torqueautomotive.com', initials: 'IB', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Supplier portal · Torque' }
+  { name: 'Iris Barnard', email: 'iris.barnard@barnardprecision.com', role: 'Plant manager · Barnard Precision', initials: 'IB', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Plant' },
+  { name: 'Iris Barnard', email: 'iris@torqueautomotive.com', initials: 'IB', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Supplier portal · Torque' }
 ];
 
 const goPage = (href) => (e) => {
@@ -975,8 +975,8 @@ class Component extends DCLogic {
 
       notifications: [
         { icon: 'priority_high', text: 'Containment due 16:00: “NCR-312, bore diameter out of tolerance”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Bongani Mtshali joined Quality & NCRs as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Kagiso Mokoena assigned you the 8D root cause section', time: '1 hr ago', unread: true },
+        { icon: 'person_add', text: 'Brandon McCall joined Quality & NCRs as a guest', time: '26 min ago', unread: true },
+        { icon: 'assignment_ind', text: 'Kyle Mitchell assigned you the 8D root cause section', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'ECN-088 implemented: revised gasket spec', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Shift leads', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
@@ -1043,7 +1043,7 @@ class Component extends DCLogic {
       ].map(x => ({ ...x, onClick: goPage(x.href) })),
       chats: [
         { initials: '', group: true, name: 'Shift leads', unread: '2', avatarBg: dark ? 'rgba(255,255,255,0.12)' : 'rgba(51,80,91,0.12)', avatarFg: 'var(--topIcon, #33505b)', onClick: goPage('Desktop Admin - Group Chat.dc.html'), onEnter: () => {}, onLeave: () => {} },
-        { initials: 'BM', group: false, name: 'Bongani Mtshali', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
+        { initials: 'BM', group: false, name: 'Brandon McCall', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
           onEnter: (e) => this.showCard(SHARON, e.currentTarget), onLeave: () => this.scheduleHide() }
       ],
       members: MEMBERS.map((m, i) => ({

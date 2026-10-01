@@ -707,10 +707,10 @@ const THEMES = {
 
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
-  { initials: 'GR', name: 'Gareth Roos', preview: 'Any update on the mail delays?', unread: true, customer: true },
-  { initials: 'G1', name: 'Service desk team', unread: true, preview: 'Sizwe: failover holding, monitoring', customer: false, href: '' },
-  { initials: 'NM', name: 'Nomsa Mbeki', preview: 'New starter needs a laptop Monday.', unread: false, customer: true },
-  { initials: 'SM', name: 'Sizwe Mthembu', preview: 'P1 comms drafted. Check before I send.', unread: false, customer: false }
+  { initials: 'GR', name: 'Gavin Russo', preview: 'Any update on the mail delays?', unread: true, customer: true },
+  { initials: 'G1', name: 'Service desk team', unread: true, preview: 'Samuel: failover holding, monitoring', customer: false, href: '' },
+  { initials: 'NM', name: 'Nora Mullins', preview: 'New starter needs a laptop Monday.', unread: false, customer: true },
+  { initials: 'SM', name: 'Samuel Meyers', preview: 'P1 comms drafted. Check before I send.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -740,45 +740,45 @@ const STATUSES = [
 const SHARON = { initials: 'HF', name: 'Helen Fry', role: 'Client · Managing partner', email: 'helen.fry@rossgrove.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'LG', name: 'Lauren Geldenhuys', admin: true, role: 'Channel admin · Service delivery manager', email: 'lauren.geldenhuys@meridian-it.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'SM', name: 'Sizwe Mthembu', role: 'Second-line engineer', email: 'sizwe.mthembu@meridian-it.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'PK', name: 'Pieter Krause', role: 'Infrastructure lead', email: 'pieter.krause@meridian-it.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'AC', name: 'Anita Chetty', role: 'Security analyst', email: 'anita.chetty@meridian-it.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GR', name: 'Gareth Roos', role: 'Client · Practice manager', email: 'gareth.roos@rossgrove.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'NM', name: 'Nomsa Mbeki', role: 'Client · Office administrator', email: 'nomsa.mbeki@rossgrove.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'LG', name: 'Lauren Gallagher', admin: true, role: 'Channel admin · Service delivery manager', email: 'lauren.gallagher@meridian-it.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'SM', name: 'Samuel Meyers', role: 'Second-line engineer', email: 'samuel.meyers@meridian-it.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'PK', name: 'Peter Krause', role: 'Infrastructure lead', email: 'peter.krause@meridian-it.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'AC', name: 'Anita Cole', role: 'Security analyst', email: 'anita.cole@meridian-it.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GR', name: 'Gavin Russo', role: 'Client · Practice manager', email: 'gavin.russo@rossgrove.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'NM', name: 'Nora Mullins', role: 'Client · Office administrator', email: 'nora.mullins@rossgrove.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
-const PINNED = { text: 'P1 open: mail flow degraded since 08:40. Status updates every 30 minutes in this channel until resolved.', meta: 'Lauren Geldenhuys · 09:00' };
+const PINNED = { text: 'P1 open: mail flow degraded since 08:40. Status updates every 30 minutes in this channel until resolved.', meta: 'Lauren Gallagher · 09:00' };
 
 const THREAD = {
-  author: 'Gareth Roos', photo: '', initials: 'GR', time: '09:12',
+  author: 'Gavin Russo', photo: '', initials: 'GR', time: '09:12',
   text: 'Mail has been crawling since just before nine. Two partners have court at eleven and cannot get attachments out. How bad is this?',
   replies: [
-    { author: 'Sizwe Mthembu', initials: 'SM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', time: '09:14', text: 'Hybrid connector is throttling on one transport server. Mail is queued, not lost. Nothing has bounced.' },
-    { author: 'Pieter Krause', initials: 'PK', bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', time: '09:16', text: 'Failing over to the second server now. Expect the queue to drain in about fifteen minutes.' },
-    { author: 'Gareth Roos', initials: 'GR', bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', time: '09:17', text: 'Can I tell the partners their attachments will go out before ten?' },
-    { author: 'Pieter Krause', initials: 'PK', bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', time: '09:18', text: 'Yes. I will confirm in here the moment the queue is clear rather than leaving you to guess.' }
+    { author: 'Samuel Meyers', initials: 'SM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', time: '09:14', text: 'Hybrid connector is throttling on one transport server. Mail is queued, not lost. Nothing has bounced.' },
+    { author: 'Peter Krause', initials: 'PK', bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', time: '09:16', text: 'Failing over to the second server now. Expect the queue to drain in about fifteen minutes.' },
+    { author: 'Gavin Russo', initials: 'GR', bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', time: '09:17', text: 'Can I tell the partners their attachments will go out before ten?' },
+    { author: 'Peter Krause', initials: 'PK', bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', time: '09:18', text: 'Yes. I will confirm in here the moment the queue is clear rather than leaving you to guess.' }
   ]
 };
 
 const GROUP = [
-  { initials: 'LG', name: 'Lauren Geldenhuys', role: 'Channel admin · Support lead', email: 'lauren.geldenhuys@meridian-it.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'PK', name: 'Pieter Krause', role: 'Infrastructure lead', email: 'pieter.krause@meridian-it.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'AC', name: 'Anita Chetty', role: 'Security analyst', email: 'anita.chetty@meridian-it.com', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GR', name: 'Gareth Roos', role: 'Client · Rossgrove Legal', email: 'gareth.roos@rossgrove.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'SM', name: 'Sizwe Mthembu', role: 'Second-line engineer', email: 'sizwe.mthembu@meridian-it.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'NM', name: 'Nomsa Mbeki', role: 'Client · Rossgrove Legal', email: 'nomsa.mbeki@rossgrove.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
+  { initials: 'LG', name: 'Lauren Gallagher', role: 'Channel admin · Support lead', email: 'lauren.gallagher@meridian-it.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'PK', name: 'Peter Krause', role: 'Infrastructure lead', email: 'peter.krause@meridian-it.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'AC', name: 'Anita Cole', role: 'Security analyst', email: 'anita.cole@meridian-it.com', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GR', name: 'Gavin Russo', role: 'Client · Rossgrove Legal', email: 'gavin.russo@rossgrove.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'SM', name: 'Samuel Meyers', role: 'Second-line engineer', email: 'samuel.meyers@meridian-it.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'NM', name: 'Nora Mullins', role: 'Client · Rossgrove Legal', email: 'nora.mullins@rossgrove.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
   { initials: 'HF', name: 'Helen Fry', role: 'Client · Rossgrove Legal', email: 'helen.fry@rossgrove.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
-  { initials: 'VR', name: 'Vikash Ramjee', role: 'Network engineer', email: 'vikash.ramjee@meridian-it.com', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'CD', name: 'Chantal du Toit', role: 'First-line technician', email: 'chantal.dutoit@meridian-it.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'MS', name: 'Morne Steyn', role: 'Second-line engineer', email: 'morne.steyn@meridian-it.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'BN', name: 'Bongi Nkosi', role: 'Client · Finance', email: 'bongi.nkosi@rossgrove.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'VR', name: 'Victor Ramos', role: 'Network engineer', email: 'victor.ramos@meridian-it.com', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'CD', name: 'Chantal Dupree', role: 'First-line technician', email: 'chantal.dutoit@meridian-it.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'MS', name: 'Micah Sullivan', role: 'Second-line engineer', email: 'micah.sullivan@meridian-it.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'BN', name: 'Blake Nelson', role: 'Client · Finance', email: 'blake.nelson@rossgrove.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
   { initials: 'JW', name: 'Jason Wills', role: 'Account manager', email: 'jason.wills@meridian-it.com', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const ACCOUNTS = [
-  { name: 'Lauren Geldenhuys', email: 'lauren.geldenhuys@meridian-it.com', role: 'Service delivery · Meridian IT', initials: 'LG', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Provider' },
-  { name: 'Lauren Geldenhuys', email: 'lauren@rossgrove.com', initials: 'LG', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'IT team · Rossgrove Legal' }
+  { name: 'Lauren Gallagher', email: 'lauren.gallagher@meridian-it.com', role: 'Service delivery · Meridian IT', initials: 'LG', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Provider' },
+  { name: 'Lauren Gallagher', email: 'lauren@rossgrove.com', initials: 'LG', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'IT team · Rossgrove Legal' }
 ];
 
 const goPage = (href) => (e) => {
@@ -813,7 +813,7 @@ class Component extends DCLogic {
   sendDraft() {
     const text = this.state.draft.trim();
     if (!text) return;
-    this.setState(s => ({ draft: '', sent: [...s.sent, { author: 'Lauren Geldenhuys', text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }] }),
+    this.setState(s => ({ draft: '', sent: [...s.sent, { author: 'Lauren Gallagher', text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }] }),
       () => { const el = this._stream; if (el) el.scrollTop = el.scrollHeight; });
   }
 
@@ -874,20 +874,20 @@ class Component extends DCLogic {
 
     const base = [
       { kind: 'divider', label: 'Yesterday' },
-      { kind: 'event', icon: 'group_add', label: 'Helen Fry joined #incidents-outages', meta: 'invited by Lauren Geldenhuys · 9 members', time: '16:02' },
-      { kind: 'msg', author: 'Anita Chetty', photo: '', initials: 'AC', time: '16:20', mention: true, text: '@channel MFA enforcement goes live Monday 06:00. Fourteen users still have not enrolled. The list is on the wiki and they will be locked out, not warned again.', reactions: [{ emoji: '👍', count: 11 }] },
+      { kind: 'event', icon: 'group_add', label: 'Helen Fry joined #incidents-outages', meta: 'invited by Lauren Gallagher · 9 members', time: '16:02' },
+      { kind: 'msg', author: 'Anita Cole', photo: '', initials: 'AC', time: '16:20', mention: true, text: '@channel MFA enforcement goes live Monday 06:00. Fourteen users still have not enrolled. The list is on the wiki and they will be locked out, not warned again.', reactions: [{ emoji: '👍', count: 11 }] },
       { kind: 'divider', label: 'Today' },
-      { kind: 'msg', author: 'Gareth Roos', photo: '', initials: 'GR', time: '09:12', text: 'Mail has been crawling since just before nine. Two partners have court at eleven and cannot get attachments out. How bad is this?', thread: '4 replies · last 09:18' },
-      { kind: 'msg', author: 'Sizwe Mthembu', photo: '', initials: 'SM', time: '09:19', text: 'Summarising out of the thread: one transport server throttling, failover in progress, queue draining. No mail lost. INC-4412 is the request and I am posting updates against it every thirty minutes.', reactions: [{ emoji: '🙌', count: 7 }] },
-      { kind: 'event', icon: 'confirmation_number', label: 'INC-4412 raised from a message: P1, mail flow degraded', meta: 'Sizwe Mthembu · In progress · breach in 38m', time: '09:26' },
-      { kind: 'msg', author: 'Lauren Geldenhuys', photo: '', initials: 'LG', time: '09:31', text: 'Rossgrove sees the same clock we do on this one. If we are going to breach, they hear it from us first, not from a partner standing in a corridor.' },
-      { kind: 'msg', author: 'Anita Chetty', photo: '', initials: 'AC', time: '09:36', text: 'Unrelated but worth flagging: reception forwarded a phishing attempt this morning. Reported, blocked, and I have added the sender pattern to the wiki so first-line recognises the next one.', thread: '2 replies · last 09:39' },
-      { kind: 'event', icon: 'event_available', label: 'Monthly service review, Thu 14:00', meta: 'Lauren Geldenhuys · 6 invited', time: '09:38' },
-      { kind: 'msg', author: 'Nomsa Mbeki', photo: '', initials: 'NM', time: '09:41', text: 'While you are in here, new paralegal starts Monday. Laptop, mailbox and practice-management access, logged as a request so it does not get lost behind the incident.' }
+      { kind: 'msg', author: 'Gavin Russo', photo: '', initials: 'GR', time: '09:12', text: 'Mail has been crawling since just before nine. Two partners have court at eleven and cannot get attachments out. How bad is this?', thread: '4 replies · last 09:18' },
+      { kind: 'msg', author: 'Samuel Meyers', photo: '', initials: 'SM', time: '09:19', text: 'Summarising out of the thread: one transport server throttling, failover in progress, queue draining. No mail lost. INC-4412 is the request and I am posting updates against it every thirty minutes.', reactions: [{ emoji: '🙌', count: 7 }] },
+      { kind: 'event', icon: 'confirmation_number', label: 'INC-4412 raised from a message: P1, mail flow degraded', meta: 'Samuel Meyers · In progress · breach in 38m', time: '09:26' },
+      { kind: 'msg', author: 'Lauren Gallagher', photo: '', initials: 'LG', time: '09:31', text: 'Rossgrove sees the same clock we do on this one. If we are going to breach, they hear it from us first, not from a partner standing in a corridor.' },
+      { kind: 'msg', author: 'Anita Cole', photo: '', initials: 'AC', time: '09:36', text: 'Unrelated but worth flagging: reception forwarded a phishing attempt this morning. Reported, blocked, and I have added the sender pattern to the wiki so first-line recognises the next one.', thread: '2 replies · last 09:39' },
+      { kind: 'event', icon: 'event_available', label: 'Monthly service review, Thu 14:00', meta: 'Lauren Gallagher · 6 invited', time: '09:38' },
+      { kind: 'msg', author: 'Nora Mullins', photo: '', initials: 'NM', time: '09:41', text: 'While you are in here, new paralegal starts Monday. Laptop, mailbox and practice-management access, logged as a request so it does not get lost behind the incident.' }
     ].concat(this.state.sent.map(m => ({ kind: 'msg', ...m })));
 
     let prev = null;
-    const ME = 'Lauren Geldenhuys';
+    const ME = 'Lauren Gallagher';
     const stream = base.map((m, i) => {
       const isMsg = m.kind === 'msg';
       const grouped = isMsg && prev && prev.author === m.author;
@@ -996,7 +996,7 @@ class Component extends DCLogic {
       notifications: [
         { icon: 'priority_high', text: 'P1 breach in 38m: “Mail flow degraded, Exchange hybrid”', time: '4 min ago', unread: true },
         { icon: 'person_add', text: 'Helen Fry joined Incidents & outages as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Pieter Krause assigned you the RCA for INC-4412', time: '1 hr ago', unread: true },
+        { icon: 'assignment_ind', text: 'Peter Krause assigned you the RCA for INC-4412', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Change CHG-238 completed: firewall firmware', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Service desk team', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),

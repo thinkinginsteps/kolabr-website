@@ -153,7 +153,7 @@ input, textarea, select { caret-color: transparent !important; }
       <div style="display: flex; align-items: flex-end; gap: 9px;">
         <span style="width: 28px; height: 28px; flex: none; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, #7f8b93, #5c6870); color: #fff; font-size: 10px; font-weight: 600;">KM</span>
         <div style="max-width: 78%;">
-          <div style="font-size: 11px; color: var(--muted, #6b8290); margin: 0 0 4px 3px;">Kagiso Mokoena</div>
+          <div style="font-size: 11px; color: var(--muted, #6b8290); margin: 0 0 4px 3px;">Kyle Mitchell</div>
           <div sc-camel-on-click="{{ msgTap0 }}" style="position: relative; cursor: pointer; padding: 10px 13px; border-radius: 16px 16px 16px 5px; background: var(--card, #f4f7f8); font-size: 13.5px; line-height: 1.4; text-wrap: pretty;">Bore diameter at 42.06 on 4 of 20. Quarantining the batch now.</div>
           <div style="font-size: 10.5px; color: var(--muted, #6b8290); margin: 4px 0 0 3px;">09:12</div>
         </div>
@@ -167,7 +167,7 @@ input, textarea, select { caret-color: transparent !important; }
       <div style="display: flex; align-items: flex-end; gap: 9px;">
         <span style="width: 28px; height: 28px; flex: none; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, #8a7f76, #6b6159); color: #fff; font-size: 10px; font-weight: 600; background-image: url(&quot;&quot;); background-size: cover; background-position: center;"></span>
         <div style="max-width: 78%;">
-          <div style="font-size: 11px; color: var(--muted, #6b8290); margin: 0 0 4px 3px;">Werner Schoeman</div>
+          <div style="font-size: 11px; color: var(--muted, #6b8290); margin: 0 0 4px 3px;">Walter Shaw</div>
           <div sc-camel-on-click="{{ msgTap2 }}" style="position: relative; cursor: pointer; padding: 10px 13px; border-radius: 16px 16px 16px 5px; background: var(--card, #f4f7f8); font-size: 13.5px; line-height: 1.4; text-wrap: pretty;">Reamer on die 7 replaced, first-off at 42.01. NCR-312 raised with the CMM report.</div>
           <div style="font-size: 10.5px; color: var(--muted, #6b8290); margin: 4px 0 0 3px;">09:31</div>
         </div>
@@ -181,7 +181,7 @@ input, textarea, select { caret-color: transparent !important; }
       <div style="display: flex; align-items: flex-end; gap: 9px;">
         <span style="width: 28px; height: 28px; flex: none; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, #5f7f8d, #3f5b68); color: #fff; font-size: 10px; font-weight: 600;">NH</span>
         <div style="max-width: 78%;">
-          <div style="font-size: 11px; color: var(--muted, #6b8290); margin: 0 0 4px 3px;">Neil Hartzenberg</div>
+          <div style="font-size: 11px; color: var(--muted, #6b8290); margin: 0 0 4px 3px;">Neil Hoffman</div>
           <div sc-camel-on-click="{{ msgTap4 }}" style="position: relative; cursor: pointer; padding: 10px 13px; border-radius: 16px 16px 16px 5px; background: var(--card, #f4f7f8); font-size: 13.5px; line-height: 1.4; text-wrap: pretty;">Containment plan by 16:00 please. I need to brief our production manager.</div>
           <div style="font-size: 10.5px; color: var(--muted, #6b8290); margin: 4px 0 0 3px;">10:02</div>
         </div>
@@ -417,8 +417,8 @@ const TAB_MENUS = {
 };
 
 const ACCOUNTS = [
-  { name: 'Ilse Barnard', email: 'ilse.barnard@barnardprecision.com', role: 'Plant manager · Barnard Precision', initials: 'IB', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Plant' },
-  { name: 'Ilse Barnard', email: 'ilse@torqueautomotive.com', initials: 'IB', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Supplier portal · Torque' }
+  { name: 'Iris Barnard', email: 'iris.barnard@barnardprecision.com', role: 'Plant manager · Barnard Precision', initials: 'IB', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Plant' },
+  { name: 'Iris Barnard', email: 'iris@torqueautomotive.com', initials: 'IB', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Supplier portal · Torque' }
 ];
 
 class Component extends DCLogic {
@@ -690,8 +690,8 @@ class Component extends DCLogic {
 
       notifications: [
         { icon: 'priority_high', text: 'Containment due 16:00: “NCR-312, bore diameter out of tolerance”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Bongani Mtshali joined Quality & NCRs as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Kagiso Mokoena assigned you the 8D root cause section', time: '1 hr ago', unread: true },
+        { icon: 'person_add', text: 'Brandon McCall joined Quality & NCRs as a guest', time: '26 min ago', unread: true },
+        { icon: 'assignment_ind', text: 'Kyle Mitchell assigned you the 8D root cause section', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'ECN-088 implemented: revised gasket spec', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Shift leads', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' }))

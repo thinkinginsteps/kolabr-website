@@ -708,9 +708,9 @@ const THEMES = {
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
   { initials: 'CS', name: 'Craig Stevens', preview: 'Will CH-4471 still make the 14:00 slot?', unread: true, customer: true },
-  { initials: 'G1', name: 'Control room', unread: true, preview: 'Thabang: reefer alarm on CH-4471', customer: false, href: '' },
-  { initials: 'ZM', name: 'Zola Mbatha', preview: 'POD signed short by two pallets.', unread: false, customer: true },
-  { initials: 'GB', name: 'Gert Badenhorst', preview: 'Backup unit is 40 min out.', unread: false, customer: false }
+  { initials: 'G1', name: 'Control room', unread: true, preview: 'Travis: reefer alarm on CH-4471', customer: false, href: '' },
+  { initials: 'ZM', name: 'Zara Mathews', preview: 'POD signed short by two pallets.', unread: false, customer: true },
+  { initials: 'GB', name: 'Glenn Barrett', preview: 'Backup unit is 40 min out.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -737,48 +737,48 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'JV', name: 'Janine Venter', role: 'Client · Head of logistics', email: 'janine.venter@coldharvest.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'JV', name: 'Janine Vance', role: 'Client · Head of logistics', email: 'janine.vance@coldharvest.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'MR', name: 'Marlise Roux', admin: true, role: 'Channel admin · Account manager', email: 'marlise.roux@rouxlogistics.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'TN', name: 'Thabang Nkosi', role: 'Controller · Night shift', email: 'thabang.nkosi@rouxlogistics.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'GB', name: 'Gert Badenhorst', role: 'Fleet supervisor', email: 'gert.badenhorst@rouxlogistics.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'FA', name: 'Farhana Adams', role: 'Claims and compliance', email: 'farhana.adams@rouxlogistics.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'MR', name: 'Melissa Rowe', admin: true, role: 'Channel admin · Account manager', email: 'melissa.rowe@rouxlogistics.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'TN', name: 'Travis Nelson', role: 'Controller · Night shift', email: 'travis.nelson@rouxlogistics.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'GB', name: 'Glenn Barrett', role: 'Fleet supervisor', email: 'glenn.barrett@rouxlogistics.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'FA', name: 'Farrah Adams', role: 'Claims and compliance', email: 'farrah.adams@rouxlogistics.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'CS', name: 'Craig Stevens', role: 'Client · Supply chain manager', email: 'craig.stevens@coldharvest.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'ZM', name: 'Zola Mbatha', role: 'Client · Depot receiving', email: 'zola.mbatha@coldharvest.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'ZM', name: 'Zara Mathews', role: 'Client · Depot receiving', email: 'zara.mathews@coldharvest.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
-const PINNED = { text: 'Cold chain: any excursion above 5°F is reported in this channel immediately, with the reefer download attached. Not at the end of the shift.', meta: 'Marlise Roux · Tue' };
+const PINNED = { text: 'Cold chain: any excursion above 5°F is reported in this channel immediately, with the reefer download attached. Not at the end of the shift.', meta: 'Melissa Rowe · Tue' };
 
 const THREAD = {
-  author: 'Thabang Nkosi', photo: '', initials: 'TN', time: '09:12',
+  author: 'Travis Nelson', photo: '', initials: 'TN', time: '09:12',
   text: 'Reefer alarm on CH-4471 on I-80: unit reading 10°F against a 0°F spec. Driver says it has been climbing for about forty minutes.',
   replies: [
-    { author: 'Gert Badenhorst', initials: 'GB', bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', time: '09:14', text: 'Condenser fan. I have a backup unit forty minutes out and a technician meeting him at the next stop on I-80.' },
+    { author: 'Glenn Barrett', initials: 'GB', bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', time: '09:14', text: 'Condenser fan. I have a backup unit forty minutes out and a technician meeting him at the next stop on I-80.' },
     { author: 'Craig Stevens', initials: 'CS', bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', time: '09:16', text: 'What is on that trailer, and is the product still saleable? I need to tell the depot before it arrives, not after.' },
-    { author: 'Farhana Adams', initials: 'FA', bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)', time: '09:17', text: 'Frozen veg, 22 pallets. Forty minutes at 10°F is inside tolerance for that product, and I am pulling the temperature log now as evidence either way.' },
+    { author: 'Farrah Adams', initials: 'FA', bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)', time: '09:17', text: 'Frozen veg, 22 pallets. Forty minutes at 10°F is inside tolerance for that product, and I am pulling the temperature log now as evidence either way.' },
     { author: 'Craig Stevens', initials: 'CS', bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', time: '09:18', text: 'Then send me the log with the POD and we will accept it. Please flag the 14:00 slot risk to the depot yourselves.' }
   ]
 };
 
 const GROUP = [
-  { initials: 'MR', name: 'Marlise Roux', role: 'Channel admin · Support lead', email: 'marlise.roux@rouxlogistics.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'GB', name: 'Gert Badenhorst', role: 'Fleet supervisor', email: 'gert.badenhorst@rouxlogistics.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'FA', name: 'Farhana Adams', role: 'Claims and compliance', email: 'farhana.adams@rouxlogistics.com', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'MR', name: 'Melissa Rowe', role: 'Channel admin · Support lead', email: 'melissa.rowe@rouxlogistics.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'GB', name: 'Glenn Barrett', role: 'Fleet supervisor', email: 'glenn.barrett@rouxlogistics.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'FA', name: 'Farrah Adams', role: 'Claims and compliance', email: 'farrah.adams@rouxlogistics.com', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
   { initials: 'CS', name: 'Craig Stevens', role: 'Client · Cold Harvest', email: 'craig.stevens@coldharvest.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'TN', name: 'Thabang Nkosi', role: 'Controller · Night shift', email: 'thabang.nkosi@rouxlogistics.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'ZM', name: 'Zola Mbatha', role: 'Client · Cold Harvest', email: 'zola.mbatha@coldharvest.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
-  { initials: 'JV', name: 'Janine Venter', role: 'Client · Cold Harvest', email: 'janine.venter@coldharvest.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
-  { initials: 'RP', name: 'Ridwaan Patel', role: 'Planner', email: 'ridwaan.patel@rouxlogistics.com', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'HK', name: 'Hein Kotze', role: 'Depot supervisor', email: 'hein.kotze@rouxlogistics.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'LS', name: 'Lebo Sithole', role: 'Controller · Night shift', email: 'lebo.sithole@rouxlogistics.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'DV', name: 'Desiree van Zyl', role: 'Client · Supply chain', email: 'desiree.vanzyl@coldharvest.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'AO', name: 'Ayanda Ofori', role: 'Account manager', email: 'ayanda.ofori@rouxlogistics.com', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'TN', name: 'Travis Nelson', role: 'Controller · Night shift', email: 'travis.nelson@rouxlogistics.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'ZM', name: 'Zara Mathews', role: 'Client · Cold Harvest', email: 'zara.mathews@coldharvest.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
+  { initials: 'JV', name: 'Janine Vance', role: 'Client · Cold Harvest', email: 'janine.vance@coldharvest.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
+  { initials: 'RP', name: 'Rohan Patel', role: 'Planner', email: 'rohan.patel@rouxlogistics.com', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'HK', name: 'Hank Kowalski', role: 'Depot supervisor', email: 'hank.kowalski@rouxlogistics.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'LS', name: 'Logan Simmons', role: 'Controller · Night shift', email: 'logan.simmons@rouxlogistics.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'DV', name: 'Desiree Vance', role: 'Client · Supply chain', email: 'desiree.vanzyl@coldharvest.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'AO', name: 'Alana Ofori', role: 'Account manager', email: 'alana.ofori@rouxlogistics.com', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const ACCOUNTS = [
-  { name: 'Marlise Roux', email: 'marlise.roux@rouxlogistics.com', role: 'Account manager · Roux Logistics', initials: 'MR', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Carrier' },
-  { name: 'Marlise Roux', email: 'marlise@coldharvest.com', initials: 'MR', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Logistics team · Cold Harvest' }
+  { name: 'Melissa Rowe', email: 'melissa.rowe@rouxlogistics.com', role: 'Account manager · Rowe Logistics', initials: 'MR', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Carrier' },
+  { name: 'Melissa Rowe', email: 'melissa@coldharvest.com', initials: 'MR', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Logistics team · Cold Harvest' }
 ];
 
 const goPage = (href) => (e) => {
@@ -813,7 +813,7 @@ class Component extends DCLogic {
   sendDraft() {
     const text = this.state.draft.trim();
     if (!text) return;
-    this.setState(s => ({ draft: '', sent: [...s.sent, { author: 'Marlise Roux', text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }] }),
+    this.setState(s => ({ draft: '', sent: [...s.sent, { author: 'Melissa Rowe', text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }] }),
       () => { const el = this._stream; if (el) el.scrollTop = el.scrollHeight; });
   }
 
@@ -874,20 +874,20 @@ class Component extends DCLogic {
 
     const base = [
       { kind: 'divider', label: 'Yesterday' },
-      { kind: 'event', icon: 'group_add', label: 'Janine Venter joined #exceptions-delays', meta: 'invited by Marlise Roux · 9 members', time: '16:02' },
-      { kind: 'msg', author: 'Farhana Adams', photo: '', initials: 'FA', time: '16:20', mention: true, text: '@channel six PODs are still outstanding from last week, the oldest is CH-4462 at six days. We cannot invoice without them and the client cannot close their receiving. List is on the wiki.', reactions: [{ emoji: '👍', count: 7 }] },
+      { kind: 'event', icon: 'group_add', label: 'Janine Vance joined #exceptions-delays', meta: 'invited by Melissa Rowe · 9 members', time: '16:02' },
+      { kind: 'msg', author: 'Farrah Adams', photo: '', initials: 'FA', time: '16:20', mention: true, text: '@channel six PODs are still outstanding from last week, the oldest is CH-4462 at six days. We cannot invoice without them and the client cannot close their receiving. List is on the wiki.', reactions: [{ emoji: '👍', count: 7 }] },
       { kind: 'divider', label: 'Today' },
-      { kind: 'msg', author: 'Thabang Nkosi', photo: '', initials: 'TN', time: '09:12', text: 'Reefer alarm on CH-4471 on I-80: unit reading 10°F against a 0°F spec. Driver says it has been climbing for about forty minutes.', thread: '4 replies · last 09:18' },
-      { kind: 'msg', author: 'Gert Badenhorst', photo: '', initials: 'GB', time: '09:19', text: 'Summarising out of the thread: condenser fan failure, backup unit 40 minutes out, technician meeting the driver on I-80. Temperature log attached to #4471 so the client has the evidence before the trailer arrives.', reactions: [{ emoji: '🙌', count: 6 }] },
-      { kind: 'event', icon: 'confirmation_number', label: 'Exception #4471 raised from a message: reefer temperature excursion', meta: 'Thabang Nkosi · In progress · breach in 35m', time: '09:26' },
-      { kind: 'msg', author: 'Marlise Roux', photo: '', initials: 'MR', time: '09:31', text: 'Cold Harvest hears about an exception from us, not from their depot. A client who finds out when the truck arrives is a client who is already shopping for another carrier.' },
-      { kind: 'msg', author: 'Zola Mbatha', photo: '', initials: 'ZM', time: '09:36', text: 'From receiving: CH-4468 was signed short by two pallets on Friday. Photographs of the seal and the tally sheet are attached, raising it now rather than at month-end reconciliation.', thread: '2 replies · last 09:39' },
-      { kind: 'event', icon: 'event_available', label: 'Weekly planning call, Thu 15:00', meta: 'Marlise Roux · 7 invited', time: '09:38' },
+      { kind: 'msg', author: 'Travis Nelson', photo: '', initials: 'TN', time: '09:12', text: 'Reefer alarm on CH-4471 on I-80: unit reading 10°F against a 0°F spec. Driver says it has been climbing for about forty minutes.', thread: '4 replies · last 09:18' },
+      { kind: 'msg', author: 'Glenn Barrett', photo: '', initials: 'GB', time: '09:19', text: 'Summarising out of the thread: condenser fan failure, backup unit 40 minutes out, technician meeting the driver on I-80. Temperature log attached to #4471 so the client has the evidence before the trailer arrives.', reactions: [{ emoji: '🙌', count: 6 }] },
+      { kind: 'event', icon: 'confirmation_number', label: 'Exception #4471 raised from a message: reefer temperature excursion', meta: 'Travis Nelson · In progress · breach in 35m', time: '09:26' },
+      { kind: 'msg', author: 'Melissa Rowe', photo: '', initials: 'MR', time: '09:31', text: 'Cold Harvest hears about an exception from us, not from their depot. A client who finds out when the truck arrives is a client who is already shopping for another carrier.' },
+      { kind: 'msg', author: 'Zara Mathews', photo: '', initials: 'ZM', time: '09:36', text: 'From receiving: CH-4468 was signed short by two pallets on Friday. Photographs of the seal and the tally sheet are attached, raising it now rather than at month-end reconciliation.', thread: '2 replies · last 09:39' },
+      { kind: 'event', icon: 'event_available', label: 'Weekly planning call, Thu 15:00', meta: 'Melissa Rowe · 7 invited', time: '09:38' },
       { kind: 'msg', author: 'Craig Stevens', photo: '', initials: 'CS', time: '09:41', text: 'Will CH-4471 still make the 14:00 slot? If not, say so now. The depot books a replacement window at eleven and after that we are into tomorrow.' }
     ].concat(this.state.sent.map(m => ({ kind: 'msg', ...m })));
 
     let prev = null;
-    const ME = 'Marlise Roux';
+    const ME = 'Melissa Rowe';
     const stream = base.map((m, i) => {
       const isMsg = m.kind === 'msg';
       const grouped = isMsg && prev && prev.author === m.author;
@@ -995,8 +995,8 @@ class Component extends DCLogic {
 
       notifications: [
         { icon: 'priority_high', text: 'Cold chain alert: “CH-4471 reefer at 10°F, spec 0°F”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Janine Venter joined Exceptions & delays as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Farhana Adams assigned you the short-delivery claim', time: '1 hr ago', unread: true },
+        { icon: 'person_add', text: 'Janine Vance joined Exceptions & delays as a guest', time: '26 min ago', unread: true },
+        { icon: 'assignment_ind', text: 'Farrah Adams assigned you the short-delivery claim', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'POD uploaded and matched: CH-4465', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Control room', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
@@ -1063,7 +1063,7 @@ class Component extends DCLogic {
       ].map(x => ({ ...x, onClick: goPage(x.href) })),
       chats: [
         { initials: '', group: true, name: 'Control room', unread: '2', avatarBg: dark ? 'rgba(255,255,255,0.12)' : 'rgba(51,80,91,0.12)', avatarFg: 'var(--topIcon, #33505b)', onClick: goPage('Desktop Admin - Group Chat.dc.html'), onEnter: () => {}, onLeave: () => {} },
-        { initials: 'JV', group: false, name: 'Janine Venter', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
+        { initials: 'JV', group: false, name: 'Janine Vance', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
           onEnter: (e) => this.showCard(SHARON, e.currentTarget), onLeave: () => this.scheduleHide() }
       ],
       members: MEMBERS.map((m, i) => ({

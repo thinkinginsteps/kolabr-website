@@ -893,8 +893,8 @@ const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
   { initials: 'SC', name: 'Simone Chavez', preview: 'Any update on the export bug?', unread: true, customer: true },
   { initials: 'G1', name: 'Group Chat 1', preview: 'Adam: pushing the fix at 4pm', unread: true, customer: false, href: 'Desktop Admin - Group Chat.dc.html' },
-  { initials: 'LP', name: 'Lena Pienaar', preview: 'Thanks, that worked.', unread: false, customer: true },
-  { initials: 'AB', name: 'Adam Bekker', preview: 'Can you take #4816?', unread: false, customer: false }
+  { initials: 'LP', name: 'Lena Peralta', preview: 'Thanks, that worked.', unread: false, customer: true },
+  { initials: 'AB', name: 'Adam Brooks', preview: 'Can you take #4816?', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -925,11 +925,11 @@ const SHARON = { initials: 'SC', name: 'Simone Chavez', role: 'Customer · North
 
 const MEMBERS = [
   { initials: 'DS', name: 'Dylan Sorensen', admin: true, role: 'Channel admin · Support lead', email: 'dylan.sorensen@kolabr.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)', photo: 'assets/screens/sm-photo-dom-september.png' },
-  { initials: 'AB', name: 'Adam Bekker', role: 'Support agent', email: 'adam.bekker@kolabr.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'RP', name: 'Ruben Pienaar', role: 'Engineer', email: 'ruben.pienaar@kolabr.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', photo: 'assets/screens/sm-photo-richard-potgieter.png' },
+  { initials: 'AB', name: 'Adam Brooks', role: 'Support agent', email: 'adam.brooks@kolabr.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'RP', name: 'Ruben Peralta', role: 'Engineer', email: 'ruben.peralta@kolabr.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', photo: 'assets/screens/sm-photo-richard-potgieter.png' },
   { initials: 'NS', name: 'Nathan Sorensen', role: 'Admin', email: 'nathan.sorensen@kolabr.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)', photo: 'assets/screens/sm-photo-neville-september.png' },
   { initials: 'DH', name: 'Dean Harlow', role: 'Customer · Northwind Trading', email: 'dean.harlow@northwindtrading.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', photo: 'assets/screens/sm-photo-dom-hardy.png' },
-  { initials: 'LP', name: 'Lena Pienaar', role: 'Customer · Northwind Trading', email: 'lena.pienaar@northwindtrading.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'LP', name: 'Lena Peralta', role: 'Customer · Northwind Trading', email: 'lena.peralta@northwindtrading.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const CH_CATS = ['All', 'Payments', 'Onboarding', 'Merchants', 'Internal'];
@@ -937,10 +937,10 @@ const CH_CATS = ['All', 'Payments', 'Onboarding', 'Merchants', 'Internal'];
 const PEOPLE = {
   DS: { name: 'Dylan Sorensen', email: 'dylan.sorensen@kolabr.com', role: 'Owner' },
   NS: { name: 'Nathan Sorensen', email: 'nathan.sorensen@kolabr.com', role: 'Admin' },
-  AB: { name: 'Adam Bekker', email: 'adam.bekker@kolabr.com', role: 'Agent' },
+  AB: { name: 'Adam Brooks', email: 'adam.brooks@kolabr.com', role: 'Agent' },
   TI: { name: 'Tasha Iyer', email: 'tasha.iyer@kolabr.com', role: 'Agent' },
-  RP: { name: 'Ruben Pienaar', email: 'ruben.pienaar@kolabr.com', role: 'Admin' },
-  LP: { name: 'Lena Pienaar', email: 'lena.pienaar@kolabr.com', role: 'Agent' },
+  RP: { name: 'Ruben Peralta', email: 'ruben.peralta@kolabr.com', role: 'Admin' },
+  LP: { name: 'Lena Peralta', email: 'lena.peralta@kolabr.com', role: 'Agent' },
   SC: { name: 'Simone Chavez', email: 'simone.chavez@northwindtrading.com', role: 'Guest' }
 };
 
@@ -1291,7 +1291,7 @@ class Component extends DCLogic {
       formDate: selIso,
       formAttendees: [
         { initials: 'DS', name: 'Dylan Sorensen', bg: 'linear-gradient(150deg, #33505b, #557a88)' },
-        { initials: 'AB', name: 'Adam Bekker', bg: 'linear-gradient(150deg, #00c3ff, #0a9fd4)' },
+        { initials: 'AB', name: 'Adam Brooks', bg: 'linear-gradient(150deg, #00c3ff, #0a9fd4)' },
         { initials: 'TI', name: 'Tasha Iyer', bg: 'linear-gradient(150deg, #7c6cf0, #5c4bd8)' }
       ],
       formToggles: [
@@ -1462,7 +1462,7 @@ class Component extends DCLogic {
       notifications: [
         { icon: 'priority_high', text: 'SLA at risk on #4821: “Invoice sync failing since Monday”', time: '4 min ago', unread: true },
         { icon: 'person_add', text: 'Simone Chavez joined Northwind Trading', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Adam Bekker assigned you request #4816', time: '1 hr ago', unread: true },
+        { icon: 'assignment_ind', text: 'Adam Brooks assigned you request #4816', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Request #4802 resolved and rated 5/5', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Group Chat 1', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),

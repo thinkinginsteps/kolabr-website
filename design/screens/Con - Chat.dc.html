@@ -595,8 +595,8 @@ input, textarea, select { caret-color: transparent !important; }
         <sc-if value="{{ typing }}" hint-placeholder-val="{{ true }}">
           <div style="display: flex; align-items: center; gap: 11px; padding: 6px 12px 2px;">
             <span style="display: flex; align-items: center;">
-              <img src="../assets/screens/sm-photo-neville-september.png" alt="Lebo Mahlangu" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; display: block; box-shadow: 0 0 0 2px var(--card, #ffffff);">
-              <img src="../assets/screens/sm-photo-richard-potgieter.png" alt="Karel Venter" style="width: 30px; height: 30px; margin-left: -9px; border-radius: 50%; object-fit: cover; display: block; box-shadow: 0 0 0 2px var(--card, #ffffff);">
+              <img src="../assets/screens/sm-photo-neville-september.png" alt="Logan Mallory" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; display: block; box-shadow: 0 0 0 2px var(--card, #ffffff);">
+              <img src="../assets/screens/sm-photo-richard-potgieter.png" alt="Keith Vance" style="width: 30px; height: 30px; margin-left: -9px; border-radius: 50%; object-fit: cover; display: block; box-shadow: 0 0 0 2px var(--card, #ffffff);">
             </span>
             <span style="font-size: 12.5px; color: var(--muted, #6b8290);">Nathan and Ruben are typing…</span>
           </div>
@@ -707,10 +707,10 @@ const THEMES = {
 
 const CHAT_FILTERS = ['All', 'Unread'];
 const ALL_CHATS = [
-  { initials: 'GS', name: 'Grant Steyn', preview: 'Is the slab pour still on for Thursday?', unread: true, customer: true },
-  { initials: 'G1', name: 'Site management', unread: true, preview: 'Sipho: rebar inspection passed', customer: false, href: '' },
-  { initials: 'MK', name: 'Marlize Koen', preview: 'Variation 12 priced, sending through.', unread: false, customer: true },
-  { initials: 'SN', name: 'Sipho Ndlovu', preview: 'Need the revised setting-out by 06:00.', unread: false, customer: false }
+  { initials: 'GS', name: 'Grant Sullivan', preview: 'Is the slab pour still on for Thursday?', unread: true, customer: true },
+  { initials: 'G1', name: 'Site management', unread: true, preview: 'Shawn: rebar inspection passed', customer: false, href: '' },
+  { initials: 'MK', name: 'Mia Keller', preview: 'Variation 12 priced, sending through.', unread: false, customer: true },
+  { initials: 'SN', name: 'Shawn Nichols', preview: 'Need the revised setting-out by 06:00.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -737,48 +737,48 @@ const STATUSES = [
   { id: 'offline', label: 'Appear offline', color: (d) => d ? '#6e6e73' : '#b8b8bd' }
 ];
 
-const SHARON = { initials: 'MK', name: 'Marlize Koen', role: 'Quantity surveyor', email: 'marlize.koen@koenqs.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
+const SHARON = { initials: 'MK', name: 'Mia Keller', role: 'Quantity surveyor', email: 'mia.keller@koenqs.com', since: '4 Feb 2026', status: 'online', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' };
 
 const MEMBERS = [
-  { initials: 'RM', name: 'Riaan Marais', admin: true, role: 'Channel admin · Site agent', email: 'riaan.marais@vermeulenbuild.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'SN', name: 'Sipho Ndlovu', role: 'Foreman · Structure', email: 'sipho.ndlovu@vermeulenbuild.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'KV', name: 'Karel Venter', role: 'Contracts manager', email: 'karel.venter@vermeulenbuild.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'LM', name: 'Lebo Mahlangu', role: 'Health & safety officer', email: 'lebo.mahlangu@vermeulenbuild.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GS', name: 'Grant Steyn', role: 'Client PM · Harbour Yard', email: 'grant.steyn@harbouryard.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'AD', name: 'Ayanda Dlamini', role: 'Electrical subcontractor', email: 'ayanda.dlamini@voltaelec.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'RM', name: 'Ryan Marsh', admin: true, role: 'Channel admin · Site agent', email: 'ryan.marsh@vermeulenbuild.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'SN', name: 'Shawn Nichols', role: 'Foreman · Structure', email: 'shawn.nichols@vermeulenbuild.com', since: '19 Jun 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'KV', name: 'Keith Vance', role: 'Contracts manager', email: 'keith.vance@vermeulenbuild.com', since: '8 Sep 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'LM', name: 'Logan Mallory', role: 'Health & safety officer', email: 'logan.mallory@vermeulenbuild.com', since: '13 Apr 2026', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GS', name: 'Grant Sullivan', role: 'Client PM · Harbour Yard', email: 'grant.sullivan@harbouryard.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'AD', name: 'Alana Dixon', role: 'Electrical subcontractor', email: 'alana.dixon@voltaelec.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
-const PINNED = { text: 'Grid C pour moved to Thursday 05:30. Concrete cube results must be in before level 3 setting-out starts.', meta: 'Karel Venter · Tue' };
+const PINNED = { text: 'Grid C pour moved to Thursday 05:30. Concrete cube results must be in before level 3 setting-out starts.', meta: 'Keith Vance · Tue' };
 
 const THREAD = {
-  author: 'Sipho Ndlovu', photo: '', initials: 'SN', time: '09:12',
+  author: 'Shawn Nichols', photo: '', initials: 'SN', time: '09:12',
   text: 'Rock at grid C is deeper than the geotech said. We are 900mm below founding level and still in hard material. Photos attached.',
   replies: [
-    { author: 'Riaan Marais', initials: 'RM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', time: '09:14', text: 'Logged as a variation so it is priced properly instead of argued about at the next valuation.' },
-    { author: 'Marlize Koen', initials: 'MK', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)', time: '09:16', text: 'Send me the dayworks sheets and the plant hours. I can price it against the rock excavation rate today.' },
-    { author: 'Grant Steyn', initials: 'GS', bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', time: '09:17', text: 'How many days does this add? I need to tell the client before the board meeting.' },
-    { author: 'Karel Venter', initials: 'KV', bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', time: '09:18', text: 'Two days on the critical path. Notice goes in today so the extension of time is on the record from day one.' }
+    { author: 'Ryan Marsh', initials: 'RM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', time: '09:14', text: 'Logged as a variation so it is priced properly instead of argued about at the next valuation.' },
+    { author: 'Mia Keller', initials: 'MK', bg: 'linear-gradient(150deg, #7b8f99, #5d757f)', time: '09:16', text: 'Send me the dayworks sheets and the plant hours. I can price it against the rock excavation rate today.' },
+    { author: 'Grant Sullivan', initials: 'GS', bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', time: '09:17', text: 'How many days does this add? I need to tell the client before the board meeting.' },
+    { author: 'Keith Vance', initials: 'KV', bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', time: '09:18', text: 'Two days on the critical path. Notice goes in today so the extension of time is on the record from day one.' }
   ]
 };
 
 const GROUP = [
-  { initials: 'RM', name: 'Riaan Marais', role: 'Channel admin · Support lead', email: 'riaan.marais@vermeulenbuild.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
-  { initials: 'KV', name: 'Karel Venter', role: 'Contracts manager', email: 'karel.venter@vermeulenbuild.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'LM', name: 'Lebo Mahlangu', role: 'Health & safety officer', email: 'lebo.mahlangu@vermeulenbuild.com', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'GS', name: 'Grant Steyn', role: 'Client · Harbour Yard', email: 'grant.steyn@subcontractor.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'SN', name: 'Sipho Ndlovu', role: 'Foreman · Structure', email: 'sipho.ndlovu@vermeulenbuild.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'AD', name: 'Ayanda Dlamini', role: 'Client · Harbour Yard', email: 'ayanda.dlamini@subcontractor.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
-  { initials: 'MK', name: 'Marlize Koen', role: 'Client · Harbour Yard', email: 'marlize.koen@subcontractor.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
-  { initials: 'JB', name: 'Jaco Brits', role: 'Setting-out engineer', email: 'jaco.brits@vermeulenbuild.com', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
-  { initials: 'FN', name: 'Fiona Naidoo', role: 'Quality manager', email: 'fiona.naidoo@vermeulenbuild.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
-  { initials: 'PM', name: 'Petrus Mokoena', role: 'Foreman · Structure', email: 'petrus.mokoena@vermeulenbuild.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
-  { initials: 'ZK', name: 'Zola Khumalo', role: 'Client PM · Harbour Yard', email: 'zola.khumalo@subcontractor.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
-  { initials: 'HB', name: 'Hendrik Basson', role: 'Commercial manager', email: 'hendrik.basson@vermeulenbuild.com', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
+  { initials: 'RM', name: 'Ryan Marsh', role: 'Channel admin · Support lead', email: 'ryan.marsh@vermeulenbuild.com', since: '2 Feb 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #4a6b78, #33505b)' },
+  { initials: 'KV', name: 'Keith Vance', role: 'Contracts manager', email: 'keith.vance@vermeulenbuild.com', since: '8 Sep 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'LM', name: 'Logan Mallory', role: 'Health & safety officer', email: 'logan.mallory@vermeulenbuild.com', since: '13 Apr 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'GS', name: 'Grant Sullivan', role: 'Client · Harbour Yard', email: 'grant.sullivan@subcontractor.com', since: '11 Mar 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'SN', name: 'Shawn Nichols', role: 'Foreman · Structure', email: 'shawn.nichols@vermeulenbuild.com', since: '19 Jun 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'AD', name: 'Alana Dixon', role: 'Client · Harbour Yard', email: 'alana.dixon@subcontractor.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' },
+  { initials: 'MK', name: 'Mia Keller', role: 'Client · Harbour Yard', email: 'mia.keller@subcontractor.com', since: '4 Feb 2026', status: 'online', customer: true, bg: 'linear-gradient(150deg, #7b8f99, #5d757f)' },
+  { initials: 'JB', name: 'Jake Briggs', role: 'Setting-out engineer', email: 'jake.briggs@vermeulenbuild.com', since: '3 Mar 2025', status: 'online', customer: false, bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)' },
+  { initials: 'FN', name: 'Fiona Nair', role: 'Quality manager', email: 'fiona.nair@vermeulenbuild.com', since: '22 Jul 2025', status: 'away', customer: false, bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)' },
+  { initials: 'PM', name: 'Preston Mitchell', role: 'Foreman · Structure', email: 'preston.mitchell@vermeulenbuild.com', since: '14 Jan 2026', status: 'online', customer: false, bg: 'linear-gradient(150deg, #8a7f76, #6b6159)' },
+  { initials: 'ZK', name: 'Zara Kennedy', role: 'Client PM · Harbour Yard', email: 'zara.kennedy@subcontractor.com', since: '9 Oct 2025', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #7f8b93, #5c6870)' },
+  { initials: 'HB', name: 'Henry Bishop', role: 'Commercial manager', email: 'henry.bishop@vermeulenbuild.com', since: '18 Nov 2025', status: 'dnd', customer: false, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
 const ACCOUNTS = [
-  { name: 'Riaan Marais', email: 'riaan.marais@vermeulenbuild.com', role: 'Site agent · Vermeulen Build', initials: 'RM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Staff' },
-  { name: 'Riaan Marais', email: 'riaan@harbouryard.com', initials: 'RM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Site team · Harbour Yard' }
+  { name: 'Ryan Marsh', email: 'ryan.marsh@vermeulenbuild.com', role: 'Site agent · Vermeulen Build', initials: 'RM', bg: 'linear-gradient(150deg, #4a6b78, #33505b)', badge: 'Staff' },
+  { name: 'Ryan Marsh', email: 'ryan@harbouryard.com', initials: 'RM', bg: 'linear-gradient(150deg, #7f8b93, #5c6870)', badge: 'Guest', role: 'Site team · Harbour Yard' }
 ];
 
 const goPage = (href) => (e) => {
@@ -813,7 +813,7 @@ class Component extends DCLogic {
   sendDraft() {
     const text = this.state.draft.trim();
     if (!text) return;
-    this.setState(s => ({ draft: '', sent: [...s.sent, { author: 'Riaan Marais', text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }] }),
+    this.setState(s => ({ draft: '', sent: [...s.sent, { author: 'Ryan Marsh', text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }] }),
       () => { const el = this._stream; if (el) el.scrollTop = el.scrollHeight; });
   }
 
@@ -874,20 +874,20 @@ class Component extends DCLogic {
 
     const base = [
       { kind: 'divider', label: 'Yesterday' },
-      { kind: 'event', icon: 'group_add', label: 'Ayanda Dlamini joined #electrical', meta: 'invited by Riaan Marais · 6 members', time: '16:02' },
-      { kind: 'msg', author: 'Lebo Mahlangu', photo: '', initials: 'LM', time: '16:20', mention: true, text: '@channel toolbox talk at 06:15 tomorrow, everyone on level 2 included. Edge protection was the near miss last week and it is the topic.', reactions: [{ emoji: '👍', count: 14 }] },
+      { kind: 'event', icon: 'group_add', label: 'Alana Dixon joined #electrical', meta: 'invited by Ryan Marsh · 6 members', time: '16:02' },
+      { kind: 'msg', author: 'Logan Mallory', photo: '', initials: 'LM', time: '16:20', mention: true, text: '@channel toolbox talk at 06:15 tomorrow, everyone on level 2 included. Edge protection was the near miss last week and it is the topic.', reactions: [{ emoji: '👍', count: 14 }] },
       { kind: 'divider', label: 'Today' },
-      { kind: 'msg', author: 'Sipho Ndlovu', photo: '', initials: 'SN', time: '09:12', text: 'Rock at grid C is deeper than the geotech said. We are 900mm below founding level and still in hard material. Photos attached.', thread: '4 replies · last 09:18' },
-      { kind: 'msg', author: 'Riaan Marais', photo: '', initials: 'RM', time: '09:19', text: 'Summarising out of the thread: rock excavation beyond the geotech, two days on the critical path. Variation 12 raised, notice of delay issued, dayworks sheets attached to the request.', reactions: [{ emoji: '🙌', count: 6 }] },
-      { kind: 'event', icon: 'confirmation_number', label: 'Variation 12 created from a message: rock excavation at grid C', meta: 'Riaan Marais · In progress · due today', time: '09:26' },
-      { kind: 'msg', author: 'Karel Venter', photo: '', initials: 'KV', time: '09:31', text: 'Nobody stands down without it being written here first. If a subbie is waiting on us, that is a standing-time claim and I would rather see it on the day than in a letter next month.' },
-      { kind: 'msg', author: 'Lebo Mahlangu', photo: '', initials: 'LM', time: '09:36', text: 'Near miss on level 2: a panel was lifted with the barrier still open. No injury. Logged as NM-15 with photos so it is closed out properly, not just mentioned at the talk.', thread: '2 replies · last 09:39' },
-      { kind: 'event', icon: 'event_available', label: 'Site meeting with the client, Thu 07:00', meta: 'Karel Venter · 9 invited', time: '09:38' },
-      { kind: 'msg', author: 'Ayanda Dlamini', photo: '', initials: 'AD', time: '09:41', text: 'Electrical first fix on level 1 needs the slab signed off before we start. If the cube results are in by Thursday we hold the programme.' }
+      { kind: 'msg', author: 'Shawn Nichols', photo: '', initials: 'SN', time: '09:12', text: 'Rock at grid C is deeper than the geotech said. We are 900mm below founding level and still in hard material. Photos attached.', thread: '4 replies · last 09:18' },
+      { kind: 'msg', author: 'Ryan Marsh', photo: '', initials: 'RM', time: '09:19', text: 'Summarising out of the thread: rock excavation beyond the geotech, two days on the critical path. Variation 12 raised, notice of delay issued, dayworks sheets attached to the request.', reactions: [{ emoji: '🙌', count: 6 }] },
+      { kind: 'event', icon: 'confirmation_number', label: 'Variation 12 created from a message: rock excavation at grid C', meta: 'Ryan Marsh · In progress · due today', time: '09:26' },
+      { kind: 'msg', author: 'Keith Vance', photo: '', initials: 'KV', time: '09:31', text: 'Nobody stands down without it being written here first. If a subbie is waiting on us, that is a standing-time claim and I would rather see it on the day than in a letter next month.' },
+      { kind: 'msg', author: 'Logan Mallory', photo: '', initials: 'LM', time: '09:36', text: 'Near miss on level 2: a panel was lifted with the barrier still open. No injury. Logged as NM-15 with photos so it is closed out properly, not just mentioned at the talk.', thread: '2 replies · last 09:39' },
+      { kind: 'event', icon: 'event_available', label: 'Site meeting with the client, Thu 07:00', meta: 'Keith Vance · 9 invited', time: '09:38' },
+      { kind: 'msg', author: 'Alana Dixon', photo: '', initials: 'AD', time: '09:41', text: 'Electrical first fix on level 1 needs the slab signed off before we start. If the cube results are in by Thursday we hold the programme.' }
     ].concat(this.state.sent.map(m => ({ kind: 'msg', ...m })));
 
     let prev = null;
-    const ME = 'Riaan Marais';
+    const ME = 'Ryan Marsh';
     const stream = base.map((m, i) => {
       const isMsg = m.kind === 'msg';
       const grouped = isMsg && prev && prev.author === m.author;
@@ -995,8 +995,8 @@ class Component extends DCLogic {
 
       notifications: [
         { icon: 'priority_high', text: 'Due today: “Concrete cube results, grid C pour”', time: '4 min ago', unread: true },
-        { icon: 'person_add', text: 'Ayanda Dlamini joined Electrical as a guest', time: '26 min ago', unread: true },
-        { icon: 'assignment_ind', text: 'Karel Venter assigned you the wet-weather claim pack', time: '1 hr ago', unread: true },
+        { icon: 'person_add', text: 'Alana Dixon joined Electrical as a guest', time: '26 min ago', unread: true },
+        { icon: 'assignment_ind', text: 'Keith Vance assigned you the wet-weather claim pack', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'Near miss NM-14 closed out: edge protection', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Site management', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
@@ -1063,7 +1063,7 @@ class Component extends DCLogic {
       ].map(x => ({ ...x, onClick: goPage(x.href) })),
       chats: [
         { initials: '', group: true, name: 'Site management', unread: '2', avatarBg: dark ? 'rgba(255,255,255,0.12)' : 'rgba(51,80,91,0.12)', avatarFg: 'var(--topIcon, #33505b)', onClick: goPage('Desktop Admin - Group Chat.dc.html'), onEnter: () => {}, onLeave: () => {} },
-        { initials: 'MK', group: false, name: 'Marlize Koen', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
+        { initials: 'MK', group: false, name: 'Mia Keller', unread: '', avatarBg: SHARON.bg, avatarFg: '#ffffff', onClick: goPage('Desktop Admin - Chat.dc.html'),
           onEnter: (e) => this.showCard(SHARON, e.currentTarget), onLeave: () => this.scheduleHide() }
       ],
       members: MEMBERS.map((m, i) => ({
