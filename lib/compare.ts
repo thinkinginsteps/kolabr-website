@@ -1,8 +1,11 @@
-// Content for the six compare pages. GENERATED from design/Compare - *.dc.html by a one-off
-// extraction script, so the copy is the design's word for word; edit here from now on.
-// Competitor prices are the design's and date quickly: re-check them before launch.
+// Content for the five compare pages. Originally extracted from design/Compare - *.dc.html and
+// since rewritten: the structure below is ours, not the design's. Competitor prices date quickly,
+// so re-check every figure before launch.
 
 import type { Card, Rich, Shot } from "./use-cases";
+
+/** A labelled line: the lead is set in bold, the text follows it. */
+export type Step = { lead: string; text: Rich };
 
 export type CompareSection =
   | { type: "reasons"; id: string; title: string; paragraphs: Rich[]; image: Shot; reasons: { lead: string; text: string }[] }
@@ -15,6 +18,11 @@ export type Comparison = {
   statement: { id: string; title: string; paragraphs: Rich[]; image: Shot };
   table: { title: string; lede: Rich; groups: { title: string; rows: [Rich, Rich, Rich][] }[] };
   sections: CompareSection[];
+  /**
+   * What the reader has by the end of the first month. It sits immediately above the price so
+   * that the price is read against something, rather than on its own.
+   */
+  outcome: { title: string; lede: Rich; items: Step[] };
   cost: {
     title: string;
     paragraphs: Rich[];
@@ -22,7 +30,14 @@ export type Comparison = {
     kolabr: { name: string; price: string; text: string };
     other: { name: string; price: string; text: string };
   };
+  /**
+   * The limits, stated plainly, with what each one buys. Below the cost section on purpose: the
+   * same sentence read before the gain is a warning, and read after it is a reason.
+   */
+  concessions: { id: string; title: string; lede: Rich; cards: Card[] };
   faq: { title: string; items: Card[] };
+  /** One week, three checkpoints. The last thing before the call to action. */
+  proof: { title: string; lede: Rich; steps: Step[] };
   cta: { title: string; body: string; disclaimer: string };
 };
 

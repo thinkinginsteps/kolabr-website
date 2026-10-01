@@ -10,7 +10,7 @@ import type { Comparison, CompareSection } from "@/lib/compare";
 import { screens } from "@/lib/use-case-images";
 import type { Card, Rich as RichText } from "@/lib/use-cases";
 
-// The six compare pages share this layout. All copy comes from lib/compare.ts.
+// The five compare pages share this layout. All copy comes from lib/compare.ts.
 
 const H2 = "text-[clamp(34px,3.7vw,54px)] leading-[1.04] font-semibold tracking-[-0.03em] text-balance text-ink";
 const PAD = "px-10 max-tab:!px-5 max-tab:!py-[86px]";
@@ -86,14 +86,7 @@ function FeatureTable({ table, competitor }: { table: Comparison["table"]; compe
   return (
     <section id="compare" aria-labelledby="vs-tbl-h" className={`${PAD} pt-0 pb-[150px]`}>
       <div className="mx-auto max-w-content">
-        <div data-rise="" className="mb-11 flex max-w-[820px] flex-col gap-5">
-          <h2 id="vs-tbl-h" className={H2}>
-            {table.title}
-          </h2>
-          <p className="text-[20px] text-pretty">
-            <Rich text={table.lede} />
-          </p>
-        </div>
+        <BandHead id="vs-tbl-h" title={table.title} lede={table.lede} />
         {/* One flat grid as in the design; rows use display:contents so they can carry table roles. */}
         <div
           data-rise=""
@@ -168,14 +161,7 @@ function Middle({ section: s }: { section: CompareSection }) {
   if (s.type === "cards") {
     return (
       <NarrowBand id={s.id} labelledBy={`${s.id}-h`}>
-        <div data-rise="" className="mb-11 flex max-w-[820px] flex-col gap-5">
-          <h2 id={`${s.id}-h`} className={H2}>
-            {s.title}
-          </h2>
-          <p className="text-[20px] text-pretty">
-            <Rich text={s.lede} />
-          </p>
-        </div>
+        <BandHead id={`${s.id}-h`} title={s.title} lede={s.lede} />
         <WhiteCards cards={s.cards} />
       </NarrowBand>
     );
@@ -200,6 +186,47 @@ function Middle({ section: s }: { section: CompareSection }) {
           <Image src={screens[s.image.file]} alt={s.image.alt} sizes="(max-width: 1080px) 100vw, 680px" className="h-auto w-full" />
         </figure>
       </Split>
+    </NarrowBand>
+  );
+}
+
+/* ---------- What the first month looks like ---------- */
+
+/** Heading plus lede, the width every band on this page uses. */
+function BandHead({ id, title, lede }: { id: string; title: string; lede: RichText }) {
+  return (
+    <div data-rise="" className="mb-11 flex max-w-[820px] flex-col gap-5">
+      <h2 id={id} className={H2}>
+        {title}
+      </h2>
+      <p className="text-[20px] text-pretty">
+        <Rich text={lede} />
+      </p>
+    </div>
+  );
+}
+
+/**
+ * The outcome band. It answers the question the feature table leaves open, which is what any of
+ * it is worth, and it runs immediately before the price for that reason.
+ */
+function Outcome({ outcome }: { outcome: Comparison["outcome"] }) {
+  return (
+    <NarrowBand id="first-month" labelledBy="vs-month-h">
+      <BandHead id="vs-month-h" title={outcome.title} lede={outcome.lede} />
+      <div data-rise-group="" className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-[18px] max-tab:grid-cols-1">
+        {outcome.items.map((item, i) => (
+          <div key={item.lead} data-rise="" className="flex flex-col gap-3.5 rounded-3xl bg-surface p-[34px] shadow-subtle">
+            <span aria-hidden="true" className="text-[13px] font-semibold tracking-[0.11em] text-accent-ink tabular-nums">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <h3 className="text-[21px] font-semibold tracking-[-0.02em] text-pretty text-ink">{item.lead}</h3>
+            <p className="text-[16.5px] text-pretty text-ink-muted">
+              <Rich text={item.text} />
+            </p>
+          </div>
+        ))}
+      </div>
     </NarrowBand>
   );
 }
@@ -262,6 +289,52 @@ function Faq({ faq }: { faq: Comparison["faq"] }) {
   );
 }
 
+/* ---------- Concessions and proof ---------- */
+
+/** The limits. Same card layout as the rest of the page, placed after the price. */
+function Concessions({ block }: { block: Comparison["concessions"] }) {
+  return (
+    <NarrowBand id={block.id} labelledBy={`${block.id}-h`}>
+      <BandHead id={`${block.id}-h`} title={block.title} lede={block.lede} />
+      <WhiteCards cards={block.cards} />
+    </NarrowBand>
+  );
+}
+
+/**
+ * One week, three checkpoints, on a dark panel so it reads as the last word before the call to
+ * action rather than another section of argument.
+ */
+function Proof({ proof }: { proof: Comparison["proof"] }) {
+  return (
+    <section id="proof" aria-labelledby="vs-proof-h" className={`${PAD} mx-auto max-w-[1480px] pt-0 pb-[150px]`}>
+      <div data-rise="" className="flex flex-col gap-10 rounded-[28px] bg-deep p-[58px] text-on-deep max-tab:p-8">
+        <div className="flex max-w-[760px] flex-col gap-4">
+          <h2
+            id="vs-proof-h"
+            className="text-[clamp(30px,3.1vw,44px)] leading-[1.06] font-semibold tracking-[-0.03em] text-balance text-on-deep"
+          >
+            {proof.title}
+          </h2>
+          <p className="text-[19px] leading-normal text-pretty text-on-deep-muted">
+            <Rich text={proof.lede} />
+          </p>
+        </div>
+        <ol className="grid list-none grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-[18px] p-0 max-tab:grid-cols-1">
+          {proof.steps.map((step) => (
+            <li key={step.lead} className="flex flex-col gap-2.5 rounded-[20px] bg-on-deep-panel p-[26px]">
+              <span className="text-[12px] font-semibold tracking-[0.11em] text-on-deep uppercase">{step.lead}</span>
+              <p className="text-[16.5px] text-pretty text-on-deep-muted">
+                <Rich text={step.text} />
+              </p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+}
+
 /* ---------- Page ---------- */
 
 export function ComparePage({ content: c, slug }: { content: Comparison; slug: string }) {
@@ -283,8 +356,11 @@ export function ComparePage({ content: c, slug }: { content: Comparison; slug: s
       {c.sections.map((s) => (
         <Middle key={s.id} section={s} />
       ))}
+      <Outcome outcome={c.outcome} />
       <Cost cost={c.cost} slug={slug} />
+      <Concessions block={c.concessions} />
       <Faq faq={c.faq} />
+      <Proof proof={c.proof} />
       <CtaBand width={680} title={c.cta.title} body={c.cta.body} note={c.cta.disclaimer} />
     </>
   );

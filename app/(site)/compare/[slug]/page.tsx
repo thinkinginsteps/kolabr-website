@@ -6,7 +6,7 @@ import { comparisons, type CompareSlug } from "@/lib/compare";
 import type { MetaRoute } from "@/lib/page-meta";
 import { breadcrumbJsonLd, faqJsonLd, graph, pageMetadata } from "@/lib/seo";
 
-// The six compare pages. Every slug is prerendered; anything else 404s.
+// The five compare pages. Every slug is prerendered; anything else 404s.
 export const dynamicParams = false;
 
 export function generateStaticParams() {

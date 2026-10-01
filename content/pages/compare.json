@@ -4,15 +4,15 @@
     "hero": {
       "eyebrow": "Kolabr compared",
       "title": "Kolabr vs Slack",
-      "lede": "Both give your team channels and chat. The difference starts with the second channel you put a client in: in Slack that person becomes a billable seat, and in Kolabr they stay free. This page sets the two side by side on guest cost, request tracking, knowledge and price.",
+      "lede": "Working with clients in Slack carries two bills: the guests who need a second channel and become billable members, and the tracker and the knowledge base you bought to stand beside it. Kolabr charges for your team and nobody else, in any number of channels, with requests, a wiki and scheduled events already in the price. Here are the two side by side on guest cost, accountability, knowledge and price.",
       "summary": [
         {
           "title": "The short version",
           "body": "Kolabr does everything you use Slack for, then adds the parts you currently bolt on: requests with owners and deadlines, a wiki in every channel, and scheduled events. Guests are free wherever you put them, so you stop rationing who gets invited."
         },
         {
-          "title": "Proof takes one week",
-          "body": "Give your most demanding client a channel and invite their whole team, not just one contact. By Friday the questions arrive from the people who actually have them, and every promise has an owner and a date against it."
+          "title": "The number that decides it",
+          "body": "Twelve people and forty client contacts who each need more than one channel: $120 a month on Kolabr Pro, $455 on Slack Pro. The gap is not the seat price, it is everyone who is not staff."
         }
       ]
     },
@@ -36,37 +36,37 @@
           "title": "Working with people outside your company",
           "rows": [
             [
-              "Cost of an outside person",
+              "What it costs to bring a client in",
               "Free on every plan, in as many channels as the work needs.",
               "A single-channel guest is free, allowed up to five per paid active member. A guest who needs a second channel is billed as a full member."
             ],
             [
-              "Guests across several channels",
+              "A client who needs more than one channel",
               "Normal. A client can sit in three channels and still costs nothing.",
               "Becomes a multi-channel guest, charged at the full per-seat rate of your plan."
             ],
             [
-              "If the other side does not use the same tool",
+              "If the client does not use the same tool as you",
               "Irrelevant. They need an email address.",
               "Slack Connect joins two workspaces, and both organisations need a paid Slack plan for it."
             ],
             [
-              "What a guest can see",
+              "How much of your account a guest can see",
               "One channel, and nothing else in your account.",
               "One channel as a single-channel guest; wider as a multi-channel guest, which is the billed kind."
             ],
             [
-              "Keeping clients apart",
+              "Keeping one client’s work away from another’s",
               "A channel per client, separate by design.",
               "One workspace, many channels. Separation depends on how channels and guest types are managed."
             ],
             [
-              "A client who needs three channels",
+              "The same client across a project, a bill and a question",
               "Free. A guest sits in as many channels as the work needs.",
               "A multi-channel guest, billed at your full member rate."
             ],
             [
-              "What the free plan gives an outside person",
+              "What you can show a client before you pay anything",
               "One channel, free, with 30 guests in it.",
               "Nothing. Guest accounts need a paid plan."
             ]
@@ -76,17 +76,17 @@
           "title": "Requests and accountability",
           "rows": [
             [
-              "Request tracking with an owner",
+              "Knowing who owes what, without asking",
               "Built in. Every request has a number, a category, an owner and a status.",
               "Not native to messaging. Slack lists, workflows or a third-party tool, added and maintained separately."
             ],
             [
-              "Response-time targets (SLA)",
+              "A deadline the client can see for themselves",
               "Per category, per channel, visible to the client.",
               "No SLA concept in Slack itself."
             ],
             [
-              "Turning a message into a request",
+              "Getting a promise out of the chat and onto a list",
               "One step, with the thread attached.",
               "Copy it into whichever tool you added for the purpose."
             ]
@@ -96,7 +96,7 @@
           "title": "Knowledge and history",
           "rows": [
             [
-              "Wiki beside the conversation",
+              "Finding the answer you already gave",
               "Built in, per channel, readable by guests.",
               "Canvases and pinned posts sit in a channel; there is no structured per-channel wiki."
             ],
@@ -106,7 +106,7 @@
               "Free plans show 90 days. Full history comes with a paid plan."
             ],
             [
-              "Scheduled events in the channel",
+              "A date in the diary tied to the work it came from",
               "Built in, tied to the request they came from.",
               "Reminders and third-party calendar apps, not tied to a request."
             ]
@@ -121,17 +121,17 @@
               "Pro is $7.25 per active user per month on annual billing and $8.75 monthly. Business Plus is $15 annual and $18 monthly. Enterprise Grid is quoted."
             ],
             [
-              "Smallest team you can pay for",
+              "The smallest team that can start",
               "One person.",
               "One person."
             ],
             [
-              "SSO / SAML",
+              "Single sign-on, when your IT asks for it",
               "On Business.",
               "On Business Plus and above."
             ],
             [
-              "Audit log export and retention policies",
+              "Proving to an auditor what happened",
               "On Business.",
               "Compliance-grade export is not available on Pro."
             ]
@@ -187,32 +187,30 @@
             "body": "Response targets per category, visible to the person waiting, so nobody has to ask whether it is being looked at."
           }
         ]
-      },
-      {
-        "type": "cards",
-        "id": "scope",
-        "title": "What Kolabr does not try to be",
-        "lede": "Worth knowing before you move, so nothing surprises you in month three.",
-        "cards": [
-          {
-            "title": "An app marketplace",
-            "body": "Kolabr is built so that the things a client project needs are already in it, rather than assembled from a directory of integrations."
-          },
-          {
-            "title": "A developer platform",
-            "body": "If your engineers have built bots and workflows they rely on daily, keep them where they are and put the client-facing work in Kolabr."
-          },
-          {
-            "title": "A place for everything at once",
-            "body": "Channels have a subject and a membership. That is deliberate, and it is why a client can be added to one without seeing the rest of your work."
-          },
-          {
-            "title": "A one-day migration",
-            "body": "Start with a single client channel. Moving the internal side follows once people ask for it, which in our experience takes about a fortnight."
-          }
-        ]
       }
     ],
+    "outcome": {
+      "title": "What changes in the first month",
+      "lede": "Not a list of features. Four things that are different about your week, rather than different about the software.",
+      "items": [
+        {
+          "lead": "You stop choosing who to invite",
+          "text": "The question “is this person worth a seat” disappears, because the answer is always no charge. The people who actually have the questions are in the room, and the relaying stops."
+        },
+        {
+          "lead": "Nothing is outstanding without an owner",
+          "text": "Every promise made in the chat carries a number, a name and a date, and the client can read all three without asking you for an update."
+        },
+        {
+          "lead": "The same answer stops being typed twice",
+          "text": "What you explained in March is a page in that channel, so a new starter and a new client contact both find it without a search through four years of messages."
+        },
+        {
+          "lead": "One renewal, not three",
+          "text": "Chat, requests, the wiki and scheduled events come off one invoice, so the tracker and the knowledge base you were paying for alongside Slack come out of the budget."
+        }
+      ]
+    },
     "cost": {
       "title": "What each one actually costs you",
       "paragraphs": [
@@ -237,6 +235,29 @@
         "price": "$8.75 to $18",
         "text": "per active user per month, or $7.25 to $15 on annual terms. A guest who needs a second channel is billed at the member rate."
       }
+    },
+    "concessions": {
+      "id": "scope",
+      "title": "Where Kolabr stops, and what you get for it",
+      "lede": "Four limits worth knowing before you move. Each one is a deliberate trade, and the second half of each line is what it buys you.",
+      "cards": [
+        {
+          "title": "An app marketplace",
+          "body": "There is no directory of integrations to browse. What a client project needs is already in the product, which is why a new channel works on the day you open it rather than after a week of wiring."
+        },
+        {
+          "title": "A developer platform",
+          "body": "If your engineers rely on bots and workflows they built, those stay in Slack. The client-facing half moves, and that is the half where the guest bill and the missing accountability actually live."
+        },
+        {
+          "title": "A place for everything at once",
+          "body": "A channel has a subject and a membership, so there is no single room holding your whole company. That is exactly why a client can be added to one channel without a conversation about what else they might see."
+        },
+        {
+          "title": "A one-day migration",
+          "body": "You start with a single client channel rather than a cutover weekend. Nothing has to be exported before you can see it working, and the internal side follows when people ask for it, usually inside a fortnight."
+        }
+      ]
     },
     "faq": {
       "title": "Questions people ask before moving",
@@ -263,7 +284,25 @@
         },
         {
           "title": "We already have years of history in Slack. What happens to it?",
-          "body": "Export it and keep it. Kolabr does not require you to move history to start, because the usual first step is a single client channel running alongside what you already have. Most teams find the archive matters less than they expected once the current work has one home."
+          "body": "Export it and keep it. Kolabr does not require you to move history to start, because the usual first step is a single client channel running alongside what you already have. Most teams find the archive matters less than they expected once the current work has one home. The channel you open this week is the one you will be searching next year."
+        }
+      ]
+    },
+    "proof": {
+      "title": "Proof takes one week",
+      "lede": "Pick your most demanding client. Nothing has to be moved, announced or exported for this to tell you the truth.",
+      "steps": [
+        {
+          "lead": "Monday",
+          "text": "Open one channel and invite the client’s whole team, not just your usual contact. Guests cost nothing, so there is no list to approve first."
+        },
+        {
+          "lead": "By Friday",
+          "text": "The questions are arriving from the people who actually have them, and every promise made in the channel has an owner and a date on it."
+        },
+        {
+          "lead": "Week four",
+          "text": "You will know from the client, not from us, whether the channel earned its place. That is the only test this page is asking you to run."
         }
       ]
     },
@@ -278,15 +317,15 @@
     "hero": {
       "eyebrow": "Kolabr compared",
       "title": "Kolabr vs Basecamp",
-      "lede": "Basecamp organises work into projects. Kolabr organises it around the people you work with, in a channel that does not end when one job does. Both let you bring clients in for free, so the real comparison is what happens to the relationship after the project closes, and whether anyone can tell what was promised while it was open.",
+      "lede": "When a Basecamp project closes, so does the only place that held the conversation, and the next job for the same client starts from an empty page. Kolabr gives that client one channel that never ends, holding every request, every document and every answer you have ever given them. Here are the two side by side on structure, accountability, knowledge and price.",
       "summary": [
         {
           "title": "The short version",
           "body": "A project ends. A client does not. Kolabr gives each relationship one channel that holds every request, every document and every conversation you have ever had with them, instead of an archive of finished projects you have to search through."
         },
         {
-          "title": "Proof takes one week",
-          "body": "Take your longest-standing client, the one whose work never really stops, and give them a channel. By Friday you will have the whole relationship in one place, with every open item owned and dated."
+          "title": "The number that decides it",
+          "body": "Basecamp usually costs less, and this page says so. What a flat fee does not buy is a request with an owner and a clock on it, a wiki in the channel, or a relationship that outlives the project it started in."
         }
       ]
     },
@@ -310,22 +349,22 @@
           "title": "How the work is organised",
           "rows": [
             [
-              "The basic container",
+              "What the work is organised around",
               "A channel, which holds an ongoing relationship: a client, a site, a department. It does not end when one job does.",
               "A project, which is created for a piece of work and archived when that work finishes."
             ],
             [
-              "Ongoing work with no end date",
+              "Work that never actually finishes",
               "Normal. Retainers, support and standing relationships live in a channel indefinitely.",
               "Fits awkwardly, because the structure assumes work that starts and finishes."
             ],
             [
-              "The same client, several jobs",
+              "The second and third job for the same client",
               "One channel, or several, all free of extra cost and visible in one place.",
               "A project each, with the client re-invited to every one."
             ],
             [
-              "Cost of an outside person",
+              "What it costs to bring a client in",
               "Free on every plan, in as many channels as needed.",
               "Free. Clients and contractors do not count toward billing."
             ]
@@ -335,22 +374,22 @@
           "title": "Requests and accountability",
           "rows": [
             [
-              "Request intake with an owner",
+              "Knowing who owes what, without asking",
               "Built in. Every request has a number, a category, an owner, a status and a due date.",
               "To-do lists assigned to people. No request intake, categories or priorities."
             ],
             [
-              "Response-time targets (SLA)",
+              "A deadline the client can see for themselves",
               "Per category, per channel, visible to the client.",
               "No SLA concept."
             ],
             [
-              "Turning a message into a request",
+              "Getting a promise out of the chat and onto a list",
               "One step, with the thread attached.",
               "Copy it into a to-do by hand."
             ],
             [
-              "Tasks",
+              "Where the small steps live",
               "Inside a request only. A task belongs to the request that created it, and closes with it.",
               "Free-standing to-do lists that outlive whatever prompted them."
             ]
@@ -360,22 +399,22 @@
           "title": "Conversation",
           "rows": [
             [
-              "Chat, threads, mentions, presence",
+              "Having the day-to-day conversation in one place",
               "Full chat in every channel, with private and group direct messages.",
               "Campfire chat and message boards inside each project."
             ],
             [
-              "Video calls",
+              "Getting on a call without a third tool",
               "In the channel, started from the request they concern.",
               "Not included; use an outside service."
             ],
             [
-              "Wiki beside the conversation",
+              "Finding the answer you already gave",
               "Built in, per channel, readable by guests.",
               "Docs and files per project."
             ],
             [
-              "Scheduled events in the channel",
+              "A date in the diary tied to the work it came from",
               "Built in, tied to the request they came from.",
               "Schedule per project, with calendar subscription."
             ]
@@ -390,17 +429,17 @@
               "A flat fee for the whole account, not per user: $25 a month for up to 20 people, $59 and $99 a month with no limit on people, and $299 a month billed annually."
             ],
             [
-              "Free plan",
+              "What you can show a client before you pay anything",
               "seven days free on Pro or Business, every option included.",
               "One project, 1 GB of storage and up to five people."
             ],
             [
-              "SSO / SAML, audit log export, retention",
+              "What your IT and your auditor will ask for",
               "On Business.",
               "Not offered."
             ],
             [
-              "Taking on the fortieth client",
+              "What the fortieth client does to the bill",
               "The bill does not move.",
               "Fine above Studio, where users are unlimited; below it they count towards the cap."
             ]
@@ -483,32 +522,30 @@
             "body": "Not a checklist item with a name beside it: a numbered record with a state, a category and a history."
           }
         ]
-      },
-      {
-        "type": "cards",
-        "id": "scope",
-        "title": "What Kolabr does not try to be",
-        "lede": "Worth knowing before you move, so nothing surprises you in month three.",
-        "cards": [
-          {
-            "title": "A planning tool",
-            "body": "No Gantt charts, dependency chains or resource levelling. If you plan a build week by week, keep the tool that does it and run the client side in Kolabr."
-          },
-          {
-            "title": "A standalone task manager",
-            "body": "Tasks exist inside requests and nowhere else. That is the design, not a gap waiting to be filled."
-          },
-          {
-            "title": "A time-tracking system",
-            "body": "Requests tell you what was asked and when it was answered. They do not replace whatever you bill from."
-          },
-          {
-            "title": "A one-day migration",
-            "body": "Start with one client channel and let the rest follow. Nothing has to be exported before you can see whether it works."
-          }
-        ]
       }
     ],
+    "outcome": {
+      "title": "What changes in the first month",
+      "lede": "Not a list of features. Four things that are different about your week, rather than different about the software.",
+      "items": [
+        {
+          "lead": "The client has one address",
+          "text": "Instead of being re-invited to each new project, they have a channel that holds the lot. Nobody has to remember which archived project the answer was in."
+        },
+        {
+          "lead": "Open items have owners and dates",
+          "text": "A to-do says what. A request says who, by when, and whether the clock has run out, and the client can read it without asking."
+        },
+        {
+          "lead": "The answer you gave last year is findable",
+          "text": "Each channel carries its own wiki, so scope notes, process and standing answers stop living in a message that scrolled past."
+        },
+        {
+          "lead": "Work with no end date fits",
+          "text": "Retainers, maintenance and standing relationships stop being forced into a project shape that was always going to close on them."
+        }
+      ]
+    },
     "cost": {
       "title": "What each one actually costs you",
       "paragraphs": [
@@ -534,6 +571,29 @@
         "text": "a month for the whole account, not per user. $25 covers twenty people, $59 and $99 cover any number, $299 is billed annually. Clients and contractors count towards the capped tiers."
       }
     },
+    "concessions": {
+      "id": "scope",
+      "title": "Where Kolabr stops, and what you get for it",
+      "lede": "Four limits worth knowing before you move. Each one is a deliberate trade, and the second half of each line is what it buys you.",
+      "cards": [
+        {
+          "title": "A planning tool",
+          "body": "No Gantt charts, dependency chains or resource levelling. Leaving the planning where it is costs you nothing, because the half that moves is the client-facing half, which is where the promises go missing today."
+        },
+        {
+          "title": "A standalone task manager",
+          "body": "Tasks exist inside a request and nowhere else. That is what stops a list filling with work nobody remembers agreeing to, and it is why closing a request closes everything underneath it."
+        },
+        {
+          "title": "A time-tracking system",
+          "body": "Requests record what was asked and when it was answered, not what to bill. Keep whatever you invoice from, and gain a record of the promise sitting next to the conversation that made it."
+        },
+        {
+          "title": "A one-day migration",
+          "body": "You start with one client channel rather than a cutover. Nothing has to be exported before you can see it working, and the Basecamp archive stays readable for as long as you want it."
+        }
+      ]
+    },
     "faq": {
       "title": "Questions people ask before moving",
       "items": [
@@ -555,11 +615,29 @@
         },
         {
           "title": "Which is cheaper?",
-          "body": "Usually Basecamp, and we would rather say so than dress it up. It charges one flat fee for the account, from $25 a month for up to twenty people and $59 with no limit on people, where Kolabr charges per user. What the fee buys is where they part: Kolabr covers requests with owners and response targets, a wiki in every channel, video calls and scheduled events, and organises around the client rather than the project. If a shared to-do list is all the structure your work needs, Basecamp is cheaper and will stay cheaper."
+          "body": "Usually Basecamp, and we would rather say so than dress it up. It charges one flat fee for the account, from $25 a month for up to twenty people and $59 with no limit on people, where Kolabr charges per user. What the fee buys is where they part: Kolabr covers requests with owners and response targets, a wiki in every channel, video calls and scheduled events, and organises around the client rather than the project. If a shared to-do list is all the structure your work needs, Basecamp is cheaper and will stay cheaper. The question is not which bill is smaller. It is whether a shared to-do list is the whole of what you owe a client."
         },
         {
           "title": "Can we move from Basecamp to Kolabr?",
           "body": "Yes, and the usual approach is to stop creating new projects rather than migrate old ones. Open a channel for your busiest client, run the next piece of work there, and let the Basecamp archive stay readable for as long as you need it."
+        }
+      ]
+    },
+    "proof": {
+      "title": "Proof takes one week",
+      "lede": "Take your longest-standing client, the one whose work never really stops. No project has to be closed and nothing has to be exported.",
+      "steps": [
+        {
+          "lead": "Monday",
+          "text": "Open one channel for that client and invite everyone on their side. Guests cost nothing, so there is no list to approve first."
+        },
+        {
+          "lead": "By Friday",
+          "text": "The whole relationship is in one place, and every open item has a name and a date on it instead of sitting in a list somebody has to remember to check."
+        },
+        {
+          "lead": "Week four",
+          "text": "You will know from the client whether a channel beats a project. That is the only test this page is asking you to run."
         }
       ]
     },
@@ -574,15 +652,15 @@
     "hero": {
       "eyebrow": "Kolabr compared",
       "title": "Kolabr vs Notion",
-      "lede": "Notion is where teams keep what they know. The conversation about it happens in a different tool, and the promise made to a client during that conversation happens in a third. Kolabr puts all three in one channel: the discussion, the request with an owner and a deadline, and the article that explains how you handle it.",
+      "lede": "A Notion setup that runs client work is really three bills and one volunteer: Notion, the chat tool beside it, the tracker somebody built, and the person who keeps that tracker alive. Kolabr is one channel per client where the conversation, the numbered request and the article explaining it are already there on the day you open it. Here are the two side by side on what you build, what you maintain and what it costs.",
       "summary": [
         {
           "title": "The short version",
           "body": "A page cannot tell you what was promised or who owes it. Kolabr gives every client a channel where the conversation produces numbered requests with owners and deadlines, and the wiki sits right beside them."
         },
         {
-          "title": "Proof takes one week",
-          "body": "Pick a client and open a channel. There is nothing to design first, no database to model and no template to choose. By Friday the conversation, the open requests and the wiki are in one place."
+          "title": "The number that decides it",
+          "body": "On list price the two are close, $10 against $12 a month. The difference is the chat tool you run alongside Notion, and the hours somebody spends designing and repairing the tracker Kolabr includes."
         }
       ]
     },
@@ -606,17 +684,17 @@
           "title": "Conversation",
           "rows": [
             [
-              "Chat with threads, mentions and presence",
+              "Having the day-to-day conversation in one place",
               "Built into every channel, with private and group direct messages.",
               "Comments on pages and blocks. Day-to-day conversation happens in another tool."
             ],
             [
-              "Video calls",
+              "Getting on a call without a third tool",
               "In the channel, started from the request they concern.",
               "Not included."
             ],
             [
-              "Where a decision is discussed",
+              "Where the decision actually gets made",
               "In the channel, beside the document and the request it produced.",
               "In whichever chat tool you use alongside Notion, away from the page it concerns."
             ]
@@ -626,22 +704,22 @@
           "title": "Requests and accountability",
           "rows": [
             [
-              "Request intake with an owner",
+              "Knowing who owes what, without asking",
               "Built in. Number, category, owner, status and due date on every request.",
               "A database you design, build and maintain yourself."
             ],
             [
-              "Response-time targets (SLA)",
+              "A deadline the client can see for themselves",
               "Per category, per channel, visible to the client.",
               "No SLA concept. Formula and automation work can approximate one."
             ],
             [
-              "Turning a message into a request",
+              "Getting a promise out of the chat and onto a list",
               "One step, with the thread attached.",
               "Copy it into a database entry by hand."
             ],
             [
-              "Tasks",
+              "Where the small steps live",
               "Inside a request only. A task belongs to the request that created it and closes with it.",
               "Free-standing task databases that outlive whatever prompted them."
             ]
@@ -651,22 +729,22 @@
           "title": "Working with people outside your company",
           "rows": [
             [
-              "How an outsider joins",
+              "How a client gets in",
               "Invited to a channel as a guest, with the conversation, requests, wiki and calendar included.",
               "Invited to individual pages."
             ],
             [
-              "Cost of an outside person",
+              "What it costs to bring a client in",
               "Free on every plan, in as many channels as needed.",
               "Guests do not consume a member seat. The free plan allows ten, and caps on paid plans vary by tier."
             ],
             [
-              "What a guest gets",
+              "What the client can actually do once they are in",
               "A working relationship: they can raise requests, read the wiki and join calls.",
               "Access to the pages they were shared, and comments on them."
             ],
             [
-              "A client who needs to raise something",
+              "A client who needs to ask you for something",
               "Posts, raises a request, reads the wiki, joins a call. Free.",
               "A free guest can be given access to pages, but there is nothing to raise."
             ]
@@ -676,17 +754,17 @@
           "title": "Knowledge",
           "rows": [
             [
-              "Wiki beside the conversation",
+              "Finding the answer you already gave",
               "Built in, per channel, readable by guests, with no setup.",
               "Documents and databases in a workspace you structure yourself."
             ],
             [
-              "Time before it is useful",
+              "How long before it earns its keep",
               "Create a channel, invite people, work. Nothing to design first.",
               "A workspace is built rather than opened, which is the appeal and the cost."
             ],
             [
-              "Scheduled events in the channel",
+              "A date in the diary tied to the work it came from",
               "Built in, tied to the request they came from.",
               "Calendar database and a separate Notion Calendar app."
             ]
@@ -701,12 +779,12 @@
               "Free, then Plus at $10 and Business at $20 per member per month on annual billing, or about $12 and $24 monthly. Enterprise is quoted."
             ],
             [
-              "SSO / SAML",
+              "Single sign-on, when your IT asks for it",
               "On Business.",
               "On Business and above."
             ],
             [
-              "Audit log export and retention",
+              "Proving to an auditor what happened",
               "On Business.",
               "Audit logs on Enterprise."
             ]
@@ -789,32 +867,30 @@
             "body": "There is no database somebody built, no view somebody configured and no automation that breaks when they leave."
           }
         ]
-      },
-      {
-        "type": "cards",
-        "id": "scope",
-        "title": "What Kolabr does not try to be",
-        "lede": "Worth knowing before you move, so nothing surprises you in month three.",
-        "cards": [
-          {
-            "title": "A database builder",
-            "body": "No custom schemas, relations or formula fields. If you run something bespoke on a Notion database, keep it there."
-          },
-          {
-            "title": "A company encyclopaedia",
-            "body": "The wiki is scoped to a channel on purpose. Long-form internal knowledge that belongs to everyone is better off where it already lives."
-          },
-          {
-            "title": "A publishing tool",
-            "body": "No public sites or forms. Kolabr is for the people in the channel, not for an audience."
-          },
-          {
-            "title": "A one-day migration",
-            "body": "Start with one client channel. Nothing has to be exported or restructured before you can see whether it works."
-          }
-        ]
       }
     ],
+    "outcome": {
+      "title": "What changes in the first month",
+      "lede": "Not a list of features. Four things that are different about your week, rather than different about the software.",
+      "items": [
+        {
+          "lead": "Nothing has to be designed first",
+          "text": "No schema, no views, no template. The channel you open this morning has the conversation, the requests and the wiki in it by lunchtime."
+        },
+        {
+          "lead": "The tracker stops having an owner",
+          "text": "Categories, statuses, owners and response targets are part of the product, so there is nobody to ask when they break and nobody to replace when they leave."
+        },
+        {
+          "lead": "The conversation stops being somewhere else",
+          "text": "The discussion, the promise it produced and the page explaining how you handle it are in one channel, so none of the three has to be linked to the other two."
+        },
+        {
+          "lead": "A guest joins the relationship, not a page",
+          "text": "You stop deciding page by page what a client may see. They join one channel and get the conversation, the open requests, the wiki and the calendar at once."
+        }
+      ]
+    },
     "cost": {
       "title": "What each one actually costs you",
       "paragraphs": [
@@ -840,6 +916,29 @@
         "text": "per member per month, or $10 to $20 on annual terms, with Enterprise quoted. Guests are free and do not consume a member seat, but see only the pages they are invited to."
       }
     },
+    "concessions": {
+      "id": "scope",
+      "title": "Where Kolabr stops, and what you get for it",
+      "lede": "Four limits worth knowing before you move. Each one is a deliberate trade, and the second half of each line is what it buys you.",
+      "cards": [
+        {
+          "title": "A database builder",
+          "body": "No custom schemas, relations or formula fields. Every channel has the same shape, which is why a new one is useful immediately and still makes sense to somebody who joins in two years."
+        },
+        {
+          "title": "A company encyclopaedia",
+          "body": "The wiki is scoped to a channel on purpose. That is what keeps it short enough to stay true, and short enough that a client reads it instead of asking you the question."
+        },
+        {
+          "title": "A publishing tool",
+          "body": "No public sites or forms. Kolabr is for the named people in the channel, which is also why nothing has to be tidied up before a client can be let into it."
+        },
+        {
+          "title": "A one-day migration",
+          "body": "You start with one client channel rather than a restructure. Nothing has to be exported, and whatever lives in Notion today carries on living there."
+        }
+      ]
+    },
     "faq": {
       "title": "Questions people ask before moving",
       "items": [
@@ -861,11 +960,29 @@
         },
         {
           "title": "Which is cheaper?",
-          "body": "On monthly billing Kolabr Pro is $10 and Notion Plus is $12, so we are the lower number; on annual terms Notion Plus is $10 and we are $8.50. Either way it is close, and the comparison changes once you count the chat tool you run alongside Notion and the time spent building and maintaining the trackers Kolabr includes."
+          "body": "On monthly billing Kolabr Pro is $10 and Notion Plus is $12, so we are the lower number; on annual terms Notion Plus is $10 and we are $8.50. Either way it is close, and the comparison changes once you count the chat tool you run alongside Notion and the time spent building and maintaining the trackers Kolabr includes. Price is rarely what decides this one. What decides it is who will own the tracker in two years."
         },
         {
           "title": "Can we use Kolabr and Notion together?",
           "body": "Plenty of teams do. Notion keeps the long-form internal knowledge it is already full of, and Kolabr runs client channels, where the conversation, the requests and the wiki for that relationship belong together. The channel wiki is for what a client or a new starter needs, not a company encyclopaedia."
+        }
+      ]
+    },
+    "proof": {
+      "title": "Proof takes one week",
+      "lede": "Pick one client and open a channel. There is nothing to model, no template to choose and no database to design first.",
+      "steps": [
+        {
+          "lead": "Monday",
+          "text": "Open the channel and invite the client. The conversation, the requests and the wiki are already in it; you set up none of the three."
+        },
+        {
+          "lead": "By Friday",
+          "text": "The first requests have numbers, owners and dates, and the first wiki pages wrote themselves out of questions you were answering anyway."
+        },
+        {
+          "lead": "Week four",
+          "text": "You will know whether anything still needs building. That is the only test this page is asking you to run."
         }
       ]
     },
@@ -880,15 +997,15 @@
     "hero": {
       "eyebrow": "Kolabr compared",
       "title": "Kolabr vs ClickUp",
-      "lede": "ClickUp tracks your team’s tasks. Kolabr runs the relationship those tasks came from: a channel per client with the conversation, the requests and the wiki in one place, and guests who can actually take part without becoming a line on your invoice.",
+      "lede": "In ClickUp a client can watch for free, and the moment they need to comment, approve or raise something they come out of a guest allowance and then onto your bill. So the people with the decisions stay outside it, and somebody on your team spends the week relaying for them. Kolabr guests post, raise requests, read the wiki and join calls, free, on every plan.",
       "summary": [
         {
           "title": "The short version",
           "body": "A client who can only watch is not collaborating. In Kolabr every guest can post, raise a request, read the wiki and join a call, on every plan, at no cost."
         },
         {
-          "title": "Proof takes one week",
-          "body": "Open a channel for one client and invite everyone on their side who has ever had a question. Nothing to configure, no seat arithmetic, and by Friday the requests arrive from the people who actually have them."
+          "title": "The number that decides it",
+          "body": "Per internal seat the two are close. The gap opens at the first client who has to approve something: ClickUp meters participating guests and then charges them as members, and Kolabr does not count them at all."
         }
       ]
     },
@@ -912,32 +1029,32 @@
           "title": "Working with people outside your company",
           "rows": [
             [
-              "A guest who can take part",
+              "A client who needs to do more than look",
               "Free on every plan. Guests post, raise requests, read the wiki and join calls.",
               "View-only guests are free and unlimited. A guest who can comment or edit takes a guest seat."
             ],
             [
-              "How many participating guests you get",
+              "How many clients can take part before you pay",
               "Any number. A guest in three channels costs the same as a guest in one: nothing.",
               "An allowance that grows with paid users. Unlimited gives 5 for a single-user workspace plus 2 per extra paid user; Business gives 10 plus 5 each."
             ],
             [
-              "What happens past the allowance",
+              "What happens when you run out",
               "Nothing to run past. Guests are never billed.",
               "Guests beyond the allocation convert to paid members at the full subscription rate."
             ],
             [
-              "A guest whose email matches your domain",
+              "A contractor on your own email domain",
               "Still a guest, on your terms.",
               "Converted automatically to a paid member."
             ],
             [
-              "Keeping clients apart",
+              "Keeping one client’s work away from another’s",
               "A channel per client, separate by design.",
               "Spaces, folders and permission settings you configure."
             ],
             [
-              "A client who needs to comment or approve",
+              "Getting a client to approve something",
               "Free, and unlimited.",
               "Draws on a guest allowance: five plus two per paid user, then a paid member."
             ]
@@ -947,22 +1064,22 @@
           "title": "Requests and accountability",
           "rows": [
             [
-              "Request intake with an owner",
+              "Knowing who owes what, without asking",
               "Built in. Number, category, owner, status and due date on every request.",
               "A list with custom fields you design."
             ],
             [
-              "Response-time targets (SLA)",
+              "A deadline the client can see for themselves",
               "Per category, per channel, visible to the client.",
               "No SLA concept. Custom fields and automations can approximate one."
             ],
             [
-              "Turning a message into a request",
+              "Getting a promise out of the chat and onto a list",
               "One step, with the thread attached.",
               "Create a task and paste the context in."
             ],
             [
-              "Tasks",
+              "Where the small steps live",
               "Inside a request only. A task belongs to the request that created it and closes with it.",
               "The centre of the product. Tasks, subtasks, checklists and boards that live on their own."
             ]
@@ -972,22 +1089,22 @@
           "title": "Conversation",
           "rows": [
             [
-              "Chat with threads, mentions and presence",
+              "Having the day-to-day conversation in one place",
               "Built into every channel, with private and group direct messages.",
               "Comments on tasks, and a separate chat feature."
             ],
             [
-              "Video calls",
+              "Getting on a call without a third tool",
               "In the channel, started from the request they concern.",
               "Through an integration."
             ],
             [
-              "Wiki beside the conversation",
+              "Finding the answer you already gave",
               "Built in, per channel, readable by guests.",
               "Docs, organised however you decide."
             ],
             [
-              "Scheduled events in the channel",
+              "A date in the diary tied to the work it came from",
               "Built in, tied to the request they came from.",
               "Calendar view and integrations, not tied to a request."
             ]
@@ -1002,7 +1119,7 @@
               "Free tier, then Unlimited at $7 and Business at $12 per user per month on annual billing, or $10 and $19 monthly. Enterprise is quoted."
             ],
             [
-              "Mixing plans across your team",
+              "Paying different rates for different people",
               "Not applicable. One plan, and guests cost nothing.",
               "Plans apply to the whole workspace, so if one person needs a higher tier, everybody moves to it."
             ],
@@ -1012,7 +1129,7 @@
               "Priced per seat on top of the plan."
             ],
             [
-              "Time before it is useful",
+              "How long before it earns its keep",
               "Create a channel, invite people, work.",
               "Spaces, folders, lists, custom fields and automations are designed first."
             ]
@@ -1095,32 +1212,30 @@
             "body": "The answer lives next to the work it belongs to, not in a docs section somebody has to remember."
           }
         ]
-      },
-      {
-        "type": "cards",
-        "id": "scope",
-        "title": "What Kolabr does not try to be",
-        "lede": "Worth knowing before you move, so nothing surprises you in month three.",
-        "cards": [
-          {
-            "title": "A planning tool",
-            "body": "No sprints, dependency chains, workload charts or Gantt views. If you plan delivery that way, keep the tool that does it."
-          },
-          {
-            "title": "A standalone task manager",
-            "body": "Tasks exist inside requests and nowhere else. That is the design, not a gap waiting to be filled."
-          },
-          {
-            "title": "An automation platform",
-            "body": "Routing, SLAs and playbooks are there, but Kolabr is not a builder for arbitrary workflows."
-          },
-          {
-            "title": "A time-tracking system",
-            "body": "Requests record what was asked and when it was answered. They do not replace whatever you bill from."
-          }
-        ]
       }
     ],
+    "outcome": {
+      "title": "What changes in the first month",
+      "lede": "Not a list of features. Four things that are different about your week, rather than different about the software.",
+      "items": [
+        {
+          "lead": "The relaying stops",
+          "text": "Clients raise their own requests instead of emailing one person on your team who re-types them. The context arrives with the question rather than being summarised away."
+        },
+        {
+          "lead": "Approvals happen where the work is",
+          "text": "The person who signs off is in the channel, so an approval is a reply rather than a forwarded screenshot waiting for an answer."
+        },
+        {
+          "lead": "Open items have a clock the client can see",
+          "text": "Response targets per category, visible to the person waiting, which is why they stop asking whether anything is being looked at."
+        },
+        {
+          "lead": "Nothing has to be configured first",
+          "text": "No spaces, lists, custom fields or automations to set up. A channel is useful the hour you create it, and still makes sense to somebody who joins a year later."
+        }
+      ]
+    },
     "cost": {
       "title": "What each one actually costs you",
       "paragraphs": [
@@ -1146,6 +1261,29 @@
         "text": "per user per month, or $7 to $12 on annual terms, with Enterprise quoted and AI per seat. Read-only guests are free; a guest who can comment or approve draws on an allowance."
       }
     },
+    "concessions": {
+      "id": "scope",
+      "title": "Where Kolabr stops, and what you get for it",
+      "lede": "Four limits worth knowing before you move. Each one is a deliberate trade, and the second half of each line is what it buys you.",
+      "cards": [
+        {
+          "title": "A planning tool",
+          "body": "No sprints, dependency chains, workload charts or Gantt views. Leaving the delivery planning where it is costs you nothing, because the half that moves is the client-facing half, which is the half ClickUp meters."
+        },
+        {
+          "title": "A standalone task manager",
+          "body": "Tasks exist inside a request and nowhere else. That is what stops a list filling with work nobody remembers agreeing to, and it is why closing a request closes everything underneath it."
+        },
+        {
+          "title": "An automation platform",
+          "body": "Routing, response targets and playbooks are built in, but there is no builder for arbitrary workflows. In exchange there is nothing to maintain, and nothing that breaks quietly a year after its author left."
+        },
+        {
+          "title": "A time-tracking system",
+          "body": "Requests record what was asked and when it was answered, not what to bill. Keep whatever you invoice from, and gain a record of the promise sitting next to the conversation that made it."
+        }
+      ]
+    },
     "faq": {
       "title": "Questions people ask before moving",
       "items": [
@@ -1155,7 +1293,7 @@
         },
         {
           "title": "Is Kolabr a project management tool?",
-          "body": "No. Kolabr organises work by relationship rather than by project: a channel per client, site or department, with requests inside it that carry owners, categories and response targets. If you need sprints, dependencies and workload charts, keep a planning tool for that and run the client side in Kolabr."
+          "body": "No. Kolabr organises work by relationship rather than by project: a channel per client, site or department, with requests inside it that carry owners, categories and response targets. Sprints, dependencies and workload charts are planning, and planning is not the part that breaks when a client needs something approved on a Friday afternoon. That is the part Kolabr takes."
         },
         {
           "title": "Does Kolabr have tasks?",
@@ -1163,7 +1301,7 @@
         },
         {
           "title": "Which is cheaper?",
-          "body": "It depends entirely on whether your clients need to do anything. Per internal seat ClickUp is lower, $10 against our $10 on monthly terms and $7 against $8.50 annually, and both of us have a free plan. Read-only guests are free on both. The moment a client has to comment, approve or raise something, ClickUp meters them: five guest seats plus two per paid user on Unlimited, and past that they become paid members. In Kolabr a guest posts, raises requests, reads the wiki and joins calls, free, for ever."
+          "body": "It depends entirely on whether your clients need to do anything. Per internal seat ClickUp is lower, $10 against our $10 on monthly terms and $7 against $8.50 annually, and both of us have a free plan. Read-only guests are free on both. The moment a client has to comment, approve or raise something, ClickUp meters them: five guest seats plus two per paid user on Unlimited, and past that they become paid members. In Kolabr a guest posts, raises requests, reads the wiki and joins calls, free, for ever. So the honest answer is that it turns on one decision: whether the client takes part, or only watches."
         },
         {
           "title": "We have built a lot in ClickUp. Is that wasted?",
@@ -1172,6 +1310,24 @@
         {
           "title": "What does Kolabr do that ClickUp does not?",
           "body": "Full chat with threads and direct messages in the same place as the work, requests with response targets a client can see, a wiki in every channel, and guests who participate without ever becoming billable. And it works the day you open it, because there is nothing to configure first."
+        }
+      ]
+    },
+    "proof": {
+      "title": "Proof takes one week",
+      "lede": "Open a channel for one client and invite everyone on their side who has ever had a question. There is no seat arithmetic to do first.",
+      "steps": [
+        {
+          "lead": "Monday",
+          "text": "Invite the whole client team, including the people you would never have spent a guest seat on. Nothing to configure, nothing to approve."
+        },
+        {
+          "lead": "By Friday",
+          "text": "Requests are arriving from the people who actually have them, with the detail attached, instead of through one contact who summarises."
+        },
+        {
+          "lead": "Week four",
+          "text": "You will know how much of your week used to go on relaying. That is the only test this page is asking you to run."
         }
       ]
     },
@@ -1186,15 +1342,15 @@
     "hero": {
       "eyebrow": "Kolabr compared",
       "title": "Kolabr vs Zendesk",
-      "lede": "A helpdesk is built for volume from people you will never meet. Kolabr is built for the forty clients whose names you know, where the request is one moment in a relationship that has run for years. Same discipline of owners, categories and clocks, without a portal standing between you and the person asking.",
+      "lede": "Per-agent pricing makes you decide which colleagues are allowed to help, and a portal makes your client decide whether a question is worth logging in for. Across forty named accounts, both of those cost you more than the licence does. Kolabr keeps the owners, the categories and the clocks, and puts them in the channel your client is already in.",
       "summary": [
         {
           "title": "The short version",
           "body": "If your customers are strangers and there are thousands of them, buy a helpdesk. If they are named accounts you will still have in five years, the queue is the wrong shape and a channel is the right one."
         },
         {
-          "title": "Proof takes one week",
-          "body": "Take one client off the portal and give them a channel. By Friday you will see requests arriving from people who never bothered to log in, and answers coming from colleagues who never had a seat."
+          "title": "The number that decides it",
+          "body": "A helpdesk charges per agent, so every colleague who could answer is a budget decision. Kolabr is priced per person on your plan, and the client and their staff are guests at no cost, so nobody is rationed out of helping."
         }
       ]
     },
@@ -1218,22 +1374,22 @@
           "title": "How the customer reaches you",
           "rows": [
             [
-              "Where the request is raised",
+              "Where your client has to go to ask",
               "In the channel the client is already in, by typing. Any message becomes a numbered request in one step.",
               "Through a portal, an email address, a web form or a chat widget."
             ],
             [
-              "What the client sees afterwards",
+              "What the client can see while they wait",
               "The whole channel: the request, the conversation around it, the wiki and the calendar.",
               "Their tickets, in the help centre."
             ],
             [
-              "Named people, or an anonymous queue",
+              "Whether the person asking has a name",
               "Named. You know who is in the channel, and so do they.",
               "Built for volume from end users you have never met."
             ],
             [
-              "Conversation outside a ticket",
+              "Talking about anything that is not a request",
               "Full chat with threads, mentions, presence, and direct messages.",
               "Conversation happens inside tickets and side conversations."
             ]
@@ -1243,27 +1399,27 @@
           "title": "Who can take part",
           "rows": [
             [
-              "Cost of your own people being involved",
+              "What it costs to let a colleague help",
               "Your plan covers your team. Anyone in the company can be in a channel and answer.",
               "Priced per agent. A person who replies to tickets needs a full seat."
             ],
             [
-              "Colleagues who only need to comment",
+              "The colleague who chips in twice a month",
               "Same as anyone else, at no extra cost.",
               "Light agents are free on the plans that include them, and are view or comment only."
             ],
             [
-              "Cost of the client",
+              "What it costs to bring a client in",
               "Free on every plan, in as many channels as needed.",
               "End users are free and unlimited."
             ],
             [
-              "Somebody who handles both customer and internal requests",
+              "One person covering both client and internal work",
               "One person, one seat, any number of channels.",
               "Customer service and employee service are separate product lines with separate seats."
             ],
             [
-              "Everyone on your side who occasionally answers",
+              "Everyone who occasionally knows the answer",
               "Included. You pay per user, not per person allowed to reply.",
               "An agent licence each, or they are limited to internal notes."
             ]
@@ -1273,27 +1429,27 @@
           "title": "Requests and accountability",
           "rows": [
             [
-              "Request tracking with an owner",
+              "Knowing who owes what, without asking",
               "Built in on every plan. Number, category, owner, status and due date.",
               "The core of the product."
             ],
             [
-              "Response-time targets (SLA)",
+              "A deadline the client can see for themselves",
               "Per category, per channel, visible to the client.",
               "SLA management is not on the entry Suite tier."
             ],
             [
-              "Tasks",
+              "Where the small steps live",
               "Inside a request only. A task belongs to the request that created it and closes with it.",
               "Tasks are handled through the ticket itself or a connected tool."
             ],
             [
-              "Wiki beside the conversation",
+              "Finding the answer you already gave",
               "Built in, per channel, readable by guests, with no separate build.",
               "A help centre, built and published as its own property."
             ],
             [
-              "Scheduled events in the channel",
+              "A date in the diary tied to the work it came from",
               "Built in, tied to the request they came from.",
               "Not part of the product."
             ]
@@ -1308,12 +1464,12 @@
               "Support Team at $19 for ticketing only, Suite Team at $55 and Suite Professional at $115 per agent per month on annual billing, with Enterprise quoted."
             ],
             [
-              "Add-ons on top",
+              "What is not in the headline price",
               "None. Chat, requests, wiki, calls and events are the product.",
               "Copilot and other bundles are charged per agent, and AI agents are billed per automated resolution."
             ],
             [
-              "Time before it is useful",
+              "How long before it earns its keep",
               "Create a channel, invite people, work.",
               "A help centre, forms, triggers and macros are configured first."
             ]
@@ -1392,32 +1548,30 @@
             "body": "Requests come out of chat and go back into it. No separate inbox, no macro library, no portal to maintain."
           }
         ]
-      },
-      {
-        "type": "cards",
-        "id": "scope",
-        "title": "What Kolabr does not try to be",
-        "lede": "This is the comparison where scope matters most, so it is worth being plain about it.",
-        "cards": [
-          {
-            "title": "A contact centre",
-            "body": "No IVR, call queues, skills-based routing or workforce management. If you run phone support at scale, you need software built for it."
-          },
-          {
-            "title": "A public help centre",
-            "body": "The wiki is for the people in the channel, not a published site for the general public to search."
-          },
-          {
-            "title": "A deflection engine",
-            "body": "Kolabr is not trying to stop your clients contacting you. With named accounts that is usually the wrong goal anyway."
-          },
-          {
-            "title": "Thousands of tickets a month",
-            "body": "Kolabr suits tens of clients with real relationships, not anonymous volume from the general public."
-          }
-        ]
       }
     ],
+    "outcome": {
+      "title": "What changes in the first month",
+      "lede": "Not a list of features. Four things that are different about your week, rather than different about the software.",
+      "items": [
+        {
+          "lead": "Anyone who can answer, can answer",
+          "text": "No decision about whether a colleague is worth a seat. The person who actually knows replies in the channel, and the record keeps their name on it."
+        },
+        {
+          "lead": "Clients stop not asking",
+          "text": "There is no portal, no password and no form, so the questions that were quietly turned into emails and phone calls come back into the record."
+        },
+        {
+          "lead": "You keep the discipline",
+          "text": "Owners, categories, response targets and a dashboard, all of it still there. What goes is the front door, not the accountability behind it."
+        },
+        {
+          "lead": "The relationship outlives the request",
+          "text": "A channel holds years of a named account, so a request is read against everything that came before it instead of arriving as an anonymous line in a queue."
+        }
+      ]
+    },
     "cost": {
       "title": "What each one actually costs you",
       "paragraphs": [
@@ -1443,12 +1597,35 @@
         "text": "per agent per month on annual terms, monthly rates are not published. Enterprise is quoted, with per-agent add-ons and per-resolution AI charges on top."
       }
     },
+    "concessions": {
+      "id": "scope",
+      "title": "Where Kolabr stops, and what you get for it",
+      "lede": "Four limits worth knowing before you move. Each one is a deliberate trade, and the second half of each line is what it buys you.",
+      "cards": [
+        {
+          "title": "A contact centre",
+          "body": "No IVR, call queues, skills-based routing or workforce management. If you run phone support at scale you need software built for it, and Kolabr is built for the forty accounts where the caller has a name."
+        },
+        {
+          "title": "A public help centre",
+          "body": "The wiki is for the people in the channel, not a published site for the general public. That is why it can carry the specifics of one client’s setup instead of being written for strangers."
+        },
+        {
+          "title": "A deflection engine",
+          "body": "Kolabr does not try to stop clients contacting you. With named accounts the contact is the relationship, and the thing worth reducing is how long an answer takes, not how many questions arrive."
+        },
+        {
+          "title": "Thousands of requests a month",
+          "body": "Kolabr suits tens of clients with real relationships rather than anonymous volume. That is the whole reason a channel can hold the history a queue throws away."
+        }
+      ]
+    },
     "faq": {
       "title": "Questions people ask before moving",
       "items": [
         {
           "title": "Is Kolabr a helpdesk?",
-          "body": "No, and it is the comparison we are most careful about. A helpdesk is built for volume from people you will never meet: a portal, a queue, macros, deflection. Kolabr is built for named relationships that last years, where the client is in the channel with you and the request is one part of an ongoing conversation. If your support is thousands of tickets a month from strangers, a helpdesk is the right tool."
+          "body": "No, and it is the comparison we are most careful about. A helpdesk is built for volume from people you will never meet: a portal, a queue, macros, deflection. Kolabr is built for named relationships that last years, where the client is in the channel with you and the request is one part of an ongoing conversation. If your support is thousands of tickets a month from strangers, a helpdesk is the right tool. If your support is forty accounts whose names you know, a queue throws away the thing that makes you worth keeping."
         },
         {
           "title": "Why would a support team choose Kolabr instead?",
@@ -1469,6 +1646,24 @@
         {
           "title": "What does Kolabr include that a helpdesk plan charges for?",
           "body": "A wiki in every channel instead of a help centre you build and publish, full chat with direct messages, video calls, and scheduled events. One price, with no per-agent add-ons stacked on it."
+        }
+      ]
+    },
+    "proof": {
+      "title": "Proof takes one week",
+      "lede": "Take one client off the portal. Nothing else has to change, and the rest of the queue carries on exactly as it is.",
+      "steps": [
+        {
+          "lead": "Monday",
+          "text": "Give that client a channel and invite everyone on their side, plus any colleague of yours who could help. None of them needs a seat."
+        },
+        {
+          "lead": "By Friday",
+          "text": "Requests are arriving from people who never bothered to log in, and answers are coming from colleagues who never had a seat."
+        },
+        {
+          "lead": "Week four",
+          "text": "You will know what the portal was costing you in questions nobody asked. That is the only test this page is asking you to run."
         }
       ]
     },
