@@ -755,7 +755,7 @@ class Component extends DCLogic {
       toggleSettings: () => this.setMenu('settings'),
 
       notifications: [
-        { icon: 'priority_high', text: 'Cold chain alert: “CH-4471 reefer at −12°C, spec −18°C”', time: '4 min ago', unread: true },
+        { icon: 'priority_high', text: 'Cold chain alert: “CH-4471 reefer at 10°F, spec 0°F”', time: '4 min ago', unread: true },
         { icon: 'person_add', text: 'Janine Venter joined Exceptions & delays as a guest', time: '26 min ago', unread: true },
         { icon: 'assignment_ind', text: 'Farhana Adams assigned you the short-delivery claim', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'POD uploaded and matched: CH-4465', time: '2 hr ago', unread: false },
@@ -866,7 +866,7 @@ class Component extends DCLogic {
         { id: '#4471', subject: 'CH-4471 reefer temperature excursion', channel: 'Exceptions & delays', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Breach in 35m', slaColor: bad },
         { id: '#4468', subject: 'Short delivery: 2 pallets, CH-4468', channel: 'Claims & PODs', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: dark ? '#8ba3ae' : '#6b8290', sla: 'Due in 6h', slaColor: warn },
         { id: '#4462', subject: 'Missing POD: CH-4462, 6 days', channel: 'Claims & PODs', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due tomorrow', slaColor: dark ? '#8ba3ae' : '#6b8290' },
-        { id: '#4470', subject: 'Border delay at Beitbridge, 9 hours', channel: 'Exceptions & delays', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 6d', slaColor: bad },
+        { id: '#4470', subject: 'Border delay at Laredo, 9 hours', channel: 'Exceptions & delays', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 6d', slaColor: bad },
         { id: '#4455', subject: 'Weekly booking plan, week 36', channel: 'Bookings & planning', status: 'Resolved', statusBg: dark ? 'rgba(61,220,151,0.14)' : 'rgba(18,160,106,0.12)', statusFg: ok, sla: 'Met · 2h 20m', slaColor: ok }
       ]
     };

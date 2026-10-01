@@ -695,7 +695,7 @@ const AVATAR_BGS = ['linear-gradient(150deg, #33505b, #557a88)', 'linear-gradien
 const CHANNEL_LIST = [
   { name: 'Monthly bookkeeping', category: 'Compliance', desc: 'Recons and management accounts', members: 5, sla: 'Standard', people: ['PR', 'HV', 'JM', 'SC', 'NK'] },
   { name: 'Year-end & audit', category: 'Audit', desc: 'Fieldwork and sign-off', members: 5, sla: 'Priority', people: ['TS', 'HV', 'SC', 'PR', 'GM'] },
-  { name: 'Payroll', category: 'Compliance', desc: 'Monthly runs and EMP501', members: 4, sla: 'Priority', people: ['NK', 'HV', 'JM', 'SC'] },
+  { name: 'Payroll', category: 'Compliance', desc: 'Monthly runs and Form 941', members: 4, sla: 'Priority', people: ['NK', 'HV', 'JM', 'SC'] },
   { name: 'Tax & IRS', category: 'Compliance', desc: 'Returns, queries, verifications', members: 4, sla: 'Priority', people: ['GM', 'HV', 'SC', 'TS'] },
   { name: 'Brightline Retail', category: 'Other clients', desc: 'Audit engagement', members: 3, sla: 'Standard', people: ['TS', 'HV', 'PR'] },
   { name: 'Kestrel Logistics', category: 'Other clients', desc: 'Monthly bookkeeping', members: 3, sla: 'Standard', people: ['PR', 'NK', 'HV'] },
@@ -850,7 +850,7 @@ class Component extends DCLogic {
         { n: '4', title: 'Post the reference back in the channel', text: 'Submission reference, date, what was sent. When the IRS asks again in eight months, nobody is reconstructing it from memory.' }
       ],
       codes: [
-        { code: 'Verification', meaning: 'Routine check of a return', action: 'Supply documents; 21 days; no penalty implied' },
+        { code: 'Verification', meaning: 'Routine check of a return', action: 'Supply documents; 30 days; no penalty implied' },
         { code: 'Audit letter', meaning: 'Formal audit of a period', action: 'Partner leads; scope the request before answering' },
         { code: 'Additional assessment', meaning: 'The IRS has changed the figures', action: 'Object within 30 business days or it stands' },
         { code: 'Final demand', meaning: 'Payment demanded', action: 'Same-day escalation; consider suspension of payment' }

@@ -748,15 +748,15 @@ const MEMBERS = [
   { initials: 'ZM', name: 'Zola Mbatha', role: 'Client · Depot receiving', email: 'zola.mbatha@coldharvest.com', since: '27 May 2026', status: 'offline', customer: true, bg: 'linear-gradient(150deg, #8b8394, #635c6d)' }
 ];
 
-const PINNED = { text: 'Cold chain: any excursion above −15°C is reported in this channel immediately, with the reefer download attached. Not at the end of the shift.', meta: 'Marlise Roux · Tue' };
+const PINNED = { text: 'Cold chain: any excursion above 5°F is reported in this channel immediately, with the reefer download attached. Not at the end of the shift.', meta: 'Marlise Roux · Tue' };
 
 const THREAD = {
   author: 'Thabang Nkosi', photo: '', initials: 'TN', time: '09:12',
-  text: 'Reefer alarm on CH-4471 outside Colesberg: unit reading −12°C against a −18°C spec. Driver says it has been climbing for about forty minutes.',
+  text: 'Reefer alarm on CH-4471 on I-80: unit reading 10°F against a 0°F spec. Driver says it has been climbing for about forty minutes.',
   replies: [
-    { author: 'Gert Badenhorst', initials: 'GB', bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', time: '09:14', text: 'Condenser fan. I have a backup unit forty minutes out and a technician meeting him at the Colesberg stop.' },
+    { author: 'Gert Badenhorst', initials: 'GB', bg: 'linear-gradient(150deg, #8a7f76, #6b6159)', time: '09:14', text: 'Condenser fan. I have a backup unit forty minutes out and a technician meeting him at the next stop on I-80.' },
     { author: 'Craig Stevens', initials: 'CS', bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', time: '09:16', text: 'What is on that trailer, and is the product still saleable? I need to tell the depot before it arrives, not after.' },
-    { author: 'Farhana Adams', initials: 'FA', bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)', time: '09:17', text: 'Frozen veg, 22 pallets. Forty minutes at −12°C is inside tolerance for that product, and I am pulling the temperature log now as evidence either way.' },
+    { author: 'Farhana Adams', initials: 'FA', bg: 'linear-gradient(150deg, #6f8b8f, #4f6a6e)', time: '09:17', text: 'Frozen veg, 22 pallets. Forty minutes at 10°F is inside tolerance for that product, and I am pulling the temperature log now as evidence either way.' },
     { author: 'Craig Stevens', initials: 'CS', bg: 'linear-gradient(150deg, #5f7f8d, #3f5b68)', time: '09:18', text: 'Then send me the log with the POD and we will accept it. Please flag the 14:00 slot risk to the depot yourselves.' }
   ]
 };
@@ -877,8 +877,8 @@ class Component extends DCLogic {
       { kind: 'event', icon: 'group_add', label: 'Janine Venter joined #exceptions-delays', meta: 'invited by Marlise Roux · 9 members', time: '16:02' },
       { kind: 'msg', author: 'Farhana Adams', photo: '', initials: 'FA', time: '16:20', mention: true, text: '@channel six PODs are still outstanding from last week, the oldest is CH-4462 at six days. We cannot invoice without them and the client cannot close their receiving. List is on the wiki.', reactions: [{ emoji: '👍', count: 7 }] },
       { kind: 'divider', label: 'Today' },
-      { kind: 'msg', author: 'Thabang Nkosi', photo: '', initials: 'TN', time: '09:12', text: 'Reefer alarm on CH-4471 outside Colesberg: unit reading −12°C against a −18°C spec. Driver says it has been climbing for about forty minutes.', thread: '4 replies · last 09:18' },
-      { kind: 'msg', author: 'Gert Badenhorst', photo: '', initials: 'GB', time: '09:19', text: 'Summarising out of the thread: condenser fan failure, backup unit 40 minutes out, technician meeting the driver at Colesberg. Temperature log attached to #4471 so the client has the evidence before the trailer arrives.', reactions: [{ emoji: '🙌', count: 6 }] },
+      { kind: 'msg', author: 'Thabang Nkosi', photo: '', initials: 'TN', time: '09:12', text: 'Reefer alarm on CH-4471 on I-80: unit reading 10°F against a 0°F spec. Driver says it has been climbing for about forty minutes.', thread: '4 replies · last 09:18' },
+      { kind: 'msg', author: 'Gert Badenhorst', photo: '', initials: 'GB', time: '09:19', text: 'Summarising out of the thread: condenser fan failure, backup unit 40 minutes out, technician meeting the driver on I-80. Temperature log attached to #4471 so the client has the evidence before the trailer arrives.', reactions: [{ emoji: '🙌', count: 6 }] },
       { kind: 'event', icon: 'confirmation_number', label: 'Exception #4471 raised from a message: reefer temperature excursion', meta: 'Thabang Nkosi · In progress · breach in 35m', time: '09:26' },
       { kind: 'msg', author: 'Marlise Roux', photo: '', initials: 'MR', time: '09:31', text: 'Cold Harvest hears about an exception from us, not from their depot. A client who finds out when the truck arrives is a client who is already shopping for another carrier.' },
       { kind: 'msg', author: 'Zola Mbatha', photo: '', initials: 'ZM', time: '09:36', text: 'From receiving: CH-4468 was signed short by two pallets on Friday. Photographs of the seal and the tally sheet are attached, raising it now rather than at month-end reconciliation.', thread: '2 replies · last 09:39' },
@@ -994,7 +994,7 @@ class Component extends DCLogic {
       toggleSettings: () => this.setMenu('settings'),
 
       notifications: [
-        { icon: 'priority_high', text: 'Cold chain alert: “CH-4471 reefer at −12°C, spec −18°C”', time: '4 min ago', unread: true },
+        { icon: 'priority_high', text: 'Cold chain alert: “CH-4471 reefer at 10°F, spec 0°F”', time: '4 min ago', unread: true },
         { icon: 'person_add', text: 'Janine Venter joined Exceptions & delays as a guest', time: '26 min ago', unread: true },
         { icon: 'assignment_ind', text: 'Farhana Adams assigned you the short-delivery claim', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'POD uploaded and matched: CH-4465', time: '2 hr ago', unread: false },
@@ -1197,7 +1197,7 @@ class Component extends DCLogic {
         { id: '#4471', subject: 'CH-4471 reefer temperature excursion', channel: 'Exceptions & delays', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Breach in 35m', slaColor: bad },
         { id: '#4468', subject: 'Short delivery: 2 pallets, CH-4468', channel: 'Claims & PODs', status: 'Waiting', statusBg: dark ? 'rgba(255,255,255,0.10)' : 'rgba(51,80,91,0.09)', statusFg: dark ? '#8ba3ae' : '#6b8290', sla: 'Due in 6h', slaColor: warn },
         { id: '#4462', subject: 'Missing POD: CH-4462, 6 days', channel: 'Claims & PODs', status: 'In progress', statusBg: 'rgba(0,195,255,0.14)', statusFg: dark ? '#5ad2ff' : '#0089b6', sla: 'Due tomorrow', slaColor: dark ? '#8ba3ae' : '#6b8290' },
-        { id: '#4470', subject: 'Border delay at Beitbridge, 9 hours', channel: 'Exceptions & delays', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 6d', slaColor: bad },
+        { id: '#4470', subject: 'Border delay at Laredo, 9 hours', channel: 'Exceptions & delays', status: 'Escalated', statusBg: 'rgba(255,92,102,0.14)', statusFg: bad, sla: 'Overdue 6d', slaColor: bad },
         { id: '#4455', subject: 'Weekly booking plan, week 36', channel: 'Bookings & planning', status: 'Resolved', statusBg: dark ? 'rgba(61,220,151,0.14)' : 'rgba(18,160,106,0.12)', statusFg: ok, sla: 'Met · 2h 20m', slaColor: ok }
       ]
     };

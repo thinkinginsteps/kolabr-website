@@ -27,11 +27,11 @@
         },
         {
           "title": "Payroll",
-          "body": "Monthly runs, variances and EMP501. Separate, because payroll questions are urgent and personal and should not sit behind an audit thread."
+          "body": "Monthly runs, variances and Form 941. Separate, because payroll questions are urgent and personal and should not sit behind an audit thread."
         },
         {
           "title": "Tax & IRS",
-          "body": "Returns, verifications, assessments. When a letter arrives with twenty-one days on it, everyone can see the clock."
+          "body": "Returns, verifications, assessments. When a letter arrives with thirty days on it, everyone can see the clock."
         },
         {
           "title": "Practice",
@@ -77,7 +77,7 @@
       "points": [
         {
           "title": "Diarise the deadline the day it arrives",
-          "body": "Not the day you start. Twenty-one days sounds generous until the client takes twelve of them finding one invoice."
+          "body": "Not the day you start. Thirty days sounds generous until the client takes eighteen of them finding one invoice."
         },
         {
           "title": "Ask for everything at once",
@@ -1649,7 +1649,7 @@
     "hero": {
       "eyebrow": "Kolabr for logistics",
       "title": "The client should hear it from you, not from their depot.",
-      "lede": "A reefer alarms outside Colesberg, the controller phones the fleet supervisor, and the client finds out when the trailer arrives two hours late. Channels for the account instead: where the exception, the temperature log and the new ETA reach everyone at once. Clients join as guests, free, on every plan.",
+      "lede": "A reefer alarms on I-80, the controller phones the fleet supervisor, and the client finds out when the trailer arrives two hours late. Channels for the account instead: where the exception, the temperature log and the new ETA reach everyone at once. Clients join as guests, free, on every plan.",
       "image": {
         "file": "g2-chat",
         "alt": "The Exceptions and delays channel for Cold Harvest Foods: a pinned cold chain reporting rule, six outstanding PODs flagged, and a controller reporting a reefer alarm in transit"
@@ -1762,7 +1762,7 @@
         },
         {
           "title": "Works on one bar",
-          "body": "Built for a truck stop outside Colesberg, not an office connection."
+          "body": "Built for a truck stop on I-80, not an office connection."
         }
       ]
     },
@@ -2484,7 +2484,7 @@
       "lede": "Which site has not reported, which receipts are missing, and whether a safeguarding item is still open at the end of the week.",
       "image": {
         "file": "n2-dashboard",
-        "alt": "The channel dashboard for one programme: requests raised in this channel this month, reporting due to funders and province, data outstanding from field sites, safeguarding items open, the people in the channel, and field reporting activity"
+        "alt": "The channel dashboard for one programme: requests raised in this channel this month, reporting due to funders and the state, data outstanding from field sites, safeguarding items open, the people in the channel, and field reporting activity"
       },
       "wide": {
         "title": "Every programme keeps its own score",

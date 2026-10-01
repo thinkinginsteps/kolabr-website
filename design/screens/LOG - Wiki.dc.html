@@ -503,7 +503,7 @@ input, textarea, select { caret-color: transparent !important; }
 
           <div style="display: flex; align-items: flex-start; gap: 11px; margin-top: 20px; padding: 13px 15px; border-radius: 14px; background: rgba(245,165,36,0.10);">
             <span style="font-family: 'Material Symbols Rounded'; font-size: 19px; line-height: 1; font-variation-settings: 'FILL' 1, 'wght' 600; color: #f5a524;">campaign</span>
-            <span style="flex: 1; font-size: 13px; line-height: 1.5; text-wrap: pretty;">From 1 September every excursion above −15°C is reported in the client channel within fifteen minutes. The steps below reflect that: reporting it at the end of the shift is a claim, not a report.</span>
+            <span style="flex: 1; font-size: 13px; line-height: 1.5; text-wrap: pretty;">From 1 September every excursion above 5°F is reported in the client channel within fifteen minutes. The steps below reflect that: reporting it at the end of the shift is a claim, not a report.</span>
           </div>
 
           <p style="margin: 22px 0 0; font-size: 15.5px; line-height: 1.62; color: var(--muted, #6b8290); text-wrap: pretty;">What to do when a reefer alarms in transit: who to tell, in what order, and what evidence to pull before the trailer reaches the depot. Written for controllers on shift; no manager approval needed to follow it.</p>
@@ -550,7 +550,7 @@ input, textarea, select { caret-color: transparent !important; }
 
           <h2 data-anchor="Message to the client" style="margin: 32px 0 0; font-size: 19px; font-weight: 650; letter-spacing: -0.02em;">Message to the client</h2>
           <p style="margin: 10px 0 0; font-size: 14.5px; line-height: 1.68; text-wrap: pretty;">Post this in the client channel within fifteen minutes. Facts and a time, not reassurance. The client is deciding whether to hold a receiving slot, and needs a number not a sentiment.</p>
-          <div style="margin-top: 14px; padding: 15px 17px; border-radius: 14px; background: var(--page, #edf3f7); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; line-height: 1.7; color: var(--muted, #6b8290); text-wrap: pretty;">Cold chain exception on CH-4471, ref #4471. Reefer reading −12°C against −18°C spec since approximately 08:35, cause is a condenser fan. Backup unit and technician meeting the vehicle at Colesberg, ETA 40 minutes. Load is 22 pallets frozen veg; temperature log is attached. Expect a 90-minute delay against the 14:00 slot. Confirm if you want us to rebook.</div>
+          <div style="margin-top: 14px; padding: 15px 17px; border-radius: 14px; background: var(--page, #edf3f7); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; line-height: 1.7; color: var(--muted, #6b8290); text-wrap: pretty;">Cold chain exception on CH-4471, ref #4471. Reefer reading 10°F against 0°F spec since approximately 08:35, cause is a condenser fan. Backup unit and technician meeting the vehicle on I-80, ETA 40 minutes. Load is 22 pallets frozen veg; temperature log is attached. Expect a 90-minute delay against the 14:00 slot. Confirm if you want us to rebook.</div>
 
           <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 34px; padding-top: 20px; border-top: 1px solid var(--hairline, rgba(0,0,0,0.09));">
             <span style="font-size: 13.5px; font-weight: 500;">Was this page helpful?</span>
@@ -850,9 +850,9 @@ class Component extends DCLogic {
         { n: '4', title: 'Attach the log to the exception', text: 'Pull the temperature record while it is live and attach it. It is the difference between a conversation and a claim.' }
       ],
       codes: [
-        { code: 'Within 3°C', meaning: 'Minor deviation, under 30 minutes', action: 'Log it; monitor; no client call required' },
-        { code: 'Above 3°C', meaning: 'Excursion against spec', action: 'Report within 15 min; pull the log; recover' },
-        { code: 'Above 8°C', meaning: 'Serious breach, product at risk', action: 'Client and account manager immediately; hold delivery' },
+        { code: 'Within 5°F', meaning: 'Minor deviation, under 30 minutes', action: 'Log it; monitor; no client call required' },
+        { code: 'Above 5°F', meaning: 'Excursion against spec', action: 'Report within 15 min; pull the log; recover' },
+        { code: 'Above 15°F', meaning: 'Serious breach, product at risk', action: 'Client and account manager immediately; hold delivery' },
         { code: 'Door open', meaning: 'Unscheduled door event in transit', action: 'Treat as security; photograph the seal before opening' }
       ],
       toc: [selTitle, 'Before you start', 'You will need', 'Working the excursion', 'Excursion thresholds', 'Message to the client'].map((l) => ({
@@ -974,7 +974,7 @@ class Component extends DCLogic {
       toggleSettings: () => this.setMenu('settings'),
 
       notifications: [
-        { icon: 'priority_high', text: 'Cold chain alert: “CH-4471 reefer at −12°C, spec −18°C”', time: '4 min ago', unread: true },
+        { icon: 'priority_high', text: 'Cold chain alert: “CH-4471 reefer at 10°F, spec 0°F”', time: '4 min ago', unread: true },
         { icon: 'person_add', text: 'Janine Venter joined Exceptions & delays as a guest', time: '26 min ago', unread: true },
         { icon: 'assignment_ind', text: 'Farhana Adams assigned you the short-delivery claim', time: '1 hr ago', unread: true },
         { icon: 'task_alt', text: 'POD uploaded and matched: CH-4465', time: '2 hr ago', unread: false },

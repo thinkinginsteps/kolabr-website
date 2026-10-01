@@ -710,7 +710,7 @@ const ALL_CHATS = [
   { initials: 'GP', name: 'Grant Pretorius', preview: 'Two urgent results are ready.', unread: true, customer: true },
   { initials: 'G1', name: 'Clinical team', unread: true, preview: 'Dr Steyn: room 3 running 25 min late', customer: false, href: '' },
   { initials: 'AM', name: 'Anja Meyer', preview: 'Can I get access before Tuesday?', unread: false, customer: false },
-  { initials: 'SV', name: 'Sanele Vilakazi', preview: 'Vaccine fridge log done, 4.1°C.', unread: false, customer: false }
+  { initials: 'SV', name: 'Sanele Vilakazi', preview: 'Vaccine fridge log done, 39°F.', unread: false, customer: false }
 ];
 
 const TENANTS = [
@@ -875,7 +875,7 @@ class Component extends DCLogic {
     const base = [
       { kind: 'divider', label: 'Yesterday' },
       { kind: 'event', icon: 'group_add', label: 'Thandeka Khumalo joined #radiology-partners', meta: 'invited by Lerato Mabaso · 5 members', time: '16:02' },
-      { kind: 'msg', author: 'Sanele Vilakazi', photo: '', initials: 'SV', time: '16:20', mention: true, text: '@channel vaccine fridge logged at 4.1°C this morning and again at close. Reminder that the log is a channel task now. If it is not ticked here, it did not happen as far as an inspection is concerned.', reactions: [{ emoji: '👍', count: 8 }] },
+      { kind: 'msg', author: 'Sanele Vilakazi', photo: '', initials: 'SV', time: '16:20', mention: true, text: '@channel vaccine fridge logged at 39°F this morning and again at close. Reminder that the log is a channel task now. If it is not ticked here, it did not happen as far as an inspection is concerned.', reactions: [{ emoji: '👍', count: 8 }] },
       { kind: 'divider', label: 'Today' },
       { kind: 'msg', author: 'Grant Pretorius', photo: '', initials: 'GP', time: '09:12', text: 'MedLab here. Two urgent results went out yesterday afternoon on file 22841 and 23107. Neither has been acknowledged and one of them needs same-day action.', thread: '4 replies · last 09:18' },
       { kind: 'msg', author: 'Lerato Mabaso', photo: '', initials: 'LM', time: '09:19', text: 'Recording the change out of the thread: urgent results are flagged in this channel by file number, results stay in the portal, and an unacknowledged urgent escalates after an hour. Raised as #512.', reactions: [{ emoji: '🙌', count: 6 }] },
@@ -997,7 +997,7 @@ class Component extends DCLogic {
         { icon: 'priority_high', text: 'Urgent result unactioned 2h: “Abnormal potassium, ward round list”', time: '4 min ago', unread: true },
         { icon: 'person_add', text: 'Thandeka Khumalo joined Radiology partners as a guest', time: '26 min ago', unread: true },
         { icon: 'assignment_ind', text: 'Lerato Mabaso assigned you the locum onboarding', time: '1 hr ago', unread: true },
-        { icon: 'task_alt', text: 'Cold chain log completed: vaccine fridge 4.1°C', time: '2 hr ago', unread: false },
+        { icon: 'task_alt', text: 'Cold chain log completed: vaccine fridge 39°F', time: '2 hr ago', unread: false },
         { icon: 'forum', text: '3 new replies in Clinical team', time: 'Yesterday', unread: false }
       ].map(n => ({ ...n, weight: n.unread ? 600 : 400, textColor: n.unread ? 'var(--text, #1d1d1f)' : 'var(--muted, #6e6e73)' })),
       chatQuery: this.state.chatQuery,
