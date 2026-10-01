@@ -3,7 +3,7 @@
     "hero": {
       "eyebrow": "Kolabr for accounting firms",
       "title": "Stop chasing documents through four inboxes.",
-      "lede": "An IRS notice with thirty days on it, a client who forwards invoices to whoever they spoke to last, and a junior reconstructing what was asked for in March. One channel per client, where the request, the document and the deadline all live together. Clients join as guests, free, on every plan.",
+      "lede": "An IRS notice with thirty days on it, a client who forwards invoices to whoever they spoke to last, and a junior reconstructing what was asked for in March. A channel for that client, where the request, the document and the deadline all live together. Clients join as guests, free, on every plan.",
       "image": {
         "file": "ac2-chat",
         "alt": "The Tax and IRS channel for Harlow Foods: a pinned Form 941 deadline, open inventory count queries, and the client reporting an IRS notice"
@@ -11,11 +11,11 @@
     },
     "channels": {
       "title": "Where a practice puts its channels",
-      "lede": "A channel is a group of people plus the work they share: the conversation, the requests, the deadline calendar and the wiki. Most firms run one per client, split by service line.",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the requests, the deadline calendar and the wiki. Most firms open one for the client, then as many alongside it as the work needs, usually split by service line.",
       "cards": [
         {
-          "title": "One channel per client",
-          "body": "Harlow Foods in one place: their financial director, their creditors clerk, their MD. Guests, free, seeing only their own affairs."
+          "title": "Harlow Foods",
+          "body": "The client channel: their financial director, their creditors clerk, their MD. Guests, free, seeing only their own affairs."
         },
         {
           "title": "Monthly bookkeeping",
@@ -246,7 +246,7 @@
     },
     "channels": {
       "title": "Where a practice puts its channels",
-      "lede": "A channel is a group of people plus the work they share: the conversation, the RFIs and variations, the calendar and the wiki. Most practices land on one channel per project, and a few standing ones.",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the RFIs and variations, the calendar and the wiki. Most practices open one for the project, then as many alongside it as the work needs, plus a few standing ones.",
       "cards": [
         {
           "title": "Sable Bay Precinct",
@@ -473,7 +473,7 @@
     "hero": {
       "eyebrow": "Kolabr for clinics and practices",
       "title": "An urgent result should never wait in a shared inbox.",
-      "lede": "It arrives at twenty to five, lands in an inbox nobody owns, and is found at nine the next morning. One channel per practice instead: where an urgent result is flagged by file number, has a named clinician and escalates if nobody acknowledges it. Labs and referral partners join as guests, free, on every plan.",
+      "lede": "It arrives at twenty to five, lands in an inbox nobody owns, and is found at nine the next morning. Channels for the practice instead: where an urgent result is flagged by file number, has a named clinician and escalates if nobody acknowledges it. Labs and referral partners join as guests, free, on every plan.",
       "note": "Kolabr is not a patient record. It coordinates the practice around one: the wiki rule on every clinical channel is that identifiers and clinical detail stay in the record, not in chat.",
       "image": {
         "file": "c3-chat",
@@ -717,7 +717,7 @@
     },
     "channels": {
       "title": "Where a contractor puts its channels",
-      "lede": "A channel is a group of people plus the work they share: the conversation, the variations and RFIs, the calendar and the wiki. Most sites run one project channel and a handful of standing ones.",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the variations and RFIs, the calendar and the wiki. Most sites open one for the site, then as many alongside it as the work needs, plus a handful of standing ones.",
       "cards": [
         {
           "title": "Harbour Yard",
@@ -944,7 +944,7 @@
     "hero": {
       "eyebrow": "Kolabr for engineering practices",
       "title": "You signed it. So it had better be written down.",
-      "lede": "A pour booked for Thursday, spacing that looks wrong in a photograph, and a contractor who will say you approved it verbally. One channel per project, where the inspection, the measurement and the decision carry a name and a timestamp. Clients and contractors join as guests, free, on every plan.",
+      "lede": "A pour booked for Thursday, spacing that looks wrong in a photograph, and a contractor who will say you approved it verbally. A channel for the project, where the inspection, the measurement and the decision carry a name and a timestamp. Clients and contractors join as guests, free, on every plan.",
       "image": {
         "file": "e2-chat",
         "alt": "The Structural channel for the Riverside Mall upgrade: a pinned rule that no pour proceeds without a signed inspection, cube results flagged under spec, and the contractor asking whether to stop"
@@ -952,11 +952,11 @@
     },
     "channels": {
       "title": "Where a practice puts its channels",
-      "lede": "A channel is a group of people plus the work they share: the conversation, the inspections and queries, the calendar and the wiki. Most practices run one per project, split by discipline.",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the inspections and queries, the calendar and the wiki. Most practices open one for the project, then as many alongside it as the work needs, usually split by discipline.",
       "cards": [
         {
-          "title": "One channel per project",
-          "body": "Riverside Mall in one place: the client, the contractor, and each of your disciplines. They join as guests, free, and see only this project."
+          "title": "Riverside Mall upgrade",
+          "body": "The project channel: the client, the contractor, and each of your disciplines. They join as guests, free, and see only this project."
         },
         {
           "title": "Per discipline",
@@ -1179,7 +1179,7 @@
     "hero": {
       "eyebrow": "Kolabr for IT service providers",
       "title": "The client can see the SLA clock. That is the point.",
-      "lede": "A ticket portal nobody logs into, an inbox that swallows requests, and a client who only hears from you when something breaks. One channel per client instead: where the incident, the update and the time remaining are all visible to the people paying for them. Clients join as guests, free, on every plan.",
+      "lede": "A ticket portal nobody logs into, an inbox that swallows requests, and a client who only hears from you when something breaks. Channels for the client instead: where the incident, the update and the time remaining are all visible to the people paying for them. Clients join as guests, free, on every plan.",
       "image": {
         "file": "i2-chat",
         "alt": "The Service desk channel for Rossgrove Legal: a pinned P1 notice promising updates every thirty minutes, the practice manager asking how bad the mail outage is, and the incident raised from that message"
@@ -1187,11 +1187,11 @@
     },
     "channels": {
       "title": "Where a provider puts its channels",
-      "lede": "A channel is a group of people plus the work they share: the conversation, the requests, the calendar and the runbooks. Most providers run one per client, split by the kind of work.",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the requests, the calendar and the runbooks. Most providers open one for the client, then as many alongside it as the work needs, usually split by the kind of work.",
       "cards": [
         {
-          "title": "One channel per client",
-          "body": "Rossgrove Legal in one place: their practice manager, their managing partner, their office administrator. Guests, free, seeing only their own estate."
+          "title": "Rossgrove Legal",
+          "body": "The client channel: their practice manager, their managing partner, their office administrator. Guests, free, seeing only their own estate."
         },
         {
           "title": "Service desk",
@@ -1414,7 +1414,7 @@
     "hero": {
       "eyebrow": "Kolabr for law firms",
       "title": "An instruction nobody wrote down is not an instruction.",
-      "lede": "A mandate given on a telephone call, a deadline in someone’s diary, and a candidate attorney reconstructing in March what was agreed in November. One channel per matter, where the instruction, the draft and the court date all live together. Clients join as guests, free, on every plan.",
+      "lede": "A mandate given on a telephone call, a deadline in someone’s diary, and a candidate attorney reconstructing in March what was agreed in November. A channel for the matter, where the instruction, the draft and the court date all live together. Clients join as guests, free, on every plan.",
       "image": {
         "file": "l3-chat",
         "alt": "The Kingsway acquisition matter channel: a pinned signature date, a discovery affidavit deadline, and the client's general counsel asking for a change to the warranty schedule"
@@ -1422,11 +1422,11 @@
     },
     "channels": {
       "title": "Where a firm puts its channels",
-      "lede": "A channel is a group of people plus the work they share: the conversation, the tasks and deadlines, the calendar and the wiki. Most firms run one per matter, or one per client with a channel per workstream.",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the tasks and deadlines, the calendar and the wiki. Most firms open one per matter, or one for the client with a channel per workstream. The shape is yours.",
       "cards": [
         {
-          "title": "One channel per matter",
-          "body": "The Kingsway acquisition in one place: the client’s general counsel, their company secretary, their CEO. Guests, free, seeing only that matter."
+          "title": "Kingsway acquisition",
+          "body": "The matter channel: the client’s general counsel, their company secretary, their CEO. Guests, free, seeing only that matter."
         },
         {
           "title": "Litigation",
@@ -1649,7 +1649,7 @@
     "hero": {
       "eyebrow": "Kolabr for logistics",
       "title": "The client should hear it from you, not from their depot.",
-      "lede": "A reefer alarms outside Colesberg, the controller phones the fleet supervisor, and the client finds out when the trailer arrives two hours late. One channel per account instead: where the exception, the temperature log and the new ETA reach everyone at once. Clients join as guests, free, on every plan.",
+      "lede": "A reefer alarms outside Colesberg, the controller phones the fleet supervisor, and the client finds out when the trailer arrives two hours late. Channels for the account instead: where the exception, the temperature log and the new ETA reach everyone at once. Clients join as guests, free, on every plan.",
       "image": {
         "file": "g2-chat",
         "alt": "The Exceptions and delays channel for Cold Harvest Foods: a pinned cold chain reporting rule, six outstanding PODs flagged, and a controller reporting a reefer alarm in transit"
@@ -1657,11 +1657,11 @@
     },
     "channels": {
       "title": "Where a carrier puts its channels",
-      "lede": "A channel is a group of people plus the work they share: the conversation, the exceptions, the calendar and the wiki. Most carriers run one per account, split by what the client needs to see.",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the exceptions, the calendar and the wiki. Most carriers open one for the account, then as many alongside it as the client needs to see.",
       "cards": [
         {
-          "title": "One channel per account",
-          "body": "Cold Harvest in one place: their supply chain manager, their depot receiving, their head of logistics. Guests, free, seeing only their own freight."
+          "title": "Cold Harvest Foods",
+          "body": "The account channel: their supply chain manager, their depot receiving, their head of logistics. Guests, free, seeing only their own freight."
         },
         {
           "title": "Loads in transit",
@@ -1884,7 +1884,7 @@
     "hero": {
       "eyebrow": "Kolabr for manufacturing",
       "title": "A late notification is a bigger finding than the defect.",
-      "lede": "Four parts measure out of tolerance on the night shift, 480 are already at the customer, and their supplier quality engineer hears about it when their own line stops. One channel per customer instead: where the NCR, the containment plan and the 8D all happen in front of them. Customers join as guests, free, on every plan.",
+      "lede": "Four parts measure out of tolerance on the night shift, 480 are already at the customer, and their supplier quality engineer hears about it when their own line stops. Channels for the customer instead: where the NCR, the containment plan and the 8D all happen in front of them. Customers join as guests, free, on every plan.",
       "image": {
         "file": "f2-chat",
         "alt": "The Quality and NCRs channel for Torque Automotive: a pinned quarantine rule, an engineering change notice, and the quality manager reporting a bore diameter out of tolerance"
@@ -1892,11 +1892,11 @@
     },
     "channels": {
       "title": "Where a plant puts its channels",
-      "lede": "A channel is a group of people plus the work they share: the conversation, the NCRs and changes, the calendar and the wiki. Most plants run one per customer, plus the internal ones.",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the NCRs and changes, the calendar and the wiki. Most plants open one for the customer, then as many alongside it as the work needs, plus the internal ones.",
       "cards": [
         {
-          "title": "One channel per customer",
-          "body": "Torque Automotive in one place: their supplier quality engineer, their buyer, their programme manager. Guests, free, seeing only their own parts."
+          "title": "Torque Automotive",
+          "body": "The customer channel: their supplier quality engineer, their buyer, their programme manager. Guests, free, seeing only their own parts."
         },
         {
           "title": "Quality & NCRs",
@@ -2119,7 +2119,7 @@
     "hero": {
       "eyebrow": "Kolabr for marketing agencies",
       "title": "Round three was approved in writing. Before you started it.",
-      "lede": "Feedback from five stakeholders, a legal review nobody mentioned, a print slot at 16:00 and a revision that quietly became free work. One channel per client, where the version, the approval and the estimate all live together. Clients join as guests, free, on every plan.",
+      "lede": "Feedback from five stakeholders, a legal review nobody mentioned, a print slot at 16:00 and a revision that quietly became free work. A channel for that client, where the version, the approval and the estimate all live together. Clients join as guests, free, on every plan.",
       "image": {
         "file": "m2-chat",
         "alt": "The Creative review channel for Verde Health: a pinned scope note about two rounds per asset, the client asking for a claim change, and the reply flagging it as round three"
@@ -2127,11 +2127,11 @@
     },
     "channels": {
       "title": "Where an agency puts its channels",
-      "lede": "A channel is a group of people plus the work they share: the conversation, the approvals and scope requests, the calendar and the wiki. Most agencies run one per client, then split by workstream.",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the approvals and scope requests, the calendar and the wiki. Most agencies open one for the client, then as many alongside it as the work needs, usually split by workstream.",
       "cards": [
         {
-          "title": "One channel per client",
-          "body": "Verde Health in one place: the brand lead, the marketing manager, their legal reviewer. They join as guests, free, and never see another client’s work."
+          "title": "Verde Health",
+          "body": "The client channel: the brand lead, the marketing manager, their legal reviewer. They join as guests, free, and never see another client’s work."
         },
         {
           "title": "Campaign",
@@ -2354,7 +2354,7 @@
     "hero": {
       "eyebrow": "Kolabr for nonprofits",
       "title": "The report writes itself, because the work was recorded as it happened.",
-      "lede": "Four field sites, forty volunteers, three funders and a quarterly narrative report that currently takes two weeks to assemble from memory and WhatsApp. One channel per programme instead: where attendance, receipts and safeguarding all land the day they happen. Volunteers, the board and funders join as guests, free, on every plan.",
+      "lede": "Four field sites, forty volunteers, three funders and a quarterly narrative report that currently takes two weeks to assemble from memory and WhatsApp. Channels for the programme instead: where attendance, receipts and safeguarding all land the day they happen. Volunteers, the board and funders join as guests, free, on every plan.",
       "image": {
         "file": "n2-chat",
         "alt": "The Early learning programme channel for Thusanang Trust: a pinned funder report deadline, a field coordinator reporting short attendance with the reason, and the funder reading along"
@@ -2362,7 +2362,7 @@
     },
     "channels": {
       "title": "Where an organisation puts its channels",
-      "lede": "A channel is a group of people plus the work they share: the conversation, the requests, the calendar and the wiki. Most organisations run one per programme, plus the people who fund and govern it.",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the requests, the calendar and the wiki. Most organisations open one per programme, then as many alongside it as the work needs, plus the people who fund and govern it.",
       "cards": [
         {
           "title": "Programme",
@@ -2589,7 +2589,7 @@
     "hero": {
       "eyebrow": "Kolabr for property management",
       "title": "Take the building off your personal phone.",
-      "lede": "A water heater bursts at six, three residents WhatsApp the portfolio manager directly, and the board hears about it at the next meeting. One channel per building instead: where the report, the quote, the approval and the notice all live together. The board and residents join as guests, free, on every plan.",
+      "lede": "A water heater bursts at six, three residents WhatsApp the portfolio manager directly, and the board hears about it at the next meeting. Channels for the building instead: where the report, the quote, the approval and the notice all live together. The board and residents join as guests, free, on every plan.",
       "image": {
         "file": "p2-chat",
         "alt": "The Maintenance channel for Meadowridge Estate: a pinned definition of what counts as an emergency, three roof quotes posted for the board, and a resident reporting a burst water heater"
@@ -2597,11 +2597,11 @@
     },
     "channels": {
       "title": "Where a property manager puts its channels",
-      "lede": "A channel is a group of people plus the work they share: the conversation, the jobs, the calendar and the wiki. Most agents run one per building, split by who is allowed to see what.",
+      "lede": "A channel is a group of people plus the work they share: the conversation, the jobs, the calendar and the wiki. Most agents open one for the building, then as many alongside it as the work needs, split by who is allowed to see what.",
       "cards": [
         {
-          "title": "One channel per building",
-          "body": "Meadowridge in one place: the board, the residents and your site staff. Owners and board members join as guests, free, and see only their own building."
+          "title": "Meadowridge Estate",
+          "body": "The building channel: the board, the residents and your site staff. Owners and board members join as guests, free, and see only their own building."
         },
         {
           "title": "Maintenance",

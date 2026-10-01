@@ -94,7 +94,7 @@
     },
     {
       "q": "How should an agency set up its channels?",
-      "a": "Most agencies run one channel per client, then split by workstream: campaign, creative review, always-on social, and scope and billing. A studio channel is for your own team only, for resourcing, fee conversations and honest critique. Each client sees only their own work, never another client's."
+      "a": "Most agencies open a channel for the client and more alongside it, split by workstream: campaign, creative review, always-on social, and scope and billing. A studio channel is for your own team only, for resourcing, fee conversations and honest critique. Each client sees only their own work, never another client's."
     },
     {
       "q": "How does Kolabr stop us doing out-of-scope work for free?",
@@ -116,7 +116,7 @@
     },
     {
       "q": "How do we organise channels for each client?",
-      "a": "Most firms run one channel per client, split by service line: monthly bookkeeping, year-end and audit, payroll, and tax and IRS. Payroll sits separately because its questions are urgent and personal. A practice channel is for your own people. Clients see only their own affairs, never another client or your internal notes."
+      "a": "Most firms open a channel for the client and more alongside it, split by service line: monthly bookkeeping, year-end and audit, payroll, and tax and IRS. Payroll sits separately because its questions are urgent and personal. A practice channel is for your own people. Clients see only their own affairs, never another client or your internal notes."
     },
     {
       "q": "Can Kolabr track IRS and state filing deadlines?",
@@ -164,7 +164,7 @@
     },
     {
       "q": "How should we structure channels for each managed client?",
-      "a": "Most providers run one channel per client, split by the kind of work: the everyday queue, incidents and outages (P1 and P2 only, so clients can mute the noise but never this), security and compliance, and projects. An internal channel is for your engineers only. Each client sees only their own estate."
+      "a": "Most providers open a channel for the client and more alongside it, split by the kind of work: the everyday queue, incidents and outages (P1 and P2 only, so clients can mute the noise but never this), security and compliance, and projects. An internal channel is for your engineers only. Each client sees only their own estate."
     },
     {
       "q": "How does on-call work from a phone?",
@@ -204,7 +204,7 @@
     },
     {
       "q": "How should a property manager set up channels for each building?",
-      "a": "Most property managers run one channel per building, split by who is allowed to see what. Typical channels are Maintenance, The board, Residents, Dues & arrears, and your own Agency channel. Owners and the board see only their own building, and sensitive matters like arrears stay out of the residents channel."
+      "a": "Most property managers open a channel for the building and more alongside it, split by who is allowed to see what. Typical channels are Maintenance, The board, Residents, Dues & arrears, and your own Agency channel. Owners and the board see only their own building, and sensitive matters like arrears stay out of the residents channel."
     },
     {
       "q": "How do response times work for emergencies versus everyday queries?",
@@ -248,7 +248,7 @@
     },
     {
       "q": "Can one client see another shipper's loads or rates?",
-      "a": "No. Most carriers run one channel per account, and each client sees only its own freight, not another shipper's rates and not a competitor sharing your backhaul. Your Control room channel is for your own staff: shift handover, fleet and the frank assessment of a trailer before a client hears about it."
+      "a": "No. Most carriers open a channel for the account, and more alongside it, and each client sees only its own freight, not another shipper's rates and not a competitor sharing your backhaul. Your Control room channel is for your own staff: shift handover, fleet and the frank assessment of a trailer before a client hears about it."
     },
     {
       "q": "How quickly should we tell a client about a cold chain excursion?",
@@ -270,7 +270,7 @@
     },
     {
       "q": "Will a customer see our supplier problems or other customers' NCRs?",
-      "a": "No. Most plants run one channel per customer plus the internal ones. Each customer sees only their own parts, not another customer's NCR rate and not the competitor you build for on the next line. Your inbound quality problems with steel, castings and tooling sit in channels your customer is not in."
+      "a": "No. Most plants open a channel for the customer, more alongside it, and the internal ones. Each customer sees only their own parts, not another customer's NCR rate and not the competitor you build for on the next line. Your inbound quality problems with steel, castings and tooling sit in channels your customer is not in."
     },
     {
       "q": "How are NCR containment deadlines tracked?",

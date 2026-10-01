@@ -57,7 +57,7 @@
             ],
             [
               "Keeping one client’s work away from another’s",
-              "A channel per client, separate by design.",
+              "A channel per client, or several, separate by design.",
               "One workspace, many channels. Separation depends on how channels and guest types are managed."
             ],
             [
@@ -606,7 +606,7 @@
     "hero": {
       "eyebrow": "Kolabr compared",
       "title": "Kolabr vs Notion",
-      "lede": "A Notion setup that runs client work is really three bills and one volunteer: Notion, the chat tool beside it, the tracker somebody built, and the person who keeps that tracker alive. Kolabr is one channel per client where the conversation, the numbered request and the wiki article saying how that kind of work is handled are already there on the day you open it. Here are the two side by side on what you build, what you maintain and what it costs.",
+      "lede": "A Notion setup that runs client work is really three bills and one volunteer: Notion, the chat tool beside it, the tracker somebody built, and the person who keeps that tracker alive. Kolabr gives each client its own channels, where the conversation, the numbered request and the wiki article saying how that kind of work is handled are already there on the day you open it. Here are the two side by side on what you build, what you maintain and what it costs.",
       "summary": [
         {
           "title": "The short version",
@@ -981,7 +981,7 @@
             ],
             [
               "Keeping one client’s work away from another’s",
-              "A channel per client, separate by design.",
+              "A channel per client, or several, separate by design.",
               "Spaces, folders and permission settings you configure."
             ],
             [

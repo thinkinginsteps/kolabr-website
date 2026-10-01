@@ -82,7 +82,7 @@ Two weeks is early enough to fix, and late enough to know.
 ## The checklist, short version
 
 1. List the people who will be asked questions, including outside the client's own team.
-2. One channel per client, one membership list.
+2. A channel for the client, and more alongside it if the work splits. One membership list each.
 3. Four categories, with honest response targets.
 4. Three wiki pages: how we work, the facts, the decisions log.
 5. Recurring dates in the calendar now.
