@@ -20,8 +20,8 @@ dependencies and builds the new version in a staging directory while the current
 then swaps the two. It takes a few minutes, of which the site is down for the swap alone.
 `deploy.sh` does this.
 
-A deploy never overwrites content: the package's `content/` only seeds the server on the very
-first deploy.
+A deploy never overwrites content. It only adds page copy that the new code needs and the server
+does not have yet (see [What goes in the package](#what-goes-in-the-package)).
 
 ## Deploying an update
 
@@ -34,16 +34,17 @@ That type-checks, lints, builds, and then writes `publish/kolabr-<timestamp>.zip
 
 Then sign in at `https://kolabr.com/admin/` (`https://preview.kolabr.com/admin/` until launch), choose the file, and press **Upload and deploy**.
 
-The panel shows each step: extracting, checking, backing up, **building**, stopping, swapping,
-starting, watching, verifying. The site serves the old version throughout the build, which is the
+The panel shows each step: extracting, checking, backing up, adding new page copy, **building**,
+stopping, swapping, starting, watching, verifying. The site serves the old version throughout the build, which is the
 slow part. It is down only between "stopping" and "starting", a few seconds, and the panel cannot
 reach the server for that moment: a failed poll there is the expected middle of a deploy, not a
 failure.
 
-Three things can go wrong, and each has an answer:
+Four things can go wrong, and each has an answer:
 
 | What happens | What the deploy does |
 | --- | --- |
+| A page copy file on the server is not valid JSON | Stops at "adding new page copy", naming the file. Nothing was built; the site is still serving. Fix the file (a backup is in `/opt/kolabr/backups/content-<id>.tgz`) and deploy again. |
 | The build fails | Stops there. The site was never touched and is still serving. |
 | The new version does not start, or does not answer within 25 seconds | Swaps the previous build back and starts it. The panel says "rolled back". |
 | A main page (`/`, `/pricing/`, `/blog/`, `/contact/`) does not answer afterwards | The same. A build that compiles but cannot render a page is still a failure. |
@@ -63,7 +64,10 @@ npm run test:deploy
 
 That builds a tiny package, stands in for `systemctl`, `curl`, `su`, `flock` and `chown`, and walks
 every path that matters: a failing build, a service that will not start, a page that does not
-answer, an invalid package, a deploy killed outright mid-build, and each repair the watchdog makes.
+answer, an invalid package, new page copy (added without touching edited copy), broken copy on the
+server, a deploy killed outright mid-build, the very first deploy, and each repair the watchdog
+makes. It also checks the systemd unit still lets the back office reach the scripts through sudo.
+It needs Linux (`zip`, `flock`, `perl`): run it on the server or in WSL.
 Every case asserts the same thing at the end, which is the only rule that cannot bend: **the site
 is running**.
 
@@ -74,9 +78,24 @@ excludes `node_modules`, `.next`, `.env*` (except the example), `publish/`, and 
 74MB of mockups that only `npm run assets` needs. The images the pages import live in `assets/` and
 are included.
 
-`content/` ships too, but only ever seeds the server on the very first deploy. After that the
-server's own copy is the source of truth, so a deploy can never overwrite a blog post written in the
-back office.
+`content/` ships too. On the very first deploy it seeds the server. After that the server's own
+copy is the source of truth, so a deploy can never overwrite a blog post written in the back office
+or copy edited under **Copy**.
+
+The one thing a deploy does to it is **add what is missing**. When the code gains a page or a field,
+its words exist only in the package's `content/pages/*.json`, and without them the build stops with
+`Content file page-meta.json is missing: ...` (this happened on 1 October, when `/dpa/` and
+`/contact/thank-you/` were added). So before building, the deploy saves the server's content to
+`backups/content-<id>.tgz` and runs [`scripts/content-sync.mjs`](scripts/content-sync.mjs):
+
+- a key or a whole file the server lacks is added, with the package's words;
+- a value the server already has is **never** changed, even if the package's words differ;
+- keys the package no longer has stay on the server (removing copy is a person's decision);
+- lists, such as a page's FAQs, are kept whole rather than merged item by item.
+
+Copy added this way is the repo's wording; edit it under **Copy** like anything else. Blog posts are
+not synced: a post deleted in the back office stays deleted. Run the rules' tests with
+`npm run test:content-sync` (part of `npm run publish:prepare`).
 
 ## Server layout
 

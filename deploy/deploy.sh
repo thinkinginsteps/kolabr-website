@@ -195,6 +195,8 @@ ensure_running() {
 WORK_DIR="$WORK_ROOT/$DEPLOY_ID"
 STAGE_DIR="$WORK_DIR/app"
 BACKUP_FILE="$BACKUP_ROOT/app-$DEPLOY_ID.tgz"
+CONTENT_BACKUP_FILE="$BACKUP_ROOT/content-$DEPLOY_ID.tgz"
+CONTENT_SYNC="${KOLABR_CONTENT_SYNC:-$PREFIX/content-sync.mjs}"
 
 echo "=== Kolabr deploy $DEPLOY_ID ==="
 echo "package:  $PKG_PATH"
@@ -269,21 +271,55 @@ for required in package.json package-lock.json next.config.ts app lib; do
 done
 
 # First deploy only: seed the content directory from the package. After that the server's copy is
-# the source of truth and no deploy touches it again.
+# the source of truth: no deploy overwrites it, and the content step below only ever adds to it.
 if [[ -z "$(ls -A "$CONTENT_ROOT" 2>/dev/null)" && -d "$STAGE_DIR/content" ]]; then
   echo "seeding $CONTENT_ROOT from the package (first deploy only)"
   cp -a "$STAGE_DIR/content/." "$CONTENT_ROOT"/
 fi
+# Whatever modes the package carried (the first seed left world-writable files), the content is
+# readable by all and writable only by its owner.
+chmod -R u+rwX,go+rX,go-w "$CONTENT_ROOT"
 
 if [[ -d "$APP_ROOT" && -n "$(ls -A "$APP_ROOT" 2>/dev/null)" ]]; then
   step backup "saving the current source"
   tar -C "$APP_ROOT" -czf "$BACKUP_FILE" --exclude=./node_modules --exclude=./.next . || true
 fi
+# The content step may add to the server's copy, so it is saved first, every deploy. A deploy that
+# fails later keeps what was added: it is only ever new keys, which older code ignores.
+if [[ -n "$(ls -A "$CONTENT_ROOT" 2>/dev/null)" ]]; then
+  tar -C "$CONTENT_ROOT" -czf "$CONTENT_BACKUP_FILE" .
+fi
+
+chown -R "$SERVICE_USER:$SERVICE_USER" "$WORK_DIR" "$STATE_ROOT" "$CONTENT_ROOT"
+
+# ---------------------------------------------------------------- content the new code needs
+
+# Code owns the shape of the copy, the server owns its words. When the new code adds a page or a
+# field, its words exist only in the package's content/; without them the build stops with
+# "Content file page-meta.json is missing: ...". The sync adds what is missing and never changes
+# a value already on the server (it may have been edited in the back office). See
+# deploy/content-sync.mjs, installed root-owned next to this script by install-server.sh: it is
+# part of the server, like this script, so it works with any package, old or new.
+if [[ ! -f "$CONTENT_SYNC" ]]; then
+  echo "WARNING: $CONTENT_SYNC is not installed; the server's copy is used as it is (run install-server.sh)" >&2
+elif [[ -d "$STAGE_DIR/content/pages" ]]; then
+  step content "adding copy the new version needs (existing copy is kept)"
+  mkdir -p "$CONTENT_ROOT/pages"
+  chown "$SERVICE_USER:$SERVICE_USER" "$CONTENT_ROOT/pages"
+  set +e
+  su - "$SERVICE_USER" -s /bin/bash -c "node '${CONTENT_SYNC}' '${STAGE_DIR}/content/pages' '${CONTENT_ROOT}/pages'"
+  SYNC_RC=$?
+  set -e
+  if [[ "$SYNC_RC" -ne 0 ]]; then
+    echo "content sync failed (exit $SYNC_RC); nothing was built and the site is untouched" >&2
+    write_state failed content "could not add the new version's copy to the server's content; the site is untouched. See $LOG_FILE" "$SYNC_RC"
+    exit 1
+  fi
+fi
 
 # ---------------------------------------------------------------- build, with the site still up
 
 step build "installing and building (the site stays up)"
-chown -R "$SERVICE_USER:$SERVICE_USER" "$WORK_DIR" "$STATE_ROOT" "$CONTENT_ROOT"
 
 set +e
 su - "$SERVICE_USER" -s /bin/bash -c "
@@ -380,12 +416,15 @@ if [[ "$SWAP_RC" -eq 0 ]]; then
   [[ "$OWNS_PACKAGE" -eq 1 ]] && rm -f "$PKG_PATH"
   # Keep the newest $KEEP_BACKUPS. nullglob, not `ls glob | ...`: on the first deploy there are no
   # backups, ls exits 2, and pipefail + set -e used to kill the script right after a good deploy.
-  shopt -s nullglob
-  backups=("$BACKUP_ROOT"/app-*.tgz)
-  shopt -u nullglob
-  if (( ${#backups[@]} > KEEP_BACKUPS )); then
-    ls -1t -- "${backups[@]}" | tail -n +$((KEEP_BACKUPS + 1)) | xargs -r -d '\n' rm -f --
-  fi
+  # Source and content backups are pruned separately, each to its own newest $KEEP_BACKUPS.
+  for kind in app content; do
+    shopt -s nullglob
+    backups=("$BACKUP_ROOT"/"$kind"-*.tgz)
+    shopt -u nullglob
+    if (( ${#backups[@]} > KEEP_BACKUPS )); then
+      ls -1t -- "${backups[@]}" | tail -n +$((KEEP_BACKUPS + 1)) | xargs -r -d '\n' rm -f --
+    fi
+  done
   # $PREVIOUS_ROOT is deliberately kept until the next deploy: it is the fastest rollback there
   # is, and it costs one copy of the build rather than a rebuild from a tarball.
   step done "deploy complete"

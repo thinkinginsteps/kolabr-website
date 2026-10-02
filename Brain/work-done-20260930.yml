@@ -1,0 +1,28 @@
+- time: "08:17"
+  type: config
+  title: Resend settings added to the server's .env.production (contact form email)
+  tags: [resend, contact-form, env, secrets, email, cloudflare-email-routing, dns]
+  files: [/opt/kolabr/.env.production (server), creds.md (read only, gitignored)]
+  root_cause: >
+    Dom added the Resend API key, CONTACT_TO_EMAIL and CONTACT_FROM_EMAIL to creds.md and asked for
+    the server's .env to be updated. Until now contact messages were stored under Messages but not
+    emailed.
+  what_changed: >
+    A local script (scratchpad, not the repo) read the three values from creds.md, validated their
+    formats and wrote a 0600 fragment, printing no values. The fragment and a merge script went to
+    a private mktemp dir on the server; the merge replaced the commented placeholders in place,
+    backed up the previous file to /opt/kolabr/.env.production.bak-20260930T041553 (kolabr 0600)
+    and wrote atomically with the same owner and mode. Temp copies shredded on both sides. Values
+    are double-quoted: CONTACT_FROM_EMAIL is `Kolabr website <noreply@kolabr.com>`, and
+    deploy.sh/rebuild.sh `source` the file in bash, where an unquoted `<...>` is a redirection and
+    would fail every build; systemd EnvironmentFile strips the quotes. Comment headings tidied
+    (NEXT_PUBLIC_APP_URL under "still to decide", Resend under its own heading). Restarted kolabr.
+  result: >
+    bash sources the file cleanly (as deploys do); the running service's environment has all three
+    values with quotes stripped; site 200. The Resend key authenticates but is send-only
+    (GET /domains returns 401 restricted_api_key), which is correct least privilege but means domain
+    verification cannot be read via the API. Public DNS has the Resend records on kolabr.com
+    (resend._domainkey DKIM, send.kolabr.com SPF and MX, _dmarc p=none). kolabr.com receives mail
+    via Cloudflare Email Routing (route1-3.mx.cloudflare.net); whether hello@ has a routing rule is
+    not visible from outside. End-to-end send NOT yet tested: waiting for Dom's go-ahead to send
+    one test message through the form (it lands in hello@kolabr.com).

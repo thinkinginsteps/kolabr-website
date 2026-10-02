@@ -53,6 +53,11 @@ publish/
 # server access notes and keys: local only, never committed or packaged
 /server.md
 /creds.md
+# Archives at the root are handovers (an envlocal.zip with .env.local once sat here), never source
+/*.zip
+/*.tgz
+/*.tar.gz
+/*.7z
 *.key
 
 # TLS material handed over locally: never committed or packaged
