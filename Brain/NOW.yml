@@ -1,4 +1,4 @@
-updated: "2026-10-02 12:12"
+updated: "2026-10-02 12:29"
 
 active_task: >
   Page text now ships with the code; blog posts stay on the server (back office); the back office
@@ -29,7 +29,7 @@ locked:
   - "Page text is code (content/pages, read from process.cwd()); blog is server-owned (CONTENT_DIR/blog). See decisions-20261002 12:04"
 
 open_questions:
-  - "Commit/push of today's changes (Dom), and colleague pulls before deploying"
+  - "Pushed by Dom (b683d09, 09663f7); colleague to pull before deploying. NEW uncommitted: scripts/clean-generated-types.mjs + package.json verify:package (12:29)"
   - "/opt/kolabr/content/pages is unused now: leave as a record (current) or delete later?"
   - "envlocal.zip (contains .env.local, from a Mac) sits untracked in the repo root: Dom to delete or move"
   - "Failed upload kolabr-20261001-095459-*.zip still in /opt/kolabr/uploads (failed deploys do not delete it)"

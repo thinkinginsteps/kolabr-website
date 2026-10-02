@@ -126,3 +126,29 @@
     his next deploy (his repo still reads page text from CONTENT_DIR, and the server no longer
     syncs it, so deploying without these changes would show the stale server text again).
 
+- time: "12:29"
+  type: fix
+  title: verify:package clears stale generated route types first (deleted routes broke tsc after `npm run dev`)
+  tags: [verify-package, publish-prepare, typescript, next-typegen, next-dev, generated-types, tsconfig]
+  files: [scripts/clean-generated-types.mjs, package.json]
+  root_cause: >
+    Reported by the colleague's agent after merging the Copy removal: tsc --noEmit failed on
+    .next/dev/types/validator.ts still importing the deleted /admin/copy pages. tsconfig.json
+    includes .next/types, .next/dev/types, .next-build/types and .next-build/dev/types, but
+    `next typegen` only rewrites .next/types; the dev server and rebuilds write the others and
+    nothing cleans them. So deleting any route breaks publish:prepare for anyone who has run
+    `npm run dev`, with a real-looking error. (It bit me earlier the same day as stale .next/types.)
+  what_changed: >
+    scripts/clean-generated-types.mjs removes only those four `types` folders (not the rest of
+    .next/dev, which a running dev server needs; missing folders are fine). verify:package runs it
+    before `next typegen`. A Node script rather than `rm -rf` because npm runs scripts through cmd
+    on Windows.
+  result: >
+    Reproduced with a stand-in .next/dev/types/validator.ts typing the deleted page
+    (typeof import): typegen + tsc -> TS2307, rc 2. With the clean first: rc 0. Full
+    verify:package with the stale file present passes. (A bare side-effect import does not
+    reproduce it: TypeScript does not check those for existence.) Dom had already committed and
+    pushed the earlier work (b683d09, 09663f7); these two files are uncommitted. The colleague's
+    note that the nginx /compare/teams redirect needs install-server.sh: already done today,
+    verified 301 live.
+

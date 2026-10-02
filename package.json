@@ -9,7 +9,7 @@
     "lint": "eslint",
     "assets": "node scripts/sync-assets.mjs",
     "admin:password": "node --experimental-strip-types --no-warnings scripts/create-admin-password.mjs",
-    "verify:package": "next typegen && tsc --noEmit && eslint app components lib && next build",
+    "verify:package": "node scripts/clean-generated-types.mjs && next typegen && tsc --noEmit && eslint app components lib && next build",
     "test:content-source": "node scripts/test-content-source.mjs",
     "publish:package": "node scripts/create-deploy-zip.mjs",
     "test:deploy": "bash scripts/test-deploy-scripts.sh",
