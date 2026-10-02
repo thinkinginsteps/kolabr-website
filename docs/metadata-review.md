@@ -33,8 +33,8 @@ Legal pages are unchanged and stay noindex.
 
 - Title was (52): Kolabr pricing | Pay for your team, guests join free
 - Title now (52): **Pricing: per user plans, guests always free | Kolabr**
-- Description was (152): Kolabr pricing: Starter, Pro and Max plans priced per user, 14 days free on Max with no card needed, and guests you invite are never billed on any plan.
-- Description now (155): **Kolabr pricing in full. Starter, Pro and Max compared per user, what each plan includes, and why every client or partner you invite is free on all of them.**
+- Description was (152): named the three tiers as they were then and led on the trial rather than on what a plan includes. (Quote removed with the plan rename.)
+- Description now (152): **Kolabr pricing in full. Free, Pro and Business compared per user, what each plan includes, and why every client you invite is free on all of them.**
 
 ### `/about/`
 

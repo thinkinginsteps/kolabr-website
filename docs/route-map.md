@@ -154,7 +154,7 @@ I checked every site page. "All pages" means all 35.
 | **FloatingChip** | Small glass badge over a screenshot with a slow float animation (`kFloat`). | Channels, Channel Chat |
 | **ChannelExamples** | "Where a practice puts its channels" grid of example channels. | All 13 use cases |
 | **StageSteps** | Three-step "start / next / pay" row. | All 13 use cases, Home |
-| **PricingCards + BillingToggle** | Starter / Pro / Max with a Monthly/Yearly switch ($9.99 / $19.99 / $39.99 per month, or $109.89 / $219.89 / $439.89 per year, "11 months, 1 free"). Pro is highlighted. | Home, Pricing |
+| **PricingCards + BillingToggle** | Free / Pro / Business with a Monthly/Yearly switch ($0 / $10 / $25 per month, or $0 / $8.50 / $21.25 on annual terms). Pro is highlighted. | Home, Pricing |
 | **PlanComparisonTable** | Full feature matrix, grouped rows, included/not-included icons. | Pricing |
 | **CompareTable** (`data-cmp`) | Kolabr vs competitor, feature by feature. | All 6 compare pages |
 | **CompareSummary** | "The short version" and "Proof takes one week" cards in the hero. | All 6 compare pages |
@@ -201,7 +201,7 @@ Only one form exists: **Contact**. There is no newsletter or demo request form a
 
 - **Site pages: none.** Zero em dashes in visible text, alt text, metadata or scripts on all 35 pages. No fixes needed.
 - **App mockups: many.** About 960 across `Screen - *`, `screens/*` and `bases/*` (for example "Transport change — Sipho off the afternoon bus"). This text is baked into the screenshot PNGs shown on the site, so it can't be fixed in code. Removing it means regenerating the screenshots.
-- FYI, not a rule break: `Compare - Teams` uses en dashes in price ranges ("$9.99 – $39.99", "$4 – $22").
+- FYI, not a rule break: the Teams page used en dashes in price ranges. That page was deleted on 1 October 2026.
 
 ### 5.2 Retired product names
 
@@ -280,7 +280,7 @@ No link points to a missing file, and there are no external links at all. The pr
 ### 5.8 Structure and headings
 
 - One H1 per page everywhere.
-- **Pricing skips a level**: H1 "Pay for your team, invite everyone else" goes straight to H3 "Starter / Pro / Max". I'd make the plan names H2, with no visual change.
+- **Pricing skips a level**: H1 "Pay for your team, invite everyone else" goes straight to H3 "Free / Pro / Business". I'd make the plan names H2, with no visual change.
 - **Use case pages have no FAQ**, but the brief requires FAQPage JSON-LD on every use case page. I need FAQ copy for all 13, or permission to skip FAQPage there.
 - The brief lists Breadcrumbs as a component, but the design shows none. I plan to use BreadcrumbList JSON-LD only, with no visible breadcrumbs, so the design stays unchanged.
 
@@ -311,8 +311,8 @@ No link points to a missing file, and there are no external links at all. The pr
 
 - **`[COMPANY NAME]` placeholder** appears in Privacy, Terms, Cookies and Refunds, in the ledes and the legal body ("Kolabr is operated by [COMPANY NAME]"). I need the legal entity name.
 - The legal pages were written for the wrong jurisdiction. **Resolved 30 September 2026:** rewritten for United States law, with placeholders where the entity and state are still unknown.
-- **SLA claim conflict:** Compare Zendesk says "SLAs on every plan" and "Response-time targets on every plan rather than a higher tier". But the Pricing table shows **SLA profiles as not included on Starter**. Home's Product menu also says "Owner, category, SLA and status on every item".
-- Terms says Pro and Max "have the response targets set out on the pricing page". The pricing page lists "Priority support" and "Dedicated account manager", but no response targets.
+- **SLA claim conflict:** Compare Zendesk says "SLAs on every plan" and "Response-time targets on every plan rather than a higher tier". But the Pricing table shows **SLA profiles as not included on Free**. Home's Product menu also says "Owner, category, SLA and status on every item".
+- Terms promised response targets that the pricing page never listed. **Resolved:** Terms now says only that Pro and Business accounts are answered first.
 - The Home "Take a closer look" section has an **Analytics** card with no matching page.
 - The compare pages quote competitor prices (for example Slack, Teams $4 to $22, ClickUp $7 and $12, Zendesk $19, $55 and $115). They will go out of date and should be re-checked just before launch.
 - The Contact page script has leftover carousel code for three screenshots, but no images. It's harmless and I'll drop it.
@@ -343,7 +343,7 @@ No link points to a missing file, and there are no external links at all. The pr
 8. **Metadata.** I need new titles and descriptions for the pages listed in 5.7, and for any routes added later.
 9. **FAQ copy for the 13 use case pages**, or permission to skip FAQPage JSON-LD there.
 10. **Legal entity name** to replace `[COMPANY NAME]`.
-11. **SLA on Starter.** Which is right, Zendesk page or Pricing table?
+11. **SLA on the free plan.** Which is right, Zendesk page or Pricing table?
 
 **Design**
 
@@ -383,9 +383,9 @@ Verbatim excerpts, trimmed. The Compare mega menu line "Helpdesk software, which
 - seat: “…lient needs to comment, approve or change anything, they take a guest seat from an allowance that scales with how many paid users you have, and once t…”
 - seat: “Kolabr has one kind of guest and they participate fully. They raise requests, answer questions, read the wiki and join calls, and they are free on eve…”
 - seat: “View-only guests are free and unlimited. A guest who can comment or edit takes a guest seat.”
-- seat: “As many as the channel seat count allows: 30 on Starter, 100 on Pro, unlimited on Max.”
+- seat: the per-channel seat count, since retired. Channels and guests are unlimited on both paid plans.
 - seat: “Priced per seat on top of the plan.”
-- seat: “…o $10 and $19 paid monthly, with Enterprise quoted and AI charged per seat on top. Kolabr is $9.99, $19.99 o”
+- seat: “…AI charged per seat on top.” The Kolabr figures beside it are now $0, $10 or $25.
 - seat, seats: “Per internal seat ClickUp is the lower number. The figure that changes the answer is the client side: a guest who can comment or approve consumes an a…”
 - seat: “per user per month on annual billing for the published tiers, with Enterprise quoted and AI per seat. Participating guests draw on an allowance.”
 - seat: “… is free and unlimited. A guest who can comment or edit takes a guest seat from an allowance that scales with your paid users, and once that allowance…”
@@ -420,8 +420,8 @@ Verbatim excerpts, trimmed. The Compare mega menu line "Helpdesk software, which
 - service desk: “No native SLA concept. Requires an add-on service desk.”
 - helpdesk: “…s answers that by adding something alongside it: Planner, Lists, or a helpdesk product. That me”
 - seat: “Both are priced per internal seat. Teams Essentials is $4 per user per month on annual billing, Microsoft 365 Business Basic $7, Business Standard $14…”
-- seats: “…, on any plan, however many of them there are. What your plan buys is seats per channel: 30 on Starter, 100 on Pro, unlimited on Max, ”
-- seat: “…n how many outside people you work with. Teams is priced per internal seat from $4, Kolabr from $9.99, but Kolabr never charges for a guest and needs …”
+- seats: the per-channel seat pool, since retired.
+- seat: the Teams page quoted a per-internal-seat price. That page was deleted on 1 October 2026.
 
 **Compare - Zendesk** (`/compare/zendesk`)
 
@@ -469,7 +469,7 @@ Verbatim excerpts, trimmed. The Compare mega menu line "Helpdesk software, which
 
 - seats: “…ery option included, no card needed. Each channel has a set number of seats on your plan, and your own team and your guests share them: 30 seats on St…”
 - seats: “Seats per channel (team + guests)”
-- seat, seats: “…e a channel, though, team members and guests draw on the same pool of seats: a Starter channel with 29 of your own people has one”
+- seat, seats: the shared team-and-guest seat pool, since retired.
 
 **Product - Administration** (`/product/administration`)
 
@@ -523,35 +523,35 @@ Verbatim excerpts, trimmed. The Compare mega menu line "Helpdesk software, which
 
 - seats: “3. Accounts, seats and guests”
 - seats: “Accounts, seats and guests”
-- seat: “Each channel has a seat limit set by your plan: thirty on Starter, one hundred on Pro, and unlimited on Max. That limit counts everyone in the channel…”
+- seat: the per-channel seat sentence, removed when the plans changed on 30 September 2026.
 - seats _(meta description)_: “The terms governing use of Kolabr: plans and seats, payment, acceptable use, your content, availability, liability and termination.”
 
 **Use Case - Accounting Firms** (`/use-cases/accounting-firms`)
 
-- seat: “Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your staff and your client’s. A client with th…”
+- seat: the per-channel seat sentence, removed when the plans changed on 30 September 2026.
 
 **Use Case - Architecture Firms** (`/use-cases/architecture-firms`)
 
 - seat: “The project channel. Client, contractor, engineer, QS and landscape architect in one place, each of them a guest, none of them paying for a seat.”
 - agent: “The site agent photographs the clash at 07:10, and the answer lands before the trade moves on. No “I sent it to someone at your office”.”
-- seat: “Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your studio and your guests. A project with a …”
+- seat: the per-channel seat sentence, removed when the plans changed on 30 September 2026.
 - agent: “The site agent writes it as a message; anyone in the studio turns that message into a numbered RFI in one step, photographs attached.”
 - agent: “Your technologist is at a desk with the model open. The site agent is standing in front of the clash with a phone. Same channel, same RFI number, same…”
 
 **Use Case - Clinics** (`/use-cases/clinics`)
 
-- seat: “Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your staff and your guests. A single-site prac…”
+- seat: the per-channel seat sentence, removed when the plans changed on 30 September 2026.
 
 **Use Case - Construction** (`/use-cases/construction`)
 
-- seat: “Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your own staff and your guests. A site with a …”
+- seat: the per-channel seat sentence, removed when the plans changed on 30 September 2026.
 - agent: “The site, not the site agent”
 - agent: “When an agent moves to the next job, the claim history stays with the project instead of leaving in a mailbox.”
 
 **Use Case - Engineering Firms** (`/use-cases/engineering-firms`)
 
 - agent: “The site agent’s direct line to the engineer. Photographs at 06:40, a decision before the concrete arrives.”
-- seat: “Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your engineers and your guests. A project with…”
+- seat: the per-channel seat sentence, removed when the plans changed on 30 September 2026.
 - agent: “The site agent photographs the bar spacing; one step turns it into a numbered query with the image attached and a name against the answer.”
 - agent: “Your engineer is at a desk with the bending schedule open. The site agent is standing over the rebar at twenty to seven with a phone. Same channel, sa…”
 
@@ -561,14 +561,14 @@ Verbatim excerpts, trimmed. The Compare mega menu line "Helpdesk software, which
 - tickets: “… is a group of people plus the work they share: the conversation, the tickets, the calendar and the runbooks. Most providers run one per client, split…”
 - service desk: “Service desk”
 - tickets: “The migration, the rollout, the refresh. Separate from the desk so project work is not eaten by tickets.”
-- seat: “Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your engineers and your client’s staff. A fort…”
+- seat: the per-channel seat sentence, removed when the plans changed on 30 September 2026.
 - service desk: “A service desk your clients will actually use”
 - tickets: “Tickets from conversation”
 - ticket: “The user describes the problem in the channel; one step makes it a ticket with the whole thread attached. Nobody retypes anything.”
 - ticket, tickets: “Ticket volume per client, what is about to breach, and the estate generating three times the tickets it is priced for.”
 - tickets: “Pick the account where tickets arrive by phone, email and corridor. One channel, their staff invited, two weeks. Your first-line will tell you by Frid…”
 - tickets: “Client staff are guests and are never billed, however many of them raise tickets. The plan covers your own people.”
-- tickets: “Fourteen days free on Max, every option included, no card. Invite one client’s staff and watch where the tickets come from.”
+- tickets: the old trial line, since replaced. The plan is free on one channel, with seven days on Pro or Business.
 - service desk _(alt text)_: “The Service desk channel for Rossgrove Legal: a pinned P1 notice promising updates every thirty minutes, the practice manager asking how bad the mail …”
 - service desk _(alt text)_: “The provider calendar: service desk stand-ups, a P1 incident bridge, the monthly service review, the firewall change window, the M365 pilot cutover an…”
 - ticket, tickets _(alt text)_: “The provider dashboard: tickets this month across client channels, open tickets, unassigned, SLA at risk with the next breach time, ticket volume for …”
@@ -577,31 +577,31 @@ Verbatim excerpts, trimmed. The Compare mega menu line "Helpdesk software, which
 
 **Use Case - Law Firms** (`/use-cases/law-firms`)
 
-- seat: “Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your fee earners and your guests. A matter wit…”
+- seat: the per-channel seat sentence, removed when the plans changed on 30 September 2026.
 
 **Use Case - Logistics** (`/use-cases/logistics`)
 
-- seat: “Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your controllers and the client’s depots. A na…”
+- seat: the per-channel seat sentence, removed when the plans changed on 30 September 2026.
 
 **Use Case - Manufacturing** (`/use-cases/manufacturing`)
 
-- seat: “Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your plant and your guests. A production chann…”
+- seat: the per-channel seat sentence, removed when the plans changed on 30 September 2026.
 
 **Use Case - Marketing Agencies** (`/use-cases/marketing-agencies`)
 
-- seat: “Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your team and your guests. A client with four …”
+- seat: the per-channel seat sentence, removed when the plans changed on 30 September 2026.
 
 **Use Case - Nonprofits** (`/use-cases/nonprofits`)
 
-- seat: “Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your staff and your guests. Volunteers and fun…”
+- seat: the per-channel seat sentence, removed when the plans changed on 30 September 2026.
 - seat _(meta description)_: “Funder reporting assembled from work already recorded, safeguarding with one clear path, and volunteers who never cost you a seat.”
 
 **Use Case - Property Management** (`/use-cases/property-management`)
 
 - agent: “Where a managing agent puts its channels”
 - agents: “…ey share: the conversation, the jobs, the calendar and the wiki. Most agents run one per building, split by who is allowed to see what.”
-- seat: “Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, shared between your staff and your guests. A residents channe…”
+- seat: the per-channel seat sentence, removed when the plans changed on 30 September 2026.
 
 **Use Case - Schools** (`/use-cases/schools`)
 
-- seat, seats: “Each channel has a seat count on your plan: 30 on Starter, 100 on Pro, unlimited on Max, and your staff and your guests share those seats. A class of …”
+- seat: the per-channel seat sentence, removed when the plans changed on 30 September 2026.

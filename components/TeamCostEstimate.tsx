@@ -79,9 +79,12 @@ export function TeamCostEstimate() {
                 {money(Math.round(team * rate * 100) / 100)}
                 <span className="text-[15px] font-normal text-ink-muted"> / month</span>
               </span>
+              {/* On yearly terms the figure above is the effective monthly rate, so the line that
+                  says "billed yearly" has to show what is actually billed: twelve months of it. */}
               <span className="text-[13.5px] leading-[1.4] text-ink-muted">
-                {team} × {money(rate)}
-                {yearly ? ", billed yearly" : ""}
+                {yearly
+                  ? `${team} × ${money(rate)} × 12 = ${money(Math.round(team * rate * 12 * 100) / 100)}, billed yearly`
+                  : `${team} × ${money(rate)}`}
               </span>
             </div>
           );
