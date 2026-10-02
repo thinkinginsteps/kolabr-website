@@ -18,9 +18,38 @@
     - option: Ship the sync script inside the package
       rejected_because: Packages built from repos without the script (the colleague's) would skip it; it belongs to the server like deploy.sh.
   implications: >
-    Retiring a page in code also deletes its edited copy from the server on the next deploy
-    (recoverable from backups/content-<id>.tgz, last 5 kept). Copy for new pages starts as the
-    repo's wording. Changes to content-sync are applied with install-server.sh, not by deploys.
-    The website code should still take routes from COMPARE_SLUGS / USE_CASE_SLUGS / META_ROUTES
-    (colleague's repo); the sync makes deploys safe either way.
-  revisit_if: A content file gains top-level keys that are not routes or slugs (data the back office adds), which this rule would delete.
+    SUPERSEDED at 12:04 the same day (see next entry): page text now comes from the code.
+  revisit_if: n/a (superseded)
+
+- time: "12:04"
+  title: Page text lives in the code and ships with every deploy; blog posts stay server-owned; the back office Copy editor is removed
+  tags: [content, page-text, blog, back-office, copy-editor, deploy, content-store]
+  context: >
+    After the content sync, deploys succeeded but 246 text changes the colleague made in the repo's
+    content/pages/*.json never reached the live site, because the server's copy of page text always
+    won. The reason that copy existed was the back office Copy editor, which nobody uses: the
+    colleague edits page text directly in code. Dom: "always overwrite page text, but retain blog
+    posts, since those will be handled via backoffice. Remove the 'copy' section from the
+    backoffice."
+  choice: >
+    The build reads page text (content/pages/*.json) from the deployed code itself, so every deploy
+    publishes exactly the repo's text, with nothing to copy or compare. Blog posts are read from the
+    server's content directory (CONTENT_DIR/blog), written by the back office Blog editor and never
+    touched by a deploy. The Copy section of the back office is removed. The content-sync step and
+    /opt/kolabr/content-sync.mjs go away.
+  alternatives_considered:
+    - option: Keep page text on the server and have deploy.sh replace it wholesale from the package
+      rejected_because: >
+        Same visible result but keeps a second copy of code-owned data on the server, plus a
+        copy step that can fail or drift. Reading it from the deployed code removes the moving part.
+    - option: Keep the add/retire content sync (10:34 decision)
+      rejected_because: It keeps the server's words, so text edited in code is never published.
+    - option: Let deploys replace blog posts too
+      rejected_because: Posts are written in the back office; a deploy would delete them.
+  implications: >
+    Changing page text = edit content/pages/*.json in the repo, then deploy. Nothing on the server
+    can change page text any more. /opt/kolabr/content/pages is no longer read (left in place as a
+    record). The first deploy still seeds the blog from the package; after that the server owns the
+    blog. Publish in the Blog editor still rebuilds the site (rebuild.sh), using the page text of
+    the code currently deployed.
+  revisit_if: Non-developers need to change page text without a deploy (would need an editor whose edits are committed to the repo, not stored on the server).

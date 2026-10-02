@@ -17,7 +17,10 @@ const local = (...parts: string[]) => path.join(/*turbopackIgnore: true*/ proces
 /** Sessions, and later the contact form's own record of what it received. */
 export const STATE_DIR = process.env.STATE_DIR ?? local(".local-state");
 
-/** Blog posts, and later the editable page copy. Read at build time, written by the back office. */
+/**
+ * The server's own content: blog posts, written by the back office and read at build time. Page
+ * text is not here: it is part of the code (lib/content-store.ts reads it from the app itself).
+ */
 export const CONTENT_DIR = process.env.CONTENT_DIR ?? local("content");
 
 /** Uploaded deployment packages. The deploy script reads them from here as root. */

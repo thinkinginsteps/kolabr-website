@@ -36,7 +36,7 @@ say() { printf '\n== %s\n' "$*"; }
 note() { printf '   %s\n' "$*"; }
 
 [[ $EUID -eq 0 ]] || { echo "run as root (sudo bash $0)" >&2; exit 1; }
-for f in deploy.sh rebuild.sh watchdog.sh content-sync.mjs kolabr.service kolabr-watchdog.service kolabr-watchdog.timer \
+for f in deploy.sh rebuild.sh watchdog.sh kolabr.service kolabr-watchdog.service kolabr-watchdog.timer \
          sudoers.kolabr nginx/conf.d/kolabr.conf nginx/conf.d/cloudflare-realip.conf \
          nginx/snippets/kolabr-site.conf nginx/sites/00-default.conf nginx/sites/$PREVIEW_SITE \
          nginx/sites/$HOLDING_SITE holding/index.html; do
@@ -98,9 +98,9 @@ say "scripts (root-owned: the sudoers line would hand kolabr root if it could ed
 for s in deploy.sh rebuild.sh watchdog.sh; do
   install -o root -g root -m 0755 "$SRC/$s" "$PREFIX/$s"
 done
-# Run by deploy.sh (as kolabr, through node) to add new page copy before each build. Root-owned
-# like the scripts: kolabr must not be able to change what a deploy does to the content.
-install -o root -g root -m 0644 "$SRC/content-sync.mjs" "$PREFIX/content-sync.mjs"
+# Page text now ships with the code, so the content sync that used to run before each build is gone
+# (2026-10-02). Remove the copy an earlier version of this script installed.
+rm -f "$PREFIX/content-sync.mjs"
 
 say "sudoers"
 visudo -cf "$SRC/sudoers.kolabr" >/dev/null

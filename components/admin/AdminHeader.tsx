@@ -5,7 +5,7 @@ import { messageSummary } from "@/lib/admin/messages";
 
 const tab = "flex items-center gap-2 rounded-xl px-3.5 py-2 text-[15px] font-semibold";
 
-export async function AdminHeader({ current }: { current: "deploy" | "posts" | "copy" | "messages" }) {
+export async function AdminHeader({ current }: { current: "deploy" | "posts" | "messages" }) {
   const { total, failed } = await messageSummary();
 
   return (
@@ -20,9 +20,6 @@ export async function AdminHeader({ current }: { current: "deploy" | "posts" | "
           </Link>
           <Link href="/admin/posts" className={`${tab} ${current === "posts" ? "bg-surface text-ink shadow-subtle" : "text-ink-muted hover:text-ink"}`}>
             Blog
-          </Link>
-          <Link href="/admin/copy" className={`${tab} ${current === "copy" ? "bg-surface text-ink shadow-subtle" : "text-ink-muted hover:text-ink"}`}>
-            Copy
           </Link>
           <Link
             href="/admin/messages"

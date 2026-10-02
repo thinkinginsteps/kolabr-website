@@ -70,3 +70,59 @@
     bug (routes from content keys) remains in the colleague's code; scripts/test-stale-content.mjs
     (uncommitted, local) reproduces it. The failed upload zip is still in /opt/kolabr/uploads.
 
+- time: "11:40"
+  type: investigation
+  title: Colleague's deploys succeeded but 246 page text changes from the repo were not live
+  tags: [deploy, content, page-text, back-office, copy-editor]
+  files: []
+  root_cause: >
+    The build read page text from /opt/kolabr/content/pages (CONTENT_DIR), seeded once on
+    2026-09-25. Deploys only added missing entries and never replaced words already there (to
+    protect back office Copy edits). The colleague edits page text in the repo, so his changes were
+    deployed inside app/content/pages and ignored by the build. Copy had never been used: the only
+    writes to /opt/kolabr/content since the seed were today's sync additions.
+  what_changed: Nothing; compared /opt/kolabr/app/content/pages (package) with /opt/kolabr/content/pages (read by the build).
+  result: >
+    246 values differed (use-cases 158, compare 59, use-case-faqs 13 lists, use-case-schools 7,
+    legal 5, page-meta 4). Blog: identical 4 posts. Also confirmed Dom had committed my deploy
+    changes (105c340) and the colleague merged them; deploy files on origin/main matched the server.
+
+- time: "12:12"
+  type: refactor
+  title: Page text is read from the code; back office Copy section removed; content sync removed; deployed
+  tags: [content, page-text, blog, content-store, back-office, copy-editor, deploy, content-sync, tsconfig]
+  files: [lib/content-store.ts, lib/admin/config.ts, components/admin/AdminHeader.tsx,
+          app/admin/copy/ (deleted), components/admin/CopyEditor.tsx (deleted), lib/admin/copy.ts (deleted),
+          lib/admin/copy-actions.ts (deleted), deploy/content-sync.mjs (deleted), deploy/content-sync.test.mjs (deleted),
+          deploy/deploy.sh, deploy/install-server.sh, lib/deploy/types.ts, scripts/test-deploy-scripts.sh,
+          scripts/test-content-source.mjs (renamed from test-stale-content.mjs), package.json, tsconfig.json,
+          DEPLOY.md, README.md]
+  root_cause: >
+    Dom's decision (decisions-20261002 12:04): page text always comes from the deploy, blog posts
+    stay server-owned and back-office managed, Copy section removed.
+  what_changed: >
+    lib/content-store.ts reads content/pages from process.cwd() (the code being built), no longer
+    from CONTENT_DIR; lib/blog.ts and the back office still use CONTENT_DIR for blog posts. Removed
+    the Copy routes, editor component, copy.ts and copy-actions.ts, and the Copy tab. deploy.sh: no
+    content step; the first deploy seeds only content/blog when the server's blog is empty; every
+    deploy still backs up CONTENT_DIR to backups/content-<id>.tgz and fixes perms.
+    install-server.sh removes /opt/kolabr/content-sync.mjs. content-sync script and its node tests
+    deleted; test:content-sync removed from verify:package. Deploy suite: package now carries
+    content/pages + content/blog; new cases "first deploy seeds the blog" and "page text comes with
+    the code, the back office's blog posts are never touched". scripts/test-content-source.mjs
+    (npm run test:content-source): real build with CONTENT_DIR holding decoy page text and an extra
+    post; asserts pages show repo text and the post is built. Uses .next-build as distDir because
+    Next adds every new distDir to tsconfig.json includes; removed the .next-stale-test entries an
+    earlier run had added. step label "content" removed from the deploy panel. DEPLOY.md and README
+    rewritten for the new model.
+  result: >
+    test:content-source FAILS against the old content-store (pages showed the decoy server text)
+    and passes with the new one. Deploy suite on the server 56/56. verify:package passes; admin has
+    no /admin/copy routes. Installed on the server (deploy.sh c47c3c14..., content-sync.mjs gone).
+    Deployed kolabr-20261002-081046 (origin/main fa6cb40 + these changes): succeeded. Live checks
+    via Cloudflare: /compare/slack/, /use-cases/accounting-firms/, /pricing/ show the repo's text
+    (previously the stale server text), /blog/ lists 4 posts, /admin/copy/ 404, /compare/teams/
+    301 to /compare/slack/. NOT yet committed: Dom to commit and push so the colleague pulls before
+    his next deploy (his repo still reads page text from CONTENT_DIR, and the server no longer
+    syncs it, so deploying without these changes would show the stale server text again).
+

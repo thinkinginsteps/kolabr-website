@@ -1,24 +1,23 @@
-updated: "2026-10-02 10:34"
+updated: "2026-10-02 12:12"
 
 active_task: >
-  Back office deploys failed because the server's page copy (content/) never got new entries from
-  packages. deploy.sh on the server now syncs it (root-owned /opt/kolabr/content-sync.mjs). Dom is
-  asking his colleague to retry the deploy; a dry run of the colleague's package passed.
+  Page text now ships with the code; blog posts stay on the server (back office); the back office
+  Copy section is removed. Deployed to preview and verified. Waiting for Dom to commit and push,
+  and for the colleague to pull BEFORE his next deploy.
 
 working_assumption: >
-  The colleague's repo (GitHub thinkinginsteps/kolabr-website, origin/main) is the latest code; my
-  local checkout is NOT the working repo (Dom: "this is not the latest repo"). Server-side deploy
-  tooling is mine to change; website code fixes belong in the colleague's repo.
+  Shared repo: GitHub thinkinginsteps/kolabr-website (origin/main). My checkout was level with
+  origin/main fa6cb40 at 12:04 plus the uncommitted changes listed in work-done-20261002 12:12.
+  The site runs at https://preview.kolabr.com (noindex); kolabr.com serves the holding page.
 
 last_action: >
-  Installed the updated deploy.sh + content-sync.mjs with install-server.sh; suite 60/60 on the
-  server; dry run of kolabr-20261001-095459 against a copy of live content built cleanly.
+  Deployed kolabr-20261002-081046; live checks passed (repo text on compare/use-case/pricing pages,
+  blog 4 posts, /admin/copy 404).
 
 next_action: >
-  When the colleague retries: check /opt/kolabr/deploy-logs/<id>.log for the content step
-  (expect "retired compare.json: teams" and "retired page-meta.json: /compare/teams/") and a
-  succeeded status. Then decide with Dom what to do with my local uncommitted edits (they include
-  the deploy/ changes now live on the server and should reach the colleague's repo).
+  Dom commits and pushes; colleague pulls. Until then, a deploy from the colleague's unpulled repo
+  would read page text from /opt/kolabr/content/pages (the stale 25 Sep copy, no longer synced)
+  and silently revert the live text. After that: nothing pending on deploys.
 
 locked:
   - "server.md: local only, gitignored, never copied into Brain, commits or packages"
@@ -27,12 +26,11 @@ locked:
   - "kolabr.com must serve only the holding page until Dom says launch"
   - "kolabr.service must not set NoNewPrivileges (breaks back office deploy/publish); test-deploy-scripts.sh guards it"
   - ".env.production values containing spaces or <> must be double-quoted: deploy.sh and rebuild.sh source it in bash"
-  - "Do not fix website code in this checkout: Dom says it is not the latest repo"
+  - "Page text is code (content/pages, read from process.cwd()); blog is server-owned (CONTENT_DIR/blog). See decisions-20261002 12:04"
 
 open_questions:
-  - "Did the colleague's retry succeed?"
-  - "Local uncommitted edits (deploy/content-sync*, deploy.sh, install-server.sh, tests, packager archive guard, .gitignore, DEPLOY.md, lib/deploy/types.ts step labels, scripts/test-stale-content.mjs): hand to the colleague's repo, commit here, or discard? The server already runs the deploy/ part."
-  - "Website bug for the colleague: compare/use-case generateStaticParams + isSlug and app/sitemap.ts take routes from content keys instead of COMPARE_SLUGS/USE_CASE_SLUGS/META_ROUTES"
+  - "Commit/push of today's changes (Dom), and colleague pulls before deploying"
+  - "/opt/kolabr/content/pages is unused now: leave as a record (current) or delete later?"
   - "envlocal.zip (contains .env.local, from a Mac) sits untracked in the repo root: Dom to delete or move"
   - "Failed upload kolabr-20261001-095459-*.zip still in /opt/kolabr/uploads (failed deploys do not delete it)"
   - "Contact form: one test message to hello@kolabr.com awaiting Dom's go-ahead"
@@ -48,7 +46,8 @@ do_not_suggest:
   - "Serving the holding page from the Next app: kept in nginx on purpose so nothing of the site is reachable on kolabr.com"
   - "Re-adding NoNewPrivileges=true to kolabr.service (see decisions-20260928)"
   - "Using the Resend key to list domains: it is send-only (restricted_api_key), by design"
-  - "Shipping content-sync inside the package (see decisions-20261002)"
+  - "Content sync / keeping page text on the server / a back office Copy editor (see decisions-20261002 12:04)"
+  - "Test builds with a new NEXT_DIST_DIR: Next adds it to tsconfig.json includes; use .next-build"
 
 assumptions_in_play:
   - "The server hosts only Kolabr (hostname kolabr-us-01)."

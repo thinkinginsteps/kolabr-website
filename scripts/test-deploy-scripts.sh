@@ -79,10 +79,10 @@ chmod +x "$BIN"/*
 
 # ---------------------------------------------------------------- a package to deploy
 
-make_package() { # make_package <path.zip> <build script> [home.json content]
-  local out="$1" build="$2" home="${3:-}" dir="$WORK/pkg"
+make_package() { # make_package <path.zip> <build script>
+  local out="$1" build="$2" dir="$WORK/pkg"
   rm -rf "$dir" "$out"
-  mkdir -p "$dir/app" "$dir/lib" "$dir/content/pages"
+  mkdir -p "$dir/app" "$dir/lib" "$dir/content/pages" "$dir/content/blog"
   # Written by node, not a heredoc: the build command is full of quotes and has to be escaped as
   # JSON or npm ci fails on a package.json that cannot be parsed.
   node -e 'require("fs").writeFileSync(process.argv[1], JSON.stringify({ name: "kolabr-website-test", version: "0.0.0", scripts: { build: process.argv[2] } }, null, 2))' "$dir/package.json" "$build"
@@ -90,22 +90,17 @@ make_package() { # make_package <path.zip> <build script> [home.json content]
 { "name": "kolabr-website-test", "version": "0.0.0", "lockfileVersion": 3, "requires": true, "packages": { "": { "name": "kolabr-website-test", "version": "0.0.0" } } }
 EOF
   echo "export default {};" > "$dir/next.config.ts"
-  if [[ -n "$home" ]]; then
-    # Page copy only: the sync is the server's (deploy/content-sync.mjs), never the package's.
-    printf '%s\n' "$home" > "$dir/content/pages/home.json"
-  else
-    echo "{}" > "$dir/content/pages/home.json"
-  fi
+  # Page text and a blog post, as the repo has them.
+  echo '{ "title": "Page text from the repo" }' > "$dir/content/pages/home.json"
+  echo "A post that is in the repo" > "$dir/content/blog/from-the-repo.md"
   (cd "$dir" && zip -qr "$out" .)
 }
 
 BUILD_OK="node -e \"require('fs').mkdirSync('.next',{recursive:true})\""
 GOOD_ZIP="$WORK/good.zip"
 BAD_ZIP="$WORK/bad.zip"
-CONTENT_ZIP="$WORK/content.zip"
 make_package "$GOOD_ZIP" "$BUILD_OK"
 make_package "$BAD_ZIP" 'node -e "process.exit(1)"'
-make_package "$CONTENT_ZIP" "$BUILD_OK" '{ "title": "From the repo", "dpa": "New page copy" }'
 
 # ---------------------------------------------------------------- helpers
 
@@ -124,7 +119,6 @@ field() { # field <json> <key>
 
 deploy() { # deploy <zip> <id>
   PATH="$BIN:$PATH" KOLABR_PREFIX="$PREFIX" KOLABR_USER="$(id -un)" \
-    KOLABR_CONTENT_SYNC="$HERE/deploy/content-sync.mjs" \
     DEPLOY_WATCH_SECONDS=5 DEPLOY_MIN_FREE_MB=1 \
     bash "$HERE/deploy/deploy.sh" "$1" --deploy-id "$2" --foreground >/dev/null 2>&1
 }
@@ -180,32 +174,23 @@ check "the deploy succeeded" succeeded "$(field "$PREFIX/deploy-logs/d0.json" st
 check "it reached the end" done "$(field "$PREFIX/deploy-logs/d0.json" step)"
 check "the build is in place" yes "$([[ -d "$PREFIX/app/.next" ]] && echo yes || echo no)"
 check "there is no previous build to keep" no "$([[ -d "$PREFIX/app.previous" ]] && echo yes || echo no)"
+check "the blog is seeded from the package" "A post that is in the repo" "$(cat "$PREFIX/content/blog/from-the-repo.md" 2>/dev/null)"
 
-echo "  copy the new code needs is added, retired entries go, and edited copy is kept"
-# The 2026-10-01 failure: a package added pages whose words were missing from the server's
-# content (which deploys never overwrite), and the build refused to run.
+echo "  page text comes with the code, and the back office's blog posts are never touched"
+# The 2026-10-02 problem: page text changed in the repo was deployed and never appeared, because
+# the server kept its own copy. Page text is now part of the app the deploy replaces wholesale;
+# blog posts written in the back office stay exactly as they are.
 reset_prefix
-mkdir -p "$PREFIX/content/pages"
-printf '{ "title": "Edited in the back office", "retired": "A page the code removed" }\n' > "$PREFIX/content/pages/home.json"
-deploy "$CONTENT_ZIP" d7
-home_json() { node -e 'const d=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"));console.log(d[process.argv[2]]??"")' "$PREFIX/content/pages/home.json" "$1"; }
+mkdir -p "$PREFIX/content/blog" "$PREFIX/content/pages"
+echo "Written in the back office" > "$PREFIX/content/blog/written-here.md"
+echo '{ "title": "Old text left on the server" }' > "$PREFIX/content/pages/home.json"
+deploy "$GOOD_ZIP" d7
 check "the deploy succeeded" succeeded "$(field "$PREFIX/deploy-logs/d7.json" status)"
-check "the edited title is untouched" "Edited in the back office" "$(home_json title)"
-check "the new copy was added" "New page copy" "$(home_json dpa)"
-check "the entry the code retired is gone" "" "$(home_json retired)"
-check "the content was backed up first" yes "$([[ -s "$PREFIX/backups/content-d7.tgz" ]] && echo yes || echo no)"
+check "the live code carries the repo's page text" '{ "title": "Page text from the repo" }' "$(cat "$PREFIX/app/content/pages/home.json" 2>/dev/null)"
+check "the back office's post is untouched" "Written in the back office" "$(cat "$PREFIX/content/blog/written-here.md")"
+check "no repo post was copied over the server's blog" no "$([[ -e "$PREFIX/content/blog/from-the-repo.md" ]] && echo yes || echo no)"
+check "the server's blog was backed up" yes "$([[ -s "$PREFIX/backups/content-d7.tgz" ]] && echo yes || echo no)"
 check "no content file is world-writable" "" "$(find "$PREFIX/content" -perm -o+w ! -type l 2>/dev/null)"
-
-echo "  server copy that is not valid JSON stops the deploy before the build"
-reset_prefix
-mkdir -p "$PREFIX/content/pages"
-printf '{ broken\n' > "$PREFIX/content/pages/home.json"
-deploy "$CONTENT_ZIP" d8
-check "the site is still running" running "$(service_state)"
-check "the deploy reports failed" failed "$(field "$PREFIX/deploy-logs/d8.json" status)"
-check "it failed at the content step" content "$(field "$PREFIX/deploy-logs/d8.json" step)"
-check "the broken file was left for a person" "{ broken" "$(cat "$PREFIX/content/pages/home.json")"
-check "the old build is still in place" "the old build" "$(cat "$PREFIX/app/marker")"
 
 echo "  a service that will not start is rolled back"
 reset_prefix

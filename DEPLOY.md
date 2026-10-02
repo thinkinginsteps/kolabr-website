@@ -10,18 +10,18 @@ something outside the app: the deploy script, the systemd unit, nginx, or `.env.
 
 ## Two ways to change the site
 
-**Content** (a blog post, or the words on a marketing page): edit it in the back office under Blog
-or Copy, then press **Publish changes**.
-That rebuilds the site from the current content and swaps the new build in. It takes about a
+**Blog posts**: write or edit them in the back office under Blog, then press **Publish changes**.
+That rebuilds the site with the current posts and swaps the new build in. It takes about a
 minute, and the site stays up except for a few seconds at the swap. `rebuild.sh` does this.
 
-**Code** (anything else): build a package locally and upload it under Deploy. That installs
-dependencies and builds the new version in a staging directory while the current one keeps serving,
-then swaps the two. It takes a few minutes, of which the site is down for the swap alone.
-`deploy.sh` does this.
+**Everything else, including the words on the marketing pages** (`content/pages/*.json`): change
+it in the repo, build a package locally and upload it under Deploy. That installs dependencies and
+builds the new version in a staging directory while the current one keeps serving, then swaps the
+two. It takes a few minutes, of which the site is down for the swap alone. `deploy.sh` does this.
 
-A deploy never overwrites content. It only adds page copy that the new code needs and the server
-does not have yet (see [What goes in the package](#what-goes-in-the-package)).
+A deploy replaces the whole site, page text included, with what is in the package. The one thing
+it never touches is the blog: posts live on the server and belong to the back office (see
+[What goes in the package](#what-goes-in-the-package)).
 
 ## Deploying an update
 
@@ -34,17 +34,16 @@ That type-checks, lints, builds, and then writes `publish/kolabr-<timestamp>.zip
 
 Then sign in at `https://kolabr.com/admin/` (`https://preview.kolabr.com/admin/` until launch), choose the file, and press **Upload and deploy**.
 
-The panel shows each step: extracting, checking, backing up, adding new page copy, **building**,
-stopping, swapping, starting, watching, verifying. The site serves the old version throughout the build, which is the
+The panel shows each step: extracting, checking, backing up, **building**, stopping, swapping,
+starting, watching, verifying. The site serves the old version throughout the build, which is the
 slow part. It is down only between "stopping" and "starting", a few seconds, and the panel cannot
 reach the server for that moment: a failed poll there is the expected middle of a deploy, not a
 failure.
 
-Four things can go wrong, and each has an answer:
+Three things can go wrong, and each has an answer:
 
 | What happens | What the deploy does |
 | --- | --- |
-| A page copy file on the server is not valid JSON | Stops at "adding new page copy", naming the file. Nothing was built; the site is still serving. Fix the file (a backup is in `/opt/kolabr/backups/content-<id>.tgz`) and deploy again. |
 | The build fails | Stops there. The site was never touched and is still serving. |
 | The new version does not start, or does not answer within 25 seconds | Swaps the previous build back and starts it. The panel says "rolled back". |
 | A main page (`/`, `/pricing/`, `/blog/`, `/contact/`) does not answer afterwards | The same. A build that compiles but cannot render a page is still a failure. |
@@ -64,9 +63,9 @@ npm run test:deploy
 
 That builds a tiny package, stands in for `systemctl`, `curl`, `su`, `flock` and `chown`, and walks
 every path that matters: a failing build, a service that will not start, a page that does not
-answer, an invalid package, new page copy (added without touching edited copy), broken copy on the
-server, a deploy killed outright mid-build, the very first deploy, and each repair the watchdog
-makes. It also checks the systemd unit still lets the back office reach the scripts through sudo.
+answer, an invalid package, page text arriving with the code while the back office's blog posts
+are left alone, a deploy killed outright mid-build, the very first deploy, and each repair the
+watchdog makes. It also checks the systemd unit still lets the back office reach the scripts through sudo.
 It needs Linux (`zip`, `flock`, `perl`): run it on the server or in WSL.
 Every case asserts the same thing at the end, which is the only rule that cannot bend: **the site
 is running**.
@@ -78,27 +77,25 @@ excludes `node_modules`, `.next`, `.env*` (except the example), `publish/`, and 
 74MB of mockups that only `npm run assets` needs. The images the pages import live in `assets/` and
 are included.
 
-`content/` ships too. On the very first deploy it seeds the server. After that the server's own
-copy is the source of truth, so a deploy can never overwrite a blog post written in the back office
-or copy edited under **Copy**.
+`content/` ships too, and its two halves are treated differently:
 
-The one thing a deploy does to it is **add what is missing**. When the code gains a page or a field,
-its words exist only in the package's `content/pages/*.json`, and without them the build stops with
-`Content file page-meta.json is missing: ...` (this happened on 1 October, when `/dpa/` and
-`/contact/thank-you/` were added). So before building, the deploy saves the server's content to
-`backups/content-<id>.tgz` and runs [`deploy/content-sync.mjs`](deploy/content-sync.mjs):
+- **`content/pages/*.json`, the page text, is code.** It is part of the app directory every deploy
+  replaces, and the build reads it from there ([`lib/content-store.ts`](lib/content-store.ts)), so
+  the site always shows exactly the words in the repo. Change them in the repo and deploy; there is
+  no way to change them on the server.
+- **`content/blog/`, the posts, belongs to the server.** The back office writes posts to
+  `/opt/kolabr/content/blog` (`CONTENT_DIR`) and the build reads them from there. A deploy never
+  touches it, except to seed it on the very first deploy, and backs it up to
+  `backups/content-<id>.tgz` every time. A post that exists only in the repo is not published by a
+  deploy, and a post deleted in the back office stays deleted.
 
-- a key or a whole file the server lacks is added, with the package's words;
-- a value the server already has is **never** changed, even if the package's words differ;
-- a **top-level** key the package no longer has is retired: those are routes and slugs, owned by
-  the code. A leftover `teams` in `compare.json` failed the 2 October deploy by being prerendered
-  as a page whose fields no longer existed;
-- a **nested** key the package no longer has stays, because that is just words;
-- lists, such as a page's FAQs, are kept whole rather than merged item by item.
+Until 2 October page text lived on the server as well, editable under a back office **Copy**
+section, and a deploy kept the server's words: 246 changes made in the repo were deployed and never
+appeared. The Copy section was removed and page text moved into the code. `/opt/kolabr/content/pages`
+from that time is no longer read; it is left in place only as a record.
 
-Copy added this way is the repo's wording; edit it under **Copy** like anything else. Blog posts are
-not synced: a post deleted in the back office stays deleted. Run the rules' tests with
-`npm run test:content-sync` (part of `npm run publish:prepare`).
+`npm run test:content-source` proves the split with a real build: page text from the code, posts
+from `CONTENT_DIR`.
 
 ## Server layout
 
@@ -107,7 +104,7 @@ not synced: a post deleted in the back office stays deleted. Run the rules' test
   app/              the running site; replaced by every deploy
   app.previous/     the version before it, kept for an instant rollback
   .deploy-work/     where the next version is built while the current one keeps serving
-  content/          blog posts and page copy. Survives deploys (CONTENT_DIR)
+  content/          blog posts (blog/). Survives deploys (CONTENT_DIR). pages/ is a retired copy, unused
   state/            admin sessions and contact form messages. Survives deploys (STATE_DIR)
   uploads/          packages received from the back office
   backups/          the last 5 deploys' source, as tarballs
@@ -373,20 +370,18 @@ systemctl start kolabr
 
 The tarball is source only, without `node_modules` or `.next`, which is why that one has to build.
 
-## Where the page copy lives
+## Where the page text lives
 
-The words on the marketing pages are in `content/pages/*.json`, read at build time. The keys,
-routes and slugs stay in TypeScript (`lib/page-meta.ts`, `lib/use-cases.ts`, `lib/compare.ts`,
-`lib/legal.ts`, `lib/use-case-faqs.ts`), which is what keeps the two halves honest: **code owns
-the shape, content owns the words.**
+The words on the marketing pages are in `content/pages/*.json` in the repo, read at build time from
+the code being built. The keys, routes and slugs stay in TypeScript (`lib/page-meta.ts`,
+`lib/use-cases.ts`, `lib/compare.ts`, `lib/legal.ts`, `lib/use-case-faqs.ts`), which keeps the two
+halves honest: **code owns the shape, content owns the words.** Routes always come from those lists,
+never from the keys of a JSON file. If a content file is missing a key the code expects, the build
+fails with the file named, and the deploy leaves the previous build serving.
 
-The back office patches individual strings by path and cannot add, remove or rename anything, so
-an edit can change what a page says but never what a page expects. Links, image filenames and
-section ids are not editable for the same reason. If a content file goes missing a key, the build
-fails with the file named, and the rebuild leaves the previous build serving.
-
-Pricing is the exception: it is still code (`lib/pricing.ts`), because the pricing table is a
-client component and reads it directly. Changing a price is a deploy, not a publish.
+To change page text: edit the JSON in the repo, then deploy. Pricing is TypeScript
+(`lib/pricing.ts`), because the pricing table is a client component and reads it directly; it is
+deployed the same way.
 
 ## The contact form keeps its own copy
 

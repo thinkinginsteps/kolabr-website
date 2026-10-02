@@ -196,8 +196,6 @@ WORK_DIR="$WORK_ROOT/$DEPLOY_ID"
 STAGE_DIR="$WORK_DIR/app"
 BACKUP_FILE="$BACKUP_ROOT/app-$DEPLOY_ID.tgz"
 CONTENT_BACKUP_FILE="$BACKUP_ROOT/content-$DEPLOY_ID.tgz"
-CONTENT_SYNC="${KOLABR_CONTENT_SYNC:-$PREFIX/content-sync.mjs}"
-
 echo "=== Kolabr deploy $DEPLOY_ID ==="
 echo "package:  $PKG_PATH"
 echo "watch:    ${WATCH_SECONDS}s"
@@ -270,11 +268,16 @@ for required in package.json package-lock.json next.config.ts app lib; do
   fi
 done
 
-# First deploy only: seed the content directory from the package. After that the server's copy is
-# the source of truth: no deploy overwrites it, and the content step below only ever adds to it.
-if [[ -z "$(ls -A "$CONTENT_ROOT" 2>/dev/null)" && -d "$STAGE_DIR/content" ]]; then
-  echo "seeding $CONTENT_ROOT from the package (first deploy only)"
-  cp -a "$STAGE_DIR/content/." "$CONTENT_ROOT"/
+# What a deploy publishes:
+#   - the code, INCLUDING the page text (content/pages/*.json): the whole app directory is replaced
+#     by the package's, so the site shows exactly what is in the repo. lib/content-store.ts reads
+#     page text from the code, never from $CONTENT_ROOT.
+#   - NOT the blog. Posts are written in the back office into $CONTENT_ROOT/blog, which no deploy
+#     touches, except to seed it the very first time.
+if [[ -z "$(ls -A "$CONTENT_ROOT/blog" 2>/dev/null)" && -d "$STAGE_DIR/content/blog" ]]; then
+  echo "seeding $CONTENT_ROOT/blog from the package (first deploy only)"
+  mkdir -p "$CONTENT_ROOT/blog"
+  cp -a "$STAGE_DIR/content/blog/." "$CONTENT_ROOT/blog"/
 fi
 # Whatever modes the package carried (the first seed left world-writable files), the content is
 # readable by all and writable only by its owner.
@@ -284,38 +287,13 @@ if [[ -d "$APP_ROOT" && -n "$(ls -A "$APP_ROOT" 2>/dev/null)" ]]; then
   step backup "saving the current source"
   tar -C "$APP_ROOT" -czf "$BACKUP_FILE" --exclude=./node_modules --exclude=./.next . || true
 fi
-# The content step may add to the server's copy, so it is saved first, every deploy. A deploy that
-# fails later keeps what was added: it is only ever new keys, which older code ignores.
+# The posts are the one thing on this server that exists nowhere else, so they are saved with every
+# deploy too, although the deploy itself never changes them.
 if [[ -n "$(ls -A "$CONTENT_ROOT" 2>/dev/null)" ]]; then
   tar -C "$CONTENT_ROOT" -czf "$CONTENT_BACKUP_FILE" .
 fi
 
 chown -R "$SERVICE_USER:$SERVICE_USER" "$WORK_DIR" "$STATE_ROOT" "$CONTENT_ROOT"
-
-# ---------------------------------------------------------------- content the new code needs
-
-# Code owns the shape of the copy, the server owns its words. When the new code adds a page or a
-# field, its words exist only in the package's content/; without them the build stops with
-# "Content file page-meta.json is missing: ...". The sync adds what is missing and never changes
-# a value already on the server (it may have been edited in the back office). See
-# deploy/content-sync.mjs, installed root-owned next to this script by install-server.sh: it is
-# part of the server, like this script, so it works with any package, old or new.
-if [[ ! -f "$CONTENT_SYNC" ]]; then
-  echo "WARNING: $CONTENT_SYNC is not installed; the server's copy is used as it is (run install-server.sh)" >&2
-elif [[ -d "$STAGE_DIR/content/pages" ]]; then
-  step content "adding copy the new version needs (existing copy is kept)"
-  mkdir -p "$CONTENT_ROOT/pages"
-  chown "$SERVICE_USER:$SERVICE_USER" "$CONTENT_ROOT/pages"
-  set +e
-  su - "$SERVICE_USER" -s /bin/bash -c "node '${CONTENT_SYNC}' '${STAGE_DIR}/content/pages' '${CONTENT_ROOT}/pages'"
-  SYNC_RC=$?
-  set -e
-  if [[ "$SYNC_RC" -ne 0 ]]; then
-    echo "content sync failed (exit $SYNC_RC); nothing was built and the site is untouched" >&2
-    write_state failed content "could not add the new version's copy to the server's content; the site is untouched. See $LOG_FILE" "$SYNC_RC"
-    exit 1
-  fi
-fi
 
 # ---------------------------------------------------------------- build, with the site still up
 

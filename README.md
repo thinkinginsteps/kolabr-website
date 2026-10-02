@@ -33,6 +33,7 @@ Put `ADMIN_EMAIL` and the printed `ADMIN_PASSWORD_HASH` in `.env.local`, then si
 | `npm run publish:prepare` | Type-check, lint, build, then write the deployment package |
 | `npm run publish:package` | Just the package, into `publish/` |
 | `npm run test:deploy` | Runs the deploy, rebuild and watchdog scripts against a fake server. Needs Linux (`zip`, `flock`, `perl`): run it on the server or in WSL, not Git Bash |
+| `npm run test:content-source` | A full build proving page text comes from the code and blog posts from `CONTENT_DIR` |
 
 ## How it is laid out
 
@@ -40,7 +41,7 @@ Put `ADMIN_EMAIL` and the printed `ADMIN_PASSWORD_HASH` in `.env.local`, then si
 app/              routes: the marketing pages, /admin, and two API routes
 components/       shared components, grouped by the pages that use them
 lib/              content loaders, SEO helpers, the deploy and admin logic
-content/          the words: blog posts (Markdown) and page copy (JSON)
+content/          the words: page text (pages/*.json, part of the code) and the blog posts seeded on first deploy
 design/           the finished design this site was built from: the source of truth
 assets/           images the pages import, converted to WebP by npm run assets
 deploy/           the server side: deploy and rebuild scripts, systemd unit, nginx, sudoers
@@ -48,13 +49,14 @@ docs/             the build report, SEO notes, metadata and FAQ reviews
 ```
 
 **Code owns the shape, content owns the words.** Keys, routes and slugs live in TypeScript so the
-compiler checks them; the strings live in `content/` so the back office can edit them without
-being able to break a page.
+compiler checks them; the strings live in `content/pages/` so they can be edited without touching a
+component. Page text is changed in the repo and deployed. Blog posts are the one thing written in
+the back office: they live on the server and no deploy touches them.
 
 ## Deploying
 
 You do not need SSH. Build a package locally, upload it in the back office, and watch it land;
-content changes are published with a rebuild instead. The whole thing, including the one-time
+blog posts are published from the back office with a rebuild instead. The whole thing, including the one-time
 server setup, is in [DEPLOY.md](DEPLOY.md).
 
 ## Worth reading first

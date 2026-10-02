@@ -4,7 +4,7 @@ export type DeployStatus = "running" | "succeeded" | "failed" | "stale";
 export type DeployRecord = {
   id: string;
   status: DeployStatus;
-  /** The step it is on, or the one it failed at: lock, preflight, unzip, validate, backup, content, build, stop, swap, start, watch, verify, rollback, done. */
+  /** The step it is on, or the one it failed at: lock, preflight, unzip, validate, backup, build, stop, swap, start, watch, verify, rollback, done. */
   step: string;
   message: string;
   startedAt: string;
@@ -32,7 +32,6 @@ export const STEP_LABELS: Record<string, string> = {
   unzip: "Extracting the package",
   validate: "Checking the package",
   backup: "Backing up the current site",
-  content: "Adding the new version's page copy",
   stop: "Stopping the site",
   swap: "Installing the new files",
   build: "Installing dependencies and building",
