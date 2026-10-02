@@ -41,6 +41,9 @@ const SECRET = [
   { test: (f) => /\.(key|pem|p12|pfx)$/i.test(f), why: "it looks like a key or certificate" },
   { test: (f) => /(^|\/)server\.md$/i.test(f), why: "it holds server access details" },
   { test: (f) => /(^|\/)creds\.md$/i.test(f), why: "it holds credentials" },
+  // No archive is ever source, and its name says nothing about what is inside: an envlocal.zip
+  // holding .env.local once sat untracked in the repo root, where this script would have shipped it.
+  { test: (f) => /\.(zip|tgz|tar|gz|7z|rar)$/i.test(f), why: "it is an archive, which can hold anything (secrets included)" },
 ];
 
 const NUL = String.fromCharCode(0);

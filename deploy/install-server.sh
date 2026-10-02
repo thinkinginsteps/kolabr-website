@@ -36,7 +36,7 @@ say() { printf '\n== %s\n' "$*"; }
 note() { printf '   %s\n' "$*"; }
 
 [[ $EUID -eq 0 ]] || { echo "run as root (sudo bash $0)" >&2; exit 1; }
-for f in deploy.sh rebuild.sh watchdog.sh kolabr.service kolabr-watchdog.service kolabr-watchdog.timer \
+for f in deploy.sh rebuild.sh watchdog.sh content-sync.mjs kolabr.service kolabr-watchdog.service kolabr-watchdog.timer \
          sudoers.kolabr nginx/conf.d/kolabr.conf nginx/conf.d/cloudflare-realip.conf \
          nginx/snippets/kolabr-site.conf nginx/sites/00-default.conf nginx/sites/$PREVIEW_SITE \
          nginx/sites/$HOLDING_SITE holding/index.html; do
@@ -88,6 +88,8 @@ for d in state uploads deploy-logs backups; do
   install -d -o "$SERVICE_USER" -g "$SERVICE_USER" -m 0750 "$PREFIX/$d"
 done
 install -d -o "$SERVICE_USER" -g "$SERVICE_USER" -m 0755 "$PREFIX/content"
+# The first deploy's seed left the copy world-writable; deploy.sh now prevents that, this repairs it.
+chmod -R u+rwX,go+rX,go-w "$PREFIX/content"
 note "$(ls -ld "$PREFIX" | awk '{print $1, $3, $4, $NF}')"
 
 # ---------------------------------------------------------------- root-owned scripts
@@ -96,6 +98,9 @@ say "scripts (root-owned: the sudoers line would hand kolabr root if it could ed
 for s in deploy.sh rebuild.sh watchdog.sh; do
   install -o root -g root -m 0755 "$SRC/$s" "$PREFIX/$s"
 done
+# Run by deploy.sh (as kolabr, through node) to add new page copy before each build. Root-owned
+# like the scripts: kolabr must not be able to change what a deploy does to the content.
+install -o root -g root -m 0644 "$SRC/content-sync.mjs" "$PREFIX/content-sync.mjs"
 
 say "sudoers"
 visudo -cf "$SRC/sudoers.kolabr" >/dev/null

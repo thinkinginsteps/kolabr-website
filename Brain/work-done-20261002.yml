@@ -1,0 +1,72 @@
+- time: "06:25"
+  type: investigation
+  title: RCA of failed back office deploy 20261001-095459 (content keys missing on server); fixes started then halted at Dom's request
+  tags: [deploy, rca, content, page-meta, content-sync, compare, generateStaticParams, stale-content]
+  files: [scripts/content-sync.mjs, scripts/content-sync.test.mjs, scripts/test-stale-content.mjs,
+          scripts/test-deploy-scripts.sh, scripts/create-deploy-zip.mjs, deploy/deploy.sh,
+          deploy/install-server.sh, lib/deploy/types.ts, package.json, DEPLOY.md, .gitignore]
+  root_cause: >
+    1) Deploys never touch /opt/kolabr/content after the first deploy (seeded 2026-09-25). The
+    package from origin/main (1ce49a0) added /dpa/ and /contact/thank-you/ to META_ROUTES, whose copy
+    exists only in the repo's content/pages/page-meta.json; requireKeys threw "Content file
+    page-meta.json is missing" during page data collection, so the build failed (site untouched).
+    The same package also needed legal.json dpa and outcome/proof on every compare entry.
+    2) Behind it: compare and use-case pages (page + opengraph-image generateStaticParams, isSlug)
+    and app/sitemap.ts derive routes from the KEYS of the content files instead of COMPARE_SLUGS /
+    USE_CASE_SLUGS / META_ROUTES. The server's compare.json still has "teams" (removed from code in
+    f58a46b), so the build prerenders /compare/teams and crashes on missing fields; the sitemap
+    would list stale routes.
+  what_changed: >
+    Dom stopped the work mid-turn: "not supposed to fix anything, this is not the latest repo".
+    Already done before that: local `git pull --ff-only` to origin/main 71d8240; uncommitted local
+    edits listed under files (content-sync with 11 node tests, deploy.sh content step + content
+    backup + perms, deploy suite cases, packager refuses archives, root archives gitignored, step
+    labels, docs, a stale-content build test that currently FAILS as designed). On the SERVER:
+    ran install-server.sh (installed the modified deploy.sh, sha 09b98619...; chmod'ed content to
+    no world-write, previously 10 files were 0666), then deployed kolabr-20261002-061835: content
+    step ADDED 13 keys to /opt/kolabr/content (compare.json outcome/proof x5, legal.json dpa,
+    page-meta.json /contact/thank-you/ and /dpa/), backup of the prior content at
+    /opt/kolabr/backups/content-kolabr-20261002-061835.tgz; build then failed on /compare/teams;
+    site untouched (previous build serving). Found an untracked envlocal.zip (contains .env.local,
+    from a Mac) in the repo root: left in place, now gitignored and refused by the packager.
+  result: >
+    RCA delivered to Dom. Pending his call: keep or revert the server changes (restore content from
+    the backup tgz; reinstall the previous deploy.sh) and keep or discard the local edits.
+
+- time: "10:34"
+  type: fix
+  title: deploy.sh now syncs page copy from any package (server-side content-sync, adds new entries, retires removed ones)
+  tags: [deploy, content-sync, page-meta, compare, teams, retire, server, dry-run]
+  files: [deploy/content-sync.mjs (moved from scripts/), deploy/content-sync.test.mjs (moved), deploy/deploy.sh,
+          deploy/install-server.sh, scripts/test-deploy-scripts.sh, scripts/test-stale-content.mjs, package.json]
+  root_cause: >
+    Dom asked for deploy.sh on the server to be updated so the colleague can retry. Two gaps stood
+    in the way: (1) the content step ran scripts/content-sync.mjs from the PACKAGE, which only my
+    uncommitted tree has, so the colleague's package would skip it and fail identically; (2) the
+    sync never removed entries, and the colleague's code (compare/use-case generateStaticParams and
+    sitemap use content KEYS, not COMPARE_SLUGS etc.) builds a page for every key, so the server's
+    leftover "teams" (removed from code in f58a46b) would fail the build on /compare/teams.
+  what_changed: >
+    content-sync moved to deploy/ and is installed root-owned (0644) at /opt/kolabr/content-sync.mjs
+    by install-server.sh (also added to its required-files check); deploy.sh runs that copy
+    (override KOLABR_CONTENT_SYNC, used by the tests), warns and skips if it is not installed. Sync
+    rule extended: TOP-LEVEL keys the package no longer has are retired (removed) from the server
+    file; nested extra fields stay; an empty package file removes nothing; files missing from the
+    package are untouched; deploy.sh backs up all content first (backups/content-<id>.tgz, pruned
+    to 5). Tests first: 4 new node tests (14 total), deploy suite case now asserts retirement and
+    uses a package WITHOUT the sync script (the colleague's case). test:content-sync points at
+    deploy/. Installed on the server via install-server.sh.
+  decision: >
+    Retiring top-level entries replaces the earlier "never remove" rule: top-level keys are routes
+    and slugs owned by code, and leaving them makes the colleague's code build retired pages. Kept
+    nested keys, since they are only words and an edit there must never be lost.
+  result: >
+    Node tests 14/14; deploy suite on the server 60/60. Installed sha256 matches repo (deploy.sh
+    b6898d72..., content-sync.mjs 5b44ac1f...). Dry run on the server with the colleague's failed
+    package (kolabr-20261001-095459) against a COPY of the live content, built as kolabr under
+    deploy limits: sync retired compare.json teams and page-meta.json /compare/teams/ (the 13 new
+    entries were already added by the 06:19 test deploy), build exit 0, only slack/basecamp/notion
+    (+2) compare pages generated. Live site and content untouched by the dry run. The website-side
+    bug (routes from content keys) remains in the colleague's code; scripts/test-stale-content.mjs
+    (uncommitted, local) reproduces it. The failed upload zip is still in /opt/kolabr/uploads.
+

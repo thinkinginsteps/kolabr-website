@@ -1,0 +1,26 @@
+- time: "10:34"
+  title: Deploys sync page copy into the server's content (add new, retire removed top-level entries, never change words)
+  tags: [deploy, content, content-sync, back-office, copy]
+  context: >
+    Deploy 20261001-095459 failed because the server's content (seeded once on 2026-09-25, never
+    touched by deploys) lacked copy for pages the new code added, and still had a "teams" entry the
+    code removed. Dom asked for deploy.sh to be fixed so the colleague can retry.
+  choice: >
+    Before each build, deploy.sh backs up /opt/kolabr/content and runs the root-owned
+    /opt/kolabr/content-sync.mjs against the package's content/pages: keys the server lacks are
+    added (recursively); top-level keys the package no longer has are removed; values already on
+    the server are never changed; lists are not merged; empty package files remove nothing.
+  alternatives_considered:
+    - option: Overwrite server content with the package's on every deploy
+      rejected_because: Would destroy copy edited in the back office.
+    - option: Only add, never remove (the first version, earlier today)
+      rejected_because: Leftover top-level entries become pages in the colleague's code and fail the build (/compare/teams).
+    - option: Ship the sync script inside the package
+      rejected_because: Packages built from repos without the script (the colleague's) would skip it; it belongs to the server like deploy.sh.
+  implications: >
+    Retiring a page in code also deletes its edited copy from the server on the next deploy
+    (recoverable from backups/content-<id>.tgz, last 5 kept). Copy for new pages starts as the
+    repo's wording. Changes to content-sync are applied with install-server.sh, not by deploys.
+    The website code should still take routes from COMPARE_SLUGS / USE_CASE_SLUGS / META_ROUTES
+    (colleague's repo); the sync makes deploys safe either way.
+  revisit_if: A content file gains top-level keys that are not routes or slugs (data the back office adds), which this rule would delete.
