@@ -116,6 +116,11 @@
           "title": "Cost and administration",
           "rows": [
             [
+              "Where your own team talks",
+              "A Team channel on every paid account, there from day one. Paid members only, and a guest cannot be added to it.",
+              "Slack is that tool. The client side is the part that costs extra."
+            ],
+            [
               "List price",
               "$10 or $25 per user per month. Guests free.",
               "Pro is $7.25 per active user per month on annual billing and $8.75 monthly. Business Plus is $15 annual and $18 monthly. Enterprise Grid is quoted."
@@ -253,7 +258,7 @@
         },
         {
           "title": "Can Kolabr replace Slack entirely?",
-          "body": "Yes, and most customers end up there. Kolabr runs internal team channels, private and group messages, calls and file sharing the same way it runs client channels. What it adds is the layer Slack leaves to other products: requests with owners and deadlines, a wiki in each channel, and scheduled events tied to the work they belong to."
+          "body": "Yes, and most customers end up there. Kolabr runs internal team channels, private and group messages, calls and file sharing the same way it runs client channels. What it adds is the layer Slack leaves to other products: requests with owners and deadlines, a wiki in each channel, and scheduled events tied to the work they belong to. Every paid account also gets a Team channel, there from the first day and the one channel a guest cannot be added to, so the internal conversation has a home that is structurally private."
         },
         {
           "title": "What does Kolabr do that Slack does not?",
@@ -375,6 +380,11 @@
         {
           "title": "Conversation",
           "rows": [
+            [
+              "Where your own team talks",
+              "A Team channel on every paid account, there from day one. Paid members only, and a guest cannot be added to it.",
+              "A message board and a campfire per project, and a company HQ. Clients are invited to a project, so keeping them out is a per-project decision."
+            ],
             [
               "Having the day-to-day conversation in one place",
               "Full chat in every channel, with private and group direct messages.",
@@ -638,6 +648,11 @@
           "title": "Conversation",
           "rows": [
             [
+              "Where your own team talks",
+              "A Team channel on every paid account, there from day one. Paid members only, and a guest cannot be added to it.",
+              "Comments on pages. The running conversation of a working day happens in the chat tool you pay for alongside it."
+            ],
+            [
               "Having the day-to-day conversation in one place",
               "Built into every channel, with private and group direct messages.",
               "Comments on pages and blocks. Day-to-day conversation happens in another tool."
@@ -875,7 +890,7 @@
       "items": [
         {
           "title": "Can Notion replace a chat tool?",
-          "body": "Not really, and most teams do not ask it to. Notion carries comments on pages, but the running conversation of a working day happens somewhere else, which is why so many teams pay for Notion and a chat tool together. Kolabr puts the conversation, the request it produced and the article saying how that kind of work is handled in one channel."
+          "body": "Not really, and most teams do not ask it to. Notion carries comments on pages, but the running conversation of a working day happens somewhere else, which is why so many teams pay for Notion and a chat tool together. Kolabr puts the conversation, the request it produced and the article saying how that kind of work is handled in one channel. Your own team gets a Team channel in Kolabr as well, which no guest can be added to, so you are not paying for a third product to talk to each other."
         },
         {
           "title": "Can I build a request tracker in Notion?",
@@ -1019,6 +1034,11 @@
         {
           "title": "Conversation",
           "rows": [
+            [
+              "Where your own team talks",
+              "A Team channel on every paid account, there from day one. Paid members only, and a guest cannot be added to it.",
+              "ClickUp Chat, in the same workspace as your clients' guest access."
+            ],
             [
               "Having the day-to-day conversation in one place",
               "Built into every channel, with private and group direct messages.",
@@ -1217,7 +1237,7 @@
         },
         {
           "title": "What does Kolabr do that ClickUp does not?",
-          "body": "Full chat with threads and direct messages in the same place as the work, requests with response targets a client can see, a wiki in every channel, and guests who participate without ever becoming billable. And it works the day you open it, because there is nothing to configure first."
+          "body": "Full chat with threads and direct messages in the same place as the work, requests with response targets a client can see, a wiki in every channel, and guests who participate without ever becoming billable. And it works the day you open it, because there is nothing to configure first. And it is where your own team talks: every paid account has a Team channel that a guest cannot be added to."
         }
       ]
     },
@@ -1306,6 +1326,11 @@
         {
           "title": "Who can take part",
           "rows": [
+            [
+              "Where your own team talks",
+              "A Team channel on every paid account, there from day one. Paid members only, and a guest cannot be added to it.",
+              "Internal notes on a ticket, and side conversations. Your team's own conversation happens somewhere else."
+            ],
             [
               "What it costs to let a colleague help",
               "Your plan covers your team. Anyone in the company can be in a channel and answer.",
