@@ -128,7 +128,7 @@ Legal pages are unchanged and stay noindex.
 
 - Title was (50): Kolabr for accounting firms | A channel per client
 - Title now (54): **Client collaboration software for accountants | Kolabr**
-- Description was (149): A channel per client. Filings, SARS queries, audit requests and bookkeeping in one place, with the client as a free guest and every document visible.
+- Description was (149): led on the filing terms this market does not use, and on the guest being free rather than on what the client actually does. (Quote removed in the US rewrite.)
 - Description now (150): **A channel per client. Filings, queries, audit requests and bookkeeping in one place, with the client answering in the channel, not in an email thread.**
 
 ### `/use-cases/law-firms/`
@@ -163,8 +163,8 @@ Legal pages are unchanged and stay noindex.
 
 - Title was (55): Kolabr for property management | A channel per building
 - Title now (53): **Collaboration software for property managers | Kolabr**
-- Description was (154): A channel per building. Maintenance, trustee approvals, resident notices and arrears in one place, with trustees and residents in the room as free guests.
-- Description now (152): **A channel per building. Maintenance, trustee approvals, resident notices and arrears in one place, with contractors and trustees joining free as guests.**
+- Description was (154): A channel per building. Maintenance, board approvals, resident notices and arrears in one place, with the board and residents in the room as free guests.
+- Description now (152): **A channel per building. Maintenance, board approvals, resident notices and arrears in one place, with contractors and owners joining free as guests.**
 
 ### `/use-cases/clinics/`
 
@@ -191,8 +191,8 @@ Legal pages are unchanged and stay noindex.
 
 - Title was (53): Kolabr for nonprofits | A channel for every programme
 - Title now (58): **Collaboration software for nonprofits and funders | Kolabr**
-- Description was (155): A channel per programme. Field sites, volunteers, trustees and funders in one place, with attendance, receipts and safeguarding logged the day they happen.
-- Description now (155): **A channel per programme. Field sites, volunteers, trustees and funders in one place, and none of them cost anything, because guests are free on every plan.**
+- Description was (155): A channel per programme. Field sites, volunteers, board members and funders in one place, with attendance, receipts and safeguarding logged the day they happen.
+- Description now (155): **A channel per programme. Field sites, volunteers, board members and funders in one place, and none of them cost anything, because guests are free on every plan.**
 
 ### `/use-cases/schools/`
 

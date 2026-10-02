@@ -310,7 +310,7 @@ No link points to a missing file, and there are no external links at all. The pr
 ### 5.11 Content that is unfinished or contradicts itself
 
 - **`[COMPANY NAME]` placeholder** appears in Privacy, Terms, Cookies and Refunds, in the ledes and the legal body ("Kolabr is operated by [COMPANY NAME]"). I need the legal entity name.
-- The legal pages say "Last updated 21 September 2026", Terms is governed by South African law, and Privacy is written for POPIA with GDPR secondary. Just confirming this is intended for a site that targets all markets.
+- The legal pages were written for the wrong jurisdiction. **Resolved 30 September 2026:** rewritten for United States law, with placeholders where the entity and state are still unknown.
 - **SLA claim conflict:** Compare Zendesk says "SLAs on every plan" and "Response-time targets on every plan rather than a higher tier". But the Pricing table shows **SLA profiles as not included on Starter**. Home's Product menu also says "Owner, category, SLA and status on every item".
 - Terms says Pro and Max "have the response targets set out on the pricing page". The pricing page lists "Priority support" and "Dedicated account manager", but no response targets.
 - The Home "Take a closer look" section has an **Analytics** card with no matching page.

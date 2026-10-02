@@ -208,7 +208,7 @@
     },
     {
       "q": "How do response times work for emergencies versus everyday queries?",
-      "a": "Every job has a number, an owner and a clock. Categories such as emergency, resident query, quote approval, compliance and arrears are each routed to the person who handles them, with their own response time: an emergency has minutes, a parking dispute has days. The board see the same clock you do."
+      "a": "Every job has a number, an owner and a clock. Categories such as emergency, resident query, quote approval, compliance and arrears are each routed to the person who handles them, with their own response time: an emergency has minutes, a parking dispute has days. The board sees the same clock you do."
     },
     {
       "q": "Can our site supervisors use it from their phones on site?",

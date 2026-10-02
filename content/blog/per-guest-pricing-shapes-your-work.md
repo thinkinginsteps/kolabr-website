@@ -63,7 +63,7 @@ cannot search, count or hand over.
 
 Charge for the people whose work the software organises, and let everyone else in for nothing.
 
-That is how Kolabr is priced. You pay for your own team. Clients, contractors, parents, trustees,
+That is how Kolabr is priced. You pay for your own team. Clients, contractors, parents, board members,
 funders and suppliers join as guests, free, on every plan, for any number of people. A guest sees
 only the channels they were added to, and nothing about your other clients.
 

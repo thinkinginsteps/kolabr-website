@@ -19,7 +19,7 @@ Not the people on the contract. The people who will be asked questions.
 
 Write the list out: the client's day to day contact, whoever signs off money, whoever holds the
 information you will need, and any contractor or supplier whose work touches yours. For a building
-that is the trustee, the managing agent and three contractors. For an audit it is the finance lead,
+that is the board, the property manager and three contractors. For an audit it is the finance lead,
 the bookkeeper and often the client's own client.
 
 If your tool charges per person, you are about to ration this list. That is worth noticing, because
