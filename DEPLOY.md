@@ -86,11 +86,14 @@ The one thing a deploy does to it is **add what is missing**. When the code gain
 its words exist only in the package's `content/pages/*.json`, and without them the build stops with
 `Content file page-meta.json is missing: ...` (this happened on 1 October, when `/dpa/` and
 `/contact/thank-you/` were added). So before building, the deploy saves the server's content to
-`backups/content-<id>.tgz` and runs [`scripts/content-sync.mjs`](scripts/content-sync.mjs):
+`backups/content-<id>.tgz` and runs [`deploy/content-sync.mjs`](deploy/content-sync.mjs):
 
 - a key or a whole file the server lacks is added, with the package's words;
 - a value the server already has is **never** changed, even if the package's words differ;
-- keys the package no longer has stay on the server (removing copy is a person's decision);
+- a **top-level** key the package no longer has is retired: those are routes and slugs, owned by
+  the code. A leftover `teams` in `compare.json` failed the 2 October deploy by being prerendered
+  as a page whose fields no longer existed;
+- a **nested** key the package no longer has stays, because that is just words;
 - lists, such as a page's FAQs, are kept whole rather than merged item by item.
 
 Copy added this way is the repo's wording; edit it under **Copy** like anything else. Blog posts are
