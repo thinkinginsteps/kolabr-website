@@ -31,12 +31,19 @@ export function loadContent<T>(name: string): T {
 }
 
 /**
- * Checks that the content file still has every key the code expects. An edit cannot remove one,
- * but a bad hand edit or a half-finished migration can, and the error should name the file
- * rather than surface as "cannot read properties of undefined" inside a page.
+ * Checks that the content file still has every key the code expects, and returns only those keys.
+ *
+ * Missing is an error: a bad hand edit or a half-finished migration can lose one, and the message
+ * should name the file rather than surface as "cannot read properties of undefined" inside a page.
+ *
+ * Extra is dropped, silently and on purpose. The server's content outlives the code and a deploy
+ * never rewrites words already there, so a page retired in code can leave its entry behind. On
+ * 2026-10-02 a leftover "teams" in compare.json was prerendered as /compare/teams, which no longer
+ * had the fields the page needs, and the deploy failed. The code's list is the only list: routes
+ * come from COMPARE_SLUGS, USE_CASE_SLUGS and META_ROUTES, never from the keys of a content file.
  */
 export function requireKeys<T extends Record<string, unknown>>(data: T, keys: readonly string[], name: string): T {
   const missing = keys.filter((k) => !(k in data));
   if (missing.length) throw new Error(`Content file ${name}.json is missing: ${missing.join(", ")}`);
-  return data;
+  return Object.fromEntries(keys.map((k) => [k, data[k]])) as T;
 }

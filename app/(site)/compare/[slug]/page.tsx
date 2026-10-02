@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ComparePage } from "@/components/compare/ComparePage";
 import { JsonLd } from "@/components/JsonLd";
-import { comparisons, type CompareSlug } from "@/lib/compare";
+import { comparisons, COMPARE_SLUGS, type CompareSlug } from "@/lib/compare";
 import type { MetaRoute } from "@/lib/page-meta";
 import { breadcrumbJsonLd, faqJsonLd, graph, pageMetadata } from "@/lib/seo";
 
@@ -10,7 +10,7 @@ import { breadcrumbJsonLd, faqJsonLd, graph, pageMetadata } from "@/lib/seo";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return Object.keys(comparisons).map((slug) => ({ slug }));
+  return COMPARE_SLUGS.map((slug) => ({ slug }));
 }
 
 const isSlug = (s: string): s is CompareSlug => s in comparisons;

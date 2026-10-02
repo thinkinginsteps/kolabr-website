@@ -5,14 +5,14 @@ import { UseCasePage } from "@/components/use-case/UseCasePage";
 import type { MetaRoute } from "@/lib/page-meta";
 import { breadcrumbJsonLd, faqJsonLdFromPairs, graph, pageMetadata } from "@/lib/seo";
 import { useCaseFaqs } from "@/lib/use-case-faqs";
-import { useCaseContent, type UseCaseSlug } from "@/lib/use-cases";
+import { useCaseContent, USE_CASE_SLUGS, type UseCaseSlug } from "@/lib/use-cases";
 
 // The twelve industry pages on the shared template. Schools has its own page (a static
 // segment, which wins over this dynamic one). Every slug is prerendered; anything else 404s.
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return Object.keys(useCaseContent).map((slug) => ({ slug }));
+  return USE_CASE_SLUGS.map((slug) => ({ slug }));
 }
 
 const isSlug = (s: string): s is UseCaseSlug => s in useCaseContent;

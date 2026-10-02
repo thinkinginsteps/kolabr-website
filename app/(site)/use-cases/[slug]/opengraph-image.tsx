@@ -2,12 +2,12 @@
 export { size, contentType } from "@/lib/og";
 import { ogImage } from "@/lib/og";
 import type { MetaRoute } from "@/lib/page-meta";
-import { useCaseContent } from "@/lib/use-cases";
+import { USE_CASE_SLUGS } from "@/lib/use-cases";
 
 export const alt = "Kolabr";
 
 export function generateStaticParams() {
-  return Object.keys(useCaseContent).map((slug) => ({ slug }));
+  return USE_CASE_SLUGS.map((slug) => ({ slug }));
 }
 
 export default async function Image({ params }: { params: Promise<{ slug: string }> }) {

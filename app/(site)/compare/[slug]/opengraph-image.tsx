@@ -2,12 +2,12 @@
 export { size, contentType } from "@/lib/og";
 import { ogImage } from "@/lib/og";
 import type { MetaRoute } from "@/lib/page-meta";
-import { comparisons } from "@/lib/compare";
+import { COMPARE_SLUGS } from "@/lib/compare";
 
 export const alt = "Kolabr";
 
 export function generateStaticParams() {
-  return Object.keys(comparisons).map((slug) => ({ slug }));
+  return COMPARE_SLUGS.map((slug) => ({ slug }));
 }
 
 export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
