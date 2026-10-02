@@ -5,6 +5,7 @@ The 126 placeholder dashes became hyphens and the affected screenshots were reca
 dashes in the hand-taken screenshots were retouched, and the Construction use case now has its own
 screenshots instead of the clinic ones.
 
+> **Later change.** The site was rewritten for the United States on 30 September and 1 October 2026. Where this report quotes South African terms (SARS, VAT201, EMP201, CIPC, rand), the live copy no longer uses them. Everything below still describes the state on the date given.
 Date of the first pass: 2026-09-22. Scope: the Kolabr app mockups in `design/` that feed the product screenshots used on the marketing site. Only `design/`, `.design-backup/` and this file were touched.
 
 ## Summary

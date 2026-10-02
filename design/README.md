@@ -23,9 +23,10 @@ built HTML under `.next/server/app/` after a build.
 
 The site has moved on from these files in ways you will notice:
 
-- **Locale.** The design was written for South Africa. The site is written for the United States.
-  `Use Case - Accounting Firms.dc.html` still says SARS, VAT201 and EMP501 where the site says the
-  IRS and Form 941; `Terms.dc.html` still bills in South African rand. The site does neither.
+- **Locale.** The design was written for South Africa and the site is written for the United
+  States. The accounting, terms and privacy pages here were brought into line on 2 October 2026,
+  so nothing in this folder says SARS, VAT201, EMP501 or rand any more. Anything else written for
+  a South African reader has not been revisited.
 - **People.** Every name in the mockups is American now. These files predate that.
 - **Microsoft Teams** is gone from the site. Its page and its nav links were removed here too, but
   nothing else was revisited.

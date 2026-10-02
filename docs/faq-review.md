@@ -5,6 +5,7 @@
 (`lib/use-case-faqs.ts`). Edit that file and this document together: the schema must always match
 the words on the page.
 
+> **Later change.** The site was rewritten for the United States on 30 September and 1 October 2026. Where this report quotes South African terms (SARS, VAT201, EMP201, CIPC, rand), the live copy no longer uses them. Everything below still describes the state on the date given.
 **How they were written**
 
 - 4 to 5 questions per page (65 in total), answered only from what that page already says. The source line under each answer names the page section it comes from, so you can check it. The source lines are for review only and will not be published.
