@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
-import { MODELS, kolabrCost } from "@/lib/cost-model";
+import { MODELS, kolabrCost, kolabrYearly } from "@/lib/cost-model";
 
 /**
  * Two monthly totals for a team you describe. It replaces a pair of per-seat list prices, which
@@ -91,13 +91,21 @@ export function CostCalculator({ slug }: { slug: string }) {
           className="h-1.5 w-full cursor-pointer appearance-none rounded-full bg-border accent-accent"
         />
         <span className="text-[14px] text-ink-muted">
-          {Math.min(multi, outside)} of {outside}. This is the number that decides most of the difference.
+          {Math.min(multi, outside)} of {outside}. It never changes what you pay us
+          {model.sliderNote ? "." : `, and on ${model.name} it is the number that costs you money.`}
         </span>
       </label>
 
       <div className="grid grid-cols-2 gap-3.5 border-t border-border pt-5 max-tab:grid-cols-1">
-        <Total name="Kolabr" amount={ours.total} basis={ours.basis} plan="Pro, monthly" ours />
-        <Total name={model.name} amount={theirs.total} basis={theirs.basis} plan={model.plan} />
+        <Total
+          name="Kolabr"
+          amount={ours.total}
+          basis={ours.basis}
+          plan="Pro, monthly"
+          annual={`or $${kolabrYearly(team).toLocaleString()} a month on annual terms`}
+          ours
+        />
+        <Total name={model.name} amount={theirs.total} basis={theirs.basis} plan={model.plan} note={model.sliderNote} />
       </div>
 
       <p role="status" className="text-[15.5px] leading-[1.5] text-pretty text-ink">
@@ -124,12 +132,18 @@ function Total({
   amount,
   basis,
   plan,
+  annual,
+  note,
   ours,
 }: {
   name: string;
   amount: number;
   basis: string;
   plan: string;
+  /** Our side only: the same team on annual terms, under the monthly figure. */
+  annual?: string;
+  /** Their side only: why the participation slider leaves this total alone. */
+  note?: string;
   ours?: boolean;
 }) {
   return (
@@ -141,8 +155,12 @@ function Total({
         ${amount.toLocaleString()}
         <span className="text-[15px] font-normal text-ink-muted"> / month</span>
       </span>
-      <span className="text-[13.5px] text-ink-muted">{plan}</span>
+      <span className="text-[13.5px] text-ink-muted">
+        {plan}
+        {annual && <>, {annual}</>}
+      </span>
       <span className="text-[13.5px] leading-[1.45] text-pretty text-ink-muted">{basis}</span>
+      {note && <span className="text-[13.5px] leading-[1.45] text-pretty text-ink-muted">{note}</span>}
     </div>
   );
 }

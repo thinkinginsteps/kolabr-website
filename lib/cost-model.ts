@@ -11,6 +11,7 @@
  */
 
 export const KOLABR_PRO_MONTHLY = 10;
+export const KOLABR_PRO_YEARLY = 8.5;
 
 export type Outcome = {
   /** Monthly total in whole dollars. */
@@ -26,6 +27,12 @@ export type CompetitorModel = {
   price: (team: number, outside: number, multiChannel: number) => Outcome;
   /** Shown when the outside people cost nothing on either side, so the page does not overclaim. */
   guestsAreFreeToo?: boolean;
+  /**
+   * Why the participation slider does not move this competitor's total. Only Slack and ClickUp
+   * meter the people who take part; the rest ignore the number, and a control that silently does
+   * nothing looks broken rather than meaningful.
+   */
+  sliderNote?: string;
 };
 
 const fmtSeats = (n: number, rate: number) => `${n} × $${rate}`;
@@ -56,12 +63,15 @@ export const MODELS: Record<string, CompetitorModel> = {
     name: "Basecamp",
     plan: "flat, whole account",
     guestsAreFreeToo: true,
+    sliderNote: "Basecamp charges one fee for the whole account, so this number does not move.",
     price: (team, outside) => {
       const people = team + outside;
-      const tier = people <= 5 ? [0, "Free"] : people <= 20 ? [25, "Freelancer"] : [59, "Studio"];
+      const [fee, note] = people <= 20
+        ? [25, "the tier that covers up to twenty people"]
+        : [59, "the cheapest tier with no limit on people"];
       return {
-        total: tier[0] as number,
-        basis: `${tier[1]} at $${tier[0]} a month for the whole account. Basecamp counts everyone, but Studio and above have no limit on people.`,
+        total: fee,
+        basis: `$${fee} a month for the whole account, ${note}. Basecamp counts your team and your clients alike. Tiers above this one are $99 a month, and $299 billed annually.`,
       };
     },
   },
@@ -69,6 +79,7 @@ export const MODELS: Record<string, CompetitorModel> = {
     name: "Notion",
     plan: "Notion Plus, monthly",
     guestsAreFreeToo: true,
+    sliderNote: "Notion bills per member, and guests are free whatever they do, so this number does not move.",
     price: (team) => ({
       total: Math.round(team * 12),
       basis: `${fmtSeats(team, 12)}. Guests are free and unlimited on paid plans, though they see only the pages they are invited to.`,
@@ -98,6 +109,7 @@ export const MODELS: Record<string, CompetitorModel> = {
   zendesk: {
     name: "Zendesk",
     plan: "Suite Team, annual terms",
+    sliderNote: "Zendesk bills per agent, not per customer, so this number does not move.",
     price: (team) => ({
       total: Math.round(team * 55),
       basis: `${fmtSeats(team, 55)} per agent. Customers are free, and light agents can read and comment internally but cannot answer a customer.`,
@@ -105,10 +117,16 @@ export const MODELS: Record<string, CompetitorModel> = {
   },
 };
 
-/** Kolabr: you pay for your team, and nobody else, on any number of channels. */
+/**
+ * Kolabr: you pay for your team, and nobody else, on any number of channels. One plan covers the
+ * whole account, so neither the number of clients nor how much they take part changes the bill.
+ */
 export function kolabrCost(team: number): Outcome {
   return {
     total: team * KOLABR_PRO_MONTHLY,
-    basis: `${fmtSeats(team, KOLABR_PRO_MONTHLY)} on Pro. Guests are free and unlimited, in as many channels as the work needs.`,
+    basis: `${fmtSeats(team, KOLABR_PRO_MONTHLY)} on Pro. Move the slider as far as you like: guests are free and unlimited, however much they take part.`,
   };
 }
+
+/** The same team on annual terms, shown under the monthly total rather than as a second mode. */
+export const kolabrYearly = (team: number) => Math.round(team * KOLABR_PRO_YEARLY * 100) / 100;
