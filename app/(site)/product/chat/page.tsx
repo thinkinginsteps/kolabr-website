@@ -19,7 +19,7 @@ import { breadcrumbJsonLd, graph, pageMetadata } from "@/lib/seo";
 import { SIGNUP_PATH } from "@/lib/site";
 
 import appRequests from "@/assets/images/app-requests.webp";
-import uiChannelChat from "@/assets/images/ui-channel-chat.webp";
+import screenChat from "@/assets/images/screen-chat.webp";
 import uiThreadCrop from "@/assets/images/ui-thread-crop.webp";
 
 export const metadata = pageMetadata("/product/chat/");
@@ -36,7 +36,7 @@ export default function ChannelChatPage() {
         <Screenshot
           preload
           className="mt-16"
-          image={uiChannelChat}
+          image={screenChat}
           alt="The Payments channel conversation: a pinned notice, messages from team members and client guests, a request created from a message, a threaded reply and a scheduled deploy review"
         />
       </ProductHero>
