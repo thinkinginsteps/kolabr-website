@@ -7,15 +7,17 @@ import { CostCalculator } from "./CostCalculator";
 import { Rich } from "../Rich";
 import { ShotBand } from "../use-case/UseCasePage";
 import type { Comparison, CompareSection } from "@/lib/compare";
+import type { Href } from "@/lib/links";
 import { screens } from "@/lib/use-case-images";
 import type { Card, Rich as RichText } from "@/lib/use-cases";
 
-// The five compare pages share this layout. All copy comes from lib/compare.ts.
+// The compare pages share this layout, and the Slack page (SlackComparePage) borrows its bands.
+// All copy comes from content/pages/compare.json and compare-slack.json.
 
-const H2 = "text-[clamp(34px,3.7vw,54px)] leading-[1.04] font-semibold tracking-[-0.03em] text-balance text-ink";
-const PAD = "px-10 max-tab:!px-5 max-tab:!py-[86px]";
+export const H2 = "text-[clamp(34px,3.7vw,54px)] leading-[1.04] font-semibold tracking-[-0.03em] text-balance text-ink";
+export const PAD = "px-10 max-tab:!px-5 max-tab:!py-[86px]";
 
-function Paragraphs({ items, size }: { items: RichText[]; size: 20 | 20.5 }) {
+export function Paragraphs({ items, size }: { items: RichText[]; size: 20 | 20.5 }) {
   return (
     <>
       {items.map((p, i) => (
@@ -28,7 +30,7 @@ function Paragraphs({ items, size }: { items: RichText[]; size: 20 | 20.5 }) {
 }
 
 /** A band whose box is 1400px of content plus padding (the design sizes these sections directly). */
-function NarrowBand({ id, labelledBy, children }: { id: string; labelledBy: string; children: ReactNode }) {
+export function NarrowBand({ id, labelledBy, children }: { id: string; labelledBy: string; children: ReactNode }) {
   return (
     <section id={id} aria-labelledby={labelledBy} className={`${PAD} mx-auto max-w-[1480px] pt-0 pb-[150px]`}>
       {children}
@@ -36,13 +38,20 @@ function NarrowBand({ id, labelledBy, children }: { id: string; labelledBy: stri
   );
 }
 
-function Split({ children }: { children: ReactNode }) {
+export function Split({ children }: { children: ReactNode }) {
   return <div className="grid grid-cols-1 items-center gap-12 desk:grid-cols-[minmax(0,1fr)_minmax(0,.92fr)] desk:gap-24">{children}</div>;
 }
 
 /* ---------- Hero ---------- */
 
-function Hero({ hero }: { hero: Comparison["hero"] }) {
+/** The first button defaults to the feature table; a page whose argument starts elsewhere says where. */
+export function Hero({
+  hero,
+  primary = { label: "Jump to the comparison", href: "#compare" },
+}: {
+  hero: Comparison["hero"];
+  primary?: { label: string; href: Href };
+}) {
   return (
     <section aria-labelledby="vs-hero" className="relative bg-hero-glow px-10 pt-[196px] pb-[130px] max-tab:!px-5 max-tab:!pt-[124px] max-tab:!pb-0">
       <div className="mx-auto max-w-content">
@@ -55,8 +64,8 @@ function Hero({ hero }: { hero: Comparison["hero"] }) {
             <Rich text={hero.lede} />
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
-            <ButtonLink href="#compare" size="lg">
-              Jump to the comparison
+            <ButtonLink href={primary.href} size="lg">
+              {primary.label}
             </ButtonLink>
             <ButtonLink href="/pricing" variant="secondary" size="lg" className="[--lift-shadow:none]">
               See pricing
@@ -83,7 +92,7 @@ function Hero({ hero }: { hero: Comparison["hero"] }) {
 
 const CELL_BORDER = "border-t border-border";
 
-function FeatureTable({ table, competitor }: { table: Comparison["table"]; competitor: string }) {
+export function FeatureTable({ table, competitor }: { table: Comparison["table"]; competitor: string }) {
   return (
     <section id="compare" aria-labelledby="vs-tbl-h" className={`${PAD} pt-0 pb-[150px]`}>
       <div className="mx-auto max-w-content">
@@ -155,7 +164,7 @@ function WhiteCards({ cards }: { cards: Card[] }) {
   );
 }
 
-function Middle({ section: s }: { section: CompareSection }) {
+export function Middle({ section: s }: { section: CompareSection }) {
   if (s.type === "shotCards") {
     return <ShotBand id={s.id} title={s.title} lede={s.lede} image={s.image} cards={s.cards} headWidth={820} />;
   }
@@ -194,7 +203,7 @@ function Middle({ section: s }: { section: CompareSection }) {
 /* ---------- What the first month looks like ---------- */
 
 /** Heading plus lede, the width every band on this page uses. */
-function BandHead({ id, title, lede }: { id: string; title: string; lede: RichText }) {
+export function BandHead({ id, title, lede }: { id: string; title: string; lede: RichText }) {
   return (
     <div data-rise="" className="mb-11 flex max-w-[820px] flex-col gap-5">
       <h2 id={id} className={H2}>
@@ -211,7 +220,7 @@ function BandHead({ id, title, lede }: { id: string; title: string; lede: RichTe
  * The outcome band. It answers the question the feature table leaves open, which is what any of
  * it is worth, and it runs immediately before the price for that reason.
  */
-function Outcome({ outcome }: { outcome: Comparison["outcome"] }) {
+export function Outcome({ outcome }: { outcome: Comparison["outcome"] }) {
   return (
     <NarrowBand id="first-month" labelledBy="vs-month-h">
       <BandHead id="vs-month-h" title={outcome.title} lede={outcome.lede} />
@@ -268,7 +277,7 @@ function Cost({ cost, slug }: { cost: Comparison["cost"]; slug: string }) {
   );
 }
 
-function Faq({ faq }: { faq: Comparison["faq"] }) {
+export function Faq({ faq }: { faq: Comparison["faq"] }) {
   return (
     <NarrowBand id="faq" labelledBy="vs-faq-h">
       <div data-rise="" className="mb-11 flex max-w-[820px] flex-col gap-[18px]">
@@ -296,7 +305,7 @@ function Faq({ faq }: { faq: Comparison["faq"] }) {
  * One week, three checkpoints, on a dark panel so it reads as the last word before the call to
  * action rather than another section of argument.
  */
-function Proof({ proof }: { proof: Comparison["proof"] }) {
+export function Proof({ proof }: { proof: Comparison["proof"] }) {
   return (
     <section id="proof" aria-labelledby="vs-proof-h" className={`${PAD} mx-auto max-w-[1480px] pt-0 pb-[150px]`}>
       <div data-rise="" className="flex flex-col gap-10 rounded-[28px] bg-deep p-[58px] text-on-deep max-tab:p-8">
@@ -326,23 +335,32 @@ function Proof({ proof }: { proof: Comparison["proof"] }) {
   );
 }
 
+/* ---------- The opening argument ---------- */
+
+/** `flush` drops the top padding, for when it follows a band rather than the hero. */
+export function Statement({ statement, flush }: { statement: Comparison["statement"]; flush?: boolean }) {
+  return (
+    <section id={statement.id} aria-labelledby="vs-statement-h" className={`${PAD} ${flush ? "pt-0" : "pt-[110px]"} pb-[150px]`}>
+      <div className="mx-auto flex max-w-content flex-col gap-12">
+        <div data-rise="" className="flex max-w-[820px] flex-col gap-5">
+          <h2 id="vs-statement-h" className={H2}>
+            {statement.title}
+          </h2>
+          <Paragraphs items={statement.paragraphs} size={20} />
+        </div>
+        <Screenshot image={screens[statement.image.file]} alt={statement.image.alt} />
+      </div>
+    </section>
+  );
+}
+
 /* ---------- Page ---------- */
 
 export function ComparePage({ content: c, slug }: { content: Comparison; slug: string }) {
   return (
     <>
       <Hero hero={c.hero} />
-      <section id={c.statement.id} aria-labelledby="vs-statement-h" className={`${PAD} pt-[110px] pb-[150px]`}>
-        <div className="mx-auto flex max-w-content flex-col gap-12">
-          <div data-rise="" className="flex max-w-[820px] flex-col gap-5">
-            <h2 id="vs-statement-h" className={H2}>
-              {c.statement.title}
-            </h2>
-            <Paragraphs items={c.statement.paragraphs} size={20} />
-          </div>
-          <Screenshot image={screens[c.statement.image.file]} alt={c.statement.image.alt} />
-        </div>
-      </section>
+      <Statement statement={c.statement} />
       <FeatureTable table={c.table} competitor={c.competitor} />
       {c.sections.map((s) => (
         <Middle key={s.id} section={s} />

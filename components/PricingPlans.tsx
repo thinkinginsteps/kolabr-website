@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { PER, YEARLY_DISCOUNT, plans, type Plan } from "@/lib/pricing";
+import { PER, plans, type Plan } from "@/lib/pricing";
+import { BillingToggle } from "./BillingToggle";
 import { SIGNUP_PATH } from "@/lib/site";
 
 /**
@@ -17,15 +18,7 @@ export function PricingPlans({ headingLevel = 3 }: { headingLevel?: 2 | 3 }) {
     <>
       <div data-rise="" className="mb-[26px] flex items-center gap-5">
         <span aria-hidden="true" className="h-px flex-1 bg-border" />
-        <div role="group" aria-label="Billing period" className="flex gap-1 rounded-[14px] border border-border bg-surface-tint p-1">
-          <ToggleButton active={!yearly} onClick={() => setYearly(false)}>
-            Monthly
-          </ToggleButton>
-          <ToggleButton active={yearly} onClick={() => setYearly(true)}>
-            Yearly
-            <span className="rounded-[7px] bg-accent-wash px-[7px] py-[3px] text-[12px] font-extrabold text-accent-ink-strong">{YEARLY_DISCOUNT}</span>
-          </ToggleButton>
-        </div>
+        <BillingToggle yearly={yearly} onChange={setYearly} />
       </div>
 
       <div data-rise-group="" className="grid grid-cols-1 items-stretch gap-[18px] desk:grid-cols-3">
@@ -34,21 +27,6 @@ export function PricingPlans({ headingLevel = 3 }: { headingLevel?: 2 | 3 }) {
         ))}
       </div>
     </>
-  );
-}
-
-function ToggleButton({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
-  return (
-    <button
-      type="button"
-      aria-pressed={active}
-      onClick={onClick}
-      className={`flex cursor-pointer items-center gap-2 rounded-[11px] px-4 py-[9px] text-[14.5px] leading-[normal] font-semibold ${
-        active ? "bg-surface text-ink shadow-knob" : "text-ink-muted"
-      }`}
-    >
-      {children}
-    </button>
   );
 }
 

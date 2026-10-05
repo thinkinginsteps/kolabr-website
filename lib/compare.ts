@@ -1,6 +1,6 @@
-// Content for the five compare pages. Originally extracted from design/Compare - *.dc.html and
-// since rewritten: the structure below is ours, not the design's. Competitor prices date quickly,
-// so re-check every figure before launch.
+// Content for the compare pages other than Slack, which has its own shape (lib/compare-slack.ts).
+// Originally extracted from design/Compare - *.dc.html and since rewritten: the structure below
+// is ours, not the design's. Competitor prices date quickly, so re-check every figure before launch.
 
 import type { Card, Rich, Shot } from "./use-cases";
 
@@ -57,8 +57,12 @@ export const COMPARE_SLUGS = [
 
 export type CompareSlug = (typeof COMPARE_SLUGS)[number];
 
+/** Every compare page except Slack, whose words live in content/pages/compare-slack.json. */
+export type SharedCompareSlug = Exclude<CompareSlug, "slack">;
+const SHARED_SLUGS = COMPARE_SLUGS.filter((s): s is SharedCompareSlug => s !== "slack");
+
 export const comparisons = requireKeys(
-  loadContent<Record<CompareSlug, Comparison>>("compare"),
-  COMPARE_SLUGS,
+  loadContent<Record<SharedCompareSlug, Comparison>>("compare"),
+  SHARED_SLUGS,
   "compare",
 );
