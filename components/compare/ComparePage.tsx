@@ -70,6 +70,7 @@ function Hero({ hero }: { hero: Comparison["hero"] }) {
               <p className="text-[16.5px]">
                 <Rich text={c.body} />
               </p>
+              {c.note && <p className="text-[14px] leading-[1.45] text-pretty text-ink-muted">{c.note}</p>}
             </div>
           ))}
         </div>

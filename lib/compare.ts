@@ -14,7 +14,12 @@ export type CompareSection =
 
 export type Comparison = {
   competitor: string;
-  hero: { eyebrow: string; title: string; lede: Rich; summary: Card[] };
+  /**
+   * The two cards under the headline. `note` is the fine print beneath one of them: where a
+   * card quotes money, it says which terms the figures are on, so a reader who has seen the
+   * competitor's own advertised annual price does not think we inflated it.
+   */
+  hero: { eyebrow: string; title: string; lede: Rich; summary: (Card & { note?: string })[] };
   statement: { id: string; title: string; paragraphs: Rich[]; image: Shot };
   table: { title: string; lede: Rich; groups: { title: string; rows: [Rich, Rich, Rich][] }[] };
   sections: CompareSection[];

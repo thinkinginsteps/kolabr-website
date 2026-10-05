@@ -12,7 +12,8 @@
         },
         {
           "title": "The number that decides it",
-          "body": "Twelve people and forty client contacts who each need more than one channel: $120 a month on Kolabr Pro, $455 on Slack Pro. The gap is not the seat price, it is everyone who is not staff."
+          "body": "Twelve people and forty client contacts who each need more than one channel: $120 a month on Kolabr Pro, $455 on Slack Pro.* The gap is not the seat price, it is everyone who is not staff.",
+          "note": "* Monthly terms on both. On annual terms it is $102 against $377: a smaller gap, the same shape."
         }
       ]
     },
@@ -624,7 +625,8 @@
         },
         {
           "title": "The number that decides it",
-          "body": "On list price the two are close, $10 against $12 a month. The difference is the chat tool you run alongside Notion, and the hours somebody spends designing and repairing the tracker Kolabr includes."
+          "body": "On list price the two are close, $10 against $12 a month.* The difference is the chat tool you run alongside Notion, and the hours somebody spends designing and repairing the tracker Kolabr includes.",
+          "note": "* Monthly terms on both. On annual terms it is $8.50 against $10."
         }
       ]
     },
