@@ -20,7 +20,7 @@ import { breadcrumbJsonLd, graph, pageMetadata, softwareApplicationJsonLd } from
 import { SIGNUP_PATH } from "@/lib/site";
 
 import appRequests from "@/assets/images/app-requests.webp";
-import uiChannelDashboard from "@/assets/images/ui-channel-dashboard.webp";
+import screenDashboard from "@/assets/images/screen-dashboard.webp";
 import uiChannelSwitcher from "@/assets/images/ui-channel-switcher.webp";
 
 export const metadata = pageMetadata("/product/channels/");
@@ -38,8 +38,8 @@ export default function ChannelsPage() {
         <Screenshot
           preload
           className="mt-16"
-          image={uiChannelDashboard}
-          alt="A channel dashboard: request counts, request volume chart, CSAT average and the assigned request list, with the channel's modules and members in the sidebar"
+          image={screenDashboard}
+          alt="The dashboard for one channel: requests this month, open and unassigned counts, what is at risk against its SLA, the request volume chart, the guests in the channel with none of them billed, the CSAT average, and the requests assigned to this person"
         />
       </ProductHero>
 

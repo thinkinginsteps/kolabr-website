@@ -20,7 +20,7 @@ import { breadcrumbJsonLd, graph, pageMetadata } from "@/lib/seo";
 import { SIGNUP_PATH } from "@/lib/site";
 
 import uiRequestDetail from "@/assets/images/ui-request-detail.webp";
-import screenRequests from "@/assets/images/screen-requests.webp";
+import screenChat from "@/assets/images/screen-chat.webp";
 
 export const metadata = pageMetadata("/product/requests/");
 
@@ -36,9 +36,8 @@ export default function RequestsPage() {
         <Screenshot
           preload
           className="mt-16"
-          image={screenRequests}
-          // Design alt said "ticket number"; Kolabr's items are requests (Dom's copy rule).
-          alt="The Requests list for one channel: request number, title, status, priority, owner, assigned team, category, SLA state and created date"
+          image={screenChat}
+          alt="The Payments channel: a problem explained in the thread, a request raised from that message with its number, owner, status and SLA, a wiki page added from the same thread, and a review scheduled"
         />
       </ProductHero>
 
