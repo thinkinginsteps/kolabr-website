@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { ButtonLink } from "../ButtonLink";
+import { UnderlineLink } from "../UnderlineLink";
 import { CtaBand } from "../CtaBand";
 import { Screenshot } from "../product/ProductSections";
 import { CostCalculator } from "./CostCalculator";
@@ -44,13 +45,19 @@ export function Split({ children }: { children: ReactNode }) {
 
 /* ---------- Hero ---------- */
 
-/** The first button defaults to the feature table; a page whose argument starts elsewhere says where. */
+/**
+ * The first button defaults to the feature table; a page whose argument starts elsewhere says where.
+ * `pricingButton={false}` drops "See pricing": a page with its own price band sends the reader to
+ * /pricing from there (PricingNudge), not before they have seen anything.
+ */
 export function Hero({
   hero,
   primary = { label: "Jump to the comparison", href: "#compare" },
+  pricingButton = true,
 }: {
   hero: Comparison["hero"];
   primary?: { label: string; href: Href };
+  pricingButton?: boolean;
 }) {
   return (
     <section aria-labelledby="vs-hero" className="relative bg-hero-glow px-10 pt-[196px] pb-[130px] max-tab:!px-5 max-tab:!pt-[124px] max-tab:!pb-0">
@@ -67,9 +74,11 @@ export function Hero({
             <ButtonLink href={primary.href} size="lg">
               {primary.label}
             </ButtonLink>
-            <ButtonLink href="/pricing" variant="secondary" size="lg" className="[--lift-shadow:none]">
-              See pricing
-            </ButtonLink>
+            {pricingButton && (
+              <ButtonLink href="/pricing" variant="secondary" size="lg" className="[--lift-shadow:none]">
+                See pricing
+              </ButtonLink>
+            )}
           </div>
         </div>
         <div data-rise="" className="mt-14 grid max-w-[1080px] grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-[18px] max-tab:grid-cols-1">
@@ -332,6 +341,19 @@ export function Proof({ proof }: { proof: Comparison["proof"] }) {
         </ol>
       </div>
     </section>
+  );
+}
+
+/**
+ * The way on to /pricing, placed under a page's own price comparison so the reader leaves the
+ * compare page only once they have seen what it has to say about cost.
+ */
+export function PricingNudge({ className = "" }: { className?: string }) {
+  return (
+    <p className={`flex flex-wrap items-baseline gap-x-2 gap-y-1 text-[16px] text-ink-muted ${className}`}>
+      Want the full detail on every Kolabr plan?
+      <UnderlineLink href="/pricing">See full pricing</UnderlineLink>
+    </p>
   );
 }
 

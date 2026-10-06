@@ -1,4 +1,5 @@
-// Content for the compare pages other than Slack, which has its own shape (lib/compare-slack.ts).
+// Content for the compare pages that share one layout. Slack and Basecamp have their own shapes
+// (lib/compare-slack.ts, lib/compare-basecamp.ts).
 // Originally extracted from design/Compare - *.dc.html and since rewritten: the structure below
 // is ours, not the design's. Competitor prices date quickly, so re-check every figure before launch.
 
@@ -57,9 +58,9 @@ export const COMPARE_SLUGS = [
 
 export type CompareSlug = (typeof COMPARE_SLUGS)[number];
 
-/** Every compare page except Slack, whose words live in content/pages/compare-slack.json. */
-export type SharedCompareSlug = Exclude<CompareSlug, "slack">;
-const SHARED_SLUGS = COMPARE_SLUGS.filter((s): s is SharedCompareSlug => s !== "slack");
+/** The compare pages on the shared layout. Slack and Basecamp have their own content files. */
+export type SharedCompareSlug = Exclude<CompareSlug, "slack" | "basecamp">;
+const SHARED_SLUGS = COMPARE_SLUGS.filter((s): s is SharedCompareSlug => s !== "slack" && s !== "basecamp");
 
 export const comparisons = requireKeys(
   loadContent<Record<SharedCompareSlug, Comparison>>("compare"),

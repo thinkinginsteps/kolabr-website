@@ -1,0 +1,448 @@
+{
+  "competitor": "Basecamp",
+  "hero": {
+    "eyebrow": "Kolabr compared",
+    "title": "Kolabr vs Basecamp",
+    "lede": "Basecamp keeps a tidy list of what each project needs doing. Kolabr runs the whole client relationship as it happens: the conversation, requests with an owner and a clock the client can see, calls started from the work they are about, a wiki that answers before anyone asks, and a channel that carries on long after one project ends.",
+    "image": {
+      "file": "m2-dashboard",
+      "alt": "A Kolabr client channel's dashboard: requests this month, approvals waiting, what is due today with its response time, the people in the channel and the requests assigned to you"
+    },
+    "chip": {
+      "title": "#418 due in 3 hours",
+      "body": "The client can see the owner and the clock without asking."
+    }
+  },
+  "tuesday": {
+    "id": "tuesday",
+    "title": "The same Tuesday, in each",
+    "lede": "One client, one ordinary day. Both tools can carry it. Watch where the work lives, and who has to remember what.",
+    "steps": [
+      {
+        "time": "9:02",
+        "basecamp": "The client posts on the project’s message board. Someone reads it later and writes a to-do with an assignee and a due date.",
+        "kolabr": {
+          "title": "The message becomes request #418",
+          "text": "One step turns it into a numbered request with an owner, a category and a four-hour response target, and the client can see all three.",
+          "chip": {
+            "label": "#418 · Nina Walsh · due in 4h",
+            "tone": "accent"
+          }
+        }
+      },
+      {
+        "time": "11:30",
+        "basecamp": "A quick call would settle it. Basecamp’s features list has no video calls, so someone pastes a link to a separate video tool into the chat.",
+        "kolabr": {
+          "title": "The call starts from the request",
+          "text": "Screen sharing, a whiteboard over the shared screen and a recording, and the call stays linked to #418 so the decision is with the work.",
+          "chip": {
+            "label": "Call · linked to #418",
+            "tone": "accent"
+          }
+        }
+      },
+      {
+        "time": "15:15",
+        "basecamp": "The to-do has a due date, so it turns overdue once the date passes. Until then, nothing says it is slipping.",
+        "kolabr": {
+          "title": "It shows as at risk before it is late",
+          "text": "The response target is running down, so the request is marked at risk on the channel dashboard while there is still time to act.",
+          "chip": {
+            "label": "At risk · 40 min left",
+            "tone": "risk"
+          }
+        }
+      },
+      {
+        "time": "16:40",
+        "basecamp": "A new contact at the client asks how invoicing works. Someone types the answer again, or digs through last year’s archived project for it.",
+        "kolabr": {
+          "title": "The wiki answers first",
+          "text": "They start raising a request and the channel wiki suggests the article on invoicing before they finish typing.",
+          "chip": {
+            "label": "Suggested: How we invoice",
+            "tone": "accent"
+          }
+        }
+      }
+    ]
+  },
+  "beyond": {
+    "id": "beyond",
+    "title": "What a to-do list was never built to do",
+    "lede": "All of this is on Kolabr Pro, in every channel, with no other subscription to add.",
+    "tiles": [
+      {
+        "title": "Live, not checked later",
+        "body": "Chat with presence, threads and voice notes. Calls start from the request they are about, with screen sharing, a whiteboard over the shared screen and a recording kept for 30 days.",
+        "sketch": {
+          "kind": "call",
+          "heading": "Call from #418",
+          "chips": [
+            "Screen sharing",
+            "Whiteboard",
+            "Recording"
+          ]
+        }
+      },
+      {
+        "title": "A clock the client can see",
+        "body": "Every request has an owner, a category and a response target, and the client sees all three. Routing sends it to the right person as it arrives.",
+        "sketch": {
+          "kind": "rows",
+          "heading": "What your client sees",
+          "rows": [
+            {
+              "label": "Owner",
+              "value": "Nina Walsh"
+            },
+            {
+              "label": "Status",
+              "value": "In progress"
+            },
+            {
+              "label": "Response due",
+              "value": "In 3 hours"
+            }
+          ]
+        }
+      },
+      {
+        "title": "The channel remembers",
+        "body": "A wiki in every channel, with version history, readable by your guests and suggested to a client while they are asking.",
+        "sketch": {
+          "kind": "wiki",
+          "heading": "Channel wiki",
+          "articles": [
+            {
+              "title": "Revision rounds and scope",
+              "meta": "v6"
+            },
+            {
+              "title": "How we invoice",
+              "meta": "v3"
+            },
+            {
+              "title": "Booking a print slot",
+              "meta": "Suggested",
+              "suggested": true
+            }
+          ]
+        }
+      },
+      {
+        "title": "Repeat work runs itself",
+        "body": "Onboarding, a monthly report, a round of revisions: deploy a playbook and the steps, owners and due dates are filled in for you. Automation rules and recurring events take care of the rest.",
+        "sketch": {
+          "kind": "playbook",
+          "heading": "Client onboarding",
+          "steps": [
+            {
+              "text": "Kickoff call booked",
+              "owner": "Nina",
+              "due": "Done",
+              "done": true
+            },
+            {
+              "text": "Brand assets received",
+              "owner": "Cara",
+              "due": "Done",
+              "done": true
+            },
+            {
+              "text": "First draft to client",
+              "owner": "Joss",
+              "due": "Due Fri",
+              "done": false
+            }
+          ]
+        }
+      },
+      {
+        "title": "The relationship never closes",
+        "body": "One channel holds every job you do for that client, year after year. Nobody is re-invited, and nothing is archived away from the conversation that produced it.",
+        "sketch": {
+          "kind": "rows",
+          "heading": "Verde Health, since 2022",
+          "rows": [
+            {
+              "label": "Q4 launch",
+              "value": "In progress"
+            },
+            {
+              "label": "Website rebuild",
+              "value": "Closed 2025"
+            },
+            {
+              "label": "Rebrand",
+              "value": "Closed 2023"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Room for every client",
+        "body": "Channels are unlimited on both paid plans, and so are guests. Your fortieth client adds nothing to the bill, the same as your fourth.",
+        "sketch": {
+          "kind": "channels",
+          "heading": "Channels",
+          "items": [
+            "Verde Health",
+            "Halden & Co",
+            "Northgate Dental",
+            "Pike Street Bakery",
+            "Arlo Studio",
+            "Brightwater Trust"
+          ],
+          "more": "+ 34 more"
+        }
+      }
+    ]
+  },
+  "statement": {
+    "id": "structure",
+    "title": "Built around the client, not the project",
+    "paragraphs": [
+      "Basecamp is shaped around projects, and it is good at them: a project opens, the work gets done, the project is archived. Client work rarely ends that neatly. A retainer, a support contract or a six-year relationship produces a new project every few months, and the history ends up split across all of them.",
+      "A Kolabr channel is the relationship itself. The client joins once and stays. Work arrives as requests, closes, and is still there in two years next to the wiki article that explains how you handled it. A big job can still have its own channel; the client’s history does not have to start again when it does."
+    ],
+    "image": {
+      "file": "a5-chat",
+      "alt": "A Kolabr client channel: the practice team, the client and the contractor in one ongoing conversation, with a pinned notice, a threaded question and a request raised from a message"
+    }
+  },
+  "cost": {
+    "title": "What you pay for, plan by plan",
+    "lede": "Basecamp charges one fee for the whole account, and every plan has the same tools, so moving up buys room: more active projects and more storage. Kolabr charges for the people on your team, and moving up buys capability. Channels and guests are unlimited on both paid plans, whatever the size of your client list.",
+    "basecamp": {
+      "tag": "You pay for room",
+      "unit": "A month, for the whole account",
+      "plans": [
+        {
+          "name": "Free",
+          "price": "$0",
+          "limits": [
+            "1 project",
+            "5 people",
+            "1 GB"
+          ]
+        },
+        {
+          "name": "Freelancer",
+          "price": "$25",
+          "limits": [
+            "3 active projects",
+            "20 people, clients included",
+            "5 GB"
+          ]
+        },
+        {
+          "name": "Studio",
+          "price": "$59",
+          "limits": [
+            "10 active projects",
+            "Unlimited people",
+            "25 GB"
+          ]
+        },
+        {
+          "name": "Pro",
+          "price": "$99",
+          "limits": [
+            "25 active projects",
+            "Unlimited people",
+            "100 GB"
+          ]
+        },
+        {
+          "name": "Unlimited",
+          "price": "$299",
+          "terms": "billed yearly",
+          "limits": [
+            "Unlimited projects",
+            "Unlimited people",
+            "1,000 GB",
+            "Personal onboarding"
+          ]
+        }
+      ],
+      "same": {
+        "title": "The same tools on every plan",
+        "text": "Message boards, to-dos, card tables, Campfire chat, a schedule, docs and files, and check-ins. Upgrading changes the limits, not what you can do."
+      }
+    },
+    "kolabr": {
+      "tag": "You pay for your team",
+      "unit": "Per user, a month",
+      "same": {
+        "title": "On both paid plans",
+        "text": "Unlimited channels and unlimited free guests, with no project limit. Your fortieth client costs what your fourth did: nothing."
+      }
+    },
+    "note": "* Yearly fee, per user per month. Billed monthly, Pro is $10 and Business $25. Basecamp’s prices are its monthly list prices, which it does not discount for yearly billing; Unlimited is billed yearly only. Basecamp prices checked 6 October 2026."
+  },
+  "table": {
+    "title": "Kolabr and Basecamp, feature by feature",
+    "lede": "Basecamp’s prices and features were checked on 6 October 2026. Both change, so check Basecamp’s own pricing page before you budget.",
+    "groups": [
+      {
+        "title": "Requests and accountability",
+        "rows": [
+          [
+            "Knowing who owes what, without asking",
+            "Built in. Every request has a number, a category, an owner, a status and a response target.",
+            "To-dos with an assignee, a due date and subtasks. No categories, routing or response targets."
+          ],
+          [
+            "A deadline the client can see for themselves",
+            "A response target per category, visible to the client.",
+            "Due dates on to-dos. No response-time targets."
+          ],
+          [
+            "Work that repeats",
+            "Playbooks fill in the steps, owners and due dates. Automation rules and recurring events on Pro.",
+            "Project and to-do list templates."
+          ]
+        ]
+      },
+      {
+        "title": "Conversation and meetings",
+        "rows": [
+          [
+            "Talking in real time",
+            "Chat in every channel, with threads, presence, voice notes and direct messages.",
+            "Campfire chat and Pings for direct messages, plus a message board per project."
+          ],
+          [
+            "Getting on a call",
+            "In the channel, started from the request it concerns, with screen sharing and recording.",
+            "No video calls on Basecamp’s features list; teams link a separate video tool."
+          ],
+          [
+            "Where your own team talks",
+            "A Team channel on every paid account. Paid members only, and a guest cannot be added to it.",
+            "A company HQ for everyone in the account, and projects clients are not invited to."
+          ]
+        ]
+      },
+      {
+        "title": "Knowledge and history",
+        "rows": [
+          [
+            "Not explaining the same thing every month",
+            "A wiki in every channel, with version history, suggested to clients as they ask.",
+            "Docs and files per project."
+          ],
+          [
+            "A date in the diary tied to the work",
+            "Scheduled events in the channel, tied to the request they came from.",
+            "A schedule per project, with calendar subscription."
+          ],
+          [
+            "Where last year’s answer is",
+            "In the same channel, next to this year’s work.",
+            "In the project it was given in, archived when that project closed."
+          ]
+        ]
+      },
+      {
+        "title": "Working with clients",
+        "rows": [
+          [
+            "What it costs to bring a client in",
+            "Free on every plan, in as many channels as the work needs.",
+            "Free. On the $25 plan everyone counts towards the twenty-person limit."
+          ],
+          [
+            "The second and third job for the same client",
+            "The same channel, or another one, at no extra cost.",
+            "A new project each, and each counts towards the active-project limit."
+          ],
+          [
+            "Control over what a client sees",
+            "Only the channels they are invited to, and nothing else in your account.",
+            "Client visibility, set per project and item by item."
+          ]
+        ]
+      },
+      {
+        "title": "Cost and administration",
+        "rows": [
+          [
+            "List price",
+            "$10 or $25 per user per month, or $8.50 and $21.25 on yearly terms. Guests free.",
+            "$25, $59 or $99 a month for the whole account, or $299 a month billed yearly."
+          ],
+          [
+            "What the plan limits",
+            "Your team. Channels and guests are unlimited on both paid plans.",
+            "Active projects: 3, 10, 25 or unlimited, by plan."
+          ],
+          [
+            "What you can show a client before you pay anything",
+            "A free plan: one channel with up to 30 guests, for as long as you like.",
+            "A free plan: one project, 1 GB and up to five people."
+          ],
+          [
+            "Single sign-on and an audit log",
+            "On Business.",
+            "Not listed on Basecamp’s pricing or features pages."
+          ]
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "title": "Questions people ask before moving",
+    "items": [
+      {
+        "title": "Does Kolabr replace Basecamp’s to-dos?",
+        "body": "For client work, yes. What you would put on a to-do becomes a request: numbered, with an owner, a category and a response target the client can see, and a checklist of tasks inside it when the work has steps. What Kolabr does not have yet is a board view, so if your team plans work as cards moving across columns, keep that where it is for now."
+      },
+      {
+        "title": "We would hit Basecamp’s project limit. What happens on Kolabr?",
+        "body": "Nothing changes. Channels are unlimited on both paid plans, so a channel per client, or several, never moves the price. The bill follows your team, not how busy your year is."
+      },
+      {
+        "title": "Both have free clients, so what is the difference?",
+        "body": "What the client walks into. In Basecamp a client is invited to a project and sees its message board, to-dos and schedule. In Kolabr a client has a channel where they talk to you live, raise requests and watch the clock on them, join calls and read the wiki, and it is the same channel for every piece of work you do together."
+      },
+      {
+        "title": "Which is cheaper?",
+        "body": "Basecamp, while you run a few projects at a time: $59 a month covers ten active projects for any number of people. Past twenty-five active projects Basecamp is $299 a month billed yearly, where a team of twelve on Kolabr Pro pays $102 a month on yearly terms. Either way, the question worth asking is what the money buys: a to-do list per project, or requests with a clock, calls, a wiki and playbooks in every client’s channel."
+      },
+      {
+        "title": "What about ongoing work that never really ends?",
+        "body": "This is the common reason firms outgrow a project-shaped tool. Support, retainers, maintenance and standing client relationships have no finish date, so they sit uneasily in something built around projects. A Kolabr channel has no end date, and requests come and go inside it."
+      },
+      {
+        "title": "Can we move from Basecamp to Kolabr?",
+        "body": "Yes, and the usual approach is to stop creating new projects rather than migrate old ones. Open a channel for your busiest client, run the next piece of work there, and let the Basecamp archive stay readable for as long as you need it."
+      }
+    ]
+  },
+  "proof": {
+    "title": "Proof takes one week",
+    "lede": "Take your longest-standing client, the one whose work never really stops. No project has to be closed and nothing has to be exported.",
+    "steps": [
+      {
+        "lead": "Monday",
+        "text": "Open one channel for that client and invite everyone on their side. Guests cost nothing, so there is no list to approve first."
+      },
+      {
+        "lead": "By Friday",
+        "text": "The whole relationship is in one place, and every open item has a name and a date on it instead of sitting in a list somebody has to remember to check."
+      },
+      {
+        "lead": "Week four",
+        "text": "You will know from the client whether a channel beats a project. That is the only test this page is asking you to run."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Give the relationship a home.",
+    "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Start with the client whose work never really finishes.",
+    "disclaimer": "Basecamp is a trademark of 37signals, LLC. Kolabr is not affiliated with 37signals. Feature and price details were checked against Basecamp’s public pages on 6 October 2026 and change over time."
+  }
+}

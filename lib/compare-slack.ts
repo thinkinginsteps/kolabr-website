@@ -3,6 +3,7 @@
 // stays here, as it does for every other page (see lib/content-store.ts).
 
 import type { Comparison } from "./compare";
+import { assertCheckedDate } from "./checked-date";
 import { loadContent } from "./content-store";
 import { SLACK_PRICES_CHECKED } from "./slack-cost";
 import type { Card, Rich } from "./use-cases";
@@ -39,15 +40,7 @@ function load(): SlackComparison {
   const missing = KEYS.filter((k) => !(k in data));
   if (missing.length) throw new Error(`Content file compare-slack.json is missing: ${missing.join(", ")}`);
 
-  // The page states when Slack's figures were checked in several places (the hero note, the
-  // table, the calculator, the footer). They must all name the same day, or a re-check that
-  // updates one leaves the others claiming a date nobody checked on.
-  const text = JSON.stringify(data);
-  const dates = new Set([...text.matchAll(/checked[^"]*?(\d{1,2} [A-Z][a-z]+ \d{4})/g)].map((m) => m[1]));
-  const stale = [...dates].filter((d) => d !== SLACK_PRICES_CHECKED);
-  if (stale.length) {
-    throw new Error(`compare-slack.json says Slack was checked on ${stale.join(", ")}, but lib/slack-cost.ts says ${SLACK_PRICES_CHECKED}`);
-  }
+  assertCheckedDate(data, SLACK_PRICES_CHECKED, "compare-slack.json", "lib/slack-cost.ts");
   return data;
 }
 

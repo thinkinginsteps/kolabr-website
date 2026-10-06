@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ComparePage } from "@/components/compare/ComparePage";
+import { BasecampComparePage } from "@/components/compare/BasecampComparePage";
 import { SlackComparePage } from "@/components/compare/SlackComparePage";
 import { JsonLd } from "@/components/JsonLd";
 import { comparisons, COMPARE_SLUGS, type CompareSlug } from "@/lib/compare";
+import { basecampComparison } from "@/lib/compare-basecamp";
 import { slackComparison } from "@/lib/compare-slack";
 import type { MetaRoute } from "@/lib/page-meta";
 import { breadcrumbJsonLd, faqJsonLd, graph, pageMetadata } from "@/lib/seo";
 
 // The five compare pages. Every slug is prerendered; anything else 404s. Slack has its own layout
-// and content file; the other four share ComparePage.
+// and content file, as does Basecamp; the other three share ComparePage.
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -32,6 +34,14 @@ export default async function Compare({ params }: PageProps<"/compare/[slug]">) 
       <>
         <JsonLd data={graph(breadcrumbJsonLd(route(slug)), faqJsonLd(slackComparison.faq.items))} />
         <SlackComparePage content={slackComparison} />
+      </>
+    );
+  }
+  if (slug === "basecamp") {
+    return (
+      <>
+        <JsonLd data={graph(breadcrumbJsonLd(route(slug)), faqJsonLd(basecampComparison.faq.items))} />
+        <BasecampComparePage content={basecampComparison} />
       </>
     );
   }
