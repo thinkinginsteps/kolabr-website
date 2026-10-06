@@ -34,6 +34,8 @@ const EXTRA_IMAGES = [
   "assets/screens/con-wiki.png",
   // The ClickUp compare page's hero: a studio's client channel, drawn for that page alone.
   "assets/screens/dev-chat.png",
+  // The Zendesk compare page's hero: an IT services firm's client channel.
+  "assets/screens/its-chat.png",
 ];
 // Screenshots of the real app, replacing the design's mockups page by page. The source path is
 // relative to design/, because captures arrive wherever they arrive; the destination name is what

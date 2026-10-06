@@ -58,6 +58,7 @@ import s_l3_wiki from "@/assets/images/screens/l3-wiki.webp";
 import s_l4_mobile from "@/assets/images/screens/l4-mobile.webp";
 import s_m2_chat from "@/assets/images/screens/m2-chat.webp";
 import s_dev_chat from "@/assets/images/screens/dev-chat.webp";
+import s_its_chat from "@/assets/images/screens/its-chat.webp";
 import s_m2_dashboard from "@/assets/images/screens/m2-dashboard.webp";
 import s_m2_events from "@/assets/images/screens/m2-events.webp";
 import s_m2_requests from "@/assets/images/screens/m2-requests.webp";
@@ -139,6 +140,7 @@ export const screens: Record<string, StaticImageData> = {
   "l4-mobile": s_l4_mobile,
   "m2-chat": s_m2_chat,
   "dev-chat": s_dev_chat,
+  "its-chat": s_its_chat,
   "m2-dashboard": s_m2_dashboard,
   "m2-events": s_m2_events,
   "m2-requests": s_m2_requests,

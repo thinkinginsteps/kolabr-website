@@ -2,9 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { ButtonLink } from "../ButtonLink";
 import { UnderlineLink } from "../UnderlineLink";
-import { CtaBand } from "../CtaBand";
 import { Screenshot } from "../product/ProductSections";
-import { CostCalculator } from "./CostCalculator";
 import { Rich } from "../Rich";
 import { ShotBand } from "../use-case/UseCasePage";
 import type { Comparison, CompareSection } from "@/lib/compare";
@@ -12,8 +10,8 @@ import type { Href } from "@/lib/links";
 import { screens } from "@/lib/use-case-images";
 import type { Card, Rich as RichText } from "@/lib/use-cases";
 
-// The compare pages share this layout, and the Slack page (SlackComparePage) borrows its bands.
-// All copy comes from content/pages/compare.json and compare-slack.json.
+// Bands the compare pages share. Each page (SlackComparePage, BasecampComparePage and so on)
+// composes its own layout from these and its own sections; the words come from its content file.
 
 export const H2 = "text-[clamp(34px,3.7vw,54px)] leading-[1.04] font-semibold tracking-[-0.03em] text-balance text-ink";
 export const PAD = "px-10 max-tab:!px-5 max-tab:!py-[86px]";
@@ -60,7 +58,10 @@ export function Hero({
   pricingButton?: boolean;
 }) {
   return (
-    <section aria-labelledby="vs-hero" className="relative bg-hero-glow px-10 pt-[196px] pb-[130px] max-tab:!px-5 max-tab:!pt-[124px] max-tab:!pb-0">
+    <section
+      aria-labelledby="vs-hero"
+      className="relative bg-hero-glow px-10 pt-[196px] pb-[130px] max-tab:!px-5 max-tab:!pt-[124px] max-tab:!pb-0"
+    >
       <div className="mx-auto max-w-content">
         <div data-rise="" className="flex max-w-[880px] flex-col gap-5">
           <span className="text-[12px] font-semibold tracking-[0.12em] text-accent-ink uppercase">{hero.eyebrow}</span>
@@ -81,7 +82,10 @@ export function Hero({
             )}
           </div>
         </div>
-        <div data-rise="" className="mt-14 grid max-w-[1080px] grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-[18px] max-tab:grid-cols-1">
+        <div
+          data-rise=""
+          className="mt-14 grid max-w-[1080px] grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-[18px] max-tab:grid-cols-1"
+        >
           {hero.summary.map((c) => (
             <div key={c.title} className="flex flex-col gap-3 rounded-3xl bg-surface-tint p-[30px]">
               <h2 className="text-[20px] font-semibold tracking-[-0.02em] text-ink">{c.title}</h2>
@@ -117,7 +121,10 @@ export function FeatureTable({ table, competitor }: { table: Comparison["table"]
             <div role="columnheader" className="py-[18px] pr-[18px] pl-0.5">
               <span className="sr-only">Feature</span>
             </div>
-            <div role="columnheader" className="rounded-t-[14px] bg-surface-tint p-[18px] text-[17px] font-semibold text-ink max-tab:rounded-none">
+            <div
+              role="columnheader"
+              className="rounded-t-[14px] bg-surface-tint p-[18px] text-[17px] font-semibold text-ink max-tab:rounded-none"
+            >
               Kolabr
             </div>
             <div role="columnheader" className="py-[18px] pr-0.5 pl-[18px] text-[17px] font-semibold text-ink-muted max-tab:rounded-none">
@@ -225,66 +232,7 @@ export function BandHead({ id, title, lede }: { id: string; title: string; lede:
   );
 }
 
-/**
- * The outcome band. It answers the question the feature table leaves open, which is what any of
- * it is worth, and it runs immediately before the price for that reason.
- */
-export function Outcome({ outcome }: { outcome: Comparison["outcome"] }) {
-  return (
-    <NarrowBand id="first-month" labelledBy="vs-month-h">
-      <BandHead id="vs-month-h" title={outcome.title} lede={outcome.lede} />
-      <div data-rise-group="" className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-[18px] max-tab:grid-cols-1">
-        {outcome.items.map((item, i) => (
-          <div key={item.lead} data-rise="" className="flex flex-col gap-3.5 rounded-3xl bg-surface p-[34px] shadow-subtle">
-            <span aria-hidden="true" className="text-[13px] font-semibold tracking-[0.11em] text-accent-ink tabular-nums">
-              {String(i + 1).padStart(2, "0")}
-            </span>
-            <h3 className="text-[21px] font-semibold tracking-[-0.02em] text-pretty text-ink">{item.lead}</h3>
-            <p className="text-[16.5px] text-pretty text-ink-muted">
-              <Rich text={item.text} />
-            </p>
-          </div>
-        ))}
-      </div>
-    </NarrowBand>
-  );
-}
-
-/* ---------- Cost and FAQ ---------- */
-
-function Cost({ cost, slug }: { cost: Comparison["cost"]; slug: string }) {
-  // The list prices stay, but small and underneath: a per-seat rate is the wrong unit for this
-  // decision, so the calculator leads and the rates are there to be checked against.
-  const rate = (p: Comparison["cost"]["kolabr"], ours: boolean) => (
-    <div className="flex flex-col gap-1">
-      <span className={`text-[12px] font-semibold tracking-[0.11em] uppercase ${ours ? "text-accent-ink" : "text-ink-muted"}`}>{p.name}</span>
-      <span className="text-[19px] font-semibold tracking-[-0.02em] text-ink">{p.price}</span>
-      <span className="text-[14.5px] leading-[1.45] text-pretty text-ink-muted">{p.text}</span>
-    </div>
-  );
-  return (
-    <NarrowBand id="cost" labelledBy="vs-cost-h">
-      <Split>
-        <div data-rise="" className="flex max-w-[620px] flex-col gap-[22px]">
-          <h2 id="vs-cost-h" className={H2}>
-            {cost.title}
-          </h2>
-          <Paragraphs items={cost.paragraphs} size={20.5} />
-          <p className="text-[16.5px] text-pretty text-ink-muted">
-            <Rich text={cost.note} />
-          </p>
-        </div>
-        <div data-rise="" className="flex flex-col gap-5">
-          <CostCalculator slug={slug} />
-          <div className="grid grid-cols-2 gap-6 rounded-3xl bg-surface-tint p-[26px] max-tab:grid-cols-1">
-            {rate(cost.kolabr, true)}
-            {rate(cost.other, false)}
-          </div>
-        </div>
-      </Split>
-    </NarrowBand>
-  );
-}
+/* ---------- FAQ ---------- */
 
 export function Faq({ faq }: { faq: Comparison["faq"] }) {
   return (
@@ -373,25 +321,5 @@ export function Statement({ statement, flush }: { statement: Comparison["stateme
         <Screenshot image={screens[statement.image.file]} alt={statement.image.alt} />
       </div>
     </section>
-  );
-}
-
-/* ---------- Page ---------- */
-
-export function ComparePage({ content: c, slug }: { content: Comparison; slug: string }) {
-  return (
-    <>
-      <Hero hero={c.hero} />
-      <Statement statement={c.statement} />
-      <FeatureTable table={c.table} competitor={c.competitor} />
-      {c.sections.map((s) => (
-        <Middle key={s.id} section={s} />
-      ))}
-      <Outcome outcome={c.outcome} />
-      <Cost cost={c.cost} slug={slug} />
-      <Faq faq={c.faq} />
-      <Proof proof={c.proof} />
-      <CtaBand width={680} title={c.cta.title} body={c.cta.body} note={c.cta.disclaimer} />
-    </>
   );
 }

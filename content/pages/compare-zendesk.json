@@ -1,0 +1,307 @@
+{
+  "competitor": "Zendesk",
+  "hero": {
+    "eyebrow": "Kolabr compared",
+    "title": "Kolabr vs Zendesk",
+    "lede": "Zendesk is built to keep customers at the door: a portal, a form, a queue, a reply by email and a ticket that closes. Kolabr brings your clients into the room. They ask in the channel they already use, the person who knows the answer gives it, and the clock on every request is there for them to see.",
+    "image": {
+      "file": "its-chat",
+      "alt": "A Kolabr client channel for an IT services firm and a dental group: the front desk lead reports a frozen check-in screen, request #2214 is created with a one-hour response target, the network engineer fixes it remotely and the client confirms in the channel"
+    },
+    "chip": {
+      "title": "Fixed in nine minutes",
+      "body": "Raised in the channel, answered by the engineer who knew, confirmed by the client."
+    }
+  },
+  "journey": {
+    "id": "journey",
+    "title": "One request, two journeys",
+    "lede": "The same Monday-morning problem, from the moment the client notices it to the moment it is fixed.",
+    "relayLabel": "The relay",
+    "zendesk": {
+      "label": "Through Zendesk",
+      "steps": [
+        {
+          "actor": "Client",
+          "text": "Emails support, or fills in the web form."
+        },
+        {
+          "actor": "Queue",
+          "text": "A ticket is created and waits its turn."
+        },
+        {
+          "actor": "Agent",
+          "text": "Picks it up and reads back through the history."
+        },
+        {
+          "actor": "Agent",
+          "text": "Asks the engineer who knows, in a private note.",
+          "relay": true
+        },
+        {
+          "actor": "Engineer",
+          "text": "Answers the agent, not the client.",
+          "relay": true
+        },
+        {
+          "actor": "Agent",
+          "text": "Passes the answer on to the client by email.",
+          "relay": true
+        },
+        {
+          "actor": "Queue",
+          "text": "The ticket is solved and closed. The next question starts a new one."
+        }
+      ]
+    },
+    "kolabr": {
+      "label": "In Kolabr",
+      "steps": [
+        {
+          "actor": "Client",
+          "text": "Says it in the channel they are already in."
+        },
+        {
+          "actor": "Kolabr",
+          "text": "One step makes it request #2214, with an owner and a one-hour response target."
+        },
+        {
+          "actor": "Engineer",
+          "text": "The person who knows answers in the thread."
+        },
+        {
+          "actor": "Client",
+          "text": "Watches the owner, the status and the clock, and confirms the fix."
+        },
+        {
+          "actor": "Channel",
+          "text": "The request closes and stays in the channel’s history, beside the wiki article that stops it happening again."
+        }
+      ]
+    }
+  },
+  "roles": {
+    "id": "roles",
+    "title": "Who is allowed to answer",
+    "lede": "The person who knows the answer is often not the person with the licence.",
+    "cards": [
+      {
+        "label": "Zendesk agent",
+        "can": "Replies to the client.",
+        "note": "Response targets only from Suite Professional."
+      },
+      {
+        "label": "Zendesk light agent",
+        "can": "Adds private notes. Cannot reply to the client.",
+        "note": "An add-on on Suite Team, up to 100 included on Suite Professional."
+      },
+      {
+        "label": "Kolabr user",
+        "can": "Answers the client directly, in the channel.",
+        "note": "Response targets, routing and playbooks included on Pro."
+      }
+    ],
+    "footer": "In Kolabr the person who knows gives the answer, instead of handing it to someone with a licence."
+  },
+  "keep": {
+    "id": "keep",
+    "title": "Clients, not tickets",
+    "lede": "What your guests keep in a channel that a queue was never built to give them.",
+    "tiles": [
+      {
+        "title": "One place, for years",
+        "body": "Every request, decision and article for that client lives in one channel. Nothing is closed away from the conversation that produced it."
+      },
+      {
+        "title": "The clock in plain sight",
+        "body": "Each request shows its owner, its status and the time left, to your guests, without anyone logging in to a portal to check."
+      },
+      {
+        "title": "People with names",
+        "body": "Your guests see who is working on their request and talk to them directly, not to a shared support address."
+      }
+    ]
+  },
+  "cost": {
+    "title": "What response targets cost",
+    "lede": "In Zendesk, response targets start at Suite Professional. In Kolabr they are on Pro. Choose how many users you have.",
+    "chartTitle": "Monthly cost by number of users",
+    "teamLabel": "Users",
+    "noTargets": "No response targets",
+    "withTargets": "Response targets included",
+    "note": "* Yearly fees per user or agent per month: Kolabr Pro $8.50, Zendesk Suite Team $55, Zendesk Suite Professional $115. Billed monthly they are $10, $69 and $149. Zendesk charges Copilot at $50 per agent on top, and bills AI agents per automated resolution. Zendesk prices checked 6 October 2026."
+  },
+  "table": {
+    "title": "Kolabr and Zendesk, feature by feature",
+    "lede": "Zendesk’s prices and features were checked on 6 October 2026. Both change, so check Zendesk’s own pricing page before you budget.",
+    "groups": [
+      {
+        "title": "How your client reaches you",
+        "rows": [
+          [
+            "Where your client goes to ask",
+            "In the channel they are already in, by typing. Any message becomes a numbered request in one step.",
+            "A help centre, email, a web form or a chat widget."
+          ],
+          [
+            "What your client sees while they wait",
+            "The request with its owner, status and response target, the conversation around it, the wiki and the calendar.",
+            "Their own tickets in the help centre, and email updates."
+          ],
+          [
+            "Talking about anything that is not a request",
+            "Full chat with threads, mentions, presence and direct messages.",
+            "Conversation happens inside tickets and side conversations."
+          ]
+        ]
+      },
+      {
+        "title": "Who can answer",
+        "rows": [
+          [
+            "A colleague who knows the answer",
+            "Answers the client directly, as a user.",
+            "Needs an agent licence to reply. A light agent can only add private notes."
+          ],
+          [
+            "What a person who answers costs",
+            "$8.50 per user per month on Pro, on yearly terms.",
+            "$55 per agent on Suite Team, $115 on Suite Professional, on yearly terms."
+          ],
+          [
+            "Light agents",
+            "Not needed. Every user can answer.",
+            "An add-on on Suite Team, up to 100 on Suite Professional. Private notes only."
+          ],
+          [
+            "What it costs to bring a client in",
+            "Free on every plan, as guests, in as many channels as the work needs.",
+            "End users are free."
+          ],
+          [
+            "Where your own team talks",
+            "A Team channel on every paid account. Paid users only, and a guest cannot be added to it.",
+            "Internal notes on a ticket, and side conversations."
+          ]
+        ]
+      },
+      {
+        "title": "Requests and accountability",
+        "rows": [
+          [
+            "Knowing who owes what, without asking",
+            "Built in on every plan. Number, category, owner, status and due date.",
+            "The core of the product."
+          ],
+          [
+            "Response targets",
+            "On Pro, and visible to your guests.",
+            "From Suite Professional. Not on Support Team or Suite Team."
+          ],
+          [
+            "Sending a request to the right person",
+            "Routing rules on Pro.",
+            "Ticket routing on every plan, skills-based routing on Suite Professional."
+          ],
+          [
+            "Work that repeats",
+            "Playbooks on Pro: the steps, owners and due dates filled in for you.",
+            "Macros and triggers."
+          ]
+        ]
+      },
+      {
+        "title": "Knowledge, calls and dates",
+        "rows": [
+          [
+            "Not explaining the same thing every month",
+            "A wiki in every channel, readable by guests and suggested to them as they ask.",
+            "A help centre from Suite Team, built and published as its own site."
+          ],
+          [
+            "Getting on a call",
+            "Video calls in the channel, started from the request, with screen sharing.",
+            "Phone support through Zendesk’s telephony on Suite plans."
+          ],
+          [
+            "A date in the diary tied to the work",
+            "Scheduled events in the channel, tied to the request they came from.",
+            "Not part of the product."
+          ]
+        ]
+      },
+      {
+        "title": "Cost and administration",
+        "rows": [
+          [
+            "List price",
+            "$10 or $25 per user per month, or $8.50 and $21.25 on yearly terms. Guests free.",
+            "Support Team $25, Suite Team $69 and Suite Professional $149 per agent per month, or $19, $55 and $115 on yearly terms. Enterprise is quoted."
+          ],
+          [
+            "On top of the plan",
+            "Nothing.",
+            "Copilot at $50 per agent, and AI agents billed per automated resolution."
+          ],
+          [
+            "How long before it earns its keep",
+            "Open a channel and invite people. Nothing to configure first.",
+            "A help centre, forms, triggers and macros are configured first."
+          ]
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "title": "Questions people ask before moving",
+    "items": [
+      {
+        "title": "Is Kolabr a helpdesk?",
+        "body": "No. A helpdesk is built to process volume from people you will never meet: a portal, a queue, macros and a ticket that closes. Kolabr is built for clients you know by name and keep for years. They are in the channel with you, and each request is one part of an ongoing conversation rather than a case in a queue."
+      },
+      {
+        "title": "Do clients need to log into a portal?",
+        "body": "No. They are in the channel, which is where they already talk to you. There is no separate system to learn, no password to forget and no moment where somebody gives up and sends an email instead."
+      },
+      {
+        "title": "Can the people who know the answer reply to clients directly?",
+        "body": "Yes. Every user can answer in the channels they are in. In Zendesk, replying to a customer needs an agent licence; a light agent can add private notes but cannot reply."
+      },
+      {
+        "title": "Do we get response targets on the entry plan?",
+        "body": "Yes. Response targets are on Kolabr Pro, and your guests can see them. In Zendesk they start at Suite Professional, $115 per agent a month on yearly terms."
+      },
+      {
+        "title": "Which is cheaper?",
+        "body": "On yearly terms Kolabr Pro is $8.50 per user a month, against $55 per agent for Zendesk Suite Team and $115 for Suite Professional, the first Suite plan with response targets. For 10 people that is $85 a month, against $550 and $1,150."
+      },
+      {
+        "title": "What is in the Kolabr price?",
+        "body": "Chat, requests with response targets, routing, playbooks, a wiki in every channel, video calls and scheduled events, all on Pro. Nothing is billed per agent or per resolution."
+      }
+    ]
+  },
+  "proof": {
+    "title": "Proof takes one week",
+    "lede": "Take one client off the portal. Nothing else has to change, and the rest of the queue carries on exactly as it is.",
+    "steps": [
+      {
+        "lead": "Monday",
+        "text": "Give that client a channel, invite everyone on their side as guests, and add any colleague of yours who could help. Nobody needs a helpdesk licence."
+      },
+      {
+        "lead": "By Friday",
+        "text": "Requests are arriving from people who never bothered to log in, and answers are coming from colleagues who never had a helpdesk licence."
+      },
+      {
+        "lead": "Week four",
+        "text": "You will know what the portal was costing you in questions nobody asked. That is the only test this page is asking you to run."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Take one client off the portal.",
+    "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Keep the owners, categories and clocks; lose the front door.",
+    "disclaimer": "Zendesk is a trademark of Zendesk, Inc. Kolabr is not affiliated with Zendesk. Feature and price details were checked against Zendesk’s public pages on 6 October 2026 and change over time."
+  }
+}

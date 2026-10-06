@@ -1,5 +1,5 @@
-// Content for the compare pages that share one layout. Slack, Basecamp, Notion and ClickUp have
-// their own shapes (lib/compare-slack.ts, compare-basecamp.ts, compare-notion.ts, compare-clickup.ts).
+// Shapes shared by the compare pages. Each page builds its own type from these
+// (lib/compare-slack.ts, compare-basecamp.ts, compare-notion.ts, compare-clickup.ts, compare-zendesk.ts).
 // Originally extracted from design/Compare - *.dc.html and since rewritten: the structure below
 // is ours, not the design's. Competitor prices date quickly, so re-check every figure before launch.
 
@@ -42,29 +42,9 @@ export type Comparison = {
   cta: { title: string; body: string; disclaimer: string };
 };
 
-// The words live in content/pages/compare.json, which the back office edits. The types and the
-// key list below stay here on purpose: code owns the shape, content owns the words, so an edit
-// can change what a page says but never what a page expects.
+// Every compare page has its own content file and layout (lib/compare-<slug>.ts). The types above
+// are the pieces they share; the list below is the only list of compare routes.
 
-import { loadContent, requireKeys } from "./content-store";
-
-export const COMPARE_SLUGS = [
-  "slack",
-  "basecamp",
-  "notion",
-  "clickup",
-  "zendesk",
-] as const;
+export const COMPARE_SLUGS = ["slack", "basecamp", "notion", "clickup", "zendesk"] as const;
 
 export type CompareSlug = (typeof COMPARE_SLUGS)[number];
-
-/** The compare pages on the shared layout. The rest have their own content files. */
-const OWN_LAYOUT = ["slack", "basecamp", "notion", "clickup"] as const;
-export type SharedCompareSlug = Exclude<CompareSlug, (typeof OWN_LAYOUT)[number]>;
-const SHARED_SLUGS = COMPARE_SLUGS.filter((s): s is SharedCompareSlug => !(OWN_LAYOUT as readonly string[]).includes(s));
-
-export const comparisons = requireKeys(
-  loadContent<Record<SharedCompareSlug, Comparison>>("compare"),
-  SHARED_SLUGS,
-  "compare",
-);

@@ -255,7 +255,7 @@ export default function HomePage() {
             <h2 id="compare-h" className="text-[clamp(28px,3vw,40px)] leading-[1.08] font-semibold tracking-[-0.03em] text-ink">
               How does Kolabr compare?
             </h2>
-            <p className="text-[17.5px]">Fair, specific comparisons, including where the other tool is the better choice.</p>
+            <p className="text-[17.5px]">Fair, specific comparisons, checked against each tool’s own pricing and dated.</p>
           </div>
           <CompareLogoGrid
             items={[
