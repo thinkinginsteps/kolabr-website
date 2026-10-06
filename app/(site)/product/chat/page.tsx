@@ -37,7 +37,7 @@ export default function ChannelChatPage() {
           preload
           className="mt-16"
           image={screenChat}
-          alt="The Payments channel conversation: a pinned notice, messages from team members and client guests, a request created from a message, a threaded reply and a scheduled deploy review"
+          alt="The Payments channel conversation: a pinned notice, messages from users and guests, a request created from a message, a threaded reply and a scheduled deploy review"
         />
       </ProductHero>
 
@@ -47,13 +47,13 @@ export default function ChannelChatPage() {
         lede="Not everything belongs in front of the client, and not everything needs a separate tool. Channel chat gives you the room for each conversation without leaving the channel."
         points={[
           { title: "The channel conversation", body: "One thread everyone in the channel can read, team and guests alike. It is the record of the relationship, not a scroll you have to keep up with." },
-          { title: "Group chats inside it", body: "Pull in the people a particular thing concerns: two of your team and the client's finance lead, say. Members are named on the chat, so nobody wonders who is reading." },
+          { title: "Group chats inside it", body: "Pull in the people a particular thing concerns: two of your team and the client's finance lead, say. Everyone in it is named on the chat, so nobody wonders who is reading." },
           { title: "Direct messages", body: "A quiet word with one person, still in the channel's context. No parallel inbox, no second app to check." },
         ]}
         figure={
           <SplitFigure>
             <GroupChatCard />
-            <FloatingChip title="Guests included" body="Client members are marked, and see only the channels they are in." />
+            <FloatingChip title="Guests included" body="Guests are marked, and see only the channels they are in." />
           </SplitFigure>
         }
       />
@@ -84,7 +84,7 @@ export default function ChannelChatPage() {
           <BleedImage
             className="mt-7 min-h-0 flex-1"
             image={uiThreadCrop}
-            alt="A thread on a message: replies from team members collapsed under the original message"
+            alt="A thread on a message: replies from users collapsed under the original message"
           />
         </DeepCard>
         <PlainCard
@@ -95,7 +95,7 @@ export default function ChannelChatPage() {
         </PlainCard>
         <PlainCard
           title="Who is here, always visible"
-          body="Members are listed on the chat and in the channel, with client members marked as guests and presence shown next to each name."
+          body="Users and guests are listed on the chat and in the channel, with guests marked and presence shown next to each name."
         >
           <MemberList
             members={[
@@ -106,7 +106,7 @@ export default function ChannelChatPage() {
         </PlainCard>
         <PlainCard
           title="Searchable history"
-          body="Every thread stays with its channel, so a question from six months ago is one search away, and a new member reads the whole story from the start."
+          body="Every thread stays with its channel, so a question from six months ago is one search away, and someone new reads the whole story from the start."
         >
           <SkeletonLines widths={["88%", "66%", "78%"]} />
         </PlainCard>
@@ -117,7 +117,7 @@ export default function ChannelChatPage() {
         lede="No. It is the conversation layer of the work itself: the requests, meetings and wiki it talks about are in the same channel."
         items={[
           { title: "No more chasing across inboxes", body: "The decision, the file and the request it produced are in one thread, instead of split across email, WhatsApp and a task tool nobody outside your team can open." },
-          { title: "Guests do not pay to talk to you", body: "Clients, partners and suppliers join by email link, free, and take part in the conversation as full members of the channels they belong to." },
+          { title: "Guests do not pay to talk to you", body: "Clients, partners and suppliers join by email link as guests, free, and take part fully in the channels they belong to." },
           { title: "Quiet by design", body: "Conversations are scoped to a channel, not a company-wide firehose. People see the threads they are in, and nothing else." },
         ]}
       />

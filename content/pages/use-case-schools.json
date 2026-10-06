@@ -38,7 +38,7 @@
       }
     ],
     "seatNote": [
-      "Channels are unlimited on Pro and Business, and so are guests: a class of 27 parents adds nothing to the bill. You pay for your teachers and office staff, and nothing else. ",
+      "Channels are unlimited on Pro and Business, and so are guests: a class of 27 parents adds nothing to the bill. You pay only for users: your teachers and office staff. ",
       {
         "label": "Compare plans",
         "href": "/pricing#compare-plans"
@@ -223,9 +223,9 @@
         "body": "Build next year’s classes from a channel template: categories, SLAs and the wiki already in place. Archive last year’s and keep it readable."
       },
       {
-        "title": "You pay for staff only",
+        "title": "You pay for users, not guests",
         "body": [
-          "Parents, coaches and suppliers are guests and are never billed. The plan covers your own team. ",
+          "Parents, coaches and suppliers are guests and are never billed. The plan bills users only: your own team. ",
           {
             "label": "See pricing",
             "href": "/pricing"

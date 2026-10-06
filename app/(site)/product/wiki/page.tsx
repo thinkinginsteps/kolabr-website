@@ -83,7 +83,7 @@ export default function WikiPage() {
       >
         <WideCard
           title="Sections, not a folder of files"
-          body="Group articles the way the channel thinks: Getting started, one section per service line, Onboarding, Runbooks. New members read the first section and are useful by lunchtime."
+          body="Group articles the way the channel thinks: Getting started, one section per service line, Onboarding, Runbooks. Newcomers read the first section and are useful by lunchtime."
           link={{ label: "How a channel fits together", href: "/product/channels" }}
           aside={
             <CardPanel className="gap-3.5 px-6 py-[22px] text-[14px]">
@@ -145,7 +145,7 @@ export default function WikiPage() {
         title="Is this a documentation tool?"
         lede="Not the kind you migrate a company into. It is the wiki for one channel, read by the people in that channel, which is why it stays short enough to be true."
         items={[
-          { title: "One wiki per channel", body: "No company-wide tree nobody prunes. Each channel keeps the pages its own work needs, and they are the pages its members see." },
+          { title: "One wiki per channel", body: "No company-wide tree nobody prunes. Each channel keeps the pages its own work needs, and they are the pages its users and guests see." },
           { title: "Guests read it too", body: "Publish the articles a client should have, the checklist, the cut-off times, the escalation ladder, and stop sending them as attachments." },
           { title: "Included in the plan", body: "The wiki comes with the channel. No separate knowledge-base subscription, and no per-reader charge." },
         ]}

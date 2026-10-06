@@ -3,7 +3,7 @@
   "hero": {
     "eyebrow": "Kolabr compared",
     "title": "Kolabr vs Notion",
-    "lede": "Notion is a blank canvas, and a good one. To run client work on it, somebody builds the portal, the tracker and the sharing, connects a chat tool and a video tool, then keeps all of it working. Kolabr is the finished room your client walks into: the conversation, requests with a clock, the wiki, calls and events, ready the day you open a channel.",
+    "lede": "Notion is a blank canvas, and a good one. To run client work on it, somebody builds the portal, the tracker and the sharing, connects a chat tool and a video tool, then keeps all of it working. Kolabr is the finished room your guests walk into: the conversation, requests with a clock, the wiki, calls and events, ready the day you open a channel.",
     "image": {
       "file": "m2-wiki",
       "alt": "A Kolabr channel wiki article on rounds, revisions and scope: numbered steps, a reference table and a message to send the client, with the channel's other articles listed beside it"
@@ -30,10 +30,10 @@
           "text": "A view for each client, filtered to their requests"
         },
         {
-          "text": "Sharing, page by page, so each client sees only their own"
+          "text": "Sharing, page by page, so each client’s guests see only their own"
         },
         {
-          "text": "A form for the client to ask for things"
+          "text": "A form for guests to ask for things"
         },
         {
           "text": "Automations to tell the owner something arrived",
@@ -62,10 +62,10 @@
       ],
       "includedLabel": "Already there when you do",
       "included": [
-        "Live chat with your client",
+        "Live chat with your guests",
         "Requests with an owner and a response target",
         "Routing to the right person",
-        "A wiki the client can read",
+        "A wiki your guests can read",
         "Calls with screen sharing",
         "Scheduled events",
         "A dashboard for the channel"
@@ -75,7 +75,7 @@
   },
   "walkIn": {
     "id": "walk-in",
-    "title": "What your client walks into",
+    "title": "What your guests walk into",
     "lede": "Both tools let clients in for free. What they find when they arrive is the difference.",
     "notion": {
       "label": "A Notion guest",
@@ -123,7 +123,7 @@
   },
   "cost": {
     "title": "One subscription, or a stack",
-    "lede": "Per person the prices are close. What differs is everything else you pay for, because Notion has no chat and no calls.",
+    "lede": "Per user the prices are close. What differs is everything else you pay for, because Notion has no chat and no calls.",
     "notion": {
       "label": "Client work on Notion",
       "lines": [
@@ -145,20 +145,20 @@
     "kolabr": {
       "label": "Client work on Kolabr Pro",
       "lines": [
-        "Live chat with your clients",
+        "Live chat with your guests",
         "Requests with response targets",
         "Calls with screen sharing",
         "A wiki in every channel",
         "Scheduled events"
       ]
     },
-    "totalLabel": "Per person, a month",
+    "totalLabel": "Per user, a month",
     "scale": {
       "title": "At Business level",
-      "notion": "Notion Business is $20* per member. SCIM provisioning and the audit log are kept for Enterprise, which is quoted.",
+      "notion": "Notion Business is $20* per user. SCIM provisioning and the audit log are kept for Enterprise, which is quoted.",
       "kolabr": "SAML SSO, SCIM provisioning and an unlimited, exportable audit log are all included."
     },
-    "note": "* Yearly fees, per person per month. Billed monthly, Notion Plus is $12 and Business $24; Kolabr Pro is $10 and Business $25. Notion prices checked 6 October 2026."
+    "note": "* Yearly fees, per user per month. Billed monthly, Notion Plus is $12 and Business $24; Kolabr Pro is $10 and Business $25. Notion prices checked 6 October 2026."
   },
   "table": {
     "title": "Kolabr and Notion, feature by feature",
@@ -168,7 +168,7 @@
         "title": "Conversation and meetings",
         "rows": [
           [
-            "Talking with your client day to day",
+            "Talking with your guests day to day",
             "Live chat in every channel, with threads, presence, voice notes and direct messages.",
             "Comments on pages and blocks. Notion has no chat between people."
           ],
@@ -179,7 +179,7 @@
           ],
           [
             "Where your own team talks",
-            "A Team channel on every paid account. Paid members only, and a guest cannot be added to it.",
+            "A Team channel on every paid account. Paid users only, and a guest cannot be added to it.",
             "Comments and teamspaces. The running conversation happens in another tool."
           ]
         ]
@@ -193,12 +193,12 @@
             "A database you design, with the properties and views you build."
           ],
           [
-            "A deadline the client can see",
-            "A response target per category, visible to the client.",
+            "A deadline your guests can see",
+            "A response target per category, visible to guests.",
             "No response-time targets. Formulas and automations can approximate one."
           ],
           [
-            "How a client asks for something",
+            "How a guest asks for something",
             "In the channel. One step turns the message into a numbered request.",
             "A form, on any plan, with custom forms on Plus."
           ],
@@ -213,7 +213,7 @@
         "title": "Working with clients",
         "rows": [
           [
-            "What it costs to bring a client in",
+            "What it costs to bring a guest in",
             "Free on every plan, and unlimited on both paid plans.",
             "Free. Ten on the free plan, unlimited on paid plans."
           ],
@@ -260,7 +260,7 @@
           [
             "List price",
             "$10 or $25 per user per month, or $8.50 and $21.25 on yearly terms. Guests free.",
-            "Plus $12 and Business $24 per member per month, or $10 and $20 on yearly terms. Enterprise is quoted."
+            "Plus $12 and Business $24 per user per month, or $10 and $20 on yearly terms. Enterprise is quoted."
           ],
           [
             "Single sign-on",
@@ -289,8 +289,8 @@
         "body": "No. Notion has comments on pages and blocks, but no chat between people and no calls, so client work in Notion runs beside a separate chat tool and a separate video tool. In Kolabr the conversation, the calls, the requests and the wiki are in the same channel, and your own team gets a Team channel that no guest can be added to."
       },
       {
-        "title": "Notion has forms. How does a client ask for something in Kolabr?",
-        "body": "They say it in the channel. One step turns the message into a numbered request with a category, an owner and a response target, and routing sends it to the right person. The client then watches that request: who has it, its status and how long is left. A form gets the question in; a request keeps the promise in sight until it is kept."
+        "title": "Notion has forms. How does a guest ask for something in Kolabr?",
+        "body": "They say it in the channel. One step turns the message into a numbered request with a category, an owner and a response target, and routing sends it to the right person. The guest then watches that request: who has it, its status and how long is left. A form gets the question in; a request keeps the promise in sight until it is kept."
       },
       {
         "title": "Can I build a request tracker in Notion?",
@@ -298,15 +298,15 @@
       },
       {
         "title": "Both offer free guests, so what is the difference?",
-        "body": "What a guest joins. In Notion a guest is shared individual pages, to view, comment on or edit. In Kolabr a guest joins a channel: the conversation, their open requests and the clock on each, the wiki, calls and events for that relationship, all at once. You are not deciding page by page what a client may see."
+        "body": "What a guest joins. In Notion a guest is shared individual pages, to view, comment on or edit. In Kolabr a guest joins a channel: the conversation, their open requests and the clock on each, the wiki, calls and events for that relationship, all at once. You are not deciding page by page what a guest may see."
       },
       {
         "title": "Which is cheaper?",
-        "body": "Per person the two are close: on yearly terms Notion Plus is $10 a member and Kolabr Pro is $8.50 a user. The difference is what else you pay for. Notion has no chat and no calls, so client work on it needs a chat tool and a video tool as well, and Kolabr Pro includes both. At Business level, Kolabr includes SCIM provisioning and a full audit log, which Notion keeps for its quoted Enterprise plan."
+        "body": "Per user the two are close: on yearly terms Notion Plus is $10 a user and Kolabr Pro is $8.50 a user. The difference is what else you pay for. Notion has no chat and no calls, so client work on it needs a chat tool and a video tool as well, and Kolabr Pro includes both. At Business level, Kolabr includes SCIM provisioning and a full audit log, which Notion keeps for its quoted Enterprise plan."
       },
       {
         "title": "Can we use Kolabr and Notion together?",
-        "body": "Plenty of teams do. Notion keeps the long-form internal knowledge it is already full of, and Kolabr runs client channels, where the conversation, the requests and the wiki for that relationship belong together. The channel wiki is for what a client or a new starter needs, not a company encyclopaedia."
+        "body": "Plenty of teams do. Notion keeps the long-form internal knowledge it is already full of, and Kolabr runs client channels, where the conversation, the requests and the wiki for that relationship belong together. The channel wiki is for what a guest or a new starter needs, not a company encyclopaedia."
       }
     ]
   },

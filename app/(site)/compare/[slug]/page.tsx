@@ -2,18 +2,20 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ComparePage } from "@/components/compare/ComparePage";
 import { BasecampComparePage } from "@/components/compare/BasecampComparePage";
+import { ClickUpComparePage } from "@/components/compare/ClickUpComparePage";
 import { NotionComparePage } from "@/components/compare/NotionComparePage";
 import { SlackComparePage } from "@/components/compare/SlackComparePage";
 import { JsonLd } from "@/components/JsonLd";
 import { comparisons, COMPARE_SLUGS, type CompareSlug } from "@/lib/compare";
 import { basecampComparison } from "@/lib/compare-basecamp";
+import { clickupComparison } from "@/lib/compare-clickup";
 import { notionComparison } from "@/lib/compare-notion";
 import { slackComparison } from "@/lib/compare-slack";
 import type { MetaRoute } from "@/lib/page-meta";
 import { breadcrumbJsonLd, faqJsonLd, graph, pageMetadata } from "@/lib/seo";
 
 // The five compare pages. Every slug is prerendered; anything else 404s. Slack has its own layout
-// and content file, as do Basecamp and Notion; ClickUp and Zendesk share ComparePage.
+// and content file, as do Basecamp, Notion and ClickUp; Zendesk still uses ComparePage.
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -52,6 +54,14 @@ export default async function Compare({ params }: PageProps<"/compare/[slug]">) 
       <>
         <JsonLd data={graph(breadcrumbJsonLd(route(slug)), faqJsonLd(notionComparison.faq.items))} />
         <NotionComparePage content={notionComparison} />
+      </>
+    );
+  }
+  if (slug === "clickup") {
+    return (
+      <>
+        <JsonLd data={graph(breadcrumbJsonLd(route(slug)), faqJsonLd(clickupComparison.faq.items))} />
+        <ClickUpComparePage content={clickupComparison} />
       </>
     );
   }

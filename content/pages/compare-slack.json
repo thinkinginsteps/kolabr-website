@@ -3,7 +3,7 @@
   "hero": {
     "eyebrow": "Kolabr compared",
     "title": "Kolabr vs Slack",
-    "lede": "Everything you use Slack for, and the part Slack leaves to other tools: requests with an owner and a deadline your client can see, a wiki in every channel, and meetings and scheduled events tied to the work. Your clients join free, in as many channels as the work needs.",
+    "lede": "Everything you use Slack for, and the part Slack leaves to other tools: requests with an owner and a deadline your guests can see, a wiki in every channel, and meetings and scheduled events tied to the work. Your guests join free, in as many channels as the work needs.",
     "summary": [
       {
         "title": "What you get on top of chat",
@@ -11,7 +11,7 @@
       },
       {
         "title": "The number that decides it",
-        "body": "Twelve people and eight clients with five people each, every client in more than one channel: $120 a month on Kolabr Pro, $455 on Slack Pro.* Slack bills those forty guests as members. Kolabr does not bill them at all.",
+        "body": "Twelve people and eight clients with five people each, every client in more than one channel: $120 a month on Kolabr Pro, $455 on Slack Pro.* Slack bills those forty guests as paid users. Kolabr does not bill them at all.",
         "note": "* Monthly terms on both. On annual terms it is $102 against $377. Slack prices checked 5 October 2026."
       }
     ]
@@ -50,12 +50,12 @@
         }
       },
       {
-        "title": "The client sees the status",
+        "title": "Your guests see the status",
         "body": "Guests see the owner, the status and the time left on the requests they are part of, so nobody has to ask for an update.",
         "slack": "A guest can see a List you share with them, as long as someone keeps it up to date.",
         "sketch": {
           "kind": "rows",
-          "heading": "What your client sees",
+          "heading": "What your guests see",
           "rows": [
             {
               "label": "Owner",
@@ -74,7 +74,7 @@
       },
       {
         "title": "A wiki in every channel",
-        "body": "Articles with version history, readable by your guests, and suggested to a client while they are raising a request.",
+        "body": "Articles with version history, readable by your guests, and suggested to a guest while they are raising a request.",
         "slack": "Canvases: documents you can pin to a channel.",
         "sketch": {
           "kind": "wiki",
@@ -136,9 +136,9 @@
         }
       },
       {
-        "title": "Clients free in every channel",
+        "title": "Guests free in every channel",
         "body": "A guest needs an email address. They are free in as many channels as the work needs, with nothing to count and nothing that turns them into a paid account later.",
-        "slack": "Free in one channel, up to five per paid member. A second channel bills them as a full member.",
+        "slack": "Free in one channel, up to five per paid user. A second channel bills them as a paid user.",
         "sketch": {
           "kind": "members",
           "heading": "Channel members",
@@ -168,7 +168,7 @@
     "id": "guests",
     "title": "The second channel is where it gets expensive",
     "paragraphs": [
-      "Slack gives you free guests on two conditions. Each one may be in a single channel, and you may have no more than five of them for every paid member. A client with a project channel, a billing question and a support thread is in three channels, so Slack bills them at the full member rate. A growing client list meets the second condition too: past five guests per member, every extra guest needs a paid account.",
+      "Slack gives you free guests on two conditions. Each one may be in a single channel, and you may have no more than five of them for every paid user. A client with a project channel, a billing question and a support thread is in three channels, so Slack bills them as paid users. A growing client list meets the second condition too: past five guests per paid user, every extra guest needs a paid account.",
       "Kolabr has one kind of guest. Free, in as many channels as the work needs, with no allowance to track. The calculator below shows what that difference comes to for your own numbers."
     ],
     "image": {
@@ -179,7 +179,7 @@
   "cost": {
     "title": "What each one actually costs you",
     "paragraphs": [
-      "Per person the two are close: Kolabr Pro is $10 a month and Slack Pro $8.75, or $8.50 and $7.25 on annual terms. What decides the bill is your guests. On Slack, a client in more than one channel is billed as a full member, and one-channel guests are free only up to five per paid member.",
+      "Per user the two are close: Kolabr Pro is $10 a month and Slack Pro $8.75, or $8.50 and $7.25 on annual terms. What decides the bill is your guests. On Slack, a guest in more than one channel is billed as a paid user, and one-channel guests are free only up to five per paid user.",
       "What decides the value is everything beyond chat. Kolabr's price includes requests with response targets, a wiki in every channel, playbooks and scheduled events. On Slack you build those from Lists, canvases and workflows, or pay for another tool."
     ]
   },
@@ -196,8 +196,8 @@
             "Slack Lists track items with an assignee and a due date, in a list you set up and keep current."
           ],
           [
-            "A deadline the client can see for themselves",
-            "Per category, per channel, visible to the client.",
+            "A deadline your guests can see for themselves",
+            "Per category, per channel, visible to guests.",
             "No response-time targets in Slack itself."
           ],
           [
@@ -228,16 +228,16 @@
         ]
       },
       {
-        "title": "Working with people outside your company",
+        "title": "Working with guests",
         "rows": [
           [
-            "What it costs to bring a client in",
+            "What it costs to bring a guest in",
             "Free on every plan, in as many channels as the work needs.",
-            "A single-channel guest is free, allowed up to five per paid active member. A guest who needs a second channel is billed as a full member."
+            "A single-channel guest is free, allowed up to five per paid user. A guest who needs a second channel is billed as a paid user."
           ],
           [
-            "A client who needs more than one channel",
-            "Normal. A client can sit in three channels and still costs nothing.",
+            "A guest who needs more than one channel",
+            "Normal. A guest can sit in three channels and still costs nothing.",
             "Becomes a multi-channel guest, charged at the full per-seat rate of your plan."
           ],
           [
@@ -258,7 +258,7 @@
           [
             "The same client across a project, a bill and a question",
             "Free. A guest sits in as many channels as the work needs.",
-            "A multi-channel guest, billed at your full member rate."
+            "A multi-channel guest, billed as a paid user."
           ],
           [
             "What you can show a client before you pay anything",
@@ -272,7 +272,7 @@
         "rows": [
           [
             "Where your own team talks",
-            "A Team channel on every paid account, there from day one. Paid members only, and a guest cannot be added to it.",
+            "A Team channel on every paid account, there from day one. Paid users only, and a guest cannot be added to it.",
             "Slack is that tool. The client side is the part that costs extra."
           ],
           [
@@ -304,7 +304,7 @@
       "type": "shotCards",
       "id": "requests",
       "title": "A conversation does not tell you what was promised",
-      "lede": "Ask a Slack workspace what is outstanding for a client and the answer lives in someone’s memory, or in whichever tracker you bought and now maintain alongside it. Kolabr answers in the channel: any message becomes a numbered request with a category, an owner, a due date and a response target the client can see.",
+      "lede": "Ask a Slack workspace what is outstanding for a client and the answer lives in someone’s memory, or in whichever tracker you bought and now maintain alongside it. Kolabr answers in the channel: any message becomes a numbered request with a category, an owner, a due date and a response target your guests can see.",
       "image": {
         "file": "m2-requests",
         "alt": "Kolabr request management: approvals, out-of-scope work, deadlines and asset deliveries in one table with owner, category and SLA state"
@@ -315,7 +315,7 @@
           "body": "Chat, requests, wiki and scheduled events are the same product. Nothing to integrate, nothing else to renew in March."
         },
         {
-          "title": "The client sees the clock",
+          "title": "Your guests see the clock",
           "body": "Response targets are visible to the people waiting, which is why they stop phoning to ask where something is."
         },
         {
@@ -335,11 +335,11 @@
       },
       {
         "lead": "Nothing is outstanding without an owner",
-        "text": "Every promise made in the chat carries a number, a name and a date, and the client can read all three without asking you for an update."
+        "text": "Every promise made in the chat carries a number, a name and a date, and your guests can read all three without asking you for an update."
       },
       {
         "lead": "The same answer stops being typed twice",
-        "text": "Scope, process and the quirks of that account go on the channel’s wiki once, so a new starter and a new client contact read it instead of asking you."
+        "text": "Scope, process and the quirks of that account go on the channel’s wiki once, so a new starter and a new guest read it instead of asking you."
       },
       {
         "lead": "One renewal, not three",
@@ -360,7 +360,7 @@
       },
       {
         "title": "Is Kolabr cheaper than Slack?",
-        "body": "Usually, and by a lot once your clients need more than one channel. Twelve people with eight clients of five each, every client in more than one channel, is $120 a month on Kolabr Pro and $455 on Slack Pro. For a small team whose clients each stay in one channel, Slack can come out a few dollars less, because one-channel guests are free there up to five per paid member. What the difference buys on Kolabr is requests with owners and response targets, a wiki in every channel, playbooks and scheduled events, which on Slack you build from Lists, canvases and workflows, or buy as another tool."
+        "body": "Usually, and by a lot once your clients need more than one channel. Twelve people with eight clients of five each, every client in more than one channel, is $120 a month on Kolabr Pro and $455 on Slack Pro. For a small team whose clients each stay in one channel, Slack can come out a few dollars less, because one-channel guests are free there up to five per paid user. What the difference buys on Kolabr is requests with owners and response targets, a wiki in every channel, playbooks and scheduled events, which on Slack you build from Lists, canvases and workflows, or buy as another tool."
       },
       {
         "title": "Can Kolabr replace Slack entirely?",
@@ -368,7 +368,7 @@
       },
       {
         "title": "Doesn't Slack have Lists, canvases and huddles now?",
-        "body": "It does, and they are good. Lists track items with an assignee and a due date, canvases are documents you can pin to a channel, and huddles are calls. What Kolabr adds is the structure around client work: requests with categories, routing and response targets the client can see, a wiki that suggests the right article while someone is asking, meetings and dates linked to the request they belong to, and guests who are free in every channel. In Slack you assemble that from the pieces and keep it working. In Kolabr it is how a channel works from the first day."
+        "body": "It does, and they are good. Lists track items with an assignee and a due date, canvases are documents you can pin to a channel, and huddles are calls. What Kolabr adds is the structure around client work: requests with categories, routing and response targets your guests can see, a wiki that suggests the right article while someone is asking, meetings and dates linked to the request they belong to, and guests who are free in every channel. In Slack you assemble that from the pieces and keep it working. In Kolabr it is how a channel works from the first day."
       },
       {
         "title": "We already have years of history in Slack. What happens to it?",
@@ -382,7 +382,7 @@
     "steps": [
       {
         "lead": "Monday",
-        "text": "Open one channel and invite the client’s whole team, not just your usual contact. Guests cost nothing, so there is no list to approve first."
+        "text": "Open one channel and invite everyone on the client’s side as guests, not just the one person you usually deal with. Guests cost nothing, so there is no list to approve first."
       },
       {
         "lead": "By Friday",
@@ -395,7 +395,7 @@
     ]
   },
   "cta": {
-    "title": "Invite the whole client, not one contact.",
+    "title": "Invite the whole client, not one person.",
     "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Put one client in a channel and add everyone who matters, because it costs nothing.",
     "disclaimer": "Slack is a trademark of Slack Technologies, LLC, a Salesforce company. Kolabr is not affiliated with Slack. Feature and price details were checked against Slack's public pages on 5 October 2026 and change over time."
   }

@@ -1,0 +1,343 @@
+{
+  "competitor": "ClickUp",
+  "hero": {
+    "eyebrow": "Kolabr compared",
+    "title": "Kolabr vs ClickUp",
+    "lede": "ClickUp gives your team one place to manage everything. Kolabr gives your team and your guests one place to get it done together: everyone who needs a say is in the channel, free, able to ask, approve and talk, and nobody needs a tour of a workspace to find their way.",
+    "image": {
+      "file": "dev-chat",
+      "alt": "A Kolabr client channel for a studio building a credit union's app: 18 members, 6 users and 12 guests, with the client's head of digital asking for a change, the team turning it into request #418 and the client's finance lead approving the estimate"
+    },
+    "chip": {
+      "title": "12 guests, all taking part",
+      "body": "Asking, approving and signing off in the channel, at no cost."
+    }
+  },
+  "room": {
+    "id": "room",
+    "title": "How many guests your users can bring in",
+    "lede": "On ClickUp, a guest who can comment or approve needs a guest place, and how many places you get depends on how many users you pay for. On Kolabr, guests are never counted.",
+    "plans": [
+      {
+        "label": "ClickUp Unlimited",
+        "rule": "5 places for your first user, then 2 for each user after that.",
+        "after": "Past that, every 2 more guests add a paid seat.",
+        "visual": "Each user after your first makes room for"
+      },
+      {
+        "label": "ClickUp Business",
+        "rule": "10 places for your first user, then 5 for each user after that.",
+        "after": "Past that, every 5 more guests add a paid seat.",
+        "visual": "Each user after your first makes room for"
+      }
+    ],
+    "kolabr": {
+      "label": "Kolabr",
+      "rule": "Any number of guests, on every plan, in as many channels as the work needs.",
+      "after": "Nothing to count, and no seats bought to make room.",
+      "visual": "Your users make room for"
+    },
+    "tableTitle": "Guests who can comment or approve before the bill grows",
+    "teamLabel": "Users",
+    "noLimit": "No limit",
+    "note": "Someone who only needs to watch can be a view-only guest on ClickUp, free and unlimited. A view-only guest cannot comment, approve or edit."
+  },
+  "learn": {
+    "id": "learn",
+    "title": "One channel, not a workspace to learn",
+    "lede": "What a guest has to find their way around on the first day.",
+    "clickup": {
+      "label": "In ClickUp",
+      "path": [
+        {
+          "level": "Workspace",
+          "name": "Brightline"
+        },
+        {
+          "level": "Space",
+          "name": "Clients"
+        },
+        {
+          "level": "Folder",
+          "name": "Harbor Credit Union"
+        },
+        {
+          "level": "List",
+          "name": "App launch"
+        },
+        {
+          "level": "Task",
+          "name": "Checkout v2"
+        },
+        {
+          "level": "Subtask",
+          "name": "Apple Pay on step one"
+        }
+      ],
+      "views": [
+        "List",
+        "Board",
+        "Gantt",
+        "Calendar",
+        "Table",
+        "Timeline"
+      ],
+      "caption": "Work filed in a hierarchy your team designed, seen through whichever view someone chose."
+    },
+    "kolabr": {
+      "label": "In Kolabr",
+      "client": "Harbor Credit Union",
+      "channel": "App launch",
+      "tabs": [
+        "Channel Chat",
+        "Requests",
+        "Scheduled Events",
+        "Wiki"
+      ],
+      "caption": "One channel and four tabs. A guest knows where to look the moment they arrive."
+    }
+  },
+  "promise": {
+    "id": "promise",
+    "title": "Promises your guests can hold you to",
+    "lede": "Boards and Gantt charts are views for your team. A guest wants three things: who has it, where it is, and when it will be done.",
+    "board": {
+      "label": "Your team’s board",
+      "columns": [
+        {
+          "name": "To do",
+          "cards": 2
+        },
+        {
+          "name": "Design",
+          "cards": 1
+        },
+        {
+          "name": "Build",
+          "cards": 2,
+          "highlight": "Checkout v2"
+        },
+        {
+          "name": "QA",
+          "cards": 1
+        },
+        {
+          "name": "Done",
+          "cards": 3
+        }
+      ]
+    },
+    "request": {
+      "label": "What your guests read",
+      "id": "#418",
+      "title": "Approve checkout flow v2",
+      "rows": [
+        {
+          "label": "Owner",
+          "value": "Maya Chen"
+        },
+        {
+          "label": "Status",
+          "value": "In progress"
+        },
+        {
+          "label": "Response due",
+          "value": "In 4 hours"
+        }
+      ],
+      "footer": "Kept up to date as the work moves. Nobody redraws anything."
+    },
+    "caption": "Plan delivery in whatever view your team likes. The promise lives in the request, where your guests can see it.",
+    "points": [
+      {
+        "title": "A response target your guests can see",
+        "body": "Each category of request has its own clock, and your guests watch it count down. ClickUp has due dates and custom fields, but no response targets."
+      },
+      {
+        "title": "Routed as it arrives",
+        "body": "Routing rules send a new request to the right person, so it never waits for somebody to notice it."
+      },
+      {
+        "title": "The answer before the question",
+        "body": "The channel wiki suggests the right article while a guest is raising a request."
+      }
+    ]
+  },
+  "cost": {
+    "title": "The bill as your client list grows",
+    "lede": "Choose how many users you have. What changes from left to right is how many guests need a say: ClickUp’s bill climbs as its allowance runs out, and Kolabr’s does not move.",
+    "chartTitle": "Monthly bill by the number of guests who can comment or approve",
+    "teamLabel": "Users",
+    "hint": "Hover the chart, or tab to it and use the arrow keys, to read any point.",
+    "note": "* Yearly fees, per user per month: ClickUp Unlimited $7, ClickUp Business $12, Kolabr Pro $8.50. Billed monthly they are $10, $19 and $10. ClickUp adds a paid seat whenever you invite a guest who can comment or edit beyond your allowance, and each seat added opens 2 more places on Unlimited, 5 on Business. ClickUp prices checked 6 October 2026."
+  },
+  "table": {
+    "title": "Kolabr and ClickUp, feature by feature",
+    "lede": "ClickUp’s prices and features were checked on 6 October 2026. Both change, so check ClickUp’s own pricing page before you budget.",
+    "groups": [
+      {
+        "title": "Working with clients",
+        "rows": [
+          [
+            "A guest who needs to do more than look",
+            "Free on every plan. Guests post, raise requests, read the wiki and join calls.",
+            "View-only guests are free and unlimited. A guest who can comment or edit takes a guest place."
+          ],
+          [
+            "How many guests can take part before you pay",
+            "Any number.",
+            "Unlimited: 5 places for your first user, then 2 for each user after that. Business: 10, then 5."
+          ],
+          [
+            "What happens when you run out",
+            "Nothing to run out of. Guests are never billed.",
+            "Inviting another guest who can comment or edit adds a paid seat."
+          ],
+          [
+            "Someone on your own email domain",
+            "Can be a guest, on your terms.",
+            "Cannot be a guest, and is charged as a member."
+          ],
+          [
+            "Keeping one client’s work away from another’s",
+            "Separate channels by design.",
+            "Spaces, folders and permissions you configure."
+          ]
+        ]
+      },
+      {
+        "title": "Requests and accountability",
+        "rows": [
+          [
+            "Knowing who owes what, without asking",
+            "Built in. Number, category, owner, status and response target on every request.",
+            "Tasks with assignees, statuses and the custom fields you design."
+          ],
+          [
+            "A deadline your guests can see",
+            "A response target per category, visible to guests.",
+            "Due dates. No response-time targets."
+          ],
+          [
+            "Getting a promise out of the chat and onto a list",
+            "One step, with the thread attached.",
+            "One step too: a chat message can become a task."
+          ],
+          [
+            "Where the small steps live",
+            "Inside a request, and they close with it.",
+            "Tasks, subtasks and checklists, the heart of the product."
+          ]
+        ]
+      },
+      {
+        "title": "Conversation and meetings",
+        "rows": [
+          [
+            "Talking with your guests",
+            "Live chat in every channel, with threads, presence, voice notes and direct messages.",
+            "ClickUp Chat, with channels and direct messages. Guests see the channels they are invited to."
+          ],
+          [
+            "Getting on a call",
+            "In the channel, started from the request it concerns, with screen sharing and recording.",
+            "SyncUps in Chat, with screen sharing and recording."
+          ],
+          [
+            "Where your own team talks",
+            "A Team channel on every paid account. Paid users only, and a guest cannot be added to it.",
+            "Chat channels that guests are not invited to."
+          ]
+        ]
+      },
+      {
+        "title": "Knowledge and planning",
+        "rows": [
+          [
+            "Not explaining the same thing every month",
+            "A wiki in every channel, readable by guests and suggested to them as they ask.",
+            "Docs and wikis, organised however you decide."
+          ],
+          [
+            "Planning views for your team",
+            "Not part of Kolabr. Guests read the request instead.",
+            "Board, Gantt, calendar, timeline and more."
+          ],
+          [
+            "How long before it earns its keep",
+            "Open a channel and invite people. Nothing to design first.",
+            "Spaces, folders, lists and fields are designed first."
+          ]
+        ]
+      },
+      {
+        "title": "Cost and administration",
+        "rows": [
+          [
+            "List price",
+            "$10 or $25 per user per month, or $8.50 and $21.25 on yearly terms. Guests free.",
+            "Unlimited $10 and Business $19 per user per month, or $7 and $12 on yearly terms. Enterprise is quoted."
+          ],
+          [
+            "Single sign-on",
+            "SAML SSO and SCIM on Business.",
+            "Google and Microsoft sign-in from Unlimited, custom SAML on Business."
+          ],
+          [
+            "An audit log",
+            "30 days on Free, a year on Pro, unlimited and exportable on Business.",
+            "On Enterprise."
+          ]
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "title": "Questions people ask before moving",
+    "items": [
+      {
+        "title": "Are ClickUp guests free?",
+        "body": "Some are. A view-only guest is free and unlimited, but cannot comment, approve or edit. A guest who can do any of those takes a guest place. On Unlimited you get 5 places for your first user and 2 for each user after that; on Business, 10 and then 5. Past that, inviting another one adds a paid seat to your bill. People on your own email domain cannot be guests at all. In Kolabr every guest can post, raise requests, read the wiki and join calls, free, on every plan."
+      },
+      {
+        "title": "ClickUp has chat and calls now. What is different?",
+        "body": "Its chat and calls are good, and they are not the difference. What changes is who gets a say. On ClickUp every guest who can comment or approve uses a guest place, and past your allowance each one costs a paid seat, so teams ration who they invite. In Kolabr every guest takes part, free. And a guest opens one channel rather than a workspace, with requests that carry a response target they can hold you to."
+      },
+      {
+        "title": "Where are the boards and Gantt charts?",
+        "body": "Kolabr does not have them, by design. They are planning views for your team. What a guest needs is the request: who has it, where it is and when it is due, kept up to date without anybody redrawing a chart. If your team plans delivery on a board, keep that board. The promise lives in the request."
+      },
+      {
+        "title": "Which is cheaper?",
+        "body": "It turns on whether your guests take part. Per user, ClickUp Unlimited is $7 a month on yearly terms and Kolabr Pro is $8.50, so while your guests only watch, ClickUp Unlimited is the smaller bill. Once more guests need a say than your allowance covers, every 2 more add a paid seat and the bill soon passes ours. ClickUp Business makes room for more guests, but at $12 a user it costs more than Kolabr Pro from the first user. The chart above works it out for your number of users."
+      },
+      {
+        "title": "We have built a lot in ClickUp. Is that wasted?",
+        "body": "Not at all, and it is a reason to keep it for internal delivery. The usual approach is to leave the build where it is and open Kolabr channels for the client-facing side, where the conversation, the requests and the wiki need to be somewhere guests can be without a seat or a licence."
+      }
+    ]
+  },
+  "proof": {
+    "title": "Proof takes one week",
+    "lede": "Open a channel for one client and invite everyone on their side who has ever had a question. There is no seat arithmetic to do first.",
+    "steps": [
+      {
+        "lead": "Monday",
+        "text": "Invite the whole client team, including the people you would never have spent a guest seat on. Nothing to configure, nothing to approve."
+      },
+      {
+        "lead": "By Friday",
+        "text": "Requests are arriving from the people who actually have them, with the detail attached, instead of through one contact who summarises."
+      },
+      {
+        "lead": "Week four",
+        "text": "You will know how much of your week used to go on relaying. That is the only test this page is asking you to run."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Let your guests do more than watch.",
+    "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Open a channel and invite everyone on their side, because it costs nothing.",
+    "disclaimer": "ClickUp is a trademark of Mango Technologies, Inc. Kolabr is not affiliated with ClickUp. Feature and price details were checked against ClickUp’s public pages on 6 October 2026 and change over time."
+  }
+}

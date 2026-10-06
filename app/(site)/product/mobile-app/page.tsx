@@ -35,7 +35,7 @@ export default function MobileAppPage() {
 
       <ProductHero
         title="The whole of Kolabr, in your pocket"
-        lede="A free companion app for iOS and Android, included with every seat. The same channels, requests, chats, events and wiki: built for the times you are not at a desk."
+        lede="A free companion app for iOS and Android, included for every user. The same channels, requests, chats, events and wiki: built for the times you are not at a desk."
       >
         <StoreButtons className="mt-[34px]" />
         <figure data-rise="" className="m-0 mt-16 flex flex-wrap items-end justify-center gap-[26px]">
@@ -85,7 +85,7 @@ export default function MobileAppPage() {
         lede={
           <>
             Free with your plan, and the same account you already use.
-            <LedeLink href="/pricing">See what a seat costs</LedeLink>
+            <LedeLink href="/pricing">See what a user costs</LedeLink>
           </>
         }
       >
@@ -106,13 +106,13 @@ export default function MobileAppPage() {
         <DeepCard
           alignStart
           title="Free, on both stores"
-          body="The app is included with every Kolabr seat: nothing to buy, nothing to add on. Sign in with the account you already have and your channels are there."
+          body="The app is included for every Kolabr user: nothing to buy, nothing to add on. Sign in with the account you already have and your channels are there."
         >
           <DeepRows
             rows={[
               { label: "iOS", value: "iPhone · iOS 16+" },
               { label: "Android", value: "Android 10+", highlight: true },
-              { label: "Included", value: "with every seat" },
+              { label: "Included", value: "for every user" },
               { label: "Guests too", value: "free, as always" },
             ]}
           />
@@ -154,13 +154,13 @@ export default function MobileAppPage() {
         items={[
           { title: "Guests get it too", body: "A client you invited can follow their requests and answer from their phone, without an account or a licence of their own." },
           { title: "A companion, not a replacement", body: "Heavy administration, analytics and playbook editing stay in the browser. The phone is for the work that cannot wait until you are back." },
-          { title: "Same data, same rules", body: "Members see only the channels they belong to, on the phone exactly as in the browser. Nothing is cached where it should not be." },
+          { title: "Same data, same rules", body: "Users and guests see only the channels they belong to, on the phone exactly as in the browser. Nothing is cached where it should not be." },
         ]}
       />
 
       <CtaBand
         title="Take the whole thing with you."
-        body="Free with every seat, on iOS and Android."
+        body="Free for every user, on iOS and Android."
         actions={
           <>
             <StoreButtons align="center" />

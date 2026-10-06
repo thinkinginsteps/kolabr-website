@@ -457,6 +457,14 @@
     "h": 912
   },
   {
+    "used": "dev-chat",
+    "src": "design/screens/Dev - Chat.dc.html",
+    "out": "design/assets/screens/dev-chat.png",
+    "mode": "viewport",
+    "w": 1604,
+    "h": 912
+  },
+  {
     "used": "m2-requests",
     "src": "design/screens/Mkt - Requests.dc.html",
     "out": "design/assets/screens/m2-requests.png",

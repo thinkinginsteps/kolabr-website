@@ -1,9 +1,9 @@
 /**
- * What a team of a given size, working with a given number of outside people, pays per month.
+ * What a number of users, working with a given number of guests, pays per month.
  *
  * This exists to answer the only cost question that matters here, which is not "what is your
  * per-seat price" but "what is the bill once the clients are in the room". It is deliberately
- * honest: on ClickUp and Notion the outside people are free too, and the model says so rather
+ * honest: on ClickUp and Notion guests are free too, and the model says so rather
  * than inventing a gap. On Basecamp the answer is usually that Basecamp is cheaper.
  *
  * Every competitor figure is a published monthly list price checked on 29 September 2026, and
@@ -25,7 +25,7 @@ export type CompetitorModel = {
   /** Short label for the plan being priced, shown under the total. */
   plan: string;
   price: (team: number, outside: number, multiChannel: number) => Outcome;
-  /** Shown when the outside people cost nothing on either side, so the page does not overclaim. */
+  /** Shown when guests cost nothing on either side, so the page does not overclaim. */
   guestsAreFreeToo?: boolean;
   /**
    * Why the participation slider does not move this competitor's total. Only Slack and ClickUp
@@ -41,8 +41,8 @@ export const MODELS: Record<string, CompetitorModel> = {
   slack: {
     name: "Slack",
     plan: "Slack Pro, monthly",
-    // Single-channel guests are free, capped at 5 per paid member. A guest who needs a second
-    // channel is billed as a full member.
+    // Single-channel guests are free, capped at 5 per paid user. A guest who needs a second
+    // channel is billed as a paid user.
     price: (team, outside, multiChannel) => {
       const rate = 8.75;
       const singleChannel = outside - multiChannel;
@@ -53,7 +53,7 @@ export const MODELS: Record<string, CompetitorModel> = {
         total: Math.round(billable * rate),
         basis:
           `${fmtSeats(billable, rate)}: your ${team}` +
-          (multiChannel ? `, plus ${multiChannel} multi-channel guests billed as members` : "") +
+          (multiChannel ? `, plus ${multiChannel} multi-channel guests billed as paid users` : "") +
           (overflow ? `, plus ${overflow} single-channel guests past the free allowance` : "") +
           ".",
       };
@@ -79,7 +79,7 @@ export const MODELS: Record<string, CompetitorModel> = {
     name: "Notion",
     plan: "Notion Plus, monthly",
     guestsAreFreeToo: true,
-    sliderNote: "Notion bills per member, and guests are free whatever they do, so this number does not move.",
+    sliderNote: "Notion bills per user, and guests are free whatever they do, so this number does not move.",
     price: (team) => ({
       total: Math.round(team * 12),
       basis: `${fmtSeats(team, 12)}. Guests are free and unlimited on paid plans, though they see only the pages they are invited to.`,
@@ -89,7 +89,7 @@ export const MODELS: Record<string, CompetitorModel> = {
     name: "ClickUp",
     plan: "ClickUp Unlimited, monthly",
     // Read-only guests are unlimited and free. Guests who can comment or edit are metered:
-    // 5 for the first paid user, plus 2 per additional paid user, then they become members.
+    // 5 for the first paid user, plus 2 per additional paid user, then they become paid users.
     price: (team, outside, multiChannel) => {
       const rate = 10;
       const allowance = team > 0 ? 5 + (team - 1) * 2 : 0;
@@ -100,7 +100,7 @@ export const MODELS: Record<string, CompetitorModel> = {
         basis:
           `${fmtSeats(billable, rate)}: your ${team}` +
           (overflow
-            ? `, plus ${overflow} participating guests past the allowance of ${allowance}, who become paid members`
+            ? `, plus ${overflow} participating guests past the allowance of ${allowance}, who become paid users`
             : `. The ${multiChannel} participating guests fit inside the allowance of ${allowance}`) +
           ".",
       };

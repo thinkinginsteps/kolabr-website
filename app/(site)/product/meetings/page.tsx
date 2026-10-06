@@ -139,7 +139,7 @@ export default function MeetingsPage() {
         items={[
           { title: "Nothing for guests to install", body: "Clients and suppliers join in the browser from the channel. No account, no licence, no download before a 15-minute call." },
           { title: "Keep your all-hands elsewhere", body: "Kolabr calls are sized for working sessions: a standup, a walkthrough, an escalation review. Large webinars are not what this is for." },
-          { title: "Included in the plan", body: "Calls and the channel calendar come with your team’s seats. No separate video bill, and no per-guest charge." },
+          { title: "Included in the plan", body: "Calls and the channel calendar come with every user. No separate video bill, and no per-guest charge." },
         ]}
       />
 

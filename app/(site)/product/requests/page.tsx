@@ -47,7 +47,7 @@ export default function RequestsPage() {
         title="What a request carries"
         lede="Enough structure to run the work, and not so much that nobody fills it in. Every request opens with the conversation on the left and the facts on the right."
         points={[
-          { title: "An owner and a team", body: "One person accountable, plus the team it is assigned to. Participants are listed with their role, so the client can see who is on it." },
+          { title: "An owner and a team", body: "One person accountable, plus the team it is assigned to. Participants are listed with their role, so your guests can see who is on it." },
           { title: "A category and a priority", body: "Set on the request and used everywhere else: routing, reporting and the SLA that applies. Change either one and the record keeps the history." },
           { title: "A first-response and resolution clock", body: "On track, at risk or breached, with the time left shown on the request and in the channel's dashboard. Auto-close rules end the ones that go quiet." },
         ]}

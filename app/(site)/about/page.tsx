@@ -24,7 +24,7 @@ const broken = [
   },
   {
     title: "Per-seat pricing punishes the point",
-    body: "Charge for every outsider and firms ration access to the people they most need in the room. The pricing model quietly decides how the work gets done, and it decides wrong.",
+    body: "Charge for every guest and firms ration access to the people they most need in the room. The pricing model quietly decides how the work gets done, and it decides wrong.",
   },
 ];
 

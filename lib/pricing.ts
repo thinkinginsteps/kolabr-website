@@ -34,7 +34,7 @@ export const plans: Plan[] = [
     note: "Free forever. No card needed",
     cta: "Get started free",
     features: [
-      "1 channel, 1 team user",
+      "1 channel, 1 user",
       "30 guests, free",
       "Requests with owners and categories",
       "Voice calls and voice notes",

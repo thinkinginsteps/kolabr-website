@@ -72,7 +72,7 @@ export default function HomePage() {
                 Learn more
               </ButtonLink>
             </div>
-            <p className="text-[15px] text-ink-muted">You pay only for your team users. Guests are invited for free.</p>
+            <p className="text-[15px] text-ink-muted">You pay only for users. Guests are invited for free.</p>
           </div>
 
           <HeroStack
@@ -158,12 +158,12 @@ export default function HomePage() {
                   Who pays for the guests you invite?
                 </h2>
                 <p className="text-[21px] leading-[1.45] text-on-deep">
-                  Nobody. You pay for your team, and the guests you invite join free.
+                  Nobody. You pay for users, and the guests you invite join free.
                 </p>
                 <p className="text-[17.5px] text-pretty">
                   Users hold a paid Kolabr account and are your own team. Guests join by email link, a client, a partner, a
-                  supplier or another department, and work inside the channels they are invited to at no charge. Each
-                  channel has a member limit set by your plan, so you decide who belongs in it.
+                  supplier or another department, and work inside the channels they are invited to at no charge. You
+                  decide who belongs in each channel.
                 </p>
                 <p className="text-[17.5px] text-pretty">So bringing the right people into a project never adds to the bill.</p>
                 <UnderlineLink href="/pricing" onDark>
@@ -214,11 +214,11 @@ export default function HomePage() {
           <div data-rise="" className="mb-[22px] flex max-w-[820px] flex-col gap-[18px]">
             <Eyebrow>Pricing</Eyebrow>
             <h2 id="pricing-h" className={h2}>
-              Pay for your team, invite everyone else
+              Pay for users, invite guests free
             </h2>
             <p className={lede}>
-              Free for one channel, for as long as you like. Pro and Business are priced per person on your team, and
-              everyone you invite from outside it is free.
+              Free for one channel, for as long as you like. Pro and Business are priced per user, and
+              every guest you invite is free.
             </p>
           </div>
           <PricingPlans />

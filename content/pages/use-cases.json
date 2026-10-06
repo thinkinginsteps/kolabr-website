@@ -39,7 +39,7 @@
         }
       ],
       "seatNote": [
-        "Channels are unlimited on Pro and Business, and so are guests: a client with three finance people in the channel adds nothing to the bill. You pay for your own team, and nothing else. ",
+        "Channels are unlimited on Pro and Business, and so are guests: a client with three finance people in the channel adds nothing to the bill. You pay only for users: your own team. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -216,7 +216,7 @@
           "body": "Build it from a channel template: service lines, the compliance calendar, the IRS notice procedure and the records checklist already there. Onboarding stops being a week of setup."
         },
         {
-          "title": "You pay for your staff",
+          "title": "You pay for users, not guests",
           "body": [
             "Client finance teams are guests and are never billed, however many of them send you documents. ",
             {
@@ -250,7 +250,7 @@
       "cards": [
         {
           "title": "Sable Bay Precinct",
-          "body": "The project channel. Client, contractor, engineer, QS and landscape architect in one place, each of them a guest, none of them paying for a seat."
+          "body": "The project channel. Client, contractor, engineer, QS and landscape architect in one place, each of them a guest, none of them a paid user."
         },
         {
           "title": "Design & drawings",
@@ -274,7 +274,7 @@
         }
       ],
       "seatNote": [
-        "Channels are unlimited on Pro and Business, and so are guests: a project with a client, a contractor and four consultants adds nothing to the bill. You pay for your studio, and nothing else. ",
+        "Channels are unlimited on Pro and Business, and so are guests: a project with a client, a contractor and four consultants adds nothing to the bill. You pay only for users: your studio. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -451,9 +451,9 @@
           "body": "Build it from a channel template: categories, SLAs, drawing standards and the submission checklist already in place. Archive the last one and keep it readable for the defects period."
         },
         {
-          "title": "You pay for the studio only",
+          "title": "You pay for users, not guests",
           "body": [
-            "Clients, contractors, engineers and QSs are guests and are never billed. The plan covers your own people. ",
+            "Clients, contractors, engineers and QSs are guests and are never billed. The plan bills users only: your own people. ",
             {
               "label": "See pricing",
               "href": "/pricing"
@@ -510,7 +510,7 @@
         }
       ],
       "seatNote": [
-        "Channels are unlimited on Pro and Business, and so are guests: a lab and a radiology partner in the channel add nothing to the bill. You pay for your own staff, and nothing else. ",
+        "Channels are unlimited on Pro and Business, and so are guests: a lab and a radiology partner in the channel add nothing to the bill. You pay only for users: your own staff. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -654,7 +654,7 @@
       },
       "cards": [
         {
-          "title": "Partners see one channel",
+          "title": "Each guest sees one channel",
           "body": "Your lab sees the results channel. Not the billing conversation, and not the roster discussion about a locum."
         },
         {
@@ -687,9 +687,9 @@
           "body": "Build it from a channel template: categories, escalation times, the results procedure and the compliance checklist already there."
         },
         {
-          "title": "You pay for your staff",
+          "title": "You pay for users, not guests",
           "body": [
-            "Labs, radiology practices and referral partners are guests and are never billed. The plan covers your own people. ",
+            "Labs, radiology practices and referral partners are guests and are never billed. The plan bills users only: your own people. ",
             {
               "label": "See pricing",
               "href": "/pricing"
@@ -745,7 +745,7 @@
         }
       ],
       "seatNote": [
-        "Channels are unlimited on Pro and Business, and so are guests: a client PM, a QS and six subcontractor foremen add nothing to the bill. You pay for your own staff, and nothing else. ",
+        "Channels are unlimited on Pro and Business, and so are guests: a client PM, a QS and six subcontractor foremen add nothing to the bill. You pay only for users: your own staff. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -922,9 +922,9 @@
           "body": "Build it from a channel template: categories, SLAs, safety procedure and the valuation checklist already there. Archive the last one and keep it readable through the defects period."
         },
         {
-          "title": "You pay for your own staff",
+          "title": "You pay for users, not guests",
           "body": [
-            "Clients, QSs and subcontractors are guests and are never billed. The plan covers the people on your payroll. ",
+            "Clients, QSs and subcontractors are guests and are never billed. The plan bills users only: the people on your payroll. ",
             {
               "label": "See pricing",
               "href": "/pricing"
@@ -980,7 +980,7 @@
         }
       ],
       "seatNote": [
-        "Channels are unlimited on Pro and Business, and so are guests: a client, a contractor and three disciplines in the channel add nothing to the bill. You pay for your engineers, and nothing else. ",
+        "Channels are unlimited on Pro and Business, and so are guests: a client, a contractor and three disciplines in the channel add nothing to the bill. You pay only for users: your engineers. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -1157,9 +1157,9 @@
           "body": "Build it from a channel template: disciplines, hold points, the inspection procedure and the certificate checklist already there. Archive the last one and keep it readable for the liability period."
         },
         {
-          "title": "You pay for your engineers",
+          "title": "You pay for users, not guests",
           "body": [
-            "Clients, contractors and other consultants are guests and are never billed. The plan covers your own people. ",
+            "Clients, contractors and other consultants are guests and are never billed. The plan bills users only: your own people. ",
             {
               "label": "See pricing",
               "href": "/pricing"
@@ -1215,7 +1215,7 @@
         }
       ],
       "seatNote": [
-        "Channels are unlimited on Pro and Business, and so are guests: a forty-person client adds nothing to the bill, and neither does the next one. You pay for your engineers, and nothing else. ",
+        "Channels are unlimited on Pro and Business, and so are guests: a forty-person client adds nothing to the bill, and neither does the next one. You pay only for users: your engineers. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -1385,16 +1385,16 @@
       "cards": [
         {
           "title": "Start with the noisy client",
-          "body": "Pick the account where tickets arrive by phone, email and corridor. One channel, their staff invited, two weeks. Your first-line will tell you by Friday."
+          "body": "Pick the account where tickets arrive by phone, email and corridor. One channel, their staff invited as guests, two weeks. Your first-line will tell you by Friday."
         },
         {
           "title": "Next client in one step",
           "body": "Build it from a channel template: categories, SLAs, the incident runbook and the joiner-leaver process already there. Onboarding stops being a fortnight of setup."
         },
         {
-          "title": "You pay for your engineers",
+          "title": "You pay for users, not guests",
           "body": [
-            "Client staff are guests and are never billed, however many of them raise requests. The plan covers your own people. ",
+            "Client staff are guests and are never billed, however many of them raise requests. The plan bills users only: your own people. ",
             {
               "label": "See pricing",
               "href": "/pricing"
@@ -1406,7 +1406,7 @@
     },
     "cta": {
       "title": "Try it on one contract.",
-      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Invite one client’s staff and watch where the requests come from.",
+      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Invite one client’s staff as guests and watch where the requests come from.",
       "primary": "Start free trial"
     }
   },
@@ -1450,7 +1450,7 @@
         }
       ],
       "seatNote": [
-        "Channels are unlimited on Pro and Business, and so are guests: three client contacts on a matter add nothing to the bill. You pay for your fee earners, and nothing else. ",
+        "Channels are unlimited on Pro and Business, and so are guests: three guests from the client on a matter add nothing to the bill. You pay only for users: your fee earners. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -1620,16 +1620,16 @@
       "cards": [
         {
           "title": "Start with the busiest matter",
-          "body": "Pick the transaction with three client contacts and a deadline. One channel, two weeks. The first time an instruction is confirmed in writing, you will see the point."
+          "body": "Pick the transaction with three people on the client’s side and a deadline. One channel, two weeks. The first time an instruction is confirmed in writing, you will see the point."
         },
         {
           "title": "Next matter in one step",
           "body": "Build it from a channel template: categories, the instruction procedure, the conflicts checklist and the closing checklist already there."
         },
         {
-          "title": "You pay for fee earners",
+          "title": "You pay for users, not guests",
           "body": [
-            "Clients, counsel and other advisers are guests and are never billed. The plan covers your own people. ",
+            "Clients, counsel and other advisers are guests and are never billed. The plan bills users only: your own people. ",
             {
               "label": "See pricing",
               "href": "/pricing"
@@ -1685,7 +1685,7 @@
         }
       ],
       "seatNote": [
-        "Channels are unlimited on Pro and Business, and so are guests: a national account with six receiving sites adds nothing to the bill. You pay for your controllers, and nothing else. ",
+        "Channels are unlimited on Pro and Business, and so are guests: a national account with six receiving sites adds nothing to the bill. You pay only for users: your controllers. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -1862,9 +1862,9 @@
           "body": "Build it from a channel template: categories, response times, the excursion procedure and the POD process already there. Onboarding a shipper stops being a fortnight."
         },
         {
-          "title": "You pay for your own staff",
+          "title": "You pay for users, not guests",
           "body": [
-            "Client depots, receiving clerks and planners are guests and are never billed. The plan covers your controllers. ",
+            "Client depots, receiving clerks and planners are guests and are never billed. The plan bills users only: your controllers. ",
             {
               "label": "See pricing",
               "href": "/pricing"
@@ -1920,7 +1920,7 @@
         }
       ],
       "seatNote": [
-        "Channels are unlimited on Pro and Business, and so are guests: a customer's quality team in the channel adds nothing to the bill. You pay for your plant, and nothing else. ",
+        "Channels are unlimited on Pro and Business, and so are guests: a customer's quality team in the channel adds nothing to the bill. You pay only for users: your plant. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -2097,9 +2097,9 @@
           "body": "Build it from a channel template: categories, containment times, the NCR procedure and the change-control process already there."
         },
         {
-          "title": "You pay for the plant",
+          "title": "You pay for users, not guests",
           "body": [
-            "Customer engineers, buyers and auditors are guests and are never billed. The plan covers your own people. ",
+            "Customer engineers, buyers and auditors are guests and are never billed. The plan bills users only: your own people. ",
             {
               "label": "See pricing",
               "href": "/pricing"
@@ -2155,7 +2155,7 @@
         }
       ],
       "seatNote": [
-        "Channels are unlimited on Pro and Business, and so are guests: a client with four stakeholders adds nothing to the bill, and neither does the next client. You pay for your account team, and nothing else. ",
+        "Channels are unlimited on Pro and Business, and so are guests: a client with four stakeholders adds nothing to the bill, and neither does the next client. You pay only for users: your account team. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -2332,9 +2332,9 @@
           "body": "Build it from a channel template: categories, SLAs, the rounds policy and the brand section already there. Archive the old account and keep it readable."
         },
         {
-          "title": "You pay for the agency only",
+          "title": "You pay for users, not guests",
           "body": [
-            "Clients, their legal reviewers and freelance collaborators are guests and are never billed. The plan covers your own people. ",
+            "Clients, their legal reviewers and freelancers are guests and are never billed. The plan bills users only: your own people. ",
             {
               "label": "See pricing",
               "href": "/pricing"
@@ -2390,7 +2390,7 @@
         }
       ],
       "seatNote": [
-        "Channels are unlimited on Pro and Business, and so are guests: forty volunteers and a funder add nothing to the bill. You pay for the people on your payroll, and nothing else. ",
+        "Channels are unlimited on Pro and Business, and so are guests: forty volunteers and a funder add nothing to the bill. You pay only for users: the people on your payroll. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -2567,9 +2567,9 @@
           "body": "Build it from a channel template: categories, the safeguarding procedure and the reporting calendar already in place. Archive the last grant and keep it readable for the audit."
         },
         {
-          "title": "You pay for staff, not volunteers",
+          "title": "You pay for users, not guests",
           "body": [
-            "Volunteers, the board and funders are guests and are never billed. The plan covers the people on your payroll. ",
+            "Volunteers, the board and funders are guests and are never billed. The plan bills users only: the people on your payroll. ",
             {
               "label": "See pricing",
               "href": "/pricing"
@@ -2625,7 +2625,7 @@
         }
       ],
       "seatNote": [
-        "Channels are unlimited on Pro and Business, and so are guests: an eighty-unit residents channel adds nothing to the bill. You pay for your own staff, and nothing else. ",
+        "Channels are unlimited on Pro and Business, and so are guests: an eighty-unit residents channel adds nothing to the bill. You pay only for users: your own staff. ",
         {
           "label": "Compare plans",
           "href": "/pricing#compare-plans"
@@ -2802,7 +2802,7 @@
           "body": "Build it from a channel template: categories, response times, the emergency procedure and the contractor list already there. Taking on a scheme stops being a week of setup."
         },
         {
-          "title": "You pay for your staff",
+          "title": "You pay for users, not guests",
           "body": [
             "The board, owners and residents are guests and are never billed, however many of them report a leak. ",
             {

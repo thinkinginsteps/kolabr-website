@@ -2,11 +2,11 @@
  * What a team pays on Kolabr Pro and on Slack Pro once its clients are in the room. The Slack
  * compare page's calculator runs on this, and nothing else does.
  *
- * Kolabr bills the people on your team and nobody else, so our side is team × rate and no other
+ * Kolabr bills users and nobody else, so our side is users × rate and no other
  * input moves it. Slack bills guests on two conditions, both its own published rules:
  *
- * - A guest in more than one channel is a multi-channel guest, billed as a full member.
- * - A guest in one channel is free, but only up to five per paid member. Past that allowance each
+ * - A guest in more than one channel is a multi-channel guest, billed as a paid user.
+ * - A guest in one channel is free, but only up to five per paid user. Past that allowance each
  *   extra guest needs a paid account.
  *
  * Slack list prices checked on SLACK_PRICES_CHECKED. Introductory offers are left out on purpose:
@@ -60,13 +60,13 @@ export function kolabrSide({ team, clients, guestsPerClient, yearly }: SlackInpu
   const theirs = guests
     ? ` Your ${guests === 1 ? "guest is" : `${guests.toLocaleString("en-US")} guests are`} free, in as many channels as the work needs.`
     : " Guests are free, in as many channels as the work needs.";
-  return side(team, rate, `${team} × ${money(rate)} on Pro, your team and nobody else.${theirs}`);
+  return side(team, rate, `${team} × ${money(rate)} on Pro, your users and nobody else.${theirs}`);
 }
 
 export function slackSide({ team, clients, guestsPerClient, multiChannel, yearly }: SlackInputs): SideCost {
   const rate = yearly ? SLACK_PRO.yearly : SLACK_PRO.monthly;
   const guests = clients * guestsPerClient;
-  const head = (billed: number) => `${billed} × ${money(rate)}: your team of ${team}`;
+  const head = (billed: number) => `${billed} × ${money(rate)}: your ${plural(team, "user", "users")}`;
 
   if (!guests) return side(team, rate, `${head(team)}.`);
 
@@ -75,7 +75,7 @@ export function slackSide({ team, clients, guestsPerClient, multiChannel, yearly
     return side(
       billed,
       rate,
-      `${head(billed)}, plus ${plural(guests, "guest", "guests")} in more than one channel, each billed as a full member.`,
+      `${head(billed)}, plus ${plural(guests, "guest", "guests")} in more than one channel, each billed as a paid user.`,
     );
   }
 
@@ -86,7 +86,7 @@ export function slackSide({ team, clients, guestsPerClient, multiChannel, yearly
     billed,
     rate,
     overflow
-      ? `${head(billed)}, plus ${plural(overflow, "guest", "guests")} past the free limit of ${allowance} (five per paid member), each needing a paid account.`
-      : `${head(billed)}. Your ${plural(guests, "guest stays", "guests stay")} in one channel each, free up to ${allowance} (five per paid member).`,
+      ? `${head(billed)}, plus ${plural(overflow, "guest", "guests")} past the free limit of ${allowance} (five per paid user), each needing a paid account.`
+      : `${head(billed)}. Your ${plural(guests, "guest stays", "guests stay")} in one channel each, free up to ${allowance} (five per paid user).`,
   );
 }

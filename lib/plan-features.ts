@@ -14,7 +14,7 @@ export const featureGroups: FeatureGroup[] = [
     title: "Channels and workspace",
     rows: [
       { name: "Channels included", values: [{ text: "1" }, { text: "Unlimited" }, { text: "Unlimited" }] },
-      { name: "Team users", values: [{ text: "1" }, { text: "Unlimited" }, { text: "Unlimited" }] },
+      { name: "Users", values: [{ text: "1" }, { text: "Unlimited" }, { text: "Unlimited" }] },
       // Always present on a paid account and outside the channel count. A guest cannot be added
       // to it, which is the point: it is where the internal conversation lives, so Kolabr is not
       // only the place clients come into.
@@ -22,7 +22,7 @@ export const featureGroups: FeatureGroup[] = [
         name: "Internal Team channel",
         values: [{ icon: "no" }, { icon: "tick", text: "guests cannot be added" }, { icon: "tick", text: "guests cannot be added" }],
       },
-      { name: "Guest users", note: true, values: [{ text: "30, free" }, { text: "Unlimited, free" }, { text: "Unlimited, free" }] },
+      { name: "Guests", note: true, values: [{ text: "30, free" }, { text: "Unlimited, free" }, { text: "Unlimited, free" }] },
       { name: "Channel archiving and export", values: [{ icon: "no" }, { icon: "yes" }, { icon: "yes" }] },
     ],
   },

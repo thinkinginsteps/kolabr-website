@@ -66,7 +66,7 @@ export function SlackCostCalculator() {
       </div>
 
       <div className="grid grid-cols-3 gap-3.5 max-tab:grid-cols-1">
-        <NumberField label="People on your team" value={team} max={500} onChange={setTeam} />
+        <NumberField label="Users" value={team} max={500} onChange={setTeam} />
         <NumberField label="Clients" value={clients} max={500} onChange={setClients} />
         <NumberField label="Guests per client" value={guestsPerClient} max={100} onChange={setGuestsPerClient} />
       </div>

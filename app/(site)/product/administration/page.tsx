@@ -47,11 +47,11 @@ export default function AdministrationPage() {
       <SplitFeature
         id="users"
         title="Who is in, and what they can do"
-        lede="One list of everyone with access, your staff and the customers you invited, with the channel they belong to, their role and whether the account is still active."
+        lede="One list of everyone with access, your users and the guests you invited, with the channel they belong to, their role and whether the account is still active."
         points={[
-          { title: "Staff and customers, one view", body: "Filter to staff or customers, search any column, export the lot. You can see at a glance who is a guest and which channel they were invited into." },
+          { title: "Users and guests, one view", body: "Filter to users or guests, search any column, export the lot. You can see at a glance who is a guest and which channel they were invited into." },
           // "Agent" is the product role name. Held as designed until Dom confirms (see report).
-          { title: "Roles, not guesswork", body: "Admin, agent or participant: set per person, applied per channel. Changing someone’s role takes effect everywhere they are a member." },
+          { title: "Roles, not guesswork", body: "Admin, agent or participant: set per person, applied per channel. Changing someone’s role takes effect in every channel they are in." },
           { title: "Disable without deleting", body: "Someone leaves, an account goes quiet: switch it off and the history stays intact, including everything they wrote in the channel." },
         ]}
         figure={
@@ -79,7 +79,7 @@ export default function AdministrationPage() {
         id="audit"
         first={false}
         title="Everything that happened, with a name on it"
-        lede="Logins, role changes, members added, requests reassigned, every email the system sent, with the user, the entity, the ID and the IP. Retained for 24 months and exportable as CSV."
+        lede="Logins, role changes, users and guests added, requests reassigned, every email the system sent, with the user, the entity, the ID and the IP. Retained for 24 months and exportable as CSV."
         image={uiAdminAudit}
         alt="The audit log: timestamped platform activity with the user, the action, the entity type, entity ID and IP address, filterable by email, user, request or channel"
       />
@@ -96,14 +96,14 @@ export default function AdministrationPage() {
       >
         <WideCard
           title="Channels, created and retired"
-          body="Spin up a channel for a new client, give it a category, an SLA profile and members, and archive it when the work ends. Cards or a list, whichever you prefer."
+          body="Spin up a channel for a new client, give it a category, an SLA profile and its users and guests, and archive it when the work ends. Cards or a list, whichever you prefer."
           link={{ label: "How a channel fits together", href: "/product/channels" }}
           aside={
             <CardPanel className="px-[22px] py-5 text-[14px]">
               <RoleList
                 roles={[
-                  { name: "Admin", body: "Configuration, users, channels, audit log", pill: "Staff" },
-                  { name: "Agent", body: "Works requests in the channels they are in", pill: "Staff" },
+                  { name: "Admin", body: "Configuration, users, channels, audit log", pill: "User" },
+                  { name: "Agent", body: "Works requests in the channels they are in", pill: "User" },
                   { name: "Participant", body: "Raises and follows their own requests", pill: "Guest ok", guest: true },
                 ]}
               />
@@ -125,12 +125,12 @@ export default function AdministrationPage() {
           />
         </DeepCard>
         <PlainCard
-          title="Seats you can see"
-          body="Usage sits in the sidebar: staff seats and channels against your plan, so a limit never arrives as a surprise mid-week."
+          title="Usage you can see"
+          body="Usage sits in the sidebar: users and channels against your plan, so a limit never arrives as a surprise mid-week."
         >
           <TintRows
             rows={[
-              { label: "Staff seats", value: "7 / 10" },
+              { label: "Users", value: "7 / 10" },
               { label: "Channels", value: "4 / 5" },
             ]}
           />

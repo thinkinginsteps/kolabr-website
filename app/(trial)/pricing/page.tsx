@@ -26,8 +26,8 @@ export default function PricingPage() {
               Pay for your team, invite everyone else
             </h1>
             <p className="text-[20px] leading-normal text-pretty text-ink-muted">
-              Free for one channel, for as long as you like. Pro and Business are priced per person on your team, and
-              the clients, partners and suppliers you invite are free on every plan, however many channels they sit in.
+              Free for one channel, for as long as you like. Pro and Business are priced per user, and the clients,
+              partners and suppliers you invite join as guests, free on every plan, however many channels they sit in.
             </p>
           </div>
           {/* Plan names are h2 here: they sit directly under the page h1. */}

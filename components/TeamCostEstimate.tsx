@@ -22,7 +22,7 @@ export function TeamCostEstimate() {
     <div className="flex flex-col gap-5 rounded-3xl bg-surface p-[30px] shadow-subtle">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <label htmlFor={`${id}-team`} className="flex flex-col gap-1.5">
-          <span className="text-[14px] font-semibold text-ink">People on your team</span>
+          <span className="text-[14px] font-semibold text-ink">Users</span>
           <input
             id={`${id}-team`}
             type="number"

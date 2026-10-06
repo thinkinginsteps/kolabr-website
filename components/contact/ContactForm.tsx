@@ -142,7 +142,7 @@ export function ContactForm() {
           <input name="company" type="text" autoComplete="organization" placeholder="Reyes + Malan" maxLength={160} className={FIELD} />
         </label>
         <label className="flex flex-col gap-[7px]">
-          <span className={LABEL}>People on your team</span>
+          <span className={LABEL}>Team size</span>
           <select
             name="size"
             value={size}

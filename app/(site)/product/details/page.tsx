@@ -53,9 +53,9 @@ export default function DetailsPage() {
       <SplitFeature
         id="accounts"
         title="Several accounts, one app"
-        lede="Most people end up with more than one Kolabr identity: the seat their employer pays for, and the guest account a supplier invited them into. Add them all and switch in a tap, without signing out of anything."
+        lede="Most people end up with more than one Kolabr identity: the user account their employer pays for, and the guest account a supplier invited them into. Add them all and switch in a tap, without signing out of anything."
         points={[
-          { title: "Add as many as you need", body: "Not just two. A staff seat, a guest account at one client, another at a supplier, each with its own channels and notifications." },
+          { title: "Add as many as you need", body: "Not just two. A user account, a guest account at one client, another at a supplier, each with its own channels and notifications." },
           { title: "Nothing bleeds across", body: "Guest accounts are marked as such, and each one sees only its own channels. Switching is a context change, not a merge." },
           { title: "Leave together, if you like", body: "Sign out of one, or out of all of them at once on a shared machine." },
         ]}
@@ -78,7 +78,7 @@ export default function DetailsPage() {
           aside={
             <CardImage
               image={uiPopNotifications}
-              alt="The notifications panel: an SLA at risk, a member joining, an assigned request, a resolved request rated 5 out of 5 and new replies in a group chat"
+              alt="The notifications panel: an SLA at risk, someone joining, an assigned request, a resolved request rated 5 out of 5 and new replies in a group chat"
             />
           }
         />

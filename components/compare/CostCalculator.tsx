@@ -5,11 +5,11 @@ import { MODELS, kolabrCost, kolabrYearly } from "@/lib/cost-model";
 
 /**
  * Two monthly totals for a team you describe. It replaces a pair of per-seat list prices, which
- * compared the wrong thing: the question is never what a seat costs, it is what the bill is once
+ * compared the wrong thing: the question is never what a user costs, it is what the bill is once
  * the clients are in the room.
  *
  * It is allowed to lose. On Basecamp it usually says Basecamp is cheaper, and on Notion and
- * ClickUp it says the outside people are free on both sides. A calculator that only ever flatters
+ * ClickUp it says guests are free on both sides. A calculator that only ever flatters
  * us would be worth nothing to the person reading it, and they can check every figure.
  */
 
@@ -46,7 +46,7 @@ export function CostCalculator({ slug }: { slug: string }) {
 
       <div className="grid grid-cols-2 gap-3.5 max-tab:grid-cols-1">
         <label className="flex flex-col gap-1.5">
-          <span className="text-[14px] font-semibold text-ink">People on your team</span>
+          <span className="text-[14px] font-semibold text-ink">Users</span>
           <input
             id={`${id}-team`}
             className={FIELD}
@@ -59,7 +59,7 @@ export function CostCalculator({ slug }: { slug: string }) {
           />
         </label>
         <label className="flex flex-col gap-1.5">
-          <span className="text-[14px] font-semibold text-ink">Clients and partners you work with</span>
+          <span className="text-[14px] font-semibold text-ink">Guests</span>
           <input
             id={`${id}-outside`}
             className={FIELD}
@@ -117,7 +117,7 @@ export function CostCalculator({ slug }: { slug: string }) {
         ) : saving < 0 ? (
           <>
             {model.name} is <strong className="font-semibold">${Math.abs(saving).toLocaleString()} a month less</strong>
-            {model.guestsAreFreeToo ? ", and the people outside your company are free on both. The difference is what they can do once they are in." : "."}
+            {model.guestsAreFreeToo ? ", and guests are free on both. The difference is what they can do once they are in." : "."}
           </>
         ) : (
           <>The two come to the same monthly bill, so the decision is what you get for it, not the price.</>

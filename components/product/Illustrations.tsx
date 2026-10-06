@@ -252,7 +252,7 @@ export function FloatingChip({ title, body }: { title: string; body: string }) {
   );
 }
 
-/** Channel members with a TEAM or GUEST label. */
+/** Channel members with a USER or GUEST label. */
 export function MemberList({ members }: { members: { name: string; guest: boolean }[] }) {
   return (
     <div className="mt-auto flex flex-col gap-2 text-[13.5px]">
@@ -262,7 +262,7 @@ export function MemberList({ members }: { members: { name: string; guest: boolea
           {m.name}
           {/* Design used --accent for GUEST; that fails contrast as small text, so --accent-ink. */}
           <span className={`ml-auto text-[11.5px] font-semibold tracking-[0.08em] ${m.guest ? "text-accent-ink" : "text-ink-muted"}`}>
-            {m.guest ? "GUEST" : "TEAM"}
+            {m.guest ? "GUEST" : "USER"}
           </span>
         </span>
       ))}
@@ -290,7 +290,7 @@ export function SectionList({ sections }: { sections: { title: string; items: st
   );
 }
 
-/** Roles with a short description and a Staff / Guest ok pill. */
+/** Roles with a short description and a User / Guest ok pill. */
 export function RoleList({ roles }: { roles: { name: string; body: string; pill: string; guest?: boolean }[] }) {
   return (
     <>

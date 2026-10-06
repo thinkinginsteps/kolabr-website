@@ -1,331 +1,4 @@
 {
-  "clickup": {
-    "competitor": "ClickUp",
-    "hero": {
-      "eyebrow": "Kolabr compared",
-      "title": "Kolabr vs ClickUp",
-      "lede": "In ClickUp a client can watch for free, and the moment they need to comment, approve or raise something they come out of a guest allowance and then onto your bill. So the people with the decisions stay outside it, and somebody on your team spends the week relaying for them. Kolabr guests post, raise requests, read the wiki and join calls, free, on every plan.",
-      "summary": [
-        {
-          "title": "The short version",
-          "body": "A client who can only watch is not collaborating. In Kolabr every guest can post, raise a request, read the wiki and join a call, on every plan, at no cost."
-        },
-        {
-          "title": "The number that decides it",
-          "body": "Per internal seat the two are close. The gap opens at the first client who has to approve something: ClickUp meters participating guests and then charges them as members, and Kolabr does not count them at all."
-        }
-      ]
-    },
-    "statement": {
-      "id": "guests",
-      "title": "A guest who can only look is not much of a guest",
-      "paragraphs": [
-        "ClickUp’s free guests are view-only. The moment a client needs to comment, approve or change anything, they take a guest seat from an allowance that scales with how many paid users you have, and once that allowance is gone the next guest is billed as a full member. There is a further rule that catches people out: a guest whose email domain matches your workspace is converted to a paid member automatically.",
-        "Kolabr has one kind of guest and they participate fully. They raise requests, answer questions, read the wiki and join calls, and they are free on every plan. Nothing converts, nothing is metered, and nobody on your side has to think about who is worth a seat before inviting the person who has the answer."
-      ],
-      "image": {
-        "file": "l3-chat",
-        "alt": "A Kolabr client channel: the provider's team and the client's staff in the same conversation, with a pinned notice and a request raised from a message"
-      }
-    },
-    "table": {
-      "title": "Kolabr and ClickUp, feature by feature",
-      "lede": "ClickUp prices and guest allowances are list terms at the time of writing and are revised periodically, so check ClickUp’s own pricing page before you budget. Checked 29 September 2026.",
-      "groups": [
-        {
-          "title": "Working with people outside your company",
-          "rows": [
-            [
-              "A client who needs to do more than look",
-              "Free on every plan. Guests post, raise requests, read the wiki and join calls.",
-              "View-only guests are free and unlimited. A guest who can comment or edit takes a guest seat."
-            ],
-            [
-              "How many clients can take part before you pay",
-              "Any number. A guest in three channels costs the same as a guest in one: nothing.",
-              "An allowance that grows with paid users. Unlimited gives 5 for a single-user workspace plus 2 per extra paid user; Business gives 10 plus 5 each."
-            ],
-            [
-              "What happens when you run out",
-              "Nothing to run past. Guests are never billed.",
-              "Guests beyond the allocation convert to paid members at the full subscription rate."
-            ],
-            [
-              "A contractor on your own email domain",
-              "Still a guest, on your terms.",
-              "Converted automatically to a paid member."
-            ],
-            [
-              "Keeping one client’s work away from another’s",
-              "A channel per client, or several, separate by design.",
-              "Spaces, folders and permission settings you configure."
-            ],
-            [
-              "Getting a client to approve something",
-              "Free, and unlimited.",
-              "Draws on a guest allowance: five plus two per paid user, then a paid member."
-            ]
-          ]
-        },
-        {
-          "title": "Requests and accountability",
-          "rows": [
-            [
-              "Knowing who owes what, without asking",
-              "Built in. Number, category, owner, status and due date on every request.",
-              "A list with custom fields you design."
-            ],
-            [
-              "A deadline the client can see for themselves",
-              "Per category, per channel, visible to the client.",
-              "No SLA concept. Custom fields and automations can approximate one."
-            ],
-            [
-              "Getting a promise out of the chat and onto a list",
-              "One step, with the thread attached.",
-              "Create a task and paste the context in."
-            ],
-            [
-              "Where the small steps live",
-              "Inside a request only. A task belongs to the request that created it and closes with it.",
-              "The centre of the product. Tasks, subtasks, checklists and boards that live on their own."
-            ]
-          ]
-        },
-        {
-          "title": "Conversation",
-          "rows": [
-            [
-              "Where your own team talks",
-              "A Team channel on every paid account, there from day one. Paid members only, and a guest cannot be added to it.",
-              "ClickUp Chat, in the same workspace as your clients' guest access."
-            ],
-            [
-              "Having the day-to-day conversation in one place",
-              "Built into every channel, with private and group direct messages.",
-              "Comments on tasks, and a separate chat feature."
-            ],
-            [
-              "Getting on a call without a third tool",
-              "In the channel, started from the request they concern.",
-              "Through an integration."
-            ],
-            [
-              "Not explaining the same thing every month",
-              "Built in, per channel, readable by guests.",
-              "Docs, organised however you decide."
-            ],
-            [
-              "A date in the diary tied to the work it came from",
-              "Built in, tied to the request they came from.",
-              "Calendar view and integrations, not tied to a request."
-            ]
-          ]
-        },
-        {
-          "title": "Cost and administration",
-          "rows": [
-            [
-              "List price",
-              "$10 or $25 per user per month. Guests free.",
-              "Free tier, then Unlimited at $7 and Business at $12 per user per month on annual billing, or $10 and $19 monthly. Enterprise is quoted."
-            ],
-            [
-              "Paying different rates for different people",
-              "Not applicable. One plan, and guests cost nothing.",
-              "Plans apply to the whole workspace, so if one person needs a higher tier, everybody moves to it."
-            ],
-            [
-              "AI",
-              "Included where it is used.",
-              "Priced per seat on top of the plan."
-            ],
-            [
-              "How long before it earns its keep",
-              "Create a channel, invite people, work.",
-              "Spaces, folders, lists, custom fields and automations are designed first."
-            ]
-          ]
-        }
-      ]
-    },
-    "sections": [
-      {
-        "type": "reasons",
-        "id": "tasks",
-        "title": "Tasks live inside the request, and die with it",
-        "paragraphs": [
-          "Kolabr has tasks. What it does not have is a task manager. Every task belongs to the request that created it, is assigned to somebody, and disappears when that request is closed. There is no separate board to groom and no second place to look for what is outstanding, because what is outstanding for a client is the list of open requests.",
-          "This is a deliberate limit rather than a missing feature. Free-standing lists are easy to create and hard to keep honest, and a year in they describe a version of the work that stopped being true months ago. Tying every task to a request means the list is exactly as current as the request it belongs to."
-        ],
-        "image": {
-          "file": "l3-requests",
-          "alt": "Kolabr request management: every item with a number, a category, an owner, a status and a due date, in one table"
-        },
-        "reasons": [
-          {
-            "lead": "One home.",
-            "text": "Open requests are the answer to what is outstanding. There is no second answer."
-          },
-          {
-            "lead": "No orphans.",
-            "text": "A task cannot exist without a request, so it cannot exist without a reason."
-          },
-          {
-            "lead": "Nothing to tidy.",
-            "text": "Close the request and its tasks go with it. No backlog grooming ritual."
-          }
-        ]
-      },
-      {
-        "type": "cards",
-        "id": "build",
-        "title": "Nothing to configure before you can use it",
-        "lede": "Every channel has the same shape, so the setup is a name and an invitation.",
-        "cards": [
-          {
-            "title": "No hierarchy to invent",
-            "body": "No spaces inside folders inside lists. A channel holds a relationship, and requests live in it."
-          },
-          {
-            "title": "No custom-field project",
-            "body": "Category, owner, status, priority and a response target are there already, and they mean the same thing in every channel."
-          },
-          {
-            "title": "Reporting that exists already",
-            "body": "What is open, overdue or unassigned in a client’s channel is on its dashboard the day you create it, not a dashboard somebody builds."
-          },
-          {
-            "title": "One plan for everyone",
-            "body": "No workspace-wide upgrade because one person needs a feature, and no guest allowance to keep an eye on."
-          }
-        ]
-      },
-      {
-        "type": "cards",
-        "id": "only",
-        "title": "What only Kolabr does",
-        "lede": "The parts you cannot assemble out of what you already pay for.",
-        "cards": [
-          {
-            "title": "Built for the people outside",
-            "body": "A client is a guest who takes part, free and unlimited, rather than an allowance you spend and eventually pay for."
-          },
-          {
-            "title": "A conversation, not a comment field",
-            "body": "Threads, mentions, presence, voice notes and calls, beside the requests they created."
-          },
-          {
-            "title": "Nothing to configure first",
-            "body": "No spaces, folders, lists, statuses or custom fields to design before the first request. It works as it arrives."
-          },
-          {
-            "title": "A wiki per channel",
-            "body": "The answer lives next to the work it belongs to, not in a docs section somebody has to remember."
-          }
-        ]
-      }
-    ],
-    "outcome": {
-      "title": "What changes in the first month",
-      "lede": "Not a list of features. Four things that are different about your week, rather than different about the software.",
-      "items": [
-        {
-          "lead": "The relaying stops",
-          "text": "Clients raise their own requests instead of emailing one person on your team who re-types them. The context arrives with the question rather than being summarised away."
-        },
-        {
-          "lead": "Approvals happen where the work is",
-          "text": "The person who signs off is in the channel, so an approval is a reply rather than a forwarded screenshot waiting for an answer."
-        },
-        {
-          "lead": "Open items have a clock the client can see",
-          "text": "Response targets per category, visible to the person waiting, which is why they stop asking whether anything is being looked at."
-        },
-        {
-          "lead": "Nothing has to be configured first",
-          "text": "No spaces, lists, custom fields or automations to set up. A channel is useful the hour you create it, and still makes sense to somebody who joins a year later."
-        }
-      ]
-    },
-    "cost": {
-      "title": "What each one actually costs you",
-      "paragraphs": [
-        "ClickUp has a free tier, then Unlimited at $7 and Business at $12 per user per month on annual billing, rising to $10 and $19 paid monthly, with Enterprise quoted and AI charged per seat on top. Kolabr is $10 or $25 per user per month.",
-        "Per internal seat ClickUp is the lower number. The figure that changes the answer is the client side: a guest who can comment or approve consumes an allowance, and past it becomes a paid member at the full rate. Kolabr never bills a guest. Channels are unlimited on both paid plans and so are guests, so what you pay never depends on how many clients you have."
-      ],
-      "note": [
-        "Worth checking before you compare: whether a higher tier for one person means moving everybody onto it. ",
-        {
-          "label": "Compare Kolabr plans",
-          "href": "/pricing#compare-plans"
-        },
-        "."
-      ],
-      "kolabr": {
-        "name": "Kolabr",
-        "price": "$0, $10 or $25",
-        "text": "per user per month, or $8.50 and $21.25 on annual terms. Guests are free and unlimited on both paid plans, in as many channels as the work needs."
-      },
-      "other": {
-        "name": "ClickUp",
-        "price": "$10 to $19",
-        "text": "per user per month, or $7 to $12 on annual terms, with Enterprise quoted and AI per seat. Read-only guests are free; a guest who can comment or approve draws on an allowance."
-      }
-    },
-    "faq": {
-      "title": "Questions people ask before moving",
-      "items": [
-        {
-          "title": "Are ClickUp guests free?",
-          "body": "A view-only guest is free and unlimited. A guest who can comment or edit takes a guest seat from an allowance that scales with your paid users, and once that allowance runs out the next one is charged as a full member. There is also a rule worth knowing: a guest whose email domain matches your workspace is converted to a paid member automatically. In Kolabr a guest can post, raise requests and read the wiki, and is free on every plan."
-        },
-        {
-          "title": "Is Kolabr a project management tool?",
-          "body": "No. Kolabr organises work by relationship rather than by project: a channel per client, site or department, with requests inside it that carry owners, categories and response targets. Sprints, dependencies and workload charts are planning, and planning is not the part that breaks when a client needs something approved on a Friday afternoon. That is the part Kolabr takes."
-        },
-        {
-          "title": "Does Kolabr have tasks?",
-          "body": "Yes, inside a request. A request carries its own checklist, assigned and ticked off as the work moves, and those tasks close when the request closes. There is no free-standing task manager, because a list that floats loose from the thing that caused it is how a tool fills up with work nobody remembers agreeing to."
-        },
-        {
-          "title": "Which is cheaper?",
-          "body": "It depends entirely on whether your clients need to do anything. Per internal seat ClickUp is lower, $10 against our $10 on monthly terms and $7 against $8.50 annually, and both of us have a free plan. Read-only guests are free on both. The moment a client has to comment, approve or raise something, ClickUp meters them: five guest seats plus two per paid user on Unlimited, and past that they become paid members. In Kolabr a guest posts, raises requests, reads the wiki and joins calls, free, for ever. So the honest answer is that it turns on one decision: whether the client takes part, or only watches."
-        },
-        {
-          "title": "We have built a lot in ClickUp. Is that wasted?",
-          "body": "Not at all, and it is a reason to keep it for internal delivery. The usual approach is to leave the build where it is and open Kolabr channels for the client-facing side, where the conversation, the requests and the wiki need to be somewhere a client can be without a seat or a licence."
-        },
-        {
-          "title": "What does Kolabr do that ClickUp does not?",
-          "body": "Full chat with threads and direct messages in the same place as the work, requests with response targets a client can see, a wiki in every channel, and guests who participate without ever becoming billable. And it works the day you open it, because there is nothing to configure first. And it is where your own team talks: every paid account has a Team channel that a guest cannot be added to."
-        }
-      ]
-    },
-    "proof": {
-      "title": "Proof takes one week",
-      "lede": "Open a channel for one client and invite everyone on their side who has ever had a question. There is no seat arithmetic to do first.",
-      "steps": [
-        {
-          "lead": "Monday",
-          "text": "Invite the whole client team, including the people you would never have spent a guest seat on. Nothing to configure, nothing to approve."
-        },
-        {
-          "lead": "By Friday",
-          "text": "Requests are arriving from the people who actually have them, with the detail attached, instead of through one contact who summarises."
-        },
-        {
-          "lead": "Week four",
-          "text": "You will know how much of your week used to go on relaying. That is the only test this page is asking you to run."
-        }
-      ]
-    },
-    "cta": {
-      "title": "Let the client do more than watch.",
-      "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Open a channel and invite everyone on their side, because it costs nothing.",
-      "disclaimer": "ClickUp is a trademark of Mango Technologies, Inc. Kolabr is not affiliated with ClickUp. Feature and price details were checked against public sources and change over time."
-    }
-  },
   "zendesk": {
     "competitor": "Zendesk",
     "hero": {
@@ -339,7 +12,7 @@
         },
         {
           "title": "The number that decides it",
-          "body": "A helpdesk charges per agent, so every colleague who could answer is a budget decision. Kolabr is priced per person on your plan, and the client and their staff are guests at no cost, so nobody is rationed out of helping."
+          "body": "A helpdesk charges per agent, so every colleague who could answer is a budget decision. Kolabr is priced per user, and the client’s people are guests at no cost, so nobody is rationed out of helping."
         }
       ]
     },
@@ -389,7 +62,7 @@
           "rows": [
             [
               "Where your own team talks",
-              "A Team channel on every paid account, there from day one. Paid members only, and a guest cannot be added to it.",
+              "A Team channel on every paid account, there from day one. Paid users only, and a guest cannot be added to it.",
               "Internal notes on a ticket, and side conversations. Your team's own conversation happens somewhere else."
             ],
             [
@@ -409,7 +82,7 @@
             ],
             [
               "One person covering both client and internal work",
-              "One person, one seat, any number of channels.",
+              "One user, any number of channels.",
               "Customer service and employee service are separate product lines with separate seats."
             ],
             [
@@ -550,7 +223,7 @@
       "items": [
         {
           "lead": "Anyone who can answer, can answer",
-          "text": "No decision about whether a colleague is worth a seat. The person who actually knows replies in the channel, and the record keeps their name on it."
+          "text": "No agent licences to ration. The person who actually knows replies in the channel, and the record keeps their name on it."
         },
         {
           "lead": "Clients stop not asking",
@@ -570,7 +243,7 @@
       "title": "What each one actually costs you",
       "paragraphs": [
         "Zendesk is priced per agent on annual terms: Support Team at $19 for ticketing only, Suite Team at $55 and Suite Professional at $115, with Enterprise quoted. Copilot and the other bundles are charged per agent on top, and AI agents are billed per automated resolution. Kolabr is $10 or $25 per user per month, with nothing stacked on it.",
-        "The difference compounds with how many of your own people are involved. A ten-person firm where everybody occasionally answers a client pays for ten people in Kolabr. On per-agent pricing the same firm either buys ten seats at contact-centre rates or decides that six of them are not allowed to reply. Channels are unlimited on both paid plans and so are guests, so what you pay never depends on how many clients you have."
+        "The difference compounds with how many of your own people are involved. A ten-person firm where everybody occasionally answers a client pays for ten users in Kolabr. On per-agent pricing the same firm either buys ten seats at contact-centre rates or decides that six of them are not allowed to reply. Channels are unlimited on both paid plans and so are guests, so what you pay never depends on how many clients you have."
       ],
       "note": [
         "Also worth checking: whether somebody who answers both customer and internal requests needs a seat on two separate products. ",
@@ -604,7 +277,7 @@
         },
         {
           "title": "Do we pay per agent?",
-          "body": "No. Kolabr is priced per person on your plan, and anyone in your company can be in a channel and answer a request. Nobody has to decide whether a colleague is worth an agent seat before letting them help, and the client and their staff are guests at no cost."
+          "body": "No. Kolabr is priced per user, and any user in your company can be in a channel and answer a request. Nobody has to decide whether a colleague is worth an agent seat before letting them help, and the client’s people are guests at no cost."
         },
         {
           "title": "Do clients need to log into a portal?",
@@ -626,11 +299,11 @@
       "steps": [
         {
           "lead": "Monday",
-          "text": "Give that client a channel and invite everyone on their side, plus any colleague of yours who could help. None of them needs a seat."
+          "text": "Give that client a channel, invite everyone on their side as guests, and add any colleague of yours who could help. Nobody needs a helpdesk licence."
         },
         {
           "lead": "By Friday",
-          "text": "Requests are arriving from people who never bothered to log in, and answers are coming from colleagues who never had a seat."
+          "text": "Requests are arriving from people who never bothered to log in, and answers are coming from colleagues who never had a helpdesk licence."
         },
         {
           "lead": "Week four",

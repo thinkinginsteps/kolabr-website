@@ -49,7 +49,7 @@ export default function ChannelsPage() {
         lede="A shared workspace for a project, or any slice of it, and everyone involved. Your team is in it. So are the clients, partners, suppliers or other departments the work is for."
         points={[
           { title: "You decide what a channel covers", body: "A client account, a project, a workstream inside it, a department's intake, a supplier relationship. Create as many as the work needs." },
-          { title: "Everyone involved is a member", body: "Your team holds Kolabr accounts. Anyone else joins by email link, free, and sees only the channels they belong to." },
+          { title: "Everyone involved is in the channel", body: "Your own staff are users, on paid accounts. Everyone else joins by email link as a guest, free, and sees only the channels they belong to." },
           { title: "The whole job stays in it", body: "A message becomes a request. The request gets a meeting. The meeting leaves notes in the Wiki." },
         ]}
         figure={
@@ -59,7 +59,7 @@ export default function ChannelsPage() {
               centered
               width="min(480px,92%)"
               image={uiChannelSwitcher}
-              alt="The channel switcher open, listing every channel a member belongs to"
+              alt="The channel switcher open, listing every channel you belong to"
             />
           </SplitFigure>
         }
@@ -124,7 +124,7 @@ export default function ChannelsPage() {
         title="So where does your own team talk?"
         lede="In the Team channel, which is there from the day you start and is the one channel a guest cannot be added to. You are not buying a second product for the internal conversation."
         items={[
-          { title: "The Team channel", body: "Every paid account has one and it is always there, outside the channel count. Paid members only, and a guest cannot be invited into it, so nobody has to check a membership list before speaking plainly." },
+          { title: "The Team channel", body: "Every paid account has one and it is always there, outside the channel count. Paid users only, and a guest cannot be invited into it, so nobody has to check a membership list before speaking plainly." },
           { title: "Within your team", body: "Internal IT, HR, facilities, procurement. One department runs the channel and the rest of the company is invited in. Requests get owners and SLAs, the Wiki holds the how-tos." },
           { title: "Across companies", body: "A firm and its clients, a school and its families, a manufacturer and its suppliers. Each relationship gets a channel, and the people in it work with you without paying." },
           { title: "Both at once", body: "Most teams do both. Kolabr scales from a small school to a large enterprise, and the channel model does not change on the way up." },

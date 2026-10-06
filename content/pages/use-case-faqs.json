@@ -2,7 +2,7 @@
   "schools": [
     {
       "q": "Do we have to pay for parents to use Kolabr?",
-      "a": "No. Parents, coaches and suppliers join as guests, free, and are never billed. The plan covers your own team. Channels are unlimited on Pro and Business too, so a class, a year group and a sports fixture list are three channels and the same bill."
+      "a": "No. Parents, coaches and suppliers join as guests, free, and are never billed. The plan bills users only: your own team. Channels are unlimited on Pro and Business too, so a class, a year group and a sports fixture list are three channels and the same bill."
     },
     {
       "q": "Can parents see other families or the staff room?",
@@ -24,7 +24,7 @@
   "nonprofits": [
     {
       "q": "Will we be billed for our volunteers?",
-      "a": "No. Volunteers, the board and funders join as guests and are never billed; the plan covers the people on your payroll. A small team supporting forty volunteers is not a forty-person bill, and channels are unlimited on Pro and Business, so a channel per programme costs nothing extra."
+      "a": "No. Volunteers, the board and funders join as guests and are never billed; the plan bills users only: the people on your payroll. A small team supporting forty volunteers is not a forty-person bill, and channels are unlimited on Pro and Business, so a channel per programme costs nothing extra."
     },
     {
       "q": "Can funders see our internal conversations or other funders' grants?",
@@ -45,8 +45,8 @@
   ],
   "architecture-firms": [
     {
-      "q": "Do clients, contractors and consultants need to pay for a seat?",
-      "a": "No. Clients, contractors, engineers and QSs join as guests, free, and are never billed. The plan covers your own people. Channels are unlimited on Pro and Business, so a channel per project adds nothing to what you pay."
+      "q": "Do clients, contractors and consultants need to be paid users?",
+      "a": "No. Clients, contractors, engineers and QSs join as guests, free, and are never billed. The plan bills users only: your own people. Channels are unlimited on Pro and Business, so a channel per project adds nothing to what you pay."
     },
     {
       "q": "How are RFIs tracked in Kolabr?",
@@ -84,13 +84,13 @@
     },
     {
       "q": "Do we pay for clients and contractors, and how do we start?",
-      "a": "Clients, contractors and other consultants are guests and are never billed; the plan covers your own people. To start, pick the project with the most site queries and the least written record, invite the contractor and run it for two weeks. Start free on one channel, or take seven days on Pro or Business, no card either way."
+      "a": "Clients, contractors and other consultants are guests and are never billed; the plan bills users only: your own people. To start, pick the project with the most site queries and the least written record, invite the contractor and run it for two weeks. Start free on one channel, or take seven days on Pro or Business, no card either way."
     }
   ],
   "marketing-agencies": [
     {
       "q": "Do our clients have to pay to use Kolabr?",
-      "a": "No. Clients join as guests, free, and that includes their legal reviewers and freelance collaborators. You pay for the agency only, and channels are unlimited on Pro and Business, so the tenth client costs the same as the first."
+      "a": "No. Clients join as guests, free, and that includes their legal reviewers and freelancers. You pay only for users, the agency’s own people, and channels are unlimited on Pro and Business, so the tenth client costs the same as the first."
     },
     {
       "q": "How should an agency set up its channels?",
@@ -112,7 +112,7 @@
   "accounting-firms": [
     {
       "q": "Do our clients' finance staff need paid accounts?",
-      "a": "No. Client finance teams join as guests and are never billed, however many of them send you documents. You pay for your staff. Channels are unlimited on Pro and Business, so a channel per client adds nothing to the bill."
+      "a": "No. Client finance teams join as guests and are never billed, however many of them send you documents. You pay only for users: your own staff. Channels are unlimited on Pro and Business, so a channel per client adds nothing to the bill."
     },
     {
       "q": "How do we organise channels for each client?",
@@ -146,7 +146,7 @@
     },
     {
       "q": "Do clients and counsel have to pay?",
-      "a": "No. Clients, counsel and other advisers are guests and are never billed. The plan covers your fee earners. Channels are unlimited on Pro and Business, so a channel per matter costs no more than a channel per client."
+      "a": "No. Clients, counsel and other advisers are guests and are never billed. The plan bills users only: your fee earners. Channels are unlimited on Pro and Business, so a channel per matter costs no more than a channel per client."
     },
     {
       "q": "How long is the matter record kept?",
@@ -178,7 +178,7 @@
   "construction": [
     {
       "q": "Do subcontractors cost us anything?",
-      "a": "No. Clients, QSs and subcontractors join as guests and are never billed. The plan covers the people on your payroll. Channels are unlimited on Pro and Business, so a channel per site costs nothing extra."
+      "a": "No. Clients, QSs and subcontractors join as guests and are never billed. The plan bills users only: the people on your payroll. Channels are unlimited on Pro and Business, so a channel per site costs nothing extra."
     },
     {
       "q": "Will our foremen actually use this on site?",
@@ -200,7 +200,7 @@
   "property-management": [
     {
       "q": "Do the board and residents have to pay to use Kolabr?",
-      "a": "No. The board, owners and residents join as guests, free, and are never billed however many of them report a leak. You pay for your staff, and channels are unlimited on Pro and Business, so a channel per building is not a bigger bill."
+      "a": "No. The board, owners and residents join as guests, free, and are never billed however many of them report a leak. You pay only for users, your own staff, and channels are unlimited on Pro and Business, so a channel per building is not a bigger bill."
     },
     {
       "q": "How should a property manager set up channels for each building?",
@@ -226,7 +226,7 @@
     },
     {
       "q": "Do our lab and radiology partners need to pay?",
-      "a": "No. Labs, radiology practices and referral partners join as guests and are never billed; the plan covers your own people. Each partner sees only its own channel, not billing or the roster, and channels are unlimited on Pro and Business."
+      "a": "No. Labs, radiology practices and referral partners join as guests and are never billed; the plan bills users only: your own people. Each of them sees only its own channel, not billing or the roster, and channels are unlimited on Pro and Business."
     },
     {
       "q": "What happens if nobody acknowledges an urgent result?",
@@ -244,7 +244,7 @@
   "logistics": [
     {
       "q": "Do our clients pay for access to their account channel?",
-      "a": "No. Client depots, receiving clerks and planners join as guests and are never billed; the plan covers your controllers. A national account with six receiving sites is six sets of guests and one bill, and channels are unlimited on Pro and Business."
+      "a": "No. Client depots, receiving clerks and planners join as guests and are never billed; the plan bills users only: your controllers. A national account with six receiving sites is six sets of guests and one bill, and channels are unlimited on Pro and Business."
     },
     {
       "q": "Can one client see another shipper's loads or rates?",
@@ -266,7 +266,7 @@
   "manufacturing": [
     {
       "q": "Do our customers have to pay to join their channel?",
-      "a": "No. Customer engineers, buyers and auditors join as guests and are never billed; the plan covers your own people. Channels are unlimited on Pro and Business, so a channel per customer and a channel per line cost the same as one."
+      "a": "No. Customer engineers, buyers and auditors join as guests and are never billed; the plan bills users only: your own people. Channels are unlimited on Pro and Business, so a channel per customer and a channel per line cost the same as one."
     },
     {
       "q": "Will a customer see our supplier problems or other customers' NCRs?",

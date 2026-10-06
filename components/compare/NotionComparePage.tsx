@@ -305,7 +305,7 @@ function ReceiptTotal({ label, children }: { label: string; children: ReactNode 
 }
 
 /**
- * Two receipts, per person per month on yearly terms. Notion's stack names its other
+ * Two receipts, per user per month on yearly terms. Notion's stack names its other
  * subscriptions without pricing them; Kolabr's figure comes from lib/pricing.ts.
  */
 function Cost({ cost: c }: { cost: NotionComparison["cost"] }) {
