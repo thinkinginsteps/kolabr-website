@@ -43,7 +43,13 @@ export function WikiSketch({ heading, articles }: { heading: string; articles: {
 }
 
 /** A deployed playbook: progress across the top, then each step with its owner and date. */
-export function PlaybookSketch({ heading, steps }: { heading: string; steps: { text: string; owner: string; due: string; done: boolean }[] }) {
+export function PlaybookSketch({
+  heading,
+  steps,
+}: {
+  heading: string;
+  steps: { text: string; owner: string; due: string; done: boolean }[];
+}) {
   const done = steps.filter((s) => s.done).length;
   return (
     <>
@@ -76,3 +82,17 @@ export function PlaybookSketch({ heading, steps }: { heading: string; steps: { t
   );
 }
 
+/**
+ * A glass note floating over a hero screenshot. Glass is allowed on floating cards; it is hidden
+ * below 1080px, where it would cover the capture it describes. `className` places it.
+ */
+export function GlassNote({ title, body, className }: { title: string; body: string; className: string }) {
+  return (
+    <div
+      className={`absolute box-content flex max-w-[230px] animate-float flex-col gap-1 rounded-2xl bg-glass px-4 py-3.5 shadow-card [backdrop-filter:blur(22px)_saturate(180%)] [-webkit-backdrop-filter:blur(22px)_saturate(180%)] max-desk:hidden ${className}`}
+    >
+      <span className="text-[13.5px] font-semibold text-ink">{title}</span>
+      <span className="text-[13px] text-ink-muted">{body}</span>
+    </div>
+  );
+}

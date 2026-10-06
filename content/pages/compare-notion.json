@@ -1,0 +1,336 @@
+{
+  "competitor": "Notion",
+  "hero": {
+    "eyebrow": "Kolabr compared",
+    "title": "Kolabr vs Notion",
+    "lede": "Notion is a blank canvas, and a good one. To run client work on it, somebody builds the portal, the tracker and the sharing, connects a chat tool and a video tool, then keeps all of it working. Kolabr is the finished room your client walks into: the conversation, requests with a clock, the wiki, calls and events, ready the day you open a channel.",
+    "image": {
+      "file": "m2-wiki",
+      "alt": "A Kolabr channel wiki article on rounds, revisions and scope: numbered steps, a reference table and a message to send the client, with the channel's other articles listed beside it"
+    },
+    "chip": {
+      "title": "Next to the conversation",
+      "body": "The wiki lives in the channel, so the answer is one click from the question."
+    }
+  },
+  "build": {
+    "id": "build",
+    "title": "Build it, or open it",
+    "lede": "What it takes to run one client’s work from a standing start, in each.",
+    "notion": {
+      "title": "In Notion, you build",
+      "items": [
+        {
+          "text": "A client page to act as the portal"
+        },
+        {
+          "text": "A requests database, with status, owner and due date properties"
+        },
+        {
+          "text": "A view for each client, filtered to their requests"
+        },
+        {
+          "text": "Sharing, page by page, so each client sees only their own"
+        },
+        {
+          "text": "A form for the client to ask for things"
+        },
+        {
+          "text": "Automations to tell the owner something arrived",
+          "note": "Database automations need Business"
+        },
+        {
+          "text": "A way to show a deadline",
+          "note": "No response targets, so formulas stand in"
+        },
+        {
+          "text": "A chat tool alongside, for the day-to-day conversation",
+          "note": "Another subscription"
+        },
+        {
+          "text": "A video tool alongside, for calls",
+          "note": "Another subscription"
+        }
+      ],
+      "footer": "Then somebody keeps all of it working."
+    },
+    "kolabr": {
+      "title": "In Kolabr, you open a channel",
+      "actions": [
+        "Create a channel",
+        "Invite the client"
+      ],
+      "includedLabel": "Already there when you do",
+      "included": [
+        "Live chat with your client",
+        "Requests with an owner and a response target",
+        "Routing to the right person",
+        "A wiki the client can read",
+        "Calls with screen sharing",
+        "Scheduled events",
+        "A dashboard for the channel"
+      ],
+      "footer": "Nothing to design, and nothing to maintain."
+    }
+  },
+  "walkIn": {
+    "id": "walk-in",
+    "title": "What your client walks into",
+    "lede": "Both tools let clients in for free. What they find when they arrive is the difference.",
+    "notion": {
+      "label": "A Notion guest",
+      "caption": "The pages they were invited to, to read, comment on or edit.",
+      "breadcrumb": "Verde Health / Q4 launch",
+      "page": "Q4 launch: brief and timeline",
+      "comment": {
+        "name": "Miles Hart",
+        "text": "Is a third round included, or is that extra?"
+      }
+    },
+    "kolabr": {
+      "label": "A Kolabr guest",
+      "caption": "A working relationship: the conversation, their requests and the clock on them, the wiki, calls and events.",
+      "channel": "Creative review",
+      "incoming": "Is a third round included, or is that extra?",
+      "outgoing": "Round three is quoted separately. Raised as #418.",
+      "request": {
+        "id": "#418",
+        "title": "Round three estimate",
+        "due": "Due in 3h"
+      },
+      "wiki": "Rounds, revisions and what is in scope",
+      "event": "Design review, Thursday 10:00"
+    }
+  },
+  "owner": {
+    "id": "owner",
+    "title": "The tracker nobody has to own",
+    "lede": "A Notion setup belongs to whoever built it. When they move on, the knowledge of how it works goes with them. Kolabr’s structure is the product, so there is nothing to hand over.",
+    "points": [
+      {
+        "title": "Nothing to design",
+        "body": "Nobody decides how your company models a client, a request or a deadline, and nobody documents that decision."
+      },
+      {
+        "title": "Nothing to repair",
+        "body": "No property somebody renamed, no view somebody deleted, no automation that stopped when its builder left."
+      },
+      {
+        "title": "Every channel the same",
+        "body": "Someone who knows one client channel knows them all, including a new starter in their first week."
+      }
+    ]
+  },
+  "cost": {
+    "title": "One subscription, or a stack",
+    "lede": "Per person the prices are close. What differs is everything else you pay for, because Notion has no chat and no calls.",
+    "notion": {
+      "label": "Client work on Notion",
+      "lines": [
+        {
+          "name": "Notion Plus",
+          "price": "$10*"
+        },
+        {
+          "name": "A chat tool",
+          "price": "another subscription"
+        },
+        {
+          "name": "A video tool",
+          "price": "another subscription"
+        }
+      ],
+      "total": "$10* and two more bills"
+    },
+    "kolabr": {
+      "label": "Client work on Kolabr Pro",
+      "lines": [
+        "Live chat with your clients",
+        "Requests with response targets",
+        "Calls with screen sharing",
+        "A wiki in every channel",
+        "Scheduled events"
+      ]
+    },
+    "totalLabel": "Per person, a month",
+    "scale": {
+      "title": "At Business level",
+      "notion": "Notion Business is $20* per member. SCIM provisioning and the audit log are kept for Enterprise, which is quoted.",
+      "kolabr": "SAML SSO, SCIM provisioning and an unlimited, exportable audit log are all included."
+    },
+    "note": "* Yearly fees, per person per month. Billed monthly, Notion Plus is $12 and Business $24; Kolabr Pro is $10 and Business $25. Notion prices checked 6 October 2026."
+  },
+  "table": {
+    "title": "Kolabr and Notion, feature by feature",
+    "lede": "Notion’s prices and features were checked on 6 October 2026. Both change, so check Notion’s own pricing page before you budget.",
+    "groups": [
+      {
+        "title": "Conversation and meetings",
+        "rows": [
+          [
+            "Talking with your client day to day",
+            "Live chat in every channel, with threads, presence, voice notes and direct messages.",
+            "Comments on pages and blocks. Notion has no chat between people."
+          ],
+          [
+            "Getting on a call",
+            "In the channel, started from the request it concerns, with screen sharing and recording.",
+            "No calls. AI Meeting Notes on Business transcribes meetings held in another tool."
+          ],
+          [
+            "Where your own team talks",
+            "A Team channel on every paid account. Paid members only, and a guest cannot be added to it.",
+            "Comments and teamspaces. The running conversation happens in another tool."
+          ]
+        ]
+      },
+      {
+        "title": "Requests and accountability",
+        "rows": [
+          [
+            "Knowing who owes what, without asking",
+            "Built in. Number, category, owner, status and response target on every request.",
+            "A database you design, with the properties and views you build."
+          ],
+          [
+            "A deadline the client can see",
+            "A response target per category, visible to the client.",
+            "No response-time targets. Formulas and automations can approximate one."
+          ],
+          [
+            "How a client asks for something",
+            "In the channel. One step turns the message into a numbered request.",
+            "A form, on any plan, with custom forms on Plus."
+          ],
+          [
+            "Telling the owner something arrived",
+            "Routing rules send it to the right person on Pro.",
+            "Button automations on Plus, database automations on Business."
+          ]
+        ]
+      },
+      {
+        "title": "Working with clients",
+        "rows": [
+          [
+            "What it costs to bring a client in",
+            "Free on every plan, and unlimited on both paid plans.",
+            "Free. Ten on the free plan, unlimited on paid plans."
+          ],
+          [
+            "What a guest gets",
+            "A channel: the conversation, their requests, the wiki, calls and events.",
+            "The individual pages they are invited to, to view, comment on or edit."
+          ],
+          [
+            "Keeping one client’s work away from another’s",
+            "Separate channels by design. A guest sees only the channels they are invited to.",
+            "Sharing set page by page."
+          ]
+        ]
+      },
+      {
+        "title": "Knowledge and history",
+        "rows": [
+          [
+            "Not explaining the same thing every month",
+            "A wiki in every channel, readable by guests and suggested to them as they ask.",
+            "Docs and databases in a workspace you structure yourself."
+          ],
+          [
+            "How long before it earns its keep",
+            "Open a channel and invite people. Nothing to design first.",
+            "A workspace is built before it is used."
+          ],
+          [
+            "Page history",
+            "Unlimited version history on Pro.",
+            "30 days on Plus, 90 on Business, unlimited on Enterprise."
+          ],
+          [
+            "A date in the diary tied to the work",
+            "Scheduled events in the channel, tied to the request they came from.",
+            "A calendar database, and the separate Notion Calendar app."
+          ]
+        ]
+      },
+      {
+        "title": "Cost and administration",
+        "rows": [
+          [
+            "List price",
+            "$10 or $25 per user per month, or $8.50 and $21.25 on yearly terms. Guests free.",
+            "Plus $12 and Business $24 per member per month, or $10 and $20 on yearly terms. Enterprise is quoted."
+          ],
+          [
+            "Single sign-on",
+            "On Business.",
+            "On Business."
+          ],
+          [
+            "User provisioning (SCIM)",
+            "On Business.",
+            "On Enterprise."
+          ],
+          [
+            "An audit log",
+            "30 days on Free, a year on Pro, unlimited and exportable on Business.",
+            "On Enterprise."
+          ]
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "title": "Questions people ask before moving",
+    "items": [
+      {
+        "title": "Can Notion replace a chat tool?",
+        "body": "No. Notion has comments on pages and blocks, but no chat between people and no calls, so client work in Notion runs beside a separate chat tool and a separate video tool. In Kolabr the conversation, the calls, the requests and the wiki are in the same channel, and your own team gets a Team channel that no guest can be added to."
+      },
+      {
+        "title": "Notion has forms. How does a client ask for something in Kolabr?",
+        "body": "They say it in the channel. One step turns the message into a numbered request with a category, an owner and a response target, and routing sends it to the right person. The client then watches that request: who has it, its status and how long is left. A form gets the question in; a request keeps the promise in sight until it is kept."
+      },
+      {
+        "title": "Can I build a request tracker in Notion?",
+        "body": "Yes, and people build good ones. The question is who keeps it working. A Notion tracker is a database somebody designed, with views somebody configured and automations somebody maintains, and it usually belongs to one person who eventually moves on. In Kolabr requests are part of the product: categories, owners, statuses, response targets and the channel’s dashboard exist the moment you create it."
+      },
+      {
+        "title": "Both offer free guests, so what is the difference?",
+        "body": "What a guest joins. In Notion a guest is shared individual pages, to view, comment on or edit. In Kolabr a guest joins a channel: the conversation, their open requests and the clock on each, the wiki, calls and events for that relationship, all at once. You are not deciding page by page what a client may see."
+      },
+      {
+        "title": "Which is cheaper?",
+        "body": "Per person the two are close: on yearly terms Notion Plus is $10 a member and Kolabr Pro is $8.50 a user. The difference is what else you pay for. Notion has no chat and no calls, so client work on it needs a chat tool and a video tool as well, and Kolabr Pro includes both. At Business level, Kolabr includes SCIM provisioning and a full audit log, which Notion keeps for its quoted Enterprise plan."
+      },
+      {
+        "title": "Can we use Kolabr and Notion together?",
+        "body": "Plenty of teams do. Notion keeps the long-form internal knowledge it is already full of, and Kolabr runs client channels, where the conversation, the requests and the wiki for that relationship belong together. The channel wiki is for what a client or a new starter needs, not a company encyclopaedia."
+      }
+    ]
+  },
+  "proof": {
+    "title": "Proof takes one week",
+    "lede": "Pick one client and open a channel. There is nothing to model, no template to choose and no database to design first.",
+    "steps": [
+      {
+        "lead": "Monday",
+        "text": "Open the channel and invite the client. The conversation, the requests and the wiki are already in it; you set up none of the three."
+      },
+      {
+        "lead": "By Friday",
+        "text": "The first requests have numbers, owners and dates, and you have written the two or three wiki articles that stop the same questions coming back."
+      },
+      {
+        "lead": "Week four",
+        "text": "You will know whether anything still needs building. That is the only test this page is asking you to run."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Nothing to design. Start working.",
+    "body": "Free for one channel, no card. Seven days on Pro or Business when you want the rest. Open a channel for one client and see it working the same afternoon.",
+    "disclaimer": "Notion is a trademark of Notion Labs, Inc. Kolabr is not affiliated with Notion Labs. Feature and price details were checked against Notion’s public pages on 6 October 2026 and change over time."
+  }
+}

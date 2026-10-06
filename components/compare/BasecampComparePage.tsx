@@ -5,7 +5,7 @@ import { Rich } from "../Rich";
 import { PanelHeading, TintRows } from "../product/Illustrations";
 import { Screenshot } from "../product/ProductSections";
 import { BandHead, Faq, FeatureTable, NarrowBand, PAD, PricingNudge, Proof, Statement } from "./ComparePage";
-import { Body, PlaybookSketch, WikiSketch } from "./Sketches";
+import { Body, GlassNote, PlaybookSketch, WikiSketch } from "./Sketches";
 import { plans } from "@/lib/pricing";
 import type { Rich as RichText } from "@/lib/use-cases";
 import type { BasecampComparison, DayStep, TileSketch } from "@/lib/compare-basecamp";
@@ -43,11 +43,8 @@ function Hero({ hero }: { hero: BasecampComparison["hero"] }) {
         </div>
         <div className="relative mt-16 max-tab:mt-12">
           <Screenshot image={screens[hero.image.file]} alt={hero.image.alt} preload />
-          {/* Over the sidebar's empty foot rather than the request list it describes. Glass is for floating cards. */}
-          <div className="absolute bottom-[9%] left-[-14px] box-content flex max-w-[230px] animate-float flex-col gap-1 rounded-2xl bg-glass px-4 py-3.5 shadow-card [backdrop-filter:blur(22px)_saturate(180%)] [-webkit-backdrop-filter:blur(22px)_saturate(180%)] max-desk:hidden">
-            <span className="text-[13.5px] font-semibold text-ink">{hero.chip.title}</span>
-            <span className="text-[13px] text-ink-muted">{hero.chip.body}</span>
-          </div>
+          {/* Over the sidebar's empty foot rather than the request list it describes. */}
+          <GlassNote title={hero.chip.title} body={hero.chip.body} className="bottom-[9%] left-[-14px]" />
         </div>
       </div>
     </section>
