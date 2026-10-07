@@ -4,8 +4,8 @@
     "title": "Privacy policy",
     "lede": "How [COMPANY NAME], trading as Kolabr, collects, uses and protects personal information when you visit our website or use the Kolabr service.",
     "chips": [
-      "Last updated 21 September 2026",
-      "Applies to kolabr.com and the Kolabr apps"
+      "Last updated [DATE OF PUBLISHING]",
+      "Applies to kolabr.com, kolabr.io and the Kolabr apps"
     ],
     "nav": [
       {
@@ -103,13 +103,13 @@
             "h4": "Channel content"
           },
           {
-            "p": "Everything you and your guests put into a channel: messages, files, requests and their tasks, wiki pages, scheduled events and the membership of the channel itself. We hold this on your behalf. We do not read it except where you ask us to in support, or where we are legally compelled to."
+            "p": "Everything you and your guests put into a channel: messages, files, requests and their tasks, wiki pages, scheduled events, call recordings, emails sent to a channel’s email address, and the membership of the channel itself. We hold this on your behalf. We do not read it except where you ask us to in support, or where we are legally compelled to."
           },
           {
             "h4": "Technical and usage information"
           },
           {
-            "p": "IP address, browser and device type, operating system, time zone, the pages you visit on our website, and diagnostic logs from the apps. We use this to keep the service running, investigate faults and abuse, and understand which parts of the product are used."
+            "p": "IP address, browser and device type, operating system, time zone, the pages you visit on our website, and diagnostic logs from the apps. For calls we also record call quality information: when each person joined and left, the network region they connected from, which media server carried the call, and measurements such as latency and packet loss. We use this to keep the service running, investigate faults and abuse, and understand which parts of the product are used."
           },
           {
             "p": "We do not collect special personal information, and we ask that you do not put health records, biometric data, criminal records or children’s personal information into a channel unless your own lawful basis for doing so is in place."
@@ -213,14 +213,24 @@
               ],
               "rows": [
                 [
-                  "[HOSTING PROVIDER]",
-                  "Runs the service and holds your data",
-                  "[DATA REGION]"
+                  "Dedicated.com",
+                  "Hosts the servers that run the Kolabr platform and hold your data",
+                  "United States"
                 ],
                 [
-                  "[PAYMENT PROCESSOR]",
-                  "Takes payment and issues invoices",
-                  "[REGION]"
+                  "Cloudflare",
+                  "Network security, content delivery and DNS, and storage for uploaded files and call recordings",
+                  "Global network; stored files in the United States"
+                ],
+                [
+                  "LiveKit",
+                  "Carries voice and video calls",
+                  "Global network"
+                ],
+                [
+                  "Paddle",
+                  "Takes payment and issues invoices as the reseller of Kolabr subscriptions",
+                  "[CONFIRM: Paddle’s region from their privacy notice]"
                 ],
                 [
                   "Resend",
@@ -228,9 +238,9 @@
                   "United States"
                 ],
                 [
-                  "[MONITORING PROVIDER]",
-                  "Diagnoses faults and performance problems",
-                  "[REGION]"
+                  "Apple and Google",
+                  "Deliver push notifications to the Kolabr mobile apps",
+                  "Global"
                 ],
                 [
                   "Google",
@@ -239,6 +249,9 @@
                 ]
               ]
             }
+          },
+          {
+            "p": "Paddle sells Kolabr subscriptions as our reseller, so it also handles your payment details under its own privacy notice. Card details are never stored on our systems."
           },
           {
             "p": "We update this list when it changes. We will also disclose information where we are legally required to, and we will tell the customer unless we are prohibited from doing so."
@@ -251,10 +264,10 @@
         "title": "Where information is stored",
         "blocks": [
           {
-            "p": "Your data is stored with cloud providers whose facilities are located in [DATA REGION]. Where we transfer personal information out of the EEA or the UK for customers there, we rely on standard contractual clauses or an adequacy decision."
+            "p": "Your organisation’s data (messages, files, requests, wiki pages, call recordings and backups) is stored in the region chosen when the account is created. At present that region is the United States."
           },
           {
-            "p": "You can ask where your data is held before signing up, and we will tell you plainly what is possible."
+            "p": "The providers listed in section 5 process information to deliver their part of the service, as described there. Where we transfer personal information out of the EEA or the UK for customers there, we rely on standard contractual clauses or an adequacy decision."
           }
         ]
       },
@@ -279,6 +292,18 @@
                   "Held read-only for the period the customer sets, which may extend past the project"
                 ],
                 [
+                  "Call recordings",
+                  "30 days on Pro; as set by the customer on Business"
+                ],
+                [
+                  "Emails sent to a channel’s address",
+                  "Once delivered they become channel content. Emails that cannot be delivered are discarded and not kept"
+                ],
+                [
+                  "Call quality information",
+                  "Twelve months"
+                ],
+                [
                   "Account records",
                   "For the life of the account"
                 ],
@@ -298,7 +323,7 @@
             }
           },
           {
-            "p": "Customers on paid plans can set their own retention rules for channel content. Where your rule is shorter than ours, yours applies to your content."
+            "p": "Customers on the Business plan can set their own retention rules for channel content. Where your rule is shorter than ours, yours applies to your content."
           }
         ]
       },
